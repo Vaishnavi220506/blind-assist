@@ -107,6 +107,17 @@ Post-seal diagnostics identify40independent persistent-ghost FP among61total FP;
 the sole FN has range/image evidence but reciprocal association ambiguity. These
 are separate responsibilities, not reasons to increase persistence lifetime.
 
+[MZ114](MZ114_RESULTS_20260913.md) rejects a fixed global-assignment/range-prior
+alert replacement:768consumed frames375TP/138FP/21FN ->377/142/19. Preserving the
+old matched-pair range smoothing restores one lostTP (posthoc378/142/18), but
+no net FP or timing benefit appears; ghost-to-object mistakes can masquerade as FP
+removal or reinforce new alerts. Keep it as a negative control within that role.
+Suppressing unmatched Radar would remove71FP but lose31TP on480frames, including
+25correct hazardous-actor supports. Neither absent center rays nor repeated
+compatible ranges are enough to identify persistent ghosts. Study finite-footprint zonal
+return information next; do not assume a reported range-noise sigma is a true
+within-zone spatial depth distribution, or strongest-first is nearest-first.
+
 After fixing an observable method, evaluate complete new scenes with identical
 alert distance/corridor/margins and the full miss-versus-reminder relationship.
 Report obstacle-event misses, first correct alert timing and irrelevant alert

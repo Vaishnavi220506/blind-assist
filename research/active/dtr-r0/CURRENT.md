@@ -7,6 +7,21 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest association falsifier: [MZ114](nearfield/MZ114_RESULTS_20260913.md) evaluates
+joint null-inclusive assignment and an optical/range prior on768consumed frames.
+375TP/138FP/21FN incumbent becomes377/142/19; threeTP gained but one lost.
+A sealed posthoc matched-range-readout control restores that smoothing-related
+loss (378/142/18), without changing any FP. Timing and post-exit burden do not
+improve; the sole removed FP is wrong ghost-to-object association, and a ghost
+prior reinforces another FP. Intended NEGATIVE_CONTROL for this fixed alert
+replacement; retain MZ113 and do not tune consumed costs or expand capture.
+Separately, suppressing unmatched Radar on480frames removes71FP but loses31TP,
+including25correct hazardous-actor Radar supports. Missing center-ray ToF and
+repeated compatible returns are insufficient discrimination. Next information
+work concerns finite ToF footprints/multiple returns and local RGB allocation,
+with explicit hypothetical detection limits. The goal remains active; structured
+registration is pending the existing ledger fingerprint error.
+
 Latest dynamic test: [MZ113](nearfield/MZ113_RESULTS_20260913.md) freezes optical
 correspondence against a same-policy angular ablation. On new240frames, incumbent
 84TP/60FP/4FN becomes87/61/1 with no old positives lost; angular remains84/60/4.
