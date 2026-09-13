@@ -7,7 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
-Latest fixed combination: [MZ127](nearfield/MZ127_RESULTS_20260913.md) tests32zones
+Latest weighted readout: [MZ128](nearfield/MZ128_RESULTS_20260913.md) keeps full
+association with fixed symmetric zone weights. Original139/107/5but false segments
+27to28; weighted MZ125 equals139/105/5. Declared binary-four alert-use control
+retains full context and gives139/103/5,57.44%precision,15events,.25s delay,26false
+segments. It preserves5HEAD exclusions lost by MZ127's context removal and adds
+2BODY exclusions to MZ125. Retain scoped Development diagnostic/component;
+MZ116 baseline unchanged, registration/inheritance pending ledger303. No successor.
+
+Previous fixed combination: [MZ127](nearfield/MZ127_RESULTS_20260913.md) tests32zones
 (four columns,28.41%image width). Original gives139TP/114FP/5FN; with MZ125 gives
 139/108/5 versus full MZ125139/105/5. All15events and.25s delay retained; false
 segments26/25versus27. Combined restores5HEAD FP when association loses its second

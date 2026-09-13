@@ -26,6 +26,12 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ128](MZ128_RESULTS_20260913.md) preserves all association context and applies
+  fixed zone weights only to alerts. Soft original139/107/5has28false segments;
+  soft MZ125 matches139/105/5. Declared binary-four alert-use control gives139/103/5,
+  57.44%precision,15events,.25s delay,26segments. Benefit is context retention plus
+  two BODY exclusions, not continuous-weight superiority. Keep components and
+  MZ116 baseline; structured registration/inheritance remains pending ledger303.
 - [MZ127](MZ127_RESULTS_20260913.md) fills the four-column contrast:139/114/5,
   combined with MZ125139/108/5, preserving15events and.25s delay. Full MZ125 has
   fewer FP105 but more false segments27versus25combined. Removing peripheral
