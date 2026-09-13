@@ -53,3 +53,39 @@ new scene split test it unchanged, including ambiguity, low contrast, occlusion,
 time/calibration errors and sensor gaps. Current-corridor occupancy and future
 collision prediction are different tasks; report them separately. Each experiment
 ends at its stated budget, followed by evidence and code delivery.
+
+## Revised design direction: spatial evidence before object categories
+
+User proposal, 2026-09-13; not a validated algorithm. Represent coarse forward
+regions with local contour/extent candidates, range and extent uncertainty,
+known/unknown height, sensor provenance, evidence age and unobserved space.
+Do not fill a whole grid cell or clip a thin structure at a cell center. A
+ToF-zone range is not automatically the depth of every image pixel in that zone.
+
+ToF supplies zonal distance and validity; Radar supplies independent distance,
+coarse bearing and motion with HEIGHT_UNKNOWN where unobserved; RGB supplies
+boundaries and angular localization without requiring a named object category;
+IMU compensates short-term rotation without inventing metric motion or intent.
+Allow separate RGB+ToF and RGB+Radar candidate branches. ToF absence must not
+prevent consideration of an RGB+Radar pair. Conflicting ranges can belong to
+different objects; preserve alternative explanations and independent support.
+Repeated Radar detections alone do not establish independent corroboration.
+
+Use the initial body/walking reference for the first simulation comparison,
+explicitly retaining reference uncertainty. Head orientation and future motion
+remain distinct. A multizone footprint/multireturn simulator is a separate
+sensor-model study: existing center-ray results cannot decide physical thin-pole
+detection, and a replacement must not assume that every thin pole is detected.
+
+[MZ110 diagnosis](MZ110_RESULTS_20260913.md) finds six ToF-blocked opportunities
+among 30 nominal misses; simple gate removal recovers four but adds a net FP.
+All nine pole misses lack target Radar and five new FP have correct diagnostic
+identity but wrong geometry. Preserve the diagnostic as a component, keep both
+existing comparators, and do not promote the gate-removal counterfactual.
+
+After fixing an observable method, evaluate complete new scenes with identical
+alert distance/corridor/margins and the full miss-versus-reminder relationship.
+Report obstacle-event misses, first correct alert timing and irrelevant alert
+count/duration per route. Keep centimeter-boundary pressure tests separate from
+event-level headline results. If RGB cannot reduce nuisance at matched recall
+and timing, retain it for direction display/explanation within that tested scope.

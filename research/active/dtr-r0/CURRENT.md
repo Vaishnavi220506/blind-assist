@@ -7,6 +7,18 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest bounded diagnosis: [MZ110](nearfield/MZ110_RESULTS_20260913.md) reuses 288
+unique MZ107--109 frames. Of 30 nominal RGB FN, 20 lack target Radar, six have
+RGB+Radar pairs blocked by ToF and four fail geometry. Correct-association
+nominal recovery ceiling is six frames; simple ToF-gate removal recovers four
+but changes FP 32 to 33 (four removed, five added), with no TP lost. All nine
+pole misses lack target Radar; five added FP have correct projected-box identity
+but wrong extent geometry. Retain the diagnostic component, preserve nominal
+and interval comparators, no alert promotion or automatic successor. See the
+revised spatial-evidence responsibilities in the four-sensor mainline. Structured
+registration remains blocked by the pre-existing ledger line 303 fingerprint
+error; intended component disposition and failed attempts are retained locally.
+
 Latest bounded optimization: [MZ109](nearfield/MZ109_RESULTS_20260913.md) propagates
 working range/pose/box intervals into corridor geometry. Across288 frames it
 retains all142 three-sensor baseline TP and reduces FP33to31, but it is not a
