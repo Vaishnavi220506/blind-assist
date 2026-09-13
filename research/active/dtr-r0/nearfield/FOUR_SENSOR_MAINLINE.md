@@ -26,6 +26,13 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ115](MZ115_RESULTS_20260913.md) implements hypothetical finite ToF footprints
+  and strongest2 status-bearing return tuples. Same-tuple RGB allocation on fresh
+  240frames changes141TP/71FP/3FN to141/69/3 at3.6m, with no contributor hit
+  dropped. Duration falls.5s but false segments18→19;2.6m loses oneTP and delays
+  first alert. Retain the interface/allocation as a Development challenger,
+  without alert promotion or claims of full-curve/hardware improvement.
+
 - MZ90--100 are range/rotation sensor experiments; their predictors do not consume
   RGB. They do not establish a tested four-sensor fusion system.
 - MZ101--106 are a **separate stereo RGB + ToF branch**, with no Radar in the

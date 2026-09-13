@@ -7,6 +7,20 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest spatial-model study: [MZ115](nearfield/MZ115_RESULTS_20260913.md) replaces
+center-only ToF observations with hypothetical finite-zone/multiple-return
+tuples and compares RGB allocation against the same whole-zone measurements.
+Fresh240frames:141TP/71FP/3FN→141/69/3 at3.6m, all14events alert at first positive
+bin, no narrowed native contributor hit dropped. False duration17.75→17.25s,
+but segments18→19;2.6m loses oneTP and max delay2→2.25s. A small spatial gain,
+not a nuisance breakthrough or full-curve dominance. Intended Development
+COMPONENT_OR_CHALLENGER for interface/allocation/audit, no alert promotion.
+All frames now consumed; preserve merged/unseen uncertainty, separate Radar
+HEIGHT_UNKNOWN and independent support. Native capture complete and UE/Zen
+released. The larger goal remains active; do not tune the consumed source.
+Structured registration remains pending the existing ledger line303 fingerprint
+error; the attempted command and intended challenger inheritance are preserved.
+
 Latest association falsifier: [MZ114](nearfield/MZ114_RESULTS_20260913.md) evaluates
 joint null-inclusive assignment and an optical/range prior on768consumed frames.
 375TP/138FP/21FN incumbent becomes377/142/19; threeTP gained but one lost.
