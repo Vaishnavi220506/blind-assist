@@ -26,6 +26,11 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ127](MZ127_RESULTS_20260913.md) fills the four-column contrast:139/114/5,
+  combined with MZ125139/108/5, preserving15events and.25s delay. Full MZ125 has
+  fewer FP105 but more false segments27versus25combined. Removing peripheral
+  zones restores5HEAD FP through insufficient two-zone association, offset by
+  2BODY FP removed. Keep Development components and MZ116 baseline; ledger pending.
 - [MZ126](MZ126_RESULTS_20260913.md) tests whole-zone central ToF selection.
   Half image width leaves MZ116 unchanged; quarter target retains16zones and
   only14.07%actual image width:130TP/58FP/14FN,69.15%precision,15/15events but

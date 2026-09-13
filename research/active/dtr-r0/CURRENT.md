@@ -7,7 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
-Latest user-directed contrast: [MZ126](nearfield/MZ126_RESULTS_20260913.md) selects
+Latest fixed combination: [MZ127](nearfield/MZ127_RESULTS_20260913.md) tests32zones
+(four columns,28.41%image width). Original gives139TP/114FP/5FN; with MZ125 gives
+139/108/5 versus full MZ125139/105/5. All15events and.25s delay retained; false
+segments26/25versus27. Combined restores5HEAD FP when association loses its second
+zone, while removing2BODY FP. Retain scoped Development components/interaction
+diagnostic, keep MZ116 baseline; registration/inheritance pending ledger303.
+No automatic successor or default promotion.
+
+Previous width contrast: [MZ126](nearfield/MZ126_RESULTS_20260913.md) selects
 whole ToF zones within central half/quarter image width, preserving vertical and
 Radar policy. Half target (48zones) leaves139TP/116FP/5FN; quarter (16zones,actual
 14.07% image width) yields130/58/14, precision69.15%,15/15events but delay1.25s.
