@@ -26,6 +26,12 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ116](MZ116_RESULTS_20260913.md) adds a runnable pixel-resolution Radar guard:
+  independent support survives a visual box with no robust interior.1008 consumed
+  frames preserve every prior alert and recover one real rod frame (MZ115142/69/2).
+  The mixed-ToF oracle exposes29FP potential, but429current merged targets all
+  have one actor; future mixture claims need actual multi-actor merged inputs.
+
 - [MZ115](MZ115_RESULTS_20260913.md) implements hypothetical finite ToF footprints
   and strongest2 status-bearing return tuples. Same-tuple RGB allocation on fresh
   240frames changes141TP/71FP/3FN to141/69/3 at3.6m, with no contributor hit

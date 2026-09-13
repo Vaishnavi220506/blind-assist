@@ -7,6 +7,18 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest information/repair study: [MZ116](nearfield/MZ116_RESULTS_20260913.md) adds
+a runnable resolution guard to preserve current independent Radar from tiny
+RGB-box vetoes.1008consumed frames: the older768are unchanged; MZ115141/69/3
+becomes142/69/2, no old alert lost or FP added. Retain as a Development component.
+Merged-ToF oracle exposes29FP potential, but all429merged targets have one actor
+(370singleface); there is no returned multi-actor mixture validation. A concrete
+same-ToF-tuple/different-near-hit witness prevents treating mean range as a
+clearance certificate. Next substantial geometry work needs a new complete
+multi-actor mixed-return source. No fresh capture or default promotion; goal active.
+Registration/intended component assignment remain pending the existing ledger
+line303 fingerprint mismatch, with the attempt and diagnostic authority preserved.
+
 Latest spatial-model study: [MZ115](nearfield/MZ115_RESULTS_20260913.md) replaces
 center-only ToF observations with hypothetical finite-zone/multiple-return
 tuples and compares RGB allocation against the same whole-zone measurements.
