@@ -26,6 +26,12 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ125](MZ125_RESULTS_20260913.md) recovers pixel foreground extent before
+  unchanged positive ToF association. On 288 consumed frames, FP116 becomes105
+  with TP139/FN5, all15 events, delay and false segments unchanged. All11 removals
+  belong to two offroute HEAD episodes; all1678 native samples in changed regions
+  remain contained. Retain a scoped Development component, keep MZ116 baseline;
+  no fresh confirmation or default promotion. Ledger303 registration stays pending.
 - [MZ124](MZ124_RESULTS_20260913.md) completes the user-authorized five-direction
   Development package on consumed MZ123. Failure diagnosis separates BODY
   readout from weak rod response and low/wrong-distance HEAD output. Interval

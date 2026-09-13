@@ -7,7 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
-Latest authorized five-direction package: [MZ124](nearfield/MZ124_RESULTS_20260913.md).
+Latest focused correction: [MZ125](nearfield/MZ125_RESULTS_20260913.md) recovers
+RGB foreground extent and retains the existing positive ToF association. On288
+consumed frames,139TP/116FP/5FN becomes139/105/5; precision54.51%to56.97%,15/15
+events and delay unchanged. All11FP removals come from two offroute HEAD episodes;
+BODY/rod/stress unchanged. All1678 native samples in changed regions are retained.
+Retain a scoped Development component, keep MZ116 baseline. No default promotion
+or fresh validation claim. Registration/inheritance pending ledger303; no successor.
+
+Previous five-direction package: [MZ124](nearfield/MZ124_RESULTS_20260913.md).
 All bounded consumed diagnosis, measurement/correction, paired training and time
 contrasts complete; no replacement. BODY score separation differs from rod's weak
 response and HEAD's missing/low wrong-distance evidence. No old early threshold
