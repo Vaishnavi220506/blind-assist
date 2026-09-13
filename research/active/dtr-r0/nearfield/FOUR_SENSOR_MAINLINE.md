@@ -26,6 +26,12 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ126](MZ126_RESULTS_20260913.md) tests whole-zone central ToF selection.
+  Half image width leaves MZ116 unchanged; quarter target retains16zones and
+  only14.07%actual image width:130TP/58FP/14FN,69.15%precision,15/15events but
+  first-alert delay increases to1.25s. All9 added FN are boundary stress;
+  BODY/HEAD/rod recall unchanged. Retain a Development tradeoff diagnostic,
+  not a narrowed-coverage default; MZ116 remains baseline. Ledger303 pending.
 - [MZ125](MZ125_RESULTS_20260913.md) recovers pixel foreground extent before
   unchanged positive ToF association. On 288 consumed frames, FP116 becomes105
   with TP139/FN5, all15 events, delay and false segments unchanged. All11 removals
