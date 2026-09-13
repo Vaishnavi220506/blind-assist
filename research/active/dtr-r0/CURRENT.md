@@ -7,7 +7,17 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
-Latest additive direction decision: [ToF stress](nearfield/TOF_DIRECTIONAL_STRESS_20260914.md)
+Latest depth-connectivity component: [depth gate](nearfield/TOF_DEPTH_CONNECTIVITY_20260914.md)
+reuses the same60 artificial packets. With the identical near-view selector,
+equal/angular21/34/12 becomes45/10/0 for both fixed absolute and relative gates;
+22/22 known-depth bridges cut,117/117 observed anchors retained. Raw all-support
+instead19/36/12 to17/38/0: notice selection is an explicit separate contribution.
+Four correct directions retain UNKNOWN depth; no within-zone recovery or RGB
+fusion claim. Keep absolute as the simpler component, frozen equal and MZ116
+unchanged. Registration/intended component inheritance pending ledger303.
+No automatic successor or weight sweep.
+
+Previous additive direction decision: [ToF stress](nearfield/TOF_DIRECTIONAL_STRESS_20260914.md)
 freezes equal weights. On 60 artificial packets, equal and 1/0.5 both give
 19/60 exact near-direction sets, 36 false CENTER frames and 12 bilateral merges.
 The original disjoint-region demo remains valid; range-blind connectivity loses

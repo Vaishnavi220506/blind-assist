@@ -26,6 +26,14 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [Depth connectivity](TOF_DEPTH_CONNECTIVITY_20260914.md), 2026-09-14: same60
+  consumed artificial packets, three fixed graph arms. Matched near view improves
+  equal21/34/12 to45/10/0 for both depth gates;22/22 known-depth background bridges
+  cut,117/117 observed anchors retained. Raw all-support19/36/12 becomes17/38/0;
+  keep notice selection separate from topology attribution. Four correct coarse
+  directions still have UNKNOWN depth. Retain the simple absolute-gate component,
+  not within-zone decomposition, hardware or fusion validation; frozen equal and
+  MZ116 unchanged. Registration/inheritance pending ledger303; no successor.
 - [ToF direction stress](TOF_DIRECTIONAL_STRESS_20260914.md), 2026-09-14: freeze
   equal zone weights for the additive readout. On 60 hand-constructed packets,
   equal and 1/0.5 both give 19/60 exact near-direction sets, 36 false CENTER

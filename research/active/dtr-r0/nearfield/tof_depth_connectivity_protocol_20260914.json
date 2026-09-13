@@ -1,0 +1,31 @@
+{
+  "id": "tof-depth-connectivity-20260914-v1",
+  "phase": "EXPLORE_CONSUMED_SYNTHETIC_DEVELOPMENT",
+  "question": "Does depth-gated adjacency stop valid far background connecting near-obstacle support without deleting observed near modes?",
+  "hypothesis": "Changing only graph edges can separate observable depth discontinuities; it cannot reconstruct unreturned near depth or establish within-zone surface identity.",
+  "source": "artifacts.local/work/tof-directional-stress-20260914/run-v1",
+  "source_sha256": {
+    "packets.jsonl": "afaf12f78364f9f0351dc35f7958ef4ada5e6f0bb45daf7f0d4c42b1817c9a94",
+    "evaluator.jsonl": "1ab27931e0f7afa9aa5e9241c1d634a1546dacb9dc4715796f63b3d8a7b96065",
+    "predictions.json": "89e559a1b1645ef7e3b74ff18d40f45cd4e6e6f193cb7c62770433c75b4473f7"
+  },
+  "arms": {
+    "equal_angular": null,
+    "absolute_depth": {"abs_gap_m": 0.3, "rel_gap": 0.0},
+    "relative_depth": {"abs_gap_m": 0.15, "rel_gap": 0.1}
+  },
+  "depth_definition": "One node per observed zone. Minimum finite positive SIM_VALID slot is d_i, matching existing per-zone distance summary. Merged-only depth is UNKNOWN. Preserve every observed zone and all original tuples. No within-zone splitting, no inferred hidden near return.",
+  "edge_definition": "Four-neighbor adjacency AND both depths known AND strict abs(d_i-d_j) < abs_gap_m + rel_gap*min(d_i,d_j). Unknown-depth zones retain isolated angular support.",
+  "threshold_rationale": "Two simple fixed engineering contrasts, not calibrated sensor tolerances. No sweep or post-result selection. This already-consumed discrete 1/4 m panel may not distinguish the gates.",
+  "readouts": {
+    "raw_all_support": "Original score on all emitted regions; reproduce frozen baseline 19/60,36,12 exactly.",
+    "matched_near_view": "Same post-component selector for every arm: keep if any valid minimum <=2m OR any merged target OR no known depth. Defer only valid-only all-far regions, retain them in raw outputs. This extra display policy is separate from edge changes; not collision clearance."
+  },
+  "near_view_m": 2.0,
+  "primary_metrics": ["exact near-direction set correctness / all 60 frames", "false CENTER frame count", "bilateral merge frame count", "background bridge cut successes / eligible frames"],
+  "bridge_opportunity": "Evaluator-only near footprints identify anchors with observed valid depth <=2m; background zones outside all near footprints must be valid-only with minimum >2m. Eligible if a frozen baseline component contains both. Record all such near-background pairs. Merged-only cases are ineligible for this known-depth metric and explicitly reported, not successful by abstention.",
+  "bridge_success": "All baseline connected near/background pairs become disconnected, all near anchors survive in selected output, all background anchors survive raw, and bilateral near modes are not merged. Count once per eligible frame, not once per edge. Evaluate on raw component topology plus retention.",
+  "audit": "Record unknown-depth zones, connected mixed near/background frames lacking known-depth opportunity, missing observed mode retention, dropout changes, unresolved versus valid-backed correct directions, and graph identity between challengers. Evaluator labels and synthetic RGB annotations never enter predictions.",
+  "decision": "Retain depth connectivity as a scoped component if matched near correctness strictly improves, false CENTER strictly falls, bilateral merges do not increase, at least one eligible bridge is cut, and no observed valid-near zone is lost. If gates tie prefer absolute simplicity without asserting general superiority. No gain means stop fixed recipe; missing depth remains UNKNOWN.",
+  "budget": "Exactly the original 60 packet bytes; three graph arms, two fixed reporting views; no weight arm, training, RGB fusion, new scenes, parameter search, capture, deployment or automatic successor. CPU scalar workload TASK_NOT_GPU_SUITABLE."
+}
