@@ -26,6 +26,14 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [ToF direction stress](TOF_DIRECTIONAL_STRESS_20260914.md), 2026-09-14: freeze
+  equal zone weights for the additive readout. On 60 hand-constructed packets,
+  equal and 1/0.5 both give 19/60 exact near-direction sets, 36 false CENTER
+  frames and 12 bilateral merges. Range-blind connectivity merges modes when
+  background bridges them; status weights cannot split a connected component.
+  This is synthetic logic evidence, not physical echo or RGB fusion validation.
+  Keep the old arm only for reproduction, MZ116 unchanged; registration and
+  intended inheritance pending ledger303. No automatic successor.
 - [MZ128](MZ128_RESULTS_20260913.md) preserves all association context and applies
   fixed zone weights only to alerts. Soft original139/107/5has28false segments;
   soft MZ125 matches139/105/5. Declared binary-four alert-use control gives139/103/5,

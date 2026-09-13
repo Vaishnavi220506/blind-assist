@@ -7,6 +7,14 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest additive direction decision: [ToF stress](nearfield/TOF_DIRECTIONAL_STRESS_20260914.md)
+freezes equal weights. On 60 artificial packets, equal and 1/0.5 both give
+19/60 exact near-direction sets, 36 false CENTER frames and 12 bilateral merges.
+The original disjoint-region demo remains valid; range-blind connectivity loses
+modes when background bridges them. No weight gain, physical echo or fusion
+validation; preserve explicit historical comparator, keep MZ116 unchanged.
+Registration/intended inheritance pending ledger303; no automatic successor.
+
 Latest weighted readout: [MZ128](nearfield/MZ128_RESULTS_20260913.md) keeps full
 association with fixed symmetric zone weights. Original139/107/5but false segments
 27to28; weighted MZ125 equals139/105/5. Declared binary-four alert-use control

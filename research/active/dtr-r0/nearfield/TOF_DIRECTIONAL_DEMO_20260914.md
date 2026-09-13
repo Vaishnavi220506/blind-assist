@@ -1,5 +1,11 @@
 # ToF directional readout engineering demo
 
+Current disposition: the [60-packet synthetic stress contrast](TOF_DIRECTIONAL_STRESS_20260914.md)
+freezes equal weights as the default, with no 1/0.5 improvement. The original
+weighted arm described below is retained explicitly for historical reproduction.
+Disconnected bilateral separation does not establish preservation after a
+background return bridges the regions.
+
 The user's intended weighting preserves obstacle direction, rather than reducing
 side-zone contributions to one collision-alert score. This additive prototype
 reads the four consumed Willow frames captured for the color/ToF visual review.

@@ -2,7 +2,8 @@
 
 Only observable ToF zones enter this engineering readout. Connected regions are
 not object identities. Missing returns remain UNKNOWN; merged distances are not
-used for a metric estimate. Fixed quality weights are illustrative, not fitted.
+used for a metric estimate. Equal zone weights are the frozen default. The old
+quality weights remain available only as an explicit diagnostic comparator.
 """
 import math
 
@@ -20,7 +21,7 @@ def zone_weights(zone):
                 vertical_position_weight=phi / 2.8125)
 
 
-def readout(row, *, equal_weights=False):
+def readout(row, *, equal_weights=True):
     if not row['tof_packet_received']:
         return dict(state='UNKNOWN_PACKET_MISSING', regions=[], zone_evidence=[])
     zones = row['tof_zones']

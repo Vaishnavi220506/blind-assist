@@ -1,0 +1,22 @@
+{
+  "id": "tof-directional-stress-20260914-v1",
+  "phase": "EXPLORE",
+  "authority": "HAND_CONSTRUCTED_SYNTHETIC_PACKET_LOGIC_DIAGNOSTIC",
+  "question": "Does the existing 1/0.5 status weighting improve near-obstacle direction over equal weights when angular support contains backgrounds, weak returns or gaps?",
+  "hypothesis": "Status weighting may move a connected-region bearing, but cannot separate depth layers or undo connectivity merging.",
+  "arms": {"equal": true, "status_1_0.5": false},
+  "cases": ["near_far_background", "sparse_reliable_side", "same_zone_pole_wall", "one_side_dropout", "bilateral_near", "rgb_tof_conflict"],
+  "frames_per_case": 10,
+  "near_m": 1.0,
+  "far_m": 4.0,
+  "merged_nominal_m": 3.6,
+  "primary_metrics": {
+    "direction_correct": "Exact set of emitted region horizontal labels equals the evaluator near-obstacle direction set. UNKNOWN counts incorrect in the full 60-frame denominator; extra far-background directions count incorrect. This probes a new near-obstacle use, not the original all-return support contract.",
+    "false_center": "Number of frames emitting CENTER when the evaluator near-obstacle set does not contain CENTER, including CENTER plus other outputs.",
+    "bilateral_merge": "Number of bilateral-truth frames where one emitted region contains zone footprints of both near modes. Count even if its bearing is LEFT or RIGHT; missing modes alone are not merges."
+  },
+  "diagnostic_accounting": "Record available-mode misses, unsupported extra directions, UNKNOWN frames and adjacent-frame label-set changes for dropout. These are audit fields, not extra retention objectives.",
+  "retention_rule": "Retain status weighting only if it has strictly more exact-correct frames in the pooled near_far_background and same_zone_pole_wall cases, no lower overall exact correctness, and no increase in either primary error count. Otherwise remove it from the default and retain only the reproducibility comparator.",
+  "budget": "Exactly six fixed families of ten packets; no training, tuning, capture, threshold sweep or automatic successor. Mirrored pairs except one fixed ten-frame dropout sequence.",
+  "limits": "No physical echo generation, calibrated reliability, actual RGB image, fusion arbitration, natural accuracy or safety evidence. No-return physical truth is evaluator-only and must not be recovered by invention. CPU scalar metadata workload: TASK_NOT_GPU_SUITABLE."
+}

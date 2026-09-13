@@ -20,14 +20,14 @@ def main():
     assert [r['id'] for r in rows]==['willow-clear','willow-left','willow-right','willow-center']
     baseline=json.loads(a.baseline.read_text());assert len(baseline)==len(rows)
     results=[dict(id=r['id'],rgb_path=r['rgb_path'],incumbent_alert=b['candidate'],
-                  weighted=readout(r),equal=readout(r,equal_weights=True)) for r,b in zip(rows,baseline)]
+                  weighted=readout(r,equal_weights=False),equal=readout(r,equal_weights=True)) for r,b in zip(rows,baseline)]
     # No RGB is assigned to this control: separate captures are not a joint observation.
     bilateral=copy.deepcopy(rows[1]);bilateral['id']='ARTIFICIAL_BILATERAL_UNIT_CONTROL'
     for z,right in zip(bilateral['tof_zones'],rows[2]['tof_zones']):
         assert z['zone_id']==right['zone_id']
         if right['targets']:
             assert not z['targets'];z['targets']=copy.deepcopy(right['targets']);z['target_count']=len(z['targets'])
-    control=readout(bilateral)
+    control=readout(bilateral,equal_weights=False)
     assert [r['horizontal'] for r in control['regions']]==['LEFT','RIGHT']
     expected=[[],['LEFT'],['RIGHT'],['CENTER']]
     for r,want in zip(results,expected):
