@@ -26,6 +26,16 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ119](MZ119_RESULTS_20260913.md) is the final user-authorized attempt.
+  **USER_REQUESTED_STOP_AFTER_MZ119**: no further optimization or successor.
+  On240new frames, ToF-scaled causal RGB parallax leaves primary153TP/62FP/2FN
+  and timing/nuisance unchanged. Four1.8m gains have mixed correct/false point
+  support;13of55depth points put distant context nearby. Moving anchors explain
+  17commanded-reference pose containment failures. Retain the fixed recipe as
+  intended NEGATIVE_CONTROL, keep MZ116 runnable, and make no promotion claim.
+  Source/inference/audit completed and capture resources released; structured
+  registration remains pending the pre-existing ledger303 fingerprint error.
+
 - [MZ118](MZ118_RESULTS_20260913.md) recovers border-touching RGB surface regions
   without changing Radar proposals. The interval-plane route removes3MZ115FP,
   but excludes551actual corridor-hit contributors across44MZ117frames despite

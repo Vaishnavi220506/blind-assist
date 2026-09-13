@@ -7,6 +7,19 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Final authorized attempt: [MZ119](nearfield/MZ119_RESULTS_20260913.md) completes
+the user's last round. **USER_REQUESTED_STOP_AFTER_MZ119** supersedes the older
+goal-active notes below: stop further optimization; no successor or capture.
+New240frames: MZ116 and causal ToF-scaled RGB parallax both153TP/62FP/2FN at3.6m,
+14/14events,0.25s maximum delay,18false segments/15.5s. At1.8m four bins improve,
+but every gain has both real-actor and erroneous background support.55points on
+four moving-barrier frames include13false context depths;17pose bounds exclude
+commanded-reference translation with moving anchors. No localization promotion.
+Controls/admission/sealed replay/audit complete; task-owned capture tree released.
+Keep MZ116 runnable and the fixed parallax recipe as intended NEGATIVE_CONTROL.
+No breakthrough achieved. Registration remains pending the existing ledger303
+fingerprint mismatch, with attempted command and evidence preserved.
+
 Latest surface-identity falsifier: [MZ118](nearfield/MZ118_RESULTS_20260913.md)
 recovers border-touching RGB regions and tests interval-plane feasible sets on
 480consumed frames. Primary283/133/6 becomes283/130/6, but native audits expose
