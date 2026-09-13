@@ -29,9 +29,10 @@ sensor merely because another sensor missed the object.
 - [MZ123](MZ123_RESULTS_20260913.md) validates MZ122's same-round early model
   at frozen 0.58 on 288 new controlled frames. MZ116 139/116/5 becomes 122/104/22
   TP/FP/FN, one suspended-HEAD event missed, and only 10.34% FP reduction.
-  Nonstress failure persists; rod/body in-out pairs remain always alerted.
+  Alert-frame precision also falls 54.51% to 53.98%; nonstress failure persists.
   Stop this fixed fresh joint-alert role; retain the earlier consumed development
-  gain and local-fusion spatial evidence. MZ116 remains baseline. No training,
+  gain and local-fusion spatial evidence. MZ116 retains high recall with unresolved
+  false alerts. All 288 frames are consumed; failure causes remain unresolved. No training,
   threshold rescue or automatic successor; intended NEGATIVE_CONTROL pending
   the existing ledger303 registration/inheritance blocker.
 - [MZ122](MZ122_RESULTS_20260913.md) completes paired local-before-pooling fits.

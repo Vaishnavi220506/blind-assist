@@ -11,11 +11,11 @@ Latest frozen early validation: [MZ123](nearfield/MZ123_RESULTS_20260913.md)
 tests MZ122's same-round early checkpoint at 0.58 on 24 new complete controlled
 episodes / 288 frames. MZ116 139 TP / 116 FP / 5 FN becomes 122 / 104 / 22;
 events 15/15 to 14/15, suspended HEAD 33/36 to 22/36 with one 12-frame full miss.
-Only 10.34% FP reduction; HEAD cell recall 111/149 and rod 60/72 also fail.
-Nonstress degradation persists; rod/body in-out pairs are always alerted by early.
+FP falls 10.34%, but alert-frame precision also falls 54.51% to 53.98%.
+Nonstress FP81 to78 / FN5 to14; HEAD cell111/149 and rod60/72 also fail.
 Stop this fixed fresh joint-alert role, intended NEGATIVE_CONTROL; retain MZ116,
-early's consumed development gain and MZ122's separate spatial findings.
-No training, threshold search or automatic loss/CNH successor. Worker released;
+early's development gain and MZ122's spatial findings; causes remain unresolved.
+MZ116 is high-recall with unresolved FP. These288frames are consumed. Worker released;
 raw evidence retained. Registration/inheritance still pending ledger303 mismatch.
 
 Latest paired representation experiment: [MZ122](nearfield/MZ122_RESULTS_20260913.md)
