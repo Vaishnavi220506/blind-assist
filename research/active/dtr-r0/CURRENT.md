@@ -7,16 +7,21 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
-Latest frozen early validation: [MZ123](nearfield/MZ123_RESULTS_20260913.md)
-tests MZ122's same-round early checkpoint at 0.58 on 24 new complete controlled
-episodes / 288 frames. MZ116 139 TP / 116 FP / 5 FN becomes 122 / 104 / 22;
-events 15/15 to 14/15, suspended HEAD 33/36 to 22/36 with one 12-frame full miss.
-FP falls 10.34%, but alert-frame precision also falls 54.51% to 53.98%.
-Nonstress FP81 to78 / FN5 to14; HEAD cell111/149 and rod60/72 also fail.
-Stop this fixed fresh joint-alert role, intended NEGATIVE_CONTROL; retain MZ116,
-early's development gain and MZ122's spatial findings; causes remain unresolved.
-MZ116 is high-recall with unresolved FP. These288frames are consumed. Worker released;
-raw evidence retained. Registration/inheritance still pending ledger303 mismatch.
+Latest authorized five-direction package: [MZ124](nearfield/MZ124_RESULTS_20260913.md).
+All bounded consumed diagnosis, measurement/correction, paired training and time
+contrasts complete; no replacement. BODY score separation differs from rod's weak
+response and HEAD's missing/low wrong-distance evidence. No old early threshold
+matches MZ116 TP139/FP116. Strict correction leaves139/116/5; conditional3FP gain
+inherits a Radar rejection and increases false segments. Matched ranking loses
+13TP/11HEAD frames versus BCE on96consumed dev frames; no joint point. Temporal
+hold adds FP; majority loses recall. Retain MZ116 and explanatory diagnostics;
+exact recipes intended NEGATIVE_CONTROL. Worker released, evidence retained.
+Registration blocked by ledger303; inheritance unknown terminal/pending. No successor.
+
+[MZ123](nearfield/MZ123_RESULTS_20260913.md) remains frozen: early.58 gives
+122/104/22 versus MZ116139/116/5 on288frames; precision54.51%to53.98%, events
+15/15to14/15, HEAD33/36to22/36 with12frame full miss. No promotion; MZ122 spatial
+findings remain scoped. These frames are consumed, never fresh validation again.
 
 Latest paired representation experiment: [MZ122](nearfield/MZ122_RESULTS_20260913.md)
 retains local RGB positions through ToF fusion before pooling. Shared21initial

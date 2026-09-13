@@ -26,6 +26,14 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ124](MZ124_RESULTS_20260913.md) completes the user-authorized five-direction
+  Development package on consumed MZ123. Failure diagnosis separates BODY
+  readout from weak rod response and low/wrong-distance HEAD output. Interval
+  geometry tightens 62 ToF supports, but strict correction leaves MZ116 unchanged;
+  conditional 3FP reduction inherits unresolved Radar rejection. Matched ranking
+  loses 13TP and 11HEAD frames versus BCE on 96 dev frames. Hold/majority trade
+  recall against nuisance. No tested arm replaces MZ116; no automatic successor.
+  Intended scoped NEGATIVE_CONTROL; registration/inheritance remain pending.
 - [MZ123](MZ123_RESULTS_20260913.md) validates MZ122's same-round early model
   at frozen 0.58 on 288 new controlled frames. MZ116 139/116/5 becomes 122/104/22
   TP/FP/FN, one suspended-HEAD event missed, and only 10.34% FP reduction.
