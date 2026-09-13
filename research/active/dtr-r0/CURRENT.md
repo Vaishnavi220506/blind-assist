@@ -7,6 +7,17 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest surface-identity falsifier: [MZ118](nearfield/MZ118_RESULTS_20260913.md)
+recovers border-touching RGB regions and tests interval-plane feasible sets on
+480consumed frames. Primary283/133/6 becomes283/130/6, but native audits expose
+551corridor-hit contributors excluded across44mixed-source frames; every frame
+still alerts. A concrete wall-only-anchor fit cuts out near-rod hits. This defeats
+localization promotion despite aggregate recall retention. Full distance curves
+also lose warning bins. Preserve intended NEGATIVE_CONTROL for the fixed recipe,
+retain frontend diagnosis/contrasts, keep MZ116 runnable; no fresh capture/tuning.
+Eight focused tests and paired native audits pass; no persistent process started.
+Registration remains pending the existing ledger303 fingerprint error; goal active.
+
 Latest mixture/geometry study: [MZ117](nearfield/MZ117_RESULTS_20260913.md) closes
 the source gap with35native near/far merged frames, including18weak-near frames.
 All240labels match source geometry (145positive/95negative). Conditional plane

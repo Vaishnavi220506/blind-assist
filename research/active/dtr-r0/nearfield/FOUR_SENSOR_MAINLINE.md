@@ -26,6 +26,13 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ118](MZ118_RESULTS_20260913.md) recovers border-touching RGB surface regions
+  without changing Radar proposals. The interval-plane route removes3MZ115FP,
+  but excludes551actual corridor-hit contributors across44MZ117frames despite
+  unchanged primary frame recall. Wall-only anchors do not establish a mixed
+  target's surface identity. Preserve as a localization negative control; the
+  full distance curve also loses warnings. Keep MZ116 as runnable challenger.
+
 - [MZ117](MZ117_RESULTS_20260913.md) admits a complete native multi-actor source:
   35near/far mixed frames, including18weak-near/far-biased frames. Conditional
   plane and nominal proxy both have zero refinement coverage across1168merged
