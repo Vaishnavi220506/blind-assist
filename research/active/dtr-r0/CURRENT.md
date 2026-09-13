@@ -7,6 +7,18 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest mixture/geometry study: [MZ117](nearfield/MZ117_RESULTS_20260913.md) closes
+the source gap with35native near/far merged frames, including18weak-near frames.
+All240labels match source geometry (145positive/95negative). Conditional plane
+and nominal proxy refine0/1168merged components: the six fitted models occur
+only in frames without mixed targets. All ten-distance decisions are unchanged;
+primary141TP/64FP/4FN,14/14events,0.25s maximum delay,16s false duration.
+This is zero operational coverage, not demonstrated safe localization. Preserve
+the fixed recipe as intended NEGATIVE_CONTROL, keep MZ116 as runnable challenger,
+and retain the now-consumed source/audits. No tuning or default promotion.
+Native capture/resources are complete/released. Structured registration remains
+pending the existing ledger line303 mismatch; larger optimization goal active.
+
 Latest information/repair study: [MZ116](nearfield/MZ116_RESULTS_20260913.md) adds
 a runnable resolution guard to preserve current independent Radar from tiny
 RGB-box vetoes.1008consumed frames: the older768are unchanged; MZ115141/69/3

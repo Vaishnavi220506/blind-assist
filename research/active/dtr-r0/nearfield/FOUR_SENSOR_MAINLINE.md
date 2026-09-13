@@ -26,6 +26,13 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ117](MZ117_RESULTS_20260913.md) admits a complete native multi-actor source:
+  35near/far mixed frames, including18weak-near/far-biased frames. Conditional
+  plane and nominal proxy both have zero refinement coverage across1168merged
+  targets; all ten-distance decisions remain MZ116-equivalent (primary141/64/4).
+  Preserve the fixed eligibility recipe as a coverage negative control; zero
+  contributor losses are vacuous. Keep MZ116 runnable; source is now consumed.
+
 - [MZ116](MZ116_RESULTS_20260913.md) adds a runnable pixel-resolution Radar guard:
   independent support survives a visual box with no robust interior.1008 consumed
   frames preserve every prior alert and recover one real rod frame (MZ115142/69/2).
