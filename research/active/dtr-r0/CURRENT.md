@@ -7,7 +7,19 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
-Final authorized attempt: [MZ119](nearfield/MZ119_RESULTS_20260913.md) completes
+Latest newly authorized direction: [MZ120](nearfield/MZ120_RESULTS_20260913.md)
+implements a single-frame learned45-cell occupancy candidate, with MZ116 fixed.
+336training/144scene-held-out Development frames:82TP/40FP/2FN becomes83/14/1,
+but true rod cells102/126 fail spatial retention despite correct frame alarms.
+Frozen threshold.71 on consumed MZ119 gives139/20/16 versus153/62/2; all16misses
+are suspended HEAD and maximum delay grows.25s to1.25s. Stop this fixed pilot
+recipe; intended NEGATIVE_CONTROL, no promotion or automatic CNH/capture.
+This small from-scratch pilot does not establish a sensor information ceiling.
+MZ116 remains runnable. Execution/boundary checks pass; structured registration
+and inheritance remain pending the pre-existing ledger303 fingerprint mismatch.
+The user's new direction superseded the earlier MZ119 stop only for this round.
+
+Previous bounded attempt: [MZ119](nearfield/MZ119_RESULTS_20260913.md) completes
 the user's last round. **USER_REQUESTED_STOP_AFTER_MZ119** supersedes the older
 goal-active notes below: stop further optimization; no successor or capture.
 New240frames: MZ116 and causal ToF-scaled RGB parallax both153TP/62FP/2FN at3.6m,

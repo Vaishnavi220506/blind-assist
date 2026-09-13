@@ -26,7 +26,17 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
-- [MZ119](MZ119_RESULTS_20260913.md) is the final user-authorized attempt.
+- [MZ120](MZ120_RESULTS_20260913.md) follows the newly authorized learned spatial
+  ownership direction. The independent single-frame candidate can retract old
+  alerts; preserving every old output is not its requirement. MZ116 stays fixed.
+  Small-data Development FP40to14 hides rod-cell recall102/126. Frozen transfer
+  FP62to20 also loses HEAD frame recall42/42to26/42 and delays alerts to1.25s.
+  Stop this exact pilot; no promotion, CNH or new capture. The earlier MZ119 stop
+  was superseded for this bounded round, not unlimited successors. Structured
+  inheritance remains pending the existing ledger303 mismatch; intended
+  NEGATIVE_CONTROL, not a conclusion against learned fusion or current inputs.
+
+- [MZ119](MZ119_RESULTS_20260913.md) was the previous final authorized attempt.
   **USER_REQUESTED_STOP_AFTER_MZ119**: no further optimization or successor.
   On240new frames, ToF-scaled causal RGB parallax leaves primary153TP/62FP/2FN
   and timing/nuisance unchanged. Four1.8m gains have mixed correct/false point
