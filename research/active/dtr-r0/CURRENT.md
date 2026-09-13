@@ -7,6 +7,16 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest readout diagnosis: [MZ121](nearfield/MZ121_JOINT_READOUT_20260913.md)
+finds31sampled development thresholds.30–.60that jointly satisfy MZ120's original
+retention criteria. Joint selection chooses.60:84TP/16FP/0FN, HEAD142/142 and
+rod114/126,8/8events,0s delay. Versus.71, wrong grid cells899to1130 and precision
+43.78%to40.34% expose the spatial tradeoff. Retain a separate Development joint
+selector/profile; keep MZ116 and the original MZ120 terminal unchanged. No MZ119
+retuning, new training, CNH or data expansion. Early-pooling remains a testable
+hypothesis, not an established cause. Structured registration/inheritance remains
+pending ledger303; intended COMPONENT_OR_CHALLENGER for this readout diagnostic.
+
 Latest newly authorized direction: [MZ120](nearfield/MZ120_RESULTS_20260913.md)
 implements a single-frame learned45-cell occupancy candidate, with MZ116 fixed.
 336training/144scene-held-out Development frames:82TP/40FP/2FN becomes83/14/1,

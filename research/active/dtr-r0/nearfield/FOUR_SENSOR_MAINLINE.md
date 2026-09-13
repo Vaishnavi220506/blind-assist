@@ -26,6 +26,13 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ121](MZ121_JOINT_READOUT_20260913.md) checks the existing development curve
+  without training. Joint feasible grid.30–.60exists; the separate.60readout
+  gives84TP/16FP/0FN with HEAD142/142and rod114/126. Wrong cells increase899to1130
+  versus.71, so threshold correction does not establish improved spatial precision.
+  Keep MZ116 and MZ120's old terminal; no MZ119 retuning or automatic model run.
+  Intended Development COMPONENT_OR_CHALLENGER, registration pending ledger303.
+
 - [MZ120](MZ120_RESULTS_20260913.md) follows the newly authorized learned spatial
   ownership direction. The independent single-frame candidate can retract old
   alerts; preserving every old output is not its requirement. MZ116 stays fixed.
