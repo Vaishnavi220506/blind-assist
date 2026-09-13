@@ -91,8 +91,21 @@ first alert delay1.0s to0.25s; full-panel FP38 to41 exposes the boundary tradeof
 Keep these as components/challengers, with explicit age/ambiguity and retained
 nominal/interval/hold comparators. Plane/filter complexity shows no fresh gain;
 zero-velocity controls show most persistence gains do not require Doppler.
-The actual reference remains initial body axes; dynamic obstacles, occlusion,
-pose drift, full miss/nuisance curves and ghost discrimination remain unresolved.
+The actual reference remains initial body axes; pose drift, full miss/nuisance
+curves and ghost discrimination remain unresolved.
+
+[MZ113](MZ113_RESULTS_20260913.md) tests actual pixel correspondence on a new
+240-frame dynamic source with15obstacle exits. The optical-flow combination
+improves incumbent84TP/60FP/4FN to87/61/1, recovering three crossing-pole frames;
+the same-policy angular control remains84/60/4. All16events start alerting at
+the first sampled positive bin. Post-exit false support stays26frames/6.5s.
+The one addedFP correctly tracks a pole still7mm outside the corridor. Retain
+the controlled tracking component and its ablation, not a nuisance-improvement
+claim. Dynamic sampled boxes do not establish natural tracking or full occlusion
+robustness; initial body reference and hypothetical RF limits remain.
+Post-seal diagnostics identify40independent persistent-ghost FP among61total FP;
+the sole FN has range/image evidence but reciprocal association ambiguity. These
+are separate responsibilities, not reasons to increase persistence lifetime.
 
 After fixing an observable method, evaluate complete new scenes with identical
 alert distance/corridor/margins and the full miss-versus-reminder relationship.

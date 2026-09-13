@@ -7,6 +7,20 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest dynamic test: [MZ113](nearfield/MZ113_RESULTS_20260913.md) freezes optical
+correspondence against a same-policy angular ablation. On new240frames, incumbent
+84TP/60FP/4FN becomes87/61/1 with no old positives lost; angular remains84/60/4.
+Three crossing-pole recoveries are correctly associated past range at0.25s age.
+All16events alert at their first sampled positive bin, but one new FP tracks a
+pole7mm outside the corridor and post-exit false support stays26frames/6.5s.
+528 consumed static frames are unchanged frame by frame. Retain the optical
+tracking component with its tradeoff; nuisance breakthrough is not established.
+Native dynamic labels/Doppler and prediction supports audited; one capture
+complete, UE/Zen released. Larger optimization remains active, with spatial
+boundary ambiguity and persistent ghosts still material unresolved burdens.
+Structured component registration is pending the existing ledger line303
+fingerprint failure; command/error and intended inheritance are preserved.
+
 Latest multi-method progress: [MZ111](nearfield/MZ111_RESULTS_20260913.md) combines
 independent RGB/Radar association, a spatial range readout and short current-RGB
 range persistence. Consumed288-frame nominal146TP/32FP/30FN becomes166/36/10,
