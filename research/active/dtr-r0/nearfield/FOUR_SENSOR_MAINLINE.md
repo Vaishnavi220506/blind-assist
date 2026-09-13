@@ -26,6 +26,14 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ128 FP diagnosis](MZ128_FP_DIAGNOSIS_20260914.md): all103 remaining false
+  frames audited;67ToF-only/14Radar-only/22both.101have current real off-corridor
+  support,2require inherited carry. Main issue is possible spatial extent
+  overlapping the corridor;422ToF support returns have0native hazard hits and
+  30current real Radar supports use offroute visual association.95FP are in
+  multi-frame segments. The separate ToF angular-depth graph is absent from this
+  alert path. Native-range/drop-MERGED controls are evaluator diagnostics only;
+  unchanged MZ128/MZ116, no new predictor or automatic successor.
 - [Depth connectivity](TOF_DEPTH_CONNECTIVITY_20260914.md), 2026-09-14: same60
   consumed artificial packets, three fixed graph arms. Matched near view improves
   equal21/34/12 to45/10/0 for both depth gates;22/22 known-depth background bridges

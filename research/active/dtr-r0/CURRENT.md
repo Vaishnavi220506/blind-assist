@@ -7,6 +7,17 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest diagnostic: [MZ128 remaining103 FP](nearfield/MZ128_FP_DIAGNOSIS_20260914.md)
+reproduces139/103/5 on the frozen288frames. ToF-only67, Radar-only14, both22;
+101FP have sufficient current real off-corridor support,2 require inherited carry.
+422triggering ToF returns have0native corridor hits;30current real Radar supports
+use offroute actor-to-visual-extent proxies. MERGED native-range oracle removes11FP,
+while deleting all MERGED removes19 on this consumed panel; neither is a policy.
+95FP belong to multi-frame segments. No ToF angular-centroid stage exists in this
+alert path, so the separate depth-graph gain is not an explanation of these FP.
+Prioritize corridor extent/association diagnosis. No algorithm change/successor;
+existing MZ128 metadata remains pending ledger303.
+
 Latest depth-connectivity component: [depth gate](nearfield/TOF_DEPTH_CONNECTIVITY_20260914.md)
 reuses the same60 artificial packets. With the identical near-view selector,
 equal/angular21/34/12 becomes45/10/0 for both fixed absolute and relative gates;
