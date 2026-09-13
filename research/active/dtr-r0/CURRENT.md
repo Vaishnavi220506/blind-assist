@@ -7,6 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest bounded correction: [MZ129 Radar extent](nearfield/MZ129_RESULTS_20260914.md)
+uses MZ125 boxes in current Radar geometry while preserving raw support, guards
+and complete original flow carry. Same consumed 288 frames: MZ128 139/103/5
+becomes 139/93/5, precision 59.91%, false segments 26 to 22; all 139 TP and
+15 event alert times retained. All ten exclusions are offroute HEAD. ToF
+subdivision alone changes no frames and adds no combined benefit. Retain the
+simpler scoped Radar component; MZ116/default unchanged, metadata pending
+ledger303. Remaining BODY/rod/boundary nuisance persists; no automatic successor.
+
 Latest diagnostic: [MZ128 remaining103 FP](nearfield/MZ128_FP_DIAGNOSIS_20260914.md)
 reproduces139/103/5 on the frozen288frames. ToF-only67, Radar-only14, both22;
 101FP have sufficient current real off-corridor support,2 require inherited carry.

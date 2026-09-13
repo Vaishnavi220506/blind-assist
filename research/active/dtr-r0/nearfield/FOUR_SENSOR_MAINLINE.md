@@ -26,6 +26,13 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ129 Radar extent](MZ129_RESULTS_20260914.md): corrected MZ125 boxes enter
+  current Radar geometry with complete original flow, raw and guard protection.
+  On the same consumed 288 frames, 139/103/5 becomes 139/93/5; all ten exclusions
+  are offroute HEAD, false segments 26 to 22, all true frames/events/timing
+  retained. ToF subdivision has no frame gain alone or combined. Retain the
+  simpler scoped Radar component; MZ116/default unchanged, metadata pending
+  ledger303. BODY, rod and boundary errors remain; no automatic successor.
 - [MZ128 FP diagnosis](MZ128_FP_DIAGNOSIS_20260914.md): all103 remaining false
   frames audited;67ToF-only/14Radar-only/22both.101have current real off-corridor
   support,2require inherited carry. Main issue is possible spatial extent
