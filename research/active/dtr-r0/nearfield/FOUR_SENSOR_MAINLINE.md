@@ -26,6 +26,13 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ130 local support](MZ130_RESULTS_20260914.md): all four arms remain
+  139/93/5 and 22 false segments, with all true frames/event times retained.
+  815 local ToF returns create no new associations; 103 Radar returns gain
+  local corroboration but no alert benefit. Image clipping excludes 67 native
+  ToF samples outside RGB, including one corridor point. Reject this exact
+  complete-mask rule; preserve independent support beyond visual coverage.
+  MZ129 remains best on this panel; NEGATIVE_CONTROL metadata pending ledger303.
 - [MZ129 Radar extent](MZ129_RESULTS_20260914.md): corrected MZ125 boxes enter
   current Radar geometry with complete original flow, raw and guard protection.
   On the same consumed 288 frames, 139/103/5 becomes 139/93/5; all ten exclusions

@@ -7,6 +7,14 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest local-support falsifier: [MZ130](nearfield/MZ130_RESULTS_20260914.md)
+keeps all four arms at 139/93/5 with identical event times and 22 false segments.
+815 ToF returns and 103 Radar returns acquire local masks, but no new ToF
+association or alert gain appears. Image clipping removes 67 native ToF samples
+outside RGB coverage, including one corridor point hidden by retained alert
+support. Reject this exact mask-as-complete-support rule; keep MZ129. Intended
+NEGATIVE_CONTROL pending ledger303; no outcome-tuned repair or automatic successor.
+
 Latest bounded correction: [MZ129 Radar extent](nearfield/MZ129_RESULTS_20260914.md)
 uses MZ125 boxes in current Radar geometry while preserving raw support, guards
 and complete original flow carry. Same consumed 288 frames: MZ128 139/103/5
