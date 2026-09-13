@@ -26,6 +26,14 @@ sensor merely because another sensor missed the object.
 
 ## Evidence routing and correction
 
+- [MZ122](MZ122_RESULTS_20260913.md) completes paired local-before-pooling fits.
+  Training/dev spatial precision envelopes improve, but late frame-recall
+  thresholds<=.49and nuisance thresholds>=.60do not intersect. Offroute FP and
+  1cm boundary misses prevent joint alert retention. Preserve positive spatial
+  evidence, stop this exact alert role; MZ116/MZ121 remain. No MZ119 transfer,
+  CNH or automatic data expansion. Intended scoped NEGATIVE_CONTROL, registration
+  pending ledger303; extra1296parameters prevent isolated order-only attribution.
+
 - [MZ121](MZ121_JOINT_READOUT_20260913.md) checks the existing development curve
   without training. Joint feasible grid.30–.60exists; the separate.60readout
   gives84TP/16FP/0FN with HEAD142/142and rod114/126. Wrong cells increase899to1130

@@ -7,6 +7,17 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest paired representation experiment: [MZ122](nearfield/MZ122_RESULTS_20260913.md)
+retains local RGB positions through ToF fusion before pooling. Shared21initial
+tensors and exact paired800step schedule/augmentation. At>=90%grid recall,
+train precision36.15%to39.74%, dev30.30%to39.89%; positive spatial evidence remains.
+However late frame recall requires threshold<=.49while nuisance requires>=.60:
+no joint point. Offroute FP23at.49versus early selected4; boundary-stress FN3.
+Stop this exact joint-alert candidate, intended NEGATIVE_CONTROL for that role;
+keep MZ116/MZ121 and the measured spatial findings. No transfer, tuning or capture.
+The package adds1296parameters; pooling-order attribution alone is unproven.
+Registration/inheritance pending the existing ledger303 fingerprint mismatch.
+
 Latest readout diagnosis: [MZ121](nearfield/MZ121_JOINT_READOUT_20260913.md)
 finds31sampled development thresholds.30–.60that jointly satisfy MZ120's original
 retention criteria. Joint selection chooses.60:84TP/16FP/0FN, HEAD142/142 and
