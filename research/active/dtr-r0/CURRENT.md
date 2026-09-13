@@ -7,6 +7,24 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest multi-method progress: [MZ111](nearfield/MZ111_RESULTS_20260913.md) combines
+independent RGB/Radar association, a spatial range readout and short current-RGB
+range persistence. Consumed288-frame nominal146TP/32FP/30FN becomes166/36/10,
+with no nominal or baseline TP lost. The fixed primary challenger then reaches
+122TP/41FP/10FN versus nominal97/38/35 on the new240-frame
+[MZ112 panel](nearfield/MZ112_RESULTS_20260913.md), again retaining all positives.
+Predeclared nonstress216 frames improve91/29/29 to113/29/7; maximum first alert
+delay1.0s to0.25s. All three extra fresh FP are on the separate1cm stress object.
+These are substantial controlled recall/timing gains, not a nuisance or natural
+tracking breakthrough. Plane/filter variants add no fresh gain; zero-velocity
+controls preserve all old and11/12 fresh temporal TP gains. Retain association
+and visual-gated short persistence as intended COMPONENT_OR_CHALLENGER components,
+with nominal, interval, simple-hold and ghost/boundary controls. No unconditional
+alert promotion. New support identities/ages and native source bounds audited;
+capture complete and UE/Zen released. Structured registration remains subject
+to the existing ledger fingerprint failure. The larger optimization goal remains
+active: dynamic/occlusion/reference errors and nuisance reduction are unproven.
+
 Latest bounded diagnosis: [MZ110](nearfield/MZ110_RESULTS_20260913.md) reuses 288
 unique MZ107--109 frames. Of 30 nominal RGB FN, 20 lack target Radar, six have
 RGB+Radar pairs blocked by ToF and four fail geometry. Correct-association

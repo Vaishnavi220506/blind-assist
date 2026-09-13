@@ -83,6 +83,17 @@ All nine pole misses lack target Radar and five new FP have correct diagnostic
 identity but wrong geometry. Preserve the diagnostic as a component, keep both
 existing comparators, and do not promote the gate-removal counterfactual.
 
+[MZ111](MZ111_RESULTS_20260913.md) and its unchanged new-scene
+[MZ112 evaluation](MZ112_RESULTS_20260913.md) establish controlled recall gains
+from independent RGB/Radar association plus current-visual-correspondence-gated
+short range persistence. Fresh nonstress FN29 to7 at the same29FP and maximum
+first alert delay1.0s to0.25s; full-panel FP38 to41 exposes the boundary tradeoff.
+Keep these as components/challengers, with explicit age/ambiguity and retained
+nominal/interval/hold comparators. Plane/filter complexity shows no fresh gain;
+zero-velocity controls show most persistence gains do not require Doppler.
+The actual reference remains initial body axes; dynamic obstacles, occlusion,
+pose drift, full miss/nuisance curves and ghost discrimination remain unresolved.
+
 After fixing an observable method, evaluate complete new scenes with identical
 alert distance/corridor/margins and the full miss-versus-reminder relationship.
 Report obstacle-event misses, first correct alert timing and irrelevant alert
