@@ -53,6 +53,9 @@ with a standardized385-parameter readout over frozen features. Retain this as a
 Development fitting diagnostic: its subsequent frozen dev48 transfer needs20FP
 versus MZ12913 at matched recall/timing. Scene-dependent residual offsets remain
 unresolved. No new capture or original-test scoring; MZ129 remains retained.
+The [grouped readout follow-up](../research/active/dtr-r0/nearfield/MZ136_GROUPED_READOUT_20260914.md)
+improves readout-only cross-group stability but still needs22FP versus MZ12913
+at matched dev recall/timing. Do not promote this fixed-feature linear correction.
 
 The depth-front-end diagnostics described below are historical and scoped to
 their named branches. MZ101--106 omitted Radar and used stereo; their failures

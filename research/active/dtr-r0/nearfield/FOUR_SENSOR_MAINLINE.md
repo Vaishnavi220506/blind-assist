@@ -25,6 +25,11 @@ at zero logit, or24TP/20FP/0FN at matched MZ129 recall/timing versus24/13/0.
 Retain the fitting diagnostic only; scene-dependent residual offsets need work.
 No hardware expansion or capture was performed in this continuation.
 
+[Grouped readout stability](MZ136_GROUPED_READOUT_20260914.md) reduces readout-only
+OOF errors with stronger L2 and paired midpoint supervision, but frozen dev48
+still needs22FP versus MZ12913 at matched recall/timing. Keep MZ129; this fixed
+pooled-feature linear correction is not an alert challenger. No original-test run.
+
 Use measured image/IMU motion and state translation/correspondence assumptions.
 IMU rotation does not supply metric translation. An image track need not be the
 surface producing its ToF return, and coherent object motion can mimic ego motion.

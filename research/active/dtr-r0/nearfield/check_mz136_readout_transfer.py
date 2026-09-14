@@ -27,11 +27,11 @@ def exact_thresholds(scores):
     return np.r_[values, np.nextafter(values[-1], np.inf)]
 
 
-def run(root, out):
+def run(root, out, fit_dir=None):
     root, out = root.resolve(), out.resolve()
     assert out.is_relative_to((ROOT/'artifacts.local').resolve()) and not out.exists()
     out.mkdir(parents=True)
-    fit = root/'train-direct-readout-v1'
+    fit = Path(fit_dir).resolve() if fit_dir is not None else root/'train-direct-readout-v1'
     model_hash = sha(fit/'model.pt')
     cap = root/'source/returned-v1/capture-v1'
     prep = root/'incumbent/fresh-v1'
@@ -160,5 +160,6 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--root',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--fit-dir',type=Path)
     args=parser.parse_args()
-    run(args.root,args.output)
+    run(args.root,args.output,args.fit_dir)

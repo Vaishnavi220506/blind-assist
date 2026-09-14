@@ -22,6 +22,8 @@ The subsequent [TRAIN fit repair](../research/active/dtr-r0/nearfield/MZ136_TRAI
 improves the same192 training frames from154 to191 correct with385new readout
 parameters. Its frozen dev48 transfer needs20FP versus MZ12913 at matched recall
 and timing, so retain it as a fitting diagnostic only. No new capture was used.
+The [grouped readout follow-up](../research/active/dtr-r0/nearfield/MZ136_GROUPED_READOUT_20260914.md)
+reduces head instability but still needs22FP versus13 at matched dev recall/timing.
 MZ101--106 are a separate stereo+ToF branch, not evidence about this four-sensor
 system. Follow the [four-sensor mainline](../research/active/dtr-r0/nearfield/FOUR_SENSOR_MAINLINE.md)
 and its paired ToF+Radar+IMU versus +RGB comparison. Architecture changes require

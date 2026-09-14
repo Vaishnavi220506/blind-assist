@@ -31,6 +31,11 @@ recall/timing (zero logit misses12/24 positives). Retain only the fitting diagno
 scene-dependent readout offsets are the next bottleneck. No new capture or original
 test inference; MZ129 remains baseline. See the linked report's transfer follow-up.
 
+[Grouped readout check](nearfield/MZ136_GROUPED_READOUT_20260914.md) reduces
+readout-only OOF instability (63.54% to79.17%; backbone saw all TRAIN), but its
+frozen dev48 still needs22FP versus MZ12913 at matched recall/timing. Shallow
+boundary decisions remain the dominant misses. Keep MZ129; no original-test run.
+
 Previous fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
 uses current plus four past frames and observed RGB flow, without metric
 translation or future data. It narrows853 returns and removes17 possible bits,
