@@ -17,7 +17,11 @@ with lateral intervention pairs over further flow-to-return contraction.
 pair order does not become a useful common alarm threshold, and no pairing gain
 is retained. Keep MZ129. Native evidence stays auditable; a statistical candidate
 need not solve unique return identity or OR the full incumbent alarm back in.
-No new training, hardware expansion or capture follows this completed comparison.
+The user subsequently authorized a [TRAIN-only fit repair](MZ136_TRAIN_FIT_REPAIR_20260914.md):
+frozen existing features plus a 385-parameter standardized direct readout reaches
+191/192 frames and 95/96 pairs correct at zero logit, versus 154/192 and 60/96.
+Retain this fitting component; unseen-scene alert benefit remains untested.
+No hardware expansion or capture was performed in this continuation.
 
 Use measured image/IMU motion and state translation/correspondence assumptions.
 IMU rotation does not supply metric translation. An image track need not be the

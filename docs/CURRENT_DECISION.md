@@ -47,6 +47,12 @@ support and UNKNOWN. RGB is not a second camera, stereo depth, or a substitute
 for Radar. IMU rotation is not metric translation or future walking intention.
 See the [four-sensor mainline and stop points](../research/active/dtr-r0/nearfield/FOUR_SENSOR_MAINLINE.md).
 
+The user-authorized [TRAIN-only fit repair](../research/active/dtr-r0/nearfield/MZ136_TRAIN_FIT_REPAIR_20260914.md)
+passes the original fitting criterion:191/192 frames and95/96 pairs correct,
+with a standardized385-parameter readout over frozen features. Retain this as a
+Development component; no new capture or held-out scoring occurred. The MZ136
+joint-alert negative result and retained MZ129 baseline remain unchanged.
+
 The depth-front-end diagnostics described below are historical and scoped to
 their named branches. MZ101--106 omitted Radar and used stereo; their failures
 must not be presented as the bottleneck or ceiling of the four-sensor mainline.

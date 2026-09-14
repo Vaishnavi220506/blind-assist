@@ -21,7 +21,13 @@ at retained recall/timing. The frozen .01grid selects all-alert; held-out MZ129
 22/12/2 becomes24/24/0 for both, with no pairing gain. Shifted ToF leaves
 22/13/2 versus24/24/0; all-alert invariance is not robustness. New training fit
 also remains incomplete. Keep MZ129; exact recipe intended NEGATIVE_CONTROL,
-registration/inheritance pending ledger303. No additional training or capture.
+registration/inheritance pending ledger303. The original comparison is complete.
+
+User-authorized [TRAIN-only fit repair](nearfield/MZ136_TRAIN_FIT_REPAIR_20260914.md)
+now gets191/192 frames and95/96 pairs correct with the original zero-logit
+criterion, using frozen existing features plus385direct-readout parameters.
+No new capture or held-out inference. Retain this Development fitting component;
+generalization and joint alert benefit remain untested, and MZ129 remains baseline.
 
 Previous fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
 uses current plus four past frames and observed RGB flow, without metric
