@@ -7,6 +7,31 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+User priority correction,2026-09-14: fix the inexpensive RGB + **8x8 ToF** +
+same Radar + IMU budget. High-resolution ToF is a capability control only;
+short-window temporal spatial de-aliasing is the algorithm question. Raw support
+retention and alert authority are separate; conditional decisions must expose
+actual lost hazard evidence, misses, timing and UNKNOWN. No teacher/student
+training or hardware expansion was started.
+
+Latest fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
+uses current plus four past frames and observed RGB flow, without metric
+translation or future data. It narrows853 returns and removes17 possible bits,
+but stays139TP/93FP/5FN (ToF115/89/29), with unchanged event times. It newly loses
+225native contributors including31corridor samples. Reject this conditional
+feature-to-ToF/local-flow transport rule; keep MZ129. No tuning or successor.
+
+Supporting controls: [MZ134](nearfield/MZ134_RESULTS_20260914.md) adds16FP under
+a free-unresolved joint model, which cannot identify mandatory visible sources
+by construction; this is model inadequacy, not a sensor impossibility theorem.
+[MZ133](nearfield/MZ133_RESULTS_20260914.md) regenerates admitted analytic rays:
+same96x96 lattice, dense8 to fine32 full143/112/1 to143/102/1, chiefly HEAD gain,
+BODY28 to31FP and rod27 unchanged. ToF loses one old rod TP/delays its event. A
+hypothetical fixed-signal-budget stress loses every fine-zone detection. Retain
+only as controlled capability context, not hardware or fixed-input algorithm gain.
+All288 frames are consumed Development; registration/intended inheritance remain
+pending the existing ledger303 fingerprint mismatch, with no ledger bypass.
+
 Latest visible-contour diagnostic: [MZ132](nearfield/MZ132_RESULTS_20260914.md)
 replaces RGB proposals with anonymous UE visible instances on the same288frames.
 Both tight-box and mask arms stay139TP/93FP/5FN, BODY FP30, all15 event times

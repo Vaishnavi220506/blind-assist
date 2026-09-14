@@ -6,6 +6,35 @@ awareness. Work remains simulation-only. A second camera, stereo depth, removal
 of Radar, or substitution of simulator truth for an observable input changes the
 architecture and requires an explicit new user decision.
 
+## Fixed-hardware priority, user correction 2026-09-14
+
+Keep **RGB + 8x8 multi-zone ToF + the same low-cost Radar + IMU** as the
+algorithm research input budget. Higher-resolution ToF is an information-capability
+comparator only; it is not the mainline solution or evidence of an algorithm
+contribution. The current authorized probe is past-only short-window temporal
+spatial de-aliasing, without training, followed by an explicit retain/reject
+decision. Privileged teacher/student learning and richer joint Radar motion
+models remain proposed directions, not automatic training or source expansion.
+
+Use measured image/IMU motion and state translation/correspondence assumptions.
+IMU rotation does not supply metric translation. An image track need not be the
+surface producing its ToF return, and coherent object motion can mimic ego motion.
+Raw sensor support must be retained for audit; it does not follow that every old
+possible-support branch must permanently own an alert vote. A new conditional
+readout may change decisions under declared assumptions, with full missed-alert,
+timing, UNKNOWN and actual contributor accounting. Do not claim calibrated
+occupancy probabilities from uncalibrated fit or intersection scores.
+
+[MZ135](MZ135_RESULTS_20260914.md) tests one actual five-frame conditional
+image-flow candidate: 853 returns narrow and 17 possible bits disappear, but
+139TP/93FP/5FN stays unchanged and 31 native corridor samples are newly lost.
+Reject this source-ownership/local-flow assumption; no tuning or training follows.
+[MZ133](MZ133_RESULTS_20260914.md) is the bounded angular capability control;
+[MZ134](MZ134_RESULTS_20260914.md) diagnoses the inadequacy of an unconstrained
+single-frame attribution model. All preserve MZ129 as the retained baseline.
+Earlier stop points below continue to govern their completed experiments, not
+this separately user-authorized fixed-hardware question.
+
 ## What the next implementation must answer
 
 1. Does a measured surface occupy the current walking/body/head corridor?
