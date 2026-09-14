@@ -30,6 +30,14 @@ support outside RGB coverage. This is a geometric coverage constraint.
 
 ## Evidence routing and correction
 
+- [MZ132 ideal visible contours](MZ132_RESULTS_20260914.md): anonymous complete
+  UE instance boxes/masks create2387/2553new ToF association proxies, but both
+  remain139TP/93FP/5FN and BODY FP30. Two old BODY FP removed, two restored by
+  retaining independent support outside RGB; all true frames/event times survive.
+  Merged and nonvisual supports sustain BODY nuisance. Radar accepts no current
+  association, so its mask audit has zero coverage. No native ToF sample lost.
+  Keep MZ129; no frontend training, retuning or successor. Scoped negative
+  diagnostic with ledger303 metadata pending, not a verdict against segmentation.
 - [MZ131-A native angular envelope](MZ131_RESULTS_20260914.md): one fixed,
   explicitly uncalibrated cohort center-span formula narrows triggering
   footprints in 56/93 FP and changes their actual possible bits/scores in 23

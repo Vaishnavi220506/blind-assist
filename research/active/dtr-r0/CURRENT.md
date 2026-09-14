@@ -7,6 +7,17 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest visible-contour diagnostic: [MZ132](nearfield/MZ132_RESULTS_20260914.md)
+replaces RGB proposals with anonymous UE visible instances on the same288frames.
+Both tight-box and mask arms stay139TP/93FP/5FN, BODY FP30, all15 event times
+and22false segments unchanged. Masks create2553new ToF association proxies;
+ten original BODY FP lose triggering bits, but only two alerts disappear and
+two outside-RGB supports restore different FP. Merged returns and independent
+nonvisual coverage sustain the remaining BODY errors. No new Radar association;
+its masks have zero evaluation coverage. No native ToF samples newly excluded.
+Keep MZ129; no frontend training, tuning or successor from this result. Intended
+scoped NEGATIVE_CONTROL pending ledger303, not a general rejection of segmentation.
+
 Latest native-angular falsifier: [MZ131-A](nearfield/MZ131_RESULTS_20260914.md)
 tests one disclosed cohort center-span envelope on MZ129. It reaches triggering
 footprints in 56/93 FP and changes actual support bits/scores in 23 frames,
