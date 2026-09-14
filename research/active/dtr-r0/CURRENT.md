@@ -36,6 +36,12 @@ readout-only OOF instability (63.54% to79.17%; backbone saw all TRAIN), but its
 frozen dev48 still needs22FP versus MZ12913 at matched recall/timing. Shallow
 boundary decisions remain the dominant misses. Keep MZ129; no original-test run.
 
+[Boundary-input audit](nearfield/MZ136_BOUNDARY_INPUTS_20260915.md): observed IMU
+rectification and RGB gradients reduce MAE2.886 to1.227px on the same38 TRAIN
+frames, but fine-edge coverage is38/48. Coarse seeds and independent native
+evidence remain available. Geometry component only; no alert gain or dev/test
+scoring. MZ129 retained; component registration/inheritance pending ledger303.
+
 Previous fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
 uses current plus four past frames and observed RGB flow, without metric
 translation or future data. It narrows853 returns and removes17 possible bits,

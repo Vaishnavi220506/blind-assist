@@ -30,6 +30,13 @@ OOF errors with stronger L2 and paired midpoint supervision, but frozen dev48
 still needs22FP versus MZ12913 at matched recall/timing. Keep MZ129; this fixed
 pooled-feature linear correction is not an alert challenger. No original-test run.
 
+[Boundary-input audit](MZ136_BOUNDARY_INPUTS_20260915.md) moves the smallest
+check to observable geometry: IMU rectification plus signed RGB gradients reduces
+edge MAE2.886 to1.227px on the same38 TRAIN frames. Fine coverage is38/48 versus
+45/48 coarse seeds, so retain only a conditional geometry component. Missing
+refinement preserves coarse and raw sensor evidence; no alert benefit is claimed.
+MZ129 stays retained; no new capture, dev/test scoring or alert fit in this run.
+
 Use measured image/IMU motion and state translation/correspondence assumptions.
 IMU rotation does not supply metric translation. An image track need not be the
 surface producing its ToF return, and coherent object motion can mimic ego motion.

@@ -56,6 +56,9 @@ unresolved. No new capture or original-test scoring; MZ129 remains retained.
 The [grouped readout follow-up](../research/active/dtr-r0/nearfield/MZ136_GROUPED_READOUT_20260914.md)
 improves readout-only cross-group stability but still needs22FP versus MZ12913
 at matched dev recall/timing. Do not promote this fixed-feature linear correction.
+The [boundary-input audit](../research/active/dtr-r0/nearfield/MZ136_BOUNDARY_INPUTS_20260915.md)
+reduces conditional TRAIN edge MAE2.886 to1.227px on the same38 frames; fine-edge
+coverage is38/48. Keep it as a geometry component, with no alert promotion.
 
 The depth-front-end diagnostics described below are historical and scoped to
 their named branches. MZ101--106 omitted Radar and used stereo; their failures
