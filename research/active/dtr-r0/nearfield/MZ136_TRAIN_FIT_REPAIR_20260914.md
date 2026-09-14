@@ -128,3 +128,57 @@ to disclosed Development. Supported registration remains pending the existing
 `experiments/index.jsonl:303 input_fingerprint` mismatch; no ledger was bypassed
 or rewritten. Pending metadata and the actual registration attempt are saved
 alongside these artifacts.
+
+## Frozen transfer check, subsequent user continuation
+
+The user then authorized continuation toward alert benefit. The saved model was
+frozen before accessing the original 48 dev frames from four scene groups.
+These are previously consumed Development scenes, not fresh independent
+confirmation. No parameters, scaling buffers, or labels were changed, and there
+was no training. The original training-fit result above remains valid.
+
+| Original dev48,24positive/24negative | TP | FP | FN | Events detected /5 | False alert duration |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| MZ129 | 24 | 13 | 0 | 5 | 3.25s |
+| Frozen direct readout, zero logit | 12 | 6 | 12 | 2 | 1.50s |
+| Frozen direct readout, exact dev-selected threshold | 24 | 20 | 0 | 5 | 5.00s |
+
+Before scoring, the check specified an exact sweep over all distinct logit
+decisions, selecting minimum FP under recall within2pp of MZ129 and retaining
+every MZ129-detected event with at most0.25s additional delay. The selected
+threshold was -15.568821907043457. Both baseline and selected candidate detect
+all five events at onset. This is therefore an actual nuisance regression at
+matched recall/timing, not an artifact of the earlier coarse sigmoid grid.
+
+The predeclared continuation condition required at least20% fewer dev FP. It
+failed (20 versus13), so the check stopped before original-test or shifted-test
+inference. No test scores were produced and no new capture was requested.
+
+At zero logit, the corrected readout misses all six positive suspended-head
+frames and all six positive shallow-boundary frames. The rod scene alarms on
+all twelve positive/negative frames. The paired ranking is20/24, versus24/24
+for the original BCE on these dev pairs. Only6/24 pairs have both decisions
+correct at zero threshold; at the selected threshold it is4/24.
+
+The saved base/residual decomposition locates a concrete transfer problem:
+the added residual is -17.23 to -6.04 logits on the suspended-head scene and
+-13.55 to -9.36 on the boundary scene. Thus even the original positive head
+scores become negative. Bringing these scenes back requires a global threshold
+that also alarms on all body/head negatives. The evidence shows large
+scene-associated residual offsets; because each dev family has only one scene,
+it does not isolate background appearance from family/geometry as the cause.
+
+Decision: retain the small readout only as a **training-fit diagnostic component**,
+not an alert challenger. The next learning work should address scene-dependent
+score offsets and test stability across complete training scene groups, before
+another data expansion or alert comparison. Do not change the frozen model to
+erase this failure. MZ129 remains retained. This check does not establish that
+the existing sensors contain insufficient information.
+
+Evidence: `readout-transfer-v1/{freeze.json,operating-point.json,summary.json,
+dev-cases.json,dev-threshold-curve.json,completion.json}` below the same canonical
+artifact root. Source/receipt, original model, baseline prediction and observation
+seals were verified; the model hash is unchanged. Existing equivalent batch8
+GPU placement was reused. The exact-threshold test covers large logits, ties,
+all-alert, and no-alert decisions. Registration remains pending the same existing
+ledger303 mismatch; the transfer attempt is saved separately.

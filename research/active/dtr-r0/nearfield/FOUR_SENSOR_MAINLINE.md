@@ -20,7 +20,9 @@ need not solve unique return identity or OR the full incumbent alarm back in.
 The user subsequently authorized a [TRAIN-only fit repair](MZ136_TRAIN_FIT_REPAIR_20260914.md):
 frozen existing features plus a 385-parameter standardized direct readout reaches
 191/192 frames and 95/96 pairs correct at zero logit, versus 154/192 and 60/96.
-Retain this fitting component; unseen-scene alert benefit remains untested.
+The subsequent frozen consumed-dev48 check fails alert transfer:12TP/6FP/12FN
+at zero logit, or24TP/20FP/0FN at matched MZ129 recall/timing versus24/13/0.
+Retain the fitting diagnostic only; scene-dependent residual offsets need work.
 No hardware expansion or capture was performed in this continuation.
 
 Use measured image/IMU motion and state translation/correspondence assumptions.

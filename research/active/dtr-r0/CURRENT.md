@@ -26,8 +26,10 @@ registration/inheritance pending ledger303. The original comparison is complete.
 User-authorized [TRAIN-only fit repair](nearfield/MZ136_TRAIN_FIT_REPAIR_20260914.md)
 now gets191/192 frames and95/96 pairs correct with the original zero-logit
 criterion, using frozen existing features plus385direct-readout parameters.
-No new capture or held-out inference. Retain this Development fitting component;
-generalization and joint alert benefit remain untested, and MZ129 remains baseline.
+The subsequent frozen original-dev48 check needs20FP versus MZ12913 at matched
+recall/timing (zero logit misses12/24 positives). Retain only the fitting diagnostic;
+scene-dependent readout offsets are the next bottleneck. No new capture or original
+test inference; MZ129 remains baseline. See the linked report's transfer follow-up.
 
 Previous fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
 uses current plus four past frames and observed RGB flow, without metric

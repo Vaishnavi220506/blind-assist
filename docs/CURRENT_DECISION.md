@@ -50,8 +50,9 @@ See the [four-sensor mainline and stop points](../research/active/dtr-r0/nearfie
 The user-authorized [TRAIN-only fit repair](../research/active/dtr-r0/nearfield/MZ136_TRAIN_FIT_REPAIR_20260914.md)
 passes the original fitting criterion:191/192 frames and95/96 pairs correct,
 with a standardized385-parameter readout over frozen features. Retain this as a
-Development component; no new capture or held-out scoring occurred. The MZ136
-joint-alert negative result and retained MZ129 baseline remain unchanged.
+Development fitting diagnostic: its subsequent frozen dev48 transfer needs20FP
+versus MZ12913 at matched recall/timing. Scene-dependent residual offsets remain
+unresolved. No new capture or original-test scoring; MZ129 remains retained.
 
 The depth-front-end diagnostics described below are historical and scoped to
 their named branches. MZ101--106 omitted Radar and used stereo; their failures
