@@ -24,8 +24,19 @@ and cost. Preserve independently valid ToF evidence. Missing RGB detections or
 missing range returns cannot establish clearance. Never suppress an independent
 sensor merely because another sensor missed the object.
 
+RGB may refine ToF/Radar support within space it observes, but must never define
+either sensor's complete spatial coverage. Preserve independently observed
+support outside RGB coverage. This is a geometric coverage constraint.
+
 ## Evidence routing and correction
 
+- [MZ131-A native angular envelope](MZ131_RESULTS_20260914.md): one fixed,
+  explicitly uncalibrated cohort center-span formula narrows triggering
+  footprints in 56/93 FP and changes their actual possible bits/scores in 23
+  frames. FP93 to84 (six BODY, three rod), but TP139 to138 and 158 native
+  corridor samples lost. All15 events/times survive. Reject this exact envelope;
+  depth connectivity is not a demonstrated within-zone bound. Keep MZ129;
+  intended NEGATIVE_CONTROL pending ledger303, no automatic successor.
 - [MZ130 local support](MZ130_RESULTS_20260914.md): all four arms remain
   139/93/5 and 22 false segments, with all true frames/event times retained.
   815 local ToF returns create no new associations; 103 Radar returns gain

@@ -7,6 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
+Latest native-angular falsifier: [MZ131-A](nearfield/MZ131_RESULTS_20260914.md)
+tests one disclosed cohort center-span envelope on MZ129. It reaches triggering
+footprints in 56/93 FP and changes actual support bits/scores in 23 frames,
+removing six BODY and three rod FP. But 139/93/5 becomes 138/84/6 and 158 native
+corridor contributor samples are lost across 24 frames. All 15 event times
+remain identical; one rod TP is lost. Reject this exact uncalibrated envelope,
+not all ToF-native angular inference; keep MZ129. Intended NEGATIVE_CONTROL
+pending ledger303. No tuning or automatic successor.
+
 Latest local-support falsifier: [MZ130](nearfield/MZ130_RESULTS_20260914.md)
 keeps all four arms at 139/93/5 with identical event times and 22 false segments.
 815 ToF returns and 103 Radar returns acquire local masks, but no new ToF
