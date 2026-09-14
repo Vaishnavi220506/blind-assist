@@ -7,14 +7,23 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
-User priority correction,2026-09-14: fix the inexpensive RGB + **8x8 ToF** +
-same Radar + IMU budget. High-resolution ToF is a capability control only;
-short-window temporal spatial de-aliasing is the algorithm question. Raw support
-retention and alert authority are separate; conditional decisions must expose
-actual lost hazard evidence, misses, timing and UNKNOWN. No teacher/student
-training or hardware expansion was started.
+User priority correction,2026-09-14: fix inexpensive RGB + **8x8 ToF** +
+same Radar + IMU; prioritize direct corridor-task learning over further
+flow-to-return contraction. MZ129 remains the retained baseline. Native evidence
+is preserved for audit; statistical candidates issue independent alarms and must
+expose misses, nuisance, timing and UNKNOWN without incumbent OR fallback.
 
-Latest fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
+Latest matched learning result: [MZ136](nearfield/MZ136_RESULTS_20260914.md)
+compares direct corridor BCE with BCE plus corridor hinge on24new procedural
+scene groups,192/48/48train/dev/held-out frames. Both rank24/24dev pairs but
+fail a useful common readout: exact dev-score diagnosis needs23FP versus MZ12913
+at retained recall/timing. The frozen .01grid selects all-alert; held-out MZ129
+22/12/2 becomes24/24/0 for both, with no pairing gain. Shifted ToF leaves
+22/13/2 versus24/24/0; all-alert invariance is not robustness. New training fit
+also remains incomplete. Keep MZ129; exact recipe intended NEGATIVE_CONTROL,
+registration/inheritance pending ledger303. No additional training or capture.
+
+Previous fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
 uses current plus four past frames and observed RGB flow, without metric
 translation or future data. It narrows853 returns and removes17 possible bits,
 but stays139TP/93FP/5FN (ToF115/89/29), with unchanged event times. It newly loses

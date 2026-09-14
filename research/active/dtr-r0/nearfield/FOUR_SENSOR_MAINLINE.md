@@ -11,10 +11,13 @@ architecture and requires an explicit new user decision.
 Keep **RGB + 8x8 multi-zone ToF + the same low-cost Radar + IMU** as the
 algorithm research input budget. Higher-resolution ToF is an information-capability
 comparator only; it is not the mainline solution or evidence of an algorithm
-contribution. The current authorized probe is past-only short-window temporal
-spatial de-aliasing, without training, followed by an explicit retain/reject
-decision. Privileged teacher/student learning and richer joint Radar motion
-models remain proposed directions, not automatic training or source expansion.
+contribution. The later user correction prioritizes direct corridor classification
+with lateral intervention pairs over further flow-to-return contraction.
+[MZ136](MZ136_RESULTS_20260914.md) completes that one matched BCE/hinge experiment:
+pair order does not become a useful common alarm threshold, and no pairing gain
+is retained. Keep MZ129. Native evidence stays auditable; a statistical candidate
+need not solve unique return identity or OR the full incumbent alarm back in.
+No new training, hardware expansion or capture follows this completed comparison.
 
 Use measured image/IMU motion and state translation/correspondence assumptions.
 IMU rotation does not supply metric translation. An image track need not be the

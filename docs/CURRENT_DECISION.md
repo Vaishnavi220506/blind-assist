@@ -36,8 +36,12 @@ by this navigation update. The existing frozen result remains unchanged.
 ## Forward obstacle awareness complementary to a cane
 
 **Active architecture, corrected 2026-09-13: one RGB camera + ToF + Radar + IMU,
-simulation only.** The next capability is observable cross-sensor association and
-current walking-corridor localization. Compare matched ToF+Radar+IMU against the
+simulation only.** Current work tests direct walking-corridor classification
+from fixed cheap sensors, without requiring unique return attribution first.
+The [MZ136 paired-training comparison](../research/active/dtr-r0/nearfield/MZ136_RESULTS_20260914.md)
+finds no joint alert gain; retain MZ129 and the distinction between pairing,
+training fit and a usable common score threshold. Historical association work
+compares matched ToF+Radar+IMU against the
 same pipeline with RGB spatial association. Preserve independently valid sensor
 support and UNKNOWN. RGB is not a second camera, stereo depth, or a substitute
 for Radar. IMU rotation is not metric translation or future walking intention.

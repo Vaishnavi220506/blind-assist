@@ -14,7 +14,10 @@ Natural-distribution and safety claims require their own evidence; a build or a 
 
 Forward-perception architecture correction (2026-09-13): the user-confirmed
 simulation mainline is **one RGB camera + ToF + Radar + IMU**. Prioritize measurable
-algorithmic improvement in object association and current-corridor occupancy.
+current-corridor alert benefit under the fixed cheap hardware budget. The
+[MZ136 direct paired-training experiment](../research/active/dtr-r0/nearfield/MZ136_RESULTS_20260914.md)
+does not improve the joint alert tradeoff; keep MZ129 and its independent native
+evidence. Unique return attribution is not a required intermediate task.
 MZ101--106 are a separate stereo+ToF branch, not evidence about this four-sensor
 system. Follow the [four-sensor mainline](../research/active/dtr-r0/nearfield/FOUR_SENSOR_MAINLINE.md)
 and its paired ToF+Radar+IMU versus +RGB comparison. Architecture changes require
