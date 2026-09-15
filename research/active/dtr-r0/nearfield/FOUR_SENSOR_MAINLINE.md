@@ -1,14 +1,16 @@
 # Four-sensor simulation mainline
 
-[MZ157](MZ157_RESULTS_20260916.md) rejects frozen relative/global metric
-calibration on consumed TRAIN192: rod0/423, boundary60to73/955 with worse ring
-depth errors, and115/192 UNKNOWN maps per arm. Same-row diagnostics retain some
-local rod/boundary ordering but no metric/alert gain. Stop the fixed mapping;
-keep MZ129 and scoped components, with no App promotion; metadata pending303.
-[MZ156](MZ156_RESULTS_20260916.md) retains one added rod true frame, zero added
-FP, and scan69/36/3to70/36/2 only under its explicit static-world condition.
-It trails MZ145 passive72/32/0. [MZ155](MZ155_RESULTS_20260916.md) still fails
-its original scan gates; its FP45to36 change is separate from memory's gain.
+[MZ158](MZ158_RESULTS_20260916.md) tests frozen static/raw-change agreement
+on288 new same-generator frames: MZ129133/80/11 and MZ145140/66/4 become140/49/4,
+with every comparator true frame and event time retained. FP falls38.75%, but
+HEAD FP7to16 fails one of13 conditions; rod FP27to10 improves. Stop the exact
+joint recipe, keep MZ129 and report the partial benefit without default/App
+promotion. All4944 returned native corridor contributors survive; independent
+audit passes, while structured metadata remains pending ledger303.
+[MZ157](MZ157_RESULTS_20260916.md) retains failed global depth calibration.
+[MZ156](MZ156_RESULTS_20260916.md) retains one extra static-world rod true frame
+with no added FP, trailing MZ145 passive. [MZ155](MZ155_RESULTS_20260916.md)
+retains its original failed gates.
 
 [MZ154](MZ154_RESULTS_20260916.md) rejects finer RGB guidance as a sufficient
 repair: direct256 rod columns46.34% versus same-scale enlarged128 control47.75%,

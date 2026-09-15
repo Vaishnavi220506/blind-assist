@@ -7,17 +7,18 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
-[MZ157 relative calibration](nearfield/MZ157_RESULTS_20260916.md) fails on
-consumed TRAIN192: rod columns0/423 in both arms; boundary60to73/955 with more
-too-near ring errors;77 valid maps/115 UNKNOWN per arm. Stop the fixed global
-mapping. Posthoc same-row ordering retains some rod/boundary structure; it is
-not metric or alert gain. Three geometry conditions fail; native evidence and
-MZ129 stay retained, with no App promotion. Metadata remains pending ledger303.
-[MZ156 static positive memory](nearfield/MZ156_RESULTS_20260916.md) retains its
-static-position/world component: scan69/36/3to70/36/2, one added rod true frame
-and zero added FP, with940 contributors enclosed. MZ145 passive72/32/0 remains
-stronger overall. [MZ155](nearfield/MZ155_RESULTS_20260916.md) retains failed
-original gates; its FP45to36 scan change predates memory's one-frame benefit.
+[MZ158 fixed agreement](nearfield/MZ158_RESULTS_20260916.md) improves new
+same-generator288-frame MZ129 TP/FP/FN133/80/11 to140/49/4; MZ145 is140/66/4.
+All baseline/static true frames and30 event times survive; false segments31to23,
+precision62.44%to74.07%, recall92.36%to97.22%. Yet HEAD FP7to16 fails the sole
+remaining joint condition, despite rod27to10. Stop this exact static/raw-change
+AND recipe; retain MZ129, with no default/App promotion. All4944 returned native
+corridor contributors survive; unsampled surfaces and Radar lineage remain
+unestablished. Independent audit passes; metadata remains pending ledger303.
+[MZ157](nearfield/MZ157_RESULTS_20260916.md) retains the failed global depth
+mapping. [MZ156](nearfield/MZ156_RESULTS_20260916.md) retains one extra rod true
+frame with no extra FP only in its static-world scope; it trails MZ145 passive.
+[MZ155](nearfield/MZ155_RESULTS_20260916.md) retains its original failed gates.
 
 [MZ154 finer RGB sampling](nearfield/MZ154_RESULTS_20260916.md) separates
 direct256 guidance from enlarged128 at the same model scale32 and original8x8
