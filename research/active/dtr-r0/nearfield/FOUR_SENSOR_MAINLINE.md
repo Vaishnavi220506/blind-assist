@@ -1,16 +1,17 @@
 # Four-sensor simulation mainline
 
-[MZ158](MZ158_RESULTS_20260916.md) tests frozen static/raw-change agreement
-on288 new same-generator frames: MZ129133/80/11 and MZ145140/66/4 become140/49/4,
-with every comparator true frame and event time retained. FP falls38.75%, but
-HEAD FP7to16 fails one of13 conditions; rod FP27to10 improves. Stop the exact
-joint recipe, keep MZ129 and report the partial benefit without default/App
-promotion. All4944 returned native corridor contributors survive; independent
-audit passes, while structured metadata remains pending ledger303.
-[MZ157](MZ157_RESULTS_20260916.md) retains failed global depth calibration.
-[MZ156](MZ156_RESULTS_20260916.md) retains one extra static-world rod true frame
-with no added FP, trailing MZ145 passive. [MZ155](MZ155_RESULTS_20260916.md)
-retains its original failed gates.
+[MZ159](MZ159_RESULTS_20260916.md) rejects fixed reflection augmentation and
+mean-score readout: dev24/3/0to24/2/0, but MZ146143/57/1to139/50/5 loses five
+prior true frames and one event; a suppressed warning has14 native corridor
+samples. MZ158 reaches
+143/47/1 with HEAD FP10 versus baseline7. Matched repeat control reproduces
+MZ145; the scoped gain is inconsistent. Cached test predictions were decoded
+but unused; no test raw/evaluator/RGB or new scoring. Keep MZ129; metadata pending303.
+[MZ158](MZ158_RESULTS_20260916.md) retains fresh aggregate benefit133/80/11to
+140/49/4 with HEAD FP7to16 joint failure. Both fixed recipes remain closed.
+[MZ157](MZ157_RESULTS_20260916.md) retains failed global calibration;
+[MZ156](MZ156_RESULTS_20260916.md) its static-world one-frame gain, and
+[MZ155](MZ155_RESULTS_20260916.md) its original failed gates.
 
 [MZ154](MZ154_RESULTS_20260916.md) rejects finer RGB guidance as a sufficient
 repair: direct256 rod columns46.34% versus same-scale enlarged128 control47.75%,

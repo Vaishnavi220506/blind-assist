@@ -7,18 +7,19 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
-[MZ158 fixed agreement](nearfield/MZ158_RESULTS_20260916.md) improves new
-same-generator288-frame MZ129 TP/FP/FN133/80/11 to140/49/4; MZ145 is140/66/4.
-All baseline/static true frames and30 event times survive; false segments31to23,
-precision62.44%to74.07%, recall92.36%to97.22%. Yet HEAD FP7to16 fails the sole
-remaining joint condition, despite rod27to10. Stop this exact static/raw-change
-AND recipe; retain MZ129, with no default/App promotion. All4944 returned native
-corridor contributors survive; unsampled surfaces and Radar lineage remain
-unestablished. Independent audit passes; metadata remains pending ledger303.
-[MZ157](nearfield/MZ157_RESULTS_20260916.md) retains the failed global depth
-mapping. [MZ156](nearfield/MZ156_RESULTS_20260916.md) retains one extra rod true
-frame with no extra FP only in its static-world scope; it trails MZ145 passive.
-[MZ155](nearfield/MZ155_RESULTS_20260916.md) retains its original failed gates.
+[MZ159 reflection](nearfield/MZ159_RESULTS_20260916.md) improves consumed
+dev24/3/0to24/2/0, but fails cross-panel retention: MZ146143/57/1to139/50/5
+loses5 prior true frames and one event; a suppressed warning has14 native
+corridor samples, with two events delayed0.25s. MZ158140/66/4to143/47/1 improves but HEAD FP10 exceeds MZ1297.
+The matched repeated-original control reproduces MZ145. Stop this exact recipe;
+no tuning/fresh capture. Mixed-split incumbent cached test predictions were
+decoded but unused; no original test raw/evaluator/RGB or scoring. Metadata
+remains pending ledger303; retain MZ129 and UNKNOWN, with no default promotion.
+[MZ158](nearfield/MZ158_RESULTS_20260916.md) retains fresh same-generator gain
+133/80/11to140/49/4 but failed HEAD FP7to16. Its original joint recipe stays closed.
+[MZ157](nearfield/MZ157_RESULTS_20260916.md) retains failed global depth mapping;
+[MZ156](nearfield/MZ156_RESULTS_20260916.md) retains its one-frame static-world
+component, and [MZ155](nearfield/MZ155_RESULTS_20260916.md) its original failure.
 
 [MZ154 finer RGB sampling](nearfield/MZ154_RESULTS_20260916.md) separates
 direct256 guidance from enlarged128 at the same model scale32 and original8x8
