@@ -1,5 +1,12 @@
 # Four-sensor simulation mainline
 
+[MZ153](MZ153_RESULTS_20260916.md) completes frozen causal video-depth
+transfer on TRAIN192: rod columns36.88%to35.70%, boundary84.19%to87.85%,
+local surface precision86.115%to86.035%. All declared geometry gates fail;
+no alert integration, model fitting or new capture. The24rod frames without
+current target ToF returns recover zero columns in either arm. Preserve this
+negative control and the explicit old-cache scope clarification; retain MZ129.
+
 [MZ151](MZ151_RESULTS_20260916.md) expands training to480 frames/40 scenes,
 including consumed MZ146. OOF discrimination improves but dev24/8/0 with five
 false segments fails; fresh source preparation remains unrun.

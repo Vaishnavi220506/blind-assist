@@ -7,6 +7,16 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ153 causal video depth](nearfield/MZ153_RESULTS_20260916.md) tests frozen
+DVSR with past/current RGB+8x8 ToF against repeated current observations on
+TRAIN192. Rod surface columns fall36.88%to35.70%; boundary rises84.19%to87.85%
+but local precision does not improve. Stop this fixed pretrained transfer.
+No current rod ToF return means0/175 recovered columns across24frames in both
+arms; this is scoped model/input evidence, not a fundamental sensing limit.
+No dev/test model scoring or native-label access; old baseline cache parsed
+after sealing uses only TRAIN corrections, with the original broad scope claim
+explicitly corrected. Keep MZ129; metadata pending ledger303.
+
 [MZ151 expanded training](nearfield/MZ151_RESULTS_20260916.md) combines original
 TRAIN192 with consumed MZ146288. Same-frame OOF discrimination improves, but
 dev24/8/0 and five false segments fail the first gate; no fresh capture occurs.
