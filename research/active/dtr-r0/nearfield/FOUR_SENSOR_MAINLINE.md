@@ -1,5 +1,13 @@
 # Four-sensor simulation mainline
 
+[MZ154](MZ154_RESULTS_20260916.md) rejects finer RGB guidance as a sufficient
+repair: direct256 rod columns46.34% versus same-scale enlarged128 control47.75%,
+with0/175 recovered columns when current rod returns are absent. Weight/input/FOV
+controls pass; four of five geometry conditions fail. Stop pretrained resolution
+sweeps. Consumed source audit shows rod lateral co-motion with the camera and
+only small camera motion; static-world/active-view capability remains untested.
+Keep MZ129 and the existing scoped gains; no App/default or capture change.
+
 [MZ153](MZ153_RESULTS_20260916.md) completes frozen causal video-depth
 transfer on TRAIN192: rod columns36.88%to35.70%, boundary84.19%to87.85%,
 local surface precision86.115%to86.035%. All declared geometry gates fail;

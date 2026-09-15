@@ -7,6 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ154 finer RGB sampling](nearfield/MZ154_RESULTS_20260916.md) separates
+direct256 guidance from enlarged128 at the same model scale32 and original8x8
+ToF. Rod columns196/423 trail control202/423; current-return-absent cases stay
+0/175 in all arms. Stop this fixed pretrained resolution follow-up; no alert gain.
+Post-outcome source audit finds only6/24absent frames have earlier target returns;
+native rod lateral motion follows the camera, limiting static-world parallax
+interpretation. A more informative observation needs a distinct matched test,
+not another resolution sweep. Keep MZ129; metadata pending ledger303.
+
 [MZ153 causal video depth](nearfield/MZ153_RESULTS_20260916.md) tests frozen
 DVSR with past/current RGB+8x8 ToF against repeated current observations on
 TRAIN192. Rod surface columns fall36.88%to35.70%; boundary rises84.19%to87.85%
