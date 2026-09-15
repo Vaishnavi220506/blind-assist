@@ -66,6 +66,15 @@ but0alerts change. One of3unsampled intrusions has estimated surface support;
 nonalerting accepted surface. Keep MZ129; this exact estimator is a negative
 control, not a route-wide impossibility claim. Metadata pending ledger303.
 
+[MZ142 fixed-pretrained-BN training](nearfield/MZ142_RESULTS_20260915.md) completes the same
+144fit/48scene-heldout,288updates per loss from original weights. BN buffers
+stay fixed while affine parameters update. Neither arm restores joint FIT and
+heldout geometry. Balanced rod MAE improves to0.915m FIT/0.722m heldout,
+but coverage is0%/12.9%; heldout shallow1.651m and BODY/HEAD regressions
+prevent admission. Raw outputs are finite and within range. Pause this exact
+fine-tuning recipe; no epoch/weight rescue, dev/test or alert scoring. Keep
+MZ129 and partial rod evidence; metadata pending303, no route-wide rejection.
+
 [MZ141 paired same-domain DEPTHOR training](nearfield/MZ141_RESULTS_20260915.md) completes
 144fit/48whole-scene-heldout frames,288updates per loss. Heldout rod MAE
 1.091m frozen becomes1.723m pixel/1.721m surface; shallow1.034m becomes
