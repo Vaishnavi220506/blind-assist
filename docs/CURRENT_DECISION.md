@@ -66,6 +66,12 @@ All arms remain24TP/13FP/0FN:13 geometry changes reach one corrected plane
 crossing but no final alert change, with native support loss. Reject this exact
 integration; retain MZ129 and the MZ136 edge component. No further tuning/test run.
 
+The [MZ138 support ceiling](../research/active/dtr-r0/nearfield/MZ138_SUPPORT_CEILING_20260915.md)
+finds evaluator-only full native-face24TP/2FP/0FN with unchanged event times on
+consumed dev48. Sample-only/angular supports lose unsampled corridor extent;
+ownership grouping alone adds no gain. Retain surface-extent headroom as a
+diagnostic, with explicit full-surface scope correction; keep MZ129, no new algorithm.
+
 The depth-front-end diagnostics described below are historical and scoped to
 their named branches. MZ101--106 omitted Radar and used stereo; their failures
 must not be presented as the bottleneck or ceiling of the four-sensor mainline.

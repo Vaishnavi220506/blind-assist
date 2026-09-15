@@ -32,6 +32,11 @@ compares coarse/fine edges under one public-range plane on consumed dev48:
 all arms24TP/13FP/0FN,5/5events unchanged. One corrected plane crossing never
 changes the final alert; native support loss rejects this fixed integration.
 MZ129 and the conditional MZ136 component remain; no tuning or test run follows.
+The [MZ138 support ceiling](../research/active/dtr-r0/nearfield/MZ138_SUPPORT_CEILING_20260915.md)
+finds true complete-surface oracle24TP/2FP/0FN versus24/13/0 on consumed dev48,
+with all event times retained. Sampled-point supports miss unsampled surface
+portions; splitting sampled ownership alone has no gain. Diagnostic headroom
+only, with disclosed full-surface scope correction; MZ129 remains the system baseline.
 MZ101--106 are a separate stereo+ToF branch, not evidence about this four-sensor
 system. Follow the [four-sensor mainline](../research/active/dtr-r0/nearfield/FOUR_SENSOR_MAINLINE.md)
 and its paired ToF+Radar+IMU versus +RGB comparison. Architecture changes require

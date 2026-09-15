@@ -47,6 +47,16 @@ MZ136 input component. The prior TRAIN edge run had not tested alert benefit;
 this new contrast establishes no gain only for its stated integration. No tuning,
 training or test scoring follows; registration/inheritance pending ledger303.
 
+[MZ138 support ceiling](MZ138_SUPPORT_CEILING_20260915.md) finds true surface
+extent headroom on consumed dev48: evaluator-only complete native faces give
+24TP/2FP/0FN with all event times unchanged, versus MZ12924/13/0. Angular
+22/3/2 and exact returned points21/2/3 miss unsampled corridor portions; grouping
+the same native points has zero gain. Full faces retain all4187contributors
+(1046corridor) within1e-5m audit tolerance; remaining2FP are fixed Radar. This
+full-surface arm explicitly completes an initially sample-only oracle definition.
+Retain diagnostic headroom, not a predictor; MZ129 unchanged. No edge tuning or
+successor algorithm; registration/inheritance pending ledger303.
+
 Use measured image/IMU motion and state translation/correspondence assumptions.
 IMU rotation does not supply metric translation. An image track need not be the
 surface producing its ToF return, and coherent object motion can mimic ego motion.

@@ -50,6 +50,14 @@ changes yield one correct plane crossing but zero final changes; fine excludes
 retain MZ129 and MZ136's input component. No successor/test run; registration
 and inheritance pending ledger303, separate from completed technical evidence.
 
+[MZ138 oracle support ceiling](nearfield/MZ138_SUPPORT_CEILING_20260915.md)
+finds complete native-face24TP/2FP/0FN at unchanged event times on consumed dev48.
+Angular22/3/2 and returned-point21/2/3 miss unsampled corridor extent; native
+point grouping adds zero gain. Full-face oracle restores three shallow positives,
+preserves1046corridor contributors, and leaves two fixed-Radar FP. Retain only
+surface-extent headroom evidence, with disclosed posthoc full-surface scope
+completion; no observable algorithm promotion. MZ129 unchanged; metadata pending.
+
 Previous fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
 uses current plus four past frames and observed RGB flow, without metric
 translation or future data. It narrows853 returns and removes17 possible bits,
