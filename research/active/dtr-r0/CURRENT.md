@@ -7,6 +7,18 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ150 virtual corridor supervision](nearfield/MZ150_RESULTS_20260916.md)
+gives24TP/10FP/0FN on consumed dev48 versus MZ14524/3/0: rod/BODY FP0,
+HEAD FP4 and boundary FP6, with all five event times retained. Seven TRAIN
+queries per image preserve central-query inputs bitwise but fail the first
+gate; MZ146 is not scored. A TRAIN-only fixed-model diagnostic finds3 central
+fit errors versus26 whole-scene OOF errors at the diagnostic .5 boundary;
+cross-scene generalization is the next evidence gap, not a new alert cutoff.
+[MZ149 state persistence](nearfield/MZ149_RESULTS_20260916.md) also stops at
+its first gate:24/6/0, four false segments and one new HEAD false frame.
+Both exact recipes are intended negative controls, metadata pending ledger303.
+Keep MZ129 and prior scoped components; no App change or fresh capture.
+
 [MZ148 background residuals](nearfield/MZ148_RESULTS_20260916.md) adds causal
 dominant-layer image compensation without metric pose or native support pruning.
 Dev48 improves MZ14524/3/0 to24/1/0. On consumed MZ146288 it gives142/43/2

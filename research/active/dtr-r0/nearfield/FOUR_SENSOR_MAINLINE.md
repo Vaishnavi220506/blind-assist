@@ -1,5 +1,14 @@
 # Four-sensor simulation mainline
 
+[MZ150](MZ150_RESULTS_20260916.md) tests seven virtual corridor questions per
+TRAIN image with unchanged central inference: dev24/10/0, HEAD FP4 and boundary
+FP6. The first gate fails before MZ146 scoring. TRAIN-only diagnosis separates
+good fitted-query classification from a large whole-scene OOF gap. Preserve
+the failed recipe; training coverage/generalization needs evidence next.
+[MZ149](MZ149_RESULTS_20260916.md) gives24/6/0 and four false segments with a
+fixed state filter, also failing its first gate. Neither is promoted. MZ129
+remains retained; intended negative-control metadata is pending ledger303.
+
 [MZ148](MZ148_RESULTS_20260916.md) retains a background-compensated image
 feature component: dev24/1/0, then consumed MZ146142/43/2 versus MZ129130/86/14.
 The rod regression is removed (FP25to18), but an incumbent boundary true frame
