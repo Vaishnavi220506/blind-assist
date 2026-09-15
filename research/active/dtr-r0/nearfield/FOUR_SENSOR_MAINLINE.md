@@ -1,5 +1,10 @@
 # Four-sensor simulation mainline
 
+[MZ147](MZ147_RESULTS_20260916.md) tests a new per-return local pixel/body-query
+representation, reaching23TP/10FP/1FN on consumed dev48 versus MZ14524/3/0.
+It loses a boundary TP and adds HEAD nuisance without improving rods. Stop the
+fixed recipe before MZ146 candidate scoring; keep the prior baseline and gains.
+
 Latest,2026-09-16: [MZ146](MZ146_RESULTS_20260916.md) transfers unchanged
 MZ143/MZ145 to288 fresh same-generator controlled frames: MZ129130/86/14
 becomes143/57/1, no incumbent TP/event lost or delayed, false segments28to21.

@@ -7,6 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ147 local query pixels](nearfield/MZ147_RESULTS_20260916.md) replaces pooled
+RGB hypotheses with per-return native-pixel/body-query features under the same
+HGB learner. Consumed dev48 gives23TP/10FP/1FN, versus MZ12924/13/0 and
+MZ14524/3/0: a boundary TP is lost, HEAD FP rises0to1, rod FP stays6. Stop at
+this first gate; MZ146 is not scored with this candidate. Its read-only rod
+diagnostic finds correspondence errors before pooling and intermittent native
+near returns; neither quantile pooling nor geometric overlap alone explains
+all alerts. This carrier is a negative control, not a new alert challenger.
+
 [MZ146 fresh confirmation](nearfield/MZ146_RESULTS_20260916.md) evaluates the
 unchanged MZ143/MZ145 pipeline on288 newly captured same-generator frames.
 MZ129130TP/86FP/14FN becomes143/57/1: precision60.19%to71.50%, recall90.28%to
