@@ -7,6 +7,14 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ148 background residuals](nearfield/MZ148_RESULTS_20260916.md) adds causal
+dominant-layer image compensation without metric pose or native support pruning.
+Dev48 improves MZ14524/3/0 to24/1/0. On consumed MZ146288 it gives142/43/2
+versus MZ145143/57/1 and MZ129130/86/14, including rod FP25to18. All families'
+FP improve against MZ129, but one incumbent boundary TP is lost. The two-panel
+Development gate fails; retain only the image feature component, not the frozen
+complete readout as a challenger. No fresh source or capture was created.
+
 [MZ147 local query pixels](nearfield/MZ147_RESULTS_20260916.md) replaces pooled
 RGB hypotheses with per-return native-pixel/body-query features under the same
 HGB learner. Consumed dev48 gives23TP/10FP/1FN, versus MZ12924/13/0 and

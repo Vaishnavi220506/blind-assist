@@ -1,5 +1,10 @@
 # Four-sensor simulation mainline
 
+[MZ148](MZ148_RESULTS_20260916.md) retains a background-compensated image
+feature component: dev24/1/0, then consumed MZ146142/43/2 versus MZ129130/86/14.
+The rod regression is removed (FP25to18), but an incumbent boundary true frame
+is lost. The complete fixed readout fails; no fresh confirmation or promotion.
+
 [MZ147](MZ147_RESULTS_20260916.md) tests a new per-return local pixel/body-query
 representation, reaching23TP/10FP/1FN on consumed dev48 versus MZ14524/3/0.
 It loses a boundary TP and adds HEAD nuisance without improving rods. Stop the
