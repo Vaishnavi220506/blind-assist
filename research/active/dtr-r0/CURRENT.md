@@ -58,6 +58,14 @@ preserves1046corridor contributors, and leaves two fixed-Radar FP. Retain only
 surface-extent headroom evidence, with disclosed posthoc full-surface scope
 completion; no observable algorithm promotion. MZ129 unchanged; metadata pending.
 
+[MZ139 observable regional surface fit](nearfield/MZ139_SURFACE_FIT_20260915.md)
+now implements joint ToF/RGB finite-slab fitting, frozen after TRAIN12. Consumed
+dev48 remains24TP/13FP/0FN,5/5events unchanged:10accepted fits replace30returns
+but0alerts change. One of3unsampled intrusions has estimated surface support;
+2remain ambiguous.24native corridor contributors are excluded,12under a wrongly
+nonalerting accepted surface. Keep MZ129; this exact estimator is a negative
+control, not a route-wide impossibility claim. Metadata pending ledger303.
+
 Previous fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
 uses current plus four past frames and observed RGB flow, without metric
 translation or future data. It narrows853 returns and removes17 possible bits,

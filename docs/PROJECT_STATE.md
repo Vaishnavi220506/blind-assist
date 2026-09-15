@@ -37,6 +37,13 @@ finds true complete-surface oracle24TP/2FP/0FN versus24/13/0 on consumed dev48,
 with all event times retained. Sampled-point supports miss unsampled surface
 portions; splitting sampled ownership alone has no gain. Diagnostic headroom
 only, with disclosed full-surface scope correction; MZ129 remains the system baseline.
+The [MZ139 observable surface estimator](../research/active/dtr-r0/nearfield/MZ139_SURFACE_FIT_20260915.md)
+fits public regional ToF and RGB jointly, but frozen consumed dev48 still gives
+24TP/13FP/0FN with unchanged events.10/48accepted surfaces do not change alerts;
+one of3unsampled intrusions is supported while native geometry still loses24
+corridor contributors. Keep MZ129; exact estimator is a negative control,
+registration/inheritance pending ledger303. No additional oracle or test run.
+
 MZ101--106 are a separate stereo+ToF branch, not evidence about this four-sensor
 system. Follow the [four-sensor mainline](../research/active/dtr-r0/nearfield/FOUR_SENSOR_MAINLINE.md)
 and its paired ToF+Radar+IMU versus +RGB comparison. Architecture changes require

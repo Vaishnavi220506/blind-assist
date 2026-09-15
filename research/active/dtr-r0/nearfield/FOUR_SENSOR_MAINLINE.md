@@ -57,6 +57,16 @@ full-surface arm explicitly completes an initially sample-only oracle definition
 Retain diagnostic headroom, not a predictor; MZ129 unchanged. No edge tuning or
 successor algorithm; registration/inheritance pending ledger303.
 
+[MZ139 observable surface fit](MZ139_SURFACE_FIT_20260915.md) implements a finite
+oriented slab that jointly explains public regional ToF and RGB bounds. Frozen
+after TRAIN12, consumed dev48 stays24TP/13FP/0FN with5/5events unchanged.
+10/48accepted fits replace30returns;12old possible votes disappear but no ToF
+decision changes. One of3unsampled intrusions has estimated continuous support;
+the other2remain ambiguous.24native corridor points are excluded, including12
+under an accepted false-outside surface. Keep MZ129; exact estimator/readout is
+an intended negative control, not a failure of every joint-surface method.
+No refit/test/successor; registration and inheritance remain pending ledger303.
+
 Use measured image/IMU motion and state translation/correspondence assumptions.
 IMU rotation does not supply metric translation. An image track need not be the
 surface producing its ToF return, and coherent object motion can mimic ego motion.

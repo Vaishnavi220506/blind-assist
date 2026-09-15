@@ -72,6 +72,14 @@ consumed dev48. Sample-only/angular supports lose unsampled corridor extent;
 ownership grouping alone adds no gain. Retain surface-extent headroom as a
 diagnostic, with explicit full-surface scope correction; keep MZ129, no new algorithm.
 
+[MZ139 joint regional-ToF/RGB finite-surface fitting](../research/active/dtr-r0/nearfield/MZ139_SURFACE_FIT_20260915.md)
+is now implemented and frozen after TRAIN12. Consumed dev48 remains24/13/0,
+5/5events unchanged:10/48accepted surfaces replace30returns but change0alerts.
+One of3unsampled intrusions has estimated continuous support; two stay ambiguous.
+Native exclusions include12corridor samples under a wrongly nonalerting accepted
+surface. Retain MZ129; this exact estimator/readout is a negative control,
+not a refutation of observable surface recovery. Metadata remains pending303.
+
 The depth-front-end diagnostics described below are historical and scoped to
 their named branches. MZ101--106 omitted Radar and used stereo; their failures
 must not be presented as the bottleneck or ceiling of the four-sensor mainline.
