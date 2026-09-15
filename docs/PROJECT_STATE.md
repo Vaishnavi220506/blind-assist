@@ -44,6 +44,12 @@ one of3unsampled intrusions is supported while native geometry still loses24
 corridor contributors. Keep MZ129; exact estimator is a negative control,
 registration/inheritance pending ledger303. No additional oracle or test run.
 
+[MZ140 DEPTHOR Small](../research/active/dtr-r0/nearfield/MZ140_DEPTHOR_20260915.md)
+now provides runnable full-RGB/ToF pretrained geometry. TRAIN48 improves BODY
+and HEAD extent agreement over box-only RGB, but fails rod/shallow recovery.
+The declared mechanism check stops before dev; no end-to-end gain or latency
+claim. Keep MZ129, pause MZ139's exact manual-fit recipe; metadata pending303.
+
 MZ101--106 are a separate stereo+ToF branch, not evidence about this four-sensor
 system. Follow the [four-sensor mainline](../research/active/dtr-r0/nearfield/FOUR_SENSOR_MAINLINE.md)
 and its paired ToF+Radar+IMU versus +RGB comparison. Architecture changes require

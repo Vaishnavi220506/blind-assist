@@ -66,6 +66,14 @@ but0alerts change. One of3unsampled intrusions has estimated surface support;
 nonalerting accepted surface. Keep MZ129; this exact estimator is a negative
 control, not a route-wide impossibility claim. Metadata pending ledger303.
 
+[MZ140 pretrained full-RGB geometry](nearfield/MZ140_DEPTHOR_20260915.md) runs
+official DEPTHOR-ZJU-Small on TRAIN48. Full RGB improves BODY/HEAD supported
+column coverage to60.6%/71.3% versus35.2%/53.3%box-only; rod/shallow retain
+0%target-depth agreement despite near ToF inputs. Stop frozen transfer before
+dev; no new alert metrics, training, oracle or backend change. MZ129 retained;
+MZ139's box/single-slab/frame-search is paused. Exact DEPTHOR adaptation is a
+negative control with partial RGB benefit, metadata pending303.
+
 Previous fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
 uses current plus four past frames and observed RGB flow, without metric
 translation or future data. It narrows853 returns and removes17 possible bits,

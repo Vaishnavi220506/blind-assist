@@ -80,6 +80,14 @@ Native exclusions include12corridor samples under a wrongly nonalerting accepted
 surface. Retain MZ129; this exact estimator/readout is a negative control,
 not a refutation of observable surface recovery. Metadata remains pending303.
 
+[MZ140 DEPTHOR Small](../research/active/dtr-r0/nearfield/MZ140_DEPTHOR_20260915.md)
+uses the full RGB image and frozen pretrained weights. TRAIN48 shows useful
+BODY/HEAD extent gains versus box-only RGB, but zero rod/shallow target-depth
+agreement and meter-scale errors despite near ToF cues. The frozen transfer
+stops before dev; no alert gain was tested. Keep MZ129, pause MZ139's specific
+box/single-slab/search recipe, retain MZ140 as scoped negative control with
+partial visual benefit. No model/threshold rescue; metadata pending303.
+
 The depth-front-end diagnostics described below are historical and scoped to
 their named branches. MZ101--106 omitted Radar and used stereo; their failures
 must not be presented as the bottleneck or ceiling of the four-sensor mainline.

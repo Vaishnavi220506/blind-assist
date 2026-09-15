@@ -67,6 +67,17 @@ under an accepted false-outside surface. Keep MZ129; exact estimator/readout is
 an intended negative control, not a failure of every joint-surface method.
 No refit/test/successor; registration and inheritance remain pending ledger303.
 
+[MZ140 DEPTHOR Small transfer](MZ140_DEPTHOR_20260915.md) implements official
+pretrained full-RGB/ToF inference with an audited regional-center adapter and
+equivalent local-convolution port. TRAIN48 fullRGB improves supported target
+columns over box-only RGB: BODY35.2%to60.6%,HEAD53.3%to71.3%; rod/shallow
+remain0%within the fixed.12m depth diagnostic. Nearby ToF cues are present, but
+the narrow-object depth errors are meter-scale. Stop this frozen transfer at its
+TRAIN mechanism check; dev/test and alert integration were not run. Keep MZ129,
+retain partial RGB evidence and the exact transfer as negative control. Pause
+MZ139 box/single-slab/frame-search; no optimizer/threshold expansion. Registration
+and inheritance remain pending303, separate from this completed bounded check.
+
 Use measured image/IMU motion and state translation/correspondence assumptions.
 IMU rotation does not supply metric translation. An image track need not be the
 surface producing its ToF return, and coherent object motion can mimic ego motion.
