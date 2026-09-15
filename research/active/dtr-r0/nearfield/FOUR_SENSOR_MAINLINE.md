@@ -67,6 +67,15 @@ under an accepted false-outside surface. Keep MZ129; exact estimator/readout is
 an intended negative control, not a failure of every joint-surface method.
 No refit/test/successor; registration and inheritance remain pending ledger303.
 
+[MZ141 paired same-domain DEPTHOR training](MZ141_RESULTS_20260915.md) completes
+144fit/48whole-scene-heldout frames,288updates per loss. Heldout rod MAE
+1.091m frozen becomes1.723m pixel/1.721m surface; shallow1.034m becomes
+2.088m/1.479m, with BODY regression and near-rod ring spill. Both also fail
+fit geometry. A no-update TRAIN4 check exposes a substantial BatchNorm-mode
+effect but does not repair thin surfaces. Stop this batch1-normalization recipe;
+do not infer that surface balancing or learned RGB+ToF geometry is impossible.
+Keep MZ129; no dev/test/alert evaluation or extended training. Metadata pending303.
+
 [MZ140 DEPTHOR Small transfer](MZ140_DEPTHOR_20260915.md) implements official
 pretrained full-RGB/ToF inference with an audited regional-center adapter and
 equivalent local-convolution port. TRAIN48 fullRGB improves supported target
