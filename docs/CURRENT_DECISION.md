@@ -60,6 +60,12 @@ The [boundary-input audit](../research/active/dtr-r0/nearfield/MZ136_BOUNDARY_IN
 reduces conditional TRAIN edge MAE2.886 to1.227px on the same38 frames; fine-edge
 coverage is38/48. Keep it as a geometry component, with no alert promotion.
 
+The [MZ137 end-to-end contrast](../research/active/dtr-r0/nearfield/MZ137_EDGE_CORRIDOR_20260915.md)
+then tests a shared public-range plane with coarse/fine edges on consumed dev48.
+All arms remain24TP/13FP/0FN:13 geometry changes reach one corrected plane
+crossing but no final alert change, with native support loss. Reject this exact
+integration; retain MZ129 and the MZ136 edge component. No further tuning/test run.
+
 The depth-front-end diagnostics described below are historical and scoped to
 their named branches. MZ101--106 omitted Radar and used stereo; their failures
 must not be presented as the bottleneck or ceiling of the four-sensor mainline.

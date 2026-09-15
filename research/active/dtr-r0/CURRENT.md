@@ -42,6 +42,14 @@ frames, but fine-edge coverage is38/48. Coarse seeds and independent native
 evidence remain available. Geometry component only; no alert gain or dev/test
 scoring. MZ129 retained; component registration/inheritance pending ledger303.
 
+[MZ137 edge-to-corridor contrast](nearfield/MZ137_EDGE_CORRIDOR_20260915.md)
+uses one fixed public-ToF plane and matched coarse/fine edges on consumed dev48.
+All arms remain24/13/0TP/FP/FN with5/5events and unchanged timing.13geometry
+changes yield one correct plane crossing but zero final changes; fine excludes
+105previously enclosed native corridor contributors. Reject this exact readout,
+retain MZ129 and MZ136's input component. No successor/test run; registration
+and inheritance pending ledger303, separate from completed technical evidence.
+
 Previous fixed-hardware temporal probe: [MZ135](nearfield/MZ135_RESULTS_20260914.md)
 uses current plus four past frames and observed RGB flow, without metric
 translation or future data. It narrows853 returns and removes17 possible bits,

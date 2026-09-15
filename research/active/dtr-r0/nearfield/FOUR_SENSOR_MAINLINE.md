@@ -37,6 +37,16 @@ edge MAE2.886 to1.227px on the same38 TRAIN frames. Fine coverage is38/48 versus
 refinement preserves coarse and raw sensor evidence; no alert benefit is claimed.
 MZ129 stays retained; no new capture, dev/test scoring or alert fit in this run.
 
+[MZ137 end-to-end edge contrast](MZ137_EDGE_CORRIDOR_20260915.md) then tests
+one shared public-ToF plane with coarse/fine edges on consumed dev48. All three
+arms remain24TP/13FP/0FN,5/5events at unchanged times:13 geometry changes reach
+one correct plane crossing but no final alert change; outside-RGB ToF sustains
+that alert. Fine still excludes105 previously enclosed native corridor samples.
+Reject this exact plane/readout for alert improvement; retain MZ129 and the
+MZ136 input component. The prior TRAIN edge run had not tested alert benefit;
+this new contrast establishes no gain only for its stated integration. No tuning,
+training or test scoring follows; registration/inheritance pending ledger303.
+
 Use measured image/IMU motion and state translation/correspondence assumptions.
 IMU rotation does not supply metric translation. An image track need not be the
 surface producing its ToF return, and coherent object motion can mimic ego motion.

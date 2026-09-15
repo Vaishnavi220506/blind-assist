@@ -27,6 +27,11 @@ reduces head instability but still needs22FP versus13 at matched dev recall/timi
 The [boundary-input audit](../research/active/dtr-r0/nearfield/MZ136_BOUNDARY_INPUTS_20260915.md)
 reduces edge MAE2.886 to1.227px on the same38 TRAIN frames, with fine edges
 available38/48. Retain the geometry component only; MZ129 stays the alert baseline.
+The [MZ137 end-to-end contrast](../research/active/dtr-r0/nearfield/MZ137_EDGE_CORRIDOR_20260915.md)
+compares coarse/fine edges under one public-range plane on consumed dev48:
+all arms24TP/13FP/0FN,5/5events unchanged. One corrected plane crossing never
+changes the final alert; native support loss rejects this fixed integration.
+MZ129 and the conditional MZ136 component remain; no tuning or test run follows.
 MZ101--106 are a separate stereo+ToF branch, not evidence about this four-sensor
 system. Follow the [four-sensor mainline](../research/active/dtr-r0/nearfield/FOUR_SENSOR_MAINLINE.md)
 and its paired ToF+Radar+IMU versus +RGB comparison. Architecture changes require
