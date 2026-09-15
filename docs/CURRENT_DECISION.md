@@ -35,6 +35,15 @@ by this navigation update. The existing frozen result remains unchanged.
 
 ## Forward obstacle awareness complementary to a cane
 
+Latest,2026-09-16: [MZ145](../research/active/dtr-r0/nearfield/MZ145_RESULTS_20260916.md)
+passes its joint consumed-Development criterion:24TP/3FP/0FN versus24/13/0,
+all5first-alert times unchanged, false segments4to2 and no family FP regression.
+Retain this exact MZ143 fused model plus TRAIN-derived causal confirmation as a
+challenger pending unchanged fresh controlled confirmation. MZ129/default stay
+retained. [MZ143](../research/active/dtr-r0/nearfield/MZ143_RESULTS_20260916.md)
+alone reduced false frames but fragmented nuisance; [MZ144](../research/active/dtr-r0/nearfield/MZ144_RESULTS_20260916.md)
+direct geometry did not improve the tradeoff. No tuning of their frozen runs.
+
 **Active architecture, corrected 2026-09-13: one RGB camera + ToF + Radar + IMU,
 simulation only.** Current work tests direct walking-corridor classification
 from fixed cheap sensors, without requiring unique return attribution first.

@@ -12,6 +12,14 @@ Natural-distribution and safety claims require their own evidence; a build or a 
 
 ## Current research lines
 
+Latest forward-alert result,2026-09-16: [MZ145](../research/active/dtr-r0/nearfield/MZ145_RESULTS_20260916.md)
+gives24TP/3FP/0FN versus MZ12924/13/0 on consumed dev48, preserving all5event
+first-alert times and reducing false segments4to2. This fixed sensor/RGB
+representation plus causal decision rule is a Development challenger; unchanged
+fresh controlled confirmation is next. MZ129 and the App default remain retained.
+The [owning route](../research/active/dtr-r0/CURRENT.md) includes the MZ143 partial
+gain and MZ144 failed physical readout. No natural-scene or device benefit claim.
+
 Forward-perception architecture correction (2026-09-13): the user-confirmed
 simulation mainline is **one RGB camera + ToF + Radar + IMU**. Prioritize measurable
 current-corridor alert benefit under the fixed cheap hardware budget. The

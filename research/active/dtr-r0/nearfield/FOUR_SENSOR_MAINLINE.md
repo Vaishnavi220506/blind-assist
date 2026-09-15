@@ -1,5 +1,15 @@
 # Four-sensor simulation mainline
 
+Latest,2026-09-16: [MZ145](MZ145_RESULTS_20260916.md) combines MZ143's frozen
+explicit sensor/RGB corridor representation with causal weak-evidence
+confirmation. Consumed dev48 improves MZ12924/13/0 to24/3/0, all5first-alert
+times unchanged, false segments4to2, no family FP regression. Retain as a
+Development challenger awaiting unchanged fresh controlled confirmation; MZ129
+remains baseline. [MZ143](MZ143_RESULTS_20260916.md) alone had24/8/0 with extra
+HEAD/fragmentation nuisance; [MZ144](MZ144_RESULTS_20260916.md) physical-margin
+readout had24/17/0. Preserve their scoped results without refitting. Supported
+registration/inheritance remain pending ledger303, separate from task evidence.
+
 User-confirmed architecture, 2026-09-13: **one RGB camera + ToF + Radar + IMU**.
 The immediate priority is algorithmic benefit in class-agnostic forward obstacle
 awareness. Work remains simulation-only. A second camera, stereo depth, removal

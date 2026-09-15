@@ -5,6 +5,23 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Latest corridor-alert exploration (2026-09-16)
+
+[MZ145 causal confirmation](nearfield/MZ145_RESULTS_20260916.md) gives24TP/3FP/0FN
+versus MZ12924/13/0 on consumed dev48, retaining all5 event first-alert times.
+False segments fall4 to2; BODY/HEAD/rod FP are0 and boundary FP3. The fixed
+MZ143 fused model plus one TRAIN-only high-onset threshold passes its joint
+Development criterion. Keep it as a challenger pending unchanged fresh controlled
+confirmation; MZ129/default remain retained. No natural-scene or device claim.
+
+[MZ143](nearfield/MZ143_RESULTS_20260916.md) first reduced13FP to8 using complete
+regional sensor plus native-RGB corridor features, but HEAD FP0to1 and nuisance
+segments4to6 prevented replacement. [MZ144](nearfield/MZ144_RESULTS_20260916.md)
+direct plane-consensus margins gave17FP with no recall/timing gain and are closed
+for that readout. Models, thresholds and failed comparisons remain frozen.
+Metadata registration/inheritance use the supported CLI and remain pending the
+existing ledger303 mismatch; technical outcomes do not bypass that metadata.
+
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 
 User priority correction,2026-09-14: fix inexpensive RGB + **8x8 ToF** +
