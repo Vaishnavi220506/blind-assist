@@ -1,5 +1,12 @@
 # Four-sensor simulation mainline
 
+[MZ155](MZ155_RESULTS_20260916.md) compares fixed views with public-cell-width
+yaw scanning on288 new static-world frames. Rod episode coverage4to6 improves,
+but current valid-return frames22to19 decline. MZ129 FP45to36 accompanies one
+lost true frame; MZ145 FP32to35. Neither alerts nor component criteria pass.
+Keep the scoped sampling observation, stop the fixed recipe, and preserve
+stationary-world, renderer/noise and native-surface coverage limits.
+
 [MZ154](MZ154_RESULTS_20260916.md) rejects finer RGB guidance as a sufficient
 repair: direct256 rod columns46.34% versus same-scale enlarged128 control47.75%,
 with0/175 recovered columns when current rod returns are absent. Weight/input/FOV

@@ -7,6 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ155 active angular sampling](nearfield/MZ155_RESULTS_20260916.md) completes
+one288-frame static-world paired capture at unchanged hardware/frame budget.
+Yaw scanning expands rod ever-observed episodes4to6 and causal-prefix evidence
+24to34, but current valid-return frames22to19. MZ12968/45/4to69/36/3 loses one
+matched true frame; MZ14572/32/0to72/35/0 adds FP. All declared gates fail.
+Preserve the episode-coverage observation, not a passed component or default;
+stop this fixed scan recipe without sweeps. Geometry matches, RGB pixels and
+later noise draws are not identical. Keep MZ129; metadata pending ledger303.
+
 [MZ154 finer RGB sampling](nearfield/MZ154_RESULTS_20260916.md) separates
 direct256 guidance from enlarged128 at the same model scale32 and original8x8
 ToF. Rod columns196/423 trail control202/423; current-return-absent cases stay
