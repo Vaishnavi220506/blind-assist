@@ -12,13 +12,14 @@ Natural-distribution and safety claims require their own evidence; a build or a 
 
 ## Current research lines
 
-Latest forward-alert result,2026-09-16: [MZ145](../research/active/dtr-r0/nearfield/MZ145_RESULTS_20260916.md)
-gives24TP/3FP/0FN versus MZ12924/13/0 on consumed dev48, preserving all5event
-first-alert times and reducing false segments4to2. This fixed sensor/RGB
-representation plus causal decision rule is a Development challenger; unchanged
-fresh controlled confirmation is next. MZ129 and the App default remain retained.
-The [owning route](../research/active/dtr-r0/CURRENT.md) includes the MZ143 partial
-gain and MZ144 failed physical readout. No natural-scene or device benefit claim.
+Latest forward-alert result,2026-09-16: [MZ146](../research/active/dtr-r0/nearfield/MZ146_RESULTS_20260916.md)
+tests unchanged MZ145 on288 fresh same-generator controlled frames. MZ129
+130TP/86FP/14FN becomes143/57/1; events29/30to30/30, false segments28to21,
+with no incumbent true frame or event lost. The aggregate gain is substantial,
+but rod FP25to29 fails the pre-outcome family condition. The fixed confirmation
+is closed without tuning; MZ129 and the App default remain retained. The
+[owning route](../research/active/dtr-r0/CURRENT.md) preserves MZ145's consumed
+Development gain separately. No natural-scene, device or all-family benefit claim.
 
 Forward-perception architecture correction (2026-09-13): the user-confirmed
 simulation mainline is **one RGB camera + ToF + Radar + IMU**. Prioritize measurable

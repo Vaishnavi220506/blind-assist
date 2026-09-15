@@ -7,20 +7,24 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
-[MZ145 causal confirmation](nearfield/MZ145_RESULTS_20260916.md) gives24TP/3FP/0FN
-versus MZ12924/13/0 on consumed dev48, retaining all5 event first-alert times.
-False segments fall4 to2; BODY/HEAD/rod FP are0 and boundary FP3. The fixed
-MZ143 fused model plus one TRAIN-only high-onset threshold passes its joint
-Development criterion. Keep it as a challenger pending unchanged fresh controlled
-confirmation; MZ129/default remain retained. No natural-scene or device claim.
+[MZ146 fresh confirmation](nearfield/MZ146_RESULTS_20260916.md) evaluates the
+unchanged MZ143/MZ145 pipeline on288 newly captured same-generator frames.
+MZ129130TP/86FP/14FN becomes143/57/1: precision60.19%to71.50%, recall90.28%to
+99.31%, events29/30to30/30 and false segments28to21. No incumbent TP or event
+is lost or delayed. Rod FP25to29 fails the pre-outcome family condition;
+`FRESH_CONTROLLED_CONFIRMATION_NOT_MET`. Preserve this fresh aggregate gain
+with its localized regression; keep MZ129/default. The exact confirmation is
+closed without threshold/model/source rescue. Same simulator priors are not
+natural-scene or device evidence. Returned native ToF corridor samples are
+retained in alerted frames; native Radar per-return ownership is NOT_EVALUABLE.
 
-[MZ143](nearfield/MZ143_RESULTS_20260916.md) first reduced13FP to8 using complete
-regional sensor plus native-RGB corridor features, but HEAD FP0to1 and nuisance
-segments4to6 prevented replacement. [MZ144](nearfield/MZ144_RESULTS_20260916.md)
-direct plane-consensus margins gave17FP with no recall/timing gain and are closed
-for that readout. Models, thresholds and failed comparisons remain frozen.
-Metadata registration/inheritance use the supported CLI and remain pending the
-existing ledger303 mismatch; technical outcomes do not bypass that metadata.
+[MZ145](nearfield/MZ145_RESULTS_20260916.md) remains a consumed Development
+gain:24TP/3FP/0FN versus24/13/0, all5first-alert times unchanged, false segments
+4to2. [MZ143](nearfield/MZ143_RESULTS_20260916.md) alone gave24/8/0 but extra
+HEAD/fragmentation nuisance; [MZ144](nearfield/MZ144_RESULTS_20260916.md) direct
+geometry gave24/17/0. Keep all frozen evidence and scoped failure boundaries.
+Supported registration/inheritance remain pending the existing ledger303
+mismatch, separate from these measured outcomes; no manual ledger bypass.
 
 ## Active mainline correction: one RGB + ToF + Radar + IMU (2026-09-13)
 

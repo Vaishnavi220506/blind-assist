@@ -1,14 +1,15 @@
 # Four-sensor simulation mainline
 
-Latest,2026-09-16: [MZ145](MZ145_RESULTS_20260916.md) combines MZ143's frozen
-explicit sensor/RGB corridor representation with causal weak-evidence
-confirmation. Consumed dev48 improves MZ12924/13/0 to24/3/0, all5first-alert
-times unchanged, false segments4to2, no family FP regression. Retain as a
-Development challenger awaiting unchanged fresh controlled confirmation; MZ129
-remains baseline. [MZ143](MZ143_RESULTS_20260916.md) alone had24/8/0 with extra
-HEAD/fragmentation nuisance; [MZ144](MZ144_RESULTS_20260916.md) physical-margin
-readout had24/17/0. Preserve their scoped results without refitting. Supported
-registration/inheritance remain pending ledger303, separate from task evidence.
+Latest,2026-09-16: [MZ146](MZ146_RESULTS_20260916.md) transfers unchanged
+MZ143/MZ145 to288 fresh same-generator controlled frames: MZ129130/86/14
+becomes143/57/1, no incumbent TP/event lost or delayed, false segments28to21.
+Rod FP25to29 fails the frozen family condition despite33.72% aggregate FP
+reduction and higher recall. Retain the scoped gain, close the exact joint
+confirmation without tuning, and keep MZ129/default. [MZ145](MZ145_RESULTS_20260916.md)
+separately retains its consumed dev48 gain24/3/0 versus24/13/0. Native ToF
+returned corridor samples survive in alerted frames; native Radar lineage is
+NOT_EVALUABLE. No all-family, natural-scene, device or safety promotion.
+Supported registration/inheritance remain pending ledger303; no ledger bypass.
 
 User-confirmed architecture, 2026-09-13: **one RGB camera + ToF + Radar + IMU**.
 The immediate priority is algorithmic benefit in class-agnostic forward obstacle
