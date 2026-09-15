@@ -7,14 +7,17 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
-[MZ156 static positive memory](nearfield/MZ156_RESULTS_20260916.md) adds one
-true rod frame and zero false frames on consumed MZ155: scan69/36/3to70/36/2,
-passive68/45/4 unchanged. All940 witness contributors are enclosed; both scoped
-conditions pass. Keep only a static-position/world component, not default or
-fresh confirmation: MZ145 passive72/32/0 remains stronger overall. The scan's
-FP45to36 benefit predates memory. [MZ155](nearfield/MZ155_RESULTS_20260916.md)
-retains its original failed gates and descriptive rod coverage4to6, with
-frame coverage22to19. Keep MZ129; metadata pending ledger303.
+[MZ157 relative calibration](nearfield/MZ157_RESULTS_20260916.md) fails on
+consumed TRAIN192: rod columns0/423 in both arms; boundary60to73/955 with more
+too-near ring errors;77 valid maps/115 UNKNOWN per arm. Stop the fixed global
+mapping. Posthoc same-row ordering retains some rod/boundary structure; it is
+not metric or alert gain. Three geometry conditions fail; native evidence and
+MZ129 stay retained, with no App promotion. Metadata remains pending ledger303.
+[MZ156 static positive memory](nearfield/MZ156_RESULTS_20260916.md) retains its
+static-position/world component: scan69/36/3to70/36/2, one added rod true frame
+and zero added FP, with940 contributors enclosed. MZ145 passive72/32/0 remains
+stronger overall. [MZ155](nearfield/MZ155_RESULTS_20260916.md) retains failed
+original gates; its FP45to36 scan change predates memory's one-frame benefit.
 
 [MZ154 finer RGB sampling](nearfield/MZ154_RESULTS_20260916.md) separates
 direct256 guidance from enlarged128 at the same model scale32 and original8x8
