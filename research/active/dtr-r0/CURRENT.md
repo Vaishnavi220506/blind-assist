@@ -7,6 +7,18 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ151 expanded training](nearfield/MZ151_RESULTS_20260916.md) combines original
+TRAIN192 with consumed MZ146288. Same-frame OOF discrimination improves, but
+dev24/8/0 and five false segments fail the first gate; no fresh capture occurs.
+MZ146 is now TRAIN evidence for this model, not its validation. Two low-scoring
+boundary/head TRAIN observations determine the permissive low/high cutoffs.
+[MZ152 contained-return anchors](nearfield/MZ152_RESULTS_20260916.md) adds a
+full-envelope ToF branch without contracting support or requiring RGB. It covers
+106 TRAIN true frames with zero false anchors but neither cutoff-support case;
+cutoffs and all dev flags stay identical to MZ151. Both exact recipes stop as
+intended negative controls, metadata pending ledger303. MZ129 remains retained.
+Partial-intrusion geometry remains unresolved; no new App/default/safety claim.
+
 [MZ150 virtual corridor supervision](nearfield/MZ150_RESULTS_20260916.md)
 gives24TP/10FP/0FN on consumed dev48 versus MZ14524/3/0: rod/BODY FP0,
 HEAD FP4 and boundary FP6, with all five event times retained. Seven TRAIN

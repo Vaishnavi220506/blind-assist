@@ -1,5 +1,14 @@
 # Four-sensor simulation mainline
 
+[MZ151](MZ151_RESULTS_20260916.md) expands training to480 frames/40 scenes,
+including consumed MZ146. OOF discrimination improves but dev24/8/0 with five
+false segments fails; fresh source preparation remains unrun.
+[MZ152](MZ152_RESULTS_20260916.md) adds unchanged full-zone contained-return
+anchors:106 TRAIN true frames/zero false anchors, but neither difficult cutoff
+support is covered. Final dev flags and thresholds remain identical to MZ151.
+Stop both fixed recipes. The gap is partial-intrusion geometry, not cleared by
+these controls. MZ129 remains retained; intended metadata is pending ledger303.
+
 [MZ150](MZ150_RESULTS_20260916.md) tests seven virtual corridor questions per
 TRAIN image with unchanged central inference: dev24/10/0, HEAD FP4 and boundary
 FP6. The first gate fails before MZ146 scoring. TRAIN-only diagnosis separates
