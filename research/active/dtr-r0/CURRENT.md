@@ -7,6 +7,16 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ166 dense virtual queries](nearfield/MZ166_RESULTS_20260916.md) improves
+FIT changed-query pair decisions6/42to24/42 (all18gains rod), but worsens
+central HELD24/8/0to24/12/0 versus matched central-only training; MZ12922/6/2.
+FIT accuracy63.89% fails95%; six boundaryFP remain and BODY/HEAD nuisance grows.
+All oldTP/events/onsets and sampled native support survive, including MZ165's
+two recovered frames. Keep the scoped FIT query-response effect, not an alert
+replacement or held-scene query claim. Stop this exact schedule/head/supervision
+recipe without tuning; keep MZ129. Metadata remains pending303; no original
+dev/test or fresh confirmation.
+
 [MZ165 pretrained task context](nearfield/MZ165_RESULTS_20260916.md) improves
 matched random-encoder HELD15/8/9 to24/7/0, versus MZ12922/6/2. All incumbent
 true frames/events/timing and sampled native corridor support survive; both

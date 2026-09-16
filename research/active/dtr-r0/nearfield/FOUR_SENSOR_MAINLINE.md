@@ -1,5 +1,13 @@
 # Four-sensor simulation mainline
 
+[MZ166](MZ166_RESULTS_20260916.md) tests matched dense seven-query supervision:
+FIT changed-query decisions6/42to24/42, entirely rod frame gains, but central
+HELD24/8/0to24/12/0 versus central-only training and baseline22/6/2. FIT63.89%
+fails95%; boundaryFP6 remain, BODYFP2 andHEADFP4 exceed baseline0. All priorTP/
+events/onsets and sampled native support survive. Keep the scoped training-query
+effect; stop the exact complete recipe without threshold/epoch/size/schedule
+rescue. MZ129 remains retained; metadata pending303, no new-scene query or App promotion.
+
 [MZ165](MZ165_RESULTS_20260916.md) establishes a matched pretrained-context
 benefit: HELD random15/8/9 to pretrained24/7/0, versus MZ12922/6/2, all old TP/
 events/timing and sampled native support retained. FIT93.06% fails95%; boundary
