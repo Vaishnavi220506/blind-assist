@@ -1,5 +1,16 @@
 # Four-sensor simulation mainline
 
+[MZ173](MZ173_RESULTS_20260916.md) tests frozen DA3-Small causal geometry with
+public regional ToF scale. Temporal TP/FP/FN is 66/66/30 versus current control
+62/63/34 and MZ129 91/46/5. More historical anchors raise calibrated coverage
+168 to 180/192, but rod half-columns remain 0/423, boundary barely improves,
+and background too-near error increases. It loses 27 old true frames, five
+events and seven native-supported warnings containing 127 corridor samples.
+Both geometry and alert gates fail; close the exact recipe as NEGATIVE_CONTROL.
+The standalone dense readout does not establish full four-sensor fusion or
+RGB-external coverage. Keep MZ129/default and fixed hardware; independent audit
+passes, structured metadata remains pending the existing ledger303.
+
 [MZ172](MZ172_RESULTS_20260916.md) tests registered full-zone visual context
 against pooled context, retaining independent raw ToF/Radar. HELD24/5/0 becomes
 24/7/0; all old true frames/onsets survive. Both FIT arms nevertheless lose
