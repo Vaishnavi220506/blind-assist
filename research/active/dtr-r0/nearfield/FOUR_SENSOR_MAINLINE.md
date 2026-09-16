@@ -1,5 +1,15 @@
 # Four-sensor simulation mainline
 
+[MZ174](MZ174_RESULTS_20260916.md) tests explicit cross-return sender/edge
+correspondence on FIT144 with three whole-scene folds. Natural known-slot
+TP/FP/FN is 309/123/73 versus shuffled 310/144/72; balanced accuracy improves
+only 0.58pp, with scene0 recall and scene2 specificity losses. The control still
+has actual relative geometry, so this does not reject all graph information.
+Close the fixed correspondence recipe before full-fit/HELD or warning scoring.
+No raw support is contracted. Keep MZ129/default and existing independent Radar;
+no alert, RGB-external obstacle coverage or absent-return gain is established.
+Independent audit passes; structured metadata remains pending ledger303.
+
 [MZ173](MZ173_RESULTS_20260916.md) tests frozen DA3-Small causal geometry with
 public regional ToF scale. Temporal TP/FP/FN is 66/66/30 versus current control
 62/63/34 and MZ129 91/46/5. More historical anchors raise calibrated coverage

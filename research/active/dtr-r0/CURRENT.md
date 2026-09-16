@@ -7,15 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
-[MZ173 causal foundation geometry](nearfield/MZ173_RESULTS_20260916.md) uses
-frozen DA3-Small with up to five past/current views and public ToF scale anchors.
-Temporal TP/FP/FN is 66/66/30 versus repeated-current 62/63/34 and MZ129 91/46/5.
-Calibrated frames rise 168 to 180 and half-column recovery 82.38% to 87.94%,
-but rod recovery stays 0/423 and boundary recovery changes only 556 to 557/955.
-Temporal loses 27 old true frames and five events; seven native-supported
-nonalerts contain 127 corridor samples. Geometry and alert gates both fail.
-Close the exact recipe without tuning or source rescue; keep MZ129/default.
-Independent audit passes; structured registration/inheritance remain pending303.
+[MZ174 return-graph correspondence](nearfield/MZ174_RESULTS_20260916.md) stops at
+the FIT144 whole-scene out-of-fold check: actual versus permuted sender content
+gives known-slot balanced accuracy 86.30% versus 85.72%, below the required 5pp
+gain. Scene0 loses recall and scene2 loses specificity. These are slot counts,
+not improved final warnings; conditional full-fit/HELD was not entered. Close
+the exact recipe without tuning or capture; keep MZ129/default. The preceding
+[MZ173 causal geometry](nearfield/MZ173_RESULTS_20260916.md) remains closed for
+its 27 lost old true frames and seven suppressed native-supported warnings.
+MZ174 independent audit passes; structured metadata remains pending ledger303.
 
 [MZ172 spatial return context](nearfield/MZ172_RESULTS_20260916.md) changes
 HELD pooled24/5/0 to registered24/7/0 versus MZ12922/6/2. All old HELD true
