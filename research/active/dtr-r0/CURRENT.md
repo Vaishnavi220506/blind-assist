@@ -7,6 +7,16 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ170 unchanged mean fresh confirmation](nearfield/MZ170_RESULTS_20260916.md)
+reduces MZ129136/74/8 to140/36/4 on288 new same-generator frames, but loses four
+old true frames with54native corridor samples, delays two events0.50s/0.25s,
+and raises HEAD FP1to6. Against static143/69/1 it loses threeTP and delays two
+onsets0.25s. Independent audit confirms the losses and all288 source frames.
+Close this exact mean as NEGATIVE_CONTROL, superseding MZ169's eligibility for
+unchanged fresh promotion; preserve its historical consumed gain. No weights,
+cutoffs, OR, padding or source rescue. MZ129 remains; no App/default promotion;
+structured metadata pending303.
+
 [MZ169 expert combination](nearfield/MZ169_RESULTS_20260916.md) retains its
 predeclared equal-mean control as consumed Development: dev24/1/0 and MZ158
 140/35/4 versus MZ129133/80/11, with all old true frames/event onsets, all-family

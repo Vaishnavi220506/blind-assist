@@ -1,5 +1,14 @@
 # Four-sensor simulation mainline
 
+[MZ170](MZ170_RESULTS_20260916.md) confirms aggregate mean gains on288 fresh
+same-generator frames: MZ129136/74/8 to140/36/4, FP-51.35%. It still fails six
+of13 joint checks: four oldTP lost with54native corridor samples, two event
+delays0.50s/0.25s, HEAD FP1to6, and three staticTP/two static onsets lost or later.
+Close the exact fixed mean as NEGATIVE_CONTROL; MZ169's consumed gain remains
+historical and does not confer fresh eligibility. No cutoff/weight/OR/source
+rescue or default promotion. Independent audit passes; metadata pending303.
+Keep MZ129 and the fixed four-sensor budget.
+
 [MZ169](MZ169_RESULTS_20260916.md) finds a useful fixed equal-mean control:
 consumed dev24/1/0 and MZ158140/35/4 versus baseline133/80/11, preserving all
 oldTP/onsets, family FP noninferiority (HEAD7to7) and sampled native corridor
