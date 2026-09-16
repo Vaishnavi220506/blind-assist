@@ -7,6 +7,16 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ165 pretrained task context](nearfield/MZ165_RESULTS_20260916.md) improves
+matched random-encoder HELD15/8/9 to24/7/0, versus MZ12922/6/2. All incumbent
+true frames/events/timing and sampled native corridor support survive; both
+recovered frames lack returned target ToF evidence. FIT93.06% misses95%, six
+baseline boundary FP persist and one HEAD FP is added. Keep the measured direct-
+risk pretraining effect, not the complete failed readout as an alert replacement.
+Rod pixel precision31.42%/recall99.88%, boundary9.90%/98.93%, and BODY29.03%
+recall limit extent claims. No epoch/threshold/encoder-size rescue; MZ129 remains
+retained, metadata pending303. No original dev/test or fresh confirmation.
+
 [MZ164 camera-aware metric prior](nearfield/MZ164_RESULTS_20260916.md) alerts on
 all192 consumed TRAIN frames: MZ12991/46/5 becomes96/96/0, adding50 false frames
 for five recovered true frames. Known-camera rod columns75/423 trail the

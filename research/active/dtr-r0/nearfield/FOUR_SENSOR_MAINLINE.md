@@ -1,5 +1,13 @@
 # Four-sensor simulation mainline
 
+[MZ165](MZ165_RESULTS_20260916.md) establishes a matched pretrained-context
+benefit: HELD random15/8/9 to pretrained24/7/0, versus MZ12922/6/2, all old TP/
+events/timing and sampled native support retained. FIT93.06% fails95%; boundary
+sixFP remain and oneHEAD FP appears. Both recovered frames have no returned
+target ToF slot, but pixel localization remains imperfect and no positive token
+alert contributes. Retain the scoped pretraining effect; stop the exact complete
+readout without tuning or promotion. MZ129 unchanged; metadata pending303.
+
 [MZ164](MZ164_RESULTS_20260916.md) completes frozen UniDepthV2 metric inference
 with known versus estimated camera on consumed TRAIN192. Known-camera OR alerts
 on every frame:91/46/5 to96/96/0, five gained true frames and50 added false frames.
