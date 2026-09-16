@@ -1,5 +1,14 @@
 # Four-sensor simulation mainline
 
+[MZ163](MZ163_RESULTS_20260916.md) tests the exact MZ155 scan with denser
+normalized integration inside the unchanged8x8 zones. Rod valid-ever episodes
+passive4/6 to scan6/6 become4/6 to4/6, also with all packets available; the old
+rod gain is quadrature-sensitive. Boundary valid coverage3/6to6/6 survives,
+including inside0/3to3/3 at0.25s, partly by changing MERGED to VALID. Keep this
+conditional source opportunity, not a new alert or physical-sensor gain. Native
+3x3 distance, identity and lineage admission pass. All-packets MERGED-inclusive
+rod coverage still improves4to5. MZ129 unchanged; metadata303.
+
 [MZ162](MZ162_RESULTS_20260916.md) stops returned-face-only completion before
 training: perfect visible linked-face geometry covers rod46/152 target-risk
 half-columns (30.26%), with23/48frames lacking resolved target correspondence.

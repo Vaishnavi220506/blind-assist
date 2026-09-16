@@ -7,6 +7,17 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ163 integration robustness](nearfield/MZ163_RESULTS_20260916.md) finds the
+MZ155 rod scan VALID episode gain4to6 becomes4to4 under12x12 normalized integration
+within the same8x8 zones; prefix24to34 becomes24to24, also without packet loss.
+Native3x3 geometry, target identity and returned lineage reproduce. Boundary
+valid episodes3to6 remain a conditional mixture/status opportunity, with inside
+first-valid delay0.25s; no alert gain evaluated. The grids are nonnested and
+neither is calibrated physical truth. Keep MZ129 and original source/default;
+avoid another rod micro-scan justified by the old coverage gain alone. Metadata
+pending303; consumed diagnostic only. All-packets MERGED-inclusive rod coverage
+still improves4to5; this weaker opportunity is not erased by the VALID result.
+
 [MZ162 returned-face correspondence](nearfield/MZ162_RESULTS_20260916.md)
 stops before real training: even complete analytic visible faces linked to
 returned ToF samples cover only46/152 rod target-risk half-columns (30.26%).
