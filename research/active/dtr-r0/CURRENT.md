@@ -7,19 +7,21 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
-[MZ159 reflection](nearfield/MZ159_RESULTS_20260916.md) improves consumed
-dev24/3/0to24/2/0, but fails cross-panel retention: MZ146143/57/1to139/50/5
-loses5 prior true frames and one event; a suppressed warning has14 native
-corridor samples, with two events delayed0.25s. MZ158140/66/4to143/47/1 improves but HEAD FP10 exceeds MZ1297.
-The matched repeated-original control reproduces MZ145. Stop this exact recipe;
-no tuning/fresh capture. Mixed-split incumbent cached test predictions were
-decoded but unused; no original test raw/evaluator/RGB or scoring. Metadata
-remains pending ledger303; retain MZ129 and UNKNOWN, with no default promotion.
+[MZ160 dense parallax](nearfield/MZ160_RESULTS_20260916.md) produces no added
+geometry on all 240 consumed MZ119 frames; current MZ129 and candidate remain
+153 TP / 50 FP / 2 FN. Of 360 image pairs, 152 lack enough independent zones,
+192 lack depth spread, and only one admits a single-lag fit; no frame admits
+both lags. All 14 events/timings and 1,903 returned native corridor samples are
+retained. Dense image matches do not establish metric scale. Close this fixed
+recipe without tuning; retain MZ129 and UNKNOWN. Metadata remains pending303.
+[MZ159](nearfield/MZ159_RESULTS_20260916.md) keeps its reflection failure:
+MZ146 loses five prior true frames and one event; a suppressed warning has
+14 native corridor samples. MZ158 improves but HEAD FP 10 exceed baseline 7.
 [MZ158](nearfield/MZ158_RESULTS_20260916.md) retains fresh same-generator gain
-133/80/11to140/49/4 but failed HEAD FP7to16. Its original joint recipe stays closed.
-[MZ157](nearfield/MZ157_RESULTS_20260916.md) retains failed global depth mapping;
-[MZ156](nearfield/MZ156_RESULTS_20260916.md) retains its one-frame static-world
-component, and [MZ155](nearfield/MZ155_RESULTS_20260916.md) its original failure.
+133/80/11 to 140/49/4, with HEAD FP 7 to 16 failing the joint condition.
+[MZ157](nearfield/MZ157_RESULTS_20260916.md) retains failed global calibration;
+[MZ156](nearfield/MZ156_RESULTS_20260916.md) its one-frame static-world component,
+and [MZ155](nearfield/MZ155_RESULTS_20260916.md) its original failed gates.
 
 [MZ154 finer RGB sampling](nearfield/MZ154_RESULTS_20260916.md) separates
 direct256 guidance from enlarged128 at the same model scale32 and original8x8

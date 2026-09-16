@@ -1,16 +1,17 @@
 # Four-sensor simulation mainline
 
-[MZ159](MZ159_RESULTS_20260916.md) rejects fixed reflection augmentation and
-mean-score readout: dev24/3/0to24/2/0, but MZ146143/57/1to139/50/5 loses five
-prior true frames and one event; a suppressed warning has14 native corridor
-samples. MZ158 reaches
-143/47/1 with HEAD FP10 versus baseline7. Matched repeat control reproduces
-MZ145; the scoped gain is inconsistent. Cached test predictions were decoded
-but unused; no test raw/evaluator/RGB or new scoring. Keep MZ129; metadata pending303.
-[MZ158](MZ158_RESULTS_20260916.md) retains fresh aggregate benefit133/80/11to
-140/49/4 with HEAD FP7to16 joint failure. Both fixed recipes remain closed.
+[MZ160](MZ160_RESULTS_20260916.md) closes the fixed dense temporal disparity
+pilot: all 240 consumed frames produce zero added points and unchanged
+153 TP / 50 FP / 2 FN. Most pairs lack independent zones or depth spread;
+only one single-lag fit survives and no frame has both. All events/timings and
+returned native support remain intact. Zero points do not establish accuracy.
+Retain MZ129 and UNKNOWN; no matching/scale tuning, metadata pending303.
+[MZ159](MZ159_RESULTS_20260916.md) retains its cross-panel reflection failure,
+including one lost event and a suppressed warning with 14 corridor samples.
+[MZ158](MZ158_RESULTS_20260916.md) retains fresh aggregate benefit 133/80/11 to
+140/49/4 with HEAD FP 7 to 16 joint failure. Both fixed recipes stay closed.
 [MZ157](MZ157_RESULTS_20260916.md) retains failed global calibration;
-[MZ156](MZ156_RESULTS_20260916.md) its static-world one-frame gain, and
+[MZ156](MZ156_RESULTS_20260916.md) its static-world one-frame component, and
 [MZ155](MZ155_RESULTS_20260916.md) its original failed gates.
 
 [MZ154](MZ154_RESULTS_20260916.md) rejects finer RGB guidance as a sufficient
