@@ -1,15 +1,16 @@
 # Four-sensor simulation mainline
 
-[MZ160](MZ160_RESULTS_20260916.md) closes the fixed dense temporal disparity
-pilot: all 240 consumed frames produce zero added points and unchanged
-153 TP / 50 FP / 2 FN. Most pairs lack independent zones or depth spread;
-only one single-lag fit survives and no frame has both. All events/timings and
-returned native support remain intact. Zero points do not establish accuracy.
-Retain MZ129 and UNKNOWN; no matching/scale tuning, metadata pending303.
-[MZ159](MZ159_RESULTS_20260916.md) retains its cross-panel reflection failure,
-including one lost event and a suppressed warning with 14 corridor samples.
-[MZ158](MZ158_RESULTS_20260916.md) retains fresh aggregate benefit 133/80/11 to
-140/49/4 with HEAD FP 7 to 16 joint failure. Both fixed recipes stay closed.
+[MZ161](MZ161_RESULTS_20260916.md) closes dense local task supervision with
+FIT accuracy78.47% and HELD15/6/9 versus MZ12922/6/2. It loses eight old true
+frames, gains one, misses one event and delays two. Three FIT nonalerts contain
+34 native corridor samples. Local BODY maps improve over the all-alert matched
+frame-only control, but joint geometry/alert requirements fail. Retain MZ129;
+no threshold, epoch or pooling rescue, metadata pending303.
+[MZ160](MZ160_RESULTS_20260916.md) retains zero added geometry from dense
+parallax and unchanged153/50/2; independent zones/depth spread limit scale.
+[MZ159](MZ159_RESULTS_20260916.md) keeps its reflection cross-panel failure;
+[MZ158](MZ158_RESULTS_20260916.md) retains fresh aggregate133/80/11 to140/49/4
+with HEAD FP7 to16 joint failure. No default promotion follows these pilots.
 [MZ157](MZ157_RESULTS_20260916.md) retains failed global calibration;
 [MZ156](MZ156_RESULTS_20260916.md) its static-world one-frame component, and
 [MZ155](MZ155_RESULTS_20260916.md) its original failed gates.

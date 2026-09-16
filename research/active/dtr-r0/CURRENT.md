@@ -7,18 +7,20 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
-[MZ160 dense parallax](nearfield/MZ160_RESULTS_20260916.md) produces no added
-geometry on all 240 consumed MZ119 frames; current MZ129 and candidate remain
-153 TP / 50 FP / 2 FN. Of 360 image pairs, 152 lack enough independent zones,
-192 lack depth spread, and only one admits a single-lag fit; no frame admits
-both lags. All 14 events/timings and 1,903 returned native corridor samples are
-retained. Dense image matches do not establish metric scale. Close this fixed
-recipe without tuning; retain MZ129 and UNKNOWN. Metadata remains pending303.
-[MZ159](nearfield/MZ159_RESULTS_20260916.md) keeps its reflection failure:
-MZ146 loses five prior true frames and one event; a suppressed warning has
-14 native corridor samples. MZ158 improves but HEAD FP 10 exceed baseline 7.
-[MZ158](nearfield/MZ158_RESULTS_20260916.md) retains fresh same-generator gain
-133/80/11 to 140/49/4, with HEAD FP 7 to 16 failing the joint condition.
+[MZ161 dense task labels](nearfield/MZ161_RESULTS_20260916.md) do not yield
+better alerts: FIT accuracy is 78.47%; HELD48 changes MZ129 22/6/2 to 15/6/9.
+Eight old true frames are lost and one gained, with one missed event and
+HEAD/boundary delays of 1.0/0.5 s. Three FIT suppressed warnings contain
+34 native corridor samples despite retained raw tokens. Dense supervision
+learns some local BODY shape, but the matched frame-only control collapses to
+all-alert and the joint spatial/alert checks fail. Stop this fixed 20-epoch
+recipe; retain MZ129 and UNKNOWN. Metadata remains pending ledger303.
+[MZ160](nearfield/MZ160_RESULTS_20260916.md) retains its zero-point dense
+parallax failure: no double-lag metric scale; unchanged 153/50/2 on240 consumed
+frames. Neither dense representation establishes a full-system gain.
+[MZ159](nearfield/MZ159_RESULTS_20260916.md) keeps its reflection retention
+failure; [MZ158](nearfield/MZ158_RESULTS_20260916.md) retains fresh aggregate
+133/80/11 to 140/49/4 with HEAD FP 7 to16 failing its joint condition.
 [MZ157](nearfield/MZ157_RESULTS_20260916.md) retains failed global calibration;
 [MZ156](nearfield/MZ156_RESULTS_20260916.md) its one-frame static-world component,
 and [MZ155](nearfield/MZ155_RESULTS_20260916.md) its original failed gates.
