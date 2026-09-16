@@ -1,5 +1,15 @@
 # Four-sensor simulation mainline
 
+[MZ169](MZ169_RESULTS_20260916.md) finds a useful fixed equal-mean control:
+consumed dev24/1/0 and MZ158140/35/4 versus baseline133/80/11, preserving all
+oldTP/onsets, family FP noninferiority (HEAD7to7) and sampled native corridor
+support. Its learned stack140/28/4 instead loses three oldTP, delays two events
+by0.25s and suppresses21native samples; HEAD FP8. Stop the learned recipe.
+Retain only the predeclared mean with MZ146-derived fixed cutoffs as a consumed
+Development challenger for separate unchanged fresh confirmation. Original
+TRAIN192 experts stay frozen; no capture or App promotion. MZ129 remains;
+structured metadata pending303.
+
 [MZ168](MZ168_RESULTS_20260916.md) uses causal calibrated RGB homography yaw
 with explicit branch ambiguity rejection and IMU fallback.26/120noninitial
 frames accept; all-frame yawMAE improves6.22%, but exact-range oracle69/1/3 and

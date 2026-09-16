@@ -7,6 +7,17 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ169 expert combination](nearfield/MZ169_RESULTS_20260916.md) retains its
+predeclared equal-mean control as consumed Development: dev24/1/0 and MZ158
+140/35/4 versus MZ129133/80/11, with all old true frames/event onsets, all-family
+FP noninferiority (HEAD7to7) and sampled native corridor support retained.
+The learned stack140/28/4 fails: three oldTP lost, two0.25s delays,21native
+corridor samples suppressed and HEAD FP8. Close that fixed learned arm without
+tuning. Mean cutoffs use separate MZ146 meta-training; four original TRAIN192
+experts stay frozen. Retain only the mean as a Development challenger eligible
+for unchanged fresh confirmation; no new capture or App/default promotion.
+MZ129 remains retained; structured metadata pending303.
+
 [MZ168 causal visual yaw](nearfield/MZ168_RESULTS_20260916.md) accepts26/120
 noninitial RGB estimates and lowers all-frame yawMAE.15004to.14070deg, but
 exact-range FIT144 remains69/1/3 with identical flags and0.50s boundary delay.
