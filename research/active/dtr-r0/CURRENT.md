@@ -7,6 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ171 direct return supervision](nearfield/MZ171_RESULTS_20260916.md) changes
+matched HELD control24/7/0 to witness24/8/0 versus MZ12922/6/2. Both arms still
+classify all382 FIT and168 HELD positive ToF slots negative; every final alert
+is pixel-only. Witness FIT96.53% passes, but six boundaryFP remain and HEAD FP
+increases1to2. All old HELD true frames/onsets and sampled native support survive.
+No declared branch-learning or alert gain; close the exact loss/head/schedule/
+zero-cutoff recipe without tuning or new capture. Keep MZ129. Registration
+is pending the existing ledger303 error; inheritance is consequently pending.
+
 [MZ170 unchanged mean fresh confirmation](nearfield/MZ170_RESULTS_20260916.md)
 reduces MZ129136/74/8 to140/36/4 on288 new same-generator frames, but loses four
 old true frames with54native corridor samples, delays two events0.50s/0.25s,

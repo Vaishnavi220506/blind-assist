@@ -1,5 +1,14 @@
 # Four-sensor simulation mainline
 
+[MZ171](MZ171_RESULTS_20260916.md) directly supervises returned ToF witnesses,
+but HELD control24/7/0 becomes24/8/0 versus MZ12922/6/2. FIT accuracy96.53%
+passes; all old HELD true frames/onsets and sampled native support remain.
+The return branch predicts zero positive slots in both arms (FIT382/HELD168
+known positives), so every alert is still pixel-only and the branch-learning
+criterion fails. Six boundaryFP remain, HEAD FP1to2. Close the exact recipe as
+NEGATIVE_CONTROL without loss/epoch/cutoff/OR/source rescue. No App promotion;
+MZ129 and fixed hardware remain. Metadata is pending the existing ledger303.
+
 [MZ170](MZ170_RESULTS_20260916.md) confirms aggregate mean gains on288 fresh
 same-generator frames: MZ129136/74/8 to140/36/4, FP-51.35%. It still fails six
 of13 joint checks: four oldTP lost with54native corridor samples, two event
