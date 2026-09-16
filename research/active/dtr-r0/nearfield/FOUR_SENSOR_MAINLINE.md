@@ -1,5 +1,13 @@
 # Four-sensor simulation mainline
 
+[MZ167](MZ167_RESULTS_20260916.md) stops a fixed range grid before learning:
+native FIT14472/0/0 becomes69/1/3 with accurate range/public pose and69/5/3 after
+6.25cm quantization. All errors are shallow boundary; three lost true frames
+contain35native corridor contributors and one event gains0.50s delay. Source
+audit confirms noisy simulated yaw and exact public accumulation. Both grid
+readouts coincide. Retain the oracle pose/grid diagnosis, not an alert gain;
+no model was trained. Keep MZ129, no tuning or promotion; metadata pending303.
+
 [MZ166](MZ166_RESULTS_20260916.md) tests matched dense seven-query supervision:
 FIT changed-query decisions6/42to24/42, entirely rod frame gains, but central
 HELD24/8/0to24/12/0 versus central-only training and baseline22/6/2. FIT63.89%
