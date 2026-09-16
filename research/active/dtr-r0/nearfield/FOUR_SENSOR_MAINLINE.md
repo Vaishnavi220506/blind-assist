@@ -1,16 +1,19 @@
 # Four-sensor simulation mainline
 
-[MZ161](MZ161_RESULTS_20260916.md) closes dense local task supervision with
-FIT accuracy78.47% and HELD15/6/9 versus MZ12922/6/2. It loses eight old true
-frames, gains one, misses one event and delays two. Three FIT nonalerts contain
-34 native corridor samples. Local BODY maps improve over the all-alert matched
-frame-only control, but joint geometry/alert requirements fail. Retain MZ129;
-no threshold, epoch or pooling rescue, metadata pending303.
-[MZ160](MZ160_RESULTS_20260916.md) retains zero added geometry from dense
-parallax and unchanged153/50/2; independent zones/depth spread limit scale.
-[MZ159](MZ159_RESULTS_20260916.md) keeps its reflection cross-panel failure;
-[MZ158](MZ158_RESULTS_20260916.md) retains fresh aggregate133/80/11 to140/49/4
-with HEAD FP7 to16 joint failure. No default promotion follows these pilots.
+[MZ162](MZ162_RESULTS_20260916.md) stops returned-face-only completion before
+training: perfect visible linked-face geometry covers rod46/152 target-risk
+half-columns (30.26%), with23/48frames lacking resolved target correspondence.
+BODY90.15%, HEAD79.71% and boundary61.71% do not remove that gap. Correspondence
+has54 informative dual-return pairs, but needs a separate unanchored-surface
+mechanism for full-family coverage. No real model or alert run; keep MZ129.
+The admission rule was written during the scan, not in its pre-parse freeze;
+evidence is consumed EXPLORE. Metadata remains pending303.
+[MZ161](MZ161_RESULTS_20260916.md) retains FIT78.47%, HELD15/6/9 versus22/6/2,
+lost event/timing and34 native corridor samples in FIT nonalerts.
+[MZ160](MZ160_RESULTS_20260916.md) retains zero added dense-parallax geometry;
+[MZ159](MZ159_RESULTS_20260916.md) its reflection failure;
+[MZ158](MZ158_RESULTS_20260916.md) its fresh133/80/11 to140/49/4 partial gain,
+with HEAD FP7 to16. No default promotion follows these pilots.
 [MZ157](MZ157_RESULTS_20260916.md) retains failed global calibration;
 [MZ156](MZ156_RESULTS_20260916.md) its static-world one-frame component, and
 [MZ155](MZ155_RESULTS_20260916.md) its original failed gates.

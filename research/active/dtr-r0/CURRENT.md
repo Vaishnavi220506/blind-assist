@@ -7,20 +7,21 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
-[MZ161 dense task labels](nearfield/MZ161_RESULTS_20260916.md) do not yield
-better alerts: FIT accuracy is 78.47%; HELD48 changes MZ129 22/6/2 to 15/6/9.
-Eight old true frames are lost and one gained, with one missed event and
-HEAD/boundary delays of 1.0/0.5 s. Three FIT suppressed warnings contain
-34 native corridor samples despite retained raw tokens. Dense supervision
-learns some local BODY shape, but the matched frame-only control collapses to
-all-alert and the joint spatial/alert checks fail. Stop this fixed 20-epoch
-recipe; retain MZ129 and UNKNOWN. Metadata remains pending ledger303.
-[MZ160](nearfield/MZ160_RESULTS_20260916.md) retains its zero-point dense
-parallax failure: no double-lag metric scale; unchanged 153/50/2 on240 consumed
-frames. Neither dense representation establishes a full-system gain.
-[MZ159](nearfield/MZ159_RESULTS_20260916.md) keeps its reflection retention
-failure; [MZ158](nearfield/MZ158_RESULTS_20260916.md) retains fresh aggregate
-133/80/11 to 140/49/4 with HEAD FP 7 to16 failing its joint condition.
+[MZ162 returned-face correspondence](nearfield/MZ162_RESULTS_20260916.md)
+stops before real training: even complete analytic visible faces linked to
+returned ToF samples cover only46/152 rod target-risk half-columns (30.26%).
+Twenty-three of48 rod frames lack resolved visible target correspondence.
+There are54 informative same-zone dual-return pairs, but anchored-face extent
+cannot fill unanchored surfaces. Retain MZ129; no alert change, no hardware
+ceiling claim. The50% rule was written during the scan before aggregate output;
+this is consumed EXPLORE evidence, not pre-parse confirmation. Metadata pending303.
+[MZ161](nearfield/MZ161_RESULTS_20260916.md) retains its dense-task failure:
+FIT78.47%, HELD22/6/2 to15/6/9, eight old true frames lost, one gained,
+one missed event and two delays;34 FIT native corridor samples in nonalerts.
+[MZ160](nearfield/MZ160_RESULTS_20260916.md) retains zero added dense-parallax
+geometry and unchanged153/50/2. [MZ159](nearfield/MZ159_RESULTS_20260916.md)
+retains its reflection failure; [MZ158](nearfield/MZ158_RESULTS_20260916.md)
+retains fresh133/80/11 to140/49/4, with HEAD FP7 to16 failing its joint check.
 [MZ157](nearfield/MZ157_RESULTS_20260916.md) retains failed global calibration;
 [MZ156](nearfield/MZ156_RESULTS_20260916.md) its one-frame static-world component,
 and [MZ155](nearfield/MZ155_RESULTS_20260916.md) its original failed gates.
