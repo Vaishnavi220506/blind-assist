@@ -7,6 +7,16 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ164 camera-aware metric prior](nearfield/MZ164_RESULTS_20260916.md) alerts on
+all192 consumed TRAIN frames: MZ12991/46/5 becomes96/96/0, adding50 false frames
+for five recovered true frames. Known-camera rod columns75/423 trail the
+estimated-camera control141/423. With no returned target evidence,31/166 rod
+columns agree, but74.09% of ring pixels are too near; one gained true frame has
+1910 correct target pixels and29419 known false corridor pixels. This is limited
+metric agreement without useful object/background or alert discrimination.
+Keep MZ129 and the distinct MZ158 partial gain. The fixed metric-prior OR is a
+negative control, with no model/threshold/resolution rescue; metadata pending303.
+
 [MZ163 integration robustness](nearfield/MZ163_RESULTS_20260916.md) finds the
 MZ155 rod scan VALID episode gain4to6 becomes4to4 under12x12 normalized integration
 within the same8x8 zones; prefix24to34 becomes24to24, also without packet loss.

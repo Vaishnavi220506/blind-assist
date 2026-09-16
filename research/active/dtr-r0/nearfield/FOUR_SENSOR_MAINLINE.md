@@ -1,5 +1,14 @@
 # Four-sensor simulation mainline
 
+[MZ164](MZ164_RESULTS_20260916.md) completes frozen UniDepthV2 metric inference
+with known versus estimated camera on consumed TRAIN192. Known-camera OR alerts
+on every frame:91/46/5 to96/96/0, five gained true frames and50 added false frames.
+No-return rod columns31/166 agree, but ring too-near74.09%; the sole newly true
+frame with1910 correct connected target pixels also has29419 false corridor
+pixels. Near-flat depth fields do not establish object/background separation.
+Keep MZ129 and MZ158's scoped gain; stop this fixed readout without rescue.
+No original dev/test or App change; metadata remains pending303.
+
 [MZ163](MZ163_RESULTS_20260916.md) tests the exact MZ155 scan with denser
 normalized integration inside the unchanged8x8 zones. Rod valid-ever episodes
 passive4/6 to scan6/6 become4/6 to4/6, also with all packets available; the old
