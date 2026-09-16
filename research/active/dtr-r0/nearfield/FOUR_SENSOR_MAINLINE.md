@@ -1,5 +1,12 @@
 # Four-sensor simulation mainline
 
+[MZ168](MZ168_RESULTS_20260916.md) uses causal calibrated RGB homography yaw
+with explicit branch ambiguity rejection and IMU fallback.26/120noninitial
+frames accept; all-frame yawMAE improves6.22%, but exact-range oracle69/1/3 and
+0.50s delay are unchanged. All four prior boundary error frames fall back;
+35native corridor contributors remain in nonalerts. Stop the fixed estimator;
+no threshold rescue or alert promotion. Keep MZ129; metadata pending303.
+
 [MZ167](MZ167_RESULTS_20260916.md) stops a fixed range grid before learning:
 native FIT14472/0/0 becomes69/1/3 with accurate range/public pose and69/5/3 after
 6.25cm quantization. All errors are shallow boundary; three lost true frames

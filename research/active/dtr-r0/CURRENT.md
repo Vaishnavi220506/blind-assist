@@ -7,6 +7,14 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ168 causal visual yaw](nearfield/MZ168_RESULTS_20260916.md) accepts26/120
+noninitial RGB estimates and lowers all-frame yawMAE.15004to.14070deg, but
+exact-range FIT144 remains69/1/3 with identical flags and0.50s boundary delay.
+Only2/30boundary opportunities accept; all four original error frames fall back
+under fixed inlier/ambiguity rules. BODY spatial precision/recall slightly worsen.
+Keep the conditional pose effect, stop this exact estimator without tuning;
+no alert or learned-range promotion. MZ129 remains retained; metadata pending303.
+
 [MZ167 first-hit range feasibility](nearfield/MZ167_RESULTS_20260916.md) finds
 an oracle public-pose floor before learning: native FIT144 72/0/0 becomes
 69/1/3 with exact range and public pose, then 69/5/3 with the fixed6.25cm grid.
