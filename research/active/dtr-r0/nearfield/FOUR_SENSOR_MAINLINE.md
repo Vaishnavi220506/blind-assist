@@ -1,5 +1,15 @@
 # Four-sensor simulation mainline
 
+[MZ175](MZ175_RESULTS_20260916.md) retains conditional Radar task consensus as
+a consumed recall component: TRAIN19291/46/5to92/46/4 and unchanged transfer on
+MZ146288130/86/14to131/86/13. ALL eligible visible plane proxies agree without
+selecting a unique identity; ANY adds nuisance on both cohorts. Complete MZ129
+warnings and native-ToF support survive; a HEAD onset improves0.25s. Baseline
+FP is unchanged. Null/unseen/ghost explanations remain unresolved, and Radar
+native lineage is NOT_EVALUABLE. Retain only this scoped component for separate
+unchanged prospective confirmation; MZ129 research baseline/App stay unchanged.
+Metadata remains pending303. The broad improvement goal is not achieved.
+
 [MZ174](MZ174_RESULTS_20260916.md) tests explicit cross-return sender/edge
 correspondence on FIT144 with three whole-scene folds. Natural known-slot
 TP/FP/FN is 309/123/73 versus shuffled 310/144/72; balanced accuracy improves

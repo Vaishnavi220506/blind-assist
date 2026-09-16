@@ -7,15 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
-[MZ174 return-graph correspondence](nearfield/MZ174_RESULTS_20260916.md) stops at
-the FIT144 whole-scene out-of-fold check: actual versus permuted sender content
-gives known-slot balanced accuracy 86.30% versus 85.72%, below the required 5pp
-gain. Scene0 loses recall and scene2 loses specificity. These are slot counts,
-not improved final warnings; conditional full-fit/HELD was not entered. Close
-the exact recipe without tuning or capture; keep MZ129/default. The preceding
-[MZ173 causal geometry](nearfield/MZ173_RESULTS_20260916.md) remains closed for
-its 27 lost old true frames and seven suppressed native-supported warnings.
-MZ174 independent audit passes; structured metadata remains pending ledger303.
+[MZ175 conditional Radar consensus](nearfield/MZ175_RESULTS_20260916.md) retains
+a small consumed recall component: TRAIN192 91/46/5 becomes92/46/4 and MZ146288
+130/86/14 becomes131/86/13. All old warnings survive; one HEAD onset is0.25s
+earlier. Multiple visible identities can agree on a task proxy without unique
+association. This does not resolve null/ghost hypotheses or lower baseline FP.
+Keep the fixed component for unchanged prospective confirmation; MZ129 remains
+the research baseline and App defaults stay unchanged. [MZ174](nearfield/MZ174_RESULTS_20260916.md)
+and [MZ173](nearfield/MZ173_RESULTS_20260916.md) stay closed. Two consumed cohorts
+do not establish a broad breakthrough; structured metadata remains pending303.
 
 [MZ172 spatial return context](nearfield/MZ172_RESULTS_20260916.md) changes
 HELD pooled24/5/0 to registered24/7/0 versus MZ12922/6/2. All old HELD true
