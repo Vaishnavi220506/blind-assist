@@ -1,5 +1,14 @@
 # Four-sensor simulation mainline
 
+[MZ172](MZ172_RESULTS_20260916.md) tests registered full-zone visual context
+against pooled context, retaining independent raw ToF/Radar. HELD24/5/0 becomes
+24/7/0; all old true frames/onsets survive. Both FIT arms nevertheless lose
+three native-supported frames with33 corridor samples and one whole boundary
+event. All550 known positive ToF slots remain negative; attention/parameter
+updates do not establish useful return association. Stop the exact recipe as
+NEGATIVE_CONTROL without tuning or source rescue. Keep MZ129/default; audit
+passes and structured metadata remains pending the existing ledger303.
+
 [MZ171](MZ171_RESULTS_20260916.md) directly supervises returned ToF witnesses,
 but HELD control24/7/0 becomes24/8/0 versus MZ12922/6/2. FIT accuracy96.53%
 passes; all old HELD true frames/onsets and sampled native support remain.

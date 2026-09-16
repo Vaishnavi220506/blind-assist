@@ -7,6 +7,15 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Latest corridor-alert exploration (2026-09-16)
 
+[MZ172 spatial return context](nearfield/MZ172_RESULTS_20260916.md) changes
+HELD pooled24/5/0 to registered24/7/0 versus MZ12922/6/2. All old HELD true
+frames/onsets survive, but both FIT arms miss three native-supported frames
+with33 corridor samples and a whole boundary event. Registered FIT95.83%
+does not overcome that loss. Raw/contextual slots remain allnegative despite
+parameter updates; no branch or joint warning gain. Close the exact contextual
+representation/head/schedule/readout without tuning or capture rescue. Keep
+MZ129; independent audit passes, structured metadata remains pending303.
+
 [MZ171 direct return supervision](nearfield/MZ171_RESULTS_20260916.md) changes
 matched HELD control24/7/0 to witness24/8/0 versus MZ12922/6/2. Both arms still
 classify all382 FIT and168 HELD positive ToF slots negative; every final alert
