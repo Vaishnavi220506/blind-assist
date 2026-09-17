@@ -1,6 +1,13 @@
 # Frozen depth corridor readout (E0/E1)
 
-Latest: [existing-data tolerance re-evaluation](TOLERANCE_RESULTS_20260917.md)
+[Surface-support oracle](SURFACE_ORACLE_RESULTS_20260917.md): on existing new288,
+replacing only A's per-return support endpoints with native full-face extents
+leaves clear95/27/13 unchanged. A barely uses this feature seam. Eight clear
+misses already have returned corridor points; five rod misses lack corresponding
+returns. Complete extent adds zero clear reachability beyond sampled points,
+and four boundary-only opportunities. No RSSF/CNH/model successor was started.
+
+[Existing-data tolerance re-evaluation](TOLERANCE_RESULTS_20260917.md)
 separates clear corridor decisions, strict boundary pressure and observed alert
 behaviour. At5cm,75%of each cohort remains: old A107/22/1,F1 90.30%; changed
 A=S195/27/13,F1 82.61%. All40remaining changed-domain errors are beyond10cm

@@ -10,6 +10,13 @@ are valid choices when their effect and cost justify them. Describe the actual
 contribution honestly, and pursue new mechanisms when they address a concrete gap.
 Natural-distribution and safety claims require their own evidence; a build or a narrow replay does not establish them.
 
+Forward-alert surface-oracle update,2026-09-17: [existing-return full-face audit](../research/active/dtr-r0/nearfield/corridor_fusion_v1/SURFACE_ORACLE_RESULTS_20260917.md)
+leaves frozen A clear95/27/13 unchanged. Eight misses already have sampled
+corridor support;five rod misses lack corresponding returns. Full extent adds
+zero clear-support opportunities. A barely uses its support-endpoint fields,
+so this rejects the fixed-entry replacement, not all spatial support learning.
+No new capture/training or automatic successor; retained per-frame diagnosis.
+
 Forward-alert task-definition update,2026-09-17: [existing-data re-evaluation](../research/active/dtr-r0/nearfield/corridor_fusion_v1/TOLERANCE_RESULTS_20260917.md)
 uses576stored frames, no training/inference.5cm lateral tolerance retains75%:
 old A107/22/1,F1 90.30%; changed A=S195/27/13,F1 82.61%. Boundary pressure

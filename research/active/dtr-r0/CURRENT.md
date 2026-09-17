@@ -5,6 +5,21 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Existing-return surface-support oracle (2026-09-17)
+
+The [new-domain oracle](nearfield/corridor_fusion_v1/SURFACE_ORACLE_RESULTS_20260917.md)
+preserves frozen A and replaces only per-slot support endpoints with native
+sampled/full-face geometry. Clear95/27/13, strict120/45/24 and every alert remain
+unchanged. This is not a global upper bound: A has only1of900splits on support
+endpoints. Of13clear misses,8already have returned corridor points(5HEAD3rod),
+3rod have no native ray hit and2rod have hits but no usable return. Full faces
+add no clear reachability beyond sampled points;4gains are boundary-only.
+Among27clear FP,17have no usable ToF returns; lack of support cannot veto
+independent evidence. Exact face-only readout84/0/24 would lose19A true frames.
+Do not commit to unsampled-extent completion as the main bottleneck from this
+cohort. No model/CNH/DA-V2/capture successor. Keep5cm clear+coverage, strict
+boundary and alert burden as separate reporting axes. Ledger303 remains pending.
+
 ## Existing-data task definition review (2026-09-17)
 
 The user redirects the next step to [stored-prediction tolerance analysis](nearfield/corridor_fusion_v1/TOLERANCE_RESULTS_20260917.md),

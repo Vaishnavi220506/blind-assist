@@ -35,6 +35,13 @@ by this navigation update. The existing frozen result remains unchanged.
 
 ## Forward obstacle awareness complementary to a cane
 
+2026-09-17 [surface-support oracle](../research/active/dtr-r0/nearfield/corridor_fusion_v1/SURFACE_ORACLE_RESULTS_20260917.md):
+fixed A support-field replacement yields no alert gain. Native audit finds
+8clear FN already have returned corridor points,5rod FN lack corresponding
+returns;complete extent adds0clear and4boundary opportunities. Preserve this
+scoped negative and A's separate input/readout limitation. No automatic RSSF,
+CNH,new model or capture. Existing-return absence is not clear-space evidence.
+
 2026-09-17 task-definition update: [stored native-geometry re-evaluation](../research/active/dtr-r0/nearfield/corridor_fusion_v1/TOLERANCE_RESULTS_20260917.md)
 keeps strict results and separates clear corridor decisions with coverage,
 boundary pressure and observed alert behaviour.5cm covers216/288frames per
