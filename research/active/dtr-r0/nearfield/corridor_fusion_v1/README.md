@@ -1,5 +1,12 @@
 # Frozen depth corridor readout (E0/E1)
 
+[Existing-evidence tri-state probe](TRISTATE_EVIDENCE_RESULTS_20260917.md):
+privileged positive OR gives clear 103/27/5, F1 86.55%; positive plus outside-only
+veto gives 102/17/6, F1 89.87%. All zero-return frames retain A. Veto loses one
+rod TP and delays its first alert by 0.75 s despite 50 usable background returns.
+Retain spatial-readout headroom; outside-only is not certified free space.
+This is an existing-data oracle diagnostic, not a public-input method result.
+
 [Surface-support oracle](SURFACE_ORACLE_RESULTS_20260917.md): on existing new288,
 replacing only A's per-return support endpoints with native full-face extents
 leaves clear95/27/13 unchanged. A barely uses this feature seam. Eight clear

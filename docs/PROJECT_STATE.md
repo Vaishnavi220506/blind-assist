@@ -10,6 +10,13 @@ are valid choices when their effect and cost justify them. Describe the actual
 contribution honestly, and pursue new mechanisms when they address a concrete gap.
 Natural-distribution and safety claims require their own evidence; a build or a narrow replay does not establish them.
 
+Forward-alert tri-state update, 2026-09-17: [existing-evidence readout](../research/active/dtr-r0/nearfield/corridor_fusion_v1/TRISTATE_EVIDENCE_RESULTS_20260917.md)
+gives privileged clear 103/27/5 for positive OR and 102/17/6 for joint veto,
+F1 86.55% / 89.87%, with zero-return fallback preserved. Joint veto loses one
+rod TP and delays that event by 0.75 s; outside returns do not prove clear space.
+This supports a public spatial-readout research candidate, not a deployed result.
+No training/capture; A and App defaults unchanged.
+
 Forward-alert surface-oracle update,2026-09-17: [existing-return full-face audit](../research/active/dtr-r0/nearfield/corridor_fusion_v1/SURFACE_ORACLE_RESULTS_20260917.md)
 leaves frozen A clear95/27/13 unchanged. Eight misses already have sampled
 corridor support;five rod misses lack corresponding returns. Full extent adds

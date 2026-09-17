@@ -35,6 +35,13 @@ by this navigation update. The existing frozen result remains unchanged.
 
 ## Forward obstacle awareness complementary to a cane
 
+2026-09-17 [tri-state existing-evidence probe](../research/active/dtr-r0/nearfield/corridor_fusion_v1/TRISTATE_EVIDENCE_RESULTS_20260917.md):
+retain privileged positive-readout headroom (clear 103/27/5) and the measured
+joint tradeoff (102/17/6, F1 89.87%). All UNKNOWN frames retain A; outside-only
+veto still loses one rod TP with 0.75 s later first alert. Prioritize the evidence
+readout question over unsampled extent, while keeping negative coverage authority
+unproven. No public-input method promotion or automatic training/capture.
+
 2026-09-17 [surface-support oracle](../research/active/dtr-r0/nearfield/corridor_fusion_v1/SURFACE_ORACLE_RESULTS_20260917.md):
 fixed A support-field replacement yields no alert gain. Native audit finds
 8clear FN already have returned corridor points,5rod FN lack corresponding

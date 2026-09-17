@@ -5,6 +5,19 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Existing-evidence tri-state readout (2026-09-17)
+
+The user-authorized [existing-data probe](nearfield/corridor_fusion_v1/TRISTATE_EVIDENCE_RESULTS_20260917.md)
+finds privileged positive OR clear 103/27/5 (F1 86.55%) and joint positive plus
+outside-only veto 102/17/6 (89.87%), versus A 95/27/13. All 72 zero-return
+frames remain UNKNOWN and retain A. Joint readout recovers 8 FN, removes 10 FP,
+but veto loses one rod TP and delays its first alert by 0.75 s despite 50 usable
+background returns. Core events stay 18/18. Full-face strict joint 137/31/7,
+30/30 events; sampled/full clear outputs are identical. Retain an evaluator-only
+spatial-readout opportunity and positive OR comparator; outside-only returns do
+not certify corridor coverage/free space. No public-input result, training,
+capture or App promotion. Registration/inheritance receipts remain pending.
+
 ## Existing-return surface-support oracle (2026-09-17)
 
 The [new-domain oracle](nearfield/corridor_fusion_v1/SURFACE_ORACLE_RESULTS_20260917.md)
