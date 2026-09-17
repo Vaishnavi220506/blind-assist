@@ -5,6 +5,17 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Depth-prior E0/E1 exploration (2026-09-17)
+
+[E1 frozen relative-depth statistics](nearfield/corridor_fusion_v1/E1_RESULTS_20260917.md)
+does not improve the matched HGB: consumed MZ170288 changes137/28/7 to135/32/9,
+F1 88.67%to86.82%, PR-AUC .9615to.9266, complete p50 78.2to303.8ms.
+The retrained A scores exactly reproduce original MZ145 static scores; its
+working-point gain is a threshold/readout tradeoff, not new representation.
+E0 reproduces all frozen expert scores/flags. Stop this E1 statistics integration;
+no E2, fresh capture, or App promotion. Keep MZ129/default and prior references.
+Intended NEGATIVE_CONTROL registration/inheritance remains pending ledger303.
+
 ## Latest corridor-alert exploration (2026-09-16)
 
 [MZ175 conditional Radar consensus](nearfield/MZ175_RESULTS_20260916.md) retains
