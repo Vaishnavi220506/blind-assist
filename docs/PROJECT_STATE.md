@@ -10,6 +10,14 @@ are valid choices when their effect and cost justify them. Describe the actual
 contribution honestly, and pursue new mechanisms when they address a concrete gap.
 Natural-distribution and safety claims require their own evidence; a build or a narrow replay does not establish them.
 
+Forward-alert public-evidence v2, 2026-09-17: [pooled calibration result](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_V2_RESULTS_20260917.md)
+reuses1,344 existing frames. The unchanged public1537-parameter BCE head recovers
+8 changed clear misses with no new FP across1,152 reported frames:103/27/5,
+F186.55%. Old/MZ146/MZ158 remain A-identical; changed strict128/45/16,
+boundary unchanged. Peak loss adds1 old TP and3 boundary FP. Retain BCE plus
+pooled calibration as a Development challenger; no single deployment model,
+fresh confirmation or App change. Both arms independently audited.
+
 Forward-alert public-evidence update, 2026-09-17: [trained public return readout](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_RESULTS_20260917.md)
 uses 1,537 parameters and only public ToF geometry, with grouped existing data.
 Selected OR stays identical to A. Posthoc logit0 recovers 8 changed clear misses

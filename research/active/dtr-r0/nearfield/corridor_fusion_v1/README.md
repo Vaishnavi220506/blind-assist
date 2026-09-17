@@ -1,5 +1,12 @@
 # Frozen depth corridor readout (E0/E1)
 
+[Public positive development v2](PUBLIC_POSITIVE_V2_RESULTS_20260917.md): reuse
+1,344 existing frames; pooled inner scene-held-out calibration turns the unchanged
+1,537-parameter BCE head into changed clear103/27/5 (F186.55%) without any
+additional FP across four reporting cohorts. Old/MZ146/MZ158 remain A-identical.
+The matched peak-loss arm adds one old TP but three boundary FP. Retain BCE plus
+pooled calibration as a Development challenger; no App or fresh-confirmation claim.
+
 [Public positive evidence head](PUBLIC_POSITIVE_RESULTS_20260917.md): implemented
 1,537-parameter public-ToF MLP and six whole-scene fit/calibration/report folds.
 Selected OR leaves A unchanged on both 288-frame cohorts. A single posthoc

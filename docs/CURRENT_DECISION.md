@@ -35,6 +35,13 @@ by this navigation update. The existing frozen result remains unchanged.
 
 ## Forward obstacle awareness complementary to a cane
 
+2026-09-17 [public positive v2](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_V2_RESULTS_20260917.md):
+prefer ordinary return BCE plus pooled scene-OOF calibration as this round's
+Development challenger: changed clear103/27/5, no added FP across four cohorts,
+all A alerts/onsets retained. The matched peak loss adds1 old TP at3 boundary FP.
+Keep both controls and earlier null result; the repair opportunities remain only
+three scene groups, with no fresh or final deployment claim. Ledger303 pending.
+
 2026-09-17 [public positive readout](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_RESULTS_20260917.md):
 the trained public-only MLP demonstrates return discrimination, but grouped
 calibration yields no added final alert. Preserve that primary null result.

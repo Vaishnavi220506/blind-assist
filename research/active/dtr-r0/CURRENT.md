@@ -5,6 +5,19 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Public positive pooled calibration (2026-09-17)
+
+[Continued Development](nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_V2_RESULTS_20260917.md)
+reuses anchor192 and four complete consumed288 cohorts, with nested scene-OOF
+calibration and final refit. Unchanged public1537-parameter BCE head gives changed
+clear103/27/5 (F186.55%), rescuing5HEAD+3rod with no added FP across1,152 report
+frames. Old/MZ146/MZ158 alerts remain A; changed strict128/45/16, boundary25/18/11.
+Core18/18 retained; changed strict remains29/30. Two observed onsets improve;
+no A alert delayed. Matched peak loss gives1 more old TP but3 boundary FP.
+Retain BCE plus pooled calibration as the simpler Development challenger.
+All48 checkpoints and2,304 public replay scores audited; no App/fresh claim,
+capture or single all-data model. Structured registration still pending ledger303.
+
 ## Public positive evidence implementation (2026-09-17)
 
 The [public return head](nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_RESULTS_20260917.md)
