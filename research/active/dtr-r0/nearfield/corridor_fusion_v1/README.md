@@ -1,5 +1,11 @@
 # Frozen depth corridor readout (E0/E1)
 
+[Saved-score FP-budget diagnosis](RESIDUAL_BUDGET_DIAGNOSIS_20260918.md): at
+Clear FP<=3/5, maximum TP is raw99/99, A*98/99, B088/91, B197/98, B293/95.
+Residual event gains coexist with lost events and delayed rod alerts; full
+maximum-TP plateaus are retained. No low-FP joint advantage to rescue through
+threshold transfer. Keep the fixed recipe closed; no training or threshold change.
+
 [Texture counterfactual training](BG_INVARIANCE_RESULTS_20260918.md): authenticated
 background pairs reduce B2 held score drift versus B1 but do not improve alerts.
 Old clear B2104/22/4 loses the low-FP tradeoff versus raw99/5/9; held B1/B2 alerts

@@ -5,6 +5,17 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Saved-score residual budget diagnosis (2026-09-18)
+
+The [posthoc budget diagnostic](nearfield/corridor_fusion_v1/RESIDUAL_BUDGET_DIAGNOSIS_20260918.md)
+finds maximum Clear TP at FP<=3/5: raw99/99, A*98/99, B088/91, B197/98,
+B293/95. All selected points retain18/18 core events and76/76 native Clear TP,
+but residuals delay one rod onset0.25s and exchange strict events. Full plateaus
+and event identities are retained. No demonstrated joint low-FP gain supports
+threshold-transfer rescue; keep raw/A* and the fixed residual recipe closed.
+Saved scores only, ten-point independent count/onset audit passes; no training,
+new data or formal-threshold edits. Existing metadata errors remain pending.
+
 ## Texture counterfactual training pilot (2026-09-18)
 
 The [fixed B0/B1/B2 comparison](nearfield/corridor_fusion_v1/BG_INVARIANCE_RESULTS_20260918.md)
