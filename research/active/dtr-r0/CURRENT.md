@@ -7,6 +7,13 @@ Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
 ## Depth-prior E0/E1 exploration (2026-09-17)
 
+The authorized [single intermediate-feature diagnostic](nearfield/corridor_fusion_v1/INTERMEDIATE_RESULTS_20260917.md)
+also has no overall gain: positioned DA-V2 tokens/TRAIN-only PCA change A137/28/7
+to103/3/41, F1 82.40%, recall71.53%, and miss9/30events. Rod36/0/0 is a scoped
+consumed gain; HEAD and boundary collapse prevent a system gain. Pause these
+two online DA-V2 feature adapters, preserve original references, and do not start
+E2. Complete local p50 is155.2ms versus matched A81.6ms; no App change.
+
 [E1 frozen relative-depth statistics](nearfield/corridor_fusion_v1/E1_RESULTS_20260917.md)
 does not improve the matched HGB: consumed MZ170288 changes137/28/7 to135/32/9,
 F1 88.67%to86.82%, PR-AUC .9615to.9266, complete p50 78.2to303.8ms.

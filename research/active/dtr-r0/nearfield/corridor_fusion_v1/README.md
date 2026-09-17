@@ -4,6 +4,12 @@ This is the first bounded experiment requested in the 2026-09-17 obstacle
 masterplan. It does not implement E2–E6 or alter the Android/default alert path.
 See [protocol](E1_PROTOCOL_20260917.md) for cohorts and symmetric selection.
 
+Completed [E1 results](E1_RESULTS_20260917.md) and the subsequently authorized
+[intermediate diagnostic](INTERMEDIATE_RESULTS_20260917.md) show no overall
+increment. The latter uses `run_intermediate.py --output <artifact-directory>`;
+its [protocol](INTERMEDIATE_PROTOCOL_20260917.md) fixes one token/PCA adapter.
+`audit_intermediate.py <artifact-directory>` verifies saved outputs without fits.
+
 The only learned task head is scikit-learn HGB. A receives the inherited 2485
 public sensor/geometry features; B also receives 924 local relative-depth
 statistics. ToF dual slots and Radar remain in both inputs. DA-V2's output is
