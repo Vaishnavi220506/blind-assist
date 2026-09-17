@@ -1,5 +1,12 @@
 # Frozen depth corridor readout (E0/E1)
 
+[Public positive evidence head](PUBLIC_POSITIVE_RESULTS_20260917.md): implemented
+1,537-parameter public-ToF MLP and six whole-scene fit/calibration/report folds.
+Selected OR leaves A unchanged on both 288-frame cohorts. A single posthoc
+logit0 diagnostic gives changed clear 103/33/5 (84.43%), recovering 8 FN but
+adding 6 FP, with substantial boundary FP growth. Preserve the learned signal
+and the calibration failure separately; no public final-method promotion.
+
 [Existing-evidence tri-state probe](TRISTATE_EVIDENCE_RESULTS_20260917.md):
 privileged positive OR gives clear 103/27/5, F1 86.55%; positive plus outside-only
 veto gives 102/17/6, F1 89.87%. All zero-return frames retain A. Veto loses one

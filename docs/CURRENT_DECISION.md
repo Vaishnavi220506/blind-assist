@@ -35,6 +35,13 @@ by this navigation update. The existing frozen result remains unchanged.
 
 ## Forward obstacle awareness complementary to a cane
 
+2026-09-17 [public positive readout](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_RESULTS_20260917.md):
+the trained public-only MLP demonstrates return discrimination, but grouped
+calibration yields no added final alert. Preserve that primary null result.
+Posthoc fixed logit0 gives changed clear 103/33/5 with 8 rescued FN and 6 added
+FP, plus boundary degradation. Retain the reusable component/diagnostic evidence;
+calibration and false activation remain open, without automatic successor work.
+
 2026-09-17 [tri-state existing-evidence probe](../research/active/dtr-r0/nearfield/corridor_fusion_v1/TRISTATE_EVIDENCE_RESULTS_20260917.md):
 retain privileged positive-readout headroom (clear 103/27/5) and the measured
 joint tradeoff (102/17/6, F1 89.87%). All UNKNOWN frames retain A; outside-only

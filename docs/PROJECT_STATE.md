@@ -10,6 +10,13 @@ are valid choices when their effect and cost justify them. Describe the actual
 contribution honestly, and pursue new mechanisms when they address a concrete gap.
 Natural-distribution and safety claims require their own evidence; a build or a narrow replay does not establish them.
 
+Forward-alert public-evidence update, 2026-09-17: [trained public return readout](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_RESULTS_20260917.md)
+uses 1,537 parameters and only public ToF geometry, with grouped existing data.
+Selected OR stays identical to A. Posthoc logit0 recovers 8 changed clear misses
+but adds 6 FP (103/33/5, F1 84.43%); boundary false alerts grow substantially.
+Retain the implemented component and diagnose calibration separately from learned
+signal. No fresh claim, final-method promotion, capture or default-App change.
+
 Forward-alert tri-state update, 2026-09-17: [existing-evidence readout](../research/active/dtr-r0/nearfield/corridor_fusion_v1/TRISTATE_EVIDENCE_RESULTS_20260917.md)
 gives privileged clear 103/27/5 for positive OR and 102/17/6 for joint veto,
 F1 86.55% / 89.87%, with zero-return fallback preserved. Joint veto loses one

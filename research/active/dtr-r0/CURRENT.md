@@ -5,6 +5,21 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Public positive evidence implementation (2026-09-17)
+
+The [public return head](nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_RESULTS_20260917.md)
+implements a 1,537-parameter shared ToF MLP, native return-level supervision and
+positive-only OR with frozen A. Six whole-scene outer folds use disjoint fit,
+calibration and report groups; existing sources only, original test excluded.
+Selected working points leave old clear 107/22/1 and changed 95/27/13 unchanged.
+A single posthoc fixed logit0 diagnostic gives changed 103/33/5 (F1 84.43%),
+recovering all 8 sampled-support misses with 6 new rod FP; old clear 108/23/0.
+Boundary FP grow to old 23 and changed 33 (from 6 and 18). Keep the public
+component and diagnostic signal, not a selected final-alert gain. Calibration
+opportunity imbalance and false positive return maxima remain unresolved.
+No new data/RGB/depth execution, veto or App change. Public replay and independent
+group/weight/threshold audits pass. No automatic successor; ledger303 pending.
+
 ## Existing-evidence tri-state readout (2026-09-17)
 
 The user-authorized [existing-data probe](nearfield/corridor_fusion_v1/TRISTATE_EVIDENCE_RESULTS_20260917.md)
