@@ -1,5 +1,11 @@
 # Frozen depth corridor readout (E0/E1)
 
+[Three-arm representation ablation](REPRESENTATION_RESULTS_20260918.md): matched
+1344-frame HGB retraining gives raw/single clear99/5/9 versus multi96/3/12.
+Multi-association superiority is not established; lower FP trades off recall
+and boundary events. Keep A* unchanged. All21 fits and exact baseline replay
+complete; consumed Development only, with native/event costs fully reported.
+
 [Minimal CCRL result](CCRL_RESULTS_20260918.md): the fixed ranking residual
 gives clear101/19/7,F188.60%, versus matched BCE101/10/7,F192.24% and
 A*96/3/12,F192.75%. Ranking does not retain low FP or all event timing;

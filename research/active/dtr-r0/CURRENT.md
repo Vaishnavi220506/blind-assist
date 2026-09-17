@@ -5,6 +5,20 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Three-arm representation ablation (2026-09-18)
+
+The [fixed same-data HGB ablation](nearfield/corridor_fusion_v1/REPRESENTATION_RESULTS_20260918.md)
+does not establish multi-association superiority. Raw2224 and single2485 both
+give clear99/5/9,F193.40%, versus multi/A*96/3/12,F192.75%. Core18/18 and
+onsets are unchanged; strict events25/26/24 hide2/1/0 lost baseline events.
+Raw loses5 and rescues5 native-supported boundary TP; single loses4/rescues1.
+All preserve76/76 clear-native TP. Equal-FP3 report diagnostics give raw99TP
+with23strict events, single96/24 and multi98/25: no joint dominance. Keep A*
+unchanged and the controls as diagnostic components; the main contribution is
+unproven. All21 fits,1632feature parity rows and independent score/count/onset
+audits complete. Consumed Development only; no capture, tuning or successor.
+Registration/inheritance remain pending existing ledger303/unknown-terminal errors.
+
 ## Minimal CCRL ranking result (2026-09-18)
 
 The [fixed consumed CCRL comparison](nearfield/corridor_fusion_v1/CCRL_RESULTS_20260918.md)
