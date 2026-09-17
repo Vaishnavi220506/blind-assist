@@ -1,5 +1,11 @@
 # Frozen depth corridor readout (E0/E1)
 
+[Texture counterfactual training](BG_INVARIANCE_RESULTS_20260918.md): authenticated
+background pairs reduce B2 held score drift versus B1 but do not improve alerts.
+Old clear B2104/22/4 loses the low-FP tradeoff versus raw99/5/9; held B1/B2 alerts
+are identical. Keep raw/A*, close the fixed recipe, retain source and drift evidence.
+One288-frame capture,30inner HGB/21residual fits complete; owned resources released.
+
 [Three-arm representation ablation](REPRESENTATION_RESULTS_20260918.md): matched
 1344-frame HGB retraining gives raw/single clear99/5/9 versus multi96/3/12.
 Multi-association superiority is not established; lower FP trades off recall

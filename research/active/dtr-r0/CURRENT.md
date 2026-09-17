@@ -5,6 +5,20 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Texture counterfactual training pilot (2026-09-18)
+
+The [fixed B0/B1/B2 comparison](nearfield/corridor_fusion_v1/BG_INVARIANCE_RESULTS_20260918.md)
+fails the low-FP target. Old clear raw99/5/9 becomes B0100/16/8,B1103/21/5,
+B2104/22/4. B2 retains raw clear TP but loses one strict event and increases
+clear false episodes4to9. One288-frame texture-only capture authenticates144
+sensor/label-preserving background pairs;192train/96held stay physical-group
+disjoint. Held B2 logit drift drops29.14% versus B1 but alerts remain identical:
+clear34/0/2,strict40/9/8; A*40/4/8 has fewer strict FP. Keep raw/A*, close this
+fixed recipe as NEGATIVE_CONTROL; drift is diagnostic, not causal disentanglement
+or alert promotion.30inner HGB/21residual fits and replay/count/event audit pass.
+Worker processes/task/port released;455MB owned DDC removed, raw retained.
+No tuning/capture successor. Registration/inheritance remain pending ledger303.
+
 ## Three-arm representation ablation (2026-09-18)
 
 The [fixed same-data HGB ablation](nearfield/corridor_fusion_v1/REPRESENTATION_RESULTS_20260918.md)
