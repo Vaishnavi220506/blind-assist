@@ -2,7 +2,9 @@
 
 Historical first-attempt report. The user subsequently directed completion and
 corrected the self-imposed cutoff; see [engineering recovery](CONFIRMATION_RECOVERY_20260917.md).
-The first attempt remains failed, while identical-source acquisition continues.
+The first attempt remains failed. Identical-source acquisition subsequently
+completed; the [complete scientific result](CONFIRMATION_FINAL_20260917.md)
+supersedes the outstanding-confirmation status below.
 
 **SOURCE_NOT_EVALUABLE_CAPTURE_TIMEOUT.** The single authorized capture stopped
 at its frozen1200-second limit with235/288 RGB frames. No complete public sensor

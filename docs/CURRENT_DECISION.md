@@ -40,10 +40,11 @@ with its disclosed recall/native-support tradeoff. The [conditional depth specia
 is a Development challenger:137/28/7to137/24/7 on consumed MZ170, unchanged30/30
 events/timing and3.47%actual invocation. No default-App change or fresh claim;
 the owning route records frozen identities, costs and next confirmation scope.
-The [one targeted confirmation attempt](../research/active/dtr-r0/nearfield/corridor_fusion_v1/CONFIRMATION_RESULTS_20260917.md)
-hit its1200s capture limit at235/288frames before sensor/evaluator finalization.
-Source is NOT_EVALUABLE; no new algorithm result. Preserve S1 Development
-status, with fresh confirmation outstanding; no automatic retry or CNH.
+The [completed targeted confirmation](../research/active/dtr-r0/nearfield/corridor_fusion_v1/CONFIRMATION_FINAL_20260917.md)
+finds no transferred benefit: A/S1 both120/45/24,29/30events;14C calls keep
+8TP and6FP. Preserve prior Development gain, close this frozen online DA-V2
+recipe without tuning, and keep A with disclosed transfer limits. The original
+engineering cutoff was corrected without changing models or scenes. No CNH run.
 
 Latest,2026-09-16: [MZ146](../research/active/dtr-r0/nearfield/MZ146_RESULTS_20260916.md)
 confirms fresh aggregate improvement from the unchanged MZ143/MZ145 pipeline:
