@@ -5,6 +5,25 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Single public version and frozen confirmation (2026-09-17)
+
+[One model and one threshold](nearfield/corridor_fusion_v1/PUBLIC_SINGLE_RESULTS_20260917.md)
+are implemented on all1344 existing frames, with pooled1152OOF calibration and
+an independent same-data retrained-A* control. Both recipes freeze before one
+new24-configuration288-frame capture. Clear A/OR97/25/11,F184.35%; all11 A
+misses lack returned corridor support. The source therefore does not test clear
+rescue transfer; no new clear FP, while boundary adds1TP/1FP. Preserve v2 gain
+and the runnable public component without claiming new clear benefit.
+
+A* clear96/3/12,F192.75%, removes22FP/rescues3FN/loses4TP. Core17/18to18/18,
+one rod onset delayed.5s; strict107/6/37 versus A111/37/33, events24/30 versus
+25/30. Retain this precision-oriented challenger with explicit costs, not an
+unconditional replacement. Full host algorithm mean A63.95/OR66.15ms; branch
+increment2.20ms. Capture authentication, independent geometry/accounting and
+exact public replay pass; owned worker processes/cache/port released. Bundle
+and public entry documented. No App promotion, retuning, combined A*+head or
+successor run. Registration/inheritance pending ledger303/unknown terminal.
+
 ## Public positive pooled calibration (2026-09-17)
 
 [Continued Development](nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_V2_RESULTS_20260917.md)

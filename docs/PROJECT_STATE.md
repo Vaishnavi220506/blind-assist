@@ -10,6 +10,15 @@ are valid choices when their effect and cost justify them. Describe the actual
 contribution honestly, and pursue new mechanisms when they address a concrete gap.
 Natural-distribution and safety claims require their own evidence; a build or a narrow replay does not establish them.
 
+Forward-alert single-version confirmation,2026-09-17: [frozen public model and same-data A*](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_SINGLE_RESULTS_20260917.md)
+are runnable with one model/threshold each. New clear A/OR both97/25/11; all11
+misses lack returned corridor support, so clear rescue transfer is untested.
+OR adds1 boundary TP and1FP. Same-data A* gives96/3/12,F192.75%, removes22 clear
+FP but loses4 A TP/rescues3; core17/18to18/18, one rod onset delayed.5s, strict
+events25/30to24/30. Retain head component and A* precision-oriented challenger
+with costs; no App promotion or retuning. Whole algorithm63.95/66.15ms A/OR.
+One288-frame capture complete, audited, resources released; ledger303 pending.
+
 Forward-alert public-evidence v2, 2026-09-17: [pooled calibration result](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_V2_RESULTS_20260917.md)
 reuses1,344 existing frames. The unchanged public1537-parameter BCE head recovers
 8 changed clear misses with no new FP across1,152 reported frames:103/27/5,

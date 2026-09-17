@@ -35,6 +35,15 @@ by this navigation update. The existing frozen result remains unchanged.
 
 ## Forward obstacle awareness complementary to a cane
 
+2026-09-17 [single-version frozen confirmation](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_SINGLE_RESULTS_20260917.md):
+new clear A/OR97/25/11, no supported clear A miss; retain the public component
+without claiming confirmed clear rescue. OR adds1 boundary TP/1FP. Same-data
+A*96/3/12,F192.75% is a useful precision challenger:22 fewer clear FP,3 rescued
+FN,4 lost TP; core18/18 but one rod delayed.5s and strict events24/30 versus25/30.
+Preserve v2 Development, frozen A reference and all costs. No automatic App
+replacement, A*+head combination or threshold repair; one capture completed.
+Runtime/bundle delivered, audits pass, resources released; registration pending.
+
 2026-09-17 [public positive v2](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_POSITIVE_V2_RESULTS_20260917.md):
 prefer ordinary return BCE plus pooled scene-OOF calibration as this round's
 Development challenger: changed clear103/27/5, no added FP across four cohorts,

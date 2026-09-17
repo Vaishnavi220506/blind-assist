@@ -1,5 +1,14 @@
 # Frozen depth corridor readout (E0/E1)
 
+[Single frozen version and new-configuration confirmation](PUBLIC_SINGLE_RESULTS_20260917.md):
+one1344-frame public head/threshold and a same-data retrained A* are runnable
+through the [public entry](SINGLE_VERSION_USAGE_20260917.md). New clear A/OR both
+97/25/11; none of11 A misses has returned corridor support, so clear rescue
+transfer is untested. The head adds1 boundary TP and1FP, +2.20ms mean algorithm
+cost. A* gives96/3/12,F192.75%, core18/18, but loses4 clear A TP, delays one rod
+onset.5s and strict events25/30to24/30. Retain the head component and A* as a
+precision-oriented challenger with costs; no App change or post-result tuning.
+
 [Public positive development v2](PUBLIC_POSITIVE_V2_RESULTS_20260917.md): reuse
 1,344 existing frames; pooled inner scene-held-out calibration turns the unchanged
 1,537-parameter BCE head into changed clear103/27/5 (F186.55%) without any
