@@ -18,6 +18,12 @@ Retain the fixed S1 as a consumed Development challenger for separately scoped
 unchanged confirmation; no report tuning, automatic capture or App promotion.
 A/C weights remain frozen. Registration/inheritance remain pending ledger303.
 
+The [targeted frozen confirmation](nearfield/corridor_fusion_v1/CONFIRMATION_RESULTS_20260917.md)
+is SOURCE_NOT_EVALUABLE: the one1200s capture timed out at235/288RGB frames,
+before raw/evaluator finalization. No new A/S1 scores exist; this neither
+confirms nor rejects S1. Preserve the Development challenger and unchanged
+models/design. All owned processes/port/task released; no recapture or CNH run.
+
 ## Depth-prior E0/E1 exploration (2026-09-17, historical global roles)
 
 The authorized [single intermediate-feature diagnostic](nearfield/corridor_fusion_v1/INTERMEDIATE_RESULTS_20260917.md)

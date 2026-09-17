@@ -17,6 +17,10 @@ supplies137/28/7,F1 88.67%,30/30events on consumed MZ170. The frozen
 [conditional depth specialist](../research/active/dtr-r0/nearfield/corridor_fusion_v1/SPECIALIST_RESULTS_20260917.md)
 removes4FP with no additional FN or event delay, invokes10/288frames and adds
 2.86msmean online cost. Retain as a Development challenger; App defaults unchanged.
+The [targeted frozen confirmation](../research/active/dtr-r0/nearfield/corridor_fusion_v1/CONFIRMATION_RESULTS_20260917.md)
+is incomplete: one capture timed out at235/288frames before complete sensor
+records. No fresh performance claim or S1 rejection follows; owned resources
+were released and the unchanged-method confirmation remains outstanding.
 
 Latest forward-alert result,2026-09-16: [MZ146](../research/active/dtr-r0/nearfield/MZ146_RESULTS_20260916.md)
 tests unchanged MZ145 on288 fresh same-generator controlled frames. MZ129
