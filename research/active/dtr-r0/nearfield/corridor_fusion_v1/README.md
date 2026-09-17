@@ -1,5 +1,13 @@
 # Frozen depth corridor readout (E0/E1)
 
+[A* plus public evidence, posthoc](ASTAR_POSITIVE_POSTHOC_RESULTS_20260917.md):
+exact saved-output OR leaves clear96/3/12,F192.75% unchanged. None of four
+old-A true frames lost by A* is recovered; all four have zero usable ToF.
+The combination adds one boundary TP and one FP, strict108/7/36 and25/30events
+versus A*107/6/37,24/30. Prefer standalone A* for the next clear effect-version
+candidate; retain the boundary-event tradeoff and public component separately.
+No training/capture/threshold change; original frozen confirmation is unchanged.
+
 [Single frozen version and new-configuration confirmation](PUBLIC_SINGLE_RESULTS_20260917.md):
 one1344-frame public head/threshold and a same-data retrained A* are runnable
 through the [public entry](SINGLE_VERSION_USAGE_20260917.md). New clear A/OR both

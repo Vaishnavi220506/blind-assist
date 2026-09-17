@@ -48,6 +48,13 @@ retrained-A comparison. `state=UNKNOWN` with zero usable returns means the
 positive branch contributes nothing; the main output retains A. A nonalert
 does not certify the corridor is clear. No temporal filter is introduced.
 
+The subsequent [saved-output complementarity check](ASTAR_POSITIVE_POSTHOC_RESULTS_20260917.md)
+prefers standalone A* (`control`) as the effect-version candidate: OR with
+`positive` adds no clear gain, only one boundary event and one false frame.
+That posthoc combination is saved separately; `alert` keeps its original meaning.
+The current entry still computes comparison heads, so consuming `control` does
+not imply an optimized A*-only runtime or transfer its latency to another path.
+
 For confirmation replay with timing and native scoring use the separate
 `run_single_confirmation.py --capture PATH_TO_CAPTURE`, followed by
 `audit_single_positive.py --capture PATH_TO_CAPTURE` and

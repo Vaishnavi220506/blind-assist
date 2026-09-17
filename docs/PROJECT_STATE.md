@@ -10,6 +10,14 @@ are valid choices when their effect and cost justify them. Describe the actual
 contribution honestly, and pursue new mechanisms when they address a concrete gap.
 Natural-distribution and safety claims require their own evidence; a build or a narrow replay does not establish them.
 
+Forward-alert effect-version choice,2026-09-17: [saved A* OR public comparison](../research/active/dtr-r0/nearfield/corridor_fusion_v1/ASTAR_POSITIVE_POSTHOC_RESULTS_20260917.md)
+leaves clear96/3/12,F192.75% unchanged. All four old-A true frames lost by A*
+have zero usable ToF and none is recovered. Combination adds one boundary TP
+and one FP: strict108/7/36,25/30events versus A*107/6/37,24/30. Prefer standalone
+A* as the next clear effect-version candidate; preserve the public component
+and boundary-event tradeoff. This is posthoc consumed analysis, not a rewritten
+confirmation; no capture, fit, threshold or App change. Registration pending.
+
 Forward-alert single-version confirmation,2026-09-17: [frozen public model and same-data A*](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_SINGLE_RESULTS_20260917.md)
 are runnable with one model/threshold each. New clear A/OR both97/25/11; all11
 misses lack returned corridor support, so clear rescue transfer is untested.
