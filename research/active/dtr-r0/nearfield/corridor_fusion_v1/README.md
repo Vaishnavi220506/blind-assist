@@ -1,5 +1,15 @@
 # Frozen depth corridor readout (E0/E1)
 
+Latest: [existing-data tolerance re-evaluation](TOLERANCE_RESULTS_20260917.md)
+separates clear corridor decisions, strict boundary pressure and observed alert
+behaviour. At5cm,75%of each cohort remains: old A107/22/1,F1 90.30%; changed
+A=S195/27/13,F1 82.61%. All40remaining changed-domain errors are beyond10cm
+laterally from the nominal boundary. No models/thresholds changed. Online
+DA-V2 stays closed and the untrained intrusion pilot is deferred. Run
+`run_tolerance.py` only for a new explicitly owned output; audit the existing
+immutable result with `audit_tolerance.py`. No new source is needed for this
+analysis. See [transfer diagnosis](TRANSFER_DIAGNOSIS_20260917.md).
+
 This is the first bounded experiment requested in the 2026-09-17 obstacle
 masterplan. It does not implement E2–E6 or alter the Android/default alert path.
 See [protocol](E1_PROTOCOL_20260917.md) for cohorts and symmetric selection.

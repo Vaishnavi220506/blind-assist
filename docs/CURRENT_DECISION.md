@@ -35,6 +35,14 @@ by this navigation update. The existing frozen result remains unchanged.
 
 ## Forward obstacle awareness complementary to a cane
 
+2026-09-17 task-definition update: [stored native-geometry re-evaluation](../research/active/dtr-r0/nearfield/corridor_fusion_v1/TOLERANCE_RESULTS_20260917.md)
+keeps strict results and separates clear corridor decisions with coverage,
+boundary pressure and observed alert behaviour.5cm covers216/288frames per
+domain; A90.30%old versus82.61%changed F1, with40clear errors beyond10cm.
+No definition change rescues S1 transfer. Defer untrained intrusion work and
+prioritize reusable datasets; current capture cancelled/released on user redirect.
+No automatic training, CNH, new capture or App promotion.
+
 2026-09-17 user decision: adopt [A as the balanced research baseline](../research/active/dtr-r0/nearfield/corridor_fusion_v1/BALANCED_BASELINE_20260917.md),
 with its disclosed recall/native-support tradeoff. The [conditional depth specialist](../research/active/dtr-r0/nearfield/corridor_fusion_v1/SPECIALIST_RESULTS_20260917.md)
 is a Development challenger:137/28/7to137/24/7 on consumed MZ170, unchanged30/30

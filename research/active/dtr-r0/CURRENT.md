@@ -5,6 +5,22 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Existing-data task definition review (2026-09-17)
+
+The user redirects the next step to [stored-prediction tolerance analysis](nearfield/corridor_fusion_v1/TOLERANCE_RESULTS_20260917.md),
+separating clear corridor decisions, strict boundary pressure and observed alert
+behaviour. Across fixed3/5/10cm lateral tolerances,5cm retains216/288frames in
+each domain: old A107/22/1,F1 90.30%; changed A=S195/27/13,F1 82.61%.
+All40remaining changed-domain errors are at least10cm from the nominal lateral
+boundary. Thus boundary pressure is real but does not explain transfer failure.
+Keep original labels/results and closed online DA-V2 disposition. The proposed
+intrusion model remains untrained/deferred; capture was cancelled on task redirect
+with verified process release, not a scientific failure. Prioritize existing
+datasets and disclose their consumed/held-out roles before acquiring more data.
+At5cm,18/18observed core events coexist with25%clear-negative alert burden in
+the changed domain; pre-entry timing/release are not established by these short
+left-censored trajectories. No model/default-App change or automatic successor.
+
 ## Balanced A and conditional depth specialist (2026-09-17)
 
 The user adopts [frozen A](nearfield/corridor_fusion_v1/BALANCED_BASELINE_20260917.md)

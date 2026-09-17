@@ -10,6 +10,14 @@ are valid choices when their effect and cost justify them. Describe the actual
 contribution honestly, and pursue new mechanisms when they address a concrete gap.
 Natural-distribution and safety claims require their own evidence; a build or a narrow replay does not establish them.
 
+Forward-alert task-definition update,2026-09-17: [existing-data re-evaluation](../research/active/dtr-r0/nearfield/corridor_fusion_v1/TOLERANCE_RESULTS_20260917.md)
+uses576stored frames, no training/inference.5cm lateral tolerance retains75%:
+old A107/22/1,F1 90.30%; changed A=S195/27/13,F1 82.61%. Boundary pressure
+is separate;40clear transfer errors remain beyond10cm laterally. Main reporting
+now separates clear-task accuracy/coverage, strict boundary and alert behaviour.
+Intrusion training is deferred, its capture cancelled with resource release;
+reuse existing data before any new acquisition. Online DA-V2 remains closed.
+
 ## Current research lines
 
 Forward-alert research update,2026-09-17: user-adopted [balanced A](../research/active/dtr-r0/nearfield/corridor_fusion_v1/BALANCED_BASELINE_20260917.md)
