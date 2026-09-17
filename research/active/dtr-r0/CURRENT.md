@@ -5,18 +5,20 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
-## A* effect candidate and saved complementarity (2026-09-17)
+## Standalone A* effect delivery (2026-09-18)
 
-The [requested posthoc exact OR](nearfield/corridor_fusion_v1/ASTAR_POSITIVE_POSTHOC_RESULTS_20260917.md)
-keeps A* clear96/3/12,F192.75%,P96.97%,R88.89%,core18/18. None of four
-old-A clear TP lost by A* is recovered; all are zero-return frames. Strict
-107/6/37 becomes108/7/36,24/30events becomes25/30 through one boundary event
-at one extra boundary FP. The rod.5s delay remains; equal old-A strict event
-counts do not preserve event identities. Prefer standalone A* as the next
-clear effect-version candidate and retain the component/boundary tradeoff.
-No capture, training, model inference or threshold tuning; original confirmation
-hashes and runtime output semantics unchanged. Independent scalar/native/event
-audit passes. Metadata remains pending ledger303/unknown terminal.
+The [standalone runtime and complete demo](nearfield/corridor_fusion_v1/ASTAR_EFFECT_USAGE_20260917.md)
+load only retained A*. Saved predictions, reminders and display share `alert`.
+All288 scores are bitwise equal to the prior comparison's A* `control_score`;
+clear96/3/12,F192.75%,P96.97%,R88.89%,core18/18 and strict107/6/37,24/30
+are unchanged. Full48-episode A/A* replay includes four lost clear TP, three
+rescued FN and one rod onset delayed.5s. Direct host decode/frontend/A* latency
+mean66.67ms,p5066.04,p9574.64,max85.00 excludes capture, saving and display.
+No speedup is established. Old entry semantics remain A OR positive / A* control.
+Keep the public head separately: its posthoc OR had zero clear increment and
+one boundary TP/FP tradeoff. No training, capture, threshold or App change.
+This is engineering extraction of retained evidence, not a new experiment;
+earlier scientific registration remains pending, without ledger edits.
 
 ## Single public version and frozen confirmation (2026-09-17)
 

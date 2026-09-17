@@ -1,5 +1,9 @@
 # Run the single public positive version
 
+For the chosen effect version use the separate [standalone A* entry](ASTAR_EFFECT_USAGE_20260917.md).
+This original entry keeps `alert = old A OR positive` and `control = A*`;
+its output contract has not been reassigned.
+
 This research runtime loads one fixed A, one1537-parameter return head and one
 positive threshold. A separately retrained HGB is included only as the matched
 data-amount comparison; it never changes the A+head alert. There is no fold or

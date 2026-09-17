@@ -35,12 +35,15 @@ by this navigation update. The existing frozen result remains unchanged.
 
 ## Forward obstacle awareness complementary to a cane
 
-2026-09-17 [A* complementarity decision](../research/active/dtr-r0/nearfield/corridor_fusion_v1/ASTAR_POSITIVE_POSTHOC_RESULTS_20260917.md):
-prefer standalone A* for the next clear effect version. Exact saved A* OR
-positive keeps96/3/12,F192.75%, recovers0/4 lost old-A clear TP (all zero-ToF),
-but adds1 boundary TP/1FP and restores one strict event:108/7/36,25/30. Keep
-that limited tradeoff, the prior public component and A*'s documented costs.
-No clear complementarity, new latency claim or alteration of frozen evidence.
+2026-09-18 [standalone A* effect delivery](../research/active/dtr-r0/nearfield/corridor_fusion_v1/ASTAR_EFFECT_USAGE_20260917.md):
+use one retained A* for the host effect version. Its canonical `alert` drives
+saved predictions, reminders and display; the old comparison entry is preserved.
+All288 scores/events match frozen A*: clear96/3/12,F192.75%,core18/18;
+strict107/6/37,24/30. Complete48-episode A/A* replay retains four lost clear TP,
+three rescued FN and the.5s rod delay. Direct mean66.67ms,p5066.04,p9574.64
+is a measured host algorithm path, not a demonstrated speedup or phone latency.
+Keep public positive as a research component and OR as a boundary tradeoff.
+No new fit, capture, threshold, default-App promotion or accuracy confirmation.
 
 2026-09-17 [single-version frozen confirmation](../research/active/dtr-r0/nearfield/corridor_fusion_v1/PUBLIC_SINGLE_RESULTS_20260917.md):
 new clear A/OR97/25/11, no supported clear A miss; retain the public component

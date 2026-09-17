@@ -1,5 +1,13 @@
 # Frozen depth corridor readout (E0/E1)
 
+[Standalone A* effect version and complete demo](ASTAR_EFFECT_USAGE_20260917.md):
+`replay_astar.py` loads one retained HGB; its `alert` drives storage, reminders
+and display. All288 scores/events exactly match frozen A*: clear96/3/12,
+F192.75%,core18/18; strict107/6/37,24/30. The complete48-episode A/A* demo
+retains all successes and costs. Direct mean66.67ms,p5066.04,p9574.64 is measured
+on the standalone host path; no speedup claim. Old comparison semantics remain
+unchanged. This is engineering delivery, with no new training/capture/threshold.
+
 [A* plus public evidence, posthoc](ASTAR_POSITIVE_POSTHOC_RESULTS_20260917.md):
 exact saved-output OR leaves clear96/3/12,F192.75% unchanged. None of four
 old-A true frames lost by A* is recovered; all four have zero usable ToF.
