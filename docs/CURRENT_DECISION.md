@@ -35,6 +35,12 @@ by this navigation update. The existing frozen result remains unchanged.
 
 ## Forward obstacle awareness complementary to a cane
 
+2026-09-17 user decision: adopt [A as the balanced research baseline](../research/active/dtr-r0/nearfield/corridor_fusion_v1/BALANCED_BASELINE_20260917.md),
+with its disclosed recall/native-support tradeoff. The [conditional depth specialist](../research/active/dtr-r0/nearfield/corridor_fusion_v1/SPECIALIST_RESULTS_20260917.md)
+is a Development challenger:137/28/7to137/24/7 on consumed MZ170, unchanged30/30
+events/timing and3.47%actual invocation. No default-App change or fresh claim;
+the owning route records frozen identities, costs and next confirmation scope.
+
 Latest,2026-09-16: [MZ146](../research/active/dtr-r0/nearfield/MZ146_RESULTS_20260916.md)
 confirms fresh aggregate improvement from the unchanged MZ143/MZ145 pipeline:
 130TP/86FP/14FN to143/57/1 on288 same-generator frames, all incumbent true

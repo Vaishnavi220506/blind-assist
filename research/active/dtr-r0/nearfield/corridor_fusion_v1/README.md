@@ -4,6 +4,13 @@ This is the first bounded experiment requested in the 2026-09-17 obstacle
 masterplan. It does not implement E2–E6 or alter the Android/default alert path.
 See [protocol](E1_PROTOCOL_20260917.md) for cohorts and symmetric selection.
 
+The user subsequently adopted [A as the balanced research baseline](BALANCED_BASELINE_20260917.md).
+The separately authorized [conditional specialist](SPECIALIST_RESULTS_20260917.md)
+retains a small consumed Development gain,137/28/7to137/24/7, without changing
+A/C weights. Run `run_specialist.py --output <artifact-directory>` and audit
+with `audit_specialist.py <artifact-directory>`. See its fixed
+[protocol](SPECIALIST_PROTOCOL_20260917.md); no App promotion is implied.
+
 Completed [E1 results](E1_RESULTS_20260917.md) and the subsequently authorized
 [intermediate diagnostic](INTERMEDIATE_RESULTS_20260917.md) show no overall
 increment. The latter uses `run_intermediate.py --output <artifact-directory>`;

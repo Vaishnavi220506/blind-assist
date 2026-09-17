@@ -12,6 +12,12 @@ Natural-distribution and safety claims require their own evidence; a build or a 
 
 ## Current research lines
 
+Forward-alert research update,2026-09-17: user-adopted [balanced A](../research/active/dtr-r0/nearfield/corridor_fusion_v1/BALANCED_BASELINE_20260917.md)
+supplies137/28/7,F1 88.67%,30/30events on consumed MZ170. The frozen
+[conditional depth specialist](../research/active/dtr-r0/nearfield/corridor_fusion_v1/SPECIALIST_RESULTS_20260917.md)
+removes4FP with no additional FN or event delay, invokes10/288frames and adds
+2.86msmean online cost. Retain as a Development challenger; App defaults unchanged.
+
 Latest forward-alert result,2026-09-16: [MZ146](../research/active/dtr-r0/nearfield/MZ146_RESULTS_20260916.md)
 tests unchanged MZ145 on288 fresh same-generator controlled frames. MZ129
 130TP/86FP/14FN becomes143/57/1; events29/30to30/30, false segments28to21,

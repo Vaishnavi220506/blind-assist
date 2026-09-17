@@ -5,7 +5,20 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
-## Depth-prior E0/E1 exploration (2026-09-17)
+## Balanced A and conditional depth specialist (2026-09-17)
+
+The user adopts [frozen A](nearfield/corridor_fusion_v1/BALANCED_BASELINE_20260917.md)
+as the balanced research baseline: consumed MZ170137/28/7,F1 88.67%,30/30events.
+MZ129 stays a historical/native-support reference and App defaults stay unchanged.
+The [S1 conditional specialist](nearfield/corridor_fusion_v1/SPECIALIST_RESULTS_20260917.md)
+changes A to137/24/7,F1 89.84%, with every A true frame, event onset/release and
+native-supported missed-warning case unchanged. Actual C calls10/288; matched
+mean latency67.16to70.02ms. Gate-only loses6TP, so C contributes in this comparison.
+Retain the fixed S1 as a consumed Development challenger for separately scoped
+unchanged confirmation; no report tuning, automatic capture or App promotion.
+A/C weights remain frozen. Registration/inheritance remain pending ledger303.
+
+## Depth-prior E0/E1 exploration (2026-09-17, historical global roles)
 
 The authorized [single intermediate-feature diagnostic](nearfield/corridor_fusion_v1/INTERMEDIATE_RESULTS_20260917.md)
 also has no overall gain: positioned DA-V2 tokens/TRAIN-only PCA change A137/28/7
