@@ -1,5 +1,11 @@
 # Frozen depth corridor readout (E0/E1)
 
+[Minimal CCRL result](CCRL_RESULTS_20260918.md): the fixed ranking residual
+gives clear101/19/7,F188.60%, versus matched BCE101/10/7,F192.24% and
+A*96/3/12,F192.75%. Ranking does not retain low FP or all event timing;
+retain A*.672lateral pairs authenticate, but no exact nuisance pairs exist,
+so invariance remains NOT_EVALUABLE. One consumed Development run only.
+
 [Standalone A* effect version and complete demo](ASTAR_EFFECT_USAGE_20260917.md):
 `replay_astar.py` loads one retained HGB; its `alert` drives storage, reminders
 and display. All288 scores/events exactly match frozen A*: clear96/3/12,

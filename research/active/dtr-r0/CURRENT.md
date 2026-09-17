@@ -5,6 +5,21 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Minimal CCRL ranking result (2026-09-18)
+
+The [fixed consumed CCRL comparison](nearfield/corridor_fusion_v1/CCRL_RESULTS_20260918.md)
+retains A*. Clear A*96/3/12,F192.75% becomes101/10/7,F192.24% with matched
+BCE residual and101/19/7,F188.60% with ranking. Both rescue6rod frames and
+lose1BODY TP; ranking adds16clear FP and delays one retained boundary event
+by.25s. Strict events24/30,27/30,26/30; core18/18 throughout. Pair ordering
+also favors matched BCE over ranking. Keep the fixed ranking recipe as a
+negative control, BCE recall/event tradeoff as diagnosis, and A* as the low-FP
+baseline.672lateral pairs authenticate; zero exact nuisance pairs means
+invariance is NOT_EVALUABLE.14residual/30inner HGB fits complete once, public
+replay/native accounting audit passes, all owned processes exit. No sweep,
+capture, App change or fusion successor. Structured metadata remains pending
+the existing ledger303/unknown-terminal errors; receipts and weights retained.
+
 ## Standalone A* effect delivery (2026-09-18)
 
 The [standalone runtime and complete demo](nearfield/corridor_fusion_v1/ASTAR_EFFECT_USAGE_20260917.md)
