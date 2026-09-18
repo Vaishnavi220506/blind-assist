@@ -95,12 +95,12 @@ registration/inheritance pending ledger303/unknown terminal; UE resources releas
 
 [MZ183 result](nearfield/corridor_fusion_v1/MZ183_RESULTS_20260919.md) applies a
 reconstructed visible actor mask to MZ181 valid-ToF support. It retains142/142
-extra TP but removes only3/32 ToF-only FP (7/39 total), leaving1228/95/156;
+extra TP but removes only3/32 ToF-only FP (3/39 total), leaving1228/95/156;
 Radar-only7 FP remain. The >=24 FP ceiling fails. Close ownership, do not train
 segmentation or start MZ184. Masks were reconstructed from controlled scene
 meshes because no instance-ID render was saved; no native depth or hit point
 entered readout. A*/Radar remain independent, baseline alerts/events retained.
-The combined MZ179-MZ183 ceilings now justify changing observable/sensor geometry.
+This reconstructed-mask result does not establish a limit for all RGB observables.
 ST multi-target/CNH contract is documented with user-provided official figures;
 local vendor fetch was blocked, so no default sensor contract changed.
 
