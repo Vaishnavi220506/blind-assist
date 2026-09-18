@@ -24,6 +24,18 @@ Withdraw old native-union/strict-oracle claims: the range proxy is not authentic
 component geometry; the oracle removed Radar and retained89/103, not66.
 Keep A*; no training, capture, promotion or automatic successor.
 
+## MZ181 fixed angular refinement (2026-09-18)
+
+[MZ181 result](nearfield/corridor_fusion_v1/MZ181_RESULTS_20260918.md) retains all142
+extra TP over A* but removes only5 of44 extra FP:1228/98/156 versus public UNKNOWN
+1228/103/156. Fixed extra-FP<=25 gate fails (39 remain); stop this recipe, no
+MZ182 or automatic geometry successor.8x8..64x64 outputs agree. Remaining32
+ToF-only FP have verified feasible public-support points;7 are Radar-sustained.
+All true-alert IDs/times and12 advance contacts remain.132 target-linked slots
+are removed, including94 in true frames still alerting; do not claim native
+contributor retention. Independent witness/count/Radar audit passes; A* remains,
+UNKNOWN stays high-recall research control. Metadata pending ledger303.
+
 ## MZ178 head/body current-frame diagnostic (2026-09-18)
 
 [MZ178-A result](nearfield/corridor_fusion_v1/MZ178_RESULTS_20260918.md)
