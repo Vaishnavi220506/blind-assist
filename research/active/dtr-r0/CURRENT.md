@@ -1,3 +1,12 @@
+## BA-NFO direct near-field occupancy preflight (2026-09-18)
+
+[BA-NFO protocol](nearfield/BA_NFO_PROTOCOL_20260918.md) is frozen as the
+last public-data training candidate, but preflight is BLOCKED_DATA_PREREQUISITES:
+no local Hypersim/SANPO-Synthetic and no dense UE RGB+depth+ToF manifest. Existing
+MZ120/MZ122 45-cell AABB occupancy is not interchangeable pixelwise near-mask
+truth. No download/training/alert change. Resume only with exact data manifest;
+one failed gate closes this route.
+
 ## BA-RPCC-O0 cardinality curve (2026-09-18)
 
 [Rank-preserving cardinality oracle](nearfield/BA_RPCC_O0_20260918.md): with
