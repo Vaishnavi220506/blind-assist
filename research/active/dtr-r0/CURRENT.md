@@ -69,6 +69,19 @@ are removed, including94 in true frames still alerting; do not claim native
 contributor retention. Independent witness/count/Radar audit passes; A* remains,
 UNKNOWN stays high-recall research control. Metadata pending ledger303.
 
+## MZ182 angular dither ceiling (2026-09-18)
+
+[MZ182 result](nearfield/corridor_fusion_v1/MZ182_RESULTS_20260918.md) captures24
+matched scenes/144 native UE collision observations. Single and repeat0x3 both
+12TP/12FP; yaw0,+quarter-zone,-quarter-zone gives12TP/8FP.4/12FP removal fails
+frozen50% gate despite12/12TP retention. Stop fixed recipe, no phase expansion
+or public-association successor. Ideal exact yaw/no packet loss and oracle actor
+IDs define the ceiling; object association is not same-point registration.
+Native extent coverage is incomplete; no surface/hardware claim. Prior MZ179/180/
+181 remain closed. ST contract migration target documented, exact vendor figures
+not independently verified (access blocked); no sensor-default change. Metadata
+registration/inheritance pending ledger303/unknown terminal; UE resources released.
+
 ## MZ178 head/body current-frame diagnostic (2026-09-18)
 
 [MZ178-A result](nearfield/corridor_fusion_v1/MZ178_RESULTS_20260918.md)
