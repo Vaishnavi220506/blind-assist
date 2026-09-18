@@ -1,3 +1,11 @@
+## BA-ZMR fixed-mass placement (2026-09-18)
+
+[160-frame ZMR](nearfield/BA_ZMR_20260918.md): IoU75.40% DEPTHOR falls
+to74.22% mono rank/74.06% connected; precision and recall also fall. Exact
+zone/union mass retained. GT-mass rank86.47% is privileged, recall92.74%.
+No ZPA training trigger. User closes existence-only SCDE; preserve learned
+geometry component evidence. Registration/inheritance pending ledger303.
+
 ## BA-Depth support-loss diagnosis (2026-09-18)
 
 [Paired FN audit](nearfield/BA_DEPTH_SUPPORT_DIAGNOSTIC_20260918.md) finds8,468
