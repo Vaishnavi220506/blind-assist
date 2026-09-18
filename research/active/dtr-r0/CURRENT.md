@@ -5,6 +5,15 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## MZ178 head/body current-frame diagnostic (2026-09-18)
+
+[MZ178-A result](nearfield/corridor_fusion_v1/MZ178_RESULTS_20260918.md)
+recovers103/106 head-turn supported FN (98 target-contributor linked), versus64
+for same-rule head-frame control. Transitions93->41, but FP59->162 and side-pass
+seconds1.2->11.2 fail the frozen gate. Existing A* already yaw-rotates supports;
+this was a direct geometric union readout, not newly introduced compensation.
+Stop A, do not launch memory or tune. Retain A*/raw; metadata remains pending.
+
 ## Continuous approach diagnostic (2026-09-18)
 
 [MZ177 complete continuous result](nearfield/corridor_fusion_v1/MZ177_CONTINUOUS_APPROACH_RESULTS_20260918.md)

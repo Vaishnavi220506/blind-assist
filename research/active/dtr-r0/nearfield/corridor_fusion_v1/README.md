@@ -1,5 +1,9 @@
 # Frozen depth corridor readout (E0/E1)
 
+[MZ178 head/body diagnostic](MZ178_RESULTS_20260918.md): rotation-aware support
+readout recovers103/106 supported head-turn FN but raises FP59->162.
+Stop the fixed union recipe; memory not launched; A* already rotated supports.
+
 [Continuous approach diagnostic](MZ177_CONTINUOUS_APPROACH_RESULTS_20260918.md):
 24 sequences/1920 frames; A*/raw/hysteresis warn before all12 moving contacts.
 Head-turn supported misses expose a body-frame continuity gap; release and
