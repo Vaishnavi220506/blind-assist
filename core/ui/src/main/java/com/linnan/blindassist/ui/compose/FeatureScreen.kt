@@ -323,46 +323,90 @@ private fun HomeModeSelector(
     Surface(
         modifier = modifier
             .fillMaxWidth()
-            .height(if (largeFont) 108.dp else 72.dp)
+            .height(if (largeFont) 304.dp else 72.dp)
             .testTag("daily_usage_mode_selector"),
         shape = RoundedCornerShape(30.dp),
         color = BaHomeControlRail,
         shadowElevation = 4.dp
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(6.dp)
-                .selectableGroup(),
-            horizontalArrangement = Arrangement.spacedBy(2.dp)
-        ) {
-            HomeModeItem(
-                mode = HomeAssistMode.DAILY,
-                selected = selectedMode == HomeAssistMode.DAILY,
-                language = language,
-                icon = Icons.Outlined.LightMode,
-                onClick = onDailyClick,
-                largeFont = largeFont,
-                modifier = Modifier.weight(1f)
-            )
-            HomeModeItem(
-                mode = HomeAssistMode.QUIET,
-                selected = selectedMode == HomeAssistMode.QUIET,
-                language = language,
-                icon = Icons.Outlined.Eco,
-                onClick = onQuietClick,
-                largeFont = largeFont,
-                modifier = Modifier.weight(1f)
-            )
-            HomeModeItem(
-                mode = HomeAssistMode.SENSITIVE,
-                selected = selectedMode == HomeAssistMode.SENSITIVE,
-                language = language,
-                icon = Icons.Outlined.Bolt,
-                onClick = onSensitiveClick,
-                largeFont = largeFont,
-                modifier = Modifier.weight(1f)
-            )
+        if (largeFont) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(6.dp)
+                    .selectableGroup(),
+                verticalArrangement = Arrangement.spacedBy(2.dp)
+            ) {
+                HomeModeItem(
+                    mode = HomeAssistMode.DAILY,
+                    selected = selectedMode == HomeAssistMode.DAILY,
+                    language = language,
+                    icon = Icons.Outlined.LightMode,
+                    onClick = onDailyClick,
+                    largeFont = true,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(96.dp)
+                )
+                HomeModeItem(
+                    mode = HomeAssistMode.QUIET,
+                    selected = selectedMode == HomeAssistMode.QUIET,
+                    language = language,
+                    icon = Icons.Outlined.Eco,
+                    onClick = onQuietClick,
+                    largeFont = true,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(96.dp)
+                )
+                HomeModeItem(
+                    mode = HomeAssistMode.SENSITIVE,
+                    selected = selectedMode == HomeAssistMode.SENSITIVE,
+                    language = language,
+                    icon = Icons.Outlined.Bolt,
+                    onClick = onSensitiveClick,
+                    largeFont = true,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(96.dp)
+                )
+            }
+        } else {
+            Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(6.dp)
+                    .selectableGroup(),
+                horizontalArrangement = Arrangement.spacedBy(2.dp)
+            ) {
+                HomeModeItem(
+                    mode = HomeAssistMode.DAILY,
+                    selected = selectedMode == HomeAssistMode.DAILY,
+                    language = language,
+                    icon = Icons.Outlined.LightMode,
+                    onClick = onDailyClick,
+                    largeFont = false,
+                    modifier = Modifier.weight(1f)
+                )
+                HomeModeItem(
+                    mode = HomeAssistMode.QUIET,
+                    selected = selectedMode == HomeAssistMode.QUIET,
+                    language = language,
+                    icon = Icons.Outlined.Eco,
+                    onClick = onQuietClick,
+                    largeFont = false,
+                    modifier = Modifier.weight(1f)
+                )
+                HomeModeItem(
+                    mode = HomeAssistMode.SENSITIVE,
+                    selected = selectedMode == HomeAssistMode.SENSITIVE,
+                    language = language,
+                    icon = Icons.Outlined.Bolt,
+                    onClick = onSensitiveClick,
+                    largeFont = false,
+                    modifier = Modifier.weight(1f)
+                )
+            }
         }
     }
 }
