@@ -1,3 +1,11 @@
+## BA-Depth public diagnostic (2026-09-18)
+
+[160-frame ZJU-L5 probe](nearfield/BA_DEPTH_PROBE_20260918.md) improves mixed-zone
+2m IoU 63.18% to75.40%, but recall97.32% to95.69%; no joint replacement gain.
+Retain descriptive localization only. No BODY/HEAD corridor authority without
+pose/calibration; no training or alert changes. Prior UE negatives remain.
+Registration/inheritance pending existing ledger303.
+
 # Cane-complementary forward perception and DTR history
 
 Updated: 2026-09-12
