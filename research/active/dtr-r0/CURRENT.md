@@ -1,3 +1,12 @@
+## BA-Depth 2x2 oracle decomposition (2026-09-18)
+
+[Equal-support oracle](nearfield/BA_DEPTH_ORACLE_2X2_20260918.md) reproduces
+DEPTHOR 75.40% IoU. GT count + DEPTHOR ranking reaches87.02% IoU but recall
+falls93.06%; DEPTHOR count + perfect placement reaches76.17% IoU, recall96.24%.
+Threshold bands show57.51% of current FN have both GT/prediction >20cm from2m;
+small calibration is not dominant. Close ZPA/SCDE; count/fraction is only a
+candidate question, with recall constraint. Registration pending ledger303.
+
 ## BA-ZMR fixed-mass placement (2026-09-18)
 
 [160-frame ZMR](nearfield/BA_ZMR_20260918.md): IoU75.40% DEPTHOR falls
