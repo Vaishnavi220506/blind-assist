@@ -91,6 +91,19 @@ Native extent coverage is incomplete; no surface/hardware claim. Prior MZ179/180
 not independently verified (access blocked); no sensor-default change. Metadata
 registration/inheritance pending ledger303/unknown terminal; UE resources released.
 
+## MZ183 visible angular ownership ceiling (2026-09-19)
+
+[MZ183 result](nearfield/corridor_fusion_v1/MZ183_RESULTS_20260919.md) applies a
+reconstructed visible actor mask to MZ181 valid-ToF support. It retains142/142
+extra TP but removes only3/32 ToF-only FP (7/39 total), leaving1228/95/156;
+Radar-only7 FP remain. The >=24 FP ceiling fails. Close ownership, do not train
+segmentation or start MZ184. Masks were reconstructed from controlled scene
+meshes because no instance-ID render was saved; no native depth or hit point
+entered readout. A*/Radar remain independent, baseline alerts/events retained.
+The combined MZ179-MZ183 ceilings now justify changing observable/sensor geometry.
+ST multi-target/CNH contract is documented with user-provided official figures;
+local vendor fetch was blocked, so no default sensor contract changed.
+
 ## MZ178 head/body current-frame diagnostic (2026-09-18)
 
 [MZ178-A result](nearfield/corridor_fusion_v1/MZ178_RESULTS_20260918.md)

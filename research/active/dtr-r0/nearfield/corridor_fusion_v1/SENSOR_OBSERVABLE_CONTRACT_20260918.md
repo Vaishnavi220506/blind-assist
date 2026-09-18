@@ -20,6 +20,15 @@ not independently verified in this task. Saved responses are under
 artifacts.local/work/tof-dither-20260918/st-sources/. Do not label them PDFs
 successfully inspected or use them as calibrated simulation parameters.
 
+2026-09-19 correction from the user supplies the official UM3109/PDF and
+VL53L8CH datasheet/product references and the intended readings: CX up to4
+targets per zone (default1; Closest/Strongest ordering; approximately600mm
+separation for separate detection); CH up to64 zones and128 histogram bins,
+with output-buffer/bandwidth examples such as8x128 at20Hz,32x36 at15Hz and
+64x18 at15Hz. These remain user-provided official-source claims in this local
+record because the direct HTTP fetch above was blocked; they are not silently
+promoted to independently inspected bytes or calibrated simulator parameters.
+
 Future opt-in versioned observation contract should preserve configured zone
 geometry, reported target count/order, independent per-target distance/quality,
 and (when supplied by driver) histogram bin origin/width/count, per-zone/bin
