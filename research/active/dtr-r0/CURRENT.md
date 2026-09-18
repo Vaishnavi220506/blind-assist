@@ -1,3 +1,11 @@
+## BA-RPCC-O0 cardinality curve (2026-09-18)
+
+[Rank-preserving cardinality oracle](nearfield/BA_RPCC_O0_20260918.md): with
+GT count and frozen DEPTHOR ranking, best global c=1.20 at recall96.13%
+gets IoU78.27% versus75.40% (+2.86), below the +5 training trigger.
+Close RPCC training from this evidence; per-zone oracle remains descriptive.
+No model/training/alert change; registration pending ledger303.
+
 ## BA-Depth 2x2 oracle decomposition (2026-09-18)
 
 [Equal-support oracle](nearfield/BA_DEPTH_ORACLE_2X2_20260918.md) reproduces
