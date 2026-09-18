@@ -14,6 +14,17 @@ seconds1.2->11.2 fail the frozen gate. Existing A* already yaw-rotates supports;
 this was a direct geometric union readout, not newly introduced compensation.
 Stop A, do not launch memory or tune. Retain A*/raw; metadata remains pending.
 
+## Temporal frontier evidence ceiling (2026-09-18)
+
+[MZ179 fixed ceiling](nearfield/corridor_fusion_v1/MZ179_RESULTS_20260918.md)
+finds past Radar features separate the six clear A*/raw disagreement cases,
+but current Radar range and past model scores also separate them. Cell survival,
+density and Doppler overlap; incremental temporal mechanism is unproven.
+Withdraw ToF-survival rescue: none of the three TP has past native corridor ToF
+support. Tiny source yaw and absent prior support do not establish head-turn
+dropout here; keep the MZ177/178 question separate. Retain diagnostic tooling
+only, freeze A*/raw, no training/capture successor. Metadata pending ledger303.
+
 ## Continuous approach diagnostic (2026-09-18)
 
 [MZ177 complete continuous result](nearfield/corridor_fusion_v1/MZ177_CONTINUOUS_APPROACH_RESULTS_20260918.md)
