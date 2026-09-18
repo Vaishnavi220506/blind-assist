@@ -43,7 +43,7 @@ All primary raw/DEPTHOR pixels are evaluable; mono abstains on 13 negative pixel
 | Reference identity | 100% | 100% | 100% | 0 | 0 |
 
 DEPTHOR reduces pixel FP by 50.21%, improves IoU by 12.22 percentage points,
-but adds 3,841 missed near pixels and loses 1.64 points recall. IoU improves in
+but has a net increase of 3,841 missed near pixels and loses 1.64 points recall. IoU improves in
 7/8 scenes against raw (dorm worsens), but beats mono in only 4/8 scenes.
 The predeclared joint condition (higher IoU, noninferior recall, majority scene
 IoU wins) fails on recall. No statistical significance or independent pixel
@@ -111,3 +111,8 @@ Reproduction: run ba_depth_probe.py prepare/predict/evaluate with a NEW --output
 directory using the recorded GPU runtime and existing frozen assets. Never
 overwrite the completed directory. `protocol.json` fixes selection and criteria
 before inference; `prediction-seal.json` precedes reference evaluation.
+
+Follow-up [support-loss diagnosis](BA_DEPTH_SUPPORT_DIAGNOSTIC_20260918.md):
+8,468 newly missed pixels minus 4,627 rescued pixels yields the net 3,841.
+All 52 affected near-return zones retain predicted near surface; 48 already
+satisfy the proposed Q10 constraint. No automatic existence-only SCDE training.

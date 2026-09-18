@@ -1,3 +1,11 @@
+## BA-Depth support-loss diagnosis (2026-09-18)
+
+[Paired FN audit](nearfield/BA_DEPTH_SUPPORT_DIAGNOSTIC_20260918.md) finds8,468
+new FN and4,627rescues (net3,841). All52affected near-return zones retain
+predicted near surface;48already satisfy Q10<=d+.1m, covering95.61%of new FN.
+Existence-only SCDE training trigger is not met; no training or alert change.
+Preserve localization gain and prior negatives; metadata remains pending303.
+
 ## BA-Depth public diagnostic (2026-09-18)
 
 [160-frame ZJU-L5 probe](nearfield/BA_DEPTH_PROBE_20260918.md) improves mixed-zone
