@@ -93,12 +93,17 @@ def engine():
         return a
     left=capture(u.SceneCaptureSource.SCS_FINAL_COLOR_LDR,u.TextureRenderTargetFormat.RTF_RGBA8_SRGB)
     rawrows=[]; evalrows=[]; provrows=[]; sensor_state={'mz115_environment_reflectance':environment_reflectance}
+    streaming=os.environ.get('BA_MZ115_FLUSH_EACH_FRAME')=='1'
+    streams={name:(out/name).open('x',encoding='utf-8') for name in ('raw.jsonl','evaluator.jsonl','provenance.jsonl')} if streaming else {}
+    report['flush_each_frame']=streaming
 
     def finish(error=None):
         report.update(status='FAIL' if error else 'PASS',frames=len(manifest),seconds=time.monotonic()-started,hashes=hashes)
         if error:report['error']=error
         for name,rows in [('raw.jsonl',rawrows),('evaluator.jsonl',evalrows),('provenance.jsonl',provrows)]:
-            (out/name).write_text(''.join(json.dumps(r,allow_nan=False)+'\n' for r in rows));hashes[name]=sha(out/name)
+            if streaming:streams[name].close()
+            else:(out/name).write_text(''.join(json.dumps(r,allow_nan=False)+'\n' for r in rows))
+            hashes[name]=sha(out/name)
         write(out/'manifest.json',dict(rig=rig,rgb_camera_count=1,depth_images_produced=False,frames=manifest))
         hashes['manifest.json']=sha(out/'manifest.json')
         write(out/'receipt.json',report)
@@ -131,7 +136,11 @@ def engine():
             row,evaluation,provenance=sensors(u,world,frame,state['native_targets'],sensor_state)
             row['rgb_path']='frame/'+frame['id']+'/rgb.png'
             row['rgb_intrinsics']=dict(width=w,height=h,fx=w/(2*math.tan(math.radians(rig['hfov_deg']/2))),fy=w/(2*math.tan(math.radians(rig['hfov_deg']/2))),cx=w/2,cy=h/2)
-            rawrows.append(row);evalrows.append(evaluation);provrows.append(provenance)
+            if streaming:
+                for name,value in [('raw.jsonl',row),('evaluator.jsonl',evaluation),('provenance.jsonl',provenance)]:
+                    streams[name].write(json.dumps(value,allow_nan=False)+'\n');streams[name].flush()
+            else:
+                rawrows.append(row);evalrows.append(evaluation);provrows.append(provenance)
             paths=dict(rgb=row['rgb_path']);hashes[row['rgb_path']]=sha(folder/'rgb.png')
             manifest.append(dict(id=frame['id'],episode=frame['episode'],time_s=frame['time_s'],paths=paths))
             state.update(i=state['i']+1,warm=0,prepared=False)
@@ -142,10 +151,11 @@ def engine():
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--spec',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--spec',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--max-frames',type=int,default=300);p.add_argument('--timeout',type=int,default=600);p.add_argument('--flush-each-frame',action='store_true');a=p.parse_args()
     root=Path(__file__).resolve().parents[4];art=(root/'artifacts.local').resolve();out=a.output.resolve()
     if not out.is_relative_to(art) or out.exists():raise ValueError('Fresh canonical artifact output required')
-    spec=json.loads(a.spec.read_text());assert 0<len(spec['frames'])<=300
+    spec=json.loads(a.spec.read_text());max_frames=int(a.max_frames);assert max_frames>0 and 0<len(spec['frames'])<=max_frames
+    if a.timeout <= 0:raise ValueError('Positive capture timeout required')
     assert len({f['id'] for f in spec['frames']})==len(spec['frames'])
     assert all('/' not in f['id'] and '\\' not in f['id'] and f['id'] not in ('.','..') for f in spec['frames'])
     out.mkdir(parents=True);shutil.copyfile(__file__,out/Path(__file__).name);shutil.copyfile(a.spec,out/'spec.json')
@@ -157,11 +167,13 @@ def main():
     import psutil
     if any((p.info['name'] or '').startswith('UnrealEditor') for p in psutil.process_iter(['name'])):raise RuntimeError('Editor occupied')
     cache=art/'work/mz113-dynamic-four-sensor-20260913/ddc';cache.mkdir(parents=True,exist_ok=True);port=cache_service_port(cache)
-    env=dict(os.environ,BA_MZ115_OUT=str(out),BA_MZ115_SPEC=str(out/'spec.json'));env['UE-LocalDataCachePath']=str(cache)
+    env=dict(os.environ,BA_MZ115_OUT=str(out),BA_MZ115_SPEC=str(out/'spec.json'),BA_MZ115_FLUSH_EACH_FRAME='1' if a.flush_each_frame else '0');env['UE-LocalDataCachePath']=str(cache)
     plugin=art/'ue-hlod-b2/package/BlindAssistCapture.uplugin'
     cmd=['F:/epic/UE_5.8/Engine/Binaries/Win64/UnrealEditor.exe',str(art/'unreal/BlindAssistStreetLab/BlindAssistStreetLab.uproject'),'-RenderOffscreen','-unattended','-nosound','-nop4','-NoSplash','-ddc=NoShared','-ini:Engine:[Zen.AutoLaunch]:DesiredPort='+str(port),'-PLUGIN='+str(plugin),'-EnablePlugins=PythonScriptPlugin,BlindAssistCapture','-ExecCmds=py '+(out/Path(__file__).name).as_posix(),'-abslog='+str(out/'editor.log'),'-ini:Engine:[/Script/EngineSettings.GameMapsSettings]:EditorStartupMap=','-ini:EditorPerProjectUserSettings:[/Script/UnrealEd.EditorLoadingSavingSettings]:LoadLevelAtStartup=None']
-    write(out/'launch.json',dict(command=cmd,spec_sha256=sha(a.spec),source_sha256=sha(__file__),helper_sha256=sha(helper),plugin_binary_sha256=sha(plugin.parent/'Binaries/Win64/UnrealEditor-BlindAssistCapture.dll'),persistent_cache=dict(path=str(cache),port=port)))
-    run_owned(cmd,env,out,600)
+    write(out/'launch.json',dict(command=cmd,spec_sha256=sha(a.spec),source_sha256=sha(__file__),helper_sha256=sha(helper),plugin_binary_sha256=sha(plugin.parent/'Binaries/Win64/UnrealEditor-BlindAssistCapture.dll'),persistent_cache=dict(path=str(cache),port=port),timeout_s=a.timeout,max_frames=a.max_frames,flush_each_frame=a.flush_each_frame))
+    try:run_owned(cmd,env,out,a.timeout)
+    except BaseException as error:
+        write(out/'failure.json',dict(status='FAIL',error=repr(error),partial_output_preserved=True));raise
     receipt=json.loads((out/'receipt.json').read_text());assert receipt['status']=='PASS',receipt
     assert receipt['frames']==len(spec['frames'])
     for name,digest in receipt['hashes'].items():assert sha(out/name)==digest

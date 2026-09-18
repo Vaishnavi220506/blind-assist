@@ -5,6 +5,18 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## Continuous approach diagnostic (2026-09-18)
+
+[MZ177 complete continuous result](nearfield/corridor_fusion_v1/MZ177_CONTINUOUS_APPROACH_RESULTS_20260918.md)
+finishes24 sequences/1920 frames with frozen A*, raw HGB and fixed hysteresis.
+All12 moving contact events receive advance alerts, but all A* moving sequences
+already alert at frame0: onset is left-censored. A* loses130 head-turn risk frames,
+106 with valid target ToF support; hysteresis leaves98 supported head-turn FN.
+Retain A*/raw; choose only rotation-conditioned body-frame evidence readout as
+an unlaunched candidate. Release is mostly censored; recovered controlled
+Development only. Existing ledger line303 fingerprint error leaves metadata pending.
+
+
 ## Saved-score residual budget diagnosis (2026-09-18)
 
 The [posthoc budget diagnostic](nearfield/corridor_fusion_v1/RESIDUAL_BUDGET_DIAGNOSIS_20260918.md)
