@@ -5,6 +5,17 @@ Updated: 2026-09-12
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
 
+## MZ180 public feasibility and corrected audit (2026-09-18)
+
+[MZ180 corrected result](nearfield/corridor_fusion_v1/MZ180_RESULTS_20260918.md)
+reproduces public merged UNKNOWN on1920 frames:1228/103/156,142 full TP additions
+and44 new FP over A*. Historical privileged proxy has identical true-alert IDs
+and first risk-alert times, but22 more FP. Both retain the same98 of103 recoveries.
+835 merged slots expose no internal modes; stop this public decomposition recipe.
+Withdraw old native-union/strict-oracle claims: the range proxy is not authenticated
+component geometry; the oracle removed Radar and retained89/103, not66.
+Keep A*; no training, capture, promotion or automatic successor.
+
 ## MZ178 head/body current-frame diagnostic (2026-09-18)
 
 [MZ178-A result](nearfield/corridor_fusion_v1/MZ178_RESULTS_20260918.md)
