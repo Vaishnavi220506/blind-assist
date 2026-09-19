@@ -1,3 +1,16 @@
+## NFO fixed joint-supervision diagnostic (2026-09-19)
+
+[Fixed 0.5 full + 0.5 target loss](nearfield/BA_NFO_JOINTFIT_20260919.md) on the same
+32 TRAIN cases gives target recall 98.75%, IoU 66.72%, FP 192; full recall 98.89%,
+pure-far FP 16,645 retain the original 32-frame baseline. Five of six gates pass,
+but local coverage 11/16 misses 14/16. Validation is therefore skipped, 0 frames
+read; no test/transfer claim. Retain joint-supervision contribution as COMPONENT,
+not a promoted model. Three remaining zones have excess FP, two lose near support.
+The fixed 512-step sequence ends with no ratio/threshold/budget sweep or successor.
+Two tests and independent all-32 reload/count/batch/skip checks pass; original NFO
+unchanged, global metadata pending at ledger line 303. Full-only fit retains stronger
+global metrics, so the joint recipe does not dominate every previous control.
+
 ## NFO paired supervision-domain diagnostic (2026-09-19)
 
 [Same32TRAIN cases, target-zone loss](nearfield/BA_NFO_TARGETFIT_20260919.md)
