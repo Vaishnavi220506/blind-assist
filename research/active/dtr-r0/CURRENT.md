@@ -1,3 +1,14 @@
+## BA-NFO small-area decomposition (2026-09-19)
+
+[Fixed-model diagnostic](nearfield/BA_NFO_AREA_DIAGNOSTIC_20260919.md) reproduces
+all original mixed counts. At2m <=20% area, near-return FN2542->1640 improves;
+far-return FN1437->4213 causes the net recall regression. Recovering every
+near-return miss alone reaches87.41%, below87.6% target. Do not train the
+proposed near-return existence auxiliary as the presumed fix; no new fit or
+threshold change. Retain decomposition as COMPONENT and matched NFO gain with
+small-area limitation.1m recall improves in every area band while FPR increases;
+ultra-near calibration/representation cause remains unresolved. Metadata pending.
+
 ## BA-NFO matched supervision completed (2026-09-19)
 
 [Matched two-arm training](nearfield/BA_NFO_MATCHED_20260919.md) supersedes the
