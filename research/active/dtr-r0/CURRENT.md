@@ -1,3 +1,20 @@
+## Fixed ToF score reduces in-sample false alerts (2026-09-20)
+
+[One calibrated readout on consumed96](nearfield/TOF_CORRIDOR_CALIBRATION_20260920.md)
+retains every original30TP and reduces nominal45-FOV FP19->15, with6FN unchanged.
+Recall stays83.33%, precision61.22%->66.67%, FPR31.67%->25%; false segments6->4,
+sampled duration3.8s->3.0s. Interior events4/5 and all events5/6 retain first
+in-event alerts; removed pre-entry false warnings move two clip-first timestamps.
+All4,912 valid returns and original intervals remain; suppressed frames lose0
+native corridor contributors. UNKNOWN stays86 and TN0. All6 lateral-only FP
+remain, and the same-zone small-object event is still missed.
+Retain only a consumed in-sample COMPONENT: the same96 labels select and report
+one maximal TP-preserving cutoff on a frozen geometric score, not a probability.
+Six synthetic checks pass; one evaluation schema repair preserves sealed scores
+and predictions. No new observations, RGB, models, training or successor.
+Global metadata remains pending ledger303/unknown-terminal with local disposition
+and receipts. All task-owned compute is released.
+
 ## Nominal ToF FOV exposes returns but worsens false alerts (2026-09-20)
 
 [One fixed96-frame nominal45x45 contrast](nearfield/TOF_FOV45_20260920.md)
