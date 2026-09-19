@@ -1,3 +1,19 @@
+## NFO late spatial-conditioning contrast (2026-09-19)
+
+[One fixed 512-update architecture contrast](nearfield/BA_NFO_LATEFUSION_20260919.md)
+adds a zero-initialized full-resolution RGB/ToF residual branch (+8,804 parameters).
+Same 32 TRAIN cases and joint loss: target recall 98.75% -> 99.50%, IoU 66.72% ->
+70.07%; full recall 98.89% -> 99.50%, pure-far FP 16,645 -> 9,496. Empty-native-near
+FP 125 -> 96; three of four high-coverage FN recovered. Coverage rises 11/16 ->
+12/16, still below 14/16; five original gates and all four paired guards pass.
+Broader small-support recall declines 92.43% -> 90.23% (122 extra FN), despite
+IoU improvement. Retain component evidence and this cost, not a promoted model.
+Exact public zone lookup and all-32 zero-initial identity verified; two tests and
+independent final-weight reload/count checks pass. Parameters and late conditioning
+are coupled; no isolated mechanism or generalization claim. This recipe ends with
+no val/test, sweep or successor. Original/joint checkpoints unchanged. Global
+registration/inheritance remains pending at the existing ledger error.
+
 ## NFO native-support audit (2026-09-19)
 
 [All 16 positive TRAIN cases inspected](nearfield/BA_NFO_NATIVE_SUPPORT_AUDIT_20260919.md):
