@@ -1,3 +1,5 @@
+2026-09-19 scope update: [camera-forward RGB + 8x8 ToF](../research/active/dtr-r0/nearfield/CAMERA_FORWARD_CONTRACT_20260919.md) is the adopted minimal research task. Optical axis defines forward; historical four-sensor/body-frame results below retain their original scope. This records the task definition, not a runtime change.
+
 # Project state
 
 Updated: 2026-09-07

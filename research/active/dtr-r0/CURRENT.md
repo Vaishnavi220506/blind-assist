@@ -1,3 +1,7 @@
+## Adopted camera-forward task (2026-09-19)
+
+[Camera-forward contract](nearfield/CAMERA_FORWARD_CONTRACT_20260919.md): optical axis defines forward; use RGB + 8x8 ToF and a fixed camera-frame corridor (0.3-3m forward, +/-0.3m lateral, explicit fixed vertical profile). Evaluate paired corridor alerts and UNKNOWN coverage; IoU remains a component metric. NFO threshold scores are not exact depth. No body-heading/IMU compensation, future trajectory or SLAM work is required. Definition adopted; runtime integration and alert validation are pending. Historical results below retain their original task.
+
 ## BA-NFO local diagnosis and conditional-readout contrast (2026-09-19)
 
 [One local diagnosis and one frozen-backbone readout](nearfield/BA_NFO_ZONE_READOUT_20260919.md)

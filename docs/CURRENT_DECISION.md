@@ -1,3 +1,5 @@
+2026-09-19 user decision: adopt [the camera-forward corridor contract](../research/active/dtr-r0/nearfield/CAMERA_FORWARD_CONTRACT_20260919.md). Immediate scope is RGB + 8x8 ToF with a fixed camera-frame volume; body-heading compensation, future trajectories and SLAM are excluded. This supersedes the older four-sensor requirement for this task; frozen results and defaults remain unchanged.
+
 # Current research decisions
 
 Updated: 2026-09-07
