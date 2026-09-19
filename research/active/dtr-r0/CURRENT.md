@@ -1,3 +1,16 @@
+## NFO paired supervision-domain diagnostic (2026-09-19)
+
+[Same32TRAIN cases, target-zone loss](nearfield/BA_NFO_TARGETFIT_20260919.md)
+changes only supervised pixel support, retaining original initialization,
+512batches/updates, original loss formula and0.081cutoff. Versus full-image
+fit, target IoU25.83%->60%, FP1110->240, recall97.5%->96%, local passing
+zones1/16->11/16. It still misses65%IoU and14/16gates. Full-image recall
+falls99.40%->58.80%, IoU80.93%->29.34%, pure-far FP4937->70192.
+Retain the supervision-domain contribution as COMPONENT diagnostic evidence;
+do not replace NFO or infer an information/architecture ceiling or generalization.
+Two loss-gradient tests and independent all32output/count/support/batch checks
+pass. One fit ended, no tuning/successor; global metadata remains pending303.
+
 ## NFO difficult-case learning check (2026-09-19)
 
 [One TRAIN-only32frame fit](nearfield/BA_NFO_HARDFIT_20260919.md) uses16depth-separated
