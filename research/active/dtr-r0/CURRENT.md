@@ -1,3 +1,22 @@
+## Frozen Core transfer: calibration retained, RGB lossless-transfer fails (2026-09-20)
+
+[One frozen36-scene/432-frame validation](nearfield/CORE_TRANSFER_RESULTS_20260920.md)
+uses new BODY/HEAD targets, Brick/Wood backdrops and independent full-extent
+INSIDE/BOUNDARY/OUTSIDE arrangements under the shared simulator. Raw144/181/0
+becomes calibrated144/146/0 with all24events and onsets retained; false segments
+increase37->40. Frozen noRGB137/138/7 and RGB134/135/10 both fail lossless transfer.
+RGB improves OUTSIDE-layout FP87->79 (noRGB81), but loses10calibrated TP, one
+contact event, delays two by0.2/0.4s and suppresses30native-contributing zone
+samples. Core INSIDE events stay12/12 while boundary events drop12/12->11/12;
+one INSIDE TP is lost, so Core event recall alone conceals the failure.
+Retain calibration's scoped frame/duration benefit with fragmentation disclosed;
+close exact frozen RGB/noRGB vetoes as negative transfer controls. Old96 fitting
+and Thin-object Challenge remain unchanged. No fit, retuning or successor.
+Source/seal/native audits and independent recount pass; task processes released.
+Global metadata remains blocked by ledger303/unknown terminal; receipts and local
+disposition retained. This is controlled new-arrangement evidence, not natural,
+hardware, new-world, body-trajectory or safety validation.
+
 ## Local RGB head fits lateral attribution with matched-control increment (2026-09-20)
 
 [One frozen local RGB pilot](nearfield/TOF_LATERAL_ATTRIBUTION_20260920.md) keeps
