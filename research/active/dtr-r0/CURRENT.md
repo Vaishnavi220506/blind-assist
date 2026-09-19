@@ -1,3 +1,24 @@
+## CPU contour-parallax recipe fails (2026-09-20)
+
+[One fixed 12-window / 36-frame reuse of G6](nearfield/BA_CONTOUR_PARALLAX_20260919.md)
+uses sparse line profiles and ideal metric poses, with no model, training, ToF
+input or new capture. It recovers 0/4 original translational 2–3 m misses.
+Far bars and wall mark have 21/3/34 target candidate samples and zero target
+false-near; their sparse coverage and frequent abstention do not prove reliable
+far ranging. Both pure-yaw windows keep every distance UNKNOWN. Across all
+windows, 104 non-target false-near samples remain; the accepted native-depth
+interval coverage is 5,853/7,695 (76.062%). Different proposal sets prevent paired
+false-positive claims against old G6. The old cached baseline replays exactly.
+Single-logical-core algorithm P95 is 554.568 ms against a frozen 200 ms allocation;
+peak RSS is 67.484 MiB. This is a desktop CPU proxy, not edge-device validation.
+Close the exact recipe as NEGATIVE_CONTROL; no automatic parameter, speed or
+successor rescue. This does not reject every contour or layered representation.
+Twelve predictions were sealed before native scoring. Actual work includes one
+extra unsealed call lost to scalar JSON serialization, with the failure retained;
+an old-report schema repair also preserves its failed code and logs. Global
+registration/inheritance remains pending ledger303/unknown-terminal errors;
+local disposition and receipts are retained. No owned compute remains active.
+
 ## Frozen camera-corridor replacement fails (2026-09-19)
 
 [One new controlled 96-frame / 8-clip comparison](nearfield/BA_CAMERA_CORRIDOR_20260919.md)
