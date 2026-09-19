@@ -1,3 +1,25 @@
+## Existing ToF helps Depth Pro; frozen layer recipe rejected (2026-09-19)
+
+[Same500-frame global versus layered echo comparison](nearfield/BA_NFO_DEPTHPRO_ECHO_20260919.md)
+reuses native Depth Pro and saved single returns, with identical predicted
+histogram-peak pairs. Global improves bare Depth Pro far-small recall61.29%
+->67.84%, IoU23.93%->42.62%, pure-far FP344,336->19,236; mixed recall88.08%
+still misses94.5%. Layered recall58.66%, IoU38.81%, mixed90.22%, FP21,845:
+neither passes the two recall gates, and layers do not dominate global.
+Retain NFO as task baseline, global as descriptive calibration component,
+and this exact bounded-region recipe as NEGATIVE_CONTROL. This revises the
+prior range-priority interpretation: RGB-only failure did not exhaust existing
+ToF. 6,094/7,942 layered far-small misses lie in algorithm-assigned regions;
+assignment is not proof of correct near-surface anchoring. No automatic tuning,
+new hardware inference, training, fresh test, App change or successor.
+Old18-view G5 fusion is NOT_EVALUABLE_NO_FROZEN_TOF, not a negative result;
+its prior RGB-only diagnostic remains separate. Four synthetic tests and an
+independent500/4-arm/11-domain recount pass;350,140 UNKNOWN and9,903,793
+unanchored prediction pixels are retained. CPU postprocessing7.606s, no models.
+Global metadata remains pending ledger303 fingerprint/unknown-terminal errors;
+structured local disposition and failure receipts are preserved.
+
+
 ## Depth Pro reference: contour gain, near2m task fails (2026-09-19)
 
 [One frozen500-frame comparison](nearfield/BA_NFO_DEPTHPRO_20260919.md) completes
