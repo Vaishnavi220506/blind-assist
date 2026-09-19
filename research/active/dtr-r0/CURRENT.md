@@ -1,3 +1,21 @@
+## Local RGB head fits lateral attribution with matched-control increment (2026-09-20)
+
+[One frozen local RGB pilot](nearfield/TOF_LATERAL_ATTRIBUTION_20260920.md) keeps
+calibrated A30/15/6 and compares Otsu B30/15/6, RGB C30/10/6, matched noRGB30/13/6
+on the same consumed96. C removes all5 eligible lateralFP, retains original30TP,
+4/5 interior and5/6 total events, all first alerts, and every native corridor
+contributor. Precision66.67%->75%, FPR25%->16.67%, false duration3s->2s; segments
+stay4. noRGB reduces2FP but fragments false segments4->6. B suppresses4zone votes
+without changing a frame. UNKNOWN stays86; all raw4912anchors remain unchanged.
+This is a5915-parameter in-sample fit (60crops,400updates per matched arm), not
+held-out transfer: all13OUTSIDE labels come from one physical arrangement.
+Retain C only as a COMPONENT with3FP increment over matched noRGB. B is a scoped
+negative control; A remains frozen. One3.007m lateral FP is ineligible;9depthFP
+and the fifth missing event remain. No cutoff change, new capture or successor.
+Core synthetic/CUDA checks pass; pre-fit backend API repair preserves sealed
+inputs and prescribed fits. Global metadata still blocked by ledger303/unknown
+terminal; local disposition/receipts retained and task compute released.
+
 ## Fixed ToF score reduces in-sample false alerts (2026-09-20)
 
 [One calibrated readout on consumed96](nearfield/TOF_CORRIDOR_CALIBRATION_20260920.md)
