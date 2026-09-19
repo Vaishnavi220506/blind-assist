@@ -1,3 +1,15 @@
+## Near-return raw input prerequisite absent (2026-09-20)
+
+[Existing-input audit](nearfield/TOF_NEAR_COMPONENT_AVAILABILITY_20260920.md)
+checks 1,044 records: corridor96 and NFO500 retain single simulated distances;
+real ZJU160 retains Gaussian location/scale parameters, not measured time bins;
+retained A*288 already includes403 double-return zones, all hypothetical.
+No existing measured weak-foreground peak stream was found in these fixed inputs.
+The user confirms no owned8x8 board/captures. Physical near-peak existence remains
+NOT_EVALUABLE, not a negative result. The actual Android scalar ToF4M adapter and
+research multi-slot schema do not establish an integrated8x8/CNH acquisition path.
+No inference, training, simulator, device operation, new capture or successor ran.
+
 ## CPU contour-parallax recipe fails (2026-09-20)
 
 [One fixed 12-window / 36-frame reuse of G6](nearfield/BA_CONTOUR_PARALLAX_20260919.md)
