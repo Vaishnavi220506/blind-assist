@@ -1,3 +1,16 @@
+## BA-NFO local diagnosis and conditional-readout contrast (2026-09-19)
+
+[One local diagnosis and one frozen-backbone readout](nearfield/BA_NFO_ZONE_READOUT_20260919.md)
+find NFO median within-zone AUC0.9465, selecting an8-parameter public-zone
+offset rather than a decoder fit. Conditional AP14.701%->15.857%; at65,965FP
+diagnostic recall69.612%->71.401%. At frozen0.081, however, far-small recall
+falls63.596%, FP65,965->50,119, and validation recall94.598% fails95%.
+Mixed IoU51.042%->51.906%; pure-far FP157,187->106,249. This is improved
+ranking plus suppression, not foreground rescue. Keep NFO; fixed-cut replacement
+is NEGATIVE_CONTROL with ranking/local-diagnostic evidence retained.
+One12epoch CUDA fit complete; base/gate-out unchanged,4tests and independent
+public inference pass. No recalibration, alternative branch or successor fit.
+
 ## BA-NFO conditional ranking diagnosis (2026-09-19)
 
 [Four frozen-model curves and spatial audit](nearfield/BA_NFO_CONDITIONAL_20260919.md)
