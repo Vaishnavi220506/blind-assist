@@ -1,3 +1,18 @@
+## NFO fixed-checkpoint branch ablation (2026-09-19)
+
+[Disable only the final late residual](nearfield/BA_NFO_LATE_BRANCH_ABLATION_20260919.md):
+102/183 prior lost small-near hits recover; 81 remain missed. But target IoU falls
+70.07% -> 29.05%, pure-far FP rises 9,496 -> 24,688 and zone coverage falls 12/16 ->
+7/16. The branch provides material far rejection with near-retention costs; off is
+not an adopted repair. All-small residual effect is 135 base hits suppressed and
+36 base FN recovered. Selected TP totals both398 hide one hit lost and one rescued;
+all four previous high-coverage FN are detected by base alone, only three with branch.
+The off state uses co-trained final base weights, not an independent trained baseline
+or a counterfactual frozen-base run. No causal training-history or raw-head sign claim.
+All32 saved-full/zero-correction/base equivalence and independent set-count checks pass;
+no training, val/test or successor. Original checkpoints and12/16 failure retained;
+global registration/inheritance remain pending at the existing ledger error.
+
 ## NFO spatial tradeoff attribution (2026-09-19)
 
 [Saved-output audit of all 126 small-support zones](nearfield/BA_NFO_SPATIAL_TRADEOFF_AUDIT_20260919.md)
