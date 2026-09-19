@@ -13,6 +13,41 @@ labels remain reproducible under their original definitions. Existing closed
 recipes remain closed in their tested scopes; this decision starts no new fit
 or capture and does not change Android defaults.
 
+## Limited edge-compute constraint
+
+User clarification, 2026-09-19: the intended system must not depend on a large
+model or assume powerful edge hardware. Compute is a design constraint from
+the start, not a later compression task after demonstrating a large-model path.
+The online candidate must not require desktop-class CUDA, a large dense-depth
+backbone or off-device inference to satisfy this task.
+
+The [completed Depth Pro comparison](BA_CAMERA_CORRIDOR_20260919.md) remains
+historical diagnostic evidence. Its use ends with that frozen comparison; do
+not continue large-model trials or make their success a prerequisite for the
+research route. Retained NFO is a comparator, not proof of deployment suitability.
+
+Start candidate design with the 64 zone observations, calibrated geometric
+support and bounded image processing. Use limited-resolution or selected-region
+RGB evidence to investigate surface extent and echo association; a small learned
+component is eligible only within the actual execution budget. Cheap contours
+are not guaranteed object boundaries, and RGB alone must not invent an unsupported
+foreground range. Preserve independently valid ToF support and UNKNOWN when
+association or distance remains unresolved.
+
+Before selecting the next runtime candidate, record the target processor,
+available acceleration, working-memory limit, required update rate and end-to-end
+latency budget. Power/thermal limits need device evidence where relevant. These
+quantities have not been specified by this clarification; do not invent numerical
+budgets or assume an NPU is available. Verify the proposed path on the target or
+a clearly identified constrained proxy before claiming that it fits. Model size
+or desktop timing alone is insufficient; include image processing, transfers,
+fusion and decision cost. Offline source construction and saved-result analysis
+do not establish online feasibility.
+
+This clarification changes future candidate selection, not frozen experiment
+inputs, outcomes, denominators or historical timing claims. It starts no new
+model execution, training, capture or hardware acquisition.
+
 ## Geometry
 
 Use metres and camera coordinates: X right, Y down, Z forward along the optical
