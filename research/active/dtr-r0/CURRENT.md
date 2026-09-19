@@ -1,3 +1,20 @@
+## NFO full-training support contrast: recipe rejected (2026-09-19)
+
+[Full3,000-frame paired training and500-frame Development check](nearfield/BA_NFO_FULLSUPPORT_20260919.md)
+uses original NFO, shared from-scratch initialization, identical12epochs/1,500
+batches and fixed0.081. Control vs full-support loss: far-small recall68.27%
+->62.56%, IoU11.25%->12.30%, mixed recall95.05%->90.40%, pure-far FP208,202
+->196,151. Both recalls decline in all6 Development families; net1,097 extra
+far-small FN. Outside-ToF FP grows238,643. Candidate passes2/4 usertargets,
+fails paired recall guards; retain original NFO and close this exact loss recipe.
+Coverage includes254,276 small-near TRAIN pixels,133,697 at1.8–2m; no selected32
+or depth-gap filtering. This rejects the full-coverage loss recipe, not all
+spatial architectures or a causal proof that data coverage cannot matter.
+Original baseline exactly reproduced; fresh control differs slightly. Two
+loss/mask tests, all500 independent counts and44-frame three-arm reload pass.
+Consumed synthetic Development only; no test, sweep, successor or App change.
+Global registration/inheritance remain pending at existing ledger303 failure.
+
 ## NFO frozen cross-scene transfer check: adaptations rejected (2026-09-19)
 
 [Three frozen models on all 500 original val/Development frames](nearfield/BA_NFO_FROZEN_TRANSFER_20260919.md)
