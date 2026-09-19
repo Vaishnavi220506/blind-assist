@@ -1,3 +1,25 @@
+## Frozen camera-corridor replacement fails (2026-09-19)
+
+[One new controlled 96-frame / 8-clip comparison](nearfield/BA_CAMERA_CORRIDOR_20260919.md)
+uses the fixed camera-forward volume and retained weights, without training or
+threshold search. Interior events: raw ToF 2/5, retained NFO 1/5, Depth Pro plus
+existing global ToF correction 0/5; all events 3/6, 2/6, 0/6. Frame TP/FP/FN:
+12/5/24, 7/5/29, 0/0/36. False-alert segments/duration: 2/1.0s, 3/1.0s, 0/0s.
+The candidate's zero false alerts accompany zero detections; the frozen retain
+gate fails. Raw ToF and NFO already alert before the large-plate entry, so their
+zero entry-relative delay is not evidence of timely onset discrimination.
+All three miss the thin center cylinder, thin plate and same-zone inside object.
+UNKNOWN remains 96/1/0 frames; raw alerts are all spatially ambiguous.
+Retain inherited NFO only as a comparator, not as an adequate solution; close
+this exact global-scale corridor replacement as NEGATIVE_CONTROL. This does not
+reject all spatial representations or reopen earlier near2m negatives.
+Source admission passes all96; two failed mechanical/source attempts are retained,
+including texture-loading rejection before model scoring. Predictions were sealed
+before evaluator access. This is posed synthetic Development, not real-time,
+hardware, natural-distribution or safety evidence. No automatic successor.
+Global metadata remains pending ledger303/unknown-terminal errors; local structured
+disposition and failure receipts are retained. All task-owned compute is released.
+
 ## Existing ToF helps Depth Pro; frozen layer recipe rejected (2026-09-19)
 
 [Same500-frame global versus layered echo comparison](nearfield/BA_NFO_DEPTHPRO_ECHO_20260919.md)
