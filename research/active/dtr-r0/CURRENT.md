@@ -1,3 +1,14 @@
+## BA-NFO auxiliary-depth matched result (2026-09-19)
+
+[One hybrid fit](nearfield/BA_NFO_HYBRID_20260919.md) freezes train-only lambda0.89323,
+adds17 training parameters and removes the auxiliary head for inference.
+Far-return small recall69.61%->79.98%, but IoU12.09%->10.02%; mixed
+IoU51.04%->49.34%, recall94.70%->93.28%. Joint target fails. Retain original
+NFO and this recipe as NEGATIVE_CONTROL; no lambda tuning or successor.
+Both controls reproduce all original counts; actual pruned inference passes.
+One12epoch CUDA run complete and process released. Global metadata pending
+ledger303/unknown terminal; local structured disposition and weights retained.
+
 ## BA-NFO trained RGB-only control (2026-09-19)
 
 [Matched RGB-only fit](nearfield/BA_NFO_RGB_CONTROL_20260919.md) completes12epochs
