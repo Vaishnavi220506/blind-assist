@@ -1,3 +1,20 @@
+## NFO-ZCR closes the current readout iteration (2026-09-19)
+
+[One frozen-NFO zone-median contrast](nearfield/BA_NFO_ZCR_20260919.md)
+gives far-small recall69.612%->99.740% but IoU12.090%->6.357%, mixed
+recall94.699%->94.285%, pure-far FP157,187->9,876,975. Three user gates fail.
+Validation alone selects residual cutoff-0.1943483. At this point mixed recall
+is already below94.5% and pure-far FP above cap; monotonicity proves no global
+cutoff can meet both on these fixed scores. AP14.701%->24.165% is retained
+ranking evidence, not a successful near mask or proof all margins are weak.
+Keep original NFO; ZCR and eight-parameter Zone Readout remain negative controls.
+No MAD, regional threshold/weight, new fit or successor. Three focused tests,
+independent public inference/NumPy median and exact baseline reproduction pass;
+one NCHW layout repair is documented. Metadata remains pending ledger303.
+The user's next direction readout is fixed image-center/left/right sectors;
+defer implementation until a useful mask, superseding the 3D corridor proposal
+below for that future readout. No body-frame reconstruction or alert claim.
+
 ## Adopted camera-forward task (2026-09-19)
 
 [Camera-forward contract](nearfield/CAMERA_FORWARD_CONTRACT_20260919.md): optical axis defines forward; use RGB + 8x8 ToF and a fixed camera-frame corridor (0.3-3m forward, +/-0.3m lateral, explicit fixed vertical profile). Evaluate paired corridor alerts and UNKNOWN coverage; IoU remains a component metric. NFO threshold scores are not exact depth. No body-heading/IMU compensation, future trajectory or SLAM work is required. Definition adopted; runtime integration and alert validation are pending. Historical results below retain their original task.
