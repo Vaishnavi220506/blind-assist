@@ -1,3 +1,16 @@
+## NFO difficult-case learning check (2026-09-19)
+
+[One TRAIN-only32frame fit](nearfield/BA_NFO_HARDFIT_20260919.md) uses16depth-separated
+small-support cases plus16textured pure-far controls, original network/loss/inputs,
+512updates and frozen0.081. Target recall71.25%->97.50%, IoU13.62%->25.83%,
+FP1693->1110; negative target FP0->13/7689. Only1/16positive zones meet local
+recall90%/IoU50%; aggregate IoU65% and14/16coverage targets fail.
+Retain the learnability diagnostic as COMPONENT, not a replacement model.
+The fixed full-image-loss fit remains incomplete; neither RGB information
+limits nor network incapacity is established. No validation/test evaluation,
+recalibration or successor. Two tests and independent all32weight-reload/count
+checks pass; original NFO unchanged, metadata pending ledger303.
+
 ## NFO-ZCR closes the current readout iteration (2026-09-19)
 
 [One frozen-NFO zone-median contrast](nearfield/BA_NFO_ZCR_20260919.md)
