@@ -1,3 +1,17 @@
+## NFO spatial tradeoff attribution (2026-09-19)
+
+[Saved-output audit of all 126 small-support zones](nearfield/BA_NFO_SPATIAL_TRADEOFF_AUDIT_20260919.md)
+resolves the net 122 extra FN into 183 previous hits lost and 61 misses recovered.
+All losses occur outside the 16 selected zones, still on the same supervised TRAIN
+images. Depth 1.8-2m contributes 138 losses/23 rescues; <=1.8m contributes 45/38.
+The original depth-separation + far-ToF stratum (30 zones) has 0 losses/5 rescues,
+but is not a new admission rule or promotion denominator. Keep all valid <2m
+positives, other-zone costs and the failed 12/16 coverage gate. Selected-pixel loss
+coefficients are about 101x other pixels under the existing half/half means, identically
+in both arms; this is not a causal explanation or measured gradient ratio.
+Independent all-zone set-difference and source/output checks pass; no new training,
+inference, validation, test or successor. Global registration/inheritance pending.
+
 ## NFO late spatial-conditioning contrast (2026-09-19)
 
 [One fixed 512-update architecture contrast](nearfield/BA_NFO_LATEFUSION_20260919.md)
