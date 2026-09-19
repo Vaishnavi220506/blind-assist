@@ -1,3 +1,16 @@
+## BA-NFO conditional ranking diagnosis (2026-09-19)
+
+[Four frozen-model curves and spatial audit](nearfield/BA_NFO_CONDITIONAL_20260919.md)
+find Hybrid AP14.606% versus NFO14.701% in449far-return small zones. At80%
+recall Hybrid needs96,944FP versus91,526. Positive/negative mean score shifts
+are+0.00941/+0.01082; the lower Hybrid cutoff also contributes to near expansion.
+Curves cross locally: no overall ranking gain, but no exact translation claim.
+Local rescue spill exists, while35.44%of new FP occur in no-rescue frames.
+Keep original NFO and Hybrid NEGATIVE_CONTROL; retain this diagnostic component.
+No fifth fit, calibration adoption or local-branch implementation. A structured
+local mechanism remains a hypothesis with an unresolved observable trigger.
+All original2m counts reproduce,3focused tests pass; consumed Development only.
+
 ## BA-NFO auxiliary-depth matched result (2026-09-19)
 
 [One hybrid fit](nearfield/BA_NFO_HYBRID_20260919.md) freezes train-only lambda0.89323,
