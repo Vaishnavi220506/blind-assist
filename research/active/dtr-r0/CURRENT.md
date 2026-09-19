@@ -1,3 +1,23 @@
+## Depth Pro reference: contour gain, near2m task fails (2026-09-19)
+
+[One frozen500-frame comparison](nearfield/BA_NFO_DEPTHPRO_20260919.md) completes
+official Depth Pro with low/native RGB and public camera rectification, plus18
+separate old G5 views. Native contour F1 improves (matched70 SI:25.21% UniDepth
+to51.28%; near-mask boundary:4.61% NFO to44.43%), but far-small recall falls
+68.36%->61.29%, mixed recall95.00%->81.64%, pure-far FP212,988->344,336.
+Far-small IoU rises11.13%->23.93%; this does not pass the joint task. Low also
+fails. Native detail and inherited sampling differences prevent attribution
+solely to pretrained representation. Old bar optical-z median improves14.21m
+to2.875m versus1.947m reference, but remains0/1,054 pixels below2m.
+Retain NFO; exact standalone Depth Pro2m replacement is NEGATIVE_CONTROL,
+native shape/range-error evidence remains diagnostic. Prioritize near-layer
+range evidence over another segmentation-head round; no successor started.
+Six focused tests and independent all500/3-arm/11-domain recount pass;350,140
+UNKNOWN pixels preserved. No originaltest, training, threshold sweep or App
+change. Global registration is blocked by ledger303; terminal is unregistered,
+with structured local disposition and actual failure receipts retained.
+
+
 ## NFO full-training support contrast: recipe rejected (2026-09-19)
 
 [Full3,000-frame paired training and500-frame Development check](nearfield/BA_NFO_FULLSUPPORT_20260919.md)
