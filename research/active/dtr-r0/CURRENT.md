@@ -1,3 +1,16 @@
+## BA-NFO matched supervision completed (2026-09-19)
+
+[Matched two-arm training](nearfield/BA_NFO_MATCHED_20260919.md) supersedes the
+preflight-only status below. On 500 training-unseen Hypersim Development frames,
+2m mixed IoU47.11%->51.04%, recall93.09%->94.70%, FP pixels536667->470344.
+48/57 eligible scenes and all6 held-out families improve. Same trainable RGB/ToF
+U-Net,3000train/500val,12epochs/arm; real weights and public-input inference pass.
+Small-near-area recall87.62%->83.01% remains a material loss; no thin-rod or alert
+benefit claim. Retain COMPONENT_OR_CHALLENGER/CHALLENGER for this synthetic
+supervision comparison only. No further fit/oracle/assignment branch launched;
+A/A*,Radar and App unchanged. Global registration/inheritance pending ledger303
+and unknown terminal; local evidence and disposition retained.
+
 ## BA-NFO direct near-field occupancy preflight (2026-09-18)
 
 [BA-NFO protocol](nearfield/BA_NFO_PROTOCOL_20260918.md) is frozen as the
