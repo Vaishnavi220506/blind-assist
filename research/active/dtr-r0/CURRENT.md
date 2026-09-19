@@ -1,3 +1,20 @@
+## Cross-zone existing-return ceiling is narrow (2026-09-20)
+
+[Fixed596-frame attribution audit](nearfield/CROSS_ZONE_ANCHOR_CEILING_20260920.md)
+replays every saved scalar and baseline exactly, with no new models or observations.
+Only1/4 originally missed corridor interior events has a pure same-frame near
+anchor elsewhere: horizontal bar s02, five interior frames, first at1.4s versus
+entry1.2s. None has an entry witness; center cylinder, thin plate and same-zone
+small object have no target-owned return anywhere. Raw ToF already detects s02.
+The separate500 VAL far_small component envelope covers4,539/6,079 FN pixels
+(74.67%), but8-connected reference-near regions can merge different objects.
+This is a privileged simulation availability ceiling, not a recovered prediction,
+valid pixel ownership, FPR gain or physical weak-peak result. Original NFO remains
+1/5 interior events; far_small precision11.73%, IoU11.13% and FP98,788 remain.
+Retain only bounded component evidence; no automatic association/training run.
+Sixteen synthetic tests pass; global metadata remains pending ledger303 and
+unknown-terminal errors, with local disposition/receipts retained.
+
 ## Near-return raw input prerequisite absent (2026-09-20)
 
 [Existing-input audit](nearfield/TOF_NEAR_COMPONENT_AVAILABILITY_20260920.md)
