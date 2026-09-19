@@ -1,3 +1,20 @@
+## NFO frozen cross-scene transfer check: adaptations rejected (2026-09-19)
+
+[Three frozen models on all 500 original val/Development frames](nearfield/BA_NFO_FROZEN_TRANSFER_20260919.md)
+close the 32-frame adaptation sequence. Far-small recall: original68.36%,
+joint62.37%, late60.12%; IoU11.13%,10.89%,11.64%; mixed recall95.00%,87.80%,87.25%;
+pure-far FP212,988,367,659,273,576. Joint meets0/4 user targets, late1/4. Both
+candidates lose far-small and mixed recall in all6 scene families. Preserve
+original NFO as reference (it still misses75%recall), reject these fixed checkpoints
+as transfer upgrades, retain local fit/ablation evidence and all old gate failures.
+This is separately authorized consumed-Development transfer, not new blind evidence
+or a retroactive pass of14/16. All500frames are image/scene/family-disjoint from
+both original training and32-frame fitting, but were used in prior calibration.
+No training, cutoff change, original test access or successor. Exact baseline,
+independent500-frame/domain/family recount and44-frame three-arm checkpoint reload
+pass. Stop same-checkpoint/small-set repair; future work needs representative
+training coverage and a distinct cross-scene question. Global metadata still pending.
+
 ## NFO fixed-checkpoint branch ablation (2026-09-19)
 
 [Disable only the final late residual](nearfield/BA_NFO_LATE_BRANCH_ABLATION_20260919.md):
