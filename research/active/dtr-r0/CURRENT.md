@@ -1,3 +1,20 @@
+## Nominal ToF FOV exposes returns but worsens false alerts (2026-09-20)
+
+[One fixed96-frame nominal45x45 contrast](nearfield/TOF_FOV45_20260920.md)
+changes only the8x8 bin layout on the original sampled depth. The center cylinder
+and thin plate gain pure near returns in5 event frames each; the small same-zone
+object remains unanchored. Raw ToF interior events rise2/5->4/5, TP12->30 and
+FN24->6, but FP5->19, FPR8.33%->31.67%, precision70.59%->61.22%, and false
+segments2->6. This retains a geometry-sensitive observation component, not an
+overall detector improvement. Prediction-UNKNOWN remains86/96; TN remains0.
+The narrower footprint loses21,032/31,416 old covered image samples; all target
+and reference-corridor surface samples happen to remain covered in this cohort.
+This is nominal geometry on an uncalibrated optical-Z/noise/return proxy, not
+physical VL53 evidence. Nine synthetic checks pass; predictions were sealed before
+ownership scoring. No model, new native capture, training or successor ran.
+Global registration/inheritance remains pending ledger303/unknown-terminal;
+local disposition and receipts preserve that metadata limitation.
+
 ## Cross-zone existing-return ceiling is narrow (2026-09-20)
 
 [Fixed596-frame attribution audit](nearfield/CROSS_ZONE_ANCHOR_CEILING_20260920.md)
