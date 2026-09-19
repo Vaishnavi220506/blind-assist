@@ -1,3 +1,13 @@
+## BA-NFO trained RGB-only control (2026-09-19)
+
+[Matched RGB-only fit](nearfield/BA_NFO_RGB_CONTROL_20260919.md) completes12epochs
+with original split/loss/budget and identical surviving initial parameters.
+Far-return small foreground recall97.89% but IoU6.35%,FPR96.26%, versus fusion
+NFO69.61%/12.09%/31.79%. High recall is broad overprediction, not useful RGB
+recovery; frozen Non-Veto trigger fails. Retain NEGATIVE_CONTROL for this recipe,
+not RGB information impossibility or proven causal veto. No successor training;
+actual weight and input-independent inference pass; metadata pending ledger303.
+
 ## BA-NFO small-area decomposition (2026-09-19)
 
 [Fixed-model diagnostic](nearfield/BA_NFO_AREA_DIAGNOSTIC_20260919.md) reproduces
