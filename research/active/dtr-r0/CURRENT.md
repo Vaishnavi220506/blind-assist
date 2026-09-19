@@ -1,3 +1,18 @@
+## NFO native-support audit (2026-09-19)
+
+[All 16 positive TRAIN cases inspected](nearfield/BA_NFO_NATIVE_SUPPORT_AUDIT_20260919.md):
+original 1024x768 RGB/depth exactly reproduce 256x192 inputs. Only 38/400 near
+labels cover a minority-near native footprint. Of 192 joint-fit FP, 125 have no
+native near coverage; four FN have mean 96.875% near coverage, the fifth 12.5%.
+Input averaging is not supported as the principal failure explanation.
+Every case contains cross-zone near support; connectivity does not establish
+object identity or invalidate the mixed-cell task. Keep all cases and the 11/16
+failure unchanged. No automatic high-resolution fit or cohort replacement.
+A future bounded spatial-localization contrast may address spill and missed
+support; no successor was run. All source/array/confusion checks and all 16 visual
+inspections pass. No training, model inference, validation or test access.
+Global registration/inheritance remains pending at the existing ledger error.
+
 ## NFO fixed joint-supervision diagnostic (2026-09-19)
 
 [Fixed 0.5 full + 0.5 target loss](nearfield/BA_NFO_JOINTFIT_20260919.md) on the same
