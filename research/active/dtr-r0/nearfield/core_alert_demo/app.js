@@ -28,7 +28,7 @@
   const data=sourceData?{...sourceData,cohorts:[...sourceData.cohorts,...(extra&&extra.clips&&extra.clips.length?[extra]:[])]}:null;
   if(!data){document.querySelector('main').innerHTML='<div class="panel prose"><h1>回放数据尚未就绪</h1><p>请保留整个演示文件夹，确认 demo-data.js 与 index.html 位于同一目录。</p></div>';return;}
   $('collectionCount').textContent=String(data.cohorts.length).padStart(2,'0');
-  const S={cohort:0,clip:0,frame:0,zone:35,autoZone:true,layout:'ALL',family:'ALL',page:'gallery',playing:false,timer:null,imageToken:0,tour:null};
+  const S={cohort:0,clip:0,frame:0,zone:35,autoZone:true,layout:'ALL',family:'ALL',page:'gallery',playing:false,timer:null,tour:null};
   const currentCohort=()=>data.cohorts[S.cohort],currentClip=()=>currentCohort().clips[S.clip],currentFrame=()=>currentClip().frames[S.frame];
   const typeNames={head_horizontal:'横向悬空体',head_hanging_plane:'悬挂面',head_protruding_edge:'头部突出边缘',body_protruding_plane:'身体突出面',body_suspended_solid:'身体悬空体',body_large_solid:'身体大型实体'};
   const layoutNames={INSIDE:'主体 · 相交布局',OUTSIDE:'主体 · 通道外布局',BOUNDARY:'挑战 · 边界接触'};
@@ -38,25 +38,80 @@
   const visibleClips=()=>currentCohort().clips.map((c,i)=>({c,i})).filter(({c})=>(S.layout==='ALL'||c.layout===S.layout)&&(S.family==='ALL'||c.layer===S.family));
   function renderGallery(){const co=currentCohort(),clips=visibleClips();$('galleryCohort').textContent=co.title;$('galleryDescription').textContent=co.illustrative?'City Sample 大城市与小城市地图，六处位置、八段分步回放。原生 1080p 材质与光影；固定策略响应独立展示，不计入原1296帧结果。':co.subtitle+' · 六种障碍形态，每个完整片段均可打开。';$('galleryCount').textContent=clips.length+' 个完整片段';$('galleryGrid').innerHTML=clips.map(({c,i})=>`<button class="gallery-card" data-gallery-clip="${i}"><div class="gallery-image"><img src="${esc(thumbnail(c))}" alt="${esc(clipTitle(c))}" loading="lazy"><span>${co.illustrative?'机制演示 · 未标注':esc(c.layer+' / '+c.layout)}</span><b>↗</b></div><div class="gallery-card-copy"><small>SCENE ${String(i+1).padStart(2,'0')} · ${c.frames.length} 个采样</small><h2>${esc(clipTitle(c))}</h2><p>${esc(clipDescription(c))}</p>${c.motion?`<div class="motion-caption">运动 · ${esc(c.motion)}</div>`:''}<span>完整回放 <i>→</i></span></div></button>`).join('')||'<p class="empty">当前筛选没有场景，请选择全部类型。</p>';$('galleryGrid').querySelectorAll('[data-gallery-clip]').forEach(b=>b.onclick=()=>{selectClip(Number(b.dataset.galleryClip));setPage('replay');});}
   function renderTour(){const active=!!S.tour;$('tourStatus').hidden=!active;if(active)$('tourLabel').textContent=`连续导览 ${S.tour.index+1} / ${S.tour.clips.length} · 每个片段独立重置历史`;}
-  function startTour(){const clips=visibleClips().map(({i})=>i);if(!clips.length)return;selectClip(clips[0]);setPage('replay');S.tour={clips,index:0};$('loop').checked=false;renderTour();play();}
+  async function startTour(){const clips=visibleClips().map(({i})=>i);if(!clips.length)return;setPage('replay');if(!await selectClip(clips[0]))return;S.tour={clips,index:0};$('loop').checked=false;renderTour();preload();play();}
   let toastTimer;
   function toast(text){$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2600);}
-  function stop(){S.playing=false;clearTimeout(S.timer);S.timer=null;$('play').textContent='▶ 播放';$('play').setAttribute('aria-label','播放');}
-  function play(){if(S.playing){stop();return;}if(S.frame===currentClip().frames.length-1)setFrame(0,false);S.playing=true;$('play').textContent='Ⅱ 暂停';$('play').setAttribute('aria-label','暂停');schedule();}
-  function schedule(){clearTimeout(S.timer);if(!S.playing)return;S.timer=setTimeout(()=>{if(!S.playing)return;const end=currentClip().frames.length-1;if(S.frame>=end){if(S.tour){const tour=S.tour;if(tour.index+1<tour.clips.length){tour.index++;selectClip(tour.clips[tour.index]);S.tour=tour;renderTour();S.playing=true;$('play').textContent='Ⅱ 暂停';$('play').setAttribute('aria-label','暂停');}else{stop();S.tour=null;renderTour();toast('已到连续导览终点。');return;}}else if($('loop').checked)setFrame(0,false);else{stop();return;}}else setFrame(S.frame+1,false);schedule();},Math.max(1,((currentClip().frames[S.frame+1]?.time_s-currentFrame().time_s)||.2)*1000)/Number($('speed').value));}
-  function setFrame(n,manual=true){if(manual)stop();S.frame=Math.max(0,Math.min(currentClip().frames.length-1,Math.round(n)));renderFrame();}
+  const images=new ReplayImages.DecodedFrames();
+  const presenter=new ReplayImages.FramePresenter(images,{
+    busy:visible=>{const box=$('imageLoading');box.style.display=visible?'grid':'none';box.textContent='正在准备高清画面…';},
+    failure:()=>{stop();$('imageLoading').style.display='grid';$('imageLoading').textContent='场景图像不可用；请确认 assets 文件夹完整。';}
+  });
+  function setNavigation(pending){for(const id of ['play','prevFrame','nextFrame','seek'])$(id).disabled=pending;}
+  function navigationReady(promise){const token=presenter.token;setNavigation(true);return promise.finally(()=>{if(token===presenter.token)setNavigation(false);});}
+  function stop(){setNavigation(false);$('cohort').value=String(S.cohort);S.playing=false;clearTimeout(S.timer);S.timer=null;presenter.cancel();$('play').textContent='▶ 播放';$('play').setAttribute('aria-label','播放');}
+  function playingLabel(){$('play').textContent='Ⅱ 暂停';$('play').setAttribute('aria-label','暂停');}
+  async function play(){
+    if(S.playing){stop();return;}
+    S.playing=true;playingLabel();
+    if(S.frame===currentClip().frames.length-1&&!await setFrame(0,false))return;
+    if(S.playing)schedule();
+  }
+  function schedule(){
+    clearTimeout(S.timer);if(!S.playing)return;
+    const interval=((currentClip().frames[S.frame+1]?.time_s-currentFrame().time_s)||.2)*1000/Number($('speed').value);
+    S.timer=setTimeout(async()=>{
+      if(!S.playing)return;
+      const end=currentClip().frames.length-1;
+      if(S.frame>=end){
+        if(S.tour){
+          const tour=S.tour;
+          if(tour.index+1>=tour.clips.length){stop();S.tour=null;renderTour();toast('已到连续导览终点。');return;}
+          tour.index++;
+          if(!await selectClip(tour.clips[tour.index]))return;
+          S.tour=tour;renderTour();preload();S.playing=true;playingLabel();
+        }else if($('loop').checked){if(!await setFrame(0,false))return;}
+        else{stop();return;}
+      }else if(!await setFrame(S.frame+1,false))return;
+      if(S.playing)schedule();
+    },Math.max(1,interval));
+  }
+  function setFrame(n,manual=true){
+    if(manual)stop();
+    const frame=Math.max(0,Math.min(currentClip().frames.length-1,Math.round(n)));
+    return presenter.show(currentClip().frames[frame].rgb,image=>{S.frame=frame;renderFrame(image);});
+  }
   function setPage(page){if(page!=='replay'){stop();S.tour=null;renderTour();}S.page=page;document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b.dataset.page===page));if(page==='gallery')renderGallery();if(page==='results')renderResults();if(page==='principle')renderPrinciple();window.scrollTo(0,0);}
-  function selectClip(index,frame=0){stop();S.tour=null;S.autoZone=true;S.clip=index;S.frame=Math.max(0,Math.min(currentClip().frames.length-1,frame));renderTour();renderSceneList();renderFrame();preload();}
-  function selectCohort(index,clip=0,frame=0){stop();S.tour=null;S.autoZone=true;renderTour();S.cohort=index;S.clip=clip;S.frame=frame;S.layout='ALL';S.family='ALL';$('cohort').value=String(index);$('familyFilter').value='ALL';document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter==='ALL'));$('cohortNote').textContent=currentCohort().subtitle;renderKPIs();renderSceneList();renderGallery();renderFrame();if(S.page==='results')renderResults();preload();}
-  function preload(){for(const f of currentClip().frames){const im=new Image();im.src=f.rgb;}}
+  function selectClip(index,frame=0){
+    stop();S.tour=null;renderTour();
+    const clip=currentCohort().clips[index];frame=Math.max(0,Math.min(clip.frames.length-1,frame));
+    const ready=presenter.show(clip.frames[frame].rgb,image=>{S.autoZone=true;S.clip=index;S.frame=frame;renderSceneList();renderFrame(image);});
+    warmClip(clip,frame,currentCohort().clips[index+1]);return navigationReady(ready);
+  }
+  function selectCohort(index,clip=0,frame=0){
+    stop();S.tour=null;renderTour();const co=data.cohorts[index],selected=co.clips[clip];
+    const ready=presenter.show(selected.frames[frame].rgb,image=>{
+      S.autoZone=true;S.cohort=index;S.clip=clip;S.frame=frame;S.layout='ALL';S.family='ALL';
+      $('cohort').value=String(index);$('familyFilter').value='ALL';document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter==='ALL'));
+      $('cohortNote').textContent=co.subtitle;renderKPIs();renderSceneList();renderGallery();renderFrame(image);if(S.page==='results')renderResults();
+    });
+    warmClip(selected,frame,co.clips[clip+1]);return navigationReady(ready);
+  }
+  function warmClip(clip,frame,next){images.warm([...clip.frames.slice(frame),...clip.frames.slice(0,frame),...(next?.frames.slice(0,4)||[])].map(f=>f.rgb));}
+  function preload(){const next=S.tour?S.tour.clips[S.tour.index+1]:S.clip+1;warmClip(currentClip(),S.frame,currentCohort().clips[next]);}
   function renderKPIs(){if(currentCohort().illustrative||!currentCohort().metrics){$('kpis').innerHTML='<div class="illustrative-banner"><span class="tag amber">动态机制演示 · 无评估真值</span><p>展示原生渲染场景、实际区域观测与同一冻结策略的响应。没有 TP / FP 或事件效果评价，原验证统计保持独立。</p></div>';return;}const m=currentCohort().metrics.core.hold,b=currentCohort().metrics.core.calibration;const reduction=b.FP?(b.FP-m.FP)/b.FP:null;
     $('kpis').innerHTML=`<div class="kpi"><span class="field-label">Core 全量 · ${m.frames} 帧 · 主体事件</span><strong>${m.events_detected}<em>/ ${m.event_count}</em></strong><small>${m.TP} TP / ${m.FN} FN · 全部主体布局</small></div><div class="kpi"><span class="field-label">候选误报帧</span><strong>${m.FP}<em>帧</em></strong><span class="change">↓ ${pct(reduction)}</span><small>Calibration ${b.FP} 帧 → 候选 ${m.FP} 帧</small></div><div class="kpi"><span class="field-label">主体正帧覆盖</span><strong>${pct(m.recall)}</strong><small>精确率 ${pct(m.precision)} · F1 ${pct(m.f1)}</small></div><div class="kpi"><span class="field-label">误报段 / 采样时长</span><strong>${m.false_segments}<em>段 / ${fixed(m.false_sampled_s,1)} s</em></strong><small>Calibration ${b.false_segments} 段 / ${fixed(b.false_sampled_s,1)} s</small></div>`;}
   function renderSceneList(){const co=currentCohort(),clips=visibleClips();$('sceneCount').textContent=`${clips.length} / ${co.clips.length}`;
     $('sceneList').innerHTML=clips.length?clips.map(({c,i})=>{const q=clipStats(c),evaluated=!co.illustrative&&c.frames.some(hasTruth);return `<button class="scene-item ${S.clip===i?'active':''}" data-clip="${i}" aria-current="${S.clip===i}"><img class="scene-thumb" src="${esc(thumbnail(c))}" alt="" loading="lazy"><div><strong>${esc(clipTitle(c))}</strong><span>${esc(c.layer)} · ${c.frames.length} 采样</span><br><span>${evaluated?`正例 ${q.tp}/${q.tp+q.fn} · 误报 ${q.fp} 帧`:'未标注 · 仅展示机制响应'}</span></div></button>`;}).join(''):'<p class="empty">当前筛选没有场景。</p>';
     $('sceneList').querySelectorAll('[data-clip]').forEach(b=>b.onclick=()=>{selectClip(Number(b.dataset.clip));setPage('replay');});}
-  function loadImage(frame){$('fullImage').href=frame.rgb;$('fullImage').textContent=frame.rgb_size?.[0]>=1920?'1080p 原图 ↗':'640×360 原图 ↗';const token=++S.imageToken,img=$('sceneImage');$('imageLoading').style.display='grid';$('imageLoading').textContent='正在同步场景…';img.style.visibility='hidden';img.onload=()=>{if(token!==S.imageToken)return;img.style.visibility='visible';$('imageLoading').style.display='none';};img.onerror=()=>{if(token!==S.imageToken)return;$('imageLoading').textContent='场景图像不可用；请确认 assets 文件夹完整。';};img.src=frame.rgb;img.alt=`${currentClip().label}，${frame.id}，${fixed(frame.time_s,1)}秒`;if(img.complete&&img.naturalWidth){img.style.visibility='visible';$('imageLoading').style.display='none';}}
-  function renderFrame(){$('guideNote').textContent='导览不改变统计范围；所有完整片段均可查看。';const f=currentFrame(),clip=currentClip();if(S.autoZone)S.zone=dominantZone(f);$('seek').max=clip.frames.length-1;$('seek').value=S.frame;$('timeLabel').textContent=`${fixed(f.time_s,1)} s / ${fixed(clip.frames.at(-1).time_s,1)} s · 第 ${S.frame+1} / ${clip.frames.length} 帧`;$('frameTag').textContent=f.id+' · '+fixed(f.time_s,1)+' s';$('sceneType').textContent=layoutNames[clip.layout]||'动态机制演示 · 未标注';$('sceneTitle').textContent=clipTitle(clip);$('sceneDescription').textContent=clipDescription(clip);$('sceneCaption').textContent=clip.environment||'相机前向 · 名义 45° ToF';$('motionLabel').textContent=clip.motion?'运动 · '+clip.motion:'按原始采样时间播放 · 不生成中间观测';
-    const truth=f.evaluation.truth;const tb=$('truthBadge');tb.textContent=!hasTruth(f)?'无评估真值 · 不计成败':'评估真值：'+(truth?(f.evaluation.boundary?'接触 / 边界带':'已进入通道'):(clip.layout==='OUTSIDE'?'通道外':'入界前负期'));tb.className='tag '+(truth?'pink':'neutral');$('showTruth').disabled=!hasTruth(f);if(!hasTruth(f))$('showTruth').checked=false;loadImage(f);renderDecision();renderZone();renderTimeline();renderPrinciple();}
+  function loadImage(frame,image){
+    $('fullImage').href=frame.rgb;$('fullImage').textContent=frame.rgb_size?.[0]>=1920?'1080p 原图 ↗':'640×360 原图 ↗';
+    const old=$('sceneImage');
+    image.alt=`${currentClip().label}，${frame.id}，${fixed(frame.time_s,1)}秒`;image.width=640;image.height=360;
+    if(old!==image){old.removeAttribute('id');image.id='sceneImage';old.replaceWith(image);}
+    $('imageLoading').style.display='none';
+  }
+  function renderFrame(image){$('guideNote').textContent='导览不改变统计范围；所有完整片段均可查看。';const f=currentFrame(),clip=currentClip();if(S.autoZone)S.zone=dominantZone(f);$('seek').max=clip.frames.length-1;$('seek').value=S.frame;$('timeLabel').textContent=`${fixed(f.time_s,1)} s / ${fixed(clip.frames.at(-1).time_s,1)} s · 第 ${S.frame+1} / ${clip.frames.length} 帧`;$('frameTag').textContent=f.id+' · '+fixed(f.time_s,1)+' s';$('sceneType').textContent=layoutNames[clip.layout]||'动态机制演示 · 未标注';$('sceneTitle').textContent=clipTitle(clip);$('sceneDescription').textContent=clipDescription(clip);$('sceneCaption').textContent=clip.environment||'相机前向 · 名义 45° ToF';$('motionLabel').textContent=clip.motion?'运动 · '+clip.motion:'按原始采样时间播放 · 不生成中间观测';
+    const truth=f.evaluation.truth;const tb=$('truthBadge');tb.textContent=!hasTruth(f)?'无评估真值 · 不计成败':'评估真值：'+(truth?(f.evaluation.boundary?'接触 / 边界带':'已进入通道'):(clip.layout==='OUTSIDE'?'通道外':'入界前负期'));tb.className='tag '+(truth?'pink':'neutral');$('showTruth').disabled=!hasTruth(f);if(!hasTruth(f))$('showTruth').checked=false;loadImage(f,image);renderDecision();renderZone();renderTimeline();renderPrinciple();}
   function renderDecision(){const f=currentFrame(),d=f.decision,state=stateFor(f),definite=f.raw.definite_zones>0;const hero=$('decisionHero');hero.className='decision-hero '+state;
     $('decisionSymbol').textContent=state==='held'?'↳':state==='strong'?'!':'−';$('decisionKicker').textContent=state==='held'?'CAUSAL HOLD · 仅延续一帧':state==='strong'?'CURRENT EVIDENCE · 当前证据':'NO ALERT · 当前不提醒';$('decisionTitle').textContent=state==='held'?'一帧保持提醒':state==='strong'?(definite?'确定支持提醒':'强分数提醒'):'当前不触发提醒';
     const previous=S.frame>0?currentClip().frames[S.frame-1]:null;
@@ -97,10 +152,10 @@
     const q=clipStats(clip);$('timelineLegend').classList.toggle('unlabeled',!frames.some(hasTruth));$('clipSummary').innerHTML=!frames.some(hasTruth)?`<span>评估状态<b>未标注 · 不计算准确率</b></span><span>当前策略提醒<b>${frames.filter(r=>r.decision.alert).length} 帧</b></span><span>仅保持提醒<b>${frames.filter(r=>r.decision.held_only).length} 帧</b></span>`:`<span>本片段正帧覆盖<b>${q.tp} / ${q.tp+q.fn}</b></span><span>本片段误报<b>${q.fp} 帧 · ${q.segments} 段</b></span><span>保持新增提醒<b>${frames.filter(r=>r.decision.held_only).length} 帧</b></span>`;}
   function renderPrinciple(){const f=currentFrame(),a=f.zones[S.zone],d=f.decision;$('liveFactor').innerHTML=`当前选中 <b>z${S.zone}</b>：深度占比 <b>${fixed(a.depth,6)}</b> × 区间内平均角域重叠 <b>${fixed(a.angular_given_depth,6)}</b> = 联合分数 <b>${fixed(a.joint,6)}</b>。<br>全帧最大分数为 <b>${fixed(f.score,6)}</b>。${a.interval?'该区完整测距区间 '+a.interval.map(v=>fixed(v,3)).join('–')+' m。':'该区无有效返回。'}`;$('liveState').innerHTML=`当前 ${esc(f.id)} · ${fixed(f.time_s,1)} s：<br>当前强证据 <b>${d.strong?'有':'无'}</b>；上一相邻采样强证据 <b>${d.previous_strong?'有':'无'}</b>。<br>最终：<b>${d.held_only?'仅保持一帧':d.alert?'当前证据提醒':'不触发提醒'}</b>。空间 UNKNOWN：${d.unknown?'保留':'当前有确定支持'}。`;}
   function renderResults(){const scope=$('resultScope').value,names={core:'完整 Core 布局',boundary:'Boundary 挑战',all:'全部布局'};$('resultCards').innerHTML=evaluatedCohorts(data.cohorts).map(co=>{const m=co.metrics[scope],h=m.hold;return `<article class="panel result-card"><div class="result-heading"><div><h2>${esc(co.title)}</h2><p>${esc(co.subtitle)}</p></div><span class="tag ${scope==='boundary'?'pink':'neutral'}">${names[scope]} · ${h.frames}帧 · ${h.positive}P / ${h.negative}N</span></div><div class="table-scroll"><table><thead><tr><th>固定读出</th><th>TP / FP / FN</th><th>精确率</th><th>召回率</th><th>F1</th><th>FPR</th><th>事件</th><th>误报段 / 时长</th><th>最大首报延迟</th></tr></thead><tbody>${['calibration','strong','hold'].map(arm=>{const a=m[arm];return `<tr class="${arm==='hold'?'highlight':''}"><td>${arm==='calibration'?'Calibration':arm==='strong'?'固定强阈值':'强阈值 + 一帧保持'}</td><td>${a.TP} / ${a.FP} / ${a.FN}</td><td>${pct(a.precision,2)}</td><td>${pct(a.recall,2)}</td><td>${pct(a.f1,2)}</td><td>${pct(a.FPR,2)}</td><td>${a.events_detected} / ${a.event_count}</td><td>${a.false_segments} / ${fixed(a.false_sampled_s,1)} s</td><td>${fixed(a.first_alert_max_delay_s,1)} s</td></tr>`;}).join('')}</tbody></table></div><div class="result-detail">候选入界前已在报警：${h.preexisting_alert_events} 个事件；当前空间 UNKNOWN：${h.prediction_unknown}/${h.frames} 帧。最大延迟仅统计已检出事件，漏事件数为 ${h.event_count-h.events_detected}。<br>来源：${esc(co.source)} · 每个布局完整保留，未按告警结果删帧。</div></article>`;}).join('');}
-  function guide(kind){stop();let ci=kind==='delay'?data.cohorts.findIndex(c=>c.id==='transfer'):data.cohorts.findIndex(c=>c.id==='validation');if(ci<0)ci=0;const co=data.cohorts[ci];let found=null;for(let i=0;i<co.clips.length&&!found;i++){const c=co.clips[i];for(let j=0;j<c.frames.length;j++){const f=c.frames[j];const match=kind==='hold'?c.layout==='INSIDE'&&f.decision.held_only:kind==='outside'?c.layout==='OUTSIDE'&&f.decision.calibration&&!f.decision.alert:kind==='delay'?c.layout==='INSIDE'&&f.evaluation.truth&&!f.decision.alert&&j>0&&!c.frames[j-1].evaluation.truth:c.layout==='BOUNDARY'&&f.evaluation.truth&&!f.decision.alert;if(match){found=[i,j];break;}}}if(found){selectCohort(ci,...found);setPage('replay');const label={hold:'一帧保持补回提醒；当前测量没有改变',outside:'Calibration 报警，固定候选抑制了该负帧',delay:'旧数据中的首报延迟仍然保留',boundary:'边界挑战的漏报也完整展示'}[kind];$('guideNote').textContent=label;toast(label);}else toast('本数据集中没有该类型示例。');}
+  async function guide(kind){stop();let ci=kind==='delay'?data.cohorts.findIndex(c=>c.id==='transfer'):data.cohorts.findIndex(c=>c.id==='validation');if(ci<0)ci=0;const co=data.cohorts[ci];let found=null;for(let i=0;i<co.clips.length&&!found;i++){const c=co.clips[i];for(let j=0;j<c.frames.length;j++){const f=c.frames[j];const match=kind==='hold'?c.layout==='INSIDE'&&f.decision.held_only:kind==='outside'?c.layout==='OUTSIDE'&&f.decision.calibration&&!f.decision.alert:kind==='delay'?c.layout==='INSIDE'&&f.evaluation.truth&&!f.decision.alert&&j>0&&!c.frames[j-1].evaluation.truth:c.layout==='BOUNDARY'&&f.evaluation.truth&&!f.decision.alert;if(match){found=[i,j];break;}}}if(found){if(!await selectCohort(ci,...found))return;setPage('replay');const label={hold:'一帧保持补回提醒；当前测量没有改变',outside:'Calibration 报警，固定候选抑制了该负帧',delay:'旧数据中的首报延迟仍然保留',boundary:'边界挑战的漏报也完整展示'}[kind];$('guideNote').textContent=label;toast(label);}else toast('本数据集中没有该类型示例。');}
   $('cohort').innerHTML=data.cohorts.map((c,i)=>`<option value="${i}">${esc(c.title)}</option>`).join('');$('cohort').onchange=e=>selectCohort(Number(e.target.value));$('familyFilter').onchange=e=>{S.family=e.target.value;renderSceneList();renderGallery();};document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{S.layout=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(q=>q.classList.toggle('active',q===b));renderSceneList();renderGallery();});document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>setPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>setPage(b.dataset.goto));document.querySelectorAll('[data-guide]').forEach(b=>b.onclick=()=>guide(b.dataset.guide));document.querySelector('.brand').onclick=e=>{e.preventDefault();setPage('gallery');};
   $('startTour').onclick=startTour;$('stopTour').onclick=()=>{stop();S.tour=null;renderTour();};
   $('play').onclick=play;$('prevFrame').onclick=()=>setFrame(S.frame-1);$('nextFrame').onclick=()=>setFrame(S.frame+1);$('seek').oninput=e=>setFrame(Number(e.target.value));$('speed').onchange=()=>{if(S.playing)schedule();};$('heatMode').onchange=renderZone;$('geometryRange').onchange=renderGeometry;$('autoZone').onclick=()=>{S.autoZone=true;S.zone=dominantZone(currentFrame());renderZone();renderPrinciple();};$('showGrid').onchange=renderOverlay;$('showTruth').onchange=()=>{renderOverlay();renderGeometry();};$('resultScope').onchange=renderResults;$('presentation').onclick=()=>{document.body.classList.toggle('wide');$('presentation').textContent=document.body.classList.contains('wide')?'恢复目录 ↙':'宽屏展示 ↗';};
   document.addEventListener('keydown',e=>{if(S.page!=='replay'||['INPUT','SELECT','TEXTAREA','BUTTON'].includes(document.activeElement.tagName))return;if(e.code==='Space'){e.preventDefault();play();}else if(e.code==='ArrowRight'){e.preventDefault();setFrame(S.frame+1);}else if(e.code==='ArrowLeft'){e.preventDefault();setFrame(S.frame-1);}});document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
-  selectCohort(extra&&extra.clips&&extra.clips.length?data.cohorts.length-1:0);setPage('gallery');
+  setPage('gallery');selectCohort(extra&&extra.clips&&extra.clips.length?data.cohorts.length-1:0);
 })();

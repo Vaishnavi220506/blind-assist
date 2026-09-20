@@ -8,7 +8,7 @@ HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[4]
 OUT=ROOT/'artifacts.local/work/ba-core-alert-demo-20260920'
 SITE=OUT/'site'
-FILES=('index.html','styles.css','app.js','launch_demo.cmd','serve_demo.py','README_使用说明.md',
+FILES=('index.html','styles.css','app.js','replay_images.js','launch_demo.cmd','serve_demo.py','README_使用说明.md',
        'CITY_SHOWCASE_DELIVERY_20260920.md')
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
