@@ -1,3 +1,17 @@
+## Zone-handoff ceiling fails the gap-bridging condition (2026-09-20)
+
+[One frozen consumed432 spatial diagnostic](nearfield/ZONE_HANDOFF_CEILING_RESULTS_20260920.md)
+bridges only1/4 gaps (1/5frames), even though three gap frames have adjacent,
+depth-compatible corridor-continuous top2 support. The other four frames remain
+below threshold even under unconstrained all-positive-zone sum. Hypothetical
+component sums give144/150/0 versus Calibration144/146/0, FP segments40->39,
+OUTSIDE FP87->90;24/24events and onsets stay identical. Four new FP comprise one
+bridge and three collateral frames. The >=3gap/<=37segment implementation gate
+fails. Close this exact aggregation explanation as NEGATIVE_CONTROL; retain
+Calibration baseline and existing RGB/noRGB closures. No threshold/overlap change,
+training, runtime promotion, temporal layer or score-dip successor. Feature seals,
+baseline parity and focused checks retained; global metadata pending ledger303.
+
 ## Calibration adopted baseline; proposed soft footprint already present (2026-09-20)
 
 User adopts [Calibration as the camera-forward branch baseline](nearfield/CALIBRATION_BASELINE_20260920.md):
