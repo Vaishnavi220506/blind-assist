@@ -1,3 +1,11 @@
+2026-09-21 [one spatial RGB-ToF BCE pilot](../research/active/dtr-r0/nearfield/SPATIAL_BCE_RESULTS_20260920.md):
+40 new groups/2880 frames, one fit, no ranking. Prespecified dev zero-logit
+Boundary current5/3/81 becomes78/3/8, but Core85/4/1 becomes83/15/3 and two
+onsets are delayed.2s. No admissible threshold among577; current-only gates fail
+too. Stop before test inference; retain Calibration/strong+hold and close this
+fixed full-alert replacement as NEGATIVE_CONTROL with Boundary signal retained
+as diagnostic evidence. Independent audit PASS; no retuning/demo/successor.
+
 2026-09-20 [frozen Core policy new-layout validation](../research/active/dtr-r0/nearfield/CORE_HOLD_VALIDATION_RESULTS_20260920.md):
 One new36-layout/432-frame cohort supports the simple Core candidate:
 Calibration74/133/0, strong72/10/2, strong+hold74/10/0; FP26 to8 segments,

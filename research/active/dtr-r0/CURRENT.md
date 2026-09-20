@@ -1,3 +1,17 @@
+## Spatial BCE: Boundary signal, no admissible Core replacement (2026-09-21)
+
+[One frozen 40-group/2880-frame A/B pilot](nearfield/SPATIAL_BCE_RESULTS_20260920.md)
+completed one ordinary BCE fit, with no ranking or second return. Train fits all
+1728 labels; on eight dev groups the prescribed zero-logit diagnostic changes
+Boundary current5/3/81 to78/3/8, but Core85/4/1 to83/15/3 and delays two onsets.2s.
+All577 dev thresholds fail combined Core TP retention and FP/segment budgets;
+current-only constraints also have no feasible threshold. Test inference remains
+unactivated. Retain original Calibration/strong+hold; close this fixed full-alert
+replacement recipe as NEGATIVE_CONTROL, preserving Boundary diagnostic scores.
+Independent source/count/threshold audit PASS; UE/training released. No test,
+retuning, demo change or automatic successor. Global ledger303/unknown-terminal
+registration remains blocked, with local disposition and supported-CLI receipts.
+
 ## Complete-event transfer: same Core alerts, Boundary tradeoff (2026-09-20)
 
 [One frozen24-clip/576-frame capture](nearfield/FULL_EVENT_RESULTS_20260920.md)

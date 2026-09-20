@@ -1,0 +1,59 @@
+{
+  "terminal_id": "ba-spatial-bce-20260920",
+  "status": "COMPLETE_LOCAL_EVIDENCE_GLOBAL_METADATA_PENDING",
+  "scientific_status": "DEV_NO_ADMISSIBLE_OPERATING_POINT",
+  "inheritance_role": "NEGATIVE_CONTROL",
+  "role_scope": "Fixed pretrained spatial BCE full Core/Boundary alert replacement under original single-return and unchanged hold",
+  "retained_surface": "Frozen model and source evidence; strong Boundary diagnostic; original Calibration and strong+hold remain retained",
+  "failure_signature": "0/577 development thresholds satisfy Core TP retention and all FP/segment budgets; current-only also0; no test inference",
+  "revisit_trigger": "Separately authorized distinct hypothesis; no automatic tuning or successor",
+  "report": "research/active/dtr-r0/nearfield/SPATIAL_BCE_RESULTS_20260920.md",
+  "protocol": "research/active/dtr-r0/nearfield/SPATIAL_BCE_PROTOCOL_20260920.md",
+  "artifact_root": "artifacts.local/work/ba-spatial-bce-20260920",
+  "metadata_blockers": [
+    "experiments/index.jsonl:303 input_fingerprint mismatch",
+    "unknown terminal id"
+  ],
+  "groups": 40,
+  "frames": 2880,
+  "train_groups": 24,
+  "dev_groups": 8,
+  "test_groups": 8,
+  "training_steps": 1200,
+  "development_thresholds": 577,
+  "admissible_thresholds": 0,
+  "test_inference_activated": false,
+  "dev_zero_core_A": [
+    85,
+    4,
+    1
+  ],
+  "dev_zero_core_B": [
+    83,
+    15,
+    3
+  ],
+  "dev_zero_boundary_A": [
+    5,
+    3,
+    81
+  ],
+  "dev_zero_boundary_B": [
+    78,
+    3,
+    8
+  ],
+  "evidence_sha256": {
+    "protocol.json": "6ab4ba09fb6e907b6d5f4cbdb311326b8ed2bffd407c7fd1bade4d3fd97966f4",
+    "spec.json": "0bbc39fb573f97af9d72551847de6a81e537fb8bb333feba7416fabe92ea8bbe",
+    "observation-seal.json": "9fc017e4feeba92d4849ce1de8c2d9524bcac2362ff4ce27084c8f326f4e757a",
+    "fit-seal.json": "37d65d752cf040c08e1a863988660170c409b991f9a4caf9a67ce0aaa40ccf06",
+    "development-seal.json": "43ab20b44be261ea768c5f608d2155ba69729fb1bfadd32be7d3f97b52b6dc85",
+    "operating-point.json": "58fa996fd5cdfa63f945eadfa6022ed6e4387086d7bf1b9447e8959a719a1205",
+    "diagnostic.json": "6d656da35543170e89fcf0c101eb6ad082276d8a2c842967c686a7c7ccb42c66",
+    "independent-audit.json": "6cf0724e6a55f70a4d5e9253ff340a2a1ed8e1fc947966d6c6cf12a2fcadc8ca",
+    "capture/process-release.json": "81f1b0d2901519daf1a6f63f4cbae143ff4fa776526aea05e86ea309a329820d",
+    "registration-attempt.txt": "cae0cb0b3cee751a907898069ff8c316429bb09db74395b7bb7295948ff89f1e",
+    "inheritance-attempt.txt": "fb343adceea0ad5e342eefdba4d0f5b3e4611510f982014a1cd8d4e52413ea98"
+  }
+}
