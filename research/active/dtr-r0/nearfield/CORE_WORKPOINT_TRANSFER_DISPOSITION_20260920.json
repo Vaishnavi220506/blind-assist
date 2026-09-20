@@ -1,0 +1,20 @@
+{
+  "terminal_id": "BA_CORE_WORKPOINT_TRANSFER_20260920",
+  "inheritance_role": "NEGATIVE_CONTROL",
+  "role_scope": "One fixed Core threshold0.4071309640537889 on36 new controlled arrangements,432frames",
+  "retained_surface": "Baseline Core77/128/1 versus candidate73/8/5; FP reduction93.75percent;12of12 events; retain all source and costs",
+  "failure_signature": "Two HEAD onsets delayed0.2s; b0 head_horizontal4of7 coverage below5of6; boundary events12to3",
+  "revisit_trigger": "No retune or automatic successor; distinct future hypothesis needs its own scientific rationale",
+  "assignment_basis": "Frozen protocol and sealed single evaluation",
+  "global_metadata_status": "PENDING_LEDGER303_AND_UNKNOWN_TERMINAL",
+  "registration_receipt": "artifacts.local\\work\\ba-core-workpoint-transfer-20260920\\registration.log",
+  "inheritance_receipt": "artifacts.local\\work\\ba-core-workpoint-transfer-20260920\\inheritance-cli.log",
+  "evidence_sha256": {
+    "protocol.json": "8e6484d39c4ec3252ea5a039bfa82645ecf200d2a7b6d4693fc32be735f6af0e",
+    "spec.json": "c15c2992c7712434b657c873cb6574afe339374d2c18c217b191efc4be16dfc1",
+    "observation-seal.json": "573483bde3038c49a32c7b2bf21ab8f2cf8440141fb51ba6ddc6938300c771c6",
+    "prediction-seal.json": "3637bd3ab9bc59827ed1fe4bd238112874d21e312d67b269ecf1a8a250ad490c",
+    "evaluation-seal.json": "5b1842c838f14ddf9c866f284178a6a17a92796bb540557e731a6def193c3d30",
+    "results.json": "674bf7c020124397ada8aa301ea75897fa2f8c05ad5078d5655729a0a766c38f"
+  }
+}

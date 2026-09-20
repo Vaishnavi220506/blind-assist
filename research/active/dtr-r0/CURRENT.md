@@ -1,3 +1,19 @@
+## Core workpoint: strong FP reduction, fixed transfer fails onset/coverage (2026-09-20)
+
+[Consumed-score diagnostic](nearfield/CORE_WORKPOINT_RESULTS_20260920.md) finds
+0/126 definite-bypass Core FP. Full-Core-TP threshold control gives72/29/0;
+event/onset ceiling gives71/10/1 with12/12 original onsets, one.2s trailing loss.
+[One frozen new-layout transfer](nearfield/CORE_WORKPOINT_TRANSFER_RESULTS_20260920.md)
+compares Calibration77/128/1 with fixedT=0.4071309640537889 candidate73/8/5 on
+Core288 (78P/210N). FP26segments/25.6s falls to7/1.6s; OUTSIDE90FP falls to0,
+INSIDE pre-entry38 to8. Both detect12/12 Core events, but two HEAD onsets delay.2s
+and one horizontal HEAD event covers4/7. Boundary events12/12 fall to3/12.
+Retain Calibration; close this exact transfer as NEGATIVE_CONTROL, retain the
+consumed diagnostic as COMPONENT. No threshold retune, RGB reopening or automatic
+successor. Seals and independent recount pass; task processes released. Global
+registration/inheritance remain pending ledger303/unknown-terminal; local structured
+dispositions and CLI receipts are preserved.
+
 ## Return-lineage audit: positive foreground survives but can lose selection (2026-09-20)
 
 [One frozen Core432 + Thin96 diagnostic](nearfield/RETURN_LINEAGE_RESULTS_20260920.md)

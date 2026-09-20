@@ -1,3 +1,11 @@
+2026-09-20 [Core operating-point diagnostic and one fixed transfer](../research/active/dtr-r0/nearfield/CORE_WORKPOINT_TRANSFER_RESULTS_20260920.md):
+The unchanged score has substantial consumed-data headroom (Core72/126/0 to71/10/1;
+all12 onsets retained), and0/126 old FP use the definite bypass. One frozen
+threshold on36 new layouts gives77/128/1 to73/8/5: FP falls93.75%, but two HEAD
+onsets delay.2s and one event has4/7 coverage. Close this candidate as a negative
+control; retain Calibration and the positive scoped diagnostic. No retuning,
+RGB reopening or successor. Severe boundary costs and metadata gaps are retained.
+
 2026-09-20 [existing-result stratified review](../research/active/dtr-r0/nearfield/EXISTING_RESULTS_STRATIFIED_REVIEW_20260920.md):
 Core usefulness governs future comparisons under the [task contract](../research/active/dtr-r0/nearfield/CAMERA_FORWARD_CONTRACT_20260919.md#useful-core-capability-and-challenge-coverage).
 Old four-sensor A* has strong BODY/HEAD performance; this does not transfer its
