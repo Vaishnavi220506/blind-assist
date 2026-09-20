@@ -1,9 +1,10 @@
-2026-09-21 [frozen lateral-pair diagnosis](../research/active/dtr-r0/nearfield/LATERAL_PAIR_DIAGNOSTIC_RESULTS_20260921.md):
-384 matched triplets;173 positive-depth pairs. Boundary scores exceed OUTSIDE
-in173/173, including119/119 unchanged geometric ToF footprints. All17 extra
-OUTSIDE FP score lower but stay above the frozen cutoff. Same-zone blindness
-is unsupported; cross-layout absolute separation remains unresolved. Retain
-COMPONENT diagnosis; no inference, fit, tuning, capture or test access.
+2026-09-21 [frozen32D last-layer pilot](../research/active/dtr-r0/nearfield/LAST_LAYER_RESULTS_20260921.md):
+Two33parameter heads retain0/68 Boundary rescues on eight consumed evaluation
+layouts; both equal A (Core82/11/2, Boundary4/0/80). xAUC .8975 becomes .9133,
+but the no-added-FP cutoff is bound by a true pre-exit frame under unchanged
+hold. This rejects the combined recipe, not current-only linear separability.
+Independent audit PASS; local NEGATIVE_CONTROL, global metadata pending; stop.
+[Prior paired ordering](../research/active/dtr-r0/nearfield/LATERAL_PAIR_DIAGNOSTIC_RESULTS_20260921.md) remains173/173; original test closed.
 
 2026-09-21 [existing-data corridor feasibility](../research/active/dtr-r0/nearfield/EXISTING_CORRIDOR_DATA_RESULTS_20260921.md):
 All15000 BODY-query metadata geometries verified; all indexed payload paths exist.

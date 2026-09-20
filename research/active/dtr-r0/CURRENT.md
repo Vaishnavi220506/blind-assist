@@ -1,12 +1,14 @@
-## Lateral-pair diagnosis: response direction works, absolute errors remain (2026-09-21)
+## Last-layer pilot: no useful repair under unchanged hold (2026-09-21)
 
-[Frozen384-triplet audit](nearfield/LATERAL_PAIR_DIAGNOSTIC_RESULTS_20260921.md)
-finds Boundary>OUTSIDE in173/173 positive-depth pairs, including119/119 with
-identical geometric zone sets. All17 added OUTSIDE FP still exceed the cutoff
-despite lower scores than paired Boundary. This does not support general
-same-zone blindness or justify a finer-grid/ranking-loss successor. Retain
-COMPONENT evidence; absolute separation across layouts remains unresolved.
-No model execution, training, tuning, capture or reserved-test access.
+[Frozen32D two-readout pilot](nearfield/LAST_LAYER_RESULTS_20260921.md) on fixed
+consumed Development roles improves evaluation xAUC .8975 to .9118/.9133,
+but both heads retain0/68 Boundary rescues at no-added-FP current+hold cutoffs.
+Both exactly equal A: Core82/11/2, Boundary4/0/80; hold84/19/0 and6/2/78.
+The binding cutoff sample is a true pre-exit Boundary frame whose hold would
+add a negative next-frame alert. Failure therefore applies to this combined
+recipe, not a proof against current-only linear separability. Audit PASS;
+local NEGATIVE_CONTROL, global metadata pending. No automatic successor or
+original-test activation. [Paired ordering](nearfield/LATERAL_PAIR_DIAGNOSTIC_RESULTS_20260921.md) remains173/173.
 
 ## Existing-data reuse: geometry usable, hard-negative coverage insufficient (2026-09-21)
 
