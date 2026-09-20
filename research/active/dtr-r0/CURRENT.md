@@ -1,3 +1,17 @@
+## Calibration adopted baseline; proposed soft footprint already present (2026-09-20)
+
+User adopts [Calibration as the camera-forward branch baseline](nearfield/CALIBRATION_BASELINE_20260920.md):
+RETAINED_CORE144/146/0, F1 66.36%,24/24events and all first in-event alerts retained;
+OUTSIDE-layout FP87, false segments40. Exact RGB/noRGB vetoes are disabled in the
+branch's active method and retained as negative controls. Historical runners and
+App defaults stay unchanged. The existing score already integrates full-zone
+footprint overlap across depth; calibration selects a threshold, not extrinsics.
+Sealed432-frame/22,371-zone identity audit passes. Raw37 FP segments map to one
+removed,32single and four split-in-two segments, giving40; soft-score threshold
+crossings and winning-zone changes are observed, angular jitter is not established.
+No new soft predictor, repeated weighting, training or temporal successor ran.
+Versioned local disposition records adoption; global inheritance remains blocked.
+
 ## Frozen Core transfer: calibration retained, RGB lossless-transfer fails (2026-09-20)
 
 [One frozen36-scene/432-frame validation](nearfield/CORE_TRANSFER_RESULTS_20260920.md)

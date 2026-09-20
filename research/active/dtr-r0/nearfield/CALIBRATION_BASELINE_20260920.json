@@ -1,0 +1,31 @@
+{
+  "decision_id": "camera-forward-calibration-baseline-20260920",
+  "scope": "Current camera-forward RGB plus nominal 8x8 ToF controlled research branch",
+  "basis": "Explicit user adoption after frozen Core36/432 transfer; source code and sealed evidence audited",
+  "active_method": "calibrated",
+  "rgb_veto_enabled": false,
+  "no_rgb_veto_enabled": false,
+  "calibrated": {
+    "inheritance_role": "RETAINED_CORE",
+    "implementation": "tof_corridor_calibration.py:score_frame/decide",
+    "threshold": 0.007085703945147101,
+    "zone_score": "depth_fraction * conditional_full_footprint_overlap",
+    "reducer": "max over original possible zones; original definite-support bypass",
+    "retained_metrics": {"frames": 432, "TP": 144, "FP": 146, "FN": 0, "events": 24, "FP_segments": 40, "outside_layout_FP": 87},
+    "limitation": "False segments increase from Raw37 to40; not calibrated physical probability"
+  },
+  "closed_controls": {
+    "rgb": {"inheritance_role": "NEGATIVE_CONTROL", "scope": "Exact frozen local RGB veto for lossless transfer", "reason": "10 TP lost, one event lost, two delayed, 30 native-support zone samples suppressed"},
+    "no_rgb": {"inheritance_role": "NEGATIVE_CONTROL", "scope": "Exact matched noRGB veto for lossless transfer", "reason": "7 TP lost, one event lost, native support suppressed"}
+  },
+  "source": {
+    "root": "artifacts.local/work/ba-core-transfer-20260920",
+    "protocol_sha256": "a8fc94b7f0590c9d364a5b4bdbfb10aae4b0d01345c93bb664a73842a56f5592",
+    "predictions_sha256": "7af41f1d2ba8b07e2bd8825e98e7a97c08304c29d2cc1711b67387b729dbdd69",
+    "results_sha256": "0bc6ce23b812b214373ae100e89a99be929d05e0a47a7faca619559dc45cf172"
+  },
+  "soft_replacement_status": "ALREADY_IMPLEMENTED_IDENTITY_NOT_A_NEW_EXPERIMENT",
+  "automatic_successor": false,
+  "android_default_changed": false,
+  "global_inheritance_status": "PENDING_REGISTRY_BLOCKER_NOT_BYPASSED"
+}
