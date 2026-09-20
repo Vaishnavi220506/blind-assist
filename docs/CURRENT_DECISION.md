@@ -1,3 +1,11 @@
+2026-09-20 [frozen Core policy new-layout validation](../research/active/dtr-r0/nearfield/CORE_HOLD_VALIDATION_RESULTS_20260920.md):
+One new36-layout/432-frame cohort supports the simple Core candidate:
+Calibration74/133/0, strong72/10/2, strong+hold74/10/0; FP26 to8 segments,
+26.6 to2.0s. All12 Core events have full sampled coverage and entry-frame alerts,
+although8 alerts were already active before entry. Boundary remains9/4/65 and
+4/12 events. Retain a scoped controlled-demo CHALLENGER; full-task Calibration,
+old onset failures and challenge limits remain. End this algorithm round.
+
 2026-09-20 [single half-bin phase diagnostic](../research/active/dtr-r0/nearfield/HALF_BIN_PHASE_RESULTS_20260920.md):
 One frozen 5 cm histogram shift changes some proxy returns but neither delayed
 HEAD onset. Core strong73/8/5 becomes72/8/6; hold76/9/2 becomes75/9/3;

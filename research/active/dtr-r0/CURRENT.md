@@ -1,3 +1,20 @@
+## Consolidated Core policy: new-layout benefit, bounded challenger (2026-09-20)
+
+[One frozen new36-layout/432-frame validation](nearfield/CORE_HOLD_VALIDATION_RESULTS_20260920.md)
+compares Calibration, fixed strong T=.4071309640537889 and unchanged nonrecursive
+one-frame hold. Core74P/214N:74/133/0 to72/10/2 to74/10/0. Hold restores two HEAD
+gaps with no FP addition; the strong working point supplies most of the gain.
+Core false segments26 to8, sampled duration26.6 to2.0s; BODY36/7/0, HEAD38/3/0.
+All12 Core events have entry-frame alerts/full coverage;8 were already alarming
+before entry. OUTSIDE FP88 to0; INSIDE-negative45 to10. Prospective bounded
+tradeoff passes; independent432-frame recount, seals and process release pass.
+Retain COMPONENT_OR_CHALLENGER / CHALLENGER for controlled Core demonstrations.
+Boundary9/4/65 and4/12 events excludes full strict-task replacement. Original
+Calibration, earlier76/9/2 with two delayed HEAD onsets and all prior dispositions
+remain unchanged. No App promotion, retuning, extra cohort or automatic successor;
+this completes the consolidation round. Global metadata pending ledger303/unknown
+terminal, with supported-CLI receipts and local structured disposition retained.
+
 ## One half-bin phase: local proxy sensitivity without onset repair (2026-09-20)
 
 [Frozen paired consumed432 diagnostic](nearfield/HALF_BIN_PHASE_RESULTS_20260920.md)
