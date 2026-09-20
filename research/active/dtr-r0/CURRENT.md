@@ -15,14 +15,17 @@ lineage evidence is COMPONENT_OR_CHALLENGER in COMPONENT mode; no new return
 arm or automatic successor. Independent replay/recount passes; global metadata
 remains pending ledger303/unknown-terminal, with receipts and local disposition.
 
-## Core usefulness and scoped acceptance (2026-09-20)
+## Core usefulness: existing results reassessed (2026-09-20)
 
-User adopts the [clarified task contract](nearfield/CAMERA_FORWARD_CONTRACT_20260919.md#useful-core-capability-and-challenge-coverage):
-prioritize useful Core event detection, timing and reduced false interruptions;
-report boundary and thin-object challenges separately. Future candidates may
-state explicit miss/delay tradeoffs; old lossless gates remain local to their
-frozen experiments. Calibration stays the baseline. This decision changes no
-results, cohort membership, thresholds, inheritance roles or runtime behavior.
+[Saved-decision stratified review](nearfield/EXISTING_RESULTS_STRATIFIED_REVIEW_20260920.md)
+recounts old BODY/HEAD A*70/1/2,12/12events; Raw/Single decisions are identical
+there. Public-positive v2 retains one HEAD configuration's five-frame gain;
+CCRL/tail provide no Core upgrade. These four-sensor results do not validate
+the current RGB+ToF task. Current Calibration Core-layout288 is72/126/0,
+12/12events,24false segments; retain it and prioritize false-alert burden.
+NFO near-area gains remain pixel components, not physical Core event evidence.
+Posthoc accounting preserves old full/challenge results, frozen gates and
+inheritance roles. No model run, new threshold, capture or successor follows.
 
 ## Score-factor audit: dominant overlap sensitivity is not a causal geometry fault (2026-09-20)
 

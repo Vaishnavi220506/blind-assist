@@ -1,9 +1,10 @@
-2026-09-20 user clarification: prioritize useful Core obstacle alerts within
-limited compute; report boundary and thin-object challenges separately. Judge
-future improvements by event misses, alert timing, false interruptions and
-coverage, with explicit tradeoffs; lossless gates belong to their named tests.
-See the [updated task contract](../research/active/dtr-r0/nearfield/CAMERA_FORWARD_CONTRACT_20260919.md#useful-core-capability-and-challenge-coverage).
-Calibration remains the branch baseline; frozen results and dispositions stand.
+2026-09-20 [existing-result stratified review](../research/active/dtr-r0/nearfield/EXISTING_RESULTS_STRATIFIED_REVIEW_20260920.md):
+Core usefulness governs future comparisons under the [task contract](../research/active/dtr-r0/nearfield/CAMERA_FORWARD_CONTRACT_20260919.md#useful-core-capability-and-challenge-coverage).
+Old four-sensor A* has strong BODY/HEAD performance; this does not transfer its
+numbers to the current two-sensor task. Calibration stays the current baseline;
+its complete Core layouts retain high false-alert burden. Preserve useful
+components, separate challenge costs, and scope old lossless gates to their tests.
+No new method or experiment is started; frozen dispositions remain unchanged.
 
 2026-09-19 user decision: adopt [the camera-forward corridor contract](../research/active/dtr-r0/nearfield/CAMERA_FORWARD_CONTRACT_20260919.md). Immediate scope is RGB + 8x8 ToF with a fixed camera-frame volume; body-heading compensation, future trajectories and SLAM are excluded. This supersedes the older four-sensor requirement for this task; frozen results and defaults remain unchanged.
 
