@@ -30,6 +30,21 @@
   $('collectionCount').textContent=String(data.cohorts.length).padStart(2,'0');
   const S={cohort:0,clip:0,frame:0,zone:35,autoZone:true,layout:'ALL',family:'ALL',page:'gallery',playing:false,timer:null,tour:null};
   const currentCohort=()=>data.cohorts[S.cohort],currentClip=()=>currentCohort().clips[S.clip],currentFrame=()=>currentClip().frames[S.frame];
+  const tone=new EventNotifications.Tone({makeContext:()=>new (window.AudioContext||window.webkitAudioContext)(),
+    onStatus:text=>{$('notificationStatus').textContent=text;}});
+  const notifications=new EventNotifications.Scheduler({emit:event=>tone.notify(event,notifications),cancel:()=>tone.cancel()});
+  function notifyFrame(){
+    const f=currentFrame();notifications.step({clipId:currentCohort().id+'/'+currentClip().id,
+      frameIndex:S.frame,timeS:f.time_s,alert:f.decision.alert});
+    $('notificationStatus').textContent=tone.enabled?(f.decision.alert?'连续告警 · 本段不重复提示':'等待下一段告警'):'提示音已关闭';
+  }
+  $('notificationSound').onchange=async e=>{
+    const enabled=e.target.checked;
+    if(enabled){if(!await tone.enable())$('notificationSound').checked=false;}
+    else{notifications.silence();tone.disable();}
+    $('notificationStatus').textContent=tone.enabled?'已开启 · 下一段告警提示一次':'提示音已关闭';
+  };
+  window.addEventListener('pagehide',()=>{notifications.reset();tone.close();});
   const instruments=new window.Telemetry.Instruments({geometry:data.geometry,threshold:data.thresholds.strong,
     onZone:zone=>{S.zone=zone;S.autoZone=false;renderZone();renderPrinciple();},onSeek:frame=>setFrame(frame)});
   function renderInstruments(){instruments.render(currentClip(),S.frame,S.zone);instruments.status(S.playing);}
@@ -51,13 +66,13 @@
   });
   function setNavigation(pending){for(const id of ['play','prevFrame','nextFrame','seek'])$(id).disabled=pending;}
   function navigationReady(promise){const token=presenter.token;setNavigation(true);return promise.finally(()=>{if(token===presenter.token)setNavigation(false);});}
-  function stop(){setNavigation(false);$('cohort').value=String(S.cohort);S.playing=false;clearTimeout(S.timer);S.timer=null;presenter.cancel();$('play').textContent='▶ 播放';$('play').setAttribute('aria-label','播放');instruments.status(false);}
+  function stop(){notifications.silence();$('notificationStatus').textContent=tone.enabled?'已暂停 · 提示已取消':'提示音已关闭';setNavigation(false);$('cohort').value=String(S.cohort);S.playing=false;clearTimeout(S.timer);S.timer=null;presenter.cancel();$('play').textContent='▶ 播放';$('play').setAttribute('aria-label','播放');instruments.status(false);}
   function playingLabel(){$('play').textContent='Ⅱ 暂停';$('play').setAttribute('aria-label','暂停');instruments.status(true);}
   async function play(){
     if(S.playing){stop();return;}
     S.playing=true;playingLabel();
     if(S.frame===currentClip().frames.length-1&&!await setFrame(0,false))return;
-    if(S.playing)schedule();
+    if(S.playing){notifyFrame();schedule();}
   }
   function schedule(){
     clearTimeout(S.timer);if(!S.playing)return;
@@ -71,7 +86,7 @@
           if(tour.index+1>=tour.clips.length){stop();S.tour=null;renderTour();toast('已到连续导览终点。');return;}
           tour.index++;
           if(!await selectClip(tour.clips[tour.index]))return;
-          S.tour=tour;renderTour();preload();S.playing=true;playingLabel();
+          S.tour=tour;renderTour();preload();S.playing=true;playingLabel();notifyFrame();
         }else if($('loop').checked){if(!await setFrame(0,false))return;}
         else{stop();return;}
       }else if(!await setFrame(S.frame+1,false))return;
@@ -81,17 +96,18 @@
   function setFrame(n,manual=true){
     if(manual)stop();
     const frame=Math.max(0,Math.min(currentClip().frames.length-1,Math.round(n)));
-    return presenter.show(currentClip().frames[frame].rgb,image=>{S.frame=frame;renderFrame(image);});
+    if(manual||frame<=S.frame)notifications.reset();
+    return presenter.show(currentClip().frames[frame].rgb,image=>{S.frame=frame;renderFrame(image);if(S.playing)notifyFrame();});
   }
   function setPage(page){if(page!=='replay'){stop();S.tour=null;renderTour();}S.page=page;document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b.dataset.page===page));if(page==='gallery')renderGallery();if(page==='results')renderResults();if(page==='principle')renderPrinciple();if(page==='replay')renderInstruments();window.scrollTo(0,0);}
   function selectClip(index,frame=0){
-    stop();S.tour=null;renderTour();
+    stop();notifications.reset();S.tour=null;renderTour();
     const clip=currentCohort().clips[index];frame=Math.max(0,Math.min(clip.frames.length-1,frame));
     const ready=presenter.show(clip.frames[frame].rgb,image=>{S.autoZone=true;S.clip=index;S.frame=frame;renderSceneList();renderFrame(image);});
     warmClip(clip,frame,currentCohort().clips[index+1]);return navigationReady(ready);
   }
   function selectCohort(index,clip=0,frame=0){
-    stop();S.tour=null;renderTour();const co=data.cohorts[index],selected=co.clips[clip];
+    stop();notifications.reset();S.tour=null;renderTour();const co=data.cohorts[index],selected=co.clips[clip];
     const ready=presenter.show(selected.frames[frame].rgb,image=>{
       S.autoZone=true;S.cohort=index;S.clip=clip;S.frame=frame;S.layout='ALL';S.family='ALL';
       $('cohort').value=String(index);$('familyFilter').value='ALL';document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter==='ALL'));

@@ -373,3 +373,6 @@ footer { color: #8ca2b2; padding-top: 30px; }
   body.wide .telemetry-card .panel-note { margin-top: 6px; padding-top: 0; padding-bottom: 8px; }
   body.wide .diagnostic-details { margin-top: 12px; }
 }
+.notification-controls { display:flex; align-items:center; flex-wrap:wrap; gap:10px 22px; margin:10px 0 18px; color:var(--muted,#8b9bb0); font-size:13px; }
+.notification-controls label { color:var(--text,#e0ebf0); cursor:pointer; }
+.notification-controls small { font-size:12px; }
