@@ -9,8 +9,11 @@ no CoreTP; hold adds1FP and recovers3TP, including one Calibration FN with no
 current raw support. This is decision continuity, not recovered current evidence.
 Old consumed Core similarly gives rising0TP/+11FP versus hold+1TP/+1FP.
 Boundary and pre-entry costs remain explicit; no fresh transfer or promotion.
-Retain Calibration, close the exact combined onset-recovery role as NEGATIVE_CONTROL,
-and retain hold ablation's scoped component evidence. No parameter sweep or automatic
+Retain Calibration. Hold is separately scoped COMPONENT evidence for continuity
+(76/9/2, F1 93.25%), not current sensing or onset recovery; Boundary remains3/12.
+Close exact rising onset rescue and the combined onset-recovery role as NEGATIVE_CONTROL.
+The assumed smooth HEAD entry pattern and spatial sufficiency are unproven.
+First-alert evidence remains unresolved. No new experiment, parameter sweep or automatic
 connected-support successor. Independent864-frame five-arm recount, prefix causality
 and seals pass; no persistent resources. Global metadata pending ledger303/unknown
 terminal, with CLI receipts and local structured disposition.

@@ -18,5 +18,30 @@
     "evaluation-seal.json": "744318aae58cd8161f6720cb6f32a931cb8f908a5a1fd70bb6ffc6e77b515b7a",
     "results.json": "b4d6942aaf0c7016a31f9ab955c558c3001f21b93848ca479725eb7e46df8d14",
     "independent-recount.json": "73d6796905cca4a53e7064f2805d9022b1420ba2515ff903aa12a200968f4ef9"
-  }
+  },
+  "ablation_dispositions": [
+    {
+      "terminal_id": "BA_CAUSAL_HOLD_COMPONENT_20260920",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Nonrecursive one genuine-strong-backed frame of alert continuity on two consumed replays",
+      "retained_surface": "Primary76/9/2, context72/11/0; no onset recovery or new current support",
+      "failure_signature": "Both HEAD onsets remain delayed; Boundary3/12; no independent validation",
+      "revisit_trigger": "New work requires an observation-grounded hypothesis; no automatic extension",
+      "inheritance_receipt": "artifacts.local/work/ba-causal-event-readout-20260920/inheritance-hold-component.log",
+      "global_metadata_status": "PENDING_UNKNOWN_TERMINAL"
+    },
+    {
+      "terminal_id": "BA_CAUSAL_RISE_ONSET_20260920",
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "role_scope": "Exact fixed one-step slope extrapolation for current Core onset rescue",
+      "retained_surface": "Preserve ablation: Core0TP/+9FP and0TP/+11FP; Boundary gains separately retained",
+      "failure_signature": "Neither delayed HEAD onset restored; current entry not uniquely indicated by rising score",
+      "revisit_trigger": "Closed in this round; no extrapolation-factor or threshold sweep",
+      "inheritance_receipt": "artifacts.local/work/ba-causal-event-readout-20260920/inheritance-rise-onset.log",
+      "global_metadata_status": "PENDING_UNKNOWN_TERMINAL"
+    }
+  ],
+  "interpretation_revision": "Rising HEAD versus flat OUTSIDE was an unverified schematic hypothesis; max-zone support is not tracked-object intrusion or collision probability. Continuity benefit does not establish spatial sufficiency or a single-return information ceiling.",
+  "component_accounting_sha256": "b4d6942aaf0c7016a31f9ab955c558c3001f21b93848ca479725eb7e46df8d14"
 }
