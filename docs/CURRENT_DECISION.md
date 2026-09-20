@@ -1,3 +1,10 @@
+2026-09-21 [frozen lateral-pair diagnosis](../research/active/dtr-r0/nearfield/LATERAL_PAIR_DIAGNOSTIC_RESULTS_20260921.md):
+384 matched triplets;173 positive-depth pairs. Boundary scores exceed OUTSIDE
+in173/173, including119/119 unchanged geometric ToF footprints. All17 extra
+OUTSIDE FP score lower but stay above the frozen cutoff. Same-zone blindness
+is unsupported; cross-layout absolute separation remains unresolved. Retain
+COMPONENT diagnosis; no inference, fit, tuning, capture or test access.
+
 2026-09-21 [existing-data corridor feasibility](../research/active/dtr-r0/nearfield/EXISTING_CORRIDOR_DATA_RESULTS_20260921.md):
 All15000 BODY-query metadata geometries verified; all indexed payload paths exist.
 750 lateral candidates across750 sites are crossbar-only,12 original fixture

@@ -1,3 +1,13 @@
+## Lateral-pair diagnosis: response direction works, absolute errors remain (2026-09-21)
+
+[Frozen384-triplet audit](nearfield/LATERAL_PAIR_DIAGNOSTIC_RESULTS_20260921.md)
+finds Boundary>OUTSIDE in173/173 positive-depth pairs, including119/119 with
+identical geometric zone sets. All17 added OUTSIDE FP still exceed the cutoff
+despite lower scores than paired Boundary. This does not support general
+same-zone blindness or justify a finer-grid/ranking-loss successor. Retain
+COMPONENT evidence; absolute separation across layouts remains unresolved.
+No model execution, training, tuning, capture or reserved-test access.
+
 ## Existing-data reuse: geometry usable, hard-negative coverage insufficient (2026-09-21)
 
 [Read-only15000-row audit](nearfield/EXISTING_CORRIDOR_DATA_RESULTS_20260921.md)
