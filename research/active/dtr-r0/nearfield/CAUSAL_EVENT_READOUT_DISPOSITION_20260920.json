@@ -1,0 +1,22 @@
+{
+  "terminal_id": "BA_CAUSAL_EVENT_READOUT_20260920",
+  "inheritance_role": "NEGATIVE_CONTROL",
+  "role_scope": "Exact fixed slope plus one genuine-strong-backed held frame restoring both delayed HEAD onsets on two consumed432 timelines",
+  "retained_surface": "Hold ablation has local continuity benefit: primary3TP recovered at1FP; context1TP at1FP. Not promoted to baseline or fresh challenger.",
+  "failure_signature": "Both HEAD onsets remain delayed0.2s. Core rising0TP+9FP; combined76/18/2 versus strong73/8/5.",
+  "revisit_trigger": "No tuning or automatic successor; distinct future hypothesis needs its own rationale",
+  "assignment_basis": "Frozen causal code and full predictions plus independent864frame fivearm recount",
+  "global_metadata_status": "PENDING_LEDGER303_AND_UNKNOWN_TERMINAL",
+  "registration_receipts": [
+    "artifacts.local\\work\\ba-causal-event-readout-20260920\\registration.log",
+    "artifacts.local\\work\\ba-causal-event-readout-20260920\\registration-corrected-id.log"
+  ],
+  "inheritance_receipt": "artifacts.local\\work\\ba-causal-event-readout-20260920\\inheritance-cli.log",
+  "evidence_sha256": {
+    "protocol.json": "62e23b398da0fbffb901b07fef0c112685c430972f2462795a238bc70bf8b51b",
+    "prediction-seal.json": "5ce49380fe5367634b1154cc7717ce8fb80e31422998b046fd6d736777719ef6",
+    "evaluation-seal.json": "744318aae58cd8161f6720cb6f32a931cb8f908a5a1fd70bb6ffc6e77b515b7a",
+    "results.json": "b4d6942aaf0c7016a31f9ab955c558c3001f21b93848ca479725eb7e46df8d14",
+    "independent-recount.json": "73d6796905cca4a53e7064f2805d9022b1420ba2515ff903aa12a200968f4ef9"
+  }
+}

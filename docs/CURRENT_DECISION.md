@@ -1,3 +1,10 @@
+2026-09-20 [fixed causal event readout](../research/active/dtr-r0/nearfield/CAUSAL_EVENT_READOUT_RESULTS_20260920.md):
+Two consumed432 replays separate temporal effects. Primary Core strong73/8/5,
++rise73/17/5, +hold76/9/2, combined76/18/2. Hold improves local continuity,
+but neither delayed HEAD onset is restored; rise adds9 CoreFP without CoreTP gain.
+Close this exact onset-recovery combination as NEGATIVE_CONTROL, preserve hold's
+scoped Development evidence and Calibration. No tuning or automatic successor.
+
 2026-09-20 [Core operating-point diagnostic and one fixed transfer](../research/active/dtr-r0/nearfield/CORE_WORKPOINT_TRANSFER_RESULTS_20260920.md):
 The unchanged score has substantial consumed-data headroom (Core72/126/0 to71/10/1;
 all12 onsets retained), and0/126 old FP use the definite bypass. One frozen

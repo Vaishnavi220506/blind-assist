@@ -1,3 +1,20 @@
+## Causal readout: hold helps continuity, rising extrapolation fails onset rescue (2026-09-20)
+
+[Two consumed432 fixed replays](nearfield/CAUSAL_EVENT_READOUT_RESULTS_20260920.md)
+keep T=0.4071309640537889, scalar scores, UNKNOWN and all layouts. Primary Core
+strong73/8/5; rising73/17/5; one genuine-strong-backed held frame76/9/2;
+combined76/18/2. Combined retains12/12events and BODY36/36, restores worst HEAD
+4/7 to6/7, but both HEAD first alerts remain delayed.2s. Rising adds9 CoreFP and
+no CoreTP; hold adds1FP and recovers3TP, including one Calibration FN with no
+current raw support. This is decision continuity, not recovered current evidence.
+Old consumed Core similarly gives rising0TP/+11FP versus hold+1TP/+1FP.
+Boundary and pre-entry costs remain explicit; no fresh transfer or promotion.
+Retain Calibration, close the exact combined onset-recovery role as NEGATIVE_CONTROL,
+and retain hold ablation's scoped component evidence. No parameter sweep or automatic
+connected-support successor. Independent864-frame five-arm recount, prefix causality
+and seals pass; no persistent resources. Global metadata pending ledger303/unknown
+terminal, with CLI receipts and local structured disposition.
+
 ## Core workpoint: strong FP reduction, fixed transfer fails onset/coverage (2026-09-20)
 
 [Consumed-score diagnostic](nearfield/CORE_WORKPOINT_RESULTS_20260920.md) finds
