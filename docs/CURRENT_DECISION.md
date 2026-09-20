@@ -1,3 +1,12 @@
+2026-09-21 [existing-data corridor feasibility](../research/active/dtr-r0/nearfield/EXISTING_CORRIDOR_DATA_RESULTS_20260921.md):
+All15000 BODY-query metadata geometries verified; all indexed payload paths exist.
+750 lateral candidates across750 sites are crossbar-only,12 original fixture
+groups,1.636-1.794m outside versus recent6.6-11.9cm false-positive clearances.
+Only3 of10 sampled pairs have both targets visibly supported; all20payload
+hash checks pass, but no full-scene negative is certified. Retain input/OBB
+adapter COMPONENT; direct hard-negative training unsupported. Seven geometry
+tests and independent recount pass. No training/capture/protected-test access.
+
 2026-09-21 [frozen supplement new-layout verification](../research/active/dtr-r0/nearfield/SPATIAL_COMPLEMENT_TRANSFER_RESULTS_20260921.md):
 16 new groups/1152 frames, unchanged model/high cutoff/hold. Current Boundary
 10/1/163 becomes128/10/45, gains in15/16 groups; Core171/17/2 becomes173/36/0,

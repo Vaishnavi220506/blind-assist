@@ -1,3 +1,17 @@
+## Existing-data reuse: geometry usable, hard-negative coverage insufficient (2026-09-21)
+
+[Read-only15000-row audit](nearfield/EXISTING_CORRIDOR_DATA_RESULTS_20260921.md)
+verifies controlled-cube OBB geometry and indexed path availability. The750
+lateral candidates are all crossbars from12 original fixture groups with
+1.636-1.794m clearance, unlike recent6.6-11.9cm OUTSIDE failures. Ten fixed pairs
+yield20payload checks (all hashes match), but only3 visibly supported target
+pairs and zero certified full-scene negatives. Existing ownership means query
+membership, not actor identity; preserve background/unseen UNKNOWN.
+Retain geometry/input adapter COMPONENT and data inventory; no immediate binary
+hard-negative fit. Seven geometry tests and independent saved-record recount pass.
+Local disposition records existing global metadata blocker. No new source,
+training, original-test access or automatic successor.
+
 ## Frozen supplement transfer: recall persists, specificity fails (2026-09-21)
 
 [One new16-group/1152-frame verification](nearfield/SPATIAL_COMPLEMENT_TRANSFER_RESULTS_20260921.md)

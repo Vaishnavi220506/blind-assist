@@ -12,7 +12,7 @@ No models were run, protected labels opened, or successor experiments authorized
 | Core hold validation |432/36|Same task;12-frame approach clips, consumed Development.|
 | Full event transfer |576/24|Matching task;24-frame approach/dwell/retreat, consumed. Complete-event diagnosis.|
 | Spatial BCE |2880/40 base groups|Direct input/label compatibility;1728 train and576 dev consumed;576 test/8 groups still unactivated and excluded from new training.|
-| BODY-query5k |5000/1000 groups/250 sites|Native RGB/depth/camera and ownership retained; adapt current64-zone input and full-volume labels. Static conditions, not event sequences.|
+| BODY-query5k |5000/1000 groups/250 sites|Native RGB/depth/camera and geometric query-region membership retained; this is not target-instance ownership. Adapt current64-zone input and full-volume labels. Static conditions, not event sequences.|
 | BODY-query10k |10000/2000 groups/500 sites|Same potential; original5000/2000/3000 roles already used Development. Known background/visibility limitations retained.|
 | Hypersim NFO subset |10000;8000/1000/1000|Native RGB/depth and near-region labels. Existing central80% proxy zones differ from current45-degree geometry; full obstacle/event labels absent.|
 | SANPO-Synthetic NFO subset |3000/60 sessions|Native RGB/depth; up to50 sampled frames/session, not full event sequences. Existing256x192 inputs need original-source alignment to current16:9 recipe.|
@@ -57,3 +57,8 @@ payload counts above come from the retained summaries/manifests.
 This inventory supports prioritizing existing-data reuse before further capture;
 it does not start an adapter, new fit, label revision or new experiment. The
 already running frozen16-group supplementary-policy verification remains bounded.
+
+Follow-up [payload/geometry feasibility audit](EXISTING_CORRIDOR_DATA_RESULTS_20260921.md)
+narrows the proposed reuse:750 lateral candidates are all crossbars, only12
+original fixture groups,1.636-1.794m outside the corridor. They do not fill the
+recent6.6-11.9cm near-boundary negative gap; no full-scene negative was certified.
