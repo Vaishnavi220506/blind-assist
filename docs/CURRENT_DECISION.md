@@ -1,3 +1,13 @@
+2026-09-21 [frozen supplement new-layout verification](../research/active/dtr-r0/nearfield/SPATIAL_COMPLEMENT_TRANSFER_RESULTS_20260921.md):
+16 new groups/1152 frames, unchanged model/high cutoff/hold. Current Boundary
+10/1/163 becomes128/10/45, gains in15/16 groups; Core171/17/2 becomes173/36/0,
+including17 additional OUTSIDE FP. Held Core gains no TP and adds25 FP; Boundary
+adds126 TP and14 FP. Rescue signal transfers, low-FP specificity does not.
+Retain COMPONENT only; independent audit PASS, original test unactivated, stop.
+[Existing-data inventory](../research/active/dtr-r0/nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md)
+identifies4752 matched prior frames and15000 BODY-query adaptation candidates;
+reuse before routine expansion, with reserved test and label-contract limits.
+
 2026-09-21 [frozen A/B complementarity diagnostic](../research/active/dtr-r0/nearfield/SPATIAL_COMPLEMENT_RESULTS_20260921.md):
 Same consumed eight dev groups/576 frames, no new fit or test access. A OR
 previously disclosed high B scores changes current Core85/4/1 to86/4/0 and

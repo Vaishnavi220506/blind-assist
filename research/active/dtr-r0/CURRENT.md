@@ -1,3 +1,18 @@
+## Frozen supplement transfer: recall persists, specificity fails (2026-09-21)
+
+[One new16-group/1152-frame verification](nearfield/SPATIAL_COMPLEMENT_TRANSFER_RESULTS_20260921.md)
+keeps the head, high cutoff and original hold fixed. Boundary current10/1/163
+becomes128/10/45, with gains in15/16 groups and event detection4/16 to15/16.
+Core171/17/2 becomes173/36/0;17 of19 new current FP are OUTSIDE, concentrated in
+three groups. Held Core173/33/0 becomes173/58/0; Boundary14/5/159 becomes140/19/33.
+Rescue signal passes, both strict no-added-FP gates fail. Retain COMPONENT
+evidence; no new operating point, runtime promotion or automatic successor.
+Source/prediction seals and independent audit PASS; UE/model processes released,
+original test still unactivated. Existing ledger303/unknown-terminal metadata
+gap is documented locally. [Data reuse inventory](nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md)
+records matched sources and15000 BODY-query frames requiring contract adaptation;
+it authorizes no new fit or protected-test access.
+
 ## Frozen A/B complementarity: rescue signal with remaining costs (2026-09-21)
 
 [Saved-output diagnostic](nearfield/SPATIAL_COMPLEMENT_RESULTS_20260921.md) reuses

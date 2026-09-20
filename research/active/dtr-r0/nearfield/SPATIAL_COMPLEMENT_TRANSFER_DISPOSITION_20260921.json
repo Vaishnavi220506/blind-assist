@@ -1,0 +1,120 @@
+{
+  "terminal_id": "ba-spatial-complement-transfer-20260921",
+  "status": "COMPLETE_LOCAL_EVIDENCE_GLOBAL_METADATA_PENDING",
+  "scientific_status": "NEW_LAYOUT_RESCUE_SIGNAL_WITH_SUBSTANTIAL_FP_COST",
+  "inheritance_role": "COMPONENT_OR_CHALLENGER",
+  "inheritance_mode": "COMPONENT",
+  "role_scope": "Frozen high-score supplementation on16new same-simulator groups; not a deployed policy",
+  "retained_surface": "Boundary current118additional TP in15of16groups; all A flags and onsets retained",
+  "failure_signature": "Core current19extraFP including17OUTSIDE; Boundary current9extraFP; held Core25 and Boundary14extraFP; no full Core TP gain",
+  "revisit_trigger": "Separate user authorization; prioritize existing-data contract and lateral-negative coverage audit; no automatic fit or capture",
+  "report": "research/active/dtr-r0/nearfield/SPATIAL_COMPLEMENT_TRANSFER_RESULTS_20260921.md",
+  "protocol": "research/active/dtr-r0/nearfield/SPATIAL_COMPLEMENT_TRANSFER_PROTOCOL_20260921.md",
+  "artifact_root": "artifacts.local/work/ba-spatial-complement-transfer-20260921",
+  "source_terminal": "ba-spatial-bce-20260920",
+  "source_negative_scope_preserved": true,
+  "metadata_blockers": [
+    "experiments/index.jsonl:303 input_fingerprint mismatch",
+    "unknown terminal id"
+  ],
+  "groups": 16,
+  "frames": 1152,
+  "new_training": false,
+  "original_test_activated": false,
+  "prospective_rescue_signal": true,
+  "strict_current_upgrade": false,
+  "strict_complete_upgrade": false,
+  "metrics": {
+    "Core_current": {
+      "A": [
+        171,
+        17,
+        2
+      ],
+      "C": [
+        173,
+        36,
+        0
+      ],
+      "extra_TP": 2,
+      "extra_FP": 19,
+      "recall_gain": 0.011560693641618491,
+      "A_segments": 16,
+      "C_segments": 23,
+      "A_events": 16,
+      "C_events": 16
+    },
+    "Core_hold": {
+      "A": [
+        173,
+        33,
+        0
+      ],
+      "C": [
+        173,
+        58,
+        0
+      ],
+      "extra_TP": 0,
+      "extra_FP": 25,
+      "recall_gain": 0.0,
+      "A_segments": 24,
+      "C_segments": 30,
+      "A_events": 16,
+      "C_events": 16
+    },
+    "Boundary_current": {
+      "A": [
+        10,
+        1,
+        163
+      ],
+      "C": [
+        128,
+        10,
+        45
+      ],
+      "extra_TP": 118,
+      "extra_FP": 9,
+      "recall_gain": 0.6820809248554913,
+      "A_segments": 1,
+      "C_segments": 8,
+      "A_events": 4,
+      "C_events": 15
+    },
+    "Boundary_hold": {
+      "A": [
+        14,
+        5,
+        159
+      ],
+      "C": [
+        140,
+        19,
+        33
+      ],
+      "extra_TP": 126,
+      "extra_FP": 14,
+      "recall_gain": 0.7283236994219654,
+      "A_segments": 5,
+      "C_segments": 13,
+      "A_events": 4,
+      "C_events": 15
+    }
+  },
+  "independent_audit": "PASS",
+  "all_A_onsets_retained": true,
+  "evidence_sha256": {
+    "protocol.json": "6dbdb78fc1adc941b9938207560ae765804c10113db265e69468c82ed9106266",
+    "preflight.json": "58b553293b73f37af4c90379336c3f0d9165ba65a6703b3a0f1ed3712e6afde1",
+    "observation-seal.json": "52cad41ce43236d78e66efa921c587eb7c59f15f2a90cdb764a76166d35366dd",
+    "prediction-seal.json": "882e4a5ebb3961fefc15ae717408c1c2f63f05cf6f77eff02b2da1671a17a373",
+    "evaluation-seal.json": "6c726d9e8d63cd97c82f30494130f5ca0dbfdb0f8983b2463550c87c535d874f",
+    "result.json": "7ddca04f6289eddd0bc71925ba3df9736d5a66c3dc87ae3e05c6b9ba93f49c9a",
+    "independent-audit.json": "e324ac8f67662519222156001d2977b2c18866f82db0fff07310bdd9044055d6",
+    "independent-diagnostics.json": "8cdcb961d8561e07b3a453d6041922eae73977fb3bf92cec0912f09898253f77",
+    "capture/process-release.json": "fcc9ed393aa3a338ef752b8bcfba4993147f5d4042d2267fe0617649db3136d6",
+    "registration-attempt.txt": "cae0cb0b3cee751a907898069ff8c316429bb09db74395b7bb7295948ff89f1e",
+    "inheritance-attempt.txt": "64d17c9ad6c5992efa0a59793afc6156121174f758dbd79254ac29006c1dc85c"
+  }
+}
