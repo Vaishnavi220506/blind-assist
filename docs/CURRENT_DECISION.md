@@ -1,3 +1,10 @@
+2026-09-20 [delayed-onset64-zone evidence audit](../research/active/dtr-r0/nearfield/ONSET_ZONE_AUDIT_RESULTS_20260920.md):
+The two delayed HEAD frames differ: one loses actual corridor contributors during
+return selection; the other retains a target return but has low interval depth
+fraction. Neither shows large dispersed positive mass hidden by max. Full210 Core
+negative comparisons overlap the fixed descriptors; no full64 information ceiling
+or repair is established. Retain Calibration/hold and bounded diagnostic evidence.
+
 2026-09-20 [fixed causal event readout](../research/active/dtr-r0/nearfield/CAUSAL_EVENT_READOUT_RESULTS_20260920.md):
 Two consumed432 replays separate temporal effects. Primary Core strong73/8/5,
 +rise73/17/5, +hold76/9/2, combined76/18/2. Hold improves local continuity,

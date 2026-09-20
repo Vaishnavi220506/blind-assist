@@ -1,3 +1,17 @@
+## Onset64-zone audit: return selection loss and interval scoring are distinct (2026-09-20)
+
+[One consumed432 audit plus six native frames](nearfield/ONSET_ZONE_AUDIT_RESULTS_20260920.md)
+reproduces all original64-zone observations/scores. At f0005,28 sampled corridor
+target points contribute to no selected return; dominant z35 chooses background,
+leaving only z34 joint.026336. At f0293,48 target corridor contributors survive in
+z36, but reported3.162859m gives depth fraction.245351 and joint.244035; this frame
+is1mm inside the depth boundary. The two positive-zone masks also occur in21/4
+Core negative frames; fixed support-magnitude tuple dominance counts78/7. Neither
+observation proves useful rescue or full64-vector inseparability. No candidate,
+retuning, new capture or automatic connected-support successor. Retain Calibration,
+one-frame hold and this COMPONENT diagnostic. Independent feature/native checks
+pass; global metadata remains pending ledger303/unknown-terminal with receipts.
+
 ## Causal readout: hold helps continuity, rising extrapolation fails onset rescue (2026-09-20)
 
 [Two consumed432 fixed replays](nearfield/CAUSAL_EVENT_READOUT_RESULTS_20260920.md)
