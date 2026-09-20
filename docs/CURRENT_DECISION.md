@@ -1,3 +1,12 @@
+2026-09-21 [frozen A/B complementarity diagnostic](../research/active/dtr-r0/nearfield/SPATIAL_COMPLEMENT_RESULTS_20260921.md):
+Same consumed eight dev groups/576 frames, no new fit or test access. A OR
+previously disclosed high B scores changes current Core85/4/1 to86/4/0 and
+Boundary5/3/81 to71/3/15. Whole-group cutoff diagnosis retains these rescues but
+adds one Core FP; unchanged hold adds three Boundary exit FP. Calibration screen
+is redundant. Retain COMPONENT evidence, not a complete zero-added-FP upgrade;
+original full-replacement negative remains scoped. Independent audit PASS;
+stop without tuning, release changes or automatic successor.
+
 2026-09-21 [one spatial RGB-ToF BCE pilot](../research/active/dtr-r0/nearfield/SPATIAL_BCE_RESULTS_20260920.md):
 40 new groups/2880 frames, one fit, no ranking. Prespecified dev zero-logit
 Boundary current5/3/81 becomes78/3/8, but Core85/4/1 becomes83/15/3 and two

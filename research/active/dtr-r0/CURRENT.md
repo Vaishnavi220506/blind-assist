@@ -1,3 +1,16 @@
+## Frozen A/B complementarity: rescue signal with remaining costs (2026-09-21)
+
+[Saved-output diagnostic](nearfield/SPATIAL_COMPLEMENT_RESULTS_20260921.md) reuses
+eight consumed dev groups/576 frames. Fixed-high OR keeps every A alert and
+changes current Core85/4/1 to86/4/0 and Boundary5/3/81 to71/3/15. Boundary gains
+span seven groups. Whole-group cutoff calibration adds one Core pre-entry FP;
+unchanged hold adds three Boundary exit FP. Calibration screening changes no
+flags or cutoffs. No tested complete policy meets the zero-added-FP criterion.
+Retain diagnostic COMPONENT; preserve the earlier full-replacement negative.
+Four focused tests and independent audit pass, source hashes unchanged, test
+unactivated. Local disposition records global ledger303/unknown-terminal gap.
+No model fit, threshold retry, hold change, demo promotion or automatic successor.
+
 ## Spatial BCE: Boundary signal, no admissible Core replacement (2026-09-21)
 
 [One frozen 40-group/2880-frame A/B pilot](nearfield/SPATIAL_BCE_RESULTS_20260920.md)

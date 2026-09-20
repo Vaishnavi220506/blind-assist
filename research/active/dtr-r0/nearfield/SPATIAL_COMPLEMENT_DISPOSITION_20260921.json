@@ -1,0 +1,96 @@
+{
+  "terminal_id": "ba-spatial-complement-diagnostic-20260921",
+  "status": "COMPLETE_LOCAL_EVIDENCE_GLOBAL_METADATA_PENDING",
+  "scientific_status": "CONSUMED_DEV_COMPLEMENTARITY_WITH_FP_AND_HOLD_COST",
+  "inheritance_role": "COMPONENT_OR_CHALLENGER",
+  "inheritance_mode": "COMPONENT",
+  "role_scope": "Consumed-development frozen A/B complementarity diagnosis; not a deployed or confirmed alert policy",
+  "retained_surface": "High-score supplement rescues 1 Core and 66 Boundary current frames; all A predictions retained; group and release costs documented",
+  "failure_signature": "Grouped cutoff adds 1 Core FP; unchanged hold adds 3 Boundary FP; Calibration screen identical; no complete zero-cost upgrade",
+  "revisit_trigger": "Separately authorized prospective verification only; no automatic tuning, test access, or successor",
+  "report": "research/active/dtr-r0/nearfield/SPATIAL_COMPLEMENT_RESULTS_20260921.md",
+  "protocol": "research/active/dtr-r0/nearfield/SPATIAL_COMPLEMENT_PROTOCOL_20260921.md",
+  "artifact_root": "artifacts.local/work/ba-spatial-complement-diagnostic-20260921",
+  "source_terminal": "ba-spatial-bce-20260920",
+  "source_negative_control_scope_preserved": true,
+  "metadata_blockers": [
+    "experiments/index.jsonl:303 input_fingerprint mismatch",
+    "unknown terminal id"
+  ],
+  "consumed_dev_groups": 8,
+  "consumed_dev_frames": 576,
+  "new_training": false,
+  "test_inference_activated": false,
+  "independent_audit": "PASS",
+  "source_hashes_unchanged": true,
+  "raw_A_core": [
+    85,
+    4,
+    1
+  ],
+  "raw_A_boundary": [
+    5,
+    3,
+    81
+  ],
+  "raw_fixed_high_core": [
+    86,
+    4,
+    0
+  ],
+  "raw_fixed_high_boundary": [
+    71,
+    3,
+    15
+  ],
+  "raw_grouped_core": [
+    86,
+    5,
+    0
+  ],
+  "raw_grouped_boundary": [
+    71,
+    3,
+    15
+  ],
+  "held_A_core": [
+    85,
+    12,
+    1
+  ],
+  "held_A_boundary": [
+    7,
+    5,
+    79
+  ],
+  "held_fixed_high_core": [
+    86,
+    12,
+    0
+  ],
+  "held_fixed_high_boundary": [
+    75,
+    8,
+    11
+  ],
+  "held_grouped_core": [
+    86,
+    13,
+    0
+  ],
+  "held_grouped_boundary": [
+    75,
+    8,
+    11
+  ],
+  "evidence_sha256": {
+    "protocol.json": "fff2ad4d19ecd0aab6f6f32adfa7dd47b5fe177fd5553335887459b39bf3fe11",
+    "public-fixed-seal.json": "21618c309cd3c409e4f191b857ae400573bc135cfbf47bb6cb9662f8790f3f6a",
+    "prediction-seal.json": "bed2212b249a166c77179580ffa0dcbaac964ab295e4fd9cd529fd1aa1f81823",
+    "evaluation-seal.json": "a46a6715378ab7a9d85df5a61f1baff4bc60386c91e16844bcd701f0b2693dae",
+    "result.json": "049a22bf9781c08f039162998b0ef5e681817e3c9d1a6ee9b2defe9c934591ed",
+    "independent-audit.json": "638202df7334be05a84239973c569c7eee75473a9eb5bc193b10e9fab8d0a73c",
+    "registration-attempt.txt": "cae0cb0b3cee751a907898069ff8c316429bb09db74395b7bb7295948ff89f1e",
+    "inheritance-attempt.txt": "6d854d2d00f824cc3ebb118db01161c0904bde59f59b92ec32590e34282aea86"
+  }
+}
