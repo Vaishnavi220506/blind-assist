@@ -1,3 +1,17 @@
+## Complete-event transfer: same Core alerts, Boundary tradeoff (2026-09-20)
+
+[One frozen24-clip/576-frame capture](nearfield/FULL_EVENT_RESULTS_20260920.md)
+compares strongest+hold with closest-exported+identical hold. Core384 is exactly
+identical96/14/0,8/8events, full coverage, zero onset delay/internal gaps; releases
+are seven.2s and one.4s, with5pre-entry and9post-exit FP. One native-backed HEAD
+current-frame recovery was already held by the baseline (held-only9to8).
+The frozen information screen passes, but complete-Core task gain is absent.
+Boundary0/0/96 becomes22/8/74;8/8events cover only1-4/12frames, five interruptions,
+and one2.2s delayed onset. Retain COMPONENT evidence; no Core upgrade or default
+promotion. Old demo/Calibration stay unchanged. Independent576-frame/native audit
+passes; task UE released. End this round without tuning/training/new cohort.
+Global metadata pending ledger303/unknown terminal; local disposition retained.
+
 ## Multi-return pilot: conditional synthetic information gain (2026-09-20)
 
 [One frozen consumed432 simulation](nearfield/MULTIRETURN_PILOT_RESULTS_20260920.md)

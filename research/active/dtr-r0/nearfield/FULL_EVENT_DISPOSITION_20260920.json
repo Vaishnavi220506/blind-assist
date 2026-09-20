@@ -1,0 +1,61 @@
+{
+  "terminal_id": "ba-full-event-transfer-20260920",
+  "status": "COMPLETE_LOCAL_EVIDENCE_GLOBAL_METADATA_PENDING",
+  "inheritance_role": "COMPONENT_OR_CHALLENGER",
+  "inheritance_mode": "COMPONENT",
+  "role_scope": "New controlled complete-event evidence under frozen hypothetical sensor law; not Core performance promotion, hardware or audio",
+  "retained_surface": "Same complete Core alerts with one added native current support; measured exit tails and sparse Boundary tradeoff",
+  "failure_signature": "Core final output differences zero; Boundary22/8/74 and5 interruptions with max2.2s onset delay",
+  "revisit_trigger": "Separately authorized input-information or event-policy hypothesis; no automatic successor",
+  "report": "research/active/dtr-r0/nearfield/FULL_EVENT_RESULTS_20260920.md",
+  "protocol": "research/active/dtr-r0/nearfield/FULL_EVENT_PROTOCOL_20260920.md",
+  "artifact_root": "artifacts.local/work/ba-full-event-transfer-20260920",
+  "metadata_blockers": [
+    "experiments/index.jsonl:303 input_fingerprint mismatch",
+    "unknown terminal id"
+  ],
+  "frozen_information_screen_passed": true,
+  "core_final_alert_improvement": false,
+  "core_final_flag_differences": 0,
+  "core_baseline": [
+    96,
+    14,
+    0
+  ],
+  "core_candidate": [
+    96,
+    14,
+    0
+  ],
+  "boundary_baseline": [
+    0,
+    0,
+    96
+  ],
+  "boundary_candidate": [
+    22,
+    8,
+    74
+  ],
+  "evidence_sha256": {
+    "protocol.json": "4f548a758751307d16cc8605fb566ae7d3309216fa653641f5af571cb4e88261",
+    "spec.json": "6ca2fdec4ba6c8f5dbd0cbd6e820750e608699a609754a11e2473b432a811f27",
+    "preflight.json": "fd57534cb3b2bbac7b15fa9f8583447a84bec8f4843e088cd6ed074ab80c741a",
+    "observation-seal.json": "b222cb6f8c987ce10ccb0fdc41d138eca6858e1378b90daf52ccff55d3d421eb",
+    "prediction-seal.json": "cfcfb4c38dceb2d8f760c8a9fbfa4e6e8d512debcaa8a98ce937b34a1275adcf",
+    "evaluation-seal.json": "1b4629e699abcd9092ab3017bdff8367d5294a67a928eb3a01031d9e64b4e6ff",
+    "results.json": "d770273830b3f2c9c219d35e77330c220b0637e09bc301ba414b8a0e323f295e",
+    "independent_recount.py": "c01290a18c195a5d7a800fe991124ca2754ffba739b6973b010452774643385d",
+    "independent_recount.json": "9e0943e3b806a78679b5f2012e4c1460b4e9843ae259923653ad635d62e74cd7",
+    "independent-alert-effect-summary.json": "959b800af11bd5c7920d0c1508bba662219647b619a51d70b01aa76e9d4344a9",
+    "capture/receipt.json": "3d7de19691722d7501d97bbd1bd5bd9274d039f1dfd52ccce7c454fa45ba6a2c",
+    "capture/process-release.json": "a9e31d9da3f2837e53facd84e2998907649ac9169696e11d190724278b5325a5",
+    "capture/launcher-terminal.json": "0f1a433ab94b185b4171c562130c37c40ac6f92330570230bee3d75840c60c39",
+    "register-active-receipt.txt": "cae0cb0b3cee751a907898069ff8c316429bb09db74395b7bb7295948ff89f1e",
+    "inheritance-receipt.txt": "d5c61fd6c9e3c2b9a93fb745a989fb6b945c3a07e4dc04aa3b4843d9663dee2f",
+    "full-event-timeline.png": "57c335375227514d8f07e54f2c31cc1715f919fc6ef44b3feba81e297ce73c4c",
+    "full-event-timeline.svg": "15352f523d4553ab57199f30f087ee4ab9f0fa5b23c125f0d88feff8c458991c"
+  },
+  "default_policy_changed": false,
+  "automatic_successor": false
+}
