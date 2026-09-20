@@ -1,3 +1,10 @@
+2026-09-20 [single half-bin phase diagnostic](../research/active/dtr-r0/nearfield/HALF_BIN_PHASE_RESULTS_20260920.md):
+One frozen 5 cm histogram shift changes some proxy returns but neither delayed
+HEAD onset. Core strong73/8/5 becomes72/8/6; hold76/9/2 becomes75/9/3;
+Calibration77/128/1 becomes77/129/1. All12 events and onset times persist.
+Retain original proxy/Calibration/hold and scoped sensitivity evidence; no phase
+replacement, threshold search, contract change or automatic successor.
+
 2026-09-20 [delayed-onset64-zone evidence audit](../research/active/dtr-r0/nearfield/ONSET_ZONE_AUDIT_RESULTS_20260920.md):
 The two delayed HEAD frames differ: one loses actual corridor contributors during
 return selection; the other retains a target return but has low interval depth

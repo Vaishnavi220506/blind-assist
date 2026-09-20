@@ -1,3 +1,17 @@
+## One half-bin phase: local proxy sensitivity without onset repair (2026-09-20)
+
+[Frozen paired consumed432 diagnostic](nearfield/HALF_BIN_PHASE_RESULTS_20260920.md)
+changes the 10 cm histogram origin by exactly5 cm, preserving paired dropout and
+standardized noise. Neither original delayed HEAD onset's score/critical returns
+changes. Across27648 zone-frames,4405 observed contributor sets change and75
+paired ranges move >1 m. Core strong73/8/5 becomes72/8/6 (new f0007 loss),
+hold76/9/2 becomes75/9/3 (f0008 loses preceding genuine strong), and Calibration
+77/128/1 becomes77/129/1. Core12/12 events and first times persist; Boundary
+flags are identical. Independent source and complete metric recount pass.
+Retain original proxy, Calibration and hold; diagnostic COMPONENT only, no new
+phase selection, task-contract change or automatic successor. Global metadata
+pending ledger303/unknown-terminal; receipts and local disposition preserved.
+
 ## Onset64-zone audit: return selection loss and interval scoring are distinct (2026-09-20)
 
 [One consumed432 audit plus six native frames](nearfield/ONSET_ZONE_AUDIT_RESULTS_20260920.md)
