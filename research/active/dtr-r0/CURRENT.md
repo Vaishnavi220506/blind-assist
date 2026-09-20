@@ -1,3 +1,17 @@
+## Score-factor audit: dominant overlap sensitivity is not a causal geometry fault (2026-09-20)
+
+[Four gaps/five frames,13-frame factor audit](nearfield/SCORE_FACTOR_COLLAPSE_RESULTS_20260920.md)
+finds4overlap-replacement-only cases and1either-factor-sufficient case;0depth-only.
+But fixed-zone tracking shows outgoing high-overlap winners become far-return
+intervals (d=0) in those four frames; incoming winners retain depth support with
+tiny overlap. Three fixed-gap-zone CFs are undefined, one reference itself fails
+threshold, one is ambiguous. Neither dominant-depth collapse nor wrong geometry
+is established. All gaps are strict negatives, not missed true obstacles.
+Retain Calibration144/146/0,24/24and onsets; Zone-Handoff and RGB/noRGB stay closed.
+No formula/output/threshold change or successor. If requested later, isolate the
+outgoing-zone return lineage before choosing a range-quality or geometry method.
+Frozen source/factor checks retained; global metadata still pending ledger303.
+
 ## Zone-handoff ceiling fails the gap-bridging condition (2026-09-20)
 
 [One frozen consumed432 spatial diagnostic](nearfield/ZONE_HANDOFF_CEILING_RESULTS_20260920.md)
