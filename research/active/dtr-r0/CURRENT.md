@@ -1,3 +1,12 @@
+## Core usefulness and scoped acceptance (2026-09-20)
+
+User adopts the [clarified task contract](nearfield/CAMERA_FORWARD_CONTRACT_20260919.md#useful-core-capability-and-challenge-coverage):
+prioritize useful Core event detection, timing and reduced false interruptions;
+report boundary and thin-object challenges separately. Future candidates may
+state explicit miss/delay tradeoffs; old lossless gates remain local to their
+frozen experiments. Calibration stays the baseline. This decision changes no
+results, cohort membership, thresholds, inheritance roles or runtime behavior.
+
 ## Score-factor audit: dominant overlap sensitivity is not a causal geometry fault (2026-09-20)
 
 [Four gaps/five frames,13-frame factor audit](nearfield/SCORE_FACTOR_COLLAPSE_RESULTS_20260920.md)

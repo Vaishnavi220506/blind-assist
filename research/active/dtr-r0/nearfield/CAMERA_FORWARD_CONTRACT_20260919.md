@@ -13,6 +13,51 @@ labels remain reproducible under their original definitions. Existing closed
 recipes remain closed in their tested scopes; this decision starts no new fit
 or capture and does not change Android defaults.
 
+## Useful core capability and challenge coverage
+
+User clarification, 2026-09-20: optimize for useful, measurable obstacle alerts
+within a declared operating scope and limited compute. Extreme-case perfection
+and lossless improvement on every frame are not universal project requirements.
+
+- **Core:** representative controlled BODY/HEAD obstacles clearly intersecting
+  the corridor, paired with clearly outside obstacles and negative periods.
+  Prioritize event detection, timely first alerts and fewer false interruptions.
+  The six geometry types in the completed Core transfer are controlled examples,
+  not measured frequencies of everyday obstacles or proof of general coverage.
+- **Boundary:** exact contact and uncertain/grazing intersections are reported
+  separately, with their original strict labels and declared tolerance retained.
+- **Thin-object Challenge:** retain the old 4 cm rods/plates and other declared
+  extreme cases as capability-boundary evidence. Their failure limits coverage;
+  it does not by itself invalidate a useful Core result.
+
+Define future cohort membership from dimensions, distance, placement and source
+conditions before outcome scoring. Do not invent a universal minimum width from
+the old 4 cm failures, discard difficult Core errors after observing them, or
+merge Core and challenge scores. Missing sensor support remains an informative
+miss/abstention where truth is known, not a reason to remove the sample.
+
+Judge future candidates against the adopted Calibration baseline by event
+misses, first-alert timing, false-alert segments/duration and UNKNOWN coverage;
+retain frame TP/FP/FN and precision/FPR as supporting diagnostics. A candidate
+may offer a useful tradeoff without preserving every baseline-positive frame.
+State the intended benefit and acceptable miss/delay cost before a new comparison;
+there is no default permission to accept a lost event for a small FP reduction.
+Set only criteria relevant to that question; one bounded comparison is enough
+unless an observed failure or evidence gap changes the decision.
+
+The old zero-TP-loss, zero-onset-delay and zero-native-contributor-suppression
+gates remain binding for the experiments that claimed **lossless** improvement.
+They are not automatically inherited by every future alert policy. Preserve raw
+valid observations and UNKNOWN; an alert-policy choice must not rewrite sensor
+evidence or manufacture foreground distance/free space. Contributor audits are
+required when the proposed mechanism or claim depends on attribution/retention,
+not as a universal prerequisite for every unrelated reversible change.
+
+This clarification changes future task selection and acceptance, not frozen
+labels, results, thresholds or negative-control dispositions. It starts no new
+training, capture or runtime change. Current Core evidence already separates
+these strata; the remaining demonstrated baseline weakness is false alerts.
+
 ## Limited edge-compute constraint
 
 User clarification, 2026-09-19: the intended system must not depend on a large
@@ -106,15 +151,18 @@ heading or SLAM pose is needed for this camera-frame task. Such labels describe
 visible/reconstructed reference support, not unseen physical occupancy; missing
 truth remains UNKNOWN. Never feed reference depth or actor identity to inference.
 
-## Smallest decision-changing comparison
+## Baseline and bounded comparisons
 
-Compare a fixed RGB+ToF/NFO corridor readout with a fixed raw-ToF support readout
-under the same camera profile and alert policy. Reuse the retained NFO weights
-first; record new-task baseline metrics separately from historical A* numbers.
-Keep the original-task reports available; relabelling cannot establish an
-improvement over a baseline evaluated under another task definition.
+The adopted [Calibration baseline](CALIBRATION_BASELINE_20260920.md) supplies
+the current camera-forward comparator. NFO reuse and the original thin-object
+pairs below are historical diagnostic options, not mandatory next steps. Select
+one concrete Core benefit before proposing a candidate; extra model complexity
+or an RGB contribution is not itself an acceptance requirement. Keep the original
+reports available; relabelling cannot establish improvement over a baseline
+evaluated under another task definition.
 
-Use authenticated paired scenes with one intended variable changed:
+When the question needs a geometry diagnostic, use an authenticated pair with
+one intended variable changed. These pairs do not define the Core success gate:
 
 | Pair | Controlled change and required distinction |
 | --- | --- |
