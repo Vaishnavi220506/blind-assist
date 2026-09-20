@@ -1,3 +1,20 @@
+## Return-lineage audit: positive foreground survives but can lose selection (2026-09-20)
+
+[One frozen Core432 + Thin96 diagnostic](nearfield/RETURN_LINEAGE_RESULTS_20260920.md)
+reproduces all528 original observations/predictions. Four of five negative gap
+frames retain the target but select backdrop; their three initial switches all
+coincide with backdrop entering the proxy's8m candidate gate. The fifth retains
+a target return. Do not repair these negatives or infer a hardware fault.
+In positive sampled corridor zones, far non-target winners occur94/500 Core
+and95/187 Thin zone-frames (55/144 and24/36 frames). Core retains all144TP;
+Thin's six existing small-foreground FN all retain near candidates suppressed
+by backdrop. This is candidate-selection loss, not demonstrated FN recovery.
+One Core true near-to-far switch also exposes10cm bin-boundary sensitivity.
+Retain Calibration and RGB/noRGB/Zone-Handoff closures. This evaluator-only
+lineage evidence is COMPONENT_OR_CHALLENGER in COMPONENT mode; no new return
+arm or automatic successor. Independent replay/recount passes; global metadata
+remains pending ledger303/unknown-terminal, with receipts and local disposition.
+
 ## Core usefulness and scoped acceptance (2026-09-20)
 
 User adopts the [clarified task contract](nearfield/CAMERA_FORWARD_CONTRACT_20260919.md#useful-core-capability-and-challenge-coverage):
