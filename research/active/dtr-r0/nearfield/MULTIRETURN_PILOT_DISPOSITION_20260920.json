@@ -1,0 +1,66 @@
+{
+  "terminal_id": "ba-multireturn-pilot-20260920",
+  "status": "COMPLETE_LOCAL_EVIDENCE_GLOBAL_METADATA_PENDING",
+  "inheritance_role": "COMPONENT_OR_CHALLENGER",
+  "inheritance_mode": "COMPONENT",
+  "role_scope": "Consumed hypothetical multi-return proxy only; no hardware, learned representation or runtime promotion",
+  "retained_surface": "First-slot parity and native-trigger-backed Core recovery; closest-exported equals two-return flags",
+  "failure_signature": "Boundary adds 7 FP; f0293 remains delayed; physical secondary detectability and exit behavior untested",
+  "revisit_trigger": "Separately authorized validation of observable multi-return inputs and complete sequences",
+  "report": "research/active/dtr-r0/nearfield/MULTIRETURN_PILOT_RESULTS_20260920.md",
+  "protocol": "research/active/dtr-r0/nearfield/MULTIRETURN_PILOT_PROTOCOL_20260920.md",
+  "metadata_blockers": [
+    "experiments/index.jsonl:303 input_fingerprint mismatch",
+    "unknown terminal id"
+  ],
+  "artifact_root": "artifacts.local/work/ba-multireturn-pilot-20260920",
+  "evidence_sha256": {
+    "protocol.json": "f53a3cca573fa16720ae4c61881d843b21e982c6d5df89cfe9f568e6be919cd7",
+    "observation-seal.json": "df3ff9c4faf57eb6c8a32cefda1f0b8a77b468734ab63c614988f2980d1e5420",
+    "prediction-seal.json": "765e0c113a22a646223f1b1ec1a6ece600ce2cb641942cced53873983c822a49",
+    "evaluation-seal.json": "d1299bbd51c82a0f12cc53347e8ccb2d1946eed3c527f779826e8eadd55f3ed8",
+    "results.json": "db5947762f31785b3d9ab5053018bc03e66b763f8310e6717662ffa46d401493",
+    "independent-recount.py": "42f6be3e186c2a5eab136350fc45d7e8a1790ab669d0860f153822a3e5435e33",
+    "independent-recount.json": "ce5e4099b826bef6143a6cfac8e02648fed2f0dfbfadcb3771b32dfea3c44d4a",
+    "register-active-valid-slugs-receipt.txt": "cae0cb0b3cee751a907898069ff8c316429bb09db74395b7bb7295948ff89f1e",
+    "inheritance-receipt.txt": "f7350f2bc445df58769cbdbeddf708d47dba1521c751024d57969c259912b24e"
+  },
+  "core_current": {
+    "baseline": [
+      73,
+      8,
+      5
+    ],
+    "candidate": [
+      77,
+      8,
+      1
+    ]
+  },
+  "core_hold": {
+    "baseline": [
+      76,
+      9,
+      2
+    ],
+    "candidate": [
+      77,
+      9,
+      1
+    ]
+  },
+  "boundary_current": {
+    "baseline": [
+      6,
+      1,
+      72
+    ],
+    "candidate": [
+      18,
+      8,
+      60
+    ]
+  },
+  "default_policy_changed": false,
+  "automatic_successor": false
+}

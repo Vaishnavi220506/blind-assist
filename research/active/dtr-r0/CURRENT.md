@@ -1,3 +1,18 @@
+## Multi-return pilot: conditional synthetic information gain (2026-09-20)
+
+[One frozen consumed432 simulation](nearfield/MULTIRETURN_PILOT_RESULTS_20260920.md)
+retains every original first return and adds one declared separated synthetic bin.
+Core strongest73/8/5 becomes77/8/1; with unchanged hold76/9/2 becomes77/9/1.
+Four current HEAD recoveries have native support in the triggering second-slot
+zones; one of two delayed onsets is repaired. Closest-exported and independent
+two-return alerts coincide; no learned/joint-representation gain is established.
+Boundary current6/1/72 becomes18/8/60, events3/12to9/12: seven extra FP remain.
+Retain COMPONENT_OR_CHALLENGER / COMPONENT for this hypothetical input law only.
+Hardware weak-return detectability and complete-event release remain unevaluated;
+the74/10/0 demo, Calibration and defaults stay unchanged. End this pilot without
+training, retuning or successor. Global metadata pending ledger303; sealed local
+evidence and structured disposition retained.
+
 ## Consolidated Core policy: new-layout benefit, bounded challenger (2026-09-20)
 
 [One frozen new36-layout/432-frame validation](nearfield/CORE_HOLD_VALIDATION_RESULTS_20260920.md)
