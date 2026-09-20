@@ -22,6 +22,12 @@ if __name__=='__main__':
         extra_path.write_text('window.CORE_DEMO_EXTRA=null;\n',encoding='utf-8')
     extra=json.loads(extra_path.read_text(encoding='utf-8').strip().removeprefix('window.CORE_DEMO_EXTRA=').removesuffix(';'))
     for name in FILES:shutil.copy2(HERE/name,SITE/name)
+    # Keep HTML and its presentation assets in one version after a local rebuild.
+    page=(SITE/'index.html').read_text(encoding='utf-8')
+    for name in FILES:
+        if name.endswith(('.css','.js')):
+            page=page.replace(f'"{name}"',f'"{name}?v={sha(SITE/name)[:12]}"')
+    (SITE/'index.html').write_text(page,encoding='utf-8')
     (OUT/'site-build-receipt.json').write_text(json.dumps(dict(
         scope='Engineering replay packaging; no changed algorithm or new scientific evaluation',
         source_data_receipt_sha256=sha(OUT/'build-receipt.json'),

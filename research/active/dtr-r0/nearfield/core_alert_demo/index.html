@@ -15,13 +15,17 @@
 </aside>
 <main>
   <section class="page active" id="page-gallery">
-    <div class="gallery-heading"><div><span class="eyebrow">SCENES IN MOTION / BLINDASSIST</span><h1>走进场景，看提醒如何发生。</h1><p>先选一段完整场景，再沿着画面、测距和时间线，理解每一次响应。</p></div><button id="startTour" class="play-button">▶ 连续导览全部片段</button></div>
+    <div class="gallery-heading"><div><span class="eyebrow">SCENES IN MOTION / BLINDASSIST</span><h1>看见空间，读懂提醒。</h1><p>先选一段完整场景，再沿着画面、测距和时间线，理解每一次响应。</p></div><button id="startTour" class="play-button">▶ 连续导览全部片段</button></div>
+    <article class="gallery-spotlight" id="gallerySpotlight">
+      <div class="spotlight-visual"><img id="spotlightImage" alt="当前场景预览"><div class="spotlight-stamp"><span>SCENE PREVIEW</span><span id="spotlightSource"></span></div><div class="spotlight-caption"><span id="spotlightNumber"></span><h2 id="spotlightTitle"></h2></div></div>
+      <div class="spotlight-copy"><span class="eyebrow">FROM OBSERVATION TO ALERT</span><h2>一个场景。<br>三层证据。</h2><p id="spotlightDescription"></p><ol class="evidence-steps"><li><b>01</b><div>看见场景<small>原始 RGB 与观测区域</small></div></li><li><b>02</b><div>理解空间<small>64 区测距与通道支持</small></div></li><li><b>03</b><div>解释提醒<small>当前强证据与一帧保持</small></div></li></ol><button class="spotlight-open" id="spotlightOpen">进入场景 <span>↗</span></button></div>
+    </article>
     <div class="gallery-collection"><div><h2 id="galleryCohort"></h2><p id="galleryDescription"></p></div><span class="tag neutral" id="galleryCount"></span></div>
     <div class="gallery-grid" id="galleryGrid"></div>
     <p class="gallery-footnote">画面均来自实际保存的模拟器 RGB。每个卡片打开完整原始片段；切换片段重置历史，不把不同场景拼成算法的连续输入。</p>
   </section>
   <section class="page" id="page-replay">
-    <div class="page-title"><div><span class="eyebrow">OBSERVE · UNDERSTAND · COMPARE</span><h1>看见告警背后的证据</h1><p>同一帧，从测距观测到几何支持，再到有限的时间保持。</p></div><button id="presentation" class="ghost" title="收起目录与说明，让画面和动态图同屏">演示模式 ↗</button></div>
+    <div class="page-title"><div><span class="eyebrow">SPATIAL SENSING / FRAME BY FRAME</span><h1>让每一次提醒，有迹可循。</h1><p>场景、空间支持与时间证据，在同一采样上对齐。</p></div><button id="presentation" class="ghost" title="收起目录，放大场景与证据面板">演示模式 ↗</button></div>
     <div class="session-ribbon"><span class="session-state" id="sessionState">Ⅱ 回放已暂停</span><strong class="session-clock" id="sessionClock">00.0 s</strong><span class="session-meta" id="sessionFrame"></span><span class="session-meta">回放驱动 · 5 Hz 原始采样</span></div>
     <div class="instrument-metrics">
       <div class="stat-card"><label>有效测距</label><strong id="instrumentValid">—</strong><small id="instrumentMissing"></small></div>
@@ -29,8 +33,7 @@
       <div class="stat-card"><label>最大几何分数</label><strong id="instrumentScore">—</strong><small>强证据线 0.407 · 非概率</small></div>
       <div class="stat-card"><label>当前提醒状态</label><strong id="instrumentState">—</strong><small id="instrumentHistory"></small></div>
     </div>
-    <div class="kpis" id="kpis"></div><div class="tour-status" id="tourStatus" hidden><span id="tourLabel"></span><button id="stopTour" class="tiny">停止导览</button></div>
-    <div class="guide-strip"><span>示例导览</span><button data-guide="hold">① 保持补帧</button><button data-guide="outside">② 通道外消警</button><button data-guide="delay">③ 旧首报延迟</button><button data-guide="boundary">④ 边界漏报</button><small id="guideNote">可查看全部场景，导览不改变统计范围</small></div>
+    <div class="tour-status" id="tourStatus" hidden><span id="tourLabel"></span><button id="stopTour" class="tiny">停止导览</button></div>
     <div class="hero-grid">
       <article class="panel scene-panel"><div class="panel-head"><div><span class="index">01</span><h2>场景与观测位置</h2></div><div class="switches"><a id="fullImage" class="image-source-link" target="_blank" rel="noopener">原图 ↗</a><label><input type="checkbox" id="showGrid" checked>ToF 网格</label><label class="truth-toggle"><input type="checkbox" id="showTruth">评估真值轮廓</label></div></div>
         <div class="scene-stage" id="sceneStage"><img id="sceneImage" width="640" height="360" alt="同步场景画面"><svg id="sceneOverlay" viewBox="0 0 640 360" aria-label="ToF 观测位置与可选真值轮廓"></svg><div id="imageLoading" class="image-loading">正在加载场景…</div><div class="scene-topline"><span id="sceneType"></span><span id="frameTag"></span></div><div class="scene-bottomline"><span>RGB · 场景展示</span><span id="sceneCaption"></span></div></div>
@@ -53,6 +56,9 @@
       <article class="panel telemetry-card history-card"><div class="panel-head"><div><span class="index">04</span><h2>64 区 · 时间热图</h2></div><select id="historyMode" aria-label="时间热图模式"><option value="range">测距历史</option><option value="score">几何分数</option></select></div><canvas id="zoneHistory" width="520" height="310" role="img" aria-label="64区历史"></canvas><div class="viz-tools"><label>选区 <input id="historyZone" type="range" min="0" max="63" value="35" aria-label="历史选区"></label><span>点击已播放区域可逐帧定位</span></div><p class="viz-caption" id="historyCaption"></p></article>
       <article class="panel telemetry-card trend-card"><div class="panel-head"><div><span class="index">05</span><h2>证据随时间</h2></div><span class="tag neutral">仅已播放历史</span></div><canvas id="causalTrend" width="520" height="260" role="img" aria-label="几何分数与观测覆盖历史"></canvas><div class="signal-legend"><span><i class="dot teal"></i>最大分数</span><span><i class="dot blue"></i>有效区占比</span><span><i class="dot amber"></i>可能相交区占比</span></div><div class="event-readout" id="eventReadout"></div><p class="panel-note">点击状态变化回看对应帧；占比不代表危险概率。</p></article>
     </div>
+    <details class="context-details"><summary>数据范围与讲解示例 <span>原验证结果 · 保持、通道外与边界示例</span></summary><div class="context-content">    <div class="kpis" id="kpis"></div>
+    <div class="guide-strip"><span>示例导览</span><button data-guide="hold">① 保持补帧</button><button data-guide="outside">② 通道外消警</button><button data-guide="delay">③ 旧首报延迟</button><button data-guide="boundary">④ 边界漏报</button><small id="guideNote">可查看全部场景，导览不改变统计范围</small></div>
+</div></details>
     <details class="diagnostic-details"><summary>逐区参数与完整时间线 <span>展开查看 64 区数值、几何分解与全片段评估</span></summary>
     <div class="analysis-grid">
       <article class="panel tof-panel"><div class="panel-head"><div><span class="index">03</span><h2>64 区 ToF</h2></div><select id="heatMode" aria-label="ToF 色图模式"><option value="range">测距</option><option value="score">几何分数</option></select></div><div class="tof-labels"><span>左 ← 视野 → 右</span><span id="validZones"></span></div><div id="tofGrid" class="tof-grid" role="group" aria-label="64区观测，点击查看几何支持"></div><div class="heat-legend"><span id="heatLow"></span><i id="heatRamp"></i><span id="heatHigh"></span></div><div class="zone-selection"><span id="selectedZoneLabel"></span><button id="autoZone" class="tiny active">跟随最大分数</button></div><p class="panel-note">每格是一个区域返回，不是一个已定位障碍。斜纹表示该区无有效返回。</p></article>

@@ -54,7 +54,17 @@
   const clipDescription=c=>c.description||({INSIDE:'沿相机前向接近，观察测距支持进入通道后，强证据与提醒如何变化。',OUTSIDE:'障碍保持在通道侧方；对照区域支持与分数，观察是否仍会提醒。',BOUNDARY:'支撑擦过通道边缘，观察分数、提醒与评估边界之间的区别。'}[c.layout]||'播放完整原始片段，查看观测与固定策略的响应。');
   const thumbnail=c=>c.frames[c.preview_index??Math.floor(c.frames.length*.55)].rgb;
   const visibleClips=()=>currentCohort().clips.map((c,i)=>({c,i})).filter(({c})=>(S.layout==='ALL'||c.layout===S.layout)&&(S.family==='ALL'||c.layer===S.family));
-  function renderGallery(){const co=currentCohort(),clips=visibleClips();$('galleryCohort').textContent=co.title;$('galleryDescription').textContent=co.illustrative?'City Sample 大城市与小城市地图，六处位置、八段分步回放。原生 1080p 材质与光影；固定策略响应独立展示，不计入原1296帧结果。':co.subtitle+' · 六种障碍形态，每个完整片段均可打开。';$('galleryCount').textContent=clips.length+' 个完整片段';$('galleryGrid').innerHTML=clips.map(({c,i})=>`<button class="gallery-card" data-gallery-clip="${i}"><div class="gallery-image"><img src="${esc(thumbnail(c))}" alt="${esc(clipTitle(c))}" loading="lazy"><span>${co.illustrative?'机制演示 · 未标注':esc(c.layer+' / '+c.layout)}</span><b>↗</b></div><div class="gallery-card-copy"><small>SCENE ${String(i+1).padStart(2,'0')} · ${c.frames.length} 个采样</small><h2>${esc(clipTitle(c))}</h2><p>${esc(clipDescription(c))}</p>${c.motion?`<div class="motion-caption">运动 · ${esc(c.motion)}</div>`:''}<span>完整回放 <i>→</i></span></div></button>`).join('')||'<p class="empty">当前筛选没有场景，请选择全部类型。</p>';$('galleryGrid').querySelectorAll('[data-gallery-clip]').forEach(b=>b.onclick=()=>{selectClip(Number(b.dataset.galleryClip));setPage('replay');});}
+  function renderSpotlight(co,clips){
+    $('gallerySpotlight').hidden=!clips.length;
+    if(!clips.length)return;
+    const {c,i}=clips[0],image=$('spotlightImage');
+    image.src=thumbnail(c);image.alt=clipTitle(c)+' · 原始场景预览';
+    $('spotlightSource').textContent=co.illustrative?'City Sample · 原生场景':'受控仿真 · 原始 RGB';
+    $('spotlightNumber').textContent='SCENE '+String(i+1).padStart(2,'0')+' / '+c.frames.length+' 个原始采样';
+    $('spotlightTitle').textContent=clipTitle(c);$('spotlightDescription').textContent=clipDescription(c);
+    $('spotlightOpen').onclick=async()=>{if(await selectClip(i))setPage('replay');};
+  }
+  function renderGallery(){const co=currentCohort(),clips=visibleClips();renderSpotlight(co,clips);$('galleryCohort').textContent=co.title;$('galleryDescription').textContent=co.illustrative?'City Sample 大城市与小城市地图，六处位置、八段分步回放。原生 1080p 材质与光影；固定策略响应独立展示，不计入原1296帧结果。':co.subtitle+' · 六种障碍形态，每个完整片段均可打开。';$('galleryCount').textContent=clips.length+' 个完整片段';$('galleryGrid').innerHTML=clips.map(({c,i})=>`<button class="gallery-card" data-gallery-clip="${i}"><div class="gallery-image"><img src="${esc(thumbnail(c))}" alt="${esc(clipTitle(c))}" loading="lazy"><span>${co.illustrative?'机制演示 · 未标注':esc(c.layer+' / '+c.layout)}</span><b>↗</b></div><div class="gallery-card-copy"><small>SCENE ${String(i+1).padStart(2,'0')} · ${c.frames.length} 个采样</small><h2>${esc(clipTitle(c))}</h2><p>${esc(clipDescription(c))}</p>${c.motion?`<div class="motion-caption">运动 · ${esc(c.motion)}</div>`:''}<span>完整回放 <i>→</i></span></div></button>`).join('')||'<p class="empty">当前筛选没有场景，请选择全部类型。</p>';$('galleryGrid').querySelectorAll('[data-gallery-clip]').forEach(b=>b.onclick=()=>{selectClip(Number(b.dataset.galleryClip));setPage('replay');});}
   function renderTour(){const active=!!S.tour;$('tourStatus').hidden=!active;if(active)$('tourLabel').textContent=`连续导览 ${S.tour.index+1} / ${S.tour.clips.length} · 每个片段独立重置历史`;}
   async function startTour(){const clips=visibleClips().map(({i})=>i);if(!clips.length)return;setPage('replay');if(!await selectClip(clips[0]))return;S.tour={clips,index:0};$('loop').checked=false;renderTour();preload();play();}
   let toastTimer;

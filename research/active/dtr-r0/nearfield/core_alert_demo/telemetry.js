@@ -17,7 +17,7 @@
   const EDGES=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
   const FACE=[[0,1,2,3],[4,5,6,7],[0,1,5,4],[1,2,6,5],[2,3,7,6],[3,0,4,7]];
   function volumeSVG(frame,geometry,selected,angle=35,far=4.2){
-    const a=angle*Math.PI/180,scale=80*4.2/far;
+    const a=angle*Math.PI/180,scale=96*4.2/far;
     const project=([x,y,z])=>[260+scale*(Math.cos(a)*x+Math.sin(a)*(z-far/2)),155+scale*(.85*y-.45*(Math.cos(a)*(z-far/2)-Math.sin(a)*x))];
     const pt=p=>project(p).map(v=>v.toFixed(1)).join(',');
     const line=(p,q,color,width=1,extra='')=>`<line x1="${project(p)[0]}" y1="${project(p)[1]}" x2="${project(q)[0]}" y2="${project(q)[1]}" stroke="${color}" stroke-width="${width}" ${extra}/>`;
@@ -40,7 +40,8 @@
     svg+=wire(v,C.teal,1.2)+label([.35,-.32,3],'固定通道',C.teal);
     const cam=project([0,0,0]);svg+=`<circle cx="${cam[0]}" cy="${cam[1]}" r="4" fill="${C.text}"/>`+label([.08,0,0],'相机',C.text);
     svg+=line([0,0,0],[0,0,far],C.teal,.7,'stroke-dasharray="3 5"')+label([0,-.18,far],'Z 前向');
-    return {svg:svg+'</g>',shown:zones.length};
+    svg+='</g><text x="20" y="300" fill="#91aebc" font-size="11">相机坐标 · X 右 / Y 下 / Z 前</text>';
+    return {svg,shown:zones.length};
   }
   if(typeof module!=='undefined'&&module.exports){module.exports={summary,history,transitions,supportVertices,volumeSVG};return;}
   const $=id=>document.getElementById(id);
@@ -48,7 +49,7 @@
     const el=$(id),r=el.getBoundingClientRect();if(!r.width)return null;
     const w=r.width,h=r.height,dpr=Math.min(window.devicePixelRatio||1,2);
     if(el.width!==Math.round(w*dpr)||el.height!==Math.round(h*dpr)){el.width=Math.round(w*dpr);el.height=Math.round(h*dpr);}
-    const ctx=el.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);ctx.font='11px system-ui';ctx.lineWidth=1;return {ctx,w,h};
+    const ctx=el.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);ctx.font='12px system-ui';ctx.lineWidth=1;return {ctx,w,h};
   }
   class Instruments {
     constructor({geometry,threshold,onZone,onSeek}){
@@ -89,7 +90,7 @@
       this.historyBounds={left,top,cw,rh};ctx.fillStyle=C.ink;ctx.fillRect(left,top,pw,ph);
       for(let col=0;col<=index;col++)for(let z=0;z<64;z++){
         const f=clip.frames[col],value=f.values[z],x=left+col*cw,y=top+z*rh;
-        if(value===null){ctx.strokeStyle='#5c6d7c';ctx.beginPath();ctx.moveTo(x,y+rh);ctx.lineTo(x+cw,y);ctx.stroke();continue;}
+        if(value===null){ctx.strokeStyle='#344756';ctx.beginPath();ctx.moveTo(x,y+rh);ctx.lineTo(x+cw,y);ctx.stroke();continue;}
         const n=mode==='score'?f.zones[z].joint:1-Math.min(8,Math.max(0,value))/8;
         ctx.fillStyle=mode==='score'?`hsl(${190-150*n} 42% ${12+48*n}%)`:`hsl(${216-52*n} ${30+24*n}% ${16+33*n}%)`;
         ctx.fillRect(x+.3,y+.15,Math.max(.5,cw-.6),Math.max(.5,rh-.3));
@@ -106,11 +107,15 @@
       const surface=canvas('causalTrend');if(!surface||!this.current)return;
       const {ctx,w,h}=surface,{clip,index}=this.current,samples=history(clip,index),left=32,right=16,top=22,bottom=29,pw=w-left-right,ph=h-top-bottom;
       const x=i=>left+i/Math.max(1,clip.frames.length-1)*pw,y=n=>top+(1-n)*ph;
-      ctx.fillStyle=C.muted;ctx.textAlign='right';for(const n of [0,.5,1]){ctx.strokeStyle=C.grid;ctx.beginPath();ctx.moveTo(left,y(n));ctx.lineTo(w-right,y(n));ctx.stroke();ctx.fillText(n.toFixed(1),left-7,y(n)+4);}
+      ctx.fillStyle=C.muted;ctx.textAlign='right';for(const n of [0,.25,.5,.75,1]){ctx.strokeStyle=C.grid;ctx.beginPath();ctx.moveTo(left,y(n));ctx.lineTo(w-right,y(n));ctx.stroke();if(n===0||n===.5||n===1)ctx.fillText(n.toFixed(1),left-7,y(n)+4);}
       ctx.strokeStyle=C.gold;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(left,y(this.threshold));ctx.lineTo(w-right,y(this.threshold));ctx.stroke();ctx.setLineDash([]);
       ctx.fillStyle=C.gold;ctx.textAlign='right';ctx.fillText('T '+this.threshold.toFixed(3),w-right,y(this.threshold)-7);
+      // The fill follows the same discrete samples; no smoothing or synthesized observations.
+      const wash=ctx.createLinearGradient(0,top,0,h-bottom);wash.addColorStop(0,'#67e2c438');wash.addColorStop(1,'#67e2c402');
+      ctx.fillStyle=wash;ctx.beginPath();ctx.moveTo(x(0),y(0));samples.forEach((s,i)=>ctx.lineTo(x(i),y(s.score)));ctx.lineTo(x(index),y(0));ctx.closePath();ctx.fill();
+      if(index<clip.frames.length-3){ctx.fillStyle='#9eb1bf';ctx.textAlign='center';ctx.fillText('待回放',(x(index)+w-right)/2,top+15);}
       for(const [key,divisor,color] of [['valid',64,C.blue],['possible',64,C.gold],['score',1,C.teal]]){
-        ctx.strokeStyle=color;ctx.lineWidth=key==='score'?2:1.2;ctx.beginPath();samples.forEach((s,i)=>{if(i)ctx.lineTo(x(i),y(s[key]/divisor));else ctx.moveTo(x(i),y(s[key]/divisor));});ctx.stroke();
+        ctx.strokeStyle=color;ctx.lineWidth=key==='score'?2.5:1.4;ctx.beginPath();samples.forEach((s,i)=>{if(i)ctx.lineTo(x(i),y(s[key]/divisor));else ctx.moveTo(x(i),y(s[key]/divisor));});ctx.stroke();
         const last=samples.at(-1);ctx.fillStyle=color;ctx.beginPath();ctx.arc(x(index),y(last[key]/divisor),3,0,Math.PI*2);ctx.fill();
       }
       ctx.lineWidth=1;ctx.strokeStyle='#e0ebf066';ctx.beginPath();ctx.moveTo(x(index),top);ctx.lineTo(x(index),h-bottom);ctx.stroke();
