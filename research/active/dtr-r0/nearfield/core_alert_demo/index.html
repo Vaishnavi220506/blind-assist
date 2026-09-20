@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>BlindAssist · 几何告警实验台</title><link rel="stylesheet" href="styles.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>BlindAssist · 空间感知演示台</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="showcase.css"></head>
 <body>
-<header class="app-header"><a class="brand" href="#" aria-label="BlindAssist 首页"><span class="brand-mark">B<span>·</span></span><div><strong>BlindAssist <em>LAB</em></strong><small>几何告警实验台</small></div></a><nav aria-label="主视图"><button class="nav active" data-page="gallery">场景画廊</button><button class="nav" data-page="replay">现场回放</button><button class="nav" data-page="principle">工作原理</button><button class="nav" data-page="results">全量结果</button></nav><div class="header-meta"><span class="live-dot"></span>冻结策略 · 离线回放<span class="version">CORE / 01</span></div></header>
+<header class="app-header"><a class="brand" href="#" aria-label="BlindAssist 首页"><span class="brand-mark">B<span>·</span></span><div><strong>BlindAssist <em>STUDIO</em></strong><small>空间感知演示台</small></div></a><nav aria-label="主视图"><button class="nav active" data-page="gallery">场景画廊</button><button class="nav" data-page="replay">现场回放</button><button class="nav" data-page="principle">工作原理</button><button class="nav" data-page="results">全量结果</button></nav><div class="header-meta"><span class="live-dot"></span>冻结策略 · 离线回放<span class="version">CORE / 01</span></div></header>
 <div class="app-shell">
 <aside class="sidebar">
   <div class="section-label">EVIDENCE COLLECTION <span id="collectionCount">03</span></div>
@@ -21,7 +21,14 @@
     <p class="gallery-footnote">画面均来自实际保存的模拟器 RGB。每个卡片打开完整原始片段；切换片段重置历史，不把不同场景拼成算法的连续输入。</p>
   </section>
   <section class="page" id="page-replay">
-    <div class="page-title"><div><span class="eyebrow">OBSERVE · UNDERSTAND · COMPARE</span><h1>看见告警背后的证据</h1><p>同一帧，从测距观测到几何支持，再到有限的时间保持。</p></div><button id="presentation" class="ghost" title="隐藏场景目录，放大信息面板">宽屏展示 ↗</button></div>
+    <div class="page-title"><div><span class="eyebrow">OBSERVE · UNDERSTAND · COMPARE</span><h1>看见告警背后的证据</h1><p>同一帧，从测距观测到几何支持，再到有限的时间保持。</p></div><button id="presentation" class="ghost" title="收起目录与说明，让画面和动态图同屏">演示模式 ↗</button></div>
+    <div class="session-ribbon"><span class="session-state" id="sessionState">Ⅱ 回放已暂停</span><strong class="session-clock" id="sessionClock">00.0 s</strong><span class="session-meta" id="sessionFrame"></span><span class="session-meta">回放驱动 · 5 Hz 原始采样</span></div>
+    <div class="instrument-metrics">
+      <div class="stat-card"><label>有效测距</label><strong id="instrumentValid">—</strong><small id="instrumentMissing"></small></div>
+      <div class="stat-card"><label>可能相交通道</label><strong id="instrumentSupport">—</strong><small id="instrumentDefinite"></small></div>
+      <div class="stat-card"><label>最大几何分数</label><strong id="instrumentScore">—</strong><small>强证据线 0.407 · 非概率</small></div>
+      <div class="stat-card"><label>当前提醒状态</label><strong id="instrumentState">—</strong><small id="instrumentHistory"></small></div>
+    </div>
     <div class="kpis" id="kpis"></div><div class="tour-status" id="tourStatus" hidden><span id="tourLabel"></span><button id="stopTour" class="tiny">停止导览</button></div>
     <div class="guide-strip"><span>示例导览</span><button data-guide="hold">① 保持补帧</button><button data-guide="outside">② 通道外消警</button><button data-guide="delay">③ 旧首报延迟</button><button data-guide="boundary">④ 边界漏报</button><small id="guideNote">可查看全部场景，导览不改变统计范围</small></div>
     <div class="hero-grid">
@@ -40,11 +47,18 @@
       </article>
     </div>
     <div class="transport panel"><div class="transport-buttons"><button id="prevFrame" class="icon-button" title="上一帧 ←" aria-label="上一帧">‹</button><button id="play" class="play-button" aria-label="播放">▶ 播放</button><button id="nextFrame" class="icon-button" title="下一帧 →" aria-label="下一帧">›</button></div><div class="scrubber"><input type="range" id="seek" min="0" max="11" value="0" aria-label="时间定位"><div><span id="timeLabel"></span><span id="motionLabel">← → 逐帧 · 空格播放</span></div></div><select id="speed" aria-label="回放速度"><option value="0.25">0.25× 慢放</option><option value="0.5">0.5× 慢放</option><option value="1" selected>1× 原速</option><option value="2">2× 快放</option></select><label class="loop-label"><input type="checkbox" id="loop">循环</label></div>
+    <div class="telemetry-grid">
+      <article class="panel telemetry-card spatial-card"><div class="panel-head"><div><span class="index">03</span><h2>空间支持 · 3D</h2></div><span class="tag neutral">区域视锥 × 测距</span></div><div class="viz-tools"><label>视角 <input id="volumeAngle" type="range" min="15" max="65" value="35" aria-label="空间视角"></label><select id="volumeRange" aria-label="空间视窗"><option value="4.2">近场 4.2 m</option><option value="9">全程 9 m</option></select></div><svg id="supportVolume" viewBox="0 0 520 310" role="img" aria-label="测距区间与区域视锥形成的空间支持体"></svg><p class="viz-caption" id="volumeCaption"></p><p class="panel-note">青绿为固定通道，金色为选中区。支持体不是障碍物重建。</p></article>
+      <article class="panel telemetry-card history-card"><div class="panel-head"><div><span class="index">04</span><h2>64 区 · 时间热图</h2></div><select id="historyMode" aria-label="时间热图模式"><option value="range">测距历史</option><option value="score">几何分数</option></select></div><canvas id="zoneHistory" width="520" height="310" role="img" aria-label="64区历史"></canvas><div class="viz-tools"><label>选区 <input id="historyZone" type="range" min="0" max="63" value="35" aria-label="历史选区"></label><span>点击已播放区域可逐帧定位</span></div><p class="viz-caption" id="historyCaption"></p></article>
+      <article class="panel telemetry-card trend-card"><div class="panel-head"><div><span class="index">05</span><h2>证据随时间</h2></div><span class="tag neutral">仅已播放历史</span></div><canvas id="causalTrend" width="520" height="260" role="img" aria-label="几何分数与观测覆盖历史"></canvas><div class="signal-legend"><span><i class="dot teal"></i>最大分数</span><span><i class="dot blue"></i>有效区占比</span><span><i class="dot amber"></i>可能相交区占比</span></div><div class="event-readout" id="eventReadout"></div><p class="panel-note">点击状态变化回看对应帧；占比不代表危险概率。</p></article>
+    </div>
+    <details class="diagnostic-details"><summary>逐区参数与完整时间线 <span>展开查看 64 区数值、几何分解与全片段评估</span></summary>
     <div class="analysis-grid">
       <article class="panel tof-panel"><div class="panel-head"><div><span class="index">03</span><h2>64 区 ToF</h2></div><select id="heatMode" aria-label="ToF 色图模式"><option value="range">测距</option><option value="score">几何分数</option></select></div><div class="tof-labels"><span>左 ← 视野 → 右</span><span id="validZones"></span></div><div id="tofGrid" class="tof-grid" role="group" aria-label="64区观测，点击查看几何支持"></div><div class="heat-legend"><span id="heatLow"></span><i id="heatRamp"></i><span id="heatHigh"></span></div><div class="zone-selection"><span id="selectedZoneLabel"></span><button id="autoZone" class="tiny active">跟随最大分数</button></div><p class="panel-note">每格是一个区域返回，不是一个已定位障碍。斜纹表示该区无有效返回。</p></article>
       <article class="panel geometry-panel"><div class="panel-head"><div><span class="index">04</span><h2>选中区的空间支持</h2></div><select id="geometryRange" aria-label="几何视图距离范围"><option value="4.2">近场 4.2 m</option><option value="9">全程 9 m</option></select></div><div class="geometry-legend"><span><i class="swatch corridor"></i>固定通道</span><span><i class="swatch support"></i>测距区间 × 区域视锥</span></div><div id="geometryViews" class="geometry-views"></div><div id="zoneFacts" class="zone-facts"></div><div id="factorEquation" class="factor-equation"></div><p class="panel-note">二维投影仅解释支持范围，不表示障碍物形状。最终分数同时计算 X、Y、Z 的重叠。</p></article>
       <article class="panel timeline-panel"><div class="panel-head"><div><span class="index">05</span><h2>分数与告警时间线</h2></div><span class="tag neutral" id="clipDuration"></span></div><svg id="scoreTimeline" viewBox="0 0 480 172" aria-label="当前片段分数曲线，点击定位"></svg><div id="decisionTracks" class="decision-tracks"></div><div class="timeline-legend" id="timelineLegend"><span><i class="dot teal"></i>当前强证据</span><span><i class="dot amber"></i>仅一帧保持</span><span><i class="dot red"></i>误报</span><span><i class="dot pink"></i>漏报</span></div><div id="clipSummary" class="clip-summary"></div><p class="panel-note">折线连接离散采样点。真值轨道仅用于评估；跳转按原始采样历史恢复状态。</p></article>
     </div>
+    </details>
   </section>
   <section class="page" id="page-principle">
     <div class="page-title"><div><span class="eyebrow">A SMALL, EXPLAINABLE PIPELINE</span><h1>从 64 个返回到一次提醒</h1><p>没有训练新网络。空间判断与时间保持承担不同职责。</p></div><button class="ghost" data-goto="replay">回到现场 ↗</button></div>
@@ -56,5 +70,5 @@
   <section class="page" id="page-results"><div class="page-title"><div><span class="eyebrow">FULL COHORT · NO HIDDEN FRAMES</span><h1>完整结果与适用范围</h1><p>逐帧结果来自同一套冻结读出。不同数据集的结果不合并成一次独立验证。</p></div><select id="resultScope" aria-label="结果统计范围"><option value="core">Core · 完整主体布局</option><option value="boundary">Boundary · 边界挑战</option><option value="all">全部布局</option></select></div><div id="resultCards"></div><article class="panel prose"><h2>如何阅读这些数字</h2><div class="result-notes"><p><b>事件检出不等于起报准确。</b>入界前就报警会使事件内首次提醒为零延迟；请同时查看入界前误报和 already-active 事件。</p><p><b>采样时长不等于连续时间测量。</b>误报时长为误报帧数 × 0.2 s。原验证数据每个片段只有 12 个采样点，不能据此推断所有真实动态行为。</p><p><b>UNKNOWN 仍是空间不确定性。</b>它可以与提醒并存；没有提醒也不代表通道已确认畅通。</p></div><p class="muted">工程回放版本 · 原阈值、原评分、原分箱起点 · 不改变冻结研究结论或 Android 默认行为</p></article></section>
   <footer>BlindAssist Research · 相机前方主体障碍告警 <span>受控仿真 · 可解释回放 · 非安全认证系统</span></footer>
 </main></div><div id="toast" role="status" aria-live="polite"></div>
-<script src="demo-data.js"></script><script src="extra-data.js"></script><script src="replay_images.js"></script><script src="app.js"></script>
+<script src="demo-data.js"></script><script src="extra-data.js"></script><script src="replay_images.js"></script><script src="telemetry.js"></script><script src="app.js"></script>
 </body></html>
