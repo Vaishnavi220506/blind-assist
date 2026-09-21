@@ -1,3 +1,13 @@
+2026-09-21 [public ToF axis evidence](../research/active/dtr-r0/nearfield/AXIS_EVIDENCE_RESULTS_20260921.md):
+All16 consumed transfer layouts/1152frames: contained-depth evidence exists on
+273/346positives,0/633distance negatives,137/173depth-valid lateral negatives.
+It excludes15/15high-score distance negatives but loses4/82native-backed
+balanced-suppressed positives, and is absent at both endpoints of all32positive
+clips. Distance information exists; hard qualification has boundary costs and
+does not settle lateral ownership. Retain diagnostic COMPONENT, no new alerts,
+gate, training or test. Independent audit PASS; global ledger303/unknown-terminal
+receipts retained.
+
 2026-09-21 [current-only fixed-score audit](../research/active/dtr-r0/nearfield/CURRENT_ONLY_RESULTS_20260921.md):
 Removing hold from selection releases Boundary rescues, but gains remain in1/8
 layouts. Evaluation current Core stays82/11/2; Boundary A4/0/80 becomes16/0/68

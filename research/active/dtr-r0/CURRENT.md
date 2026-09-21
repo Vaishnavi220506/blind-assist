@@ -1,3 +1,17 @@
+## Public ToF axes: distance evidence with boundary costs (2026-09-21)
+
+[Sealed1152-frame audit](nearfield/AXIS_EVIDENCE_RESULTS_20260921.md) finds
+contained-depth evidence on273/346positives and0/633distance negatives, but
+also137/173depth-valid lateral negatives. Every one of32positive clips lacks
+this evidence at its first and last positive sample. Of82native-backed
+balanced-suppressed positives,78have it; all15high-score distance negatives
+lack it. This is useful axis-separation evidence, not a lossless distance gate
+or lateral ownership solution. All frames have valid returns despite1040
+baseline UNKNOWN frames. Retain COMPONENT diagnostics and A/demo, with no new
+alerts, threshold, training, conditional hold or protected-test access.
+Independent audit PASS. Existing global registration/inheritance blocker remains;
+local receipts kept.
+
 ## Current-only audit: local rescue, no broad low-FP repair (2026-09-21)
 
 [Fixed-score audit](nearfield/CURRENT_ONLY_RESULTS_20260921.md) removes hold
