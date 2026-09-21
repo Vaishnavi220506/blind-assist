@@ -270,6 +270,115 @@
           "sha256": "df32c453724db3ec44a374b4fa6d7e97068f78f766f97ca6adec5288bde8b7e3"
         }
       ]
+    },
+    {
+      "id": "local-diag-v2-static-20260921",
+      "result": "COLLECTION_HAS_ISSUES",
+      "camera_frames": 472,
+      "tof_frames": 102,
+      "diagnostic_frames": 102,
+      "distance_conversion_mismatch_cells": 0,
+      "scene": "User reconfirmed previous static wall-facing pose and window clear; reflash and MCU resets intervened; no measured distance",
+      "issues": "One incomplete last raw JSON line; complete frame sequences continuous",
+      "range_concern": "4 positive 1-3 mm plus 200 zero cells at status 5; 193 zero values derive from negative signed Q2; unresolved optical/device cause",
+      "files": [
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/manifest.json",
+          "sha256": "add46b997e1d5ac6aea0d84af3f6bb2422c2ffed7b6638130c17820b71daaf1e"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/summary.json",
+          "sha256": "b0cf71488cc973a299e4312e3257b59d845dbb608b7871f86b07a9878c33eb38"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/camera/serial.bin",
+          "sha256": "e76fb27d844a41802a6a9de2f7902360fe360360cabecdeb2e98f9e9768e4c79"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/camera/frames.jsonl",
+          "sha256": "99cbfbd6327d5a34d140ba0dc6e59dafb0acc5241716e343ba24c5f46cf5e310"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/tof/raw.bin",
+          "sha256": "1c5400c4b012b7076dd896f1b9f9db4d741fd0a2c784d49b277f200f370f7656"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/tof/frames.jsonl",
+          "sha256": "161920db68c408791a5c6b2fb952ade2b913e8181f22a91b814ee7e42cb0c9f8"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/tof/events.jsonl",
+          "sha256": "e9467277685b44f460215d8e64376c7b2d863b6a0004d426bb6ba11c8b2f0203"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/tof/issues.jsonl",
+          "sha256": "c0a75aa3f536be4d9099b61db7f1f02e89ee4df9385900b9f1572d83132e8f91"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/summary.json",
+          "sha256": "e800fa8565b2651841c12fbf41b1f56bd4aaff4f62dfaef12f3d96f928b27156"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/pairs.jsonl",
+          "sha256": "ddcbfde9c908bc65312adc87043dbd675e068f5d3e1789efda585642d35c53cf"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/diagnostic-audit.json",
+          "sha256": "a48422664626c36f7841a262ead4f9f521849eb101425e63810455b19d439156"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/diagnostic-cell-observations.json",
+          "sha256": "0a2b3945d6f295e7c2712d8f0a27ee119f8a174ce847e61823b7dd957c537358"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/camera-samples.png",
+          "sha256": "f2a8565baf0f7e1446c5173ec97014853f55946a65d12970cfc5be9850390d22"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/camera-samples-selection.json",
+          "sha256": "73c7bc46504487ab0e65d4dba290b260bf1d58269f93102886eddf888d09134c"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/tof-center-by-host-receipt.png",
+          "sha256": "a65d66d35a174735d1741c1ef3f05f23beb1c3e98c7fffa236daa8977e874536"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/flash-plan.json",
+          "sha256": "8307910f69e427022c7350701ec161c42d3c14951a82872374dcdecf523e334b"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/backup.log",
+          "sha256": "deeb6033b8c6fceafc5584dfd3b9eb1f6518b197bd47f7a4709009889d80bc94"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/upload.log",
+          "sha256": "60fbdeecd8b2669eea86f73a3f97c4e66f940ca3fff3a19dd8f28add25300f56"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/audit.py",
+          "sha256": "5d8d05ce59d02217d37f3e3d4c3bcba4152874056acfeafce65bf6896cea9e0a"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/firmware/build-manifest.json",
+          "sha256": "6ad601e5be8f2697186a2d3d8890b3380092089ce6aac0c4a33229ab820892bc"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/firmware/tof_cnh_diag.ino.bin",
+          "sha256": "6a12066dbf6d0056e6f2edd85f787eb91f07fe96c85cea5a0842cca4e772db80"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/firmware/tof_cnh_diag.ino",
+          "sha256": "a906e75b7b2b656f7fc14fd9bfc4ce09fedfa20e8667b2aafd058d67d6daf785"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/firmware/compile.log",
+          "sha256": "73deee81a3c685d956726120f8bd171dc9fb749ccd808e8ad48f0da3fe80ee97"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/compile-first-template-error.log",
+          "sha256": "c13ed43ee7885a044eb72a006eee1134c6de72a7e1ecec51debac60a1eb4b89d"
+        }
+      ]
     }
   ]
 }

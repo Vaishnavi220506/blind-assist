@@ -1,5 +1,6 @@
 """Synthetic protocol regression fixtures only, never device evidence."""
 import copy
+import argparse
 import hashlib
 import json
 import math
@@ -8,8 +9,10 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import Mock, patch
+from types import SimpleNamespace
 
-from capture import Decoder, bounded_seconds, firmware_metadata, run_session, select_port, validate_frame
+from capture import Decoder, bounded_seconds, capture_arguments, firmware_metadata, live_chunks, run_session, select_port, validate_frame
 
 
 def frame(seq=1, ms=100, zones=16, cnh=False):
@@ -28,7 +31,80 @@ def encoded(*items):
     return b"".join(json.dumps(item).encode() + b"\n" for item in items)
 
 
+def diagnostic_frame(zones=16):
+    item = frame(zones=zones)
+    item["diagnostic"] = {
+        "schema": 1, "distance_q2": [2400]*zones,
+        "signal_kcps_spad": [1200]*zones, "ambient_kcps_spad": [40]*zones,
+        "range_sigma_mm": [8]*zones, "reflectance_percent": [30]*zones,
+        "nb_spads_enabled": [25000]*zones, "silicon_temp_degc": 25,
+    }
+    return item
+
+
 class ParserTests(unittest.TestCase):
+    def test_diagnostic_signed_conversion_and_shape(self):
+        for zones in (16, 64):
+            item = diagnostic_frame(zones)
+            item["diagnostic"]["distance_q2"][:9] = [-32768, -7, -4, -1, 0, 1, 7, 2403, 32767]
+            item["distance_mm"][:9] = [0, 0, 0, 0, 0, 0, 1, 600, 8191]
+            original = copy.deepcopy(item)
+            result = validate_frame(item)
+            self.assertEqual(item["distance_mm"], result["diagnostic"]["uld_expected_distance_mm"])
+            self.assertEqual([True]*zones, result["diagnostic"]["distance_conversion_match"])
+            self.assertEqual(0, result["diagnostic"]["distance_conversion_mismatch_count"])
+            self.assertEqual([None]*6, result["distance_known_mm"][:6])
+            self.assertEqual(original, item)
+
+    def test_diagnostic_mismatch_is_retained_without_changing_validity(self):
+        records = []
+        decoder = Decoder(lambda kind, record: records.append((kind, record)))
+        item = diagnostic_frame()
+        item["distance_mm"][0] = 2
+        decoder.feed(encoded(item), 123)
+        self.assertEqual(1, decoder.frames)
+        self.assertFalse(decoder.issues)
+        kept = next(record for kind, record in records if kind == "frames")
+        self.assertEqual(item, kept["sensor"])
+        self.assertTrue(kept["derived"]["range_valid"][0])
+        self.assertFalse(kept["derived"]["diagnostic"]["distance_conversion_match"][0])
+        self.assertEqual(1, decoder.summary()["distance_conversion_mismatch_cells"])
+        self.assertEqual(1, decoder.summary()["diagnostic_frames"])
+
+    def test_diagnostic_optional_for_legacy_frames(self):
+        for cnh in (False, True):
+            self.assertNotIn("diagnostic", validate_frame(frame(cnh=cnh)))
+        self.assertEqual(0, Decoder().summary()["diagnostic_frames"])
+
+    def test_malformed_diagnostic_rejected(self):
+        cases = [("schema", True), ("schema", 2), ("distance_q2", [0]*15),
+                 ("distance_q2", [32768]*16), ("signal_kcps_spad", [-1]*16),
+                 ("ambient_kcps_spad", [2**32]*16), ("range_sigma_mm", [65536]*16),
+                 ("reflectance_percent", [256]*16), ("nb_spads_enabled", [1.0]*16),
+                 ("silicon_temp_degc", -129)]
+        for key, value in cases:
+            item = diagnostic_frame()
+            item["diagnostic"][key] = value
+            with self.subTest(key=key), self.assertRaises(ValueError):
+                validate_frame(item)
+        for value in (None, [], 1):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                validate_frame({**frame(), "diagnostic": value})
+        item = diagnostic_frame()
+        del item["diagnostic"]["signal_kcps_spad"]
+        decoder = Decoder()
+        decoder.feed(encoded(item))
+        self.assertEqual(0, decoder.frames)
+        self.assertEqual(1, decoder.issues["invalid_frame"])
+
+    def test_config_readback_events_preserved_and_error_counted(self):
+        records = []
+        decoder = Decoder(lambda kind, record: records.append((kind, record)))
+        decoder.feed(encoded({"type": "config", "status": 0}, {"type": "config", "status": 1}))
+        self.assertEqual(2, decoder.events)
+        self.assertEqual(1, decoder.errors)
+        self.assertEqual(["events", "events"], [kind for kind, _ in records])
+
     def test_unknown_is_not_zero_or_negative(self):
         item = frame()
         item["distance_mm"][:3] = [0, -1, 150]
@@ -125,6 +201,31 @@ class ParserTests(unittest.TestCase):
 
 
 class EvidenceTests(unittest.TestCase):
+    def test_config_command_only_when_explicit_and_after_open(self):
+        parser = argparse.ArgumentParser()
+        capture_arguments(parser)
+        for requested in (False, True):
+            argv = ["--output", "synthetic-unused"] + (["--query-config"] if requested else [])
+            args = parser.parse_args(argv)
+            self.assertEqual(requested, args.query_config)
+            device = Mock()
+            device.read.return_value = b"fixture"
+            device.write.return_value = 7
+            with patch.dict(sys.modules, {"serial": SimpleNamespace(Serial=Mock(return_value=device))}), \
+                 patch("capture.time.monotonic", side_effect=[0, 0, 0, 2]), \
+                 patch("capture.time.monotonic_ns", return_value=123):
+                self.assertEqual([(b"fixture", 123)], list(live_chunks("FAKE", 115200, 1, args.query_config)))
+            device.open.assert_called_once_with()
+            device.close.assert_called_once_with()
+            if requested:
+                device.write.assert_called_once_with(b"CONFIG\n")
+                self.assertLess(device.method_calls.index(unittest.mock.call.open()),
+                                device.method_calls.index(unittest.mock.call.write(b"CONFIG\n")))
+            else:
+                device.write.assert_not_called()
+            self.assertFalse(device.dtr)
+            self.assertFalse(device.rts)
+
     def test_firmware_hash_is_reference_not_device_attestation(self):
         self.assertEqual("UNKNOWN", firmware_metadata(None)["identity"])
         with tempfile.TemporaryDirectory() as temp:

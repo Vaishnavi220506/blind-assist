@@ -53,6 +53,30 @@ def validate_frame(obj):
         "distance_known_mm": [d if v else None for d, v in zip(distance, valid)],
         "validity_rule": "distance_mm > 0 AND target_status == 5 AND nb_target > 0; otherwise UNKNOWN",
     }
+    if "diagnostic" in obj:
+        diagnostic = obj["diagnostic"]
+        if not isinstance(diagnostic, dict):
+            raise ValueError("diagnostic: expected object")
+        integer(diagnostic.get("schema"), "diagnostic.schema", 1, 1)
+        for key, low, high in (
+            ("distance_q2", -32768, 32767),
+            ("signal_kcps_spad", 0, 2**32 - 1),
+            ("ambient_kcps_spad", 0, 2**32 - 1),
+            ("range_sigma_mm", 0, 65535),
+            ("reflectance_percent", 0, 255),
+            ("nb_spads_enabled", 0, 2**32 - 1),
+        ):
+            vector(diagnostic, key, count, low, high)
+        integer(diagnostic.get("silicon_temp_degc"), "silicon_temp_degc", -128, 127)
+        # C signed integer division truncates toward zero, then ULD clamps negatives.
+        expected = [max(0, math.trunc(q2 / 4)) for q2 in diagnostic["distance_q2"]]
+        matches = [actual == wanted for actual, wanted in zip(distance, expected)]
+        derived["diagnostic"] = {
+            "uld_expected_distance_mm": expected,
+            "distance_conversion_match": matches,
+            "distance_conversion_mismatch_count": matches.count(False),
+            "conversion_rule": "max(0, trunc_towards_zero(distance_q2 / 4)); independent of range validity",
+        }
     if obj["type"] == "cnh_frame":
         if count != 16 or obj.get("bins", 24) != 24:
             raise ValueError("CNH supports only 16 zones x 24 bins in this bring-up")
@@ -100,6 +124,7 @@ class Decoder:
         self.clock_discontinuities = 0
         self.cnh_zero_histograms = 0
         self.cnh_finite = True
+        self.diagnostic_frames = self.distance_conversion_mismatches = 0
 
     def issue(self, reason, detail, host_ns):
         self.issues[reason] += 1
@@ -162,6 +187,9 @@ class Decoder:
         self.last_ms = obj["ms"]
         self.frames += 1
         self.kinds[obj["type"]] += 1
+        if "diagnostic" in derived:
+            self.diagnostic_frames += 1
+            self.distance_conversion_mismatches += derived["diagnostic"]["distance_conversion_mismatch_count"]
         if obj["type"] == "cnh_frame":
             self.cnh_zero_histograms += sum(all(v == 0 for v in row) for row in obj["hist_raw"])
             self.cnh_finite &= all(math.isfinite(v) for row in derived["hist_normalized"] for v in row)
@@ -195,6 +223,8 @@ class Decoder:
             "cnh_all_zero_histograms": self.cnh_zero_histograms,
             "cnh_normalized_finite": self.cnh_finite if self.kinds["cnh_frame"] else None,
             "cnh_hardware_status": CNH_STATUS,
+            "diagnostic_frames": self.diagnostic_frames,
+            "distance_conversion_mismatch_cells": self.distance_conversion_mismatches,
             "evidence_scope": "sensor bring-up only; no alert, synchronization, accuracy or safety claim",
         }
 
@@ -215,13 +245,16 @@ def select_port(requested, available=None):
     return candidates[0]
 
 
-def live_chunks(port, baud, seconds):
+def live_chunks(port, baud, seconds, query_config=False):
     import serial
     device = serial.Serial(port=None, baudrate=baud, timeout=min(0.2, seconds))
     device.port = port
     device.dtr = device.rts = False
     try:
         device.open()
+        if query_config:
+            if device.write(b"CONFIG\n") != len(b"CONFIG\n"):
+                raise OSError("incomplete CONFIG command write")
         deadline = time.monotonic() + seconds
         while time.monotonic() < deadline:
             device.timeout = min(0.2, max(0.001, deadline - time.monotonic()))
@@ -319,6 +352,7 @@ def capture_arguments(parser):
     parser.add_argument("--output", type=Path, required=True, help="new evidence directory; existing directories rejected")
     parser.add_argument("--firmware", type=Path, help="optional operator-supplied binary to hash; does not prove device firmware identity")
     parser.add_argument("--label", help="optional scene label; operator-provided, not measured ground truth")
+    parser.add_argument("--query-config", action="store_true", help="send CONFIG once after opening; request cached boot readback without resetting")
 
 
 def firmware_metadata(path):
@@ -334,9 +368,9 @@ def firmware_metadata(path):
 def capture(args, display=None):
     firmware = firmware_metadata(args.firmware)
     selected = select_port(args.port)
-    return run_session(args.output, live_chunks(selected, args.baud, args.seconds),
+    return run_session(args.output, live_chunks(selected, args.baud, args.seconds, args.query_config),
                        {"mode": "live_serial", "port": selected, "baud": args.baud, "requested_seconds": args.seconds,
-                        "firmware": firmware, "label": args.label}, display)
+                        "firmware": firmware, "label": args.label, "query_config_requested": args.query_config}, display)
 
 
 def main():

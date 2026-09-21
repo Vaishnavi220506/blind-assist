@@ -1,4 +1,4 @@
-param([ValidateSet('i2c_probe','tof_reader','tof_cnh','atom_camera')][string]$Sketch = 'tof_reader')
+param([ValidateSet('i2c_probe','tof_reader','tof_cnh','tof_cnh_diag','atom_camera')][string]$Sketch = 'tof_reader')
 $ErrorActionPreference = 'Stop'
 $repo = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../../..'))
 $configPath = Join-Path $repo 'artifacts.local/hardware-bringup/local-config.json'
@@ -10,7 +10,7 @@ $build = Join-Path $cfg.artifact_root "build/$Sketch"
 New-Item -ItemType Directory -Path $src,$build -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot "firmware/$Sketch/$Sketch.ino") -Destination $src
 $hashes = [ordered]@{}
-if ($Sketch -in @('tof_reader','tof_cnh')) {
+if ($Sketch -in @('tof_reader','tof_cnh','tof_cnh_diag')) {
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'firmware/platform.h'),(Join-Path $PSScriptRoot 'firmware/platform.cpp') -Destination $src
     foreach ($file in $lock.files) {
         # Baseline needs no CNH implementation; headers remain identical to the vendor package.

@@ -11,10 +11,11 @@ Atom 本机图像、短采集结果和恢复说明见 [Atom 实机记录](LOCAL_
 [并行证据索引](pair-evidence-index.json)。
 无需尺子的手持靠近/退远检查见 [手持响应记录](LOCAL_HANDHELD_20260921.md)。
 模块完成度、唯一下一项和后续顺序见 [硬件审视](REVIEW_NEXT_20260921.md)。
+其中诊断固件已完成本机验证，配置、异常结果与恢复记录见 [诊断实测](LOCAL_DIAGNOSTIC_20260921.md)。
 
 ## 目录与边界
 
-- `firmware/`：I²C 探测、8×8 测距、4×4 CNH、独立 Atom USB 相机固件及 Wire 适配层。
+- `firmware/`：I²C 探测、8×8 测距、4×4 CNH 及诊断候选、独立 Atom USB 相机固件和 Wire 适配层。
 - `host/`：端口枚举、限时采集、离线回放验证和显示工具。
 - `prepare.ps1`、`build.ps1`：准备隔离环境、校验驱动依赖、只编译不刷写。
 - `vendor-lock.json`：用户提供的驱动文件指纹；第三方源码和固件数据块不进入 Git。
@@ -38,6 +39,7 @@ pwsh -File research/active/hardware-bringup/prepare.ps1 `
 pwsh -File research/active/hardware-bringup/build.ps1 -Sketch i2c_probe
 pwsh -File research/active/hardware-bringup/build.ps1 -Sketch tof_reader
 pwsh -File research/active/hardware-bringup/build.ps1 -Sketch tof_cnh
+pwsh -File research/active/hardware-bringup/build.ps1 -Sketch tof_cnh_diag
 pwsh -File research/active/hardware-bringup/build.ps1 -Sketch atom_camera
 ```
 
@@ -91,6 +93,10 @@ Atom 端口必须显式指定；两块 ESP32 同时连接时不要向 XIAO 发�
 配对只按同一电脑的接收时间取最近图片，不等同于曝光同步；UNKNOWN 保留为空缺。
 两块板的 USB VID 相同，端口归属仍需事先确认。主机工具不刷写固件。
 
+已确认 XIAO 运行 `xiao-cnh-diag-v2` 时，单路采集可加 `--query-config`，并行采集
+可加 `--tof-query-config`，取得启动时实际配置读回。诊断字段和转换核对见
+[协议](PROTOCOL.md)。`tof_cnh_diag` 是独立固件候选，不覆盖原 `tof_cnh` 源码和构建目录。
+
 ## 固件与接线
 
 XIAO D4/GPIO5 → SDA，D5/GPIO6 → SCL；GND 共地；INT/SYN 留空，使用轮询。
@@ -99,9 +105,10 @@ XIAO D4/GPIO5 → SDA，D5/GPIO6 → SCL；GND 共地；INT/SYN 留空，使用�
 调试时 USB 给主控供电；便携时规划两个 USB 输出分别给 Atom 与 XIAO 供电。
 
 刷写必须选定实物和端口，并先保留原始 Flash。本机已完成一次 CNH 读出与前景对比，
-见 [本机记录](LOCAL_CNH_20260921.md)；此次只读串口，未重新刷写。
+见 [本机记录](LOCAL_CNH_20260921.md)；该早期复测只读串口，未重新刷写。
 已编译的测距固件在 artifact 的 `build/tof_reader/`，CNH 候选在 `build/tof_cnh/`；
-本轮新构建尚未刷入实机。
+这两份本地候选未在早期复测时重新刷入；随后独立的 `build/tof_cnh_diag/` 已刷入并验证，
+当前 XIAO 使用诊断 v2，见 [诊断记录](LOCAL_DIAGNOSTIC_20260921.md)。
 原相机程序备份与早期日志保留在原来的本地工作目录，不提交设备状态到 Git。
 
 ## 接线后的最小验收

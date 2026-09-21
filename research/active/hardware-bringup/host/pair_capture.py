@@ -22,6 +22,8 @@ def main():
     parser.add_argument("--seconds", type=bounded_seconds, default=40)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--label", default="operator scene not specified")
+    parser.add_argument("--tof-query-config", action="store_true",
+                        help="ask the identified ToF diagnostic firmware for cached configuration")
     args = parser.parse_args()
     if args.camera_port.upper() == args.tof_port.upper():
         parser.error("camera and ToF must use different explicitly identified ports")
@@ -39,6 +41,8 @@ def main():
         "tof": common + [str(source/"capture.py"), "capture", "--port", args.tof_port,
                          "--seconds", str(args.seconds), "--output", str(root/"tof"), "--label", args.label],
     }
+    if args.tof_query_config:
+        commands["tof"].append("--query-config")
     manifest = {
         "schema": "hardware-bringup.parallel-capture.v1", "label": args.label,
         "started_utc": datetime.now(timezone.utc).isoformat(),

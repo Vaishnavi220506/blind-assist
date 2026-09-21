@@ -63,3 +63,26 @@ CNH 全零、非有限值、尺寸不符、帧序号跳变、设备重启应在�
 区间外数据、坏记录和 UNKNOWN 不删除；另外保存带排除原因的原记录副本。
 ToF 时间来自包含行尾的 USB 读取块，相机时间来自 JPEG 接收完成；两路缓冲和曝光
 延迟未知，因此接收时间差不是传感器同步误差。区域原始次序不能直接叠加到相机像素。
+
+## 可选诊断协议 v2
+
+`xiao-cnh-diag-v2` 保留既有 `cnh_frame`，增加 `diagnostic.schema=1`：
+
+| 字段 | 每帧长度 / 类型 | 含义 |
+|---|---|---|
+| distance_q2 | 16 × int16 | 同一已接收测量块中、ULD 换算前的有符号距离，单位 1/4 mm |
+| signal_kcps_spad / ambient_kcps_spad | 各 16 × uint32 | ULD 已整数换算的信号/环境光率 |
+| range_sigma_mm | 16 × uint16 | ULD 已整数换算的不确定度；0 不是绝对准确 |
+| reflectance_percent | 16 × uint8 | ULD 反射率估计，保留原输出范围 |
+| nb_spads_enabled | 16 × uint32 | ULD 输出值，本轮不独立验证物理 SPAD 数 |
+| silicon_temp_degc | int8 | 本帧器件温度输出 |
+
+Q2 和 CNH 都从 `vl53lmz_get_ranging_data` 同次读取留下的缓冲提取，不额外读传感器。
+主机按 `max(0, trunc_towards_zero(distance_q2 / 4))` 核对距离，记录逐区 match 与
+总 mismatch 数；不一致帧仍保留，不改变 UNKNOWN 规则。可选字段形状/类型非法则
+保留原字节并计为 invalid_frame，旧协议不要求诊断字段。
+
+显式 `--query-config` 发送一次 `CONFIG\n`，诊断固件返回启动时实际 getter 的缓存
+快照，含分辨率、频率、积分时间、ranging mode、target order、读回时刻和应用 MD5。
+这是启动读回而非每次查询重新访问 DCI，不覆盖当前测量缓冲。默认采集仍不写命令。
+并行入口对应 `--tof-query-config`，仅向显式 ToF 端口发送。
