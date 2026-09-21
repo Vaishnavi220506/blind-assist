@@ -1,3 +1,20 @@
+## Shared sensor bias: primary collapse recovery with local identity retention (2026-09-22)
+
+[Frozen shared-bias comparison](nearfield/SHARED_BIAS_RESULTS_20260922.md) reuses
+749 public histories, two presets and2996MILP calls; no new observations. Primary
+X-then-Z restores84/87correct decisions from the two prior all-UNKNOWN conditions.
+Its nominal43TP+37correct negatives remain the SAME80cases across all5conditions;
+no FP or falseOUT observed. Range-only and full range/pose models give identical
+decisions on all900primary histories, so pose variables add no primary gain here.
+Full pose uncertainty costs3correct negatives on straight and2TP on reverse order
+per condition, all genuine opposing-witness UNKNOWN. Previous6straight-baseline
+TP losses on the bend remain; this is not route-wide lossless recovery.
+Bounds come from the frozen synthetic injector; shared constant bias only, no
+hardware calibration, fresh confirmation, arbitrary-noise or safety claim. Retain
+COMPONENT_OR_CHALLENGER/COMPONENT and simple attribution control.7focused tests
+and2independent saved-output/containment auditsPASS. Supported ledger303/unknown
+terminal failures and local inheritance retained; no continuing resources.
+
 ## Equal-cost bent-path observation: partial gain, exact-model stress failure (2026-09-22)
 
 [One frozen3path x5condition comparison](nearfield/BENT_PATH_RESULTS_20260922.md)

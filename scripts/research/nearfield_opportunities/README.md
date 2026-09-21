@@ -1,5 +1,14 @@
 # Bounded nearfield opportunity probes
 
+[Shared sensor biases](../../../research/active/dtr-r0/nearfield/SHARED_BIAS_RESULTS_20260922.md)
+explain the prior wall-bin inconsistency with one globalrange and optionalglobalpose
+offset per history. PrimaryXthenZ recovers84/87correct decisions in the two collapsed
+conditions, keeps every nominal43TP+37correctnegative across all5fixed conditions,
+and makes no observedwrong commitments. Range-only matches this primary outcome;
+fullpose uncertainty costs3correctnegatives onstraight and2TP onreverseorder.
+Bounds come from the frozen syntheticinjector, not hardware calibration. Newmodel
+authority stays numerical/modelconditional; no fresh-source or universalrobust claim.
+
 [Equal-cost bent paths](../../../research/active/dtr-r0/nearfield/BENT_PATH_RESULTS_20260922.md)
 compare three fixed12cm/13view trajectories on180consumed scenes. PrimaryX-then-Z
 raises34to43TP but loses6oldTP and8net correct negatives; no lossless improvement.
