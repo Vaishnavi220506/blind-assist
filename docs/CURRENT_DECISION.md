@@ -1,3 +1,13 @@
+2026-09-21 [current-only fixed-score audit](../research/active/dtr-r0/nearfield/CURRENT_ONLY_RESULTS_20260921.md):
+Removing hold from selection releases Boundary rescues, but gains remain in1/8
+layouts. Evaluation current Core stays82/11/2; Boundary A4/0/80 becomes16/0/68
+with original,12/0/72 uniform,9/0/75 balanced. Selection gains4frames in1/8layouts.
+New readouts underperform original at matched no-added-current-FP cutoffs;
+all fail the fixed cross-layout diagnostic. Retain A/demo and local rescue
+evidence; stop without conditional hold, fitting or protected-test activation.
+Independent audit PASS; local NEGATIVE_CONTROL; global metadata pending
+(ledger303/unknown terminal).
+
 2026-09-21 [frozen32D last-layer pilot](../research/active/dtr-r0/nearfield/LAST_LAYER_RESULTS_20260921.md):
 Two33parameter heads retain0/68 Boundary rescues on eight consumed evaluation
 layouts; both equal A (Core82/11/2, Boundary4/0/80). xAUC .8975 becomes .9133,

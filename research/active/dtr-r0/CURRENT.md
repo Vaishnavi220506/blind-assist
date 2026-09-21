@@ -1,3 +1,17 @@
+## Current-only audit: local rescue, no broad low-FP repair (2026-09-21)
+
+[Fixed-score audit](nearfield/CURRENT_ONLY_RESULTS_20260921.md) removes hold
+from cutoff selection without fitting. Current evaluation Core remains82/11/2;
+Boundary A4/0/80 becomes16/0/68 original,12/0/72 uniform,9/0/75 balanced.
+All evaluation gains are in one head_hanging_plane layout; selection gains
+four frames in one body_protruding_plane layout. Zero added current FP,
+but all fail the prespecified >=4/8-layout criterion. New heads underperform
+original despite higher xAUC. The old hold constraint did suppress local
+signal; it was not the sole limit on useful cross-layout repair. Keep A/demo;
+NEGATIVE_CONTROL for this broad current-only role, local rescues diagnostic.
+No conditional hold, training or protected test follows. Global metadata
+pending ledger303/unknown terminal; independent audit PASS and receipts retained.
+
 ## Last-layer pilot: no useful repair under unchanged hold (2026-09-21)
 
 [Frozen32D two-readout pilot](nearfield/LAST_LAYER_RESULTS_20260921.md) on fixed
