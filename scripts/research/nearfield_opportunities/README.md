@@ -5,6 +5,12 @@ from the 2026-09-21 missed-opportunity review. Their models and observation laws
 are deliberately explicit synthetic assumptions. They are not production
 inference, hardware emulation, or replacements for Calibration A.
 
+The user-authorized [continuation](../../../research/active/dtr-r0/nearfield/OPPORTUNITY_DEEPENING_RESULTS_20260921.md)
+adds a saved-output non-veto union (`shape_support_union.py`), a finite-prior
+opportunity audit (`active_view_opportunity_audit.py`), and a separately identified
+positive-priority selector. These use consumed synthetic data and leave the
+original runs and their dispositions unchanged. They are not fresh confirmation.
+
 | Probe | Public input and decision | Protocol and result |
 | --- | --- | --- |
 | `shape_hypotheses.py` | Ideal binary silhouette plus 64 zonal radial means; compare one fitting box, all consistent boxes, and a zone-centre point proxy | [Protocol](../../../research/active/dtr-r0/nearfield/SHAPE_HYPOTHESES_PROTOCOL_20260921.md), [result](../../../research/active/dtr-r0/nearfield/SHAPE_HYPOTHESES_RESULTS_20260921.md) |
