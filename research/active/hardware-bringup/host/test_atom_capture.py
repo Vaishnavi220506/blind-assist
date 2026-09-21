@@ -141,6 +141,44 @@ class ProtocolTests(unittest.TestCase):
 
 
 class CaptureTests(unittest.TestCase):
+    def test_stop_during_frame_finishes_payload_then_closes(self):
+        with artifact_temp() as temp:
+            clock = Clock()
+            raw, _, _ = response()
+            device = SerialFixture(raw, clock, chunk=512)
+            stop_file = Path(temp)/"stop"
+            normal_read = device.read
+            def read(count):
+                stop_file.touch()
+                return normal_read(count)
+            device.read = read
+            out = Path(temp)/"capture"
+            result = acquire(device, out, 30, 3, port="SYNTHETIC_ONLY", clock=clock,
+                             stamp=clock.stamp, stop_file=stop_file)
+            self.assertEqual("FRAMES_RECORDED", result["result"])
+            self.assertEqual(1, result["frames"])
+            self.assertEqual(0, result["failure_count"])
+            self.assertTrue(result["stopped_by_request"])
+            self.assertTrue(device.closed)
+            self.assertEqual([b"CAPTURE\n"], device.written)
+            self.assertEqual(raw, (out/"serial.bin").read_bytes())
+            self.assertTrue(json.loads((out/"frames.jsonl").read_text())["jpeg_validated"])
+            self.assertTrue(json.loads((out/"manifest.json").read_text())["stopped_by_request"])
+
+    def test_stop_before_first_request_does_not_invent_success(self):
+        with artifact_temp() as temp:
+            stop_file = Path(temp)/"stop"
+            stop_file.touch()
+            clock = Clock()
+            device = SerialFixture(b"", clock)
+            result = acquire(device, Path(temp)/"capture", 30, 3, port="SYNTHETIC_ONLY",
+                             clock=clock, stamp=clock.stamp, stop_file=stop_file)
+            self.assertEqual("NO_VALID_FRAMES", result["result"])
+            self.assertTrue(result["stopped_by_request"])
+            self.assertEqual(0, result["failure_count"])
+            self.assertEqual([], device.written)
+            self.assertTrue(device.closed)
+
     def test_explicit_usb_otg_line_configuration_and_manifest(self):
         for enabled in (False, True):
             with self.subTest(usb_otg=enabled), artifact_temp() as temp:
@@ -171,6 +209,7 @@ class CaptureTests(unittest.TestCase):
             result, device = self.run_fixture(raw, out)
             self.assertEqual("FRAMES_RECORDED", result["result"])
             self.assertEqual([b"CAPTURE\n"], device.written)
+            self.assertFalse(result["stopped_by_request"])
             self.assertTrue(device.closed)
             self.assertEqual(raw, (out/"serial.bin").read_bytes())
             record = json.loads((out/"frames.jsonl").read_text())

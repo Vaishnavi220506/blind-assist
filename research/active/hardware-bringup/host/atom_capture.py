@@ -115,7 +115,7 @@ def dump(path, obj):
 
 
 def acquire(device, output, seconds, frame_timeout, *, port, clock=time.monotonic,
-            stamp=time.monotonic_ns, usb_otg=False):
+            stamp=time.monotonic_ns, usb_otg=False, stop_file=None):
     """Device must be unopened; this function owns and closes it on every outcome."""
     output = Path(output)
     started = clock()
@@ -125,10 +125,13 @@ def acquire(device, output, seconds, frame_timeout, *, port, clock=time.monotoni
     first_receipt = last_receipt = None
     wire = None
     interrupted = False
+    stopped_by_request = False
+    stop_file = Path(stop_file) if stop_file is not None else None
     manifest = {
         "schema": "hardware-bringup.atom-jpeg.v1", "port": port, "baud": 115200,
         "started_utc": datetime.now(timezone.utc).isoformat(), "requested_seconds": seconds,
         "per_frame_timeout_seconds": frame_timeout,
+        "stop_file": str(stop_file.resolve()) if stop_file else None,
         "clock_boundary": "device_readout_us is MCU time after esp_camera_fb_get; not exposure time; no cross-device clock mapping",
         "host_timing": "monotonic_ns at command request, header receipt and final JPEG byte receipt; includes USB buffering",
         "request_policy": "CAPTURE newline only; one outstanding request; reserve a full frame timeout before next request",
@@ -160,6 +163,9 @@ def acquire(device, output, seconds, frame_timeout, *, port, clock=time.monotoni
                     dump(output/"manifest.json", manifest)
                 first_request = True
                 while (first_request and clock() < deadline) or deadline-clock() >= frame_timeout:
+                    if stop_file is not None and stop_file.exists():
+                        stopped_by_request = True
+                        break
                     first_request = False
                     requested = stamp()
                     event({"kind": "host_request", "command": "CAPTURE", "host_request_monotonic_ns": requested})
@@ -211,13 +217,15 @@ def acquire(device, output, seconds, frame_timeout, *, port, clock=time.monotoni
     summary = {
         "result": result, "frames": frames, "failure_count": failures, "missing_sequences": gaps,
         "sequence_duplicates_resets_or_reorders": resets, "interrupted": interrupted,
+        "stopped_by_request": stopped_by_request,
         "elapsed_seconds": elapsed, "fps_over_session": frames/elapsed if elapsed else None,
         "receipt_fps": (frames-1)*1e9/(last_receipt-first_receipt) if frames > 1 and last_receipt > first_receipt else None,
         "width": 640 if frames else None, "height": 480 if frames else None,
         "serial_bytes": wire.bytes if wire else 0, "serial_sha256": wire.digest.hexdigest() if wire else None,
     }
     dump(output/"summary.json", summary)
-    manifest.update(ended_utc=datetime.now(timezone.utc).isoformat(), result=result)
+    manifest.update(ended_utc=datetime.now(timezone.utc).isoformat(), result=result,
+                    stopped_by_request=stopped_by_request)
     dump(output/"manifest.json", manifest)
     return summary
 
@@ -242,6 +250,7 @@ def main():
     parser.add_argument("--frame-timeout", type=positive_seconds, default=3)
     parser.add_argument("--output", type=Path, required=True, help="new artifact directory; existing output refused")
     parser.add_argument("--usb-otg", action="store_true", help="TinyUSB USB-OTG CDC: assert DTR before open; RTS remains inactive")
+    parser.add_argument("--stop-file", type=Path, help="finish the current bounded frame, then stop requesting when this marker exists")
     args = parser.parse_args()
     if args.port.lower() == "auto":
         parser.error("--port requires the explicit Atom serial port")
@@ -251,7 +260,8 @@ def main():
         device = serial.Serial(port=None, baudrate=115200, timeout=0.2, write_timeout=min(1, args.frame_timeout))
         device.port = args.port
         configure_serial_lines(device, args.usb_otg)
-        result = acquire(device, args.output, args.seconds, args.frame_timeout, port=args.port, usb_otg=args.usb_otg)
+        result = acquire(device, args.output, args.seconds, args.frame_timeout, port=args.port,
+                         usb_otg=args.usb_otg, stop_file=args.stop_file)
         print(json.dumps(result, indent=2))
         return 0 if result["result"] == "FRAMES_RECORDED" else 2
     except (OSError, ValueError, ImportError) as exc:

@@ -201,6 +201,49 @@ class ParserTests(unittest.TestCase):
 
 
 class EvidenceTests(unittest.TestCase):
+    def test_stop_marker_after_frame_finalizes_and_closes_serial(self):
+        with tempfile.TemporaryDirectory() as temp:
+            stop_file = Path(temp)/"stop"
+            out = Path(temp)/"capture"
+            state = {}
+            device = Mock()
+            raw = encoded(frame())
+            def read(_):
+                stop_file.touch()
+                return raw
+            device.read.side_effect = read
+            def display(_):
+                # A separate reader can see the complete line before finalization.
+                self.assertEqual(1, json.loads((out/"frames.jsonl").read_text())["sensor"]["seq"])
+            with patch.dict(sys.modules, {"serial": SimpleNamespace(Serial=Mock(return_value=device))}):
+                result = run_session(out, live_chunks("FAKE", 115200, 30, stop_file=stop_file,
+                                                     stop_state=state),
+                                     {"mode": "synthetic_test"}, display, state)
+            device.read.assert_called_once()
+            device.close.assert_called_once()
+            self.assertEqual(raw, (out/"raw.bin").read_bytes())
+            self.assertEqual("FRAMES_RECORDED", result["result"])
+            self.assertTrue(result["stopped_by_request"])
+            self.assertTrue(json.loads((out/"manifest.json").read_text())["stopped_by_request"])
+            self.assertFalse(result["interrupted"])
+            self.assertFalse(result["issues"])
+
+    def test_stop_marker_before_frame_does_not_invent_success(self):
+        with tempfile.TemporaryDirectory() as temp:
+            stop_file = Path(temp)/"stop"
+            stop_file.touch()
+            state = {}
+            device = Mock()
+            with patch.dict(sys.modules, {"serial": SimpleNamespace(Serial=Mock(return_value=device))}):
+                result = run_session(Path(temp)/"capture",
+                                     live_chunks("FAKE", 115200, 30, stop_file=stop_file, stop_state=state),
+                                     {"mode": "synthetic_test"}, stop_state=state)
+            device.read.assert_not_called()
+            device.close.assert_called_once()
+            self.assertEqual("NO_VALID_FRAMES", result["result"])
+            self.assertTrue(result["stopped_by_request"])
+            self.assertIsNone(result["acquisition_error"])
+
     def test_config_command_only_when_explicit_and_after_open(self):
         parser = argparse.ArgumentParser()
         capture_arguments(parser)
@@ -208,6 +251,7 @@ class EvidenceTests(unittest.TestCase):
             argv = ["--output", "synthetic-unused"] + (["--query-config"] if requested else [])
             args = parser.parse_args(argv)
             self.assertEqual(requested, args.query_config)
+            self.assertIsNone(args.stop_file)
             device = Mock()
             device.read.return_value = b"fixture"
             device.write.return_value = 7

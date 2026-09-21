@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>硬件观测台 · BlindAssist</title>
+<style>
+:root{color-scheme:light;--paper:#f4f3ee;--panel:#fffefa;--ink:#243831;--muted:#65756e;--line:#d8ded5;--accent:#315e54;--violet:#765d95;--violet-bg:#eee8f5;--unknown:#e9eae5;--known:#dce8e3;--radius:17px}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}button,input,select{font:inherit}button,select,input{border:1px solid var(--line);border-radius:9px;padding:9px 12px;background:var(--panel);color:var(--ink)}button{cursor:pointer;font-weight:600}button:hover:not(:disabled){border-color:var(--accent);background:#edf2ec}button:disabled{cursor:not-allowed;opacity:.45}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #93b8ad;outline-offset:3px}button.primary{background:var(--accent);color:white;border-color:var(--accent)}button.primary:hover:not(:disabled){background:#254a41}select{min-width:0;width:100%;text-overflow:ellipsis}input[type=number]{width:90px}main{max-width:1420px;margin:auto;padding:32px 28px 24px}header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.eyebrow{font-size:11px;letter-spacing:.18em;font-weight:700;color:var(--muted)}h1{font-size:30px;letter-spacing:-.04em;margin:3px 0 0}h2{font-size:17px;margin:0}h3{font-size:15px;margin:0}.badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:30px;padding:6px 11px;font-size:12px;white-space:nowrap}.dot{width:7px;height:7px;border-radius:50%;background:#8b9991}.badge.live .dot{background:#315e54}.notice{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;background:#e9eee7;border-radius:11px;color:#4f6258;font-size:13px;margin-bottom:18px}.notice b{white-space:nowrap}.controls,.panel{border:1px solid var(--line);background:var(--panel);border-radius:var(--radius)}.controls{padding:16px 18px;margin-bottom:20px}.control-top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.tabs{display:inline-flex;background:#edf0e9;padding:4px;border-radius:10px;gap:3px}.tabs button{border:0;background:transparent;padding:7px 19px;font-size:13px}.tabs button[aria-selected=true]{background:var(--panel);box-shadow:0 1px 4px #233b3217}.subtle{font-size:12px;color:var(--muted)}.control-row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}.field{display:flex;flex-direction:column;gap:5px;min-width:160px;flex:1}.field.short{flex:0;min-width:90px}.field label{font-size:12px;color:var(--muted)}.control-row>.buttons{display:flex;gap:8px;flex-wrap:wrap}.replay-range{display:flex;gap:14px;align-items:center;margin-top:13px}.replay-range input{flex:1;min-width:60px;accent-color:var(--accent);padding:0}.clock{font-variant-numeric:tabular-nums;font-size:12px;white-space:nowrap}.workspace{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(380px,1fr);gap:20px}.panel{overflow:hidden}.panel-head{padding:17px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}.panel-head p{margin:3px 0 0;color:var(--muted);font-size:12px}.source-meta{display:flex;gap:8px;align-items:center;font-size:11px;color:var(--muted);text-align:right}.source-state{padding:4px 8px;border-radius:6px;background:#edf0e9;white-space:nowrap}.source-state.expired{background:#eee8f5;color:#705889}.camera-frame{aspect-ratio:4/3;background:#1c2824;position:relative;display:flex;align-items:center;justify-content:center;margin:0 14px;overflow:hidden;border-radius:9px}.camera-frame img{display:none;width:100%;height:100%;object-fit:contain;transition:opacity .15s}.camera-frame.stale img{opacity:.43}.placeholder{color:#a6b3ad;text-align:center;font-size:13px;padding:28px}.placeholder svg{width:44px;height:44px;display:block;margin:0 auto 13px;opacity:.75}.stale-overlay{position:absolute;top:12px;left:12px;border-radius:6px;background:#342b40dd;color:#f2eaf7;padding:5px 9px;font-size:12px;display:none}.camera-frame.stale .stale-overlay{display:block}.camera-foot{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:12px;padding:14px 20px}.tof-content{padding:0 20px 18px}.legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:13px;font-size:12px}.legend span{display:flex;gap:6px;align-items:center}.swatch{width:9px;height:9px;border-radius:3px;background:var(--known)}.swatch.unknown{background:#c6cbc1}.swatch.suspect{background:#b69dcf}.matrix{display:grid;gap:7px;grid-template-columns:repeat(4,minmax(0,1fr))}.cell{background:var(--known);border:1px solid transparent;border-radius:9px;min-width:0;min-height:73px;padding:7px 5px;position:relative;text-align:center}.cell:hover:not(:disabled){background:#cbded5}.cell.unknown{background:var(--unknown);color:#697368}.cell.suspect{background:var(--violet-bg);color:#705488}.cell[aria-pressed=true]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}.zone-id{font-size:10px;font-weight:400;opacity:.7;display:block;text-align:left;padding-left:2px}.distance{font-size:21px;font-weight:650;line-height:1.25;font-variant-numeric:tabular-nums}.unit{font-size:10px;font-weight:400;margin-left:2px}.quality{display:block;font-size:9px;font-weight:500;letter-spacing:.03em}.matrix.dense{gap:4px}.matrix.dense .cell{min-height:54px;padding:4px 2px;border-radius:6px}.matrix.dense .distance{font-size:13px}.matrix.dense .quality{font-size:7px}.matrix.stale{opacity:.48}.matrix-note{font-size:11px;color:var(--muted);margin:10px 0 0}.lower{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(380px,1fr);gap:20px;margin-top:20px}.chart-wrap{padding:0 18px 12px}canvas{width:100%;height:190px;display:block}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0 20px 16px}.stat-label{font-size:11px;color:var(--muted)}.stat-value{font-size:17px;font-variant-numeric:tabular-nums;margin-top:3px;overflow-wrap:anywhere}.reason{font-size:12px;color:#6a557e;margin:0 20px 18px;padding:9px 11px;background:#f3eef8;border-radius:8px;overflow-wrap:anywhere}.log{padding:0 20px 18px;font-size:12px;overflow-wrap:anywhere}.log p{margin:0 0 8px}.log ul{padding-left:18px;margin:7px 0;max-height:105px;overflow:auto}.error{background:#f3e7df;border:1px solid #dec2ad;color:#784c32;border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}.run-path{font-family:ui-monospace,Consolas,monospace;font-size:11px;color:var(--muted);overflow-wrap:anywhere}.footer{margin-top:19px;display:flex;justify-content:space-between;gap:14px;font-size:11px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:950px){main{padding:22px 18px}.workspace,.lower{grid-template-columns:minmax(0,1fr) minmax(330px,1fr)}.source-meta{flex-direction:column;gap:3px}.panel-head{padding:15px}.tof-content{padding:0 14px 15px}.cell{min-height:63px}.distance{font-size:18px}}@media(max-width:730px){main{padding:18px 12px}header{align-items:flex-start}h1{font-size:25px}.badge{font-size:11px}.workspace,.lower{grid-template-columns:1fr;gap:14px}.lower{margin-top:14px}.controls{padding:13px}.control-top{align-items:flex-start}.field{flex-basis:42%;min-width:120px}.field.short{flex:0}.control-row>.buttons{flex:1}.notice{font-size:11px;padding:11px}.notice b{display:none}.source-meta{flex-direction:row}.camera-foot{padding:12px 15px}.cell{min-height:68px}.distance{font-size:21px}.footer{flex-direction:column;gap:3px}.stats{gap:11px}.stat-value{font-size:16px}}
+</style>
+</head>
+<body>
+<main>
+  <header><div><div class="eyebrow">BLINDASSIST / HARDWARE LAB</div><h1>硬件观测台</h1></div><div id="sessionBadge" class="badge"><span class="dot"></span><span id="sessionText">未开始采集</span></div></header>
+  <div class="notice"><b>观测边界</b><span>相机与 ToF 独立显示，仅按主机接收时间查看。未做曝光同步、空间标定或图像投影；这里不输出避障报警。</span></div>
+  <div id="error" class="error" role="alert" hidden></div>
+  <section class="controls" aria-label="采集和回放控制">
+    <div class="control-top"><div class="tabs" role="tablist" aria-label="数据来源"><button id="liveTab" role="tab" aria-selected="true" aria-controls="liveControls">实时采集</button><button id="replayTab" role="tab" aria-selected="false" aria-controls="replayControls">记录回放</button></div><span id="statusText" class="subtle" aria-live="polite">连接本机服务…</span></div>
+    <div id="liveControls" role="tabpanel" aria-labelledby="liveTab"><div class="control-row">
+      <div class="field"><label for="cameraPort">Atom 相机串口</label><select id="cameraPort"><option value="">选择相机端口</option></select></div>
+      <div class="field"><label for="tofPort">XIAO / ToF 串口</label><select id="tofPort"><option value="">选择 ToF 端口</option></select></div>
+      <div class="field short"><label for="seconds">录制秒数</label><input id="seconds" type="number" min="3" max="300" step="1" value="20"></div>
+      <div class="buttons"><button id="refreshPorts" title="只枚举端口，不打开设备">刷新端口</button><button id="start" class="primary">开始并录制</button><button id="stop" disabled>停止</button></div>
+    </div><div class="subtle" style="margin-top:10px">点击开始后才会打开设备。到时自动结束，原始数据保存在本机。</div></div>
+    <div id="replayControls" role="tabpanel" aria-labelledby="replayTab" hidden><div class="control-row"><div class="field"><label for="runs">本机录制</label><select id="runs"><option value="">选择一段记录</option></select></div><div class="buttons"><button id="refreshRuns">刷新记录</button><button id="loadReplay" class="primary">打开回放</button><button id="play" disabled>播放</button></div></div><div class="replay-range"><input id="seek" type="range" min="0" max="0" value="0" step="1" aria-label="回放时间位置" disabled><span id="replayClock" class="clock">00:00.0 / 00:00.0</span></div></div>
+  </section>
+  <div class="workspace">
+    <section class="panel"><div class="panel-head"><div><h2>RGB 画面</h2><p>AtomS3R-M12 · 原始 JPEG</p></div><div class="source-meta"><span id="cameraSeq">帧 —</span><span id="cameraAge" class="source-state">未接收</span></div></div><div id="cameraFrame" class="camera-frame"><div id="cameraPlaceholder" class="placeholder"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="12" width="36" height="27" rx="5"/><path d="M15 12l3-5h12l3 5"/><circle cx="24" cy="25" r="8"/></svg>等待相机画面<br><span style="font-size:11px">开始采集或打开已有记录</span></div><img id="cameraImage" alt="Atom 相机原始画面"><div class="stale-overlay">画面已过期 · 不是当前帧</div></div><div class="camera-foot"><span id="cameraCaption">尚无画面</span><span>不叠加未标定距离</span></div></section>
+    <section class="panel"><div class="panel-head"><div><h2>ToF 区域读数</h2><p id="matrixShape">原始区域索引 · 单位 mm</p></div><div class="source-meta"><span id="tofSeq">帧 —</span><span id="tofAge" class="source-state">未接收</span></div></div><div class="tof-content"><div class="legend"><span><i class="swatch"></i>KNOWN <b id="knownCount">0</b></span><span><i class="swatch unknown"></i>UNKNOWN <b id="unknownCount">0</b></span><span><i class="swatch suspect"></i>SUSPECT <b id="suspectCount">0</b></span></div><div id="matrix" class="matrix" role="group" aria-label="ToF 区域；点击查看详情"></div><p class="matrix-note">点击区域查看原始值和 CNH。KNOWN 仅表示通过现有读数规则，不代表安全或距离已标定。网格方向尚未与相机对应。</p></div></section>
+  </div>
+  <div class="lower">
+    <section class="panel"><div class="panel-head"><div><h2 id="zoneTitle">区域详情 · Zone 0</h2><p>CNH 缩放值 · bin 不是已标定的距离轴</p></div><span id="zoneQuality" class="source-state">无数据</span></div><div class="chart-wrap"><canvas id="histogram" aria-label="选中区域的 CNH 直方图" role="img"></canvas></div><div class="stats"><div><div class="stat-label">原始距离 / mm</div><div id="rawDistance" class="stat-value">—</div></div><div><div class="stat-label">状态 / 目标数</div><div id="targetStatus" class="stat-value">—</div></div><div><div class="stat-label">距离 sigma / mm</div><div id="sigma" class="stat-value">—</div></div><div><div class="stat-label">信号 / kcps·SPAD⁻¹</div><div id="signal" class="stat-value">—</div></div><div><div class="stat-label">转换前距离 / Q2</div><div id="q2" class="stat-value">—</div></div><div><div class="stat-label">区域索引</div><div id="zoneIndex" class="stat-value">—</div></div></div><div id="reason" class="reason">等待数据。可疑标记是未经验证的诊断提示，不会自动修正距离。</div></section>
+    <section class="panel"><div class="panel-head"><div><h2>记录与诊断</h2><p>原始值保留，可疑值单独标记</p></div><span id="recordClock" class="source-state">未录制</span></div><div class="log"><p id="runLabel">当前没有打开的记录。</p><p id="runPath" class="run-path"></p><p><b>UNKNOWN</b>：当前规则不支持有效距离；详情仍展示原始值。</p><p><b>SUSPECT</b>：近零值或转换不一致等诊断标记。不是已确认根因，也不做数值替换。</p><p id="limits" class="subtle">主机接收时间不能替代传感器曝光时间；CNH 峰不直接解释为目标距离。</p><p style="margin-top:16px"><b>本段提示</b></p><ul id="issues"><li>等待数据。</li></ul></div></section>
+  </div>
+  <footer class="footer"><span>独立硬件路线 · 本机诊断与回放<br>不改写原始记录 · 不作融合判断 · 不输出报警</span><button id="shutdown">关闭本机服务</button></footer>
+</main>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+let view = 'live', state = null, selectedZone = 0, generation = 0;
+let polling = false, actionBusy = false, playing = false, cursor = 0, duration = 0;
+let lastTick = performance.now(), seekRevision = 0, lastPaintedImage = '', imageFailed = false;
+let serviceClosed = false, pollError = false;
+const portChosen = {cameraPort:false,tofPort:false};
+const finite = x => typeof x === 'number' && Number.isFinite(x);
+const fmt = x => finite(x) ? (Number.isInteger(x) ? String(x) : x.toFixed(2)) : '—';
+const setText = (id, text) => { $(id).textContent = text; };
+function errorText(message) { $('error').hidden = !message; $('error').textContent = message || ''; }
+async function api(path, body) {
+  const response = await fetch(path, body === undefined ? {cache:'no-store'} : {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  let result; try { result = await response.json(); } catch (_) { throw new Error('服务返回了无法解析的数据。'); }
+  if (!response.ok) throw new Error(result.error || result.message || `请求失败 (${response.status})`);
+  return result;
+}
+function clock(ms) { const s = Math.max(0, ms || 0) / 1000; return `${String(Math.floor(s / 60)).padStart(2,'0')}:${(s % 60).toFixed(1).padStart(4,'0')}`; }
+function refreshTimeline() { $('seek').value = Math.min(cursor,duration); setText('replayClock',`${clock(cursor)} / ${clock(duration)}`); setText('play',playing ? '暂停' : '播放'); }
+function controls() {
+  const recording = Boolean(state?.recording?.active);
+  if(serviceClosed){for(const button of document.querySelectorAll('button,input,select'))button.disabled=true;return;}
+  $('start').disabled = actionBusy || recording;
+  $('stop').disabled = actionBusy || !recording;
+  for (const id of ['cameraPort','tofPort','seconds','refreshPorts']) $(id).disabled = actionBusy || recording;
+  $('loadReplay').disabled = actionBusy || recording || !$('runs').value;
+  $('replayTab').disabled = actionBusy || recording;
+  $('liveTab').disabled = actionBusy;
+  $('play').disabled = actionBusy || state?.mode !== 'replay' || !duration;
+  $('seek').disabled = actionBusy || state?.mode !== 'replay' || !duration;
+}
+function switchView(next) {
+  if (view === next) return;
+  view = next; generation++; playing = false; lastTick = performance.now();
+  $('liveControls').hidden = next !== 'live'; $('replayControls').hidden = next !== 'replay';
+  $('liveTab').setAttribute('aria-selected',String(next === 'live')); $('replayTab').setAttribute('aria-selected',String(next === 'replay'));
+  refreshTimeline(); controls();
+}
+async function ports() {
+  const list = (await api('/api/ports')).filter(port=>port.vid===12346);
+  for (const [id,prompt] of [['cameraPort','选择相机端口'],['tofPort','选择 ToF 端口']]) {
+    const previous = $(id).value; $(id).replaceChildren(new Option(prompt,''));
+    for (const port of list) { const label = `${port.port} · ${port.description || '串口设备'}${port.serial_number ? ' · ' + port.serial_number : ''}`; $(id).add(new Option(label,port.port)); }
+    if ([...$(id).options].some(o => o.value === previous)) $(id).value = previous;
+    if(!previous && !portChosen[id]){const hint=list.find(port=>port.role_hint===(id==='cameraPort'?'camera':'tof'));if(hint)$(id).value=hint.port;}
+  }
+}
+async function runs() {
+  const list = await api('/api/runs'), previous = $('runs').value;
+  $('runs').replaceChildren(new Option(list.length ? '选择一段记录' : '暂无可回放记录',''));
+  for (const run of list) $('runs').add(new Option(run.label ? `${run.id} · ${run.label}` : run.id,run.id));
+  if ([...$('runs').options].some(o => o.value === previous)) $('runs').value = previous;
+  controls();
+}
+function sourceMeta(prefix, source, replay) {
+  setText(prefix+'Seq', source ? `帧 ${source.seq ?? '—'}` : '帧 —');
+  const age = source && finite(source.age_ms) ? `${Math.round(source.age_ms)} ms` : '—';
+  setText(prefix+'Age', !source ? '未接收' : `${source.stale ? '已过期' : replay ? '回放' : '接收'} · ${age}`);
+  $(prefix+'Age').classList.toggle('expired',Boolean(source?.stale));
+}
+function render(s) {
+  state = s; const replay = s.mode === 'replay', recording = Boolean(s.recording?.active);
+  $('sessionBadge').classList.toggle('live',recording);
+  setText('sessionText',recording ? '正在采集并保存' : replay ? '历史记录回放' : s.run_id ? '采集已结束' : '未开始采集');
+  setText('statusText',String(s.status || (recording ? '录制中' : '就绪')));
+  sourceMeta('camera',s.camera,replay); sourceMeta('tof',s.tof,replay);
+  const camera = s.camera, url = camera?.url || '';
+  if (url !== lastPaintedImage) {
+    lastPaintedImage = url; imageFailed = false;
+    if (url) { $('cameraImage').src = url; } else { $('cameraImage').removeAttribute('src'); }
+  }
+  $('cameraImage').style.display = url && !imageFailed ? 'block' : 'none';
+  $('cameraPlaceholder').hidden = Boolean(url && !imageFailed);
+  $('cameraFrame').classList.toggle('stale',Boolean(camera?.stale));
+  setText('cameraCaption',camera ? `${replay ? '回放帧' : recording ? '接收帧' : '保留的末帧'} · ${camera.stale ? '已过期' : '主机接收时间'}` : '尚无画面');
+  for (const quality of ['known','unknown','suspect']) setText(quality+'Count',String(s.counts?.[quality] ?? 0));
+  const tof = s.tof, cells = tof?.cells || [], rows = tof?.rows || 4, cols = tof?.cols || 4;
+  setText('matrixShape',`${rows} × ${cols} · 原始区域索引 · 单位 mm`);
+  $('matrix').style.gridTemplateColumns = `repeat(${cols},minmax(0,1fr))`;
+  $('matrix').classList.toggle('dense',cols > 4); $('matrix').classList.toggle('stale',Boolean(tof?.stale));
+  const focusZone=$('matrix').contains(document.activeElement)?document.activeElement.dataset.zone:null;
+  $('matrix').replaceChildren();
+  if (cells.length && !cells.some(c => c.zone === selectedZone)) selectedZone = cells[0].zone;
+  const visibleCells = cells.length ? cells : Array.from({length:rows*cols},(_,zone)=>({zone,quality:'UNKNOWN'}));
+  for (const cell of visibleCells) {
+    const q = ['KNOWN','UNKNOWN','SUSPECT'].includes(cell.quality) ? cell.quality : 'UNKNOWN';
+    const button = document.createElement('button'); button.className = `cell ${q.toLowerCase()}`; button.type = 'button';
+    button.dataset.zone=String(cell.zone);
+    button.setAttribute('aria-pressed',String(cell.zone === selectedZone)); button.setAttribute('aria-label',`Zone ${cell.zone}, ${q}, 原始距离 ${fmt(cell.raw_mm)} 毫米`);
+    const id = document.createElement('span'); id.className='zone-id'; id.textContent=`Z${cell.zone}`;
+    const distance = document.createElement('span'); distance.className='distance'; distance.textContent=q === 'UNKNOWN' ? '—' : fmt(cell.raw_mm);
+    const unit = document.createElement('span'); unit.className='unit'; unit.textContent=q === 'UNKNOWN' ? '' : 'mm'; distance.append(unit);
+    const quality = document.createElement('span'); quality.className='quality'; quality.textContent=cells.length ? q : '等待';
+    button.append(id,distance,quality); button.disabled = !cells.length;
+    button.addEventListener('click',()=>{ selectedZone=cell.zone; render(state); }); $('matrix').append(button);
+    if(focusZone===String(cell.zone))button.focus({preventScroll:true});
+  }
+  renderZone(cells.find(c=>c.zone===selectedZone));
+  setText('recordClock',recording ? `${fmt(s.recording.elapsed_s)} / ${fmt(s.recording.requested_seconds)} s` : replay ? '回放不写入原始数据' : '未录制');
+  setText('runLabel',s.run_id ? `记录：${s.run_id}` : '当前没有打开的记录。');
+  setText('runPath',s.recording?.output || '');
+  setText('limits',s.limits || '主机接收时间不能替代传感器曝光时间；CNH 峰不直接解释为目标距离。');
+  $('issues').replaceChildren(); for (const issue of (s.issues?.length ? s.issues : ['暂无报告的采集问题；不等于测距已验证。'])) { const item=document.createElement('li'); item.textContent=typeof issue==='string'?issue:JSON.stringify(issue); $('issues').append(item); }
+  if (replay) { duration=Math.max(0,Number(s.duration_ms)||0); $('seek').max=duration; if (!playing) cursor=Math.max(0,Math.min(duration,Number(s.position_ms)||0)); refreshTimeline(); }
+  controls();
+}
+function renderZone(cell) {
+  setText('zoneTitle',`区域详情 · Zone ${selectedZone}`); setText('zoneQuality',cell?.quality || '无数据');
+  setText('rawDistance',fmt(cell?.raw_mm)); setText('targetStatus',cell?`${fmt(cell.status)} / ${fmt(cell.targets)}`:'—');
+  setText('sigma',fmt(cell?.sigma_mm)); setText('signal',fmt(cell?.signal_kcps_spad)); setText('q2',fmt(cell?.q2)); setText('zoneIndex',cell?String(cell.zone):'—');
+  const reasons = (cell?.reasons || []).map(reason=>typeof reason==='string'?reason:JSON.stringify(reason));
+  setText('reason',reasons.length ? `${reasons.join('；')}。仅作诊断标记，未修正原始值。` : cell ? '未触发可疑启发式，不代表已验证物距。UNKNOWN 的原始值也保留在上方。' : '等待数据。可疑标记是未经验证的诊断提示，不会自动修正距离。');
+  drawHistogram(cell?.hist || []);
+}
+function drawHistogram(values) {
+  const canvas=$('histogram'), bounds=canvas.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
+  canvas.width=Math.round(bounds.width*dpr); canvas.height=Math.round(bounds.height*dpr);
+  const ctx=canvas.getContext('2d'); ctx.scale(dpr,dpr);
+  const width=bounds.width,height=bounds.height,left=44,right=10,top=17,bottom=29,w=width-left-right,h=height-top-bottom;
+  ctx.font='11px system-ui';ctx.fillStyle='#728176';
+  if (!values.length || !values.some(finite)) {ctx.textAlign='center';ctx.fillText('这一帧没有可显示的 CNH 数据',width/2,height/2);return;}
+  const good=values.filter(finite), min=Math.min(0,...good),max=Math.max(1,...good),range=max-min;
+  const y=value=>top+h-(value-min)/range*h;
+  ctx.strokeStyle='#dfe4db';ctx.lineWidth=1;
+  for(let tick=0;tick<=2;tick++){const value=min+range*tick/2,py=y(value);ctx.beginPath();ctx.moveTo(left,py);ctx.lineTo(width-right,py);ctx.stroke();ctx.textAlign='right';ctx.fillStyle='#728176';ctx.fillText(Math.abs(value)>=10000?value.toExponential(1):Number(value.toPrecision(3)).toString(),left-6,py+4);}
+  const barWidth=w/values.length;
+  for(let i=0;i<values.length;i++){if(!finite(values[i]))continue;ctx.fillStyle=state?.tof?.stale?'#a4b0a6':'#6c9585';const py=y(values[i]),zero=y(0);ctx.fillRect(left+i*barWidth+1,Math.min(py,zero),Math.max(1,barWidth-3),Math.max(1,Math.abs(zero-py)));}
+  ctx.fillStyle='#728176';ctx.textAlign='center';for(let i=0;i<values.length;i++){if(i%4===0||i===values.length-1)ctx.fillText(String(i),left+(i+.5)*barWidth,height-10);}ctx.textAlign='right';ctx.fillText('bin',width-right,12);
+}
+async function poll() {
+  if (polling || actionBusy || serviceClosed) return;
+  polling=true; const token=generation, revision=seekRevision;
+  const replay=view==='replay' && state?.mode==='replay';
+  try {const s=await api('/api/state'+(replay?`?at_ms=${Math.round(cursor)}`:''));if(token===generation && revision===seekRevision){render(s);if(pollError){errorText('');pollError=false;}}}
+  catch(e){if(token===generation){pollError=true;errorText(`连接或读取失败：${e.message}`); setText('statusText','服务连接异常'); $('cameraFrame').classList.add('stale'); $('matrix').classList.add('stale'); setText('cameraAge','连接中断 · 帧已过期'); setText('tofAge','连接中断 · 帧已过期'); $('cameraAge').classList.add('expired'); $('tofAge').classList.add('expired');}}
+  finally {polling=false;}
+}
+async function action(fn) {
+  if(actionBusy||serviceClosed)return;actionBusy=true;generation++;playing=false;controls();errorText('');pollError=false;
+  try{await fn();}catch(e){errorText(e.message);}finally{actionBusy=false;controls();}
+}
+$('liveTab').onclick=()=>switchView('live'); $('replayTab').onclick=()=>switchView('replay');
+$('refreshPorts').onclick=()=>action(ports); $('refreshRuns').onclick=()=>action(runs); $('runs').onchange=controls;
+for(const id of ['cameraPort','tofPort'])$(id).onchange=()=>{portChosen[id]=true;};
+$('start').onclick=()=>action(async()=>{
+  const camera_port=$('cameraPort').value,tof_port=$('tofPort').value,seconds=Number($('seconds').value);
+  if(!camera_port||!tof_port)throw new Error('请分别选择相机与 ToF 的串口。');
+  if(camera_port===tof_port)throw new Error('两路设备不能使用同一个串口。');
+  if(!Number.isInteger(seconds)||seconds<3||seconds>300)throw new Error('录制时长应为 3–300 秒的整数。');
+  await api('/api/start',{camera_port,tof_port,seconds}); render(await api('/api/state'));
+});
+$('stop').onclick=()=>action(async()=>{await api('/api/stop',{});render(await api('/api/state'));await runs();});
+$('loadReplay').onclick=()=>action(async()=>{const id=$('runs').value;if(!id)throw new Error('请先选择记录。');await api('/api/replay',{id});cursor=0;render(await api('/api/state?at_ms=0'));});
+$('play').onclick=()=>{if(cursor>=duration)cursor=0;playing=!playing;lastTick=performance.now();refreshTimeline();};
+$('seek').oninput=()=>{cursor=Number($('seek').value);seekRevision++;lastTick=performance.now();refreshTimeline();};
+$('shutdown').onclick=()=>action(async()=>{await api('/api/shutdown',{});serviceClosed=true;playing=false;generation++;setText('statusText','服务已关闭');setText('sessionText','本机服务已关闭');$('sessionBadge').classList.remove('live');$('cameraFrame').classList.add('stale');$('matrix').classList.add('stale');setText('cameraAge','服务已关闭');setText('tofAge','服务已关闭');setText('recordClock','已停止');});
+$('cameraImage').onerror=()=>{imageFailed=true;$('cameraImage').style.display='none';$('cameraPlaceholder').hidden=false;setText('cameraCaption','图片读取失败，未显示旧画面。');};
+window.addEventListener('resize',()=>drawHistogram(state?.tof?.cells?.find(c=>c.zone===selectedZone)?.hist||[]));
+setInterval(()=>{const now=performance.now();if(playing && view==='replay' && !actionBusy){cursor=Math.min(duration,cursor+now-lastTick);if(cursor>=duration)playing=false;refreshTimeline();}lastTick=now;void poll();},250);
+render({mode:'idle',status:'连接本机服务…',counts:{known:0,unknown:0,suspect:0},issues:[]});
+Promise.allSettled([ports(),runs()]).then(results=>{const failures=results.filter(r=>r.status==='rejected');if(failures.length)errorText(failures.map(r=>r.reason.message).join('\n'));});
+void poll();
+</script>
+</body>
+</html>

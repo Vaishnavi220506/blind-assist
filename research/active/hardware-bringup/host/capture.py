@@ -245,7 +245,7 @@ def select_port(requested, available=None):
     return candidates[0]
 
 
-def live_chunks(port, baud, seconds, query_config=False):
+def live_chunks(port, baud, seconds, query_config=False, stop_file=None, stop_state=None):
     import serial
     device = serial.Serial(port=None, baudrate=baud, timeout=min(0.2, seconds))
     device.port = port
@@ -257,6 +257,10 @@ def live_chunks(port, baud, seconds, query_config=False):
                 raise OSError("incomplete CONFIG command write")
         deadline = time.monotonic() + seconds
         while time.monotonic() < deadline:
+            if stop_file is not None and Path(stop_file).exists():
+                if stop_state is not None:
+                    stop_state["stopped_by_request"] = True
+                break
             device.timeout = min(0.2, max(0.001, deadline - time.monotonic()))
             chunk = device.read(16384)
             if chunk:
@@ -271,7 +275,7 @@ def file_chunks(path):
             yield chunk, None
 
 
-def run_session(output, chunks, metadata, display=None):
+def run_session(output, chunks, metadata, display=None, stop_state=None):
     """Exclusive evidence directory; finalize receipts even after serial failure."""
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
@@ -295,6 +299,7 @@ def run_session(output, chunks, metadata, display=None):
 
         def emit(kind, record):
             handles[kind].write(json.dumps(record, separators=(",", ":"), allow_nan=False) + "\n")
+            handles[kind].flush()
             if display and kind == "frames":
                 display(record)
 
@@ -324,6 +329,7 @@ def run_session(output, chunks, metadata, display=None):
             handle.close()
     summary = decoder.summary() if decoder else {"frames": 0}
     summary.update(bytes=total, raw_sha256=digest.hexdigest(), acquisition_error=error, interrupted=interrupted)
+    summary["stopped_by_request"] = bool(stop_state and stop_state.get("stopped_by_request"))
     if not summary["frames"]:
         summary["result"] = "NO_VALID_FRAMES"
     elif interrupted:
@@ -333,7 +339,8 @@ def run_session(output, chunks, metadata, display=None):
     else:
         summary["result"] = "FRAMES_RECORDED"
     write_json(output / "summary.json", summary)
-    manifest.update(ended_utc=datetime.now(timezone.utc).isoformat(), result=summary["result"])
+    manifest.update(ended_utc=datetime.now(timezone.utc).isoformat(), result=summary["result"],
+                    stopped_by_request=summary["stopped_by_request"])
     write_json(output / "manifest.json", manifest)
     return summary
 
@@ -353,6 +360,7 @@ def capture_arguments(parser):
     parser.add_argument("--firmware", type=Path, help="optional operator-supplied binary to hash; does not prove device firmware identity")
     parser.add_argument("--label", help="optional scene label; operator-provided, not measured ground truth")
     parser.add_argument("--query-config", action="store_true", help="send CONFIG once after opening; request cached boot readback without resetting")
+    parser.add_argument("--stop-file", type=Path, help="stop before the next serial read when this marker exists; preserve all collected evidence")
 
 
 def firmware_metadata(path):
@@ -368,9 +376,12 @@ def firmware_metadata(path):
 def capture(args, display=None):
     firmware = firmware_metadata(args.firmware)
     selected = select_port(args.port)
-    return run_session(args.output, live_chunks(selected, args.baud, args.seconds, args.query_config),
+    stop_state = {}
+    return run_session(args.output, live_chunks(selected, args.baud, args.seconds, args.query_config,
+                                               args.stop_file, stop_state),
                        {"mode": "live_serial", "port": selected, "baud": args.baud, "requested_seconds": args.seconds,
-                        "firmware": firmware, "label": args.label, "query_config_requested": args.query_config}, display)
+                        "firmware": firmware, "label": args.label, "query_config_requested": args.query_config,
+                        "stop_file": str(args.stop_file.resolve()) if args.stop_file else None}, display, stop_state)
 
 
 def main():

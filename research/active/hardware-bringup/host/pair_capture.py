@@ -22,6 +22,7 @@ def main():
     parser.add_argument("--seconds", type=bounded_seconds, default=40)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--label", default="operator scene not specified")
+    parser.add_argument("--stop-file", type=Path, help="shared graceful stop marker passed to both collectors")
     parser.add_argument("--tof-query-config", action="store_true",
                         help="ask the identified ToF diagnostic firmware for cached configuration")
     args = parser.parse_args()
@@ -43,12 +44,16 @@ def main():
     }
     if args.tof_query_config:
         commands["tof"].append("--query-config")
+    if args.stop_file is not None:
+        for command in commands.values():
+            command.extend(["--stop-file", str(args.stop_file.resolve())])
     manifest = {
         "schema": "hardware-bringup.parallel-capture.v1", "label": args.label,
         "started_utc": datetime.now(timezone.utc).isoformat(),
         "host_start_monotonic_ns": time.monotonic_ns(), "requested_seconds": args.seconds,
         "devices": {k: available[p.upper()] for k, p in (("camera", args.camera_port), ("tof", args.tof_port))},
         "commands": commands, "status": "STARTING", "firmware_flashing": False,
+        "stop_file": str(args.stop_file.resolve()) if args.stop_file else None,
         "clock_boundary": "same-host monotonic receipts only; no exposure alignment, hardware trigger or device-clock mapping",
         "source_sha256": {name: hashlib.sha256((source/name).read_bytes()).hexdigest()
                           for name in ("pair_capture.py", "atom_capture.py", "capture.py")},
@@ -84,11 +89,12 @@ def main():
         summaries[name] = json.loads(path.read_text()) if path.exists() else None
     success = failure is None and len(children) == 2 and all(p.returncode == 0 for p in children.values())
     result = {"result": "BOTH_COLLECTORS_PASSED" if success else "COLLECTION_HAS_ISSUES",
+              "stopped_by_request": any(s and s.get("stopped_by_request") for s in summaries.values()),
               "failure": failure, "child_exit_codes": {k: v.returncode for k, v in children.items()},
               "streams": summaries, "clock_boundary": manifest["clock_boundary"]}
     write(root/"summary.json", result)
     manifest.update(status=result["result"], ended_utc=datetime.now(timezone.utc).isoformat(),
-                    host_end_monotonic_ns=time.monotonic_ns())
+                    host_end_monotonic_ns=time.monotonic_ns(), stopped_by_request=result["stopped_by_request"])
     write(root/"manifest.json", manifest)
     print(json.dumps(result, indent=2))
     return 0 if success else 2
