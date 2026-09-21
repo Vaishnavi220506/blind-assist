@@ -1,3 +1,20 @@
+## Fixed B with broader training data: partial gains, joint budget failure (2026-09-21)
+
+[Completed data-condition experiment](nearfield/DATA_COVERAGE_RESULTS_20260921.md)
+captures3456 frames from48 distinct groups, fits one unchanged B recipe on1728,
+and evaluates16 isolated groups/1152 frames. Relative to old B calibrated by the
+same new-dev rule, N reduces Core held FP66 to34 and raises TP172 to175. Boundary
+held counts remain106/19/70,60.23% recall; detected events12/16 to13/16. This
+aggregate equality hides a trade: HEAD-horizontal12/1/34 to43/7/3, but BODY-plane
+38/9/6 to9/3/35. N's costs fail; Boundary adds14FP/10segments over A versus caps4/2,
+and Core segments also fail. Close exact condition as NEGATIVE_CONTROL without
+erasing Core/HEAD improvements or calling them a balanced upgrade. Old consumed
+regression N87/20/86 versus calibrated B145/20/28 is secondary evidence only.
+Preserve A/UNKNOWN, all prior B/R/U/G and paused POINT/REGION dispositions. No
+protected test, refit, threshold/loss retry, default promotion or successor.
+Twelve tests, independent arithmetic/event audit and64-frame public replay pass;
+task-owned processes released. Local inheritance and ledger303 gap receipts saved.
+
 ## Dense-depth alert branch paused; partial R benefit retained (2026-09-21)
 
 [Completed POINT/REGION experiment and user review](nearfield/REGIONAL_DEPTH_RESULTS_20260921.md):

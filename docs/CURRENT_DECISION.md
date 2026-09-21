@@ -1,3 +1,16 @@
+2026-09-21 [fixed-B broader-data result](../research/active/dtr-r0/nearfield/DATA_COVERAGE_RESULTS_20260921.md):
+One new3456-frame source,1728-frame fit and isolated1152-frame same-generator
+Development evaluation completed. N versus same-dev-calibrated old B preserves
+aggregate Boundary hold106/19/70, but reduces Core FP66 to34 and increases Core
+TP172 to175. HEAD-horizontal12/1/34 becomes43/7/3; BODY-plane38/9/6 becomes9/3/35.
+These are real partial gains and coverage losses, not lossless B rescue retention.
+Boundary added FP/segments14/10 exceed caps4/2; Core segments also exceed budget.
+NO_GO / exact data-condition NEGATIVE_CONTROL; no further fit/cutoff/loss retry.
+Old consumed regression N87/20/86 versus calibrated B145/20/28 confirms a coverage
+cost, not fresh confirmation. Twelve tests and independent64-frame public replay
+pass. A/UNKNOWN and legacy B/R and paused POINT/REGION dispositions stay fixed.
+All task-owned processes released; local inheritance and ledger303 receipts saved.
+
 2026-09-21 [dense-depth alert branch paused](../research/active/dtr-r0/nearfield/REGIONAL_DEPTH_RESULTS_20260921.md):
 POINT/REGION completed a negative algorithm test, unlike the unevaluable oracle.
 Their sole matched change was center versus regional training consistency loss;
