@@ -1,3 +1,22 @@
+## Five observation mechanisms: path information and constructive witnesses (2026-09-22)
+
+[One shared180scene suite](nearfield/OBSERVATION_MECHANISMS_RESULTS_20260922.md)
+finds fixed+X path information35to81/90pairs and finite-cohort purity30to156/180,
+at2to13observations with unchanged12cm travel. Strict same-surface quantization
+crossing has0gains on all4spokes; retain that exact check as NEGATIVE_CONTROL.
+Continuous real-valued MILPs produce119validated witnesses from122calls/61public
+signatures: initial180/180and two-view176/180cases have opposite-label witnesses.
+All15old fixed-endpoint commitments admit opposite explanations, including10
+correct ones; this is no selective veto or new classifier. Reasoned UNKNOWN stays
+180/180at both modes, distinguishing witness-pair ambiguity and incomplete search.
+Public3view two-step improves fixed24TP/3FP/8falseOUT to28TP/3FP/7falseOUT,
+retaining24TP, correcting2wrongOUT but adding1newwrongOUT; preserve partial gain
+without zero-new-error claim. Adaptive/nonadaptive evaluator ceilings both157,
+so no isolated feedback-ceiling gain is shown. Retain scoped components and costs;
+no aggregate system promotion, tuning or automatic successor.18tests and two
+independent saved-output audits PASS; old evidence intact, no resources remain.
+Per-mechanism local dispositions and ledger303/unknown-terminal receipts retained.
+
 ## Boundary-pair information exists beyond frozen selector coverage (2026-09-22)
 
 [One fixed90pair check](nearfield/BOUNDARY_SEPARABILITY_RESULTS_20260922.md)

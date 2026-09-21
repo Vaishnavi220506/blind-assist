@@ -1,5 +1,13 @@
 # Bounded nearfield opportunity probes
 
+[Five observation mechanisms](../../../research/active/dtr-r0/nearfield/OBSERVATION_MECHANISMS_RESULTS_20260922.md)
+share one frozen180scene source. Fixed+X path sampling raises pair separability
+35to81/90 at2to13views; strict pure-quantization attribution yields0gains.
+Continuous MILP witnesses expose opposite-label ambiguity beyond the old bank.
+Executable3view two-step improves24to28TP and11to10wrong commitments, but adds
+one new wrong OUT. Reasoned UNKNOWN remains abstention, not alert accuracy.
+`run_observation_mechanisms.py` owns the sealed run and per-mechanism costs.
+
 [Boundary-pair information check](../../../research/active/dtr-r0/nearfield/BOUNDARY_SEPARABILITY_RESULTS_20260922.md)
 uses `boundary_separability.py` on90 new analytic pairs. Of58 initial aliases,
 38have an allowed separating action; the evaluator class-common ceiling is32
@@ -57,6 +65,8 @@ python -B -m unittest discover -s scripts/research/nearfield_opportunities -p te
 ```
 
 Python needs NumPy for shape hypotheses; active-view uses the standard library.
+The five-mechanism suite additionally uses SciPy/HiGHS for continuous witnesses;
+its result records the executed Python environment and SciPy version.
 Exact executed commands, runtime assumptions, evidence locations and registration
 receipts are in the result reports. Global ledger admission is separately blocked
 by the existing row-303 fingerprint error; local evidence is retained without a
