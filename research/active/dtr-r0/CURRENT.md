@@ -1,3 +1,19 @@
+## Equal-cost bent-path observation: partial gain, exact-model stress failure (2026-09-22)
+
+[One frozen3path x5condition comparison](nearfield/BENT_PATH_RESULTS_20260922.md)
+keeps12cm/13views on180consumed singlebox scenes. PrimaryXthenZ gives43TP/37correct
+negative versus34/45straight; gains15TP but loses6, so no lossless improvement.
+Reverse-order control reaches48/35, gains23TP loses9; it does not replace primary.
+Prior98constructive-ambiguity cases yield17/32correct conditional decisions on
+the two bends: new viewpoint information exists. No nominalFP/falseOUT observed.
+Range-2mm and pose+(1mm,1mm) make bothbends180UNKNOWN, all both-class infeasible:
+backgroundwall45to44bin crossings cannotfit fixedwall or declaredboxdomain.
+This is modelinconsistency, not complete loss of observationinformation. Retain
+partial geometrycomponent and scoped stressNEGATIVE_CONTROL; no tolerance/path
+retuning, Apppromotion or yaw/RGBsuccessor.9fixtures and2independent auditsPASS;
+749queries/1498calls,3600replayed+23400new simulatedmeasurements. Localinheritance
+andledger303receipts retained; originalexperiments and unrelatedWIP preserved.
+
 ## Numerical witness recovery exposes the remaining observation ambiguity (2026-09-22)
 
 [One consumed258query replay](nearfield/CANDIDATE_RECOVERY_RESULTS_20260922.md)

@@ -1,5 +1,12 @@
 # Bounded nearfield opportunity probes
 
+[Equal-cost bent paths](../../../research/active/dtr-r0/nearfield/BENT_PATH_RESULTS_20260922.md)
+compare three fixed12cm/13view trajectories on180consumed scenes. PrimaryX-then-Z
+raises34to43TP but loses6oldTP and8net correct negatives; no lossless improvement.
+Order-controlZ-then-X reaches48TP without replacing the primary. Both bends become
+allUNKNOWN under fixed-2mm range or+1mm pose stress. Retain partial information
+gain, not robustness; no path/tolerance tuning follows the one frozen comparison.
+
 [Candidate recovery](../../../research/active/dtr-r0/nearfield/CANDIDATE_RECOVERY_RESULTS_20260922.md)
 captures raw solver vectors and restores94of97rejectedIN witnesses by closed-query
 projection plus unchanged full validation. Fixed13view numerical incompleteness
