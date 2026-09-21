@@ -152,6 +152,16 @@ modify the SkyDiscover environment.
 
 ## Close out a run
 
+### Completed sparse-path pilot (2026-09-22)
+
+The [native sparse-path comparison](../research/active/dtr-r0/nearfield/SPARSE_PATH_RESULTS_20260922.md)
+used three model calls per arm, sealed selection, and one same-generator held
+evaluation. At four observations, uniform resolved131 held scenes, direct112,
+and native top-k99, versus171 with13 observations. Neither selected policy met
+90% retention; Sky-specific incremental value was not established. Retain the
+component diagnostic and receipts, without default promotion or further search
+under that consumed protocol. Global registration remains blocked by ledger303.
+
 Record the BlindAssist source hash, SkyDiscover commit, initial candidate,
 config/evaluator/input hashes, model, call/token/evaluation ceilings, retry and
 `in_doubt` accounting, random seed, output root, and selected-candidate hash.
