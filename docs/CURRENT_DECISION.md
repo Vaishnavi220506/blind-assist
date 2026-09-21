@@ -1,3 +1,13 @@
+2026-09-21 [multi-zone RGB anchoring](../research/active/dtr-r0/nearfield/RGB_MULTIZONE_RESULTS_20260921.md):
+Fourteen consumed diagnostic frames (seven negative/Boundary pairs, three layouts)
+yield zero explained OUTSIDE negatives. Only two selection positives have the
+required adjacent whole-zone anchors; their three CROSSING queries retain
+307/307 observed-return contributor incidences. Eight frames have no whole-zone
+anchor, four have one, two have two. Close this exact recipe as NEGATIVE_CONTROL;
+UNKNOWN is unresolved, not an RGB information ceiling. Keep A/demo unchanged;
+no weaker-anchor retry, training or automatic successor. Independent audit PASS;
+global ledger303/unknown-terminal receipts and local disposition retained.
+
 2026-09-21 [public ToF axis evidence](../research/active/dtr-r0/nearfield/AXIS_EVIDENCE_RESULTS_20260921.md):
 All16 consumed transfer layouts/1152frames: contained-depth evidence exists on
 273/346positives,0/633distance negatives,137/173depth-valid lateral negatives.

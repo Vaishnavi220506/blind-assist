@@ -1,3 +1,17 @@
+## Multi-zone RGB anchoring: insufficient coverage (2026-09-21)
+
+[One frozen diagnostic](nearfield/RGB_MULTIZONE_RESULTS_20260921.md) on seven
+remaining lateral-negative/matched Boundary pairs finds zero explained OUTSIDE
+negatives. Only two selection positives meet the two-adjacent-whole-zone anchor
+rule; their three CROSSING queries cover307/307 observed-return contributor
+incidences. Eight frames have zero complete-zone anchors, four have one, two
+have two. Four frames lack an eligible query and remain unresolved. This closes
+the exact multi-zone anchoring recipe for residual lateral error, not RGB or
+8x8 information in general. Local NEGATIVE_CONTROL; A/demo, UNKNOWN and source
+alerts unchanged. No weaker anchors, segmentation retry, training, protected
+test or automatic successor. Three focused tests and independent audit PASS.
+Global metadata remains pending ledger303/unknown terminal; receipts retained.
+
 ## Public ToF axes: distance evidence with boundary costs (2026-09-21)
 
 [Sealed1152-frame audit](nearfield/AXIS_EVIDENCE_RESULTS_20260921.md) finds
