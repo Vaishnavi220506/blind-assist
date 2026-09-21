@@ -1,0 +1,15 @@
+{
+  "schema": "hardware-bringup.cnh-incremental-audit.v1",
+  "phase": "Consumed Development descriptive audit; no classifier invocation",
+  "question": "What saved CNH evidence is additional to the single scalar distance output in the same region and frame?",
+  "source_run": "dashboard-20260921T144239Z-8a8beb",
+  "score_report_sha256": "ba4422c6f99543482cd92743ce2c88f9d38fee10f347da8ebd3ffb0fb54dfa9e",
+  "scalar_comparator": "Retain original range_valid. UNKNOWN first; known1..3mm separately SUSPECT. Other distances described by which old pure-scene scalar median is closer. Exact equidistance is TIE; absent or unordered references NOT_COMPARABLE. This is a retrospective description, not metric truth or a new sensor threshold.",
+  "normalized_position": "(distance - old_foreground_median)/(old_background_median-old_foreground_median), not clipped; only valid non-suspect observations with ordered references",
+  "scope": "All16zones and all83inner-window frames; report all11 scored mixed zones first; separately identify prior7 passing zones (already outcome selected). Unscored/unevaluable never negative.",
+  "additional_evidence": "Foreground-side scalar plus saved late: background-location waveform evidence not present in scalar. Background-side scalar plus saved near_present: near-bin amplitude evidence not present in scalar. UNKNOWN stays UNKNOWN despite waveform evidence. None is a second physical target or recovered range.",
+  "stability": "Consecutive source sequence runs within one phase, counted separately perzone. First-to-last observed host-receipt span, not eventduration or alert latency; no bridging marked-phase gaps, negative frames or sequence gaps.",
+  "cost": "Report saved sampling/configuration; actual raw ToF bytes. Scalar-only compact JSON byte projection is a labeled serialization estimate from the same sensor frames, not an installed firmware throughput benchmark. No RGB cost attributed to CNH.",
+  "decision": "Retain only the actually demonstrated incremental waveform role. No useful additional pattern means diagnostic-only under this recording. Always disclose pure references, amplitude extrapolation, outcome selection and one consumed scene.",
+  "stop": "One descriptive audit of saved outputs; no new recording, training, threshold/bin/shift change, rescoring, firmware or alert integration."
+}
