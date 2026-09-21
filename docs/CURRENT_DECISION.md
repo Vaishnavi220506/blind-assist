@@ -1,11 +1,18 @@
-2026-09-21 [ideal-association feasibility](../research/active/dtr-r0/nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md):
-NOT_EVALUABLE_WHOLE_TARGET_ORACLE. All1152 native hashes/source mask counts
-pass;12/13 lateral FP and118/118 Boundary rescues have unreturned target lattice
-samples. Reconstructed visible masks and winning-return intervals do not constrain
-whole-object unmeasured extent. No geometric classifier, fit or alert change ran.
-This is a limitation of the proposed diagnostic, not a negative RGB/input result.
-Retain coverage/provenance COMPONENT; A/B/R/U/G unchanged. Independent recount
-passes; local disposition/ledger303 receipts retained. Stop without successor.
+2026-09-21 [ideal-association diagnostic closure](../research/active/dtr-r0/nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md):
+NOT_EVALUABLE_WHOLE_TARGET_ORACLE closes this underspecified diagnostic only.
+Association constrains returned samples, not whole-object extent. Coverage gaps
+are not proof that a frame is undecidable or that Boundary rescues lack evidence.
+The original current supplement adds120TP (118 Boundary) and28FP (15 distance,
+13 depth-valid lateral); only17/120 rescues outrank the highest lateral FP.
+This consumed-data ranking conflict is not repaired by monotone calibration.
+Retain A/demo, UNKNOWN, A/B/R/U/G dispositions and coverage/provenance COMPONENT;
+local disposition and ledger303 receipts stand. End this diagnostic chain: no
+further coverage/whole-object oracle check or training follows this closure.
+Future algorithm work may use explicit shape priors, RGB predictions and 3D
+training supervision; test-time truth is not an input. Require a runnable new
+mechanism with deployment-available cues or explicit priors, evaluated at fixed
+FP cost for Boundary rescue, Core events and first-alert timing. The consumed
+16 layouts/1152 frames are not fresh validation. See the report's closure scope.
 
 2026-09-21 [ordered spatial geometry contrast](../research/active/dtr-r0/nearfield/SPATIAL_STRUCTURE_RESULTS_20260921.md):
 One matched U/G comparison preserves ordered frozen RGB, with only eight

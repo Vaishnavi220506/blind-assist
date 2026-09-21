@@ -1,15 +1,26 @@
-## Ideal-association whole-target diagnosis: not evaluable (2026-09-21)
+## Whole-target oracle closed; model inference remains eligible (2026-09-21)
 
-[Source and coverage preflight](nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md)
-verifies1152 native hashes and reconstructed visible masks. Twelve of13 added
-lateral FP and all118 Boundary rescues have target samples outside the observed
-winning-return support. No interval may be copied to the remaining object extent;
-the reconstructed mask is not independent renderer instance truth. The proposed
-whole-target oracle lacks admissible depth constraints and stops NOT_EVALUABLE,
-not a negative result for RGB or full-input separability. No classifier, training,
-capture, threshold, hold or demo change. Keep coverage/provenance as COMPONENT,
-with independent recount and local disposition; existing ledger303/unknown-terminal
-gap remains. No automatic successor.
+[Source preflight and closure scope](nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md):
+NOT_EVALUABLE_WHOLE_TARGET_ORACLE. Return ownership and sampled distances do not
+establish whole-object extent; the mask is not independent instance truth.
+Twelve of13 lateral FP and all118 Boundary rescues have coverage gaps, but these
+counts prove neither undecidability nor unsupported rescues. Even the completely
+sampled lateral-error frame is not certified removable. The promised FP removal
+and TP retention quantities were not evaluated. Retain coverage/provenance
+COMPONENT and existing local disposition/ledger303 receipts.
+The current B supplement adds120TP (118 Boundary) and28FP (15 distance-window,
+13 depth-valid lateral). Only17/120 rescues exceed the highest lateral-FP score:
+consumed-data cross-layout ranking conflict remains beyond hold and calibration.
+Close this diagnostic chain without another coverage/oracle check or training;
+retain A/demo, UNKNOWN and every prior A/B/R/U/G disposition. RGB and obstacle
+research remain open. Future candidates must explain a new deployment-available
+cue or explicit prior for unmeasured regions, then provide a runnable comparison
+at fixed FP budget, measuring Boundary rescue, Core events and first-alert time.
+Shape assumptions, RGB predictions and training-only 3D supervision are eligible
+as model inference, not observed facts or test-time answers. Use isolated
+assessment; these16 consumed layouts/1152 frames cannot become fresh validation.
+Do not reopen stopped heads/representations by renaming them or require another
+whole-object geometric proof before a practical algorithm can be evaluated.
 
 ## Ordered spatial contrast: no added horizontal benefit (2026-09-21)
 

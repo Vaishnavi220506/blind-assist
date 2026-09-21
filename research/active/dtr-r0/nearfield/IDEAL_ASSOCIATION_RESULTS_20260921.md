@@ -111,3 +111,44 @@ Independent read-only review passes the input whitelist, source-mask formula,
 hashes. Supported registration still fails at the existing ledger303 fingerprint
 mismatch and inheritance reports an unknown terminal. Local disposition and
 command receipts preserve this metadata gap without editing the global ledger.
+
+## Closure scope and requirements for later algorithm work (2026-09-21)
+
+User clarification closes this whole-object ideal-association diagnostic and
+its diagnostic chain, not the RGB route or obstacle research. No additional
+coverage/whole-object oracle check or training follows this closure. The frozen
+preflight, measurements, A/demo, UNKNOWN and A/B/R/U/G dispositions remain intact.
+The existing metadata gap remains recorded; this clarification adds no run.
+
+The 12/13 lateral-FP coverage gaps do not mean 12 frames are impossible to
+classify correctly, and gaps on all118 Boundary rescues do not invalidate those
+rescues. Sparse coverage alone proves neither information insufficiency nor a
+requirement to measure every pixel. Complete sampled coverage on one lateral FP
+also does not certify its removal. This diagnostic supplies no estimate of
+removable FP or retained TP under the promised whole-object oracle.
+
+The [preceding added-error attribution](ADDED_ERROR_SOURCES_RESULTS_20260921.md)
+records B current versus A current:120 added TP, including118 Boundary, and28
+added FP. Distance-window failure has classification priority for15FP;13 others
+have valid distance but are laterally outside. Only17/120 rescues score above
+the highest lateral FP, even excluding distance errors. Hold is not the sole
+cause; raising this original score cutoff or applying monotone calibration
+cannot preserve all rescues while removing lateral FP. This is consumed-data
+ranking evidence, not independent generalization or a verdict on all RGB cues.
+
+The preflight's ban on unmeasured-depth interpolation or shape assumptions
+scopes its oracle claim. A practical model may explicitly assume shape, predict
+unmeasured regions from RGB, or learn spatial relations using 3D training truth.
+These are assumptions/predictions, not sensor observations. Training supervision
+is distinct from supplying evaluator 3D answers to a test-time decision maker.
+Practical obstacle decisions need not prove the object's complete 3D extent.
+
+Later algorithm work must identify the new deployment-available cue or explicit
+prior that handles unmeasured regions, with a runnable, comparable method.
+Evaluate Boundary rescues at a fixed false-positive budget while preserving
+Core events and first-alert timing; isolate assessment from fitting/selection.
+The1152 frames from16 already used layouts remain explanatory or disclosed
+Development evidence, never a newly independent validation. Existing stopped
+direct heads, relative representations and extra-geometry recipes keep their
+prior dispositions; this closure supplies no reason to repeat them. No candidate
+is selected, implemented or trained by this documentation clarification.
