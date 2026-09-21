@@ -1,5 +1,14 @@
 # Bounded nearfield opportunity probes
 
+[Saved-trace deepening](../../../research/active/dtr-r0/nearfield/OBSERVATION_DEEPENING_RESULTS_20260922.md)
+joins13view fixed-path measurements with continuous rectangle constraints:
+model-conditional correct decisions4to79/180, without observed wrong decisions,
+at11extra views and unchanged12cm motion. A single witness-pair path heuristic
+loses14TP; initial openloop planning reproduces every feedback decision.
+`run_observation_deepening.py` seals one consumed replay; conditional numerical
+exclusion is not a formal certificate or sensor free-space claim. Candidate
+validation failures remain UNKNOWN and are distinct from opposing witnesses.
+
 [Five observation mechanisms](../../../research/active/dtr-r0/nearfield/OBSERVATION_MECHANISMS_RESULTS_20260922.md)
 share one frozen180scene source. Fixed+X path sampling raises pair separability
 35to81/90 at2to13views; strict pure-quantization attribution yields0gains.

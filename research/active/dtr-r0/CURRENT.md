@@ -1,3 +1,20 @@
+## Saved-trace deepening: continuous path constraints and feedback attribution (2026-09-22)
+
+[Consumed180scene replay](nearfield/OBSERVATION_DEEPENING_RESULTS_20260922.md)
+raises correct numerical single-rectangle decisions4to79 with fixed+X path2to13
+views at unchanged12cm motion: TP2to34, correctnegative2to45, no observedFP/falseOUT,
+all4old correct decisions retained. This costs11extra observations; nothardware
+or formal exclusion evidence. Fixed13view UNKNOWN101includes37opposing-witness
+cases and64numerical candidate failures. Single-pair guided13view path loses14TP
+and gives64correct decisions; retain this selector as scoped NEGATIVE_CONTROL.
+Public initial openloop planning reproduces all180feedback decisions at3views/
+12cm:28TP/3FP/7falseOUT/36correctnegative, with5different paths but no decision gain.
+Continuous3view readout removes10wrong commitments but loses22oldTP and adds5;
+notlossless replacement. Preserve numerical limitations and separate ambiguity
+from rejected candidates.15focused tests and independent saved-output audits;
+258unique histories/516calls, no new actual views or retries. Components only,
+no App promotion; scoped local inheritance and ledger303 block receipts retained.
+
 ## Five observation mechanisms: path information and constructive witnesses (2026-09-22)
 
 [One shared180scene suite](nearfield/OBSERVATION_MECHANISMS_RESULTS_20260922.md)
