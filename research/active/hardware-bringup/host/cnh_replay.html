@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CNH 四步记录 · 证据回放</title>
+<style>
+:root{color-scheme:light;--ink:#172d3d;--muted:#5d7180;--line:#dce4e8;--paper:#f3f6f7;--white:#fff;--blue:#175b79;--mint:#157f75;--orange:#c57129;--red:#9c4540;--soft:#e9f3f5}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.45}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #e9ad54;outline-offset:3px}button{border:1px solid var(--line);border-radius:9px;background:white;color:var(--ink);padding:9px 15px}button:hover:not(:disabled){background:var(--soft)}h1,h2,p{margin:0}h1{font-size:clamp(25px,3vw,38px);letter-spacing:-.04em;line-height:1.25}h2{font-size:17px}small,.muted{color:var(--muted)}.wrap{max-width:1480px;margin:auto;padding:32px clamp(16px,3vw,44px) 36px}.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--blue);font-weight:750;margin-bottom:9px}.top{display:flex;justify-content:space-between;align-items:center;gap:22px}.subtitle{margin-top:10px;color:var(--muted);max-width:840px}.tag{font-size:12px;display:inline-flex;align-items:center;border-radius:30px;padding:5px 10px;background:#e3ecef;color:var(--blue);white-space:nowrap}.tag.warn{background:#fff0dc;color:#8a521e}.tag.good{background:#e3f3ed;color:#246751}.tag.quiet{background:#edf0f2;color:#596d79}.boundary{margin:20px 0;border-left:3px solid #d4a350;padding:10px 15px;background:#fcf8ef;color:#755731;font-size:13px}.player{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:16px 18px;margin-bottom:20px}.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.phase{display:flex;gap:10px;text-align:left;align-items:center;padding:10px 13px}.phase b{font-size:11px;opacity:.6}.phase[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:white}.transport{display:flex;align-items:center;gap:10px;margin-top:15px}.transport #play{background:var(--ink);color:white;min-width:100px}.transport input{width:100%;accent-color:var(--blue);min-width:80px}.count{white-space:nowrap;font-variant-numeric:tabular-nums;font-size:13px}.frame-line{display:flex;justify-content:space-between;gap:15px;margin-top:10px;font-size:12px;color:var(--muted)}.main{display:grid;grid-template-columns:minmax(290px,.8fr) minmax(500px,1.45fr);gap:20px}.stack{display:grid;gap:18px;align-content:start}.card{background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden}.card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:17px 20px 12px}.camera{background:#111e28;aspect-ratio:4/3;position:relative;display:grid;place-items:center;color:#b2c3ce}.camera img{width:100%;height:100%;object-fit:contain;position:absolute}.camera .empty{padding:24px;text-align:center}.camera-foot{padding:11px 18px;font-size:12px;color:var(--muted)}.grid-box{padding:0 18px 18px}.zone-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.zone{min-height:65px;padding:6px 4px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px}.zone strong{font-size:14px}.zone[aria-pressed=true]{border:2px solid var(--blue);background:#e7f1f5;padding:5px 3px}.zone[data-state=dual]{box-shadow:inset 0 -3px var(--mint)}.zone[data-state=ineligible]{background:#f3f4f5;color:#7b8287}.grid-caption{font-size:12px;margin-top:11px;color:var(--muted)}.chart-card{padding-bottom:8px}.legend{display:flex;flex-wrap:wrap;gap:8px 20px;padding:0 20px;font-size:12px;color:var(--muted)}.legend span:before{content:"";display:inline-block;width:19px;height:3px;vertical-align:middle;margin-right:7px;background:var(--ink)}.legend .bg:before{background:var(--mint)}.legend .fg:before{background:var(--orange)}.plot{width:100%;display:block;height:auto;aspect-ratio:760/265}.plot text{font-family:inherit;fill:#667d8b;font-size:12px}.plot .gridline{stroke:#e7ecef;stroke-width:1}.plot .zero{stroke:#b0bfc8;stroke-width:1.2}.plot-note{padding:0 20px 10px;font-size:12px;color:var(--muted)}.score-body{padding:0 20px 18px}.score-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{padding:12px;background:#f4f7f8;border-radius:9px;min-width:0}.metric small{display:block;font-size:12px}.metric strong{display:block;font-size:21px;line-height:1.4;margin:5px 0}.metric .sub{font-size:11px;color:var(--muted);overflow-wrap:anywhere}.status-line{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:13px 0 8px}.details{padding:14px 20px}.details summary{cursor:pointer;font-size:13px;font-weight:650}.details p{font-size:12px;margin-top:8px;overflow-wrap:anywhere}.gate-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.gate-list span{font-size:11px;border:1px solid var(--line);padding:3px 7px;border-radius:5px}.footer{font-size:12px;color:var(--muted);margin-top:20px;overflow-wrap:anywhere}.footer details{margin-top:10px}.footer ul{padding-left:20px}.error{padding:50px;font-size:18px}#amplitude[hidden],#camera[hidden],#camera-empty[hidden]{display:none}.role{font-weight:650;color:var(--blue)}.metric strong.yes{color:var(--mint)}.metric strong.no{color:var(--muted)}
+@media(max-width:1000px){.main{grid-template-columns:minmax(240px,.8fr) minmax(380px,1.3fr)}.wrap{padding:24px 18px}.score-row{gap:5px}.metric{padding:9px}.metric strong{font-size:18px}}@media(max-width:780px){.main{grid-template-columns:1fr}.top{align-items:flex-start}.top>.tag{display:none}.camera{aspect-ratio:16/10}.phases{gap:5px}.phase{padding:9px 7px;font-size:13px;gap:5px}.transport{flex-wrap:wrap}.transport input{order:5;flex-basis:100%}.count{margin-left:auto}.frame-line{flex-direction:column;gap:3px}.card-head{padding:15px 16px 10px}.legend{padding:0 16px}.score-body{padding:0 16px 16px}.plot{aspect-ratio:760/290}.subtitle{font-size:13px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="wrap" id="app">
+<header class="top"><div><div class="eyebrow">CNH / Recorded evidence</div><h1>四步记录，看见波形里的变化。</h1><p class="subtitle">对照相机画面、原始 4×4 区域与已保存判定，回看背景、近物、半遮挡和移开书四个阶段。</p></div><span class="tag">离线记录回放 · 无硬件连接</span></header>
+<p class="boundary">已消费的探索性记录。后峰证据不等于物理双目标、距离恢复或避障收益；本页只展示原始波形与已保存分数，不重新评分。</p>
+<section class="player" aria-label="回放控制">
+<div class="phases" id="phases"><button class="phase" data-phase="background" aria-pressed="true"><b>01</b>背景</button><button class="phase" data-phase="foreground" aria-pressed="false"><b>02</b>近物</button><button class="phase" data-phase="mixture" aria-pressed="false"><b>03</b>半遮挡</button><button class="phase" data-phase="return" aria-pressed="false"><b>04</b>移开书</button></div>
+<div class="transport"><button id="play" aria-label="播放回放">▶ 播放</button><button id="prev" aria-label="上一帧">←</button><button id="next" aria-label="下一帧">→</button><input id="timeline" type="range" min="0" max="0" value="0" step="1" aria-label="选择内窗口帧"><span class="count" id="frame-count">—</span></div>
+<div class="frame-line"><span id="frame-meta">正在加载嵌入记录…</span><span id="gap-note">慢速逐帧（约 0.65 秒/帧，非原速）；只播内窗口帧，窗口间空档跳过。</span></div>
+</section>
+<div class="main">
+<div class="stack">
+<section class="card"><div class="card-head"><h2>相机记录</h2><span class="tag quiet" id="phase-badge">背景</span></div><div class="camera"><img id="camera" alt="与当前 CNH 帧主机接收时间最接近的相机记录" hidden><div class="empty" id="camera-empty">此帧没有匹配的相机记录</div></div><p class="camera-foot" id="camera-time">按主机接收时间邻近匹配；未经曝光同步或像素配准。</p></section>
+<section class="card"><div class="card-head"><h2>原始 4×4 区域</h2><span class="tag" id="zone-label">Z6</span></div><div class="grid-box"><div class="zone-grid" id="zone-grid" role="group" aria-label="选择原始区域"></div><p class="grid-caption">默认示例 Z6；全部区域可切换。保留传感器原始行列，网格不叠加到相机画面。</p><p class="grid-caption">绿色底线：该帧保存的双证据成立。灰底：区域不可评估。未评分不代表阴性。</p></div></section>
+<section class="card"><details class="details"><summary>区域结论与原始门槛</summary><p id="zone-verdict"></p><p id="zone-reasons"></p><div class="gate-list" id="zone-gates"></div><p>这些是整段记录的既有门槛结果，不是当前单帧的实时判断。</p></details></section>
+</div>
+<div class="stack">
+<section class="card chart-card"><div class="card-head"><h2>完整 CNH · 保留正负值</h2><span class="tag quiet">signed symlog</span></div><div class="legend"><span>当前帧</span><span class="bg">背景参考模板</span><span class="fg">近物参考模板</span></div><svg class="plot" id="full-chart" viewBox="0 0 760 265" role="img" aria-label="完整 24 bin CNH，带符号对称对数纵轴"></svg><p class="plot-note">横轴为 bin 索引，不换算距离。纵轴 sign(x) · log10(1 + |x|)，刻度显示原始值；模板来自其他参考帧，不是当前时刻的两个目标。</p></section>
+<section class="card chart-card"><div class="card-head"><h2>背景峰附近 · 局部线性视图</h2><span class="tag quiet" id="peak-label">—</span></div><svg class="plot" id="late-chart" viewBox="0 0 760 265" role="img" aria-label="背景参考峰附近原始 CNH 的线性纵轴图"></svg><p class="plot-note" id="late-note">相同三条原始波形，局部纵轴单独展开；图中不进行尾部拟合或重评分。</p></section>
+<section class="card"><div class="card-head"><h2>已保存的帧级证据</h2><span class="tag quiet role" id="role-badge">—</span></div><div class="score-body"><div class="score-row"><div class="metric"><small>近端证据</small><strong id="near-state">—</strong><div class="sub" id="near-value">—</div></div><div class="metric"><small>后峰证据</small><strong id="late-state">—</strong><div class="sub" id="late-value">—</div></div><div class="metric"><small>近端 + 后峰</small><strong id="dual-state">—</strong><div class="sub" id="dual-value">既有双证据字段</div></div></div><div class="status-line"><span class="tag quiet" id="scalar">标量距离 —</span><span class="tag warn" id="amplitude" hidden>近端幅值外推</span></div><p class="muted" id="score-explanation" style="font-size:12px"></p><p class="muted" style="font-size:12px;margin-top:5px">标量距离有效性单独保留；CNH 证据不能把 UNKNOWN 改写为已知距离。幅值外推描述参考幅值范围，不描述距离。</p></div></section>
+</div>
+</div>
+<footer class="footer"><p id="summary"></p><details><summary>来源、哈希与证据边界</summary><p id="provenance"></p><ul id="limits"></ul></details></footer>
+</main>
+<script type="application/json" id="data">__CNH_REPLAY_DATA__</script>
+<script>
+"use strict";
+(() => {
+  const $ = id => document.getElementById(id);
+  let data;
+  try { data = JSON.parse($("data").textContent); }
+  catch (e) { $("app").textContent = "回放数据尚未嵌入或格式无效，请打开导出的回放文件。"; return; }
+  if (!Array.isArray(data.frames) || !data.frames.length) { $("app").textContent = "回放记录没有可展示的帧。"; return; }
+  const frames = data.frames;
+  const phaseNames = {background:"背景",foreground:"近物",mixture:"半遮挡",return:"移开书"};
+  const roleNames = {reference:"参考帧 · 未评分",calibration:"校准帧 · 未评分",check:"纯场景检查帧",evaluation:"评估帧"};
+  const NS = "http://www.w3.org/2000/svg";
+  let index = 0, zone = 6, timer = null;
+  const finite = x => typeof x === "number" && Number.isFinite(x);
+  const fmt = x => !finite(x) ? "—" : Math.abs(x) >= 100000 ? x.toExponential(2) : Math.abs(x) >= 100 ? x.toFixed(1) : x.toFixed(3).replace(/\.?0+$/, "");
+  const getZone = () => (data.zones || []).find(z => z.zone === zone) || {zone,eligible:false,reasons:["缺少区域报告"]};
+  const getTemplate = () => (data.templates || []).find(z => z.zone === zone) || {};
+  function el(name, attrs, text) { const e = document.createElementNS(NS,name); for (const [k,v] of Object.entries(attrs || {})) e.setAttribute(k,String(v)); if (text !== undefined) e.textContent = text; return e; }
+  function draw(id, lo, hi, symlog, peak) {
+    const svg = $(id); svg.replaceChildren();
+    const t = getTemplate();
+    const series = [t.background || [], t.foreground || [], frames[index].hist?.[zone] || []];
+    const values = frames.flatMap(f => (f.hist?.[zone] || []).slice(lo,hi+1)).concat(...series.map(s => s.slice(lo,hi+1))).filter(finite);
+    const trans = x => symlog ? Math.sign(x)*Math.log10(1+Math.abs(x)) : x;
+    const inv = x => symlog ? Math.sign(x)*(10**Math.abs(x)-1) : x;
+    let ymin = Math.min(0,...values.map(trans)), ymax = Math.max(0,...values.map(trans));
+    if (ymin === ymax) { ymin -= 1; ymax += 1; }
+    const pad = (ymax-ymin)*.08; ymin -= pad; ymax += pad;
+    const x = b => 78 + (b-lo)/Math.max(1,hi-lo)*656;
+    const y = v => 214 - (trans(v)-ymin)/(ymax-ymin)*190;
+    svg.append(el("title",{},symlog ? `Z${zone} 完整 CNH，带符号对称对数纵轴` : `Z${zone} 局部原始 CNH，线性纵轴`));
+    const protocol=data.protocol || {};
+    const bands=symlog?(protocol.near_bins || []).map(b=>[b,"#e8f1f6"]):finite(peak)?[...(protocol.center_offsets || []).map(o=>[peak+o,"#e9f4ee"]),...(protocol.flank_offsets || []).map(o=>[peak+o,"#f8efdf"])]:[];
+    for(const [b,color] of bands){if(b<lo || b>hi)continue;const left=x(Math.max(lo,b-.5)),right=x(Math.min(hi,b+.5));svg.append(el("rect",{x:left,y:24,width:right-left,height:190,fill:color}));}
+    for (let j=0;j<=4;j++) { const tv=ymin+(ymax-ymin)*j/4, yy=214-j*190/4; svg.append(el("line",{x1:78,y1:yy,x2:734,y2:yy,class:"gridline"}),el("text",{x:69,y:yy+4,"text-anchor":"end"},fmt(inv(tv)))); }
+    svg.append(el("line",{x1:78,y1:y(0),x2:734,y2:y(0),class:"zero"}));
+    if (finite(peak) && peak>=lo && peak<=hi) { svg.append(el("line",{x1:x(peak),y1:24,x2:x(peak),y2:214,stroke:"#acbac1","stroke-dasharray":"3 5"})); }
+    for (let b=lo;b<=hi;b++) if (!symlog || b%2===0 || b===hi) svg.append(el("text",{x:x(b),y:235,"text-anchor":"middle"},b));
+    svg.append(el("text",{x:734,y:255,"text-anchor":"end"},"bin 索引"));
+    const colors=["#157f75","#c57129","#172d3d"];
+    series.forEach((s,k) => { let d="",fresh=true; for(let b=lo;b<=hi;b++){if(!finite(s[b])){fresh=true;continue;}d+=`${fresh?"M":"L"}${x(b).toFixed(2)} ${y(s[b]).toFixed(2)} `;fresh=false;} if(d) svg.append(el("path",{d,fill:"none",stroke:colors[k],"stroke-width":k===2?2.8:1.8,"stroke-dasharray":k===2?"none":"5 4","stroke-linejoin":"round"})); });
+  }
+  function state(id, value, fallback) { $(id).textContent = typeof value === "boolean" ? value ? "成立" : "未成立" : fallback; $(id).className = typeof value === "boolean" ? value ? "yes" : "no" : "no"; }
+  function stop() { if(timer !== null) clearInterval(timer); timer=null; $("play").textContent="▶ 播放"; $("play").setAttribute("aria-label","播放回放"); }
+  function show(n) {
+    index=Math.max(0,Math.min(frames.length-1,n));
+    const f=frames[index], z=getZone(), ref=z.reference || {}, s=f.scores?.[zone] || null;
+    const unscored=f.role==="reference" || f.role==="calibration";
+    const usable=z.eligible && !unscored && s!==null;
+    const empty=z.eligible ? "未评分" : "不可评估";
+    $("timeline").value=index; $("frame-count").textContent=`${index+1} / ${frames.length} 帧`;
+    $("prev").disabled=index===0; $("next").disabled=index===frames.length-1;
+    $("frame-meta").textContent=`原始序号 ${f.seq} · ${fmt(f.elapsed_s)} s · 区块 ${f.block} · ${roleNames[f.role] || f.role}`;
+    $("phase-badge").textContent=phaseNames[f.phase] || f.phase;
+    document.querySelectorAll(".phase").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.phase===f.phase)));
+    const img=f.camera_data_url; const haveImage=typeof img==="string" && /^data:image\/(jpeg|png|webp);base64,/.test(img);
+    $("camera").hidden=!haveImage; $("camera-empty").hidden=haveImage;
+    if(haveImage) $("camera").src=img; else $("camera").removeAttribute("src");
+    $("camera-time").textContent=`${finite(f.camera_delta_ms) ? "相机 − CNH 主机接收时间差 " + (f.camera_delta_ms>=0?"+":"") + fmt(f.camera_delta_ms)+" ms。" : "无可用的相机时间差。"}邻近匹配；未经曝光同步或像素配准。`;
+    $("zone-label").textContent=`Z${zone} · 原始行 ${Math.floor(zone/4)} / 列 ${zone%4}`;
+    document.querySelectorAll(".zone").forEach(b=>{const i=Number(b.dataset.zone),r=(data.zones || []).find(q=>q.zone===i),v=f.scores?.[i];const eligible=!!r?.eligible;b.setAttribute("aria-pressed",String(i===zone));b.dataset.state=!eligible?"ineligible":!unscored && v?.dual===true?"dual":"other";b.lastChild.textContent=!eligible?"不可评估":unscored || !v?"未评分":v.dual?"双证据":"无双证据";});
+    draw("full-chart",0,23,true,ref.peak);
+    const hasPeak=finite(ref.peak); const lo=hasPeak?Math.max(0,ref.peak-3):4,hi=hasPeak?Math.min(23,ref.peak+3):12;
+    draw("late-chart",lo,hi,false,ref.peak);
+    $("peak-label").textContent=hasPeak?`背景参考峰 bin ${ref.peak}`:"无可用背景参考峰";
+    $("late-note").textContent=hasPeak?`局部显示 bin ${lo}–${hi}。绿底为协议中心 bins，浅黄为侧翼 bins；参考峰来自已存报告，图中不做尾部拟合或重评分。`:"此区域不可评估，展示 bin 4–12 仅供查看原始形状，不提供后峰判定。";
+    $("role-badge").textContent=roleNames[f.role] || f.role;
+    state("near-state",usable?s.near_present:null,empty); state("late-state",usable?s.late:null,empty); state("dual-state",usable?s.dual:null,empty);
+    $("near-value").textContent=usable?`保存分数 ${fmt(s.near)} / 截止值 ${fmt(ref.near_cutoff)}`:z.eligible?`截止值 ${fmt(ref.near_cutoff)}；本帧未评分`:"无有效区域判据";
+    $("late-value").textContent=usable?`保存分数 ${fmt(s.score)} / 截止值 ${fmt(ref.late_cutoff)}`:z.eligible?`截止值 ${fmt(ref.late_cutoff)}；本帧未评分`:"无有效区域判据";
+    $("dual-value").textContent=usable?"直接读取保存的 dual 字段":"未评分或不可评估不能解释为阴性";
+    const known=f.range_valid?.[zone]===true || f.range_valid?.[zone]===1;
+    const distance=f.distance_mm?.[zone], nearZero=known && finite(distance) && distance>0 && distance<=3;
+    $("scalar").textContent=known?`标量距离 ${fmt(distance)} mm${nearZero?" · 近零可疑":""} · status ${f.target_status?.[zone] ?? "—"}`:`标量距离 UNKNOWN · 原始值 ${fmt(distance)} mm · status ${f.target_status?.[zone] ?? "—"}`;
+    $("amplitude").hidden=!(usable && s.amplitude_extrapolation===true);
+    $("score-explanation").textContent=!z.eligible?"此区域未通过可评估性条件；原始波形可查看，不能据此补成阴性或阳性。":unscored?"此帧用于参考或校准，原报告没有帧级判定；本页明确保留未评分状态。":!s?"此帧缺少保存的区域分数，保留未评分状态。":"近端、后峰与双证据均来自保存报告。后峰判据还包含原报告的正对比度条件，不能只看分数高低。";
+    $("zone-verdict").textContent=`Z${zone} · ${z.eligible?"可评估":"不可评估"} · ${z.verdict || "NOT_EVALUABLE"}`;
+    $("zone-reasons").textContent=(z.reasons || []).length?`原始说明：${z.reasons.join("；")}`:"原报告未列出额外原因。";
+    $("zone-gates").replaceChildren();
+    for(const [key,value] of Object.entries(z.gates || {})){const e=document.createElement("span");e.textContent=`${value?"✓":"×"} ${key}`;$("zone-gates").append(e);}
+  }
+  for(let i=0;i<16;i++){const b=document.createElement("button");b.className="zone";b.dataset.zone=i;b.setAttribute("aria-label",`选择区域 Z${i}`);b.setAttribute("aria-pressed",String(i===zone));const title=document.createElement("strong");title.textContent=`Z${i}`;const status=document.createElement("span");b.append(title,status);b.addEventListener("click",()=>{zone=i;show(index);});$("zone-grid").append(b);}
+  $("timeline").max=frames.length-1;
+  $("timeline").addEventListener("input",()=>{stop();show(Number($("timeline").value));});
+  $("prev").addEventListener("click",()=>{stop();show(index-1);}); $("next").addEventListener("click",()=>{stop();show(index+1);});
+  $("play").addEventListener("click",()=>{if(timer!==null){stop();return;}if(index===frames.length-1)show(0);$("play").textContent="Ⅱ 暂停";$("play").setAttribute("aria-label","暂停回放");timer=setInterval(()=>{if(index>=frames.length-1){stop();return;}show(index+1);if(index===frames.length-1)stop();},650);});
+  document.querySelectorAll(".phase").forEach(b=>{const first=frames.findIndex(f=>f.phase===b.dataset.phase);b.disabled=first<0;b.addEventListener("click",()=>{stop();if(first>=0)show(first);});});
+  document.addEventListener("keydown",e=>{if(["INPUT","BUTTON","SUMMARY"].includes(e.target.tagName))return;if(e.key==="ArrowLeft" || e.key==="ArrowRight"){e.preventDefault();stop();show(index+(e.key==="ArrowRight"?1:-1));}if(e.code==="Space"){e.preventDefault();$("play").click();}});
+  window.addEventListener("pagehide",stop);
+  document.addEventListener("visibilitychange",()=>{if(document.hidden)stop();});
+  const eligible=(data.zones || []).filter(z=>z.eligible), passed=eligible.filter(z=>z.verdict==="EXPLORATORY_TAIL_EXCESS");
+  $("summary").textContent=`既有整段报告：${eligible.length} / ${(data.zones || []).length} 区可评估，其中 ${passed.length} 区保留探索性后峰超额候选。当前页 ${frames.length} 帧来自固定内窗口，不是独立验证。`;
+  $("provenance").textContent=`记录 ${data.run_id || "—"} · schema ${data.schema || "—"}\n报告 SHA-256：${data.report_sha256 || "—"}\n协议 SHA-256：${data.protocol_sha256 || "—"}`;
+  for(const text of data.limits || []){const li=document.createElement("li");li.textContent=text;$("limits").append(li);}
+  show(0);
+  document.body.dataset.ready="true";
+})();
+</script>
+</body>
+</html>

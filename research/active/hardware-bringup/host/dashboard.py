@@ -417,6 +417,12 @@ class Handler(BaseHTTPRequestHandler):
             dashboard = self.server.dashboard
             if url.path == "/":
                 self.send(200, (HERE / "dashboard.html").read_bytes(), "text/html; charset=utf-8")
+            elif url.path == "/cnh-review":
+                page = ARTIFACTS / "cnh-replay-20260921" / "index.html"
+                if page.is_file():
+                    self.send(200, page.read_bytes(), "text/html; charset=utf-8")
+                else:
+                    self.send(404, {"error": "CNH 对照回放尚未生成，请先运行 host/cnh_replay.py"})
             elif url.path == "/api/ports":
                 self.send(200, dashboard.available_ports())
             elif url.path == "/api/runs":
