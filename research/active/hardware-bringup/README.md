@@ -18,6 +18,7 @@ Atom 本机图像、短采集结果和恢复说明见 [Atom 实机记录](LOCAL_
 仅补上下轴的“摆好再录”入口见 [手动分段上下检查](MANUAL_VERTICAL_CHECK.md)。
 手机通过电脑 USB 中转查看的入口与验证状态见 [手机观测台](PHONE_VIEW.md)。
 电脑端 CNH 信息价值的固定波形对照与负结果见 [CNH 指纹检验](CNH_FINGERPRINT_20260921.md)。
+新授权的纯背景/纯前景/半遮挡/恢复背景对照见 [CNH 成分分离](CNH_COMPONENTS_20260921.md)。
 
 ## 目录与边界
 

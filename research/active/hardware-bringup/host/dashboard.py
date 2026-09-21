@@ -5,6 +5,7 @@ import argparse
 import bisect
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -216,12 +217,14 @@ class Dashboard:
             if not math.isfinite(seconds) or not 3 <= seconds <= 300:
                 raise ValueError("录制时长须为 3–300 秒")
             guide = payload.get("guide")
-            if guide not in (None, "orientation-v1", "vertical-manual-v1"):
+            if guide not in (None, "orientation-v1", "vertical-manual-v1", manual_orientation.CNH_GUIDE):
                 raise ValueError("未知引导类型")
             if guide == "orientation-v1" and seconds != 50:
                 raise ValueError("方向检查固定为 50 秒")
             if guide == "vertical-manual-v1" and seconds != 180:
                 raise ValueError("手动上下检查的会话上限固定为 180 秒")
+            if guide == manual_orientation.CNH_GUIDE and seconds != 240:
+                raise ValueError("CNH 近远对照的会话上限固定为 240 秒")
             name = "dashboard-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ-") + uuid.uuid4().hex[:6]
             root = self.data_root / name
             stop = self.controls / (name + ".stop")
@@ -234,7 +237,13 @@ class Dashboard:
             log = (self.controls / (name + ".log")).open("xb")
             try:
                 schedule = orientation_plan(time.monotonic_ns()) if guide == "orientation-v1" else None
-                manual = manual_orientation.plan(time.monotonic_ns()) if guide == "vertical-manual-v1" else None
+                manual = manual_orientation.plan(time.monotonic_ns(), guide) if guide in ("vertical-manual-v1", manual_orientation.CNH_GUIDE) else None
+                if guide == manual_orientation.CNH_GUIDE:
+                    protocol_path = HERE.parent / "cnh-components-protocol.json"
+                    protocol_bytes = protocol_path.read_bytes()
+                    json.loads(protocol_bytes)
+                    manual.update(protocol_file=protocol_path.name,
+                                  protocol_sha256=hashlib.sha256(protocol_bytes).hexdigest())
                 if schedule:
                     schedule.update(run_id=name, camera_port=camera, tof_port=tof)
                     with (self.controls / (name + ".orientation.json")).open("x", encoding="utf-8") as handle:
@@ -258,7 +267,7 @@ class Dashboard:
     def mark_manual(self):
         with self.lock:
             if not self.manual or not self.active():
-                raise ValueError("没有正在运行的手动上下检查")
+                raise ValueError("没有正在运行的手动分段检查")
             state = self.state()
             if any(not state[k] or state[k]["age_ms"] > 500 for k in ("camera", "tof")):
                 raise ValueError("请等两路实时数据恢复后再标记；当前缺数据或数据过期")
@@ -269,7 +278,7 @@ class Dashboard:
             temporary.write_text(json.dumps(candidate, ensure_ascii=False, indent=2), encoding="utf-8")
             temporary.replace(path)
             self.manual = candidate
-            if len(self.manual["segments"]) == 3:
+            if len(self.manual["segments"]) == len(manual_orientation.phases(self.manual)):
                 run_id = self.run_id
                 self.manual_timer = threading.Timer(manual_orientation.SEGMENT_SECONDS, self.finish_manual, args=(run_id,))
                 self.manual_timer.daemon = True

@@ -21,12 +21,12 @@
       <div class="field"><label for="cameraPort">Atom 相机串口</label><select id="cameraPort"><option value="">选择相机端口</option></select></div>
       <div class="field"><label for="tofPort">XIAO / ToF 串口</label><select id="tofPort"><option value="">选择 ToF 端口</option></select></div>
       <div class="field short"><label for="seconds">录制秒数</label><input id="seconds" type="number" min="3" max="300" step="1" value="20"></div>
-      <div class="buttons"><button id="refreshPorts" title="只枚举端口，不打开设备">刷新端口</button><button id="start" class="primary">开始并录制</button><button id="startGuide">方向检查（约 50 秒）</button><button id="startManual">上下检查（手动分段）</button><button id="stop" disabled>停止</button></div>
+      <div class="buttons"><button id="refreshPorts" title="只枚举端口，不打开设备">刷新端口</button><button id="start" class="primary">开始并录制</button><button id="startGuide">方向检查（约 50 秒）</button><button id="startManual">上下检查（手动分段）</button><button id="startCnh">CNH 近远对照（四步）</button><button id="stop" disabled>停止</button></div>
     </div><div class="subtle" style="margin-top:10px">点击开始后才会打开设备。到时自动结束，原始数据保存在本机。方向检查时保持设备固定，用书只遮住画面中央附近的一部分，不要盖满画面或碰到传感器窗口。</div></div>
     <div id="replayControls" role="tabpanel" aria-labelledby="replayTab" hidden><div class="control-row"><div class="field"><label for="runs">本机录制</label><select id="runs"><option value="">选择一段记录</option></select></div><div class="buttons"><button id="refreshRuns">刷新记录</button><button id="loadReplay" class="primary">打开回放</button><button id="play" disabled>播放</button></div></div><div class="replay-range"><input id="seek" type="range" min="0" max="0" value="0" step="1" aria-label="回放时间位置" disabled><span id="replayClock" class="clock">00:00.0 / 00:00.0</span></div></div>
   </section>
   <section id="guideBanner" class="guide-banner" aria-label="方向检查引导" hidden><div class="guide-top"><span id="guidePhase">方向检查</span><span id="guideClock" class="clock"></span></div><div id="guideInstruction" class="guide-instruction" aria-live="polite" aria-atomic="true"></div><div class="guide-note">左右上下均以屏幕相机画面为准；无需尺子。按提示移动书，设备保持固定。这一步只记录响应，不确认方向标定成功。</div></section>
-  <section id="manualBanner" class="guide-banner" aria-label="上下检查手动分段" hidden><div class="guide-top"><span id="manualPhase">上下检查</span><span id="manualClock" class="clock"></span></div><div id="manualInstruction" class="guide-instruction" aria-live="polite" aria-atomic="true"></div><button id="manualMark" disabled>已摆好，记录这一段</button><div id="manualCompleted" class="guide-note" style="margin-top:10px"></div><div class="guide-note">先看相机画面摆好，再点按钮；每段只需保持静止 6 秒。设备固定，上下以屏幕画面为准，书只挡中央附近的一部分，不碰窗口。全流程最多 180 秒，到时自动停止；记录不代表方向已标定。</div></section>
+  <section id="manualBanner" class="guide-banner" aria-label="上下检查手动分段" hidden><div class="guide-top"><span id="manualPhase">上下检查</span><span id="manualClock" class="clock"></span></div><div id="manualInstruction" class="guide-instruction" aria-live="polite" aria-atomic="true"></div><button id="manualMark" disabled>已摆好，记录这一段</button><div id="manualCompleted" class="guide-note" style="margin-top:10px"></div><div id="manualNote" class="guide-note">先看相机画面摆好，再点按钮；每段只需保持静止 6 秒。设备固定，上下以屏幕画面为准，书只挡中央附近的一部分，不碰窗口。全流程最多 180 秒，到时自动停止；记录不代表方向已标定。</div></section>
   <div class="workspace">
     <section class="panel"><div class="panel-head"><div><h2>RGB 画面</h2><p>AtomS3R-M12 · 原始 JPEG</p></div><div class="source-meta"><span id="cameraSeq">帧 —</span><span id="cameraAge" class="source-state">未接收</span></div></div><div id="cameraFrame" class="camera-frame"><div id="cameraPlaceholder" class="placeholder"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="12" width="36" height="27" rx="5"/><path d="M15 12l3-5h12l3 5"/><circle cx="24" cy="25" r="8"/></svg>等待相机画面<br><span style="font-size:11px">开始采集或打开已有记录</span></div><img id="cameraImage" alt="Atom 相机原始画面"><div class="stale-overlay">画面已过期 · 不是当前帧</div></div><div class="camera-foot"><span id="cameraCaption">尚无画面</span><span>不叠加未标定距离</span></div></section>
     <section class="panel"><div class="panel-head"><div><h2>ToF 区域读数</h2><p id="matrixShape">原始区域索引 · 单位 mm</p></div><div class="source-meta"><span id="tofSeq">帧 —</span><span id="tofAge" class="source-state">未接收</span></div></div><div class="tof-content"><div class="legend"><span><i class="swatch"></i>KNOWN <b id="knownCount">0</b></span><span><i class="swatch unknown"></i>UNKNOWN <b id="unknownCount">0</b></span><span><i class="swatch suspect"></i>SUSPECT <b id="suspectCount">0</b></span></div><div id="matrix" class="matrix" role="group" aria-label="ToF 区域；点击查看详情"></div><p class="matrix-note">点击区域查看原始值和 CNH。KNOWN 仅表示通过现有读数规则，不代表安全或距离已标定。此处是原始区域顺序，不代表相机画面方向。</p></div></section>
@@ -63,6 +63,7 @@ function controls() {
   $('start').disabled = actionBusy || recording;
   $('startGuide').disabled = actionBusy || recording;
   $('startManual').disabled = actionBusy || recording;
+  $('startCnh').disabled = actionBusy || recording;
   $('manualMark').disabled = actionBusy || !state?.manual?.active || !state.manual.can_mark || state.manual.recording_segment || state.mode!=='live' || !state.camera?.url || !state.tof?.cells?.length || state.camera.stale || state.tof.stale || imageFailed || pollError;
   $('stop').disabled = actionBusy || !recording;
   for (const id of ['cameraPort','tofPort','seconds','refreshPorts']) $(id).disabled = actionBusy || recording;
@@ -107,14 +108,18 @@ function renderManual(s, disconnected=false) {
   if(!manual)return;
   const active=manual.active && s.mode==='live' && !serviceClosed;
   const missing=!s.camera?.url || !s.tof?.cells?.length || s.camera.stale || s.tof.stale || imageFailed || disconnected || pollError;
-  const phases={baseline:'背景',up:'画面上侧',down:'画面下侧',done:'结束'};
+  const phases={baseline:'背景',up:'画面上侧',down:'画面下侧',background:'背景',foreground:'前景遮满',mixture:'半遮挡混合',return:'返回背景',done:'结束'};
+  const cnh=manual.profile==='cnh-components-manual-v1';
+  const title=manual.title || '上下检查';
+  $('manualBanner').setAttribute('aria-label',title+'手动分段');
+  setText('manualNote',cnh ? '设备和背景始终固定。先遮满，再用同一本书只做横向平移，保持书与设备的距离不变，露出半幅背景；不要碰传感器窗口。每次摆好后点击记录，保持静止 6 秒，共四步、最多 240 秒。记录不代表已分离近远回波。' : '先看相机画面摆好，再点按钮；每段只需保持静止 6 秒。设备固定，上下以屏幕画面为准，书只挡中央附近的一部分，不碰窗口。全流程最多 180 秒，到时自动停止；记录不代表方向已标定。');
   $('manualBanner').classList.toggle('interrupted',!active || missing);
-  setText('manualPhase',`上下检查 · ${phases[manual.phase] || manual.phase || '准备'}`);
+  setText('manualPhase',`${title} · ${phases[manual.phase] || manual.phase || '准备'}`);
   setText('manualClock',!active ? '已结束 / 已停止' : missing ? '数据暂不可用' : manual.recording_segment ? `本段剩余 ${Math.max(0,Math.ceil(Number(manual.remaining_s)||0))} 秒` : '摆好后再点，无需赶倒计时');
   const instruction=!active ? '分段检查已结束或停止，无需继续移动。' : missing ? '数据缺失或已过期，请先保持不动；暂不能开始新段或判断响应。' : manual.recording_segment ? '正在记录这一段，请保持设备和书静止。' : manual.instruction || '先摆好，确认后点击下面的按钮记录。';
   if($('manualInstruction').textContent!==instruction)setText('manualInstruction',instruction);
   const completed=(manual.completed || []).map(phase=>phases[phase] || phase);
-  setText('manualCompleted',completed.length ? `已完成记录：${completed.join('、')}。` : '已完成记录：暂无。');
+  setText('manualCompleted',`已完成 ${completed.length}/${manual.total || 3} 段：${completed.length ? completed.join('、') : '暂无'}。`);
   setText('manualMark',!active ? '分段已结束' : manual.recording_segment ? '正在记录，请保持静止' : '已摆好，记录这一段');
   $('manualMark').disabled=actionBusy || !active || missing || !manual.can_mark || manual.recording_segment;
 }
@@ -235,6 +240,12 @@ $('startManual').onclick=()=>action(async()=>{
   if(!camera_port||!tof_port)throw new Error('请分别选择相机与 ToF 的串口。');
   if(camera_port===tof_port)throw new Error('两路设备不能使用同一个串口。');
   await api('/api/start',{camera_port,tof_port,seconds:180,guide:'vertical-manual-v1'});render(await api('/api/state'));
+});
+$('startCnh').onclick=()=>action(async()=>{
+  const camera_port=$('cameraPort').value,tof_port=$('tofPort').value;
+  if(!camera_port||!tof_port)throw new Error('请分别选择相机与 ToF 的串口。');
+  if(camera_port===tof_port)throw new Error('两路设备不能使用同一个串口。');
+  await api('/api/start',{camera_port,tof_port,seconds:240,guide:'cnh-components-manual-v1'});render(await api('/api/state'));
 });
 $('manualMark').onclick=()=>action(async()=>{await api('/api/manual-mark',{});render(await api('/api/state'));});
 $('stop').onclick=()=>action(async()=>{await api('/api/stop',{});render(await api('/api/state'));await runs();});
