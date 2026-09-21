@@ -1,5 +1,12 @@
 # Bounded nearfield opportunity probes
 
+The subsequent [frozen +/-1cm transfer](../../../research/active/dtr-r0/nearfield/OPPORTUNITY_TRANSFER_RESULTS_20260921.md)
+uses `opportunity_transfer.py` without changing either component or prior. New
+348/1304 geometries are correlated derivatives of old layouts, not independent
+source confirmation. Shape union adds0TP/2FP over point; positive-priority adds
+8TP while retaining all fixed TP, but adds2FP/2false OUT. Both full transfer
+criteria fail; preserve the original consumed gains only in their original scope.
+
 These two analytical probes implement the shape and observation-choice ideas
 from the 2026-09-21 missed-opportunity review. Their models and observation laws
 are deliberately explicit synthetic assumptions. They are not production

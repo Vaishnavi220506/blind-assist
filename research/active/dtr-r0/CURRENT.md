@@ -1,3 +1,21 @@
+## Frozen opportunity transfer: useful positive gain with new errors (2026-09-21)
+
+[One frozen +/-1cm synthetic transfer](nearfield/OPPORTUNITY_TRANSFER_RESULTS_20260921.md)
+uses348 shape and1304 active-view layouts derived from consumed parents; no
+unused in-prior layouts existed. These are correlated same-generator geometries,
+not independent-source confirmation. Shape point84TP/4FP becomes union84TP/6FP:
+no new TP, two added FP. Active fixed504TP/4FP/2false OUT becomes positive-priority
+512TP/6FP/4false OUT, retaining all504fixed TP but adding four wrong commitments.
+Versus old adaptive, net+2TP conceals17gained/15lost TP and18lost correct negatives.
+The old four wrong shape OUT remain; eight shifted descendants give6wrong OUT,
+2UNKNOWN and0IN. Original off-grid/wall active descendants all64remain UNKNOWN.
+Both full transfer criteria fail; preserve original consumed component gains in
+their original scope, and retain this local-transfer diagnostic as COMPONENT.
+No method/bank/tolerance change, retuning, successor or runtime promotion. Four
+focused tests and independent saved-output audit PASS; old evidence unchanged.
+Local disposition and ledger303/unknown-terminal receipts retained; no resource
+remains allocated. New geometry can share old observations; report that boundary.
+
 ## Saved B/N disagreement: screening signal, binary-only budget failure (2026-09-21)
 
 [Completed posthoc diagnostic](nearfield/BRANCH_DISAGREEMENT_RESULTS_20260921.md)
