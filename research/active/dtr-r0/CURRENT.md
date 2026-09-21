@@ -1,3 +1,18 @@
+## Ordered spatial contrast: no added horizontal benefit (2026-09-21)
+
+[Matched ordered RGB comparison](nearfield/SPATIAL_STRUCTURE_RESULTS_20260921.md)
+reuses frozen 24-channel features with lossless zone/subcell spatial ordering.
+Same 65825-parameter U/G heads, initialization,1200 batches, optimizer and CUDA;
+only G's eight interval-relative geometry channels differ from U's zero ablation.
+On consumed1152-frame transfer, horizontal96-frame decisions are identical:
+15/43 true positives,2/4 timely events. Boundary hold U66/11/107 vs G68/9/105;
+Core173/44/0 vs173/45/0. Both fail the fixed cost/coverage criteria; G's extra
+horizontal TP is zero. Mark both exact recipes NEGATIVE_CONTROL and the geometry
+hypothesis NOT_SUPPORTED. This does not prove spatial pooling caused earlier
+misses or exclude other geometry representations. Existing A/B/R and UNKNOWN
+are unchanged; no threshold/fit retry, protected test or automatic successor.
+Local evidence and global index303/unknown-terminal receipts are retained.
+
 ## Corridor-relative representation: low-cost gain below coverage floor (2026-09-21)
 
 [One fixed representation pilot](nearfield/CORRIDOR_RELATIVE_RESULTS_20260921.md)

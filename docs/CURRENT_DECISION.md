@@ -1,3 +1,12 @@
+2026-09-21 [ordered spatial geometry contrast](../research/active/dtr-r0/nearfield/SPATIAL_STRUCTURE_RESULTS_20260921.md):
+One matched U/G comparison preserves ordered frozen RGB, with only eight
+interval-relative geometry channels added in G. Horizontal decisions are
+identical: 15/43 TP, 2/4 events. Boundary hold U66/11/107 vs G68/9/105;
+Core173/44/0 vs173/45/0. Both exceed transfer cost caps and fail coverage.
+Geometry NOT_SUPPORTED; both exact recipes NEGATIVE_CONTROL. A/B/R retained.
+No fit/cutoff retry, protected test, demo change or automatic successor.
+Local structured evidence and global ledger303/unknown-terminal receipts retained.
+
 2026-09-21 [corridor-relative representation](../research/active/dtr-r0/nearfield/CORRIDOR_RELATIVE_RESULTS_20260921.md):
 One fixed 60-feature interval-band/shared-max MLP gains Boundary hold14/5/159
 to78/6/95 on consumed1152-frame transfer; events4/16 to11/16, gain9/16layouts.
