@@ -1,3 +1,13 @@
+2026-09-21 [fixed-entry conditional hold](../research/active/dtr-r0/nearfield/CONDITIONAL_HOLD_RESULTS_20260921.md):
+Original score only, entry15.769264 frozen; selection-only keep15.535847 adds
+one internal Boundary frame but evaluation adds zero TP/FP. Core82/11/2 and
+Boundary16/0/68 exactly match original_current. Of68 Boundary misses,51 have
+no clip trigger,1 precedes the trigger,16 are reachable by continuation. Internal
+positive11.615569 versus exit negative14.757340 shows conflicting keep limits;
+Core exit15.453609 tightens the shared threshold. NEGATIVE_CONTROL for this
+specific fixed-entry/scalar-keep recipe; no threshold retry, new head or successor.
+A/demo unchanged. Four tests and independent audit PASS; global ledger303/unknown-terminal receipts retained.
+
 2026-09-21 [multi-zone RGB anchoring](../research/active/dtr-r0/nearfield/RGB_MULTIZONE_RESULTS_20260921.md):
 Fourteen consumed diagnostic frames (seven negative/Boundary pairs, three layouts)
 yield zero explained OUTSIDE negatives. Only two selection positives have the

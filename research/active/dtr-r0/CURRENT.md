@@ -1,3 +1,19 @@
+## Fixed-entry conditional hold: no transferred continuation gain (2026-09-21)
+
+[One separately authorized decoder contrast](nearfield/CONDITIONAL_HOLD_RESULTS_20260921.md)
+keeps original entry15.769264 and selects keep15.535847 on consumed selection
+layouts only. Selection gains one internal positive; evaluation matches every
+original_current flag (Core82/11/2, Boundary16/0/68). The12-frame gain over A
+belongs to the prior spatial supplement, not this decoder. Five unseeded events
+account for51 missed Boundary positives;1 precedes a seed and16 are reachable.
+The same selection event has an internal positive11.615569 below its exit
+negative14.757340; a Core exit15.453609 further binds the shared keep threshold.
+Close this original-score fixed-entry recipe as NEGATIVE_CONTROL; do not infer
+all temporal information is absent. Baseline, UNKNOWN and protected test remain
+unchanged. No entry/keep retry, training or automatic successor. Local evidence
+and global registration/inheritance failure receipts are retained. Four tests and
+independent audit PASS.
+
 ## Multi-zone RGB anchoring: insufficient coverage (2026-09-21)
 
 [One frozen diagnostic](nearfield/RGB_MULTIZONE_RESULTS_20260921.md) on seven
