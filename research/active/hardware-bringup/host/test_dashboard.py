@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from dashboard import ARTIFACTS, Dashboard, RunIndex, cell_view
+from orientation import cue, plan
 
 
 def tof(stamp, distance=200):
@@ -91,10 +92,21 @@ class DashboardTests(unittest.TestCase):
         app = Dashboard(self.root)
         with patch("dashboard.ports", return_value=[{"port": p, "vid": 12346} for p in ["COM5", "COM11"]]), patch("dashboard.subprocess.Popen") as launch:
             for payload in [{"camera_port": "COM5", "tof_port": "COM5"},
-                            {"camera_port": "COM11", "tof_port": "COM5", "seconds": "nan"}]:
+                            {"camera_port": "COM11", "tof_port": "COM5", "seconds": "nan"},
+                            {"camera_port": "COM11", "tof_port": "COM5", "seconds": 20, "guide": "orientation-v1"}]:
                 with self.assertRaises(ValueError):
                     app.start(payload)
             launch.assert_not_called()
+
+    def test_orientation_cues_use_host_clock_and_stop_immediately(self):
+        schedule = plan(100_000_000_000)
+        self.assertEqual(cue(schedule, 109_999_999_999, True)["phase"], "baseline")
+        self.assertEqual(cue(schedule, 110_000_000_000, True)["phase"], "left")
+        self.assertEqual(cue(schedule, 120_000_000_000, True)["phase"], "right")
+        stopped = cue(schedule, 120_000_000_000, False)
+        self.assertFalse(stopped["active"])
+        self.assertEqual(stopped["phase"], "stopped")
+        self.assertFalse(cue(schedule, 151_000_000_000, True)["active"])
 
 
 if __name__ == "__main__":

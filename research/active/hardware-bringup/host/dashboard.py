@@ -16,6 +16,7 @@ from urllib.parse import parse_qs, urlencode, urlsplit
 import uuid
 
 from capture import ports
+from orientation import plan as orientation_plan, cue as orientation_cue
 
 HERE = Path(__file__).resolve().parent
 ARTIFACTS = HERE.parents[3] / "artifacts.local" / "hardware-bringup"
@@ -182,6 +183,7 @@ class Dashboard:
         self.camera_port, self.tof_port = camera_port, tof_port
         self.run_id = None
         self.closing = False
+        self.guide = None
 
     def available_ports(self):
         return [{**p, "role_hint": "camera" if p["port"] == self.camera_port else
@@ -210,6 +212,11 @@ class Dashboard:
             seconds = float(payload.get("seconds", 20))
             if not math.isfinite(seconds) or not 3 <= seconds <= 300:
                 raise ValueError("录制时长须为 3–300 秒")
+            guide = payload.get("guide")
+            if guide not in (None, "orientation-v1"):
+                raise ValueError("未知引导类型")
+            if guide == "orientation-v1" and seconds != 50:
+                raise ValueError("方向检查固定为 50 秒")
             name = "dashboard-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ-") + uuid.uuid4().hex[:6]
             root = self.data_root / name
             stop = self.controls / (name + ".stop")
@@ -221,6 +228,11 @@ class Dashboard:
                 self.log.close()
             log = (self.controls / (name + ".log")).open("xb")
             try:
+                schedule = orientation_plan(time.monotonic_ns()) if guide else None
+                if schedule:
+                    schedule.update(run_id=name, camera_port=camera, tof_port=tof)
+                    with (self.controls / (name + ".orientation.json")).open("x", encoding="utf-8") as handle:
+                        json.dump(schedule, handle, ensure_ascii=False, indent=2)
                 process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT,
                                            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
             except Exception:
@@ -229,6 +241,7 @@ class Dashboard:
             self.process, self.log, self.stop_file = process, log, stop
             self.mode, self.current, self.run_id = "live", RunIndex(root), name
             self.started, self.seconds = time.monotonic(), seconds
+            self.guide = schedule
             return {"run_id": name, "status": "录制启动中"}
 
     def stop(self):
@@ -244,6 +257,7 @@ class Dashboard:
             if run_id not in {r["id"] for r in self.runs()}:
                 raise ValueError("未知录制目录")
             self.current, self.mode, self.run_id = RunIndex(self.data_root / run_id), "replay", run_id
+            self.guide = None
             self.current.refresh()
             return {"run_id": run_id, "status": "回放已载入"}
 
@@ -253,7 +267,7 @@ class Dashboard:
             state = {"mode": self.mode, "status": "等待选择录制或回放", "run_id": self.run_id,
                      "duration_ms": 0, "position_ms": 0, "camera": None, "tof": None,
                      "counts": {"known": 0, "unknown": 0, "suspect": 0}, "recording": None,
-                     "issues": [], "limits": LIMITS}
+                     "issues": [], "limits": LIMITS, "guide": None}
             if self.current is None:
                 return state
             self.current.refresh()
@@ -261,6 +275,8 @@ class Dashboard:
             duration = max(0, (end - start) / 1e6)
             if self.mode == "live":
                 now = time.monotonic_ns()
+                if self.guide:
+                    state["guide"] = orientation_cue(self.guide, now, active)
                 position = max(0, (now - start) / 1e6) if start else 0
                 state["status"] = "录制中" if active else "录制已结束，可选择回放"
                 state["recording"] = {"active": active,
