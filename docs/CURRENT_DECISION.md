@@ -1,3 +1,13 @@
+2026-09-21 [Core projection sensitivity](../research/active/dtr-r0/nearfield/CORE_PROJECTION_STRESS_RESULTS_20260921.md):
+One frozen consumed1152-frame check shifts reported boxes by +/-2 lattice
+pixels with ranges unchanged. Core173/33/0 becomes172/36/1 or172/64/1;
+16/16events remain, one.2s HEAD onset delay per sign. OUTSIDE FP0 becomes11/34.
+Both conditions pass inherited usefulness gates versus matching Calibration,
+but right-offset false-alert duration rises6.6 to12.8s versus nominal Core.
+Retain diagnostic COMPONENT, not calibration robustness or hardware evidence.
+A/demo, thresholds and protected test unchanged; no automatic successor.
+Global ledger303/unknown-terminal gap has local disposition and receipts.
+
 2026-09-21 [fixed-entry conditional hold](../research/active/dtr-r0/nearfield/CONDITIONAL_HOLD_RESULTS_20260921.md):
 Original score only, entry15.769264 frozen; selection-only keep15.535847 adds
 one internal Boundary frame but evaluation adds zero TP/FP. Core82/11/2 and

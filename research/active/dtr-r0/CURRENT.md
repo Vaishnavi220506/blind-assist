@@ -1,3 +1,17 @@
+## Core projection sensitivity: events survive with lateral FP cost (2026-09-21)
+
+[One frozen +/-2-pixel projection check](nearfield/CORE_PROJECTION_STRESS_RESULTS_20260921.md)
+reuses1152 consumed transfer frames and unchanged ranges. Nominal Core hold
+173/33/0 becomes left172/36/1 and right172/64/1; all16events remain, with one
+HEAD onset delayed.2s per sign. All added Core FP occur in OUTSIDE clips
+(0 to11/34), while the same-condition Calibration-relative usefulness gates
+still pass. Thus retained event coverage does not imply calibration-insensitive
+specificity. Zero-offset all1152 scores/decisions reproduce exactly. Retain a
+diagnostic COMPONENT, preserve A/demo and all old negatives; no offset/threshold
+retry, training, protected test, hardware claim or automatic successor. The
+user confirmed no connected hardware/measured inputs. Local evidence and global
+ledger303/unknown-terminal receipts are retained.
+
 ## Fixed-entry conditional hold: no transferred continuation gain (2026-09-21)
 
 [One separately authorized decoder contrast](nearfield/CONDITIONAL_HOLD_RESULTS_20260921.md)
