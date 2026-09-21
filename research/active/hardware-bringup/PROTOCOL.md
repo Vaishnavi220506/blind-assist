@@ -26,6 +26,19 @@
 
 ## 有效性与时间
 
+### Atom USB JPEG
+
+固件 `atom-usb-jpeg-v3-otg` 接收 ASCII `CAPTURE\n`，返回一行 JSON：
+`type=jpeg`、`seq`、`device_readout_us`、`width=640`、`height=480`、`bytes=N`；
+随后恰好 N 字节 JPEG，再跟一个换行。主机一次仅发出一个请求。
+`device_readout_us` 是取得帧缓冲之后的 MCU 时间，不是曝光时间。
+主机另外记录请求、头部接收、JPEG 最后字节接收的 monotonic 时间。
+这只建立单设备传输记录，没有建立与 XIAO 的时间映射。
+相机使用 USB-OTG CDC，主机加 `--usb-otg` 开启 DTR；它不控制相机曝光或硬件 GPIO。
+非 JPEG 的启动/错误行、异常字节和未完整收到的尾部保留在原始日志中。
+
+### ToF 有效性
+
 展示距离要求目标数 > 0、status=5、distance_mm > 0；其余显示 UNKNOWN。
 这是保守查看规则，原始状态 9 等其他结果并未从日志删除。
 CNH 全零、非有限值、尺寸不符、帧序号跳变、设备重启应在摘要中可见。

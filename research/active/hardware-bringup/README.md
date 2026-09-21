@@ -6,10 +6,11 @@
 既有实机日志的相对路径和校验值见 [证据索引](evidence-index.json)。
 本轮环境、编译与离线检查见 [验证记录](VALIDATION.md)。
 官方手册、数据手册及板级原理图见 [离线参考资料库](references/README.md)。
+Atom 本机图像、短采集结果和恢复说明见 [Atom 实机记录](LOCAL_ATOM_20260921.md)。
 
 ## 目录与边界
 
-- `firmware/`：任务自有的 I²C 探测、8×8 测距、4×4 CNH 固件及 Wire 适配层。
+- `firmware/`：I²C 探测、8×8 测距、4×4 CNH、独立 Atom USB 相机固件及 Wire 适配层。
 - `host/`：端口枚举、限时采集、离线回放验证和显示工具。
 - `prepare.ps1`、`build.ps1`：准备隔离环境、校验驱动依赖、只编译不刷写。
 - `vendor-lock.json`：用户提供的驱动文件指纹；第三方源码和固件数据块不进入 Git。
@@ -18,7 +19,7 @@
 
 电脑暂作开发与采集主机。目标分工：Atom 采 RGB，XIAO 采 ToF，手机接收与计算。
 两块主控先独立工作；相机和 ToF 最终需要固定相对位置、完成时间与空间标定。
-Wi-Fi 传输、新 ToF 手机适配、Atom 现机状态均未在本路线验证。
+Wi-Fi 传输、新 ToF 手机适配仍未在本路线验证。Atom 单独使用 USB JPEG 请求协议。
 
 ## 环境准备（不需要接硬件）
 
@@ -33,12 +34,15 @@ pwsh -File research/active/hardware-bringup/prepare.ps1 `
 pwsh -File research/active/hardware-bringup/build.ps1 -Sketch i2c_probe
 pwsh -File research/active/hardware-bringup/build.ps1 -Sketch tof_reader
 pwsh -File research/active/hardware-bringup/build.ps1 -Sketch tof_cnh
+pwsh -File research/active/hardware-bringup/build.ps1 -Sketch atom_camera
 ```
 
 这里复用已验证的 ESP32-S3 / 8 MB / DIO / hardware-CDC 编译配置。
 它的 FQBN 名称来自 M5AtomS3，但代码显式使用 XIAO GPIO5/6，未调用 M5 初始化，
 不使用 PSRAM。这不是已安装 Seeed 官方板级配置的声明。
 准备脚本不会安装或改变全局 Python 包；编译脚本不会打开串口或刷写设备。
+`atom_camera` 单独使用 M5AtomS3R 板型、8 MB Flash、OPI PSRAM，输出 VGA JPEG；
+它不使用 XIAO 的板型或接线，不启用 Wi-Fi，也不依赖 Atom 上连接 ToF。
 
 ## 采集与离线检查
 
@@ -61,6 +65,16 @@ $py = 'artifacts.local/hardware-bringup/venv/Scripts/python.exe'
 原始记录、状态、目标数、无效值和设备时间全部保留；不把无返回变成自由空间。
 CNH 解码保留原始整数及缩放因子，并注明公式来源，不能凭一张曲线认定多目标分离。
 在手机融合前，设备时钟只属于本设备；主机接收时间不是传感器曝光时间。
+
+Atom 已刷入本路线相机固件时，可运行：
+
+```powershell
+& $py research/active/hardware-bringup/host/atom_capture.py --port '<Atom串口>' --usb-otg --seconds 20 --output '<新目录>'
+```
+
+Atom 端口必须显式指定；两块 ESP32 同时连接时不要向 XIAO 发送相机命令。
+每次请求返回一张 JPEG，主机保留字节流、图像、序号、时间和解码检查结果。
+这是开发用 USB 串口相机协议，不是 UVC，也不表示手机 Wi-Fi 接入已完成。
 
 ## 固件与接线
 
