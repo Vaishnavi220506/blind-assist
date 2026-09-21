@@ -1,3 +1,12 @@
+2026-09-21 [ideal-association feasibility](../research/active/dtr-r0/nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md):
+NOT_EVALUABLE_WHOLE_TARGET_ORACLE. All1152 native hashes/source mask counts
+pass;12/13 lateral FP and118/118 Boundary rescues have unreturned target lattice
+samples. Reconstructed visible masks and winning-return intervals do not constrain
+whole-object unmeasured extent. No geometric classifier, fit or alert change ran.
+This is a limitation of the proposed diagnostic, not a negative RGB/input result.
+Retain coverage/provenance COMPONENT; A/B/R/U/G unchanged. Independent recount
+passes; local disposition/ledger303 receipts retained. Stop without successor.
+
 2026-09-21 [ordered spatial geometry contrast](../research/active/dtr-r0/nearfield/SPATIAL_STRUCTURE_RESULTS_20260921.md):
 One matched U/G comparison preserves ordered frozen RGB, with only eight
 interval-relative geometry channels added in G. Horizontal decisions are

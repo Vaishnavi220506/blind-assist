@@ -1,3 +1,16 @@
+## Ideal-association whole-target diagnosis: not evaluable (2026-09-21)
+
+[Source and coverage preflight](nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md)
+verifies1152 native hashes and reconstructed visible masks. Twelve of13 added
+lateral FP and all118 Boundary rescues have target samples outside the observed
+winning-return support. No interval may be copied to the remaining object extent;
+the reconstructed mask is not independent renderer instance truth. The proposed
+whole-target oracle lacks admissible depth constraints and stops NOT_EVALUABLE,
+not a negative result for RGB or full-input separability. No classifier, training,
+capture, threshold, hold or demo change. Keep coverage/provenance as COMPONENT,
+with independent recount and local disposition; existing ledger303/unknown-terminal
+gap remains. No automatic successor.
+
 ## Ordered spatial contrast: no added horizontal benefit (2026-09-21)
 
 [Matched ordered RGB comparison](nearfield/SPATIAL_STRUCTURE_RESULTS_20260921.md)
