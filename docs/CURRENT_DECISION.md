@@ -1,3 +1,12 @@
+2026-09-21 [corridor-relative representation](../research/active/dtr-r0/nearfield/CORRIDOR_RELATIVE_RESULTS_20260921.md):
+One fixed 60-feature interval-band/shared-max MLP gains Boundary hold14/5/159
+to78/6/95 on consumed1152-frame transfer; events4/16 to11/16, gain9/16layouts.
+Core173/33/0 becomes173/38/0. Added-cost caps pass, but45.09% Boundary recall
+misses frozen50% floor; all four HEAD-horizontal layouts remain wholly missed.
+NO_GO / exact-recipe NEGATIVE_CONTROL, preserving measured low-cost gains.
+No threshold/fit retry, default promotion, protected test or automatic successor.
+Independent audit and focused tests PASS; global ledger303 gap retains receipts.
+
 2026-09-21 [Core projection sensitivity](../research/active/dtr-r0/nearfield/CORE_PROJECTION_STRESS_RESULTS_20260921.md):
 One frozen consumed1152-frame check shifts reported boxes by +/-2 lattice
 pixels with ranges unchanged. Core173/33/0 becomes172/36/1 or172/64/1;

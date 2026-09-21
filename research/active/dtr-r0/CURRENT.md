@@ -1,3 +1,19 @@
+## Corridor-relative representation: low-cost gain below coverage floor (2026-09-21)
+
+[One fixed representation pilot](nearfield/CORRIDOR_RELATIVE_RESULTS_20260921.md)
+uses native RGB statistics in full-range-conditioned corridor query bands and a
+shared max MLP (3041 parameters), retaining original A/UNKNOWN and .2s hold.
+On consumed1152-frame transfer, Boundary hold14/5/159 becomes78/6/95;
+events4/16 to11/16, gains9/16layouts. Core173/33/0 becomes173/38/0, all added
+FP in one HEAD hanging-plane OUTSIDE clip. Added-cost caps pass, but45.09%
+recall misses the frozen50% floor; HEAD-horizontal0/43 across all four layouts.
+Detected Boundary onset delay reaches1.8s; five events remain wholly missed.
+NO_GO / NEGATIVE_CONTROL for this exact representation/fit/selection recipe,
+not a claim of no RGB information. A/demo retained; no retry, protected test,
+hardware claim or automatic successor. Five focused tests and independent audit
+PASS. Structured local disposition and global ledger303/unknown-terminal receipts
+are retained. User's current input scope remains simulation only.
+
 ## Core projection sensitivity: events survive with lateral FP cost (2026-09-21)
 
 [One frozen +/-2-pixel projection check](nearfield/CORE_PROJECTION_STRESS_RESULTS_20260921.md)
