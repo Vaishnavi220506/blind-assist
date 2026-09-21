@@ -30,7 +30,37 @@
       "summary_sha256": "9df6e4c690889d57f90027cf1a55086bf5977bdd18b6a91a4c0a54dcdeaaf2a9",
       "frames": 0,
       "claim": "I2C handshake failure before CNH configuration; CNH unverified"
+    },
+    {
+      "id": "local-first-20260921-175857",
+      "kind": "hardware_capture",
+      "raw_path": "artifacts.local/hardware-bringup/captures/local-first-20260921-175857/raw.bin",
+      "raw_sha256": "7b0bef6b7e89c3007f4a411606f912bf2fe2702028aa97229c747cfc6901e848",
+      "summary_path": "artifacts.local/hardware-bringup/captures/local-first-20260921-175857/summary.json",
+      "summary_sha256": "10f29119227280e830fb429520823505feac086900640582ae2d7e0659e63bf0",
+      "frames": 61,
+      "claim": "Real USB CNH readout; operator-positioned scene; no accuracy, multi-target or alert claim"
+    },
+    {
+      "id": "local-wall-20260921-175948",
+      "kind": "hardware_capture",
+      "raw_path": "artifacts.local/hardware-bringup/captures/local-wall-20260921-175948/raw.bin",
+      "raw_sha256": "150fffa8e5e78eb28032c182f114ab06a71cd8fe42ea444a862d6ecf77bb4e0d",
+      "summary_path": "artifacts.local/hardware-bringup/captures/local-wall-20260921-175948/summary.json",
+      "summary_sha256": "7a97625e6bd8390d2e0aeb662bf8b07250522599b52d915a6c0cb36a37888a66",
+      "frames": 102,
+      "claim": "Real USB CNH readout; operator-positioned scene; no accuracy, multi-target or alert claim"
+    },
+    {
+      "id": "local-foreground-20260921-180134",
+      "kind": "hardware_capture",
+      "raw_path": "artifacts.local/hardware-bringup/captures/local-foreground-20260921-180134/raw.bin",
+      "raw_sha256": "44ac5d1bad5c38480a3b2b4998955b96f6036a04a82db0dc71442f05dc015868",
+      "summary_path": "artifacts.local/hardware-bringup/captures/local-foreground-20260921-180134/summary.json",
+      "summary_sha256": "0ae589e97677f3c349838b0beea3bf607fbebb99af42bc6edd0108249546a12b",
+      "frames": 103,
+      "claim": "Real USB CNH readout; operator-positioned scene; no accuracy, multi-target or alert claim"
     }
   ],
-  "notes": "Existing session evidence. No new hardware capture during route preparation."
+  "notes": "Earlier evidence preserved. Three new local USB CNH captures on 2026-09-21; see LOCAL_CNH_20260921.md."
 }
