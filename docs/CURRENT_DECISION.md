@@ -1,18 +1,16 @@
-2026-09-21 [ideal-association diagnostic closure](../research/active/dtr-r0/nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md):
-NOT_EVALUABLE_WHOLE_TARGET_ORACLE closes this underspecified diagnostic only.
-Association constrains returned samples, not whole-object extent. Coverage gaps
-are not proof that a frame is undecidable or that Boundary rescues lack evidence.
-The original current supplement adds120TP (118 Boundary) and28FP (15 distance,
-13 depth-valid lateral); only17/120 rescues outrank the highest lateral FP.
-This consumed-data ranking conflict is not repaired by monotone calibration.
-Retain A/demo, UNKNOWN, A/B/R/U/G dispositions and coverage/provenance COMPONENT;
-local disposition and ledger303 receipts stand. End this diagnostic chain: no
-further coverage/whole-object oracle check or training follows this closure.
-Future algorithm work may use explicit shape priors, RGB predictions and 3D
-training supervision; test-time truth is not an input. Require a runnable new
-mechanism with deployment-available cues or explicit priors, evaluated at fixed
-FP cost for Boundary rescue, Core events and first-alert timing. The consumed
-16 layouts/1152 frames are not fresh validation. See the report's closure scope.
+2026-09-21 [regional ToF depth algorithm](../research/active/dtr-r0/nearfield/REGIONAL_DEPTH_RESULTS_20260921.md):
+One matched POINT/REGION native-depth-supervised fit per arm is runnable.
+Consumed1152-frame transfer: REGION adds0TP and1CoreFP; Boundary hold stays
+14/5/159,4/16events. POINT reaches22/5/151,6/16events, but adds6Core currentFP
+(cap5) and5segments(cap4). Both miss50% Boundary recall and8/16-layout breadth.
+Regional mechanism NOT_SUPPORTED; both exact recipes NEGATIVE_CONTROL.
+Core16/16events/onsets, A/UNKNOWN and all older B/R/U/G dispositions remain.
+Ten tests, independent audit and64-frame observation-only replay per arm pass.
+Native geometry is training supervision/evaluation only; no protected test.
+Keep code/checkpoints as evidence, no fit/threshold retry or automatic successor.
+The [whole-object oracle closure](../research/active/dtr-r0/nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md)
+remains scoped; this algorithm failure does not close RGB or obstacle research.
+Local disposition and existing ledger303/unknown-terminal receipts retained.
 
 2026-09-21 [ordered spatial geometry contrast](../research/active/dtr-r0/nearfield/SPATIAL_STRUCTURE_RESULTS_20260921.md):
 One matched U/G comparison preserves ordered frozen RGB, with only eight

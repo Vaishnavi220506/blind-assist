@@ -1,26 +1,21 @@
-## Whole-target oracle closed; model inference remains eligible (2026-09-21)
+## Regional ToF depth algorithm: no useful Boundary rescue (2026-09-21)
 
-[Source preflight and closure scope](nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md):
-NOT_EVALUABLE_WHOLE_TARGET_ORACLE. Return ownership and sampled distances do not
-establish whole-object extent; the mask is not independent instance truth.
-Twelve of13 lateral FP and all118 Boundary rescues have coverage gaps, but these
-counts prove neither undecidability nor unsupported rescues. Even the completely
-sampled lateral-error frame is not certified removable. The promised FP removal
-and TP retention quantities were not evaluated. Retain coverage/provenance
-COMPONENT and existing local disposition/ledger303 receipts.
-The current B supplement adds120TP (118 Boundary) and28FP (15 distance-window,
-13 depth-valid lateral). Only17/120 rescues exceed the highest lateral-FP score:
-consumed-data cross-layout ranking conflict remains beyond hold and calibration.
-Close this diagnostic chain without another coverage/oracle check or training;
-retain A/demo, UNKNOWN and every prior A/B/R/U/G disposition. RGB and obstacle
-research remain open. Future candidates must explain a new deployment-available
-cue or explicit prior for unmeasured regions, then provide a runnable comparison
-at fixed FP budget, measuring Boundary rescue, Core events and first-alert time.
-Shape assumptions, RGB predictions and training-only 3D supervision are eligible
-as model inference, not observed facts or test-time answers. Use isolated
-assessment; these16 consumed layouts/1152 frames cannot become fresh validation.
-Do not reopen stopped heads/representations by renaming them or require another
-whole-object geometric proof before a practical algorithm can be evaluated.
+[One matched POINT/REGION fit](nearfield/REGIONAL_DEPTH_RESULTS_20260921.md)
+predicts local depth distributions from raw RGB and public64 axial-Z ranges.
+The106537-parameter models differ only in the regional versus center soft-winner
+measurement loss; same native-depth supervision, initialization,1200batches and
+alert decoder. On consumed1152-frame transfer, REGION adds0TP and1CoreFP;
+Boundary hold remains14/5/159,4/16events. POINT gives22/5/151,6/16events, gains
+2/16layouts but adds6Core currentFP(cap5) and5segments(cap4). Both miss50%
+Boundary recall and8/16-layout breadth. Regional mechanism NOT_SUPPORTED;
+both exact recipes NEGATIVE_CONTROL. Core16/16events and onset times retained.
+Local occupancy IoU POINT38.70% / REGION37.11%; bin accuracy gain is not alert gain.
+Ten focused tests, independent seal/count/event audit and64-frame public-input
+replay per arm pass. Keep runnable code/checkpoints as evidence, A/demo, UNKNOWN
+and prior B/R/U/G unchanged. No protected test, fit/threshold retry or successor.
+The [whole-object oracle closure](nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md)
+remains scoped; model assumptions/predictions remain eligible for later justified
+research. Existing ledger303/unknown-terminal gap has local disposition/receipts.
 
 ## Ordered spatial contrast: no added horizontal benefit (2026-09-21)
 
