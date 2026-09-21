@@ -145,6 +145,68 @@
           "sha256": "9543b7db7e16b8bf8394980379bc8778b7cfa40315516e44be0ea72cad50f143"
         }
       ]
+    },
+    {
+      "id": "local-handheld-20260921",
+      "result": "BOTH_COLLECTORS_PASSED_WITH_RANGE_PLAUSIBILITY_CONCERN",
+      "camera_frames": 920,
+      "tof_frames": 205,
+      "cue_status": "cue delivered during capture at approximately 10s; actual action times, distances and angles unmeasured",
+      "range_concern": "42 raw zone readings across 22 frames are 1-3 mm with status 5; preserved and unresolved",
+      "files": [
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/manifest.json",
+          "sha256": "a54cfb4cebd3cc850c66cd7de067e3b778bc09a049efb493e3d15c4570edcc17"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/summary.json",
+          "sha256": "501fc8f5d603769acee3fcb7918a90c5c40ff12056ab396b67afa080c2a068ae"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/camera/serial.bin",
+          "sha256": "02bba67b5faf4cb9bab9a556e1753f4139a5397111f94cc3412e4da5c85b5110"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/camera/frames.jsonl",
+          "sha256": "fe6ec5e9abbbd0d0d3500afacc7c0499f41fc9e9f0df221f0123c615433f75cd"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/tof/raw.bin",
+          "sha256": "006e43c3dc8f252586b3b11ffbdd6ac59b09de2076c90204585905b09857fdf4"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/tof/frames.jsonl",
+          "sha256": "128182ddaa3fd014cb45398c87c6a1dac5e9edc38d4bb7447bd96fa606cf3681"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/summary.json",
+          "sha256": "f09e7bf7072cc23a2fc00d22584d0f86a2903ad378d23e3f9d4dbcf7e8e87f15"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/pairs.jsonl",
+          "sha256": "fff35f62b75985a965f78059df3d116aa8413dbb7bf0f86446be43ff714ca74e"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/tof-center-by-host-receipt.png",
+          "sha256": "cc2d66186a9d5157dd1ad1cf24e442cf8590b135e26b53a9a5e73555cbecd561"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/camera-samples.png",
+          "sha256": "9de2375da03f69f66e99c3a063ea3f21b7825f5732e70e78ddf5a60b5fe5f7d1"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/camera-samples-selection.json",
+          "sha256": "9f590484ae6390fb802e29047fd17c227460d68f34f48a686769ae92820a181b"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/raw-anomaly-audit.json",
+          "sha256": "7da179d650bd371bfb3402de24a478bcbc0c116c76182da37af3683dc897f043"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/inspect-handheld-20260921.py",
+          "sha256": "80400e9a11c55c72101f7f643eab682c4bfabbd4c37fcd046188e82dd1e46d28"
+        }
+      ]
     }
   ]
 }

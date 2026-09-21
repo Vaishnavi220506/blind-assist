@@ -9,6 +9,7 @@
 Atom 本机图像、短采集结果和恢复说明见 [Atom 实机记录](LOCAL_ATOM_20260921.md)。
 固定装配后的两路并行采集见 [并行记录](LOCAL_PAIR_20260921.md) 和
 [并行证据索引](pair-evidence-index.json)。
+无需尺子的手持靠近/退远检查见 [手持响应记录](LOCAL_HANDHELD_20260921.md)。
 
 ## 目录与边界
 
