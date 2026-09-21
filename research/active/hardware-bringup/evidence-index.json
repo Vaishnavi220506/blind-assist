@@ -1,0 +1,36 @@
+{
+  "schema": "hardware-bringup.evidence-index.v1",
+  "records": [
+    {
+      "id": "capture-initial",
+      "kind": "prior_hardware_capture",
+      "raw_path": "artifacts.local/work/tof-xiao-device-20260921/capture-initial/serial.txt",
+      "raw_sha256": "b3fa18ede786765236520fba3b71fc8a9ab1689c8d3a95a0519aaeac2c9bba23",
+      "summary_path": "artifacts.local/work/tof-xiao-device-20260921/capture-initial/summary.json",
+      "summary_sha256": "03c033565939071c54f6f9f55fd187bf3891298437ede25f79ab3cb3daa72d5d",
+      "frames": 81,
+      "claim": "USB sensor readout only; not accuracy or alert evidence"
+    },
+    {
+      "id": "capture-facing-target",
+      "kind": "prior_hardware_capture",
+      "raw_path": "artifacts.local/work/tof-xiao-device-20260921/capture-facing-target/serial.txt",
+      "raw_sha256": "357a8698d6222a6d38595a49d0dda04f2d8e6edf3247a6e11a66b8f6e937db79",
+      "summary_path": "artifacts.local/work/tof-xiao-device-20260921/capture-facing-target/summary.json",
+      "summary_sha256": "2833e57c683b09f78103ee05221293c9ad996854ebe5b5c24af30425a446b490",
+      "frames": 103,
+      "claim": "USB sensor readout only; not accuracy or alert evidence"
+    },
+    {
+      "id": "cnh-initial",
+      "kind": "prior_hardware_capture",
+      "raw_path": "artifacts.local/work/tof-xiao-device-20260921/cnh-initial/serial.txt",
+      "raw_sha256": "7b0f3dc0b65cf754c2b04d820812c7c57d787e055ac1e58dd8b0bb1dc104d122",
+      "summary_path": "artifacts.local/work/tof-xiao-device-20260921/cnh-initial/summary.json",
+      "summary_sha256": "9df6e4c690889d57f90027cf1a55086bf5977bdd18b6a91a4c0a54dcdeaaf2a9",
+      "frames": 0,
+      "claim": "I2C handshake failure before CNH configuration; CNH unverified"
+    }
+  ],
+  "notes": "Existing session evidence. No new hardware capture during route preparation."
+}

@@ -1,0 +1,84 @@
+# 独立实机接入路线
+
+本路线负责 AtomS3R-M12、XIAO ESP32-S3 + 多区 ToF、安卓手机之间的真实采集与连接。
+与避障模拟路线并行；不修改其模型、阈值、冻结数据、评测器或运行时默认行为。
+当前状态见 [CURRENT.md](CURRENT.md)，数据格式见 [PROTOCOL.md](PROTOCOL.md)。
+既有实机日志的相对路径和校验值见 [证据索引](evidence-index.json)。
+本轮环境、编译与离线检查见 [验证记录](VALIDATION.md)。
+官方手册、数据手册及板级原理图见 [离线参考资料库](references/README.md)。
+
+## 目录与边界
+
+- `firmware/`：任务自有的 I²C 探测、8×8 测距、4×4 CNH 固件及 Wire 适配层。
+- `host/`：端口枚举、限时采集、离线回放验证和显示工具。
+- `prepare.ps1`、`build.ps1`：准备隔离环境、校验驱动依赖、只编译不刷写。
+- `vendor-lock.json`：用户提供的驱动文件指纹；第三方源码和固件数据块不进入 Git。
+- `references/`：官方手册、数据手册、原理图的离线资料索引。
+- `artifacts.local/hardware-bringup/`：本机配置、虚拟环境、编译产物、采集结果。
+
+电脑暂作开发与采集主机。目标分工：Atom 采 RGB，XIAO 采 ToF，手机接收与计算。
+两块主控先独立工作；相机和 ToF 最终需要固定相对位置、完成时间与空间标定。
+Wi-Fi 传输、新 ToF 手机适配、Atom 现机状态均未在本路线验证。
+
+## 环境准备（不需要接硬件）
+
+需要 PowerShell 7、Python 3.10+、Arduino CLI、现有 m5stack ESP32 core 3.3.8，
+以及用户提供的 OA-5_6(VL53L7_8CX) 资料包。路径由本机参数传入，不提交到仓库。
+
+```powershell
+pwsh -File research/active/hardware-bringup/prepare.ps1 `
+  -VendorPackage '<资料包目录>' -ArduinoCli '<arduino-cli.exe>' `
+  -ArduinoData '<包含 packages 的 Arduino 数据目录>' `
+  -Python '<python.exe>' -InstallDependencies
+pwsh -File research/active/hardware-bringup/build.ps1 -Sketch i2c_probe
+pwsh -File research/active/hardware-bringup/build.ps1 -Sketch tof_reader
+pwsh -File research/active/hardware-bringup/build.ps1 -Sketch tof_cnh
+```
+
+这里复用已验证的 ESP32-S3 / 8 MB / DIO / hardware-CDC 编译配置。
+它的 FQBN 名称来自 M5AtomS3，但代码显式使用 XIAO GPIO5/6，未调用 M5 初始化，
+不使用 PSRAM。这不是已安装 Seeed 官方板级配置的声明。
+准备脚本不会安装或改变全局 Python 包；编译脚本不会打开串口或刷写设备。
+
+## 采集与离线检查
+
+以下命令从仓库根运行；`<新目录>` 使用 `artifacts.local/hardware-bringup/captures/`
+下一个尚不存在的目录。枚举不打开串口，自动选择遇到多个 Espressif 设备会停止。
+
+```powershell
+$py = 'artifacts.local/hardware-bringup/venv/Scripts/python.exe'
+& $py research/active/hardware-bringup/host/capture.py list-ports
+& $py research/active/hardware-bringup/host/capture.py capture --port auto --seconds 20 --output '<新目录>' --label 'wall'
+& $py research/active/hardware-bringup/host/capture.py replay --input '<serial.txt 或 raw.bin>' --output '<新目录>'
+& $py -m unittest discover -s research/active/hardware-bringup/host -p 'test_*.py'
+```
+
+实时矩阵用 `host/monitor.py`，参数与 capture 相同。CNH 绘图用
+`host/plot.py --input '<frames.jsonl>' --output '<新文件.png>' --label '<场景>'`。
+`--firmware '<固件.bin>'` 可记录预期固件哈希，但不冒充已从设备读回验证。
+回放不会扫描或打开串口；无有效帧或有异常时返回非零退出码并保留失败证据。
+
+原始记录、状态、目标数、无效值和设备时间全部保留；不把无返回变成自由空间。
+CNH 解码保留原始整数及缩放因子，并注明公式来源，不能凭一张曲线认定多目标分离。
+在手机融合前，设备时钟只属于本设备；主机接收时间不是传感器曝光时间。
+
+## 固件与接线
+
+XIAO D4/GPIO5 → SDA，D5/GPIO6 → SCL；GND 共地；INT/SYN 留空，使用轮询。
+当前初步读数来自 ToF VCC 接 XIAO 3V3。蓝板内部还有一级稳压器，供电余量待测。
+按所给原理图，外部 SDA/SCL 上拉跟随 VCC；不要直接将 VCC 改为 5V 而保留直连信号。
+调试时 USB 给主控供电；便携时规划两个 USB 输出分别给 Atom 与 XIAO 供电。
+
+刷写必须选定实物和端口，并先保留原始 Flash。当前机器无设备时只完成准备和编译。
+已编译的测距固件在 artifact 的 `build/tof_reader/`，CNH 候选在 `build/tof_cnh/`；
+本轮新构建尚未刷入实机。
+原相机程序备份与早期日志保留在原来的本地工作目录，不提交设备状态到 Git。
+
+## 下一次接线后的最小验收
+
+1. USB 完整断电后，确认唯一端口、I²C 0x29 和设备身份。
+2. CNH 初始化、输出块、16×24 原始数组、缩放值和帧序号通过检查。
+3. 分别采墙面及墙前物体；记录摆放条件，比较峰形及距离响应。
+4. 保存失败记录；握手失败时先定位供电/接线/残留状态，不推断 CNH 不支持。
+
+这轮不训练网络、不接入避障判决、不宣称精度或安全能力。连接就绪后再继续实机验收。

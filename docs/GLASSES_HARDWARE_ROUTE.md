@@ -1,5 +1,13 @@
 # 眼镜硬件接入路线
 
+## 独立实机准备路线
+
+AtomS3R-M12 + XIAO/多区 ToF + 手机的并行接入工作见
+[实机路线入口](../research/active/hardware-bringup/README.md) 和
+[当前接入状态](../research/active/hardware-bringup/CURRENT.md)。
+它独立保存固件、采集工具及证据，不修改避障模拟路线或 Android 默认行为。
+下文的旧 Atom + 单区 ToF4M 适配不能视作已支持多区 ToF/CNH。
+
 ## 当前边界
 
 Android App 中的“眼镜外界硬件连接”是统一外设入口。首个真实适配器为
