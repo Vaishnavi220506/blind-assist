@@ -207,6 +207,69 @@
           "sha256": "80400e9a11c55c72101f7f643eab682c4bfabbd4c37fcd046188e82dd1e46d28"
         }
       ]
+    },
+    {
+      "id": "local-static-check-20260921",
+      "result": "COLLECTION_HAS_ISSUES",
+      "camera_frames": 473,
+      "tof_frames": 102,
+      "scene": "User requested static rig facing wall, no measured distance; six uniform RGB samples visually stationary; physical window clearance not independently verified",
+      "issues": "Raw stream starts mid-JSON; 1 malformed first line, complete frame sequences continuous",
+      "range_concern": "10 status-5 target-present readings of 1-3 mm across 10 frames, only zones 0 and 8; 6 additional zero values; all have CNH maximum at bin 0",
+      "files": [
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/manifest.json",
+          "sha256": "cdde69b85ad7692c67daea8efe799d65b4def7b976fc5e4d4e1aa8ade6cb1f9f"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/summary.json",
+          "sha256": "7f86b2da83d6c9d94e9a34656e236773d05a172aa93bbf8c61e7be74ae2eddd8"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/camera/serial.bin",
+          "sha256": "c46076243b03915984eaf8a2a4c072d9672053b70048bbc36881c487370da3b6"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/camera/frames.jsonl",
+          "sha256": "f6b26fea5037f4ea9124855a078ee30caf34984755bfb500f9c03df16a48567b"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/tof/raw.bin",
+          "sha256": "0be739b2f4af9b95a7d41e1f3ee96d3df8ad257a13cd3363bd63601659562896"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/tof/frames.jsonl",
+          "sha256": "236991d790f447da8a30f2c0a3a22f4c516c94777ee0e1fbe61e2520983885c0"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/tof/issues.jsonl",
+          "sha256": "39f01590e1fefb1ae7c4c2bd42da79b59eb15a4691c30c94666a2c88db7ab64a"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/summary.json",
+          "sha256": "0b28a199a36845b72003f415e5ebd0ab0fd79fb98f7e8b3be8308456e2aeac13"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/pairs.jsonl",
+          "sha256": "dcabc4848d3977d09edd01ba15504e1aadab00fa47071fa21be44980323ce0a7"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/near-zero-audit.json",
+          "sha256": "ae03f4a244e615a06ece33d95d169ab7b724f7bf26c5417f135ac89e59b5ed75"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/tof-center-by-host-receipt.png",
+          "sha256": "75a8bd993fe915dd30688df55d4f18722c290b02ef0fe3f569eaa328a5c701dd"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/camera-samples.png",
+          "sha256": "1de8a53f7c9b4e707714db6677112a68a31970443d29c3a87cda584763253d49"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/camera-samples-selection.json",
+          "sha256": "df32c453724db3ec44a374b4fa6d7e97068f78f766f97ca6adec5288bde8b7e3"
+        }
+      ]
     }
   ]
 }
