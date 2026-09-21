@@ -1,3 +1,21 @@
+## Saved B/N disagreement: screening signal, binary-only budget failure (2026-09-21)
+
+[Completed posthoc diagnostic](nearfield/BRANCH_DISAGREEMENT_RESULTS_20260921.md)
+partitions A-excluded B_control/N outputs on the now-consumed1152-frame cohort.
+Boundary current common/B-only/N-only yield41/3,49/4,45/5 added TP/FP: each bucket
+alone exceeds the2-FP budget. All8fixed global binary retention masks are reported;
+only A alone passes every cost. No mask, cutoff, verifier or expert is trained/selected.
+Agreement still has real Core benefit: AND hold172/26/4 and16/16events versus
+A159/25/17 and15/16; Core costs pass. Boundary AND62/10/114 and10/16events fails
+current andheld budgets. Preserve this screening evidence and N's Core/HEAD
+improvement/B's BODY coverage; do not call Core universally solved or a partial
+gain a balanced upgrade. Layer labels remain evaluator strata, not routing inputs.
+This narrow result does not exclude continuous-score, public-input or temporal
+verification. A later method needs a justified within-pattern discriminator and
+different isolated validation data; no automatic successor starts. A/UNKNOWN and
+old B/N/R dispositions stay fixed. Diagnostic COMPONENT,4tests and independent
+arithmetic checks PASS; local inheritance/global ledger303 gap receipts retained.
+
 ## Fixed B with broader training data: partial gains, joint budget failure (2026-09-21)
 
 [Completed data-condition experiment](nearfield/DATA_COVERAGE_RESULTS_20260921.md)

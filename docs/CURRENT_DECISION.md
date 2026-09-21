@@ -1,3 +1,16 @@
+2026-09-21 [saved B/N disagreement diagnostic](../research/active/dtr-r0/nearfield/BRANCH_DISAGREEMENT_RESULTS_20260921.md):
+Consumed1152-frame posthoc partition, no refit/cutoff change. Boundary current
+common/B-only/N-only add41/3,49/4,45/5 TP/FP; each exceeds added-FP cap2.
+All8global memoryless binary retention masks reported; only A alone passes all
+costs. AND retains useful Core gain: hold159/25/17 to172/26/4, events15/16 to16/16,
+with Core costs passing. Boundary AND62/10/114 fails added FP5/cap4 and segments3/cap2;
+current FP3/cap2 already fails. No whole-fusion impossibility claim or mask selected.
+Core is not solved on wider geometries; retain N Core/HEAD gains and B BODY coverage.
+No new verifier/expert training: within-pattern separation needs independently
+justified public-input evidence and different validation layouts. A/UNKNOWN and
+all prior dispositions unchanged. Diagnostic COMPONENT;4tests and independent
+counts/event/cost checks pass; local inheritance and ledger303 receipts preserved.
+
 2026-09-21 [fixed-B broader-data result](../research/active/dtr-r0/nearfield/DATA_COVERAGE_RESULTS_20260921.md):
 One new3456-frame source,1728-frame fit and isolated1152-frame same-generator
 Development evaluation completed. N versus same-dev-calibrated old B preserves
