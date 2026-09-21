@@ -2,8 +2,8 @@
 
 ## Project
 
-BlindAssist is an Android research demo and thesis project, not a certified safety product. Effect comes first; major novelty is optional.
-Choose mature, combined, incremental or new methods by measured benefit, stability and cost. State contributions honestly.
+BlindAssist is an Android research demo and thesis project, not a certified safety product.
+Choose methods by measured benefit, stability and cost; bold hypotheses are welcome, novelty claims need evidence.
 
 Keep module ownership stable: `:app` shell/assets, `:feature:assist` runtime,
 `:core:assist` risk, `:core:vision` detection, `:core:device` adapters, and `:core:ui` UI.
@@ -21,23 +21,23 @@ Keep module ownership stable: `:app` shell/assets, `:feature:assist` runtime,
 5. Check `git status --short` before editing/staging; use
    `scripts/show_worktree_scope.ps1` only when ownership is unclear.
 
-Historical gates and failures apply to their tested scope, not the whole project.
-For a new hypothesis, state what the prior test ruled out, what changes, and what
-check could change the decision. Preserve route authority and consumed evidence
-limits; read archives or full logs only when needed for that decision.
+Historical gates apply to the tested scope. For a new hypothesis, explain what prior
+evidence rules out, what mechanism changes and what check could change the decision.
+Preserve route authority and consumed evidence; load history only as needed.
 
 ## Execution policy
 
-Default research mode is `EXPLORE`: one capability question and explanatory
-hypothesis, credible baseline, useful check, and decision for each outcome.
-Necessary coupled edits are allowed; use contrasts to resolve contribution.
-Use [research workflow](research/WORKFLOW.md) for experiments. Engineering fixes
-need no hypothesis or run registration. An experiment stop leaves other authorized
-delivery in scope, within its budget and evidence boundaries.
+In open-ended research or at a bottleneck, proactively consider different mechanisms,
+reframe the problem and offer unconventional hypotheses. Recommend the strongest
+direction with a rationale; idea generation needs no experiment registration.
+Default research mode is `EXPLORE`: select a capability question, hypothesis,
+credible baseline, useful contrast and outcome decisions. Bound tests, not ideas.
+Use [research workflow](research/WORKFLOW.md) for experiments; coupled edits are allowed.
+Engineering fixes need no hypothesis or registration. Experiment stops preserve
+other authorized work within the task's budget and evidence boundaries.
 
-In `EXPLORE`, choose routine details and complete authorized reversible work
-without repeated approval. Ask only for a consequential unresolved choice;
-continue independent work while awaiting the answer.
+In `EXPLORE`, choose details and complete authorized reversible work without repeated
+approval. Ask only for consequential unresolved choices; continue independent work.
 
 - disclosed consumed/curated Development data and controlled scenarios are allowed;
 - record a failure in the owning current/ledger when it changes a decision;
@@ -46,11 +46,10 @@ continue independent work while awaiting the answer.
 - missing deployment/safety evidence limits claims, not reversible experiments;
 - reused evidence may support disclosed Development, never fresh confirmation.
 
-Keep process only when its decision benefit or named risk justifies its cost;
-simplify ineffective local rules without adding another routine approval gate.
-Update the owning current only for changed decisions; undecided ideas stay in
-`idea.md`. Public data may enter internal research with provenance; public access
-grants no redistribution, promotion, consent, or license rights.
+Keep process proportionate to decision value or named risk; simplify ineffective rules.
+Update current only for changed decisions; persist undecided ideas in `idea.md` as needed.
+Public data needs provenance for internal research; access grants no redistribution,
+promotion, consent or license rights.
 
 Use `FINAL` only before protected blind/final access or a claim-critical paper
 number; follow [research governance](docs/formal/RESEARCH_GOVERNANCE.md). Use
