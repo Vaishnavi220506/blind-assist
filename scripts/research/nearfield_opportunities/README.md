@@ -1,5 +1,12 @@
 # Bounded nearfield opportunity probes
 
+[Boundary-pair information check](../../../research/active/dtr-r0/nearfield/BOUNDARY_SEPARABILITY_RESULTS_20260922.md)
+uses `boundary_separability.py` on90 new analytic pairs. Of58 initial aliases,
+38have an allowed separating action; the evaluator class-common ceiling is32
+versus12for all frozen selectors. Twenty pairs remain aliased across all poses.
+Most missed opportunities have no matching old hypothesis. These are information
+ceilings only; no new selector, source-aware action or expanded bank is admitted.
+
 The subsequent [frozen +/-1cm transfer](../../../research/active/dtr-r0/nearfield/OPPORTUNITY_TRANSFER_RESULTS_20260921.md)
 uses `opportunity_transfer.py` without changing either component or prior. New
 348/1304 geometries are correlated derivatives of old layouts, not independent

@@ -1,3 +1,20 @@
+## Boundary-pair information exists beyond frozen selector coverage (2026-09-22)
+
+[One fixed90pair check](nearfield/BOUNDARY_SEPARABILITY_RESULTS_20260922.md)
+uses180new same-generator boundary scenes. Of58initially identical pairs,
+38can separate under an allowed12cm action; one common action per initial
+observation class gives evaluator ceiling32 versus12for all frozen policies.
+This is not an implemented32-pair selector; the class oracle gains22and loses2
+versus fixed. Twenty pairs stay aliased across all5poses:14through quantization,
+6even in raw ray returns. Of26missed available pairs,20have no initial old-bank
+match; six share a background signature. Full180-scene opposite-label ambiguity
+is stricter than designated-pair separation:174initially mixed scenes have
+class-common82/per-case88resolved ceilings. No alert-accuracy or universal
+geometry guarantee follows. Retain diagnostic COMPONENT and original methods;
+no new selector, training, bank expansion or automatic successor. Four tests and
+independent900-view equation/count audit PASS; ledger303/unknown-terminal gap
+receipts retained, no allocated resources remain.
+
 ## Frozen opportunity transfer: useful positive gain with new errors (2026-09-21)
 
 [One frozen +/-1cm synthetic transfer](nearfield/OPPORTUNITY_TRANSFER_RESULTS_20260921.md)
