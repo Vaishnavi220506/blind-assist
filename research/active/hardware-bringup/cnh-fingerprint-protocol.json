@@ -1,0 +1,30 @@
+{
+  "schema": "hardware-bringup.cnh-fingerprint.v1",
+  "phase": "consumed-data retrospective mechanism diagnostic",
+  "run": "artifacts.local/hardware-bringup/paired/dashboard-20260921T125636Z-6735f2",
+  "markers": "artifacts.local/hardware-bringup/paired/.dashboard-control/dashboard-20260921T125636Z-6735f2.manual.json",
+  "rgb_adjudication": "artifacts.local/hardware-bringup/paired/dashboard-20260921T125636Z-6735f2-manual-review/rgb-adjudication.json",
+  "primary_zone": 0,
+  "context_zones": [4, 8, 12],
+  "reference_phase": "up",
+  "background_test_phase": "baseline",
+  "changed_scene_phase": "down",
+  "window": "unchanged middle four seconds of each six-second operator marker",
+  "reference": "per-bin median of signed normalized CNH; later phase, retrospective only",
+  "arms": {"full": [0, 24], "without_bin0": [1, 24]},
+  "score": "cosine similarity to same-zone reference; preserve signed values; no fit or threshold sweep",
+  "primary_arm": "without_bin0",
+  "one_second_blocks": 4,
+  "minimum_frames_per_block": 3,
+  "minimum_block_separation": 0.1,
+  "minimum_pairwise_auc": 0.9,
+  "decision": "SUPPORTED_FOR_RETROSPECTIVE_FINGERPRINT only if baseline primary zone is entirely scalar UNKNOWN, primary arm has all finite scores and four populated blocks in both test phases, minimum background block median minus maximum changed-scene block median >=0.1 and pairwise AUC >=0.9; otherwise NOT_SUPPORTED or NOT_EVALUABLE for missing evidence",
+  "stop": "one run of this fixed recipe; no alternative bin exclusion, threshold tuning, training, firmware change or new acquisition in this experiment",
+  "limits": [
+    "Zones selected after prior scalar/orientation review; input is consumed, not fresh confirmation.",
+    "Adjacent frames are dependent; AUC is descriptive, no independent-frame confidence interval.",
+    "RGB verifies global book placement; exact pixel-to-zone occupancy and measured distance are unavailable.",
+    "A later reference cannot be used as causal online history.",
+    "No distance recovery, new target, false-alarm operating point or obstacle benefit claim."
+  ]
+}
