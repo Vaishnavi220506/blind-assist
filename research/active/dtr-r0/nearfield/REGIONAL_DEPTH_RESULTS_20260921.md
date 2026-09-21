@@ -21,13 +21,18 @@ public64 axial-Z ranges/validity and camera rays. Native visible depth supplies
 TRAIN-only supervision; missing depth is masked, finite>=8m has an overflow
 class. Predicted geometry is an inference, not a measured surface certificate.
 
-The sole matched arm difference is the measurement-consistency operator:
+The sole matched arm difference is in the training-time measurement-consistency loss:
 REGION pools predicted depth mass over64 samples per zone; POINT uses one
 central sample. Both apply inverse-square energy weighting and a soft dominant
 bin constrained by the original public range interval. This differentiable
 surrogate is not the exact sensor likelihood or an observed depth histogram.
 Training also uses identical dense-depth CE and frame BCE. The same top16
 predicted corridor probabilities supply the current score; no scalar alert head.
+Thus this tests replacing center consistency with regional aggregate consistency
+under this network, supervision and readout. It does not compare two different
+inference fusion architectures. DELTAR's distribution encoding/attention fusion
+and richer input interface are not implemented by this loss substitution; its
+results neither describe this experiment nor guarantee a successful successor.
 
 One1200-step AdamW fit per arm used the same initialization and sampled batches,
 batch16, seed20260921, lr.001,wd.0001 and the final checkpoint. Training covers
@@ -41,6 +46,9 @@ Each output is A OR the new current score, followed by unchanged .2s one-frame
 hold. All existing A alerts and UNKNOWN values are preserved. The cutoff is
 selected solely on dev; POINT1.5939961672 and REGION2.9149248600. Identical budget
 rules do not mean identical realized FP counts or numerical score thresholds.
+Core retention follows from A OR the supplement with the same monotone hold;
+verification confirms this structural property, not an independent capability
+gain of the new model. Its contribution is additional rescue versus added cost.
 
 Counts below are TP / FP / FN on complete clips, including entry/exit negatives.
 
@@ -155,3 +163,34 @@ Both command receipts and the local disposition are retained without editing
 the global ledger. All task-owned execution processes have exited; checkpoints,
 prepared inputs and diagnostic evidence remain for reproduction. No paid worker,
 resident service, App/default change or automatic successor remains.
+
+## Research disposition after user review
+
+Pause this dense-depth-recovery-then-alert-aggregation branch. Close POINT and
+REGION without another diagnostic, loss/top-k/aggregation change or longer fit.
+The completed negative algorithm result is distinct from the previous oracle's
+NOT_EVALUABLE status. The training-loss contrast does not reject regional fusion
+as a principle or all RGB+ToF depth recovery, and that scope limit does not
+authorize a repair or renamed continuation of these recipes.
+
+Preserve the [earlier R result](CORRIDOR_RELATIVE_RESULTS_20260921.md) as useful
+partial research evidence under its original nonpromotion/NEGATIVE_CONTROL role.
+Its saved held working point improves Boundary14/5/159 to78/6/95, recall8.09%
+to45.09%, events4/16 to11/16 and gains9/16layouts. Boundary adds1FP, Core adds5FP
+(33 to38), with every added-cost cap passing. All four HEAD-horizontal layouts
+remain missed (0/43positive frames), five Boundary events are wholly missed,
+and detected-event first-alert delay reaches1.8s. These gains, costs and failure
+types should be presented together in research/defense material. Nonpromotion
+does not mean absence of research value or erase existing useful rescue.
+
+These are saved working points on the same consumed cohort, not equal-realized-FP
+comparisons or proof of general superiority. A remains the baseline; B/R retain
+their complete results and existing dispositions, without promotion or refitting.
+Prioritize task-level intrusion alerts in later research; dense recovery is an
+optional representation, not a required intermediate objective. A later experiment
+must introduce a genuinely different spatial cue or learning condition, such as
+coverage of different objects/layouts/backgrounds targeting the actual missed
+obstacles. This is an R&D priority, not proof that discriminative methods always
+beat depth reconstruction. The1152 consumed frames remain explanatory/replay
+evidence, never new independent confirmation. This update selects or starts no
+new experiment and changes no frozen protocol, checkpoint or prediction.

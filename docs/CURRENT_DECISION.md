@@ -1,16 +1,19 @@
-2026-09-21 [regional ToF depth algorithm](../research/active/dtr-r0/nearfield/REGIONAL_DEPTH_RESULTS_20260921.md):
-One matched POINT/REGION native-depth-supervised fit per arm is runnable.
-Consumed1152-frame transfer: REGION adds0TP and1CoreFP; Boundary hold stays
-14/5/159,4/16events. POINT reaches22/5/151,6/16events, but adds6Core currentFP
-(cap5) and5segments(cap4). Both miss50% Boundary recall and8/16-layout breadth.
-Regional mechanism NOT_SUPPORTED; both exact recipes NEGATIVE_CONTROL.
-Core16/16events/onsets, A/UNKNOWN and all older B/R/U/G dispositions remain.
-Ten tests, independent audit and64-frame observation-only replay per arm pass.
-Native geometry is training supervision/evaluation only; no protected test.
-Keep code/checkpoints as evidence, no fit/threshold retry or automatic successor.
-The [whole-object oracle closure](../research/active/dtr-r0/nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md)
-remains scoped; this algorithm failure does not close RGB or obstacle research.
-Local disposition and existing ledger303/unknown-terminal receipts retained.
+2026-09-21 [dense-depth alert branch paused](../research/active/dtr-r0/nearfield/REGIONAL_DEPTH_RESULTS_20260921.md):
+POINT/REGION completed a negative algorithm test, unlike the unevaluable oracle.
+Their sole matched change was center versus regional training consistency loss;
+no usable gain under this network/supervision/top16 readout. Both remain exact
+NEGATIVE_CONTROL. Pause dense recovery then alert aggregation; no extra diagnostic,
+loss/top-k/aggregation/longer-fit retry. Core retention is structural A OR retention.
+[Prior R](../research/active/dtr-r0/nearfield/CORRIDOR_RELATIVE_RESULTS_20260921.md)
+retains useful partial evidence: Boundary hold14/5/159 to78/6/95,4/16 to11/16
+events,9/16layouts gain, added Boundary/CoreFP1/5 within all cost caps.
+Its45.09% recall, HEAD-horizontal0/43, five missed events and max detected delay
+1.8s retain nonpromotion; no useful-rescue evidence is erased. Saved working
+points are not equal-realized-FP comparisons. A/UNKNOWN and B/R/U/G unchanged.
+Later research prioritizes task alerts via genuinely new spatial cues or learning
+coverage across objects/layouts/backgrounds, not mandatory dense depth recovery.
+The1152 consumed frames are not fresh confirmation. No experiment starts here;
+existing local dispositions and ledger303/unknown-terminal receipts remain.
 
 2026-09-21 [ordered spatial geometry contrast](../research/active/dtr-r0/nearfield/SPATIAL_STRUCTURE_RESULTS_20260921.md):
 One matched U/G comparison preserves ordered frozen RGB, with only eight

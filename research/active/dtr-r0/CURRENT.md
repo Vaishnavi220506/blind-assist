@@ -1,21 +1,27 @@
-## Regional ToF depth algorithm: no useful Boundary rescue (2026-09-21)
+## Dense-depth alert branch paused; partial R benefit retained (2026-09-21)
 
-[One matched POINT/REGION fit](nearfield/REGIONAL_DEPTH_RESULTS_20260921.md)
-predicts local depth distributions from raw RGB and public64 axial-Z ranges.
-The106537-parameter models differ only in the regional versus center soft-winner
-measurement loss; same native-depth supervision, initialization,1200batches and
-alert decoder. On consumed1152-frame transfer, REGION adds0TP and1CoreFP;
-Boundary hold remains14/5/159,4/16events. POINT gives22/5/151,6/16events, gains
-2/16layouts but adds6Core currentFP(cap5) and5segments(cap4). Both miss50%
-Boundary recall and8/16-layout breadth. Regional mechanism NOT_SUPPORTED;
-both exact recipes NEGATIVE_CONTROL. Core16/16events and onset times retained.
-Local occupancy IoU POINT38.70% / REGION37.11%; bin accuracy gain is not alert gain.
-Ten focused tests, independent seal/count/event audit and64-frame public-input
-replay per arm pass. Keep runnable code/checkpoints as evidence, A/demo, UNKNOWN
-and prior B/R/U/G unchanged. No protected test, fit/threshold retry or successor.
-The [whole-object oracle closure](nearfield/IDEAL_ASSOCIATION_RESULTS_20260921.md)
-remains scoped; model assumptions/predictions remain eligible for later justified
-research. Existing ledger303/unknown-terminal gap has local disposition/receipts.
+[Completed POINT/REGION experiment and user review](nearfield/REGIONAL_DEPTH_RESULTS_20260921.md):
+Only the training measurement-consistency loss differs: center sample versus
+regional aggregation, same network/supervision/top16 inference readout. REGION
+adds0TP/1CoreFP; POINT gives Boundary hold22/5/151,6/16events but fails coverage
+and Core current costs. Both exact recipes remain NEGATIVE_CONTROL. Pause this
+recover-dense-depth-then-alert branch without another diagnostic, loss/top-k/
+aggregation change or longer fit. Core event/onset retention follows from A OR
+plus unchanged hold; it is not independent new-model benefit. Regional fusion
+in general remains unrefuted; this does not authorize a renamed retry.
+[Earlier R](nearfield/CORRIDOR_RELATIVE_RESULTS_20260921.md) has useful partial
+research value: Boundary hold14/5/159 to78/6/95, recall8.09% to45.09%, events4/16
+to11/16, gains9/16layouts; Boundary/Core adds1/5FP and all cost caps pass.
+Retain original nonpromotion: HEAD-horizontal0/43 in all4layouts, five wholly
+missed events and1.8s maximum detected onset delay. Present gains/costs/failures
+together, not all nonpromoted recipes as ineffective. These saved working points
+on consumed data do not establish equal-realized-FP dominance.
+A/demo, UNKNOWN and existing B/R/U/G dispositions stay fixed. Later work should
+introduce new spatial cues or object/layout/background learning coverage for
+specific misses; direct task alerts have priority and dense depth is optional.
+This is an investment priority, not a universal architecture claim. The1152
+consumed frames remain explanatory/replay evidence, never fresh confirmation.
+No experiment starts here. Existing local dispositions/ledger303 receipts remain.
 
 ## Ordered spatial contrast: no added horizontal benefit (2026-09-21)
 
