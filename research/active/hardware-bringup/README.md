@@ -15,6 +15,7 @@ Atom 本机图像、短采集结果和恢复说明见 [Atom 实机记录](LOCAL_
 本机相机/ToF/CNH 界面、录制和回放的启动方法见 [硬件观测台](DASHBOARD.md)。
 最新连续采集、原始字节追查和串口释放结果见 [双路传输验收](TRANSPORT_20260921.md)。
 方向检查的屏幕引导、一次采集安排及判读边界见 [方向检查](ORIENTATION_CHECK.md)。
+仅补上下轴的“摆好再录”入口见 [手动分段上下检查](MANUAL_VERTICAL_CHECK.md)。
 
 ## 目录与边界
 

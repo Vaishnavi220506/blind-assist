@@ -17,6 +17,7 @@ import uuid
 
 from capture import ports
 from orientation import plan as orientation_plan, cue as orientation_cue
+import manual_orientation
 
 HERE = Path(__file__).resolve().parent
 ARTIFACTS = HERE.parents[3] / "artifacts.local" / "hardware-bringup"
@@ -184,6 +185,8 @@ class Dashboard:
         self.run_id = None
         self.closing = False
         self.guide = None
+        self.manual = None
+        self.manual_timer = None
 
     def available_ports(self):
         return [{**p, "role_hint": "camera" if p["port"] == self.camera_port else
@@ -213,10 +216,12 @@ class Dashboard:
             if not math.isfinite(seconds) or not 3 <= seconds <= 300:
                 raise ValueError("录制时长须为 3–300 秒")
             guide = payload.get("guide")
-            if guide not in (None, "orientation-v1"):
+            if guide not in (None, "orientation-v1", "vertical-manual-v1"):
                 raise ValueError("未知引导类型")
             if guide == "orientation-v1" and seconds != 50:
                 raise ValueError("方向检查固定为 50 秒")
+            if guide == "vertical-manual-v1" and seconds != 180:
+                raise ValueError("手动上下检查的会话上限固定为 180 秒")
             name = "dashboard-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ-") + uuid.uuid4().hex[:6]
             root = self.data_root / name
             stop = self.controls / (name + ".stop")
@@ -228,11 +233,16 @@ class Dashboard:
                 self.log.close()
             log = (self.controls / (name + ".log")).open("xb")
             try:
-                schedule = orientation_plan(time.monotonic_ns()) if guide else None
+                schedule = orientation_plan(time.monotonic_ns()) if guide == "orientation-v1" else None
+                manual = manual_orientation.plan(time.monotonic_ns()) if guide == "vertical-manual-v1" else None
                 if schedule:
                     schedule.update(run_id=name, camera_port=camera, tof_port=tof)
                     with (self.controls / (name + ".orientation.json")).open("x", encoding="utf-8") as handle:
                         json.dump(schedule, handle, ensure_ascii=False, indent=2)
+                if manual:
+                    manual.update(run_id=name, camera_port=camera, tof_port=tof)
+                    with (self.controls / (name + ".manual.json")).open("x", encoding="utf-8") as handle:
+                        json.dump(manual, handle, ensure_ascii=False, indent=2)
                 process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT,
                                            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
             except Exception:
@@ -242,10 +252,40 @@ class Dashboard:
             self.mode, self.current, self.run_id = "live", RunIndex(root), name
             self.started, self.seconds = time.monotonic(), seconds
             self.guide = schedule
+            self.manual = manual
             return {"run_id": name, "status": "录制启动中"}
+
+    def mark_manual(self):
+        with self.lock:
+            if not self.manual or not self.active():
+                raise ValueError("没有正在运行的手动上下检查")
+            state = self.state()
+            if any(not state[k] or state[k]["age_ms"] > 500 for k in ("camera", "tof")):
+                raise ValueError("请等两路实时数据恢复后再标记；当前缺数据或数据过期")
+            candidate = {**self.manual, "segments": list(self.manual["segments"])}
+            segment = manual_orientation.mark(candidate, time.monotonic_ns())
+            path = self.controls / (self.run_id + ".manual.json")
+            temporary = path.with_suffix(".tmp")
+            temporary.write_text(json.dumps(candidate, ensure_ascii=False, indent=2), encoding="utf-8")
+            temporary.replace(path)
+            self.manual = candidate
+            if len(self.manual["segments"]) == 3:
+                run_id = self.run_id
+                self.manual_timer = threading.Timer(manual_orientation.SEGMENT_SECONDS, self.finish_manual, args=(run_id,))
+                self.manual_timer.daemon = True
+                self.manual_timer.start()
+            return {"status": "开始记录 6 秒，请保持不动", "segment": segment}
+
+    def finish_manual(self, run_id):
+        with self.lock:
+            if self.run_id == run_id and self.manual:
+                self.stop()
 
     def stop(self):
         with self.lock:
+            if self.manual_timer:
+                self.manual_timer.cancel()
+                self.manual_timer = None
             if self.active():
                 self.stop_file.write_text("User requested graceful stop\n", encoding="utf-8")
             return {"status": "正在结束当前帧并保存" if self.active() else "录制已结束"}
@@ -258,6 +298,7 @@ class Dashboard:
                 raise ValueError("未知录制目录")
             self.current, self.mode, self.run_id = RunIndex(self.data_root / run_id), "replay", run_id
             self.guide = None
+            self.manual = None
             self.current.refresh()
             return {"run_id": run_id, "status": "回放已载入"}
 
@@ -267,7 +308,7 @@ class Dashboard:
             state = {"mode": self.mode, "status": "等待选择录制或回放", "run_id": self.run_id,
                      "duration_ms": 0, "position_ms": 0, "camera": None, "tof": None,
                      "counts": {"known": 0, "unknown": 0, "suspect": 0}, "recording": None,
-                     "issues": [], "limits": LIMITS, "guide": None}
+                     "issues": [], "limits": LIMITS, "guide": None, "manual": None}
             if self.current is None:
                 return state
             self.current.refresh()
@@ -277,6 +318,8 @@ class Dashboard:
                 now = time.monotonic_ns()
                 if self.guide:
                     state["guide"] = orientation_cue(self.guide, now, active)
+                if self.manual:
+                    state["manual"] = manual_orientation.status(self.manual, now, active)
                 position = max(0, (now - start) / 1e6) if start else 0
                 state["status"] = "录制中" if active else "录制已结束，可选择回放"
                 state["recording"] = {"active": active,
@@ -394,6 +437,8 @@ class Handler(BaseHTTPRequestHandler):
                 result = dashboard.start(payload)
             elif self.path == "/api/stop":
                 result = dashboard.stop()
+            elif self.path == "/api/manual-mark":
+                result = dashboard.mark_manual()
             elif self.path == "/api/replay":
                 result = dashboard.replay(payload.get("id"))
             elif self.path == "/api/shutdown":

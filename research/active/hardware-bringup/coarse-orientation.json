@@ -1,0 +1,19 @@
+{
+  "schema": "hardware-bringup.coarse-orientation.v1",
+  "scope": "Diagnostic axis orientation for the current fixed physical assembly and unchanged raw camera image only",
+  "status": "SUPPORTED_BY_LOCAL_DIRECTION_OBSERVATIONS",
+  "raw_zone_index": "4 * raw_row + raw_column",
+  "camera_image_axes": "x right, y down",
+  "raw_row_increases_toward": "camera image left",
+  "raw_column_increases_toward": "camera image up",
+  "display_zone_ids_top_to_bottom_left_to_right": [[15,11,7,3],[14,10,6,2],[13,9,5,1],[12,8,4,0]],
+  "horizontal_evidence_run": "paired/dashboard-20260921T124651Z-44eaec",
+  "vertical_evidence_run": "paired/dashboard-20260921T125636Z-6735f2",
+  "horizontal_evidence_scope": "Post-hoc RGB timing review of one guided recording",
+  "vertical_evidence_scope": "Operator-marked fixed windows, reviewed against RGB; one recording",
+  "pixel_projection": false,
+  "metric_calibration": false,
+  "exposure_synchronization": false,
+  "applied_to_runtime": false,
+  "invalidation": "Remounting, sensor rotation, camera mirror/flip or changed index configuration requires rechecking"
+}
