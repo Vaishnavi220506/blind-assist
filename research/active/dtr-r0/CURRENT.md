@@ -1,3 +1,17 @@
+## Numerical witness recovery exposes the remaining observation ambiguity (2026-09-22)
+
+[One consumed258query replay](nearfield/CANDIDATE_RECOVERY_RESULTS_20260922.md)
+reproduces every frozen baseline result and restores94of97rejectedIN witnesses
+using closed-query center projection with unchanged forward validation. No added
+MILP/observations and no classification gain. Fixed13view incomplete64to3;
+98of101UNKNOWN have explicit compatibleIN/OUT geometries. Keep34TP/45correctnegative,
+0FP/falseOUT and all79correct decisions.70failures arose at12decimaldecode,24at
+face-to-center arithmetic;3bin mismatches persist and are not retuned. Initial42
+witness cache recovers only3fixedpath cases. Prioritize new observable information
+over solver-only recognition expectations; retain numerical repair as COMPONENT,
+not App/alert promotion.13fixtures and independent saved-output auditPASS;
+rawvectors, failures, local inheritance and ledger303 receipts preserved.
+
 ## Saved-trace deepening: continuous path constraints and feedback attribution (2026-09-22)
 
 [Consumed180scene replay](nearfield/OBSERVATION_DEEPENING_RESULTS_20260922.md)

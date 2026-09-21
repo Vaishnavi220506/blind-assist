@@ -1,5 +1,12 @@
 # Bounded nearfield opportunity probes
 
+[Candidate recovery](../../../research/active/dtr-r0/nearfield/CANDIDATE_RECOVERY_RESULTS_20260922.md)
+captures raw solver vectors and restores94of97rejectedIN witnesses by closed-query
+projection plus unchanged full validation. Fixed13view numerical incompleteness
+falls64to3;98of101UNKNOWN now have explicit opposing geometries. All classifications
+remain unchanged. The initial42witness cache recovers only3fixed-path cases.
+This is numerical/ambiguity diagnosis, not recognition gain or relaxed sensing.
+
 [Saved-trace deepening](../../../research/active/dtr-r0/nearfield/OBSERVATION_DEEPENING_RESULTS_20260922.md)
 joins13view fixed-path measurements with continuous rectangle constraints:
 model-conditional correct decisions4to79/180, without observed wrong decisions,
