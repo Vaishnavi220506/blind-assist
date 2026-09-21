@@ -7,6 +7,8 @@
 本轮环境、编译与离线检查见 [验证记录](VALIDATION.md)。
 官方手册、数据手册及板级原理图见 [离线参考资料库](references/README.md)。
 Atom 本机图像、短采集结果和恢复说明见 [Atom 实机记录](LOCAL_ATOM_20260921.md)。
+固定装配后的两路并行采集见 [并行记录](LOCAL_PAIR_20260921.md) 和
+[并行证据索引](pair-evidence-index.json)。
 
 ## 目录与边界
 
@@ -75,6 +77,17 @@ Atom 已刷入本路线相机固件时，可运行：
 Atom 端口必须显式指定；两块 ESP32 同时连接时不要向 XIAO 发送相机命令。
 每次请求返回一张 JPEG，主机保留字节流、图像、序号、时间和解码检查结果。
 这是开发用 USB 串口相机协议，不是 UVC，也不表示手机 Wi-Fi 接入已完成。
+
+两路固件均已确认时，用显式端口并行采集，再离线检查：
+
+```powershell
+& $py -B research/active/hardware-bringup/host/pair_capture.py --camera-port '<Atom串口>' --tof-port '<XIAO串口>' --seconds 40 --output '<新采集目录>' --label '<实际场景>'
+& $py -B research/active/hardware-bringup/host/pair_inspect.py --input '<采集目录>' --output '<新检查目录>' --plot
+```
+
+两个目录均放在 `artifacts.local/hardware-bringup/paired/` 下，拒绝覆盖。
+配对只按同一电脑的接收时间取最近图片，不等同于曝光同步；UNKNOWN 保留为空缺。
+两块板的 USB VID 相同，端口归属仍需事先确认。主机工具不刷写固件。
 
 ## 固件与接线
 
