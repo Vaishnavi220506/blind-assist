@@ -1,5 +1,14 @@
 # Bounded nearfield opportunity probes
 
+[Initial-camera query](../../../research/active/dtr-r0/nearfield/INITIAL_RELATIVE_RESULTS_20260922.md)
+keeps shared sensor uncertainty but translates query constraints, labels and
+projection with the actual initial camera. Nominal51TP/46correct negatives and
+all97identities are unchanged; boundary60 remain UNKNOWN nominally. Range+2mm
+adds one correct negative over the full global-query model, already recognized
+by the old range-only control. All2340decisions match that simpler control here.
+Changed query truth/denominators are explicit; no current-camera runtime change,
+new observations, yaw or precision sweep.750MILPs, six tests and independent audit.
+
 [Boundary observability](../../../research/active/dtr-r0/nearfield/BOUNDARY_OBSERVABILITY_RESULTS_20260922.md)
 separates angular sampling, hypothetical precision and query-reference ambiguity.
 Coarse paired separation2/30 becomes5/30 under fixed positive yaw sweep, gaining4

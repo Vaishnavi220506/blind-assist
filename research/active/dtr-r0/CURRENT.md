@@ -1,3 +1,20 @@
+## Initial-camera-relative query: semantic consistency without nominal gain (2026-09-22)
+
+[One fixed375history replay](nearfield/INITIAL_RELATIVE_RESULTS_20260922.md) shifts
+query constraints, labels and INprojection to the actual initialcamera, retaining
+all shared sensor uncertainty, worlddomain and anchoredwall. Nominal51TP/46correct
+negatives keep all97old identities with0wrong and0gains; boundary60remainUNKNOWN.
+Range+2mm adds one correctnegative over fullglobalquery, already recognized by
+oldrange-only; all375queries/2340mapped decisions equal that simpler oldcontrol.
+Eight pose/combined arms each change30boundary truth labels; denominators80/100
+or100/80 are explicit, oldlabels untouched. Drift retains92-96nominalcorrect,
+without observedwrong;40globalgauge alternatives preserve relativequery labels
+but do not yield40recognitions. Retain explicit initial-reference COMPONENT,
+nominal-gain NEGATIVE_CONTROL; current-camera runtime and extra sensing untouched.
+750MILPs,0newobservations,6tests and independent math/receipt/containment/metric
+auditPASS. Local inheritance and ledger303/unknown-terminal receipts retained.
+No successor tuning, continuing process or paid resource.
+
 ## Boundary observability: sampling gains and query-reference ambiguity (2026-09-22)
 
 [Fixed angle/precision diagnostic](nearfield/BOUNDARY_OBSERVABILITY_RESULTS_20260922.md)
