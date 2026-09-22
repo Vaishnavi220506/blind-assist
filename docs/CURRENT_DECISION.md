@@ -1,3 +1,13 @@
+2026-09-22 [tiny-training spatial-query fitting check](../research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md):
+84 consumed train images,504queries. Original global FiLM179TP1FP1FN versus
+spatial180TP0FP0FN; both540/540same-imagequerypairs correct. Both learn
+image-dependent query answers; old fixed query ordering is not structurally
+unavoidable. Macro maskIoU0.484823/0.481782 fails fixed0.50gate, with no
+localization gain from the added branch. Exact package NEGATIVE_CONTROL;
+preserve query-fitting evidence and old negatives. New shared optimization
+and tiny cohort prevent historical-cause attribution. No dev/held access,
+threshold selection, video or App change. A/UNKNOWN remain unchanged.
+
 2026-09-22 [frozen-checkpoint train/dev diagnosis](../research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md):
 Both learned arms rank all six queries identically in every864train/288dev image:
 HEAD-left > centre > right > BODY-left > centre > right. Occupancy maskIoU0

@@ -1,3 +1,15 @@
+## Tiny-training query fitting: added spatial branch not retained (2026-09-22)
+
+[Fixed paired check](nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md):
+84 consumed train images,504queries. Original global FiLM179TP1FP1FN versus
+spatial180TP0FP0FN; both540/540same-imagequerypairs correct. Both learn
+image-dependent query answers; old fixed query ordering is not structurally
+unavoidable. Macro maskIoU0.484823/0.481782 fails fixed0.50gate, with no
+localization gain from the added branch. Exact package NEGATIVE_CONTROL;
+preserve query-fitting evidence and old negatives. New shared optimization
+and tiny cohort prevent historical-cause attribution. No dev/held access,
+threshold selection, video or App change. A/UNKNOWN remain unchanged.
+
 ## Inheritance batch: three useful components, no default replacement (2026-09-22)
 
 [Four frozen trials](nearfield/INHERIT_BATCH_RESULTS_20260922.md) are complete.

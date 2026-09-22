@@ -2131,6 +2131,16 @@
       "failure_signature": "Boundary remains mostlyUNKNOWN; no actual sensor precision, multiobject validity, event or safety evidence",
       "revisit_trigger": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
       "assignment_basis": "540coarse parity and true assignment checks,439queries878MILPs,4focused tests and saved seal metric witness audit"
+    },
+    {
+      "terminal_id": "terminal-query-spatial-fit-20260922",
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Fixed two-arm tiny-training joint query and mask fitting package; no alert or generalization authority.",
+      "retained_surface": "Train-only paired evidence that original FiLM can fit image-dependent query answers, with sealed spatial branch and remaining mask errors.",
+      "failure_signature": "Both arms pass query criteria but macro positive-mask IoU0.484823/0.481782 is below0.50; extra spatial branch has no localization gain.",
+      "revisit_trigger": "A separately justified changed mechanism addressing mask false area or boundary placement, with separately scoped evaluation.",
+      "assignment_basis": "Declared final-state fitting gate failed for both; retain useful query-fitting evidence without promoting the branch or reopening frozen trials."
     }
   ]
 }

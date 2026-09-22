@@ -5042,6 +5042,30 @@
         "research/active/dtr-r0/nearfield/INHERIT_PRECISION_PROTOCOL_20260922.md"
       ],
       "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb"
+    },
+    {
+      "id": "terminal-query-spatial-fit-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "evaluation_evidence"
+      ],
+      "status": "negative",
+      "decision": "SPATIAL_QUERY_BRANCH_NO_TINY_TRAIN_LOCALIZATION_GAIN",
+      "summary": "84 consumed training images: global179TP1FP1FN versus spatial180TP0FP0FN; both540/540querypairs correct. MaskIoU0.484823/0.481782 fails fixed0.50gate. Original structure can fit query answers under new shared optimization, but spatial branch does not improve localization.",
+      "successor_requires": "Separately justified mask-boundary or false-area mechanism with its own evaluation; preserve this fixed training-only package and all older negatives.",
+      "forbidden_repeats": [
+        "Tune cutoff, epoch, loss or cohort after this fixed final-state outcome",
+        "Treat tiny consumed train fitting as generalization or alert improvement",
+        "Claim invariant old query ordering is an unavoidable architecture property",
+        "Treat fixed depth hypotheses or model confidence as observed metric depth or free space"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_PROTOCOL_20260922.md"
+      ],
+      "commit": "1e585e02a95129d14a623a7cd1049fbe5c5178fd"
     }
   ]
 }

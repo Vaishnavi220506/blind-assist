@@ -2,14 +2,14 @@
   "schema_version": 3,
   "engine_version": "decision-v2-research-workflow",
   "generated_at": "2026-09-22",
-  "source_fingerprint": "c5782d1dc4696cf4bf0f12d4837dda060061c15c5347d71940738338b3a0960b",
+  "source_fingerprint": "8ea87ec106c9f943a8b6eba9e4694f526d8f249852f8813486f7aeac760a5f12",
   "counts": {
     "failure_layers": 13,
     "mechanisms": 272,
     "uses": 271,
-    "experiments": 432,
-    "current_terminals": 213,
-    "run_associations": 430
+    "experiments": 433,
+    "current_terminals": 214,
+    "run_associations": 431
   },
   "failure_layers": [
     {
@@ -25263,6 +25263,47 @@
       "search_text": "terminal-inherit-precision-20260922 obstacle-avoidance FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN 180consumed analytic geometries, fixed13views12cm path and initial-camera query: nominal correct97to109 with no losses; two constant-bias controls97to120and122. No observed wrong IN OUT. Nominal boundary recall5of30; all20far-boundary remainUNKNOWN. Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes COMPONENT_OR_CHALLENGER COMPONENT Hypothetical fine range information under bounded single-rectangle shared-bias initial-query model Precision information COMPONENT and validated dual-geometry witnesses; retain original modules and coarse evidence Boundary remains mostlyUNKNOWN; no actual sensor precision, multiobject validity, event or safety evidence Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes Treat1mm simulated bins as1mm hardware accuracy Treat numerical solver infeasibility as formal universal proof Tune paths, bias ranges or quantization using these consumed outcomes"
     },
     {
+      "kind": "current_terminal",
+      "id": "terminal-query-spatial-fit-20260922",
+      "status": "negative",
+      "question": "84 consumed training images: global179TP1FP1FN versus spatial180TP0FP0FN; both540/540querypairs correct. MaskIoU0.484823/0.481782 fails fixed0.50gate. Original structure can fit query answers under new shared optimization, but spatial branch does not improve localization.",
+      "baseline": null,
+      "change": "Separately justified mask-boundary or false-area mechanism with its own evaluation; preserve this fixed training-only package and all older negatives.",
+      "primary_metric": null,
+      "decision": "SPATIAL_QUERY_BRANCH_NO_TINY_TRAIN_LOCALIZATION_GAIN",
+      "report": "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "1e585e02a95129d14a623a7cd1049fbe5c5178fd",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified mask-boundary or false-area mechanism with its own evaluation; preserve this fixed training-only package and all older negatives.",
+      "forbidden_repeats": [
+        "Tune cutoff, epoch, loss or cohort after this fixed final-state outcome",
+        "Treat tiny consumed train fitting as generalization or alert improvement",
+        "Claim invariant old query ordering is an unavoidable architecture property",
+        "Treat fixed depth hypotheses or model confidence as observed metric depth or free space"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Fixed two-arm tiny-training joint query and mask fitting package; no alert or generalization authority.",
+      "retained_surface": "Train-only paired evidence that original FiLM can fit image-dependent query answers, with sealed spatial branch and remaining mask errors.",
+      "failure_signature": "Both arms pass query criteria but macro positive-mask IoU0.484823/0.481782 is below0.50; extra spatial branch has no localization gain.",
+      "revisit_trigger": "A separately justified changed mechanism addressing mask false area or boundary placement, with separately scoped evaluation.",
+      "assignment_basis": "Declared final-state fitting gate failed for both; retain useful query-fitting evidence without promoting the branch or reopening frozen trials.",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_PROTOCOL_20260922.md"
+      ],
+      "association_id": "ba-query-spatial-fit-20260922",
+      "search_text": "terminal-query-spatial-fit-20260922 obstacle-avoidance SPATIAL_QUERY_BRANCH_NO_TINY_TRAIN_LOCALIZATION_GAIN 84 consumed training images: global179TP1FP1FN versus spatial180TP0FP0FN; both540/540querypairs correct. MaskIoU0.484823/0.481782 fails fixed0.50gate. Original structure can fit query answers under new shared optimization, but spatial branch does not improve localization. Separately justified mask-boundary or false-area mechanism with its own evaluation; preserve this fixed training-only package and all older negatives. NEGATIVE_CONTROL  Fixed two-arm tiny-training joint query and mask fitting package; no alert or generalization authority. Train-only paired evidence that original FiLM can fit image-dependent query answers, with sealed spatial branch and remaining mask errors. Both arms pass query criteria but macro positive-mask IoU0.484823/0.481782 is below0.50; extra spatial branch has no localization gain. A separately justified changed mechanism addressing mask false area or boundary placement, with separately scoped evaluation. Tune cutoff, epoch, loss or cohort after this fixed final-state outcome Treat tiny consumed train fitting as generalization or alert improvement Claim invariant old query ordering is an unavoidable architecture property Treat fixed depth hypotheses or model confidence as observed metric depth or free space"
+    },
+    {
       "kind": "experiment",
       "id": "dtr-r0",
       "status": "active",
@@ -34698,6 +34739,28 @@
         "evaluation_evidence": 3
       },
       "search_text": "inherit-precision-20260922 Does finer simulated range information become useful relative-query decisions under unchanged shared bias? Sealed100mm quantized relative-query decisions on identical histories One fixed1mm analog export and corresponding existing shared-bias inference constraints Correct singleton IN OUT gained and lost, wrong decisions, UNKNOWN by boundary stratum FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md Consumed analytic bias-drift180geometries and initial-relative baselines; three fixed conditions"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-query-spatial-fit-20260922",
+      "status": "archived",
+      "question": "Can explicit ray-query spatial conditioning fit query-dependent localization on a fixed tiny training cohort?",
+      "baseline": "Original global FiLM forward with matched initialization, training objective, batches and budget.",
+      "change": "Add zero-initialized768weight projection of24fixed ray-query geometry channels before decoder; training-only84image paired check.",
+      "primary_metric": "Fixed query precision recall and pair order >=0.95 plus macro positive-maskIoU>=0.50.",
+      "decision": "NEITHER_PACKAGE_FITS; query answers fit in both, spatial branch no mask localization gain; no held access.",
+      "report": "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md",
+      "source": "ue-query-occupancy-20260922-consumed-training",
+      "commit": "1e585e02a95129d14a623a7cd1049fbe5c5178fd",
+      "association_id": "ba-query-spatial-fit-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 6,
+        "runtime_infrastructure": 3
+      },
+      "search_text": "ba-query-spatial-fit-20260922 Can explicit ray-query spatial conditioning fit query-dependent localization on a fixed tiny training cohort? Original global FiLM forward with matched initialization, training objective, batches and budget. Add zero-initialized768weight projection of24fixed ray-query geometry channels before decoder; training-only84image paired check. Fixed query precision recall and pair order >=0.95 plus macro positive-maskIoU>=0.50. NEITHER_PACKAGE_FITS; query answers fit in both, spatial branch no mask localization gain; no held access. research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md ue-query-occupancy-20260922-consumed-training"
     }
   ],
   "associations": [
@@ -34761,6 +34824,21 @@
         "artifacts.local/evidence/ba-query-occupancy-diagnostic-20260922/prediction-seal.json"
       ],
       "decision_id": "terminal-query-occupancy-diagnostic-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-query-spatial-fit-20260922",
+      "use_ids": [],
+      "protocol_id": "query-spatial-fit-20260922",
+      "code_revision": "1e585e02a95129d14a623a7cd1049fbe5c5178fd",
+      "input_fingerprint": "c907b79e4b89dc9c7d125684f2615ce5fb8c2ea6ae97e5e3bd9ed2735905ffa0",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-query-spatial-fit-20260922/result.json",
+        "artifacts.local/evidence/ba-query-spatial-fit-20260922/prediction-seal.json",
+        "artifacts.local/evidence/ba-query-spatial-fit-20260922/independent-audit.json"
+      ],
+      "decision_id": "terminal-query-spatial-fit-20260922",
       "source_rows": 1
     },
     {
