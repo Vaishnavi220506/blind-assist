@@ -1,3 +1,19 @@
+## Retained A operating scope: broader-layout stability not established (2026-09-22)
+
+[Consumed two-cohort scope audit](nearfield/OPERATING_SCOPE_RESULTS_20260922.md)
+replays2304existing frames at nominal/left/right projection with unchanged A.
+Actual Core positive target fronts span2.294-3.000m; the0.3-3m query definition
+does not establish closer-range coverage. Nominal original173/33/0,16/16events
+becomes159/25/17,15/16on broader layouts. A1.124mwide,7.6cmhigh HEAD-horizontal
+object intruding13.1cm is wholly missed. Broader right shift165/63/11 detects16/16
+but has0.6s onset and58.33%minimum coverage; all three broader conditions fail
+historical Core usefulness. Nominal FP are range-entry/exit errors; shifts add
+OUTSIDE FP. Broader nominal UNKNOWN681/768 includes97alerts and584silent frames;
+silence never establishes clear space. Retain A and diagnostic COMPONENT only.
+Public replay nominal parity2304/2304; independent saved-output auditPASS and
+geometry-label parity2304/2304. No training/capture/App change or successor;
+local inheritance and ledger303/unknown-terminal receipts retained.
+
 ## Initial-camera-relative query: semantic consistency without nominal gain (2026-09-22)
 
 [One fixed375history replay](nearfield/INITIAL_RELATIVE_RESULTS_20260922.md) shifts
