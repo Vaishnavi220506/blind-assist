@@ -80,6 +80,106 @@
       "evidence": "research/active/dtr-r0/nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md",
       "blocked_reason": "Mixed public/UE source bundle. UE500 derives from BODY-query5k, not an independent source; admit a specific subset first.",
       "allowed_inputs": []
+    },
+    {
+      "locator": "unreal/BlindAssistStreetLab",
+      "source_family": "ue-streetlab-source-material",
+      "evidence_status": "source_material",
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {
+          "relative_path": "Content/StreetLab",
+          "role": "configuration"
+        },
+        {
+          "relative_path": "BlindAssistStreetLab.uproject",
+          "role": "configuration"
+        }
+      ]
+    },
+    {
+      "locator": "evidence/ba-query-occupancy-20260922",
+      "source_family": "ue-query-occupancy-20260922",
+      "evidence_status": "diagnostic",
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {
+          "relative_path": "plan",
+          "role": "configuration"
+        }
+      ]
+    },
+    {
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {
+          "relative_path": "observations",
+          "role": "observation"
+        },
+        {
+          "relative_path": "evaluator",
+          "role": "evaluator"
+        },
+        {
+          "relative_path": "receipt.json",
+          "role": "configuration"
+        },
+        {
+          "relative_path": "launch-receipt.json",
+          "role": "configuration"
+        },
+        {
+          "relative_path": "process-release.json",
+          "role": "configuration"
+        }
+      ],
+      "locator": "evidence/ba-query-occupancy-20260922-capture",
+      "evidence_status": "diagnostic",
+      "source_family": "ue-query-occupancy-20260922"
+    },
+    {
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {
+          "relative_path": ".",
+          "role": "configuration"
+        }
+      ],
+      "locator": "evidence/ba-query-occupancy-20260922-fit",
+      "evidence_status": "diagnostic",
+      "source_family": "ue-query-occupancy-20260922"
+    },
+    {
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {
+          "relative_path": ".",
+          "role": "evaluator"
+        }
+      ],
+      "locator": "evidence/ba-query-occupancy-20260922-predictions",
+      "evidence_status": "diagnostic",
+      "source_family": "ue-query-occupancy-20260922"
+    },
+    {
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {
+          "relative_path": "observations",
+          "role": "observation"
+        },
+        {
+          "relative_path": "labels",
+          "role": "evaluator"
+        },
+        {
+          "relative_path": "materialization.json",
+          "role": "configuration"
+        }
+      ],
+      "locator": "evidence/ba-query-occupancy-20260922-prepared",
+      "evidence_status": "diagnostic",
+      "source_family": "ue-query-occupancy-20260922"
     }
   ]
 }
