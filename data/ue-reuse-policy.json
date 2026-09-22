@@ -3,6 +3,52 @@
   "description": "Reviewed input scopes, not inferred permission from directory names. Unlisted bundles need a scoped contract before governed use.",
   "contracts": [
     {
+      "locator": "work/ba-bias-drift-20260922",
+      "source_family": "analytic-bias-drift-20260922",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/INHERIT_PRECISION_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {"relative_path": "run-v1/observations.json", "role": "evaluator"},
+        {"relative_path": "run-v1/source.json", "role": "evaluator"},
+        {"relative_path": "run-v1/selections.json", "role": "evaluator"}
+      ]
+    },
+    {
+      "locator": "work/ba-initial-relative-20260922",
+      "source_family": "analytic-bias-drift-20260922",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/INITIAL_RELATIVE_RESULTS_20260922.md",
+      "allowed_inputs": [{"relative_path": "run-v1/predictions.json", "role": "evaluator"}]
+    },
+    {
+      "locator": "evidence/ba-inherit-multireturn-20260922",
+      "source_family": "ue-query-occupancy-20260922",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_PROTOCOL_20260922.md",
+      "allowed_inputs": [{"relative_path": "plan", "role": "configuration"}]
+    },
+    {
+      "locator": "evidence/ba-inherit-multireturn-20260922-observations",
+      "source_family": "ue-query-occupancy-20260922",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {"relative_path": "public", "role": "observation"},
+        {"relative_path": "private", "role": "evaluator"},
+        {"relative_path": "result.json", "role": "configuration"}
+      ]
+    },
+    {
+      "locator": "evidence/ba-inherit-multireturn-20260922-predictions",
+      "source_family": "ue-query-occupancy-20260922",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {"relative_path": "public", "role": "observation"},
+        {"relative_path": "result.json", "role": "configuration"}
+      ]
+    },
+    {
       "locator": "work/ba-core-transfer-20260920",
       "source_family": "ue-core-transfer-20260920",
       "evidence_status": "development_consumed",
