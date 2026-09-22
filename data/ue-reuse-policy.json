@@ -3,6 +3,60 @@
   "description": "Reviewed input scopes, not inferred permission from directory names. Unlisted bundles need a scoped contract before governed use.",
   "contracts": [
     {
+      "locator": "evidence/ba-local-transfer-20260922",
+      "source_family": "ue-local-transfer-20260922",
+      "evidence_status": "source_material",
+      "evidence": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md",
+      "allowed_inputs": [{"relative_path": "plan", "role": "configuration"}]
+    },
+    {
+      "locator": "evidence/ba-local-transfer-20260922-capture",
+      "source_family": "ue-local-transfer-20260922",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {"relative_path": "observations", "role": "observation"},
+        {"relative_path": "evaluator", "role": "evaluator"},
+        {"relative_path": "receipt.json", "role": "configuration"},
+        {"relative_path": "launch-receipt.json", "role": "configuration"},
+        {"relative_path": "process-release.json", "role": "configuration"}
+      ]
+    },
+    {
+      "locator": "evidence/ba-local-transfer-20260922-prepared",
+      "source_family": "ue-local-transfer-20260922",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md",
+      "allowed_inputs": [
+        {"relative_path": "observations", "role": "observation"},
+        {"relative_path": "labels", "role": "evaluator"},
+        {"relative_path": "materialization.json", "role": "configuration"}
+      ]
+    },
+    {
+      "locator": "evidence/ba-local-transfer-20260922-predictions",
+      "source_family": "ue-local-transfer-20260922",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md",
+      "allowed_inputs": [{"relative_path": ".", "role": "evaluator"}]
+    },
+    {
+      "locator": "evidence/ba-inherit-spatial-20260922-run",
+      "source_family": "ue-query-occupancy-20260922",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+      "allowed_inputs": [
+        {"relative_path": "raw.pkl", "role": "configuration"},
+        {"relative_path": "local.pkl", "role": "configuration"},
+        {"relative_path": "selection.json", "role": "configuration"},
+        {"relative_path": "model-seal.json", "role": "configuration"},
+        {"relative_path": "freeze.json", "role": "configuration"},
+        {"relative_path": "feature-seal.json", "role": "configuration"},
+        {"relative_path": "source-snapshot", "role": "configuration"},
+        {"relative_path": ".", "role": "evaluator"}
+      ]
+    },
+    {
       "locator": "work/ba-bias-drift-20260922",
       "source_family": "analytic-bias-drift-20260922",
       "evidence_status": "development_consumed",
