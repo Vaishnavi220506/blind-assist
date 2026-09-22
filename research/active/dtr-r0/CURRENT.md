@@ -1,3 +1,21 @@
+## Boundary observability: sampling gains and query-reference ambiguity (2026-09-22)
+
+[Fixed angle/precision diagnostic](nearfield/BOUNDARY_OBSERVABILITY_RESULTS_20260922.md)
+reuses180consumed geometries,13views/12cm path and adds known5.625degree yaw.
+Coarse paired separation2/30 becomes5/30primary,4/30reverse; both lose one old pair.
+Hypothetical1mm quantization gives18/30fixed,20/30primary; all10far pairs separate
+only under fine quantization. These are observation differences, not TP/FP gains.
+All40lateral cases retain opposite-label common-X-translation witnesses under
+the fixed-global query, all3yaw schedules and both quantizers. More angles/range
+resolution cannot break that coordinate symmetry within the declared model.
+The adopted camera-relative corridor is a different query: common translation
+preserves labels for all40saved witnesses. Do not infer a need for submillimetre
+absolute-world localization; clarify initial/current reference camera before
+new inference. Relative-pose and sensor-extrinsic errors do not automatically
+cancel. Old labels/results unchanged.5tests,2independent audits and saved semantic
+checkPASS;0MILP,56160base and12480counterexample rays. Local inheritance and ledger
+block receipts retained, no further sweep/model, persistent or paid resources.
+
 ## Frozen model under slow drift: finite tolerance, boundary information gap (2026-09-22)
 
 [One new-instance drift pilot](nearfield/BIAS_DRIFT_RESULTS_20260922.md) uses180

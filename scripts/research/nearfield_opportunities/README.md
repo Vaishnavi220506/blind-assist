@@ -1,5 +1,14 @@
 # Bounded nearfield opportunity probes
 
+[Boundary observability](../../../research/active/dtr-r0/nearfield/BOUNDARY_OBSERVABILITY_RESULTS_20260922.md)
+separates angular sampling, hypothetical precision and query-reference ambiguity.
+Coarse paired separation2/30 becomes5/30 under fixed positive yaw sweep, gaining4
+but losing1; hypothetical1mm quantization gives18/30fixed and20/30swept. All40
+lateral opposite-label shared-translation witnesses survive, so these pair counts
+are not class recovery. That fixed-global-query obstruction does not imply the
+adopted camera-relative corridor needs absolute-world localization. No inference
+change or MILP; old labels preserved, five tests and independent audits pass.
+
 [Fixed slow drift](../../../research/active/dtr-r0/nearfield/BIAS_DRIFT_RESULTS_20260922.md)
 tests unchanged shared-bias models on180 new synthetic geometries. Full-model
 nominal51TP/46correct negatives retain all97cases in six constant controls and
