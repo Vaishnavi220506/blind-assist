@@ -4922,6 +4922,30 @@
         "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md"
       ],
       "commit": "def6c501ddb3a04050a1ccf13908d39b9bb4b450"
+    },
+    {
+      "id": "terminal-query-occupancy-diagnostic-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "evaluation_evidence"
+      ],
+      "status": "negative",
+      "decision": "QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION",
+      "summary": "Frozen selected classifier and occupancy on864train288dev images always rank six queries HEADleft centre right then BODYleft centre right. Occupancy train/dev heatmapAUC0.544/0.576, fixedIoU0, conditional occupied-bin accuracy85.64/70.45percent; useful query localization not learned in selected states.",
+      "successor_requires": "Separately justified query-conditioned spatial learning check should establish train-set localization before new held evaluation; no automatic refit, cutoff rescue or video.",
+      "forbidden_repeats": [
+        "Treat invariant query score ordering as image-conditioned spatial understanding",
+        "Claim weak selected-state train fit rules out all architectures or longer optimization",
+        "Promote conditional distance-bin accuracy to reliable occupancy or measured range",
+        "Treat consumed train/dev diagnostic as fresh held confirmation"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_20260922.md"
+      ],
+      "commit": "3be9045cd76a04d8e4e7bc16ddbad3649251f732"
     }
   ]
 }

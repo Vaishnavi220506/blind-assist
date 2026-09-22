@@ -1,3 +1,16 @@
+## Frozen checkpoint diagnosis: query ordering does not follow the image (2026-09-22)
+
+[Train/dev inference-only diagnostic](nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md)
+finds the same strict6-query order in all1152train/dev images in both models:
+HEAD-left > HEAD-centre > HEAD-right > BODY-left > BODY-centre > BODY-right.
+Thus centre max always uses HEAD-centre. Occupancy foregroundAUROC0.544/0.576
+and IoU0 show weak selected-state training localization; this is more than a
+held-layout or0.5cutoff failure. Conditional occupied-bin accuracy85.64/70.45%
+retains coarse distance signal but no reliable query localization. Diagnostic
+COMPONENT, original model NEGATIVE_CONTROL and A/UNKNOWN unchanged. Eight
+synthetic tests pass; original dev counts reproduce. No training, BN update,
+held-label access, held-row inference, threshold selection or video successor.
+
 ## Single-frame query occupancy: exact recipe not retained (2026-09-22)
 
 [New-layout paired prototype](nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md)

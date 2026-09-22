@@ -2081,6 +2081,16 @@
       "failure_signature": "Recall+10.156pp costs+10FP and+12segments; IoU0 and13of880positive bins correct; A current substantially stronger",
       "revisit_trigger": "New independently justified observable or learning mechanism with appropriate evaluation and separate authorization, not a retuned consumed recipe",
       "assignment_basis": "Frozen protocol, full held prediction seal, independent frame geometry event and component decision audits"
+    },
+    {
+      "terminal_id": "terminal-query-occupancy-diagnostic-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Interpretation of frozen selected query-occupancy checkpoints on consumed train and dev only",
+      "retained_surface": "Diagnostic evidence of invariant query rank and weak training-set localization; preserve original model NEGATIVE_CONTROL and A UNKNOWN",
+      "failure_signature": "All1152images both arms have strict query rank3,4,5,0,1,2; masks empty at0.5 and weak foreground ranking on train/dev",
+      "revisit_trigger": "Independently justified new query-conditioning or optimization check, first establish training-set spatial ability; separate authorization required for successor work",
+      "assignment_basis": "Fixed checkpoint replay with original dev counts, weighted foreground ranking, exact query ordering and no optimizer"
     }
   ]
 }

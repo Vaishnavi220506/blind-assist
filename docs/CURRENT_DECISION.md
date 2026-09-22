@@ -1,3 +1,11 @@
+2026-09-22 [frozen-checkpoint train/dev diagnosis](../research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md):
+Both learned arms rank all six queries identically in every864train/288dev image:
+HEAD-left > centre > right > BODY-left > centre > right. Occupancy maskIoU0
+already on train, foregroundAUROC0.544train/0.576dev; conditional occupied-bin
+accuracy85.64%/70.45%does not repair occupancy or spatial query use. Retain this
+diagnostic COMPONENT; original recipe remains NEGATIVE_CONTROL. No refit,
+cutoff change, held-label access or held-row inference. A/UNKNOWN unchanged.
+
 2026-09-22 [single-frame query occupancy result](../research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md):
 New1728-frame grouped Development,576held frames. Matched classifier62/34/194
 TP/FP/FN becomes occupancy88/44/168; events16/32 to29/32, but false segments17

@@ -132,10 +132,25 @@ benchmarks; occupancy batch median103.83/7.21ms. Diagnostic execution and CPU
 rank aggregation took13.06s before runtime bookkeeping. Eight focused synthetic
 tests pass, covering weighted ties, invalid/empty area, query direction, matched
 OUTSIDE pairs, float64 fixed cutoffs and low-probability heatmaps. The descriptive
-figure was visually inspected. The process exited and no continuing worker remains.
+figure was visually inspected. Independent audit PASS: four prediction hashes,
+two original checkpoints, dev replay and all query pair margins/directions
+reproduce. Weighted sklearn AP/AUC independently verifies every12th visible-
+positive query (116train/37dev); all saved per-query rows reaggregate to the
+reported macros. This is sampled independent pixel-ranking recomputation, not
+a claim that every pixel metric was independently recalculated. The historical
+capture-source EOF formatting difference is verified against the prior recovery
+receipt and archived execution bytes; actual diagnostic dependencies match.
+The process exited and no continuing worker remains.
 
 Evidence root: `artifacts.local/evidence/ba-query-occupancy-diagnostic-20260922`.
 Keep input-seal.json, prediction-seal.json, four prediction NPZs, result.json,
 details.json, backend receipts, focused-tests.txt and diagnostic.png/svg. The
 governed run specification and console log are adjacent files with `-run.json`
-and `-console.txt` suffixes. No original evidence tree was rewritten.
+and `-console.txt` suffixes. independent-audit.json records the separate audit.
+No original evidence tree was rewritten.
+
+Terminal `terminal-query-occupancy-diagnostic-20260922` is explicitly assigned
+COMPONENT_OR_CHALLENGER/COMPONENT for diagnostic evidence only. Archived run
+`ba-query-occupancy-diagnostic-20260922` anchors source revision
+`3be9045cd76a04d8e4e7bc16ddbad3649251f732`; all427earlier ledger rows remain
+byte-identical, with428rows after registration. Delivery receipts are local.

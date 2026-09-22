@@ -2,14 +2,14 @@
   "schema_version": 3,
   "engine_version": "decision-v2-research-workflow",
   "generated_at": "2026-09-22",
-  "source_fingerprint": "2ae3febe609322241f8cf412afe893e2a3b7d9244a3c963303ca01d49316aa9d",
+  "source_fingerprint": "945c672b8f572ac819d20f953c65ead99ac79dcc5f7f8c167fd864934c600f33",
   "counts": {
     "failure_layers": 13,
     "mechanisms": 272,
     "uses": 271,
-    "experiments": 427,
-    "current_terminals": 208,
-    "run_associations": 425
+    "experiments": 428,
+    "current_terminals": 209,
+    "run_associations": 426
   },
   "failure_layers": [
     {
@@ -25058,6 +25058,47 @@
       "search_text": "terminal-query-occupancy-20260922 obstacle-avoidance QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN New1728-frame grouped controlled Development;576held frames: matched classifier62TP34FP194FN to occupancy88TP44FP168FN, events16 to29 of32 but false segments17 to29.880visible positive queries have maskIoU0 and13correct distance bins. A current193TP6FP32events remains stronger. A materially different justified spatial-learning premise and separately authorized validation; preserve this exact recipe and consumed outcomes. No posthoc cutoff or training rescue and no temporal successor within this experiment. NEGATIVE_CONTROL  Exact158137parameter single-frame RGB ToF first-hit plus visible-mask supervision and dev-selected alert readout on this48-layout source Retain unchanged A and UNKNOWN; retain source, paired classifier, predictions and component metrics as consumed Development diagnostic evidence Recall+10.156pp costs+10FP and+12segments; IoU0 and13of880positive bins correct; A current substantially stronger New independently justified observable or learning mechanism with appropriate evaluation and separate authorization, not a retuned consumed recipe Claim the13gained events justify the failed FP and segment costs Use conditional0.283m MAE or majority-none74.48percent accuracy as reliable localization Treat UNKNOWN or silence as clear space Reuse held outcomes for training selection or fresh-confirmation authority"
     },
     {
+      "kind": "current_terminal",
+      "id": "terminal-query-occupancy-diagnostic-20260922",
+      "status": "negative",
+      "question": "Frozen selected classifier and occupancy on864train288dev images always rank six queries HEADleft centre right then BODYleft centre right. Occupancy train/dev heatmapAUC0.544/0.576, fixedIoU0, conditional occupied-bin accuracy85.64/70.45percent; useful query localization not learned in selected states.",
+      "baseline": null,
+      "change": "Separately justified query-conditioned spatial learning check should establish train-set localization before new held evaluation; no automatic refit, cutoff rescue or video.",
+      "primary_metric": null,
+      "decision": "QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION",
+      "report": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "3be9045cd76a04d8e4e7bc16ddbad3649251f732",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified query-conditioned spatial learning check should establish train-set localization before new held evaluation; no automatic refit, cutoff rescue or video.",
+      "forbidden_repeats": [
+        "Treat invariant query score ordering as image-conditioned spatial understanding",
+        "Claim weak selected-state train fit rules out all architectures or longer optimization",
+        "Promote conditional distance-bin accuracy to reliable occupancy or measured range",
+        "Treat consumed train/dev diagnostic as fresh held confirmation"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Interpretation of frozen selected query-occupancy checkpoints on consumed train and dev only",
+      "retained_surface": "Diagnostic evidence of invariant query rank and weak training-set localization; preserve original model NEGATIVE_CONTROL and A UNKNOWN",
+      "failure_signature": "All1152images both arms have strict query rank3,4,5,0,1,2; masks empty at0.5 and weak foreground ranking on train/dev",
+      "revisit_trigger": "Independently justified new query-conditioning or optimization check, first establish training-set spatial ability; separate authorization required for successor work",
+      "assignment_basis": "Fixed checkpoint replay with original dev counts, weighted foreground ranking, exact query ordering and no optimizer",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_20260922.md"
+      ],
+      "association_id": "ba-query-occupancy-diagnostic-20260922",
+      "search_text": "terminal-query-occupancy-diagnostic-20260922 obstacle-avoidance QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION Frozen selected classifier and occupancy on864train288dev images always rank six queries HEADleft centre right then BODYleft centre right. Occupancy train/dev heatmapAUC0.544/0.576, fixedIoU0, conditional occupied-bin accuracy85.64/70.45percent; useful query localization not learned in selected states. Separately justified query-conditioned spatial learning check should establish train-set localization before new held evaluation; no automatic refit, cutoff rescue or video. COMPONENT_OR_CHALLENGER COMPONENT Interpretation of frozen selected query-occupancy checkpoints on consumed train and dev only Diagnostic evidence of invariant query rank and weak training-set localization; preserve original model NEGATIVE_CONTROL and A UNKNOWN All1152images both arms have strict query rank3,4,5,0,1,2; masks empty at0.5 and weak foreground ranking on train/dev Independently justified new query-conditioning or optimization check, first establish training-set spatial ability; separate authorization required for successor work Treat invariant query score ordering as image-conditioned spatial understanding Claim weak selected-state train fit rules out all architectures or longer optimization Promote conditional distance-bin accuracy to reliable occupancy or measured range Treat consumed train/dev diagnostic as fresh held confirmation"
+    },
+    {
       "kind": "experiment",
       "id": "dtr-r0",
       "status": "active",
@@ -34377,6 +34418,30 @@
         "runtime_infrastructure": 3
       },
       "search_text": "ba-query-occupancy-20260922 Does joint first-hit and visible-region supervision improve matched small single-frame RGB plus regional ToF queries on unseen layouts? Same encoder fusion decoder initialization and24epoch query classifier; unchanged ToF A current and one-frame hold references Six first-hit bins plus no intersection and visible-mask supervision; alert is occupied probability mass, no independent alert head Fixed-dev held recall precision FPR event onset exit tail false segments; bin accuracy and native-area mask IoU with UNKNOWN QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md New48layout1728frame same-generator controlled-object UE Development; split24train8dev16evaluation; consumed after sealed576frame evaluation"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-query-occupancy-diagnostic-20260922",
+      "status": "archived",
+      "question": "Do selected frozen checkpoints fit train queries, localize foreground below the fixed cutoff and change relative query ranking with image evidence?",
+      "baseline": "Original epoch16classifier and epoch8occupancy with fixed dev thresholds; constant-score ranking controls",
+      "change": "Inference-only train864dev288 replay; weighted heatmap ranking and same-image query and matched-layout lateral contrasts",
+      "primary_metric": "Train/dev fixed-cutoff TP FP FN; foreground AUROC AP softIoU; conditional bins; query permutations and occupied-over-empty margins",
+      "decision": "QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION",
+      "report": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md",
+      "source": "Consumed train and dev subset from query-occupancy1728frame same-generator Development; no held-label access or held-row inference",
+      "commit": "3be9045cd76a04d8e4e7bc16ddbad3649251f732",
+      "association_id": "ba-query-occupancy-diagnostic-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "authority_truth": 3,
+        "geometry_motion": 3,
+        "decision_lifecycle": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "ba-query-occupancy-diagnostic-20260922 Do selected frozen checkpoints fit train queries, localize foreground below the fixed cutoff and change relative query ranking with image evidence? Original epoch16classifier and epoch8occupancy with fixed dev thresholds; constant-score ranking controls Inference-only train864dev288 replay; weighted heatmap ranking and same-image query and matched-layout lateral contrasts Train/dev fixed-cutoff TP FP FN; foreground AUROC AP softIoU; conditional bins; query permutations and occupied-over-empty margins QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md Consumed train and dev subset from query-occupancy1728frame same-generator Development; no held-label access or held-row inference"
     }
   ],
   "associations": [
@@ -34425,6 +34490,21 @@
         "artifacts.local/evidence/ba-query-occupancy-20260922/independent-components-decision-audit.json"
       ],
       "decision_id": "terminal-query-occupancy-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-query-occupancy-diagnostic-20260922",
+      "use_ids": [],
+      "protocol_id": "ba-query-occupancy-diagnostic-20260922",
+      "code_revision": "3be9045cd76a04d8e4e7bc16ddbad3649251f732",
+      "input_fingerprint": "459c5956bafde43bebb710f65b8e86e10f5237a2427b77172d90022ef3526a5e",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-query-occupancy-diagnostic-20260922",
+        "artifacts.local/evidence/ba-query-occupancy-diagnostic-20260922/result.json",
+        "artifacts.local/evidence/ba-query-occupancy-diagnostic-20260922/prediction-seal.json"
+      ],
+      "decision_id": "terminal-query-occupancy-diagnostic-20260922",
       "source_rows": 1
     },
     {
