@@ -5066,6 +5066,54 @@
         "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_PROTOCOL_20260922.md"
       ],
       "commit": "1e585e02a95129d14a623a7cd1049fbe5c5178fd"
+    },
+    {
+      "id": "terminal-local-transfer-diagnostic-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "positive",
+      "decision": "LOCAL_SUPPORT_BACKGROUND_DEPENDENCE_HYPOTHESIS_RETAINED",
+      "summary": "Old576frame saved-output diagnosis: both addedFP won by HEAD-centre; regional support and RGB marginals overlaprescues. No model replay, refit or new performance claim. Motivates paired background-only transfer.",
+      "successor_requires": "Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention",
+      "forbidden_repeats": [
+        "Refit or retune this frozen recipe on consumed outcomes",
+        "Equate aggregate background tolerance with appearance invariance or physical ownership",
+        "Replace old failed system evidence or claim default App hardware or safety validation"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md",
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md"
+      ],
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4"
+    },
+    {
+      "id": "terminal-local-transfer-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "positive",
+      "decision": "FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE",
+      "summary": "576new controlled frames: A192TP4FP64FN, A RAW193/7/63, A LOCAL228/6/28; segments4/7/5. All three transfer gates and this-cohort strict gatePASS;14of16base rescues retained after background change. Preserve old failed strict gate and A UNKNOWN.",
+      "successor_requires": "Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results",
+      "forbidden_repeats": [
+        "Refit or retune this frozen recipe on consumed outcomes",
+        "Equate aggregate background tolerance with appearance invariance or physical ownership",
+        "Replace old failed system evidence or claim default App hardware or safety validation"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md"
+      ],
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4"
     }
   ]
 }

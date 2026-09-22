@@ -2,14 +2,14 @@
   "schema_version": 3,
   "engine_version": "decision-v2-research-workflow",
   "generated_at": "2026-09-22",
-  "source_fingerprint": "8ea87ec106c9f943a8b6eba9e4694f526d8f249852f8813486f7aeac760a5f12",
+  "source_fingerprint": "2bb9f23da5fe5f4b9b64ff9db119b8827a635d70277075304404cce72caea6e6",
   "counts": {
     "failure_layers": 13,
     "mechanisms": 272,
     "uses": 271,
-    "experiments": 433,
-    "current_terminals": 214,
-    "run_associations": 431
+    "experiments": 435,
+    "current_terminals": 216,
+    "run_associations": 433
   },
   "failure_layers": [
     {
@@ -25304,6 +25304,88 @@
       "search_text": "terminal-query-spatial-fit-20260922 obstacle-avoidance SPATIAL_QUERY_BRANCH_NO_TINY_TRAIN_LOCALIZATION_GAIN 84 consumed training images: global179TP1FP1FN versus spatial180TP0FP0FN; both540/540querypairs correct. MaskIoU0.484823/0.481782 fails fixed0.50gate. Original structure can fit query answers under new shared optimization, but spatial branch does not improve localization. Separately justified mask-boundary or false-area mechanism with its own evaluation; preserve this fixed training-only package and all older negatives. NEGATIVE_CONTROL  Fixed two-arm tiny-training joint query and mask fitting package; no alert or generalization authority. Train-only paired evidence that original FiLM can fit image-dependent query answers, with sealed spatial branch and remaining mask errors. Both arms pass query criteria but macro positive-mask IoU0.484823/0.481782 is below0.50; extra spatial branch has no localization gain. A separately justified changed mechanism addressing mask false area or boundary placement, with separately scoped evaluation. Tune cutoff, epoch, loss or cohort after this fixed final-state outcome Treat tiny consumed train fitting as generalization or alert improvement Claim invariant old query ordering is an unavoidable architecture property Treat fixed depth hypotheses or model confidence as observed metric depth or free space"
     },
     {
+      "kind": "current_terminal",
+      "id": "terminal-local-transfer-diagnostic-20260922",
+      "status": "positive",
+      "question": "Old576frame saved-output diagnosis: both addedFP won by HEAD-centre; regional support and RGB marginals overlaprescues. No model replay, refit or new performance claim. Motivates paired background-only transfer.",
+      "baseline": null,
+      "change": "Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention",
+      "primary_metric": null,
+      "decision": "LOCAL_SUPPORT_BACKGROUND_DEPENDENCE_HYPOTHESIS_RETAINED",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention",
+      "forbidden_repeats": [
+        "Refit or retune this frozen recipe on consumed outcomes",
+        "Equate aggregate background tolerance with appearance invariance or physical ownership",
+        "Replace old failed system evidence or claim default App hardware or safety validation"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Read-only old LOCAL errors and observable-feature interpretation; no standalone alert role",
+      "retained_surface": "All30rescues,2addedFP,1RAW-onlyTP and complete576frame denominator; original LOCAL component and RAW negative preserved",
+      "failure_signature": "Marginal overlap and two false examples do not establish full-feature inseparability or physical return ownership",
+      "revisit_trigger": "Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention",
+      "assignment_basis": "One governed saved-output diagnostic, unchanged source hashes and full identity-index feature and score checks",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md",
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md"
+      ],
+      "association_id": "local-transfer-diagnostic-20260922",
+      "search_text": "terminal-local-transfer-diagnostic-20260922 obstacle-avoidance LOCAL_SUPPORT_BACKGROUND_DEPENDENCE_HYPOTHESIS_RETAINED Old576frame saved-output diagnosis: both addedFP won by HEAD-centre; regional support and RGB marginals overlaprescues. No model replay, refit or new performance claim. Motivates paired background-only transfer. Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention COMPONENT_OR_CHALLENGER COMPONENT Read-only old LOCAL errors and observable-feature interpretation; no standalone alert role All30rescues,2addedFP,1RAW-onlyTP and complete576frame denominator; original LOCAL component and RAW negative preserved Marginal overlap and two false examples do not establish full-feature inseparability or physical return ownership Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention Refit or retune this frozen recipe on consumed outcomes Equate aggregate background tolerance with appearance invariance or physical ownership Replace old failed system evidence or claim default App hardware or safety validation"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-local-transfer-20260922",
+      "status": "positive",
+      "question": "576new controlled frames: A192TP4FP64FN, A RAW193/7/63, A LOCAL228/6/28; segments4/7/5. All three transfer gates and this-cohort strict gatePASS;14of16base rescues retained after background change. Preserve old failed strict gate and A UNKNOWN.",
+      "baseline": null,
+      "change": "Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results",
+      "primary_metric": null,
+      "decision": "FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results",
+      "forbidden_repeats": [
+        "Refit or retune this frozen recipe on consumed outcomes",
+        "Equate aggregate background tolerance with appearance invariance or physical ownership",
+        "Replace old failed system evidence or claim default App hardware or safety validation"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Frozen query-local HGB component on eight new same-generator geometries and paired background material intervention",
+      "retained_surface": "LOCAL component transfer and full measured false costs; old LOCAL component and RAW negative control remain; no default App promotion",
+      "failure_signature": "Two addedFP and one segment meet cost limits exactly; background changes lose2TP gain6TP remove2FP; no appearance invariance or physical return ownership",
+      "revisit_trigger": "Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results",
+      "assignment_basis": "One576frame capture, exactToF288pairs, sealed fixed predictions,13focused tests, independent37156-check saved-output audit and read-only implementation review",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md"
+      ],
+      "association_id": "local-transfer-20260922",
+      "search_text": "terminal-local-transfer-20260922 obstacle-avoidance FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE 576new controlled frames: A192TP4FP64FN, A RAW193/7/63, A LOCAL228/6/28; segments4/7/5. All three transfer gates and this-cohort strict gatePASS;14of16base rescues retained after background change. Preserve old failed strict gate and A UNKNOWN. Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results COMPONENT_OR_CHALLENGER COMPONENT Frozen query-local HGB component on eight new same-generator geometries and paired background material intervention LOCAL component transfer and full measured false costs; old LOCAL component and RAW negative control remain; no default App promotion Two addedFP and one segment meet cost limits exactly; background changes lose2TP gain6TP remove2FP; no appearance invariance or physical return ownership Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results Refit or retune this frozen recipe on consumed outcomes Equate aggregate background tolerance with appearance invariance or physical ownership Replace old failed system evidence or claim default App hardware or safety validation"
+    },
+    {
       "kind": "experiment",
       "id": "dtr-r0",
       "status": "active",
@@ -34761,6 +34843,53 @@
         "runtime_infrastructure": 3
       },
       "search_text": "ba-query-spatial-fit-20260922 Can explicit ray-query spatial conditioning fit query-dependent localization on a fixed tiny training cohort? Original global FiLM forward with matched initialization, training objective, batches and budget. Add zero-initialized768weight projection of24fixed ray-query geometry channels before decoder; training-only84image paired check. Fixed query precision recall and pair order >=0.95 plus macro positive-maskIoU>=0.50. NEITHER_PACKAGE_FITS; query answers fit in both, spatial branch no mask localization gain; no held access. research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md ue-query-occupancy-20260922-consumed-training"
+    },
+    {
+      "kind": "experiment",
+      "id": "local-transfer-diagnostic-20260922",
+      "status": "archived",
+      "question": "What saved local support and appearance structure accompanies old added false alerts and rescued positives?",
+      "baseline": "Sealed old A RAW LOCAL outputs and identical public feature inputs",
+      "change": "Read-only matched positive false and lost-frame attribution without loading a model or choosing a threshold",
+      "primary_metric": "Full denominator, saved query winner, support color distributions and matched lateral identities",
+      "decision": "LOCAL_SUPPORT_BACKGROUND_DEPENDENCE_HYPOTHESIS_RETAINED",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md",
+      "source": "Consumed576frame UE query occupancy evaluation outputs; no new source or inference",
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "association_id": "local-transfer-diagnostic-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 3,
+        "temporal_belief": 3,
+        "geometry_motion": 3,
+        "decision_lifecycle": 10,
+        "evaluation_evidence": 6
+      },
+      "search_text": "local-transfer-diagnostic-20260922 What saved local support and appearance structure accompanies old added false alerts and rescued positives? Sealed old A RAW LOCAL outputs and identical public feature inputs Read-only matched positive false and lost-frame attribution without loading a model or choosing a threshold Full denominator, saved query winner, support color distributions and matched lateral identities LOCAL_SUPPORT_BACKGROUND_DEPENDENCE_HYPOTHESIS_RETAINED research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md Consumed576frame UE query occupancy evaluation outputs; no new source or inference"
+    },
+    {
+      "kind": "experiment",
+      "id": "local-transfer-20260922",
+      "status": "archived",
+      "question": "Does frozen LOCAL transfer to new geometry and retain useful decisions under a paired background-only intervention?",
+      "baseline": "Unchanged A plus sealed matched RAW HGB at old threshold",
+      "change": "Eight new base geometries with three lateral relations and two paired background appearances; frozen models and thresholds",
+      "primary_metric": "Recall precision FP false segments onset; paired rescue retention, geometry rank and whole-base-group bootstrap",
+      "decision": "FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md",
+      "source": "576new same-generator UE controlled Development frames;8base groups48clips288appearance pairs; now consumed",
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "association_id": "local-transfer-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 3,
+        "decision_lifecycle": 12
+      },
+      "search_text": "local-transfer-20260922 Does frozen LOCAL transfer to new geometry and retain useful decisions under a paired background-only intervention? Unchanged A plus sealed matched RAW HGB at old threshold Eight new base geometries with three lateral relations and two paired background appearances; frozen models and thresholds Recall precision FP false segments onset; paired rescue retention, geometry rank and whole-base-group bootstrap FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md 576new same-generator UE controlled Development frames;8base groups48clips288appearance pairs; now consumed"
     }
   ],
   "associations": [
@@ -36236,6 +36365,33 @@
         "research/active/l10-r0/l10_scenenn_temporal_hue_geometry_consensus_result_v1.json"
       ],
       "decision_id": "terminal-l10-scenenn-temporal-hue-geometry-consensus-posthoc-negative",
+      "source_rows": 1
+    },
+    {
+      "run_id": "local-transfer-20260922",
+      "use_ids": [],
+      "protocol_id": "local-transfer-20260922-v1",
+      "code_revision": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "input_fingerprint": "cffb9d1280adaa5ffff0bdf63d1a6da9466c8feb5608668a45e93c2a84f3560d",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-local-transfer-20260922-evaluated",
+        "artifacts.local/evidence/ba-local-transfer-20260922-audit/result.json"
+      ],
+      "decision_id": "terminal-local-transfer-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "local-transfer-diagnostic-20260922",
+      "use_ids": [],
+      "protocol_id": "local-transfer-diagnostic-20260922-v1",
+      "code_revision": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "input_fingerprint": "f139f967d9e3cd23b21e41a83f2ac8e5de9501e65af61fa0dea43753f34f9bfc",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md",
+        "artifacts.local/evidence/ba-local-transfer-diagnostic-20260922"
+      ],
+      "decision_id": "terminal-local-transfer-diagnostic-20260922",
       "source_rows": 1
     },
     {

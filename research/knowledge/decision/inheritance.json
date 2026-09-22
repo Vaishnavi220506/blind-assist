@@ -2141,6 +2141,26 @@
       "failure_signature": "Both arms pass query criteria but macro positive-mask IoU0.484823/0.481782 is below0.50; extra spatial branch has no localization gain.",
       "revisit_trigger": "A separately justified changed mechanism addressing mask false area or boundary placement, with separately scoped evaluation.",
       "assignment_basis": "Declared final-state fitting gate failed for both; retain useful query-fitting evidence without promoting the branch or reopening frozen trials."
+    },
+    {
+      "terminal_id": "terminal-local-transfer-diagnostic-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Read-only old LOCAL errors and observable-feature interpretation; no standalone alert role",
+      "retained_surface": "All30rescues,2addedFP,1RAW-onlyTP and complete576frame denominator; original LOCAL component and RAW negative preserved",
+      "failure_signature": "Marginal overlap and two false examples do not establish full-feature inseparability or physical return ownership",
+      "revisit_trigger": "Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention",
+      "assignment_basis": "One governed saved-output diagnostic, unchanged source hashes and full identity-index feature and score checks"
+    },
+    {
+      "terminal_id": "terminal-local-transfer-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Frozen query-local HGB component on eight new same-generator geometries and paired background material intervention",
+      "retained_surface": "LOCAL component transfer and full measured false costs; old LOCAL component and RAW negative control remain; no default App promotion",
+      "failure_signature": "Two addedFP and one segment meet cost limits exactly; background changes lose2TP gain6TP remove2FP; no appearance invariance or physical return ownership",
+      "revisit_trigger": "Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results",
+      "assignment_basis": "One576frame capture, exactToF288pairs, sealed fixed predictions,13focused tests, independent37156-check saved-output audit and read-only implementation review"
     }
   ]
 }

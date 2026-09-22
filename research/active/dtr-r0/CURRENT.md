@@ -13,9 +13,14 @@ threshold selection, video or App change. A/UNKNOWN remain unchanged.
 ## Inheritance batch: three useful components, no default replacement (2026-09-22)
 
 [Four frozen trials](nearfield/INHERIT_BATCH_RESULTS_20260922.md) are complete.
-On 576 consumed frames, query-local HGB plus A gives 223TP/8FP/33FN versus
-matched raw 200/12/56 and A 193/6/63. Local representation is a COMPONENT;
-two added false segments exceed its one-segment alert-upgrade budget.
+On the original576consumed frames, LOCAL plus A223TP8FP33FN versus
+RAW200/12/56 and A193/6/63 remains a COMPONENT; its two added false segments
+still exceed the old one-segment budget. [Frozen transfer](nearfield/LOCAL_TRANSFER_RESULTS_20260922.md)
+on576new same-generator frames gives LOCAL228/6/28, RAW193/7/63, A192/4/64,
+with5/7/4false segments. Task transfer, background tolerance and geometry rank
+pass;14/16base rescues survive background changes, with2lostTP/6gainedTP/2removedFP.
+This cohort passes the strict cost gate; the old failure remains. Retain LOCAL
+COMPONENT, A and UNKNOWN; no appearance-invariance, hardware or App claim.
 Additional hypothetical returns plus unchanged hold give 254/29/2 versus
 225/26/31, with entry-sample detection 17/32 to 31/32; retain information and
 its added costs, not a lossless upgrade. Support inheritance returns exactly
