@@ -1,5 +1,13 @@
 # Bounded nearfield opportunity probes
 
+[Fixed slow drift](../../../research/active/dtr-r0/nearfield/BIAS_DRIFT_RESULTS_20260922.md)
+tests unchanged shared-bias models on180 new synthetic geometries. Full-model
+nominal51TP/46correct negatives retain all97cases in six constant controls and
+92-96 in six drift arms, with no observed wrong decisions. All60boundary cases
+remain UNKNOWN;28-30of30opposite-truth pairs share identical public histories.
+This is finite drift stress with coverage loss, not general safe abstention or
+boundary robustness.375unique histories/1500MILPs; no model or bound tuning.
+
 [Shared sensor biases](../../../research/active/dtr-r0/nearfield/SHARED_BIAS_RESULTS_20260922.md)
 explain the prior wall-bin inconsistency with one globalrange and optionalglobalpose
 offset per history. PrimaryXthenZ recovers84/87correct decisions in the two collapsed

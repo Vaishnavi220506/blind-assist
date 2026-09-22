@@ -1,3 +1,20 @@
+## Frozen model under slow drift: finite tolerance, boundary information gap (2026-09-22)
+
+[One new-instance drift pilot](nearfield/BIAS_DRIFT_RESULTS_20260922.md) uses180
+new synthetic geometries,13conditions and unchanged shared-bias models. Primary
+nominal51TP/46correct negatives retains the same97cases in all6constant controls;
+six small linear drifts retain92-96, no observedFP/falseOUT. No lossless drift
+claim:1-5correct cases becomeUNKNOWN. General120cases contain all97nominal decisions;
+boundary60cases are allUNKNOWN under fullmodel across every condition.28-30of30
+opposite-truth boundary pairs have identical13view histories, so zero errors is
+not boundary robustness. Existing nominal model is misspecified for drift; no
+general safe-abstention, hardware calibration or independent-source claim.
+Retain finite response diagnostic and scoped lossless/boundary NEGATIVE_CONTROLs;
+prefer new distinguishable observations over more nuisance parameters if pursued.
+375unique queries/1500MILPs,30420new simulated views.6focused tests and independent
+capture/witness/containment/metric auditPASS. Local inheritance and supported
+ledger303/unknown-terminal receipts retained; no model tuning or successor run.
+
 ## Shared sensor bias: primary collapse recovery with local identity retention (2026-09-22)
 
 [Frozen shared-bias comparison](nearfield/SHARED_BIAS_RESULTS_20260922.md) reuses
