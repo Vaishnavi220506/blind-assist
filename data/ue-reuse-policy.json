@@ -100,8 +100,8 @@
     {
       "locator": "evidence/ba-query-occupancy-20260922",
       "source_family": "ue-query-occupancy-20260922",
-      "evidence_status": "diagnostic",
-      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
       "allowed_inputs": [
         {
           "relative_path": "plan",
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
       "allowed_inputs": [
         {
           "relative_path": "observations",
@@ -134,11 +134,11 @@
         }
       ],
       "locator": "evidence/ba-query-occupancy-20260922-capture",
-      "evidence_status": "diagnostic",
+      "evidence_status": "development_consumed",
       "source_family": "ue-query-occupancy-20260922"
     },
     {
-      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
       "allowed_inputs": [
         {
           "relative_path": ".",
@@ -146,11 +146,11 @@
         }
       ],
       "locator": "evidence/ba-query-occupancy-20260922-fit",
-      "evidence_status": "diagnostic",
+      "evidence_status": "development_consumed",
       "source_family": "ue-query-occupancy-20260922"
     },
     {
-      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
       "allowed_inputs": [
         {
           "relative_path": ".",
@@ -158,11 +158,11 @@
         }
       ],
       "locator": "evidence/ba-query-occupancy-20260922-predictions",
-      "evidence_status": "diagnostic",
+      "evidence_status": "development_consumed",
       "source_family": "ue-query-occupancy-20260922"
     },
     {
-      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md",
+      "evidence": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
       "allowed_inputs": [
         {
           "relative_path": "observations",
@@ -178,7 +178,7 @@
         }
       ],
       "locator": "evidence/ba-query-occupancy-20260922-prepared",
-      "evidence_status": "diagnostic",
+      "evidence_status": "development_consumed",
       "source_family": "ue-query-occupancy-20260922"
     }
   ]

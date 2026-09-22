@@ -1,3 +1,16 @@
+## Single-frame query occupancy: exact recipe not retained (2026-09-22)
+
+[New-layout paired prototype](nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md)
+completed1728new controlled frames and24epochs per arm. On576held frames,
+classifier62TP34FP194FN becomes occupancy88TP44FP168FN,16 to29 of32events,
+but false segments17 to29 and addedFP10 exceed the +1/+2 costs. Both are worse
+than A current193TP6FP32events.880visible-positive queries have maskIoU0 and
+13correct first-hit bins; conditional0.283m MAE is not reliable detection/range.
+Preserve the exact recipe as NEGATIVE_CONTROL and this source as consumed
+Development. A/UNKNOWN unchanged.37tests and independent metric, geometry and
+component/decision audits PASS; inheritance and archived registration complete.
+Task-owned UE/training processes released. No video, App promotion or extra fit.
+
 ## Retained A operating scope: broader-layout stability not established (2026-09-22)
 
 [Consumed two-cohort scope audit](nearfield/OPERATING_SCOPE_RESULTS_20260922.md)

@@ -1,3 +1,8 @@
+2026-09-22 [single-frame spatial-learning pilot](../research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md)
+completed as a scoped negative control. Joint occupancy supervision increases
+matched-classifier event recall but exceeds false-alert costs and yields zero
+maskIoU at the fixed cutoff. Retain A; no temporal or App successor was run.
+
 2026-09-19 scope update: [camera-forward RGB + 8x8 ToF](../research/active/dtr-r0/nearfield/CAMERA_FORWARD_CONTRACT_20260919.md) is the adopted minimal research task. Optical axis defines forward; historical four-sensor/body-frame results below retain their original scope. This records the task definition, not a runtime change.
 
 # Project state

@@ -2071,6 +2071,16 @@
       "failure_signature": "All broader-cohort conditions fail event coverage silence or delay criteria; projection shifts add lateral false alerts; closer than2.29m untested",
       "revisit_trigger": "Separate authorized validation or materially different mechanism without reclassifying consumed evidence",
       "assignment_basis": "Sealed2304-frame public replay; independent metric support and geometry audit PASS; report commit6fef145c"
+    },
+    {
+      "terminal_id": "terminal-query-occupancy-20260922",
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Exact158137parameter single-frame RGB ToF first-hit plus visible-mask supervision and dev-selected alert readout on this48-layout source",
+      "retained_surface": "Retain unchanged A and UNKNOWN; retain source, paired classifier, predictions and component metrics as consumed Development diagnostic evidence",
+      "failure_signature": "Recall+10.156pp costs+10FP and+12segments; IoU0 and13of880positive bins correct; A current substantially stronger",
+      "revisit_trigger": "New independently justified observable or learning mechanism with appropriate evaluation and separate authorization, not a retuned consumed recipe",
+      "assignment_basis": "Frozen protocol, full held prediction seal, independent frame geometry event and component decision audits"
     }
   ]
 }

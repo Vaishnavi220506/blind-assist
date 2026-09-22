@@ -4897,6 +4897,31 @@
         "research/active/dtr-r0/nearfield/OPERATING_SCOPE_PROTOCOL_20260922.md"
       ],
       "commit": "6fef145c8a6697ef45158257b5e91f7bf29725bb"
+    },
+    {
+      "id": "terminal-query-occupancy-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "negative",
+      "decision": "QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN",
+      "summary": "New1728-frame grouped controlled Development;576held frames: matched classifier62TP34FP194FN to occupancy88TP44FP168FN, events16 to29 of32 but false segments17 to29.880visible positive queries have maskIoU0 and13correct distance bins. A current193TP6FP32events remains stronger.",
+      "successor_requires": "A materially different justified spatial-learning premise and separately authorized validation; preserve this exact recipe and consumed outcomes. No posthoc cutoff or training rescue and no temporal successor within this experiment.",
+      "forbidden_repeats": [
+        "Claim the13gained events justify the failed FP and segment costs",
+        "Use conditional0.283m MAE or majority-none74.48percent accuracy as reliable localization",
+        "Treat UNKNOWN or silence as clear space",
+        "Reuse held outcomes for training selection or fresh-confirmation authority"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md"
+      ],
+      "commit": "def6c501ddb3a04050a1ccf13908d39b9bb4b450"
     }
   ]
 }

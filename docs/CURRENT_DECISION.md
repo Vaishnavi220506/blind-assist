@@ -1,3 +1,13 @@
+2026-09-22 [single-frame query occupancy result](../research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md):
+New1728-frame grouped Development,576held frames. Matched classifier62/34/194
+TP/FP/FN becomes occupancy88/44/168; events16/32 to29/32, but false segments17
+to29 and addedFP10 exceed the declared costs. All44occupancyFP are OUTSIDE.
+Visible maskIoU0 across880positive queries; only13positive distance bins correct.
+A current193/6/63 with32/32events remains stronger. Preserve this exact recipe
+as NEGATIVE_CONTROL; retain A/UNKNOWN.37tests and independent geometry, output,
+component and decision audits pass. Explicit inheritance and archived ledger
+registration complete. Same-generator simulation only; no video or App change.
+
 2026-09-21 [saved B/N disagreement diagnostic](../research/active/dtr-r0/nearfield/BRANCH_DISAGREEMENT_RESULTS_20260921.md):
 Consumed1152-frame posthoc partition, no refit/cutoff change. Boundary current
 common/B-only/N-only add41/3,49/4,45/5 TP/FP; each exceeds added-FP cap2.

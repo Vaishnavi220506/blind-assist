@@ -2,14 +2,14 @@
   "schema_version": 3,
   "engine_version": "decision-v2-research-workflow",
   "generated_at": "2026-09-22",
-  "source_fingerprint": "c8a8638280a6442aeed7ca32729983e1d21d853ef5a269337522c99d3132d85d",
+  "source_fingerprint": "2ae3febe609322241f8cf412afe893e2a3b7d9244a3c963303ca01d49316aa9d",
   "counts": {
     "failure_layers": 13,
     "mechanisms": 272,
     "uses": 271,
-    "experiments": 426,
-    "current_terminals": 207,
-    "run_associations": 424
+    "experiments": 427,
+    "current_terminals": 208,
+    "run_associations": 425
   },
   "failure_layers": [
     {
@@ -25016,6 +25016,48 @@
       "search_text": "terminal-dtr-operating-scope-stability-20260922 obstacle-avoidance RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED Two consumed simulation cohorts with2304public observations replayed at three projection offsets. Broader nominal159TP25FP17FN,15/16events; right shift165TP63FP11FN,16/16events but0.6s delay and58.33percent minimum coverage. Actual Core positive fronts2.294-3.000m; closer range untested. UNKNOWN remains separate from alerts. Keep A and diagnostic component. Separate authorization for a materially different mechanism or validation scope; preserve this retrospective audit and its consumed-data limits. COMPONENT_OR_CHALLENGER COMPONENT Retrospective two-cohort fixed-A operating-scope stability and uncertainty diagnosis A strong threshold, definite support, hold, UNKNOWN, demo and App unchanged; diagnostic report retained All broader-cohort conditions fail event coverage silence or delay criteria; projection shifts add lateral false alerts; closer than2.29m untested Separate authorized validation or materially different mechanism without reclassifying consumed evidence Call this consumed replay fresh confirmation or hardware safety evidence Treat silence or UNKNOWN as verified free space Drop the missed HEAD event after outcomes to declare the original scope stable"
     },
     {
+      "kind": "current_terminal",
+      "id": "terminal-query-occupancy-20260922",
+      "status": "negative",
+      "question": "New1728-frame grouped controlled Development;576held frames: matched classifier62TP34FP194FN to occupancy88TP44FP168FN, events16 to29 of32 but false segments17 to29.880visible positive queries have maskIoU0 and13correct distance bins. A current193TP6FP32events remains stronger.",
+      "baseline": null,
+      "change": "A materially different justified spatial-learning premise and separately authorized validation; preserve this exact recipe and consumed outcomes. No posthoc cutoff or training rescue and no temporal successor within this experiment.",
+      "primary_metric": null,
+      "decision": "QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN",
+      "report": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "def6c501ddb3a04050a1ccf13908d39b9bb4b450",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "A materially different justified spatial-learning premise and separately authorized validation; preserve this exact recipe and consumed outcomes. No posthoc cutoff or training rescue and no temporal successor within this experiment.",
+      "forbidden_repeats": [
+        "Claim the13gained events justify the failed FP and segment costs",
+        "Use conditional0.283m MAE or majority-none74.48percent accuracy as reliable localization",
+        "Treat UNKNOWN or silence as clear space",
+        "Reuse held outcomes for training selection or fresh-confirmation authority"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Exact158137parameter single-frame RGB ToF first-hit plus visible-mask supervision and dev-selected alert readout on this48-layout source",
+      "retained_surface": "Retain unchanged A and UNKNOWN; retain source, paired classifier, predictions and component metrics as consumed Development diagnostic evidence",
+      "failure_signature": "Recall+10.156pp costs+10FP and+12segments; IoU0 and13of880positive bins correct; A current substantially stronger",
+      "revisit_trigger": "New independently justified observable or learning mechanism with appropriate evaluation and separate authorization, not a retuned consumed recipe",
+      "assignment_basis": "Frozen protocol, full held prediction seal, independent frame geometry event and component decision audits",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md"
+      ],
+      "association_id": "ba-query-occupancy-20260922",
+      "search_text": "terminal-query-occupancy-20260922 obstacle-avoidance QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN New1728-frame grouped controlled Development;576held frames: matched classifier62TP34FP194FN to occupancy88TP44FP168FN, events16 to29 of32 but false segments17 to29.880visible positive queries have maskIoU0 and13correct distance bins. A current193TP6FP32events remains stronger. A materially different justified spatial-learning premise and separately authorized validation; preserve this exact recipe and consumed outcomes. No posthoc cutoff or training rescue and no temporal successor within this experiment. NEGATIVE_CONTROL  Exact158137parameter single-frame RGB ToF first-hit plus visible-mask supervision and dev-selected alert readout on this48-layout source Retain unchanged A and UNKNOWN; retain source, paired classifier, predictions and component metrics as consumed Development diagnostic evidence Recall+10.156pp costs+10FP and+12segments; IoU0 and13of880positive bins correct; A current substantially stronger New independently justified observable or learning mechanism with appropriate evaluation and separate authorization, not a retuned consumed recipe Claim the13gained events justify the failed FP and segment costs Use conditional0.283m MAE or majority-none74.48percent accuracy as reliable localization Treat UNKNOWN or silence as clear space Reuse held outcomes for training selection or fresh-confirmation authority"
+    },
+    {
       "kind": "experiment",
       "id": "dtr-r0",
       "status": "active",
@@ -34311,6 +34353,30 @@
         "evaluation_evidence": 3
       },
       "search_text": "ba-operating-scope-20260922 Does retained A remain useful across two declared camera-forward simulation cohorts and fixed projection offsets? Frozen A strong threshold0.4071309640537889, definite-support bypass and nonrecursive0.2s hold Retrospective2304-frame public replay at dx=-2,0,+2; full miss false-alert and UNKNOWN audit Core events delay coverage silence; false frames segments and all-negative FPR; uncertainty cross counts RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md Two previously consumed same-generator simulation evaluation cohorts; no new source capture or protected-test access"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-query-occupancy-20260922",
+      "status": "archived",
+      "question": "Does joint first-hit and visible-region supervision improve matched small single-frame RGB plus regional ToF queries on unseen layouts?",
+      "baseline": "Same encoder fusion decoder initialization and24epoch query classifier; unchanged ToF A current and one-frame hold references",
+      "change": "Six first-hit bins plus no intersection and visible-mask supervision; alert is occupied probability mass, no independent alert head",
+      "primary_metric": "Fixed-dev held recall precision FPR event onset exit tail false segments; bin accuracy and native-area mask IoU with UNKNOWN",
+      "decision": "QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN",
+      "report": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
+      "source": "New48layout1728frame same-generator controlled-object UE Development; split24train8dev16evaluation; consumed after sealed576frame evaluation",
+      "commit": "def6c501ddb3a04050a1ccf13908d39b9bb4b450",
+      "association_id": "ba-query-occupancy-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 3,
+        "decision_lifecycle": 9,
+        "evaluation_evidence": 3,
+        "runtime_infrastructure": 3
+      },
+      "search_text": "ba-query-occupancy-20260922 Does joint first-hit and visible-region supervision improve matched small single-frame RGB plus regional ToF queries on unseen layouts? Same encoder fusion decoder initialization and24epoch query classifier; unchanged ToF A current and one-frame hold references Six first-hit bins plus no intersection and visible-mask supervision; alert is occupied probability mass, no independent alert head Fixed-dev held recall precision FPR event onset exit tail false segments; bin accuracy and native-area mask IoU with UNKNOWN QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md New48layout1728frame same-generator controlled-object UE Development; split24train8dev16evaluation; consumed after sealed576frame evaluation"
     }
   ],
   "associations": [
@@ -34342,6 +34408,23 @@
         "artifacts.local/work/ba-operating-scope-20260922/independent-audit.json"
       ],
       "decision_id": "terminal-dtr-operating-scope-stability-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-query-occupancy-20260922",
+      "use_ids": [],
+      "protocol_id": "ba-query-occupancy-20260922",
+      "code_revision": "def6c501ddb3a04050a1ccf13908d39b9bb4b450",
+      "input_fingerprint": "5fddb9ddbccb03e217f1f44fa22c452f7b246f861e26e78cbb1ecee7ae6d55c7",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-query-occupancy-20260922",
+        "artifacts.local/evidence/ba-query-occupancy-20260922-predictions/prediction-seal.json",
+        "artifacts.local/evidence/ba-query-occupancy-20260922-evaluated/metrics.json",
+        "artifacts.local/evidence/ba-query-occupancy-20260922/independent-audit-delivery.json",
+        "artifacts.local/evidence/ba-query-occupancy-20260922/independent-components-decision-audit.json"
+      ],
+      "decision_id": "terminal-query-occupancy-20260922",
       "source_rows": 1
     },
     {

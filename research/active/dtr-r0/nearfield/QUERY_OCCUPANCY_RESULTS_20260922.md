@@ -147,3 +147,10 @@ selection recipe as a NEGATIVE_CONTROL and the new source as consumed
 Development evidence. A broader spatial-learning hypothesis remains open,
 but adding video before useful single-frame spatial readout is demonstrated
 has no support from this result. No App change or successor run is included.
+
+Terminal `terminal-query-occupancy-20260922` has explicit NEGATIVE_CONTROL
+inheritance. `ba-query-occupancy-20260922` is archived through the supported
+registration command, anchored at `def6c501ddb3a04050a1ccf13908d39b9bb4b450`.
+The427-row ledger preserves all426preceding rows byte for byte. Registration
+receipts are under root/delivery; the scoped source contracts now explicitly
+mark this cohort as consumed Development.
