@@ -658,6 +658,12 @@ def upsert_asset(
     ).fetchone()
     if existing:
         record["first_seen_at"] = existing["first_seen_at"]
+        # Reconciliation must not erase inherited UE source/role restrictions.
+        old_metadata = json.loads(existing["metadata_json"])
+        if "ue_reuse" in old_metadata:
+            new_metadata = json.loads(record["metadata_json"])
+            new_metadata["ue_reuse"] = old_metadata["ue_reuse"]
+            record["metadata_json"] = json.dumps(new_metadata, ensure_ascii=False, sort_keys=True)
         if preserve_lifecycle and existing["asset_class"] != "legacy_unclassified":
             record["evidence_status"] = existing["evidence_status"]
             record["storage_status"] = existing["storage_status"]

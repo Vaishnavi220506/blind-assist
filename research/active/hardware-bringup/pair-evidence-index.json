@@ -1,0 +1,384 @@
+{
+  "schema": "hardware-bringup.parallel-evidence-index.v1",
+  "path_base": "repository_root",
+  "claim": "Parallel readout and observed scene/range response only; no exposure sync, spatial calibration, accuracy or alert claim",
+  "records": [
+    {
+      "id": "local-rig-baseline-20260921",
+      "result": "BOTH_COLLECTORS_PASSED",
+      "camera_frames": 329,
+      "tof_frames": 77,
+      "cue_status": "connectivity only; scene not confirmed",
+      "files": [
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-baseline-20260921/manifest.json",
+          "sha256": "a5f99dee9cf45b608a54c9b3b11bd34c0a499d0fcff111906df9d1c082f6c2e3"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-baseline-20260921/summary.json",
+          "sha256": "215d51b12d2694139aadb026b319822d5feb06419d9b1ebfcb356600a99ce4e1"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-baseline-20260921/camera/serial.bin",
+          "sha256": "d956425a9bf99fd99da944c3c0abaa8f52a07652073c72a02dfb81a1f8d1a94c"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-baseline-20260921/camera/frames.jsonl",
+          "sha256": "76818ec97daab88fef679d904fbb6941859a0bfcbeea56e4f284526828352e8d"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-baseline-20260921/tof/raw.bin",
+          "sha256": "55a9d672fa1308224f6b5ae160c092eeeeff85ff113aaa2f33cdfeaae4132ea1"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-baseline-20260921/tof/frames.jsonl",
+          "sha256": "e0e0d6a9d3d89dceef168e55ee1a6cc073c7940aa216ba089d3420bbbf8b2076"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-baseline-20260921-inspect/summary.json",
+          "sha256": "b54c8676b881e2a699a618a5581eb828e3576798439db2ffe05eca146a25314c"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-baseline-20260921-inspect/pairs.jsonl",
+          "sha256": "6598b0277c12607c3428c9f1ba66a5457c5b8317294f83134ebf0cb007e679c9"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-baseline-20260921-inspect/tof-center-by-host-receipt.png",
+          "sha256": "a6fff04b5d008f0801d6030a2eaae2a606a0035f9cca71c89f7aedb16447591e"
+        }
+      ]
+    },
+    {
+      "id": "local-rig-motion-20260921",
+      "result": "BOTH_COLLECTORS_PASSED",
+      "camera_frames": 1136,
+      "tof_frames": 230,
+      "cue_status": "late cue after capture ended; not a prescribed movement trial",
+      "files": [
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-20260921/manifest.json",
+          "sha256": "dfac105bf6b2af437f007285ceed9ec874a58d6505b26a1aab01e92414d7d1d4"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-20260921/summary.json",
+          "sha256": "803bf9f6dc078588e0fa9841ae6ee6e86a25aef766c9070eb88004406e530c55"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-20260921/camera/serial.bin",
+          "sha256": "b7611cc901252efae966e00366b6e8fae48f53bc9828806bd71307d38396ec18"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-20260921/camera/frames.jsonl",
+          "sha256": "a12b017e3b204b8b4b33277b843c9e85f4427c096ebd52f50c5c987410e6983f"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-20260921/tof/raw.bin",
+          "sha256": "59a9424693f51434ab3e38116aa9c60278eebe663c29454eacab2b4b73c79a4e"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-20260921/tof/frames.jsonl",
+          "sha256": "4a5c73a3a4a82b7b788e95a67ba8083781a625d8f2b27d03b9b13e0555cbf6d0"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-20260921-inspect/summary.json",
+          "sha256": "3aea32d24480c8dd11a2cd1ca8b09da65e98b77692c885475b69ddbe0218e2fd"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-20260921-inspect/pairs.jsonl",
+          "sha256": "79077f5eb540f21b18d316b61073c6e684199f15c9d43a9ffc74caa17589ad72"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-20260921-inspect/tof-center-by-host-receipt.png",
+          "sha256": "26087bc410ad95a1d9dbef922cd6dcf4720847b969860c6e1bc1efa602664486"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-20260921-inspect/camera-samples.png",
+          "sha256": "ca3e5585e147fcdb65899826f825cbc09972fc1d37be5843a2e27b499fb6e70c"
+        }
+      ]
+    },
+    {
+      "id": "local-rig-motion-cued-20260921",
+      "result": "BOTH_COLLECTORS_PASSED",
+      "camera_frames": 1017,
+      "tof_frames": 204,
+      "cue_status": "cue before capture; actual motion times and distances not measured",
+      "files": [
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-cued-20260921/manifest.json",
+          "sha256": "87aedb056266eba6bb55976430c69bb7a3d6a100d0afc3a26fa8cdb4fb6901c3"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-cued-20260921/summary.json",
+          "sha256": "798afb8ab985cda930ef473d325e9bab427edf879189a56d91d1f016675b52c3"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-cued-20260921/camera/serial.bin",
+          "sha256": "d69640612b8b00323d617c89ba1edfc4821816fbad95c0b3f6b1adf39a4586e5"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-cued-20260921/camera/frames.jsonl",
+          "sha256": "529bcafa19c303e296b10adcfd9249d4de0f2e2a32ab9de26f019a00b949824d"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-cued-20260921/tof/raw.bin",
+          "sha256": "a1ee97c4c3ab6dee1f37a89955936adc14f19d4d99b00b46f82caacf4f3d9299"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-cued-20260921/tof/frames.jsonl",
+          "sha256": "6bd008fec8c36befd498b508277cff5ca7c49f61908f983e8313b7b72a5203e8"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-cued-20260921-inspect/summary.json",
+          "sha256": "e612c227a677df632b90c43fffc3d7ccb9bd85be6d7d0b0c4fa3cd7664982b88"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-cued-20260921-inspect/pairs.jsonl",
+          "sha256": "418b0d982ff0fc95ef76e091897b1175f5dbf7edcc2cdb8d3725a6d7e5e47fe5"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-cued-20260921-inspect/tof-center-by-host-receipt.png",
+          "sha256": "74fe4a2ee39abc197c23f034a202812295f28190348c627f2cc3421449218014"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-rig-motion-cued-20260921-inspect/camera-samples.png",
+          "sha256": "9543b7db7e16b8bf8394980379bc8778b7cfa40315516e44be0ea72cad50f143"
+        }
+      ]
+    },
+    {
+      "id": "local-handheld-20260921",
+      "result": "BOTH_COLLECTORS_PASSED_WITH_RANGE_PLAUSIBILITY_CONCERN",
+      "camera_frames": 920,
+      "tof_frames": 205,
+      "cue_status": "cue delivered during capture at approximately 10s; actual action times, distances and angles unmeasured",
+      "range_concern": "42 raw zone readings across 22 frames are 1-3 mm with status 5; preserved and unresolved",
+      "files": [
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/manifest.json",
+          "sha256": "a54cfb4cebd3cc850c66cd7de067e3b778bc09a049efb493e3d15c4570edcc17"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/summary.json",
+          "sha256": "501fc8f5d603769acee3fcb7918a90c5c40ff12056ab396b67afa080c2a068ae"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/camera/serial.bin",
+          "sha256": "02bba67b5faf4cb9bab9a556e1753f4139a5397111f94cc3412e4da5c85b5110"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/camera/frames.jsonl",
+          "sha256": "fe6ec5e9abbbd0d0d3500afacc7c0499f41fc9e9f0df221f0123c615433f75cd"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/tof/raw.bin",
+          "sha256": "006e43c3dc8f252586b3b11ffbdd6ac59b09de2076c90204585905b09857fdf4"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921/tof/frames.jsonl",
+          "sha256": "128182ddaa3fd014cb45398c87c6a1dac5e9edc38d4bb7447bd96fa606cf3681"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/summary.json",
+          "sha256": "f09e7bf7072cc23a2fc00d22584d0f86a2903ad378d23e3f9d4dbcf7e8e87f15"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/pairs.jsonl",
+          "sha256": "fff35f62b75985a965f78059df3d116aa8413dbb7bf0f86446be43ff714ca74e"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/tof-center-by-host-receipt.png",
+          "sha256": "cc2d66186a9d5157dd1ad1cf24e442cf8590b135e26b53a9a5e73555cbecd561"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/camera-samples.png",
+          "sha256": "9de2375da03f69f66e99c3a063ea3f21b7825f5732e70e78ddf5a60b5fe5f7d1"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/camera-samples-selection.json",
+          "sha256": "9f590484ae6390fb802e29047fd17c227460d68f34f48a686769ae92820a181b"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-handheld-20260921-inspect/raw-anomaly-audit.json",
+          "sha256": "7da179d650bd371bfb3402de24a478bcbc0c116c76182da37af3683dc897f043"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/inspect-handheld-20260921.py",
+          "sha256": "80400e9a11c55c72101f7f643eab682c4bfabbd4c37fcd046188e82dd1e46d28"
+        }
+      ]
+    },
+    {
+      "id": "local-static-check-20260921",
+      "result": "COLLECTION_HAS_ISSUES",
+      "camera_frames": 473,
+      "tof_frames": 102,
+      "scene": "User requested static rig facing wall, no measured distance; six uniform RGB samples visually stationary; physical window clearance not independently verified",
+      "issues": "Raw stream starts mid-JSON; 1 malformed first line, complete frame sequences continuous",
+      "range_concern": "10 status-5 target-present readings of 1-3 mm across 10 frames, only zones 0 and 8; 6 additional zero values; all have CNH maximum at bin 0",
+      "files": [
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/manifest.json",
+          "sha256": "cdde69b85ad7692c67daea8efe799d65b4def7b976fc5e4d4e1aa8ade6cb1f9f"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/summary.json",
+          "sha256": "7f86b2da83d6c9d94e9a34656e236773d05a172aa93bbf8c61e7be74ae2eddd8"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/camera/serial.bin",
+          "sha256": "c46076243b03915984eaf8a2a4c072d9672053b70048bbc36881c487370da3b6"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/camera/frames.jsonl",
+          "sha256": "f6b26fea5037f4ea9124855a078ee30caf34984755bfb500f9c03df16a48567b"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/tof/raw.bin",
+          "sha256": "0be739b2f4af9b95a7d41e1f3ee96d3df8ad257a13cd3363bd63601659562896"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/tof/frames.jsonl",
+          "sha256": "236991d790f447da8a30f2c0a3a22f4c516c94777ee0e1fbe61e2520983885c0"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921/tof/issues.jsonl",
+          "sha256": "39f01590e1fefb1ae7c4c2bd42da79b59eb15a4691c30c94666a2c88db7ab64a"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/summary.json",
+          "sha256": "0b28a199a36845b72003f415e5ebd0ab0fd79fb98f7e8b3be8308456e2aeac13"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/pairs.jsonl",
+          "sha256": "dcabc4848d3977d09edd01ba15504e1aadab00fa47071fa21be44980323ce0a7"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/near-zero-audit.json",
+          "sha256": "ae03f4a244e615a06ece33d95d169ab7b724f7bf26c5417f135ac89e59b5ed75"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/tof-center-by-host-receipt.png",
+          "sha256": "75a8bd993fe915dd30688df55d4f18722c290b02ef0fe3f569eaa328a5c701dd"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/camera-samples.png",
+          "sha256": "1de8a53f7c9b4e707714db6677112a68a31970443d29c3a87cda584763253d49"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-static-check-20260921-inspect/camera-samples-selection.json",
+          "sha256": "df32c453724db3ec44a374b4fa6d7e97068f78f766f97ca6adec5288bde8b7e3"
+        }
+      ]
+    },
+    {
+      "id": "local-diag-v2-static-20260921",
+      "result": "COLLECTION_HAS_ISSUES",
+      "camera_frames": 472,
+      "tof_frames": 102,
+      "diagnostic_frames": 102,
+      "distance_conversion_mismatch_cells": 0,
+      "scene": "User reconfirmed previous static wall-facing pose and window clear; reflash and MCU resets intervened; no measured distance",
+      "issues": "One incomplete last raw JSON line; complete frame sequences continuous",
+      "range_concern": "4 positive 1-3 mm plus 200 zero cells at status 5; 193 zero values derive from negative signed Q2; unresolved optical/device cause",
+      "files": [
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/manifest.json",
+          "sha256": "add46b997e1d5ac6aea0d84af3f6bb2422c2ffed7b6638130c17820b71daaf1e"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/summary.json",
+          "sha256": "b0cf71488cc973a299e4312e3257b59d845dbb608b7871f86b07a9878c33eb38"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/camera/serial.bin",
+          "sha256": "e76fb27d844a41802a6a9de2f7902360fe360360cabecdeb2e98f9e9768e4c79"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/camera/frames.jsonl",
+          "sha256": "99cbfbd6327d5a34d140ba0dc6e59dafb0acc5241716e343ba24c5f46cf5e310"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/tof/raw.bin",
+          "sha256": "1c5400c4b012b7076dd896f1b9f9db4d741fd0a2c784d49b277f200f370f7656"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/tof/frames.jsonl",
+          "sha256": "161920db68c408791a5c6b2fb952ade2b913e8181f22a91b814ee7e42cb0c9f8"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/tof/events.jsonl",
+          "sha256": "e9467277685b44f460215d8e64376c7b2d863b6a0004d426bb6ba11c8b2f0203"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921/tof/issues.jsonl",
+          "sha256": "c0a75aa3f536be4d9099b61db7f1f02e89ee4df9385900b9f1572d83132e8f91"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/summary.json",
+          "sha256": "e800fa8565b2651841c12fbf41b1f56bd4aaff4f62dfaef12f3d96f928b27156"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/pairs.jsonl",
+          "sha256": "ddcbfde9c908bc65312adc87043dbd675e068f5d3e1789efda585642d35c53cf"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/diagnostic-audit.json",
+          "sha256": "a48422664626c36f7841a262ead4f9f521849eb101425e63810455b19d439156"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/diagnostic-cell-observations.json",
+          "sha256": "0a2b3945d6f295e7c2712d8f0a27ee119f8a174ce847e61823b7dd957c537358"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/camera-samples.png",
+          "sha256": "f2a8565baf0f7e1446c5173ec97014853f55946a65d12970cfc5be9850390d22"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/camera-samples-selection.json",
+          "sha256": "73c7bc46504487ab0e65d4dba290b260bf1d58269f93102886eddf888d09134c"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/paired/local-diag-v2-static-20260921-inspect/tof-center-by-host-receipt.png",
+          "sha256": "a65d66d35a174735d1741c1ef3f05f23beb1c3e98c7fffa236daa8977e874536"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/flash-plan.json",
+          "sha256": "8307910f69e427022c7350701ec161c42d3c14951a82872374dcdecf523e334b"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/backup.log",
+          "sha256": "deeb6033b8c6fceafc5584dfd3b9eb1f6518b197bd47f7a4709009889d80bc94"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/upload.log",
+          "sha256": "60fbdeecd8b2669eea86f73a3f97c4e66f940ca3fff3a19dd8f28add25300f56"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/audit.py",
+          "sha256": "5d8d05ce59d02217d37f3e3d4c3bcba4152874056acfeafce65bf6896cea9e0a"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/firmware/build-manifest.json",
+          "sha256": "6ad601e5be8f2697186a2d3d8890b3380092089ce6aac0c4a33229ab820892bc"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/firmware/tof_cnh_diag.ino.bin",
+          "sha256": "6a12066dbf6d0056e6f2edd85f787eb91f07fe96c85cea5a0842cca4e772db80"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/firmware/tof_cnh_diag.ino",
+          "sha256": "a906e75b7b2b656f7fc14fd9bfc4ce09fedfa20e8667b2aafd058d67d6daf785"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/firmware/compile.log",
+          "sha256": "73deee81a3c685d956726120f8bd171dc9fb749ccd808e8ad48f0da3fe80ee97"
+        },
+        {
+          "path": "artifacts.local/hardware-bringup/diagnostic-v2-20260921/compile-first-template-error.log",
+          "sha256": "c13ed43ee7885a044eb72a006eee1134c6de72a7e1ecec51debac60a1eb4b89d"
+        }
+      ]
+    }
+  ]
+}

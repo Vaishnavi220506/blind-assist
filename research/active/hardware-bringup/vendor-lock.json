@@ -1,0 +1,34 @@
+{
+  "source_subdirectory": "ESP32/VL53LxCH/main/VL53LMZ_ULD_API",
+  "files": [
+    {
+      "path": "src/vl53lmz_api.c",
+      "sha256": "6ec1ea37e90d07e86a829ea3eadd82df23adf5e00707d432f878010195378b0a"
+    },
+    {
+      "path": "src/vl53lmz_plugin_cnh.c",
+      "sha256": "80e46cb841c5a9e661fda1bf91508d9250ec146cc376f7a9bed1c65fff1eb491"
+    },
+    {
+      "path": "inc/vl53lmz_api.h",
+      "sha256": "35f6731d79b25d487b4c1cc13f9d08e927fe43771726708d86da4f4cff4bfcb8"
+    },
+    {
+      "path": "inc/vl53lmz_buffers.h",
+      "sha256": "db6e18ebc8af63d22346d8ccfa06e99db096fd0d69cf861fdc9112c00c075f9f"
+    },
+    {
+      "path": "inc/vl53lmz_plugin_cnh.h",
+      "sha256": "edcae6fe07ae1dcb8f088748544f93f66079be7efc26370412027af2fbbbaa88"
+    },
+    {
+      "path": "inc/vl53lmz_plugin_motion_indicator.h",
+      "sha256": "c93995753a83a1fd3600e3bee74da65fd3779af0d4f14062dbf594153d9ddc2c"
+    },
+    {
+      "path": "LICENSE.txt",
+      "sha256": "bdc7b0f98db4846279336431024c49a01d578a2ea1d19ec68797bbe33e718d2d"
+    }
+  ],
+  "note": "User-supplied driver dependency. Payload remains local; hashes pin the inspected input."
+}

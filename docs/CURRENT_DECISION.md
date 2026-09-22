@@ -1,3 +1,235 @@
+2026-09-22 [tiny-training spatial-query fitting check](../research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md):
+84 consumed train images,504queries. Original global FiLM179TP1FP1FN versus
+spatial180TP0FP0FN; both540/540same-imagequerypairs correct. Both learn
+image-dependent query answers; old fixed query ordering is not structurally
+unavoidable. Macro maskIoU0.484823/0.481782 fails fixed0.50gate, with no
+localization gain from the added branch. Exact package NEGATIVE_CONTROL;
+preserve query-fitting evidence and old negatives. New shared optimization
+and tiny cohort prevent historical-cause attribution. No dev/held access,
+threshold selection, video or App change. A/UNKNOWN remain unchanged.
+
+2026-09-22 [frozen-checkpoint train/dev diagnosis](../research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md):
+Both learned arms rank all six queries identically in every864train/288dev image:
+HEAD-left > centre > right > BODY-left > centre > right. Occupancy maskIoU0
+already on train, foregroundAUROC0.544train/0.576dev; conditional occupied-bin
+accuracy85.64%/70.45%does not repair occupancy or spatial query use. Retain this
+diagnostic COMPONENT; original recipe remains NEGATIVE_CONTROL. No refit,
+cutoff change, held-label access or held-row inference. A/UNKNOWN unchanged.
+
+2026-09-22 [single-frame query occupancy result](../research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md):
+New1728-frame grouped Development,576held frames. Matched classifier62/34/194
+TP/FP/FN becomes occupancy88/44/168; events16/32 to29/32, but false segments17
+to29 and addedFP10 exceed the declared costs. All44occupancyFP are OUTSIDE.
+Visible maskIoU0 across880positive queries; only13positive distance bins correct.
+A current193/6/63 with32/32events remains stronger. Preserve this exact recipe
+as NEGATIVE_CONTROL; retain A/UNKNOWN.37tests and independent geometry, output,
+component and decision audits pass. Explicit inheritance and archived ledger
+registration complete. Same-generator simulation only; no video or App change.
+
+2026-09-21 [saved B/N disagreement diagnostic](../research/active/dtr-r0/nearfield/BRANCH_DISAGREEMENT_RESULTS_20260921.md):
+Consumed1152-frame posthoc partition, no refit/cutoff change. Boundary current
+common/B-only/N-only add41/3,49/4,45/5 TP/FP; each exceeds added-FP cap2.
+All8global memoryless binary retention masks reported; only A alone passes all
+costs. AND retains useful Core gain: hold159/25/17 to172/26/4, events15/16 to16/16,
+with Core costs passing. Boundary AND62/10/114 fails added FP5/cap4 and segments3/cap2;
+current FP3/cap2 already fails. No whole-fusion impossibility claim or mask selected.
+Core is not solved on wider geometries; retain N Core/HEAD gains and B BODY coverage.
+No new verifier/expert training: within-pattern separation needs independently
+justified public-input evidence and different validation layouts. A/UNKNOWN and
+all prior dispositions unchanged. Diagnostic COMPONENT;4tests and independent
+counts/event/cost checks pass; local inheritance and ledger303 receipts preserved.
+
+2026-09-21 [fixed-B broader-data result](../research/active/dtr-r0/nearfield/DATA_COVERAGE_RESULTS_20260921.md):
+One new3456-frame source,1728-frame fit and isolated1152-frame same-generator
+Development evaluation completed. N versus same-dev-calibrated old B preserves
+aggregate Boundary hold106/19/70, but reduces Core FP66 to34 and increases Core
+TP172 to175. HEAD-horizontal12/1/34 becomes43/7/3; BODY-plane38/9/6 becomes9/3/35.
+These are real partial gains and coverage losses, not lossless B rescue retention.
+Boundary added FP/segments14/10 exceed caps4/2; Core segments also exceed budget.
+NO_GO / exact data-condition NEGATIVE_CONTROL; no further fit/cutoff/loss retry.
+Old consumed regression N87/20/86 versus calibrated B145/20/28 confirms a coverage
+cost, not fresh confirmation. Twelve tests and independent64-frame public replay
+pass. A/UNKNOWN and legacy B/R and paused POINT/REGION dispositions stay fixed.
+All task-owned processes released; local inheritance and ledger303 receipts saved.
+
+2026-09-21 [dense-depth alert branch paused](../research/active/dtr-r0/nearfield/REGIONAL_DEPTH_RESULTS_20260921.md):
+POINT/REGION completed a negative algorithm test, unlike the unevaluable oracle.
+Their sole matched change was center versus regional training consistency loss;
+no usable gain under this network/supervision/top16 readout. Both remain exact
+NEGATIVE_CONTROL. Pause dense recovery then alert aggregation; no extra diagnostic,
+loss/top-k/aggregation/longer-fit retry. Core retention is structural A OR retention.
+[Prior R](../research/active/dtr-r0/nearfield/CORRIDOR_RELATIVE_RESULTS_20260921.md)
+retains useful partial evidence: Boundary hold14/5/159 to78/6/95,4/16 to11/16
+events,9/16layouts gain, added Boundary/CoreFP1/5 within all cost caps.
+Its45.09% recall, HEAD-horizontal0/43, five missed events and max detected delay
+1.8s retain nonpromotion; no useful-rescue evidence is erased. Saved working
+points are not equal-realized-FP comparisons. A/UNKNOWN and B/R/U/G unchanged.
+Later research prioritizes task alerts via genuinely new spatial cues or learning
+coverage across objects/layouts/backgrounds, not mandatory dense depth recovery.
+The1152 consumed frames are not fresh confirmation. No experiment starts here;
+existing local dispositions and ledger303/unknown-terminal receipts remain.
+
+2026-09-21 [ordered spatial geometry contrast](../research/active/dtr-r0/nearfield/SPATIAL_STRUCTURE_RESULTS_20260921.md):
+One matched U/G comparison preserves ordered frozen RGB, with only eight
+interval-relative geometry channels added in G. Horizontal decisions are
+identical: 15/43 TP, 2/4 events. Boundary hold U66/11/107 vs G68/9/105;
+Core173/44/0 vs173/45/0. Both exceed transfer cost caps and fail coverage.
+Geometry NOT_SUPPORTED; both exact recipes NEGATIVE_CONTROL. A/B/R retained.
+No fit/cutoff retry, protected test, demo change or automatic successor.
+Local structured evidence and global ledger303/unknown-terminal receipts retained.
+
+2026-09-21 [corridor-relative representation](../research/active/dtr-r0/nearfield/CORRIDOR_RELATIVE_RESULTS_20260921.md):
+One fixed 60-feature interval-band/shared-max MLP gains Boundary hold14/5/159
+to78/6/95 on consumed1152-frame transfer; events4/16 to11/16, gain9/16layouts.
+Core173/33/0 becomes173/38/0. Added-cost caps pass, but45.09% Boundary recall
+misses frozen50% floor; all four HEAD-horizontal layouts remain wholly missed.
+NO_GO / exact-recipe NEGATIVE_CONTROL, preserving measured low-cost gains.
+No threshold/fit retry, default promotion, protected test or automatic successor.
+Independent audit and focused tests PASS; global ledger303 gap retains receipts.
+
+2026-09-21 [Core projection sensitivity](../research/active/dtr-r0/nearfield/CORE_PROJECTION_STRESS_RESULTS_20260921.md):
+One frozen consumed1152-frame check shifts reported boxes by +/-2 lattice
+pixels with ranges unchanged. Core173/33/0 becomes172/36/1 or172/64/1;
+16/16events remain, one.2s HEAD onset delay per sign. OUTSIDE FP0 becomes11/34.
+Both conditions pass inherited usefulness gates versus matching Calibration,
+but right-offset false-alert duration rises6.6 to12.8s versus nominal Core.
+Retain diagnostic COMPONENT, not calibration robustness or hardware evidence.
+A/demo, thresholds and protected test unchanged; no automatic successor.
+Global ledger303/unknown-terminal gap has local disposition and receipts.
+
+2026-09-21 [fixed-entry conditional hold](../research/active/dtr-r0/nearfield/CONDITIONAL_HOLD_RESULTS_20260921.md):
+Original score only, entry15.769264 frozen; selection-only keep15.535847 adds
+one internal Boundary frame but evaluation adds zero TP/FP. Core82/11/2 and
+Boundary16/0/68 exactly match original_current. Of68 Boundary misses,51 have
+no clip trigger,1 precedes the trigger,16 are reachable by continuation. Internal
+positive11.615569 versus exit negative14.757340 shows conflicting keep limits;
+Core exit15.453609 tightens the shared threshold. NEGATIVE_CONTROL for this
+specific fixed-entry/scalar-keep recipe; no threshold retry, new head or successor.
+A/demo unchanged. Four tests and independent audit PASS; global ledger303/unknown-terminal receipts retained.
+
+2026-09-21 [multi-zone RGB anchoring](../research/active/dtr-r0/nearfield/RGB_MULTIZONE_RESULTS_20260921.md):
+Fourteen consumed diagnostic frames (seven negative/Boundary pairs, three layouts)
+yield zero explained OUTSIDE negatives. Only two selection positives have the
+required adjacent whole-zone anchors; their three CROSSING queries retain
+307/307 observed-return contributor incidences. Eight frames have no whole-zone
+anchor, four have one, two have two. Close this exact recipe as NEGATIVE_CONTROL;
+UNKNOWN is unresolved, not an RGB information ceiling. Keep A/demo unchanged;
+no weaker-anchor retry, training or automatic successor. Independent audit PASS;
+global ledger303/unknown-terminal receipts and local disposition retained.
+
+2026-09-21 [public ToF axis evidence](../research/active/dtr-r0/nearfield/AXIS_EVIDENCE_RESULTS_20260921.md):
+All16 consumed transfer layouts/1152frames: contained-depth evidence exists on
+273/346positives,0/633distance negatives,137/173depth-valid lateral negatives.
+It excludes15/15high-score distance negatives but loses4/82native-backed
+balanced-suppressed positives, and is absent at both endpoints of all32positive
+clips. Distance information exists; hard qualification has boundary costs and
+does not settle lateral ownership. Retain diagnostic COMPONENT, no new alerts,
+gate, training or test. Independent audit PASS; global ledger303/unknown-terminal
+receipts retained.
+
+2026-09-21 [current-only fixed-score audit](../research/active/dtr-r0/nearfield/CURRENT_ONLY_RESULTS_20260921.md):
+Removing hold from selection releases Boundary rescues, but gains remain in1/8
+layouts. Evaluation current Core stays82/11/2; Boundary A4/0/80 becomes16/0/68
+with original,12/0/72 uniform,9/0/75 balanced. Selection gains4frames in1/8layouts.
+New readouts underperform original at matched no-added-current-FP cutoffs;
+all fail the fixed cross-layout diagnostic. Retain A/demo and local rescue
+evidence; stop without conditional hold, fitting or protected-test activation.
+Independent audit PASS; local NEGATIVE_CONTROL; global metadata pending
+(ledger303/unknown terminal).
+
+2026-09-21 [frozen32D last-layer pilot](../research/active/dtr-r0/nearfield/LAST_LAYER_RESULTS_20260921.md):
+Two33parameter heads retain0/68 Boundary rescues on eight consumed evaluation
+layouts; both equal A (Core82/11/2, Boundary4/0/80). xAUC .8975 becomes .9133,
+but the no-added-FP cutoff is bound by a true pre-exit frame under unchanged
+hold. This rejects the combined recipe, not current-only linear separability.
+Independent audit PASS; local NEGATIVE_CONTROL, global metadata pending; stop.
+[Prior paired ordering](../research/active/dtr-r0/nearfield/LATERAL_PAIR_DIAGNOSTIC_RESULTS_20260921.md) remains173/173; original test closed.
+
+2026-09-21 [existing-data corridor feasibility](../research/active/dtr-r0/nearfield/EXISTING_CORRIDOR_DATA_RESULTS_20260921.md):
+All15000 BODY-query metadata geometries verified; all indexed payload paths exist.
+750 lateral candidates across750 sites are crossbar-only,12 original fixture
+groups,1.636-1.794m outside versus recent6.6-11.9cm false-positive clearances.
+Only3 of10 sampled pairs have both targets visibly supported; all20payload
+hash checks pass, but no full-scene negative is certified. Retain input/OBB
+adapter COMPONENT; direct hard-negative training unsupported. Seven geometry
+tests and independent recount pass. No training/capture/protected-test access.
+
+2026-09-21 [frozen supplement new-layout verification](../research/active/dtr-r0/nearfield/SPATIAL_COMPLEMENT_TRANSFER_RESULTS_20260921.md):
+16 new groups/1152 frames, unchanged model/high cutoff/hold. Current Boundary
+10/1/163 becomes128/10/45, gains in15/16 groups; Core171/17/2 becomes173/36/0,
+including17 additional OUTSIDE FP. Held Core gains no TP and adds25 FP; Boundary
+adds126 TP and14 FP. Rescue signal transfers, low-FP specificity does not.
+Retain COMPONENT only; independent audit PASS, original test unactivated, stop.
+[Existing-data inventory](../research/active/dtr-r0/nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md)
+identifies4752 matched prior frames and15000 BODY-query adaptation candidates;
+reuse before routine expansion, with reserved test and label-contract limits.
+
+2026-09-21 [frozen A/B complementarity diagnostic](../research/active/dtr-r0/nearfield/SPATIAL_COMPLEMENT_RESULTS_20260921.md):
+Same consumed eight dev groups/576 frames, no new fit or test access. A OR
+previously disclosed high B scores changes current Core85/4/1 to86/4/0 and
+Boundary5/3/81 to71/3/15. Whole-group cutoff diagnosis retains these rescues but
+adds one Core FP; unchanged hold adds three Boundary exit FP. Calibration screen
+is redundant. Retain COMPONENT evidence, not a complete zero-added-FP upgrade;
+original full-replacement negative remains scoped. Independent audit PASS;
+stop without tuning, release changes or automatic successor.
+
+2026-09-21 [one spatial RGB-ToF BCE pilot](../research/active/dtr-r0/nearfield/SPATIAL_BCE_RESULTS_20260920.md):
+40 new groups/2880 frames, one fit, no ranking. Prespecified dev zero-logit
+Boundary current5/3/81 becomes78/3/8, but Core85/4/1 becomes83/15/3 and two
+onsets are delayed.2s. No admissible threshold among577; current-only gates fail
+too. Stop before test inference; retain Calibration/strong+hold and close this
+fixed full-alert replacement as NEGATIVE_CONTROL with Boundary signal retained
+as diagnostic evidence. Independent audit PASS; no retuning/demo/successor.
+
+2026-09-20 [frozen Core policy new-layout validation](../research/active/dtr-r0/nearfield/CORE_HOLD_VALIDATION_RESULTS_20260920.md):
+One new36-layout/432-frame cohort supports the simple Core candidate:
+Calibration74/133/0, strong72/10/2, strong+hold74/10/0; FP26 to8 segments,
+26.6 to2.0s. All12 Core events have full sampled coverage and entry-frame alerts,
+although8 alerts were already active before entry. Boundary remains9/4/65 and
+4/12 events. Retain a scoped controlled-demo CHALLENGER; full-task Calibration,
+old onset failures and challenge limits remain. End this algorithm round.
+
+2026-09-20 [single half-bin phase diagnostic](../research/active/dtr-r0/nearfield/HALF_BIN_PHASE_RESULTS_20260920.md):
+One frozen 5 cm histogram shift changes some proxy returns but neither delayed
+HEAD onset. Core strong73/8/5 becomes72/8/6; hold76/9/2 becomes75/9/3;
+Calibration77/128/1 becomes77/129/1. All12 events and onset times persist.
+Retain original proxy/Calibration/hold and scoped sensitivity evidence; no phase
+replacement, threshold search, contract change or automatic successor.
+
+2026-09-20 [delayed-onset64-zone evidence audit](../research/active/dtr-r0/nearfield/ONSET_ZONE_AUDIT_RESULTS_20260920.md):
+The two delayed HEAD frames differ: one loses actual corridor contributors during
+return selection; the other retains a target return but has low interval depth
+fraction. Neither shows large dispersed positive mass hidden by max. Full210 Core
+negative comparisons overlap the fixed descriptors; no full64 information ceiling
+or repair is established. Retain Calibration/hold and bounded diagnostic evidence.
+
+2026-09-20 [fixed causal event readout](../research/active/dtr-r0/nearfield/CAUSAL_EVENT_READOUT_RESULTS_20260920.md):
+Two consumed432 replays separate temporal effects. Primary Core strong73/8/5,
++rise73/17/5, +hold76/9/2, combined76/18/2. Hold improves local continuity,
+but neither delayed HEAD onset is restored; rise adds9 CoreFP without CoreTP gain.
+Keep nonrecursive hold as a scoped continuity COMPONENT; close rising onset rescue
+and the combined onset-recovery role as NEGATIVE_CONTROL. First-alert evidence
+remains unresolved; neither smooth-entry dynamics nor spatial sufficiency is proven.
+Retain Calibration. No new experiment, tuning or automatic successor.
+
+2026-09-20 [Core operating-point diagnostic and one fixed transfer](../research/active/dtr-r0/nearfield/CORE_WORKPOINT_TRANSFER_RESULTS_20260920.md):
+The unchanged score has substantial consumed-data headroom (Core72/126/0 to71/10/1;
+all12 onsets retained), and0/126 old FP use the definite bypass. One frozen
+threshold on36 new layouts gives77/128/1 to73/8/5: FP falls93.75%, but two HEAD
+onsets delay.2s and one event has4/7 coverage. Close this candidate as a negative
+control; retain Calibration and the positive scoped diagnostic. No retuning,
+RGB reopening or successor. Severe boundary costs and metadata gaps are retained.
+
+2026-09-20 [existing-result stratified review](../research/active/dtr-r0/nearfield/EXISTING_RESULTS_STRATIFIED_REVIEW_20260920.md):
+Core usefulness governs future comparisons under the [task contract](../research/active/dtr-r0/nearfield/CAMERA_FORWARD_CONTRACT_20260919.md#useful-core-capability-and-challenge-coverage).
+Old four-sensor A* has strong BODY/HEAD performance; this does not transfer its
+numbers to the current two-sensor task. Calibration stays the current baseline;
+its complete Core layouts retain high false-alert burden. Preserve useful
+components, separate challenge costs, and scope old lossless gates to their tests.
+No new method or experiment is started; frozen dispositions remain unchanged.
+
+2026-09-19 user decision: adopt [the camera-forward corridor contract](../research/active/dtr-r0/nearfield/CAMERA_FORWARD_CONTRACT_20260919.md). Immediate scope is RGB + 8x8 ToF with a fixed camera-frame volume; body-heading compensation, future trajectories and SLAM are excluded. This supersedes the older four-sensor requirement for this task; frozen results and defaults remain unchanged.
+
 # Current research decisions
 
 Updated: 2026-09-07

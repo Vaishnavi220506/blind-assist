@@ -1,0 +1,22 @@
+{
+  "terminal_id": "BA_HALF_BIN_PHASE_20260920",
+  "inheritance_role": "COMPONENT_OR_CHALLENGER",
+  "inheritance_mode": "COMPONENT",
+  "role_scope": "Consumed paired single half-bin proxy sensitivity diagnostic; no replacement phase",
+  "retained_surface": "Measured local return-selection sensitivity; both original delayed onset scores and critical returns unchanged",
+  "failure_signature": "No onset repair; strong loses f0007 and hold loses f0008; Calibration adds f0182 FP",
+  "revisit_trigger": "Separately authorized observation-grounded hypothesis only; no phase sweep or automatic successor",
+  "assignment_basis": "Frozen single offset, paired RNG, original observation parity, sealed predictions and independent source/metric recount",
+  "global_metadata_status": "PENDING_LEDGER303_AND_UNKNOWN_TERMINAL",
+  "registration_receipt": "artifacts.local/work/ba-half-bin-phase-20260920/registration.log",
+  "inheritance_receipt": "artifacts.local/work/ba-half-bin-phase-20260920/inheritance-cli.log",
+  "evidence_sha256": {
+    "protocol.json": "62c239a671128c28baa1afd6f613c4d04559972a6f32311a1991c5a2983ae5ee",
+    "mechanical-noise-record-fix.json": "74469b5d0a309dc89f4b12a7dedebe49a277e0ffa83bb60ae343e6e48c1fe302",
+    "observation-seal.json": "dea78f6b6a9cbda60b0df4495e6afda32d0b679a36f4844bac5996b0bdcc9998",
+    "prediction-seal.json": "68ac95557eb3d39c2ff91de21872ac8fcceda5a4217eb18f0d0cf490ad08d318",
+    "evaluation-seal.json": "cc94cbb4539c741f53a893d2b252c7a7d97d5c71df6c7de4cbb841b2881c2408",
+    "results.json": "6a9906cab7994a8460949b8f24e3078f9c511cb997c4cad7a85f870845b3c68d",
+    "independent-source-recount.json": "324491790371da3dc5bbc1f16f5b7ecffc8004c89877e582c9afaa6ef726625c"
+  }
+}

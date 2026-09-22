@@ -1,3 +1,5 @@
+Scope update, 2026-09-19: [the adopted camera-forward contract](CAMERA_FORWARD_CONTRACT_20260919.md) supersedes the four-sensor requirement for the immediate RGB + 8x8 ToF task. This page preserves historical architecture and evidence; it does not require Radar/IMU or body-frame compensation in the new minimal system.
+
 # Four-sensor simulation mainline
 
 [MZ175](MZ175_RESULTS_20260916.md) retains conditional Radar task consensus as

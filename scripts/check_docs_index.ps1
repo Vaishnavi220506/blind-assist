@@ -6,6 +6,8 @@ $sources = @(
     'docs/CURRENT_DECISION.md', 'docs/DOCUMENT_GOVERNANCE.md',
     'docs/history-index.md', 'docs/CODE_MAP.md', 'scripts/README.md',
     'research/active/l10-r0/CURRENT.md',
+    'research/active/hardware-bringup/README.md',
+    'research/active/hardware-bringup/CURRENT.md',
     'research/active/dtr-r0/CURRENT.md'
 )
 $failures = [Collections.Generic.List[string]]::new()

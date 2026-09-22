@@ -21,6 +21,7 @@ load them only after the matching compact current.
 - [Host research compute](HOST_RESEARCH_COMPUTE.md)
 - [CARLA integration](CARLA_PLAYBOOK.md)
 - [Glasses hardware route](GLASSES_HARDWARE_ROUTE.md)
+- [Independent hardware bring-up: Atom + XIAO/ToF + phone](../research/active/hardware-bringup/README.md)
 
 ## Research knowledge
 

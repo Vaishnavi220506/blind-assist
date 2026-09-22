@@ -1,0 +1,59 @@
+{
+  "schema": "hardware-bringup.atom-evidence-index.v1",
+  "path_base": "repository_root",
+  "records": [
+    {
+      "id": "capture-20260921-usb-vga",
+      "kind": "hardware_camera_capture",
+      "raw_path": "artifacts.local/hardware-bringup/atom-local/capture-20260921-usb-vga/serial.bin",
+      "raw_sha256": "a65bdce176365ffdc649fecfd5321b92f606b6ed9e1fb0b37a20b3d742ffc065",
+      "summary_path": "artifacts.local/hardware-bringup/atom-local/capture-20260921-usb-vga/summary.json",
+      "summary_sha256": "4b87fd048f432dc7c7133e5115f6e1943eafda3ee40a957d0b68000c9d4d1961",
+      "frames": 37,
+      "result": "FRAMES_WITH_FAILURES",
+      "firmware_binary_path": "artifacts.local/hardware-bringup/atom-local/firmware-v1/atom_camera.ino.bin",
+      "firmware_binary_sha256": "43afe2658a72c55b969e89578c588af29be7a58e3dce5fee898b4839d522a180",
+      "claim": "USB JPEG readout only; no synchronization, optical accuracy or alert claim"
+    },
+    {
+      "id": "capture-20260921-usb-vga-v2",
+      "kind": "hardware_camera_capture",
+      "raw_path": "artifacts.local/hardware-bringup/atom-local/capture-20260921-usb-vga-v2/serial.bin",
+      "raw_sha256": "b698f8870d9172d0b01c3f1c8a4793970e2db75821e475cf21c953469315d03e",
+      "summary_path": "artifacts.local/hardware-bringup/atom-local/capture-20260921-usb-vga-v2/summary.json",
+      "summary_sha256": "082212823e7ce9068f7dd42d6744ac9eb5cf875eb38cad0278eb8c0a4dbd5e30",
+      "frames": 25,
+      "result": "FRAMES_WITH_FAILURES",
+      "firmware_binary_path": "artifacts.local/hardware-bringup/atom-local/firmware-v2/atom_camera.ino.bin",
+      "firmware_binary_sha256": "107285cb13930a6b62a70c2524f76c8ca805fea909625a24101702d4357806c7",
+      "claim": "USB JPEG readout only; no synchronization, optical accuracy or alert claim"
+    },
+    {
+      "id": "capture-20260921-usb-vga-buffered",
+      "kind": "hardware_camera_capture",
+      "raw_path": "artifacts.local/hardware-bringup/atom-local/capture-20260921-usb-vga-buffered/serial.bin",
+      "raw_sha256": "e58f615882ffda11d9ab7246179f0398251e032549ff413900cfdbe38da4f996",
+      "summary_path": "artifacts.local/hardware-bringup/atom-local/capture-20260921-usb-vga-buffered/summary.json",
+      "summary_sha256": "2ec2adac823f203cd27bf217b1f946a0f8c55d934ea41c73cfcb4f354094a3be",
+      "frames": 124,
+      "result": "FRAMES_WITH_FAILURES",
+      "firmware_binary_path": "artifacts.local/hardware-bringup/atom-local/firmware-v2/atom_camera.ino.bin",
+      "firmware_binary_sha256": "107285cb13930a6b62a70c2524f76c8ca805fea909625a24101702d4357806c7",
+      "claim": "USB JPEG readout only; no synchronization, optical accuracy or alert claim"
+    },
+    {
+      "id": "capture-20260921-usb-otg-vga",
+      "kind": "hardware_camera_capture",
+      "raw_path": "artifacts.local/hardware-bringup/atom-local/capture-20260921-usb-otg-vga/serial.bin",
+      "raw_sha256": "f04761afffc874fd78d0770a3d459d3f6f0f44156b494525cba27fa8f7c230dc",
+      "summary_path": "artifacts.local/hardware-bringup/atom-local/capture-20260921-usb-otg-vga/summary.json",
+      "summary_sha256": "c02091946a428cc712012593daef1275810b91e1d82340efba64c02008b10e10",
+      "frames": 472,
+      "result": "FRAMES_RECORDED",
+      "firmware_binary_path": "artifacts.local/hardware-bringup/atom-local/firmware-v3/atom_camera.ino.bin",
+      "firmware_binary_sha256": "1e259afd248112095a3ef8c3e071dc4d3d27cee63be829820992795f1774fdca",
+      "claim": "USB JPEG readout only; no synchronization, optical accuracy or alert claim"
+    }
+  ],
+  "notes": "Failed captures preserved; final USB-OTG camera readout passed bounded capture. Full original Flash backup remains private local artifact."
+}

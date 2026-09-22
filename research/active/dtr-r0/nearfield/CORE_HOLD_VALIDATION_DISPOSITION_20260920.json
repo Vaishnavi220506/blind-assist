@@ -1,0 +1,28 @@
+{
+  "terminal_id": "BA_CORE_HOLD_VALIDATION_20260920",
+  "inheritance_role": "COMPONENT_OR_CHALLENGER",
+  "inheritance_mode": "CHALLENGER",
+  "role_scope": "Core-specific controlled BODY HEAD low-false-alert policy; no full-task or App replacement",
+  "retained_surface": "One new complete432 cohort: Core74/10/0 versus Calibration74/133/0;12of12 events; hold restores2 HEAD frames without added FP",
+  "failure_signature": "Boundary9/4/65 and4of12 events;8 Core events already alert before entry; old2 delayed onsets remain historical limitations",
+  "revisit_trigger": "This algorithm round ends; no retuning or automatic successor",
+  "assignment_basis": "Prospective frozen tradeoff passed with independent complete recount and source seals",
+  "global_metadata_status": "PENDING_LEDGER303_AND_UNKNOWN_TERMINAL",
+  "registration_receipt": "artifacts.local/work/ba-core-hold-validation-20260920/registration-ledger.log",
+  "inheritance_receipt": "artifacts.local/work/ba-core-hold-validation-20260920/inheritance-cli.log",
+  "evidence_sha256": {
+    "protocol.json": "285d40874abd797fa0ea4c5509d4216511dc430271d2fabd73675c0c268e5efc",
+    "spec.json": "150f2c181e13614dace5fa5c4a5896908df5eaffd343bd0f510fdd22caa90b2d",
+    "preflight.json": "635aef44a2fc1bbfe0736b94c751873a654760a95442c1659c4f17a1d9376198",
+    "observation-seal.json": "21d07d4be0b0d95184922fa15d473494e5176f0898179491539d365e6a9f2738",
+    "prediction-seal.json": "6c57a9f0c794919dafcfde7aaddb1ac97fa7edcc6a7883509d55977cf7e69c8b",
+    "evaluation-seal.json": "7814a801f1f391882476a80c093b236b8ce9bff858551cab114d87cca2bd5b37",
+    "results.json": "ae15c3088a334e0b602191a7929e7c0c89447fe326b0fb3338549c22569f4001",
+    "independent-recount.py": "8dca91e7744ea55a416facc5f93d632b44c621b5eaa1b056c4ef0915dd3ef83d",
+    "independent-recount.json": "4c673406ad0370a1252b1336302bd7dbd9cc897d04f175a2d9977f099dae4482",
+    "capture/receipt.json": "69573496b5795495fbc1587a573f2ce0aa961b5e0201d6ef060dceb13e9fc02e",
+    "capture/process-release.json": "3dadaddf1e081cb09f7219d6a34f7e2629c423ee2719f6781724a9523031eccc",
+    "core-alert-timeline.png": "ab31d0b28b6661214544b6460bbec3029455c922a39b76bd6ec9ac212ba06de9",
+    "plot_core_timeline.py": "643dd761c436c7c1f8ac1f681079f1e5d0c67e85a266bfafec557d8c8365b8c7"
+  }
+}

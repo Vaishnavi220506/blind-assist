@@ -44,6 +44,14 @@ BlindAssist L10M comparison evidence contains descriptive EvoX signals but did
 not establish meaningful incremental superiority over direct Codex or
 Best-of-N; therefore neither EvoX nor ADA is the unconditional default.
 
+The [2026-09-22 Auditor prompt pilot](../research/active/dtr-r0/nearfield/SKYSYNTH_AUDIT_PILOT_20260922.md)
+found validated single-mutant coverage of 6/8 for direct Codex and 7/8 for the
+official Auditor prompt, below the frozen +2 criterion. A malformed-timestamp
+contract/reference ambiguity affects one direct probe bundle; this is not a
+clean false-positive-rate comparison. Keep direct auditing as the default;
+retain reference-plus-mutant test validation as useful engineering practice.
+This was a one-call prompt-component ablation, not the full SkySynth workflow.
+
 ## Shape the candidate before searching
 
 Prefer explicit subcontracts over one unconstrained `decide()` function:
@@ -143,6 +151,16 @@ manifest before dispatch. It does not perform dependency synchronization or
 modify the SkyDiscover environment.
 
 ## Close out a run
+
+### Completed sparse-path pilot (2026-09-22)
+
+The [native sparse-path comparison](../research/active/dtr-r0/nearfield/SPARSE_PATH_RESULTS_20260922.md)
+used three model calls per arm, sealed selection, and one same-generator held
+evaluation. At four observations, uniform resolved131 held scenes, direct112,
+and native top-k99, versus171 with13 observations. Neither selected policy met
+90% retention; Sky-specific incremental value was not established. Retain the
+component diagnostic and receipts, without default promotion or further search
+under that consumed protocol. Global registration remains blocked by ledger303.
 
 Record the BlindAssist source hash, SkyDiscover commit, initial candidate,
 config/evaluator/input hashes, model, call/token/evaluation ceilings, retry and

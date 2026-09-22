@@ -1,0 +1,19 @@
+{
+  "terminal_id": "BA_CORE_WORKPOINT_20260920",
+  "inheritance_role": "COMPONENT_OR_CHALLENGER",
+  "inheritance_mode": "COMPONENT",
+  "role_scope": "Consumed Core432 scalar workpoint diagnostic; not fresh validation",
+  "retained_surface": "Same score admits 72/29/0 with full Core TP retention and 71/10/1 with all12 original Core onsets; definite bypass FP=0/126",
+  "failure_signature": "Event candidate boundary events12/12 to1/12; data consumed for threshold selection",
+  "revisit_trigger": "One separately frozen unchanged-candidate new-layout validation only; no threshold rescue",
+  "assignment_basis": "Frozen protocol and results, independent saved-decision recount",
+  "global_metadata_status": "PENDING_LEDGER303_AND_UNKNOWN_TERMINAL",
+  "registration_receipt": "artifacts.local\\work\\ba-core-workpoint-20260920\\registration.log",
+  "inheritance_receipt": "artifacts.local\\work\\ba-core-workpoint-20260920\\inheritance-cli.log",
+  "evidence_sha256": {
+    "protocol.json": "2bfcd583efec6ba2b3e3f1b6ce3dc9d16634b9fa049c5f63075108f1d3ea8ce6",
+    "implementation-seal.json": "2f19ede1d6d31e15ceadecfa6ca800bcc4dcd16ca3e8f08e05d12c614c1c4d72",
+    "results.json": "1c792dac4b8041b51f8e7f822bea1b6e01bd5b4f9382fe83e4d952f7832af052",
+    "decisions.json": "2212389b93a9ff14a4d214a76507a5719a50a378ca584770693131594d5b9996"
+  }
+}

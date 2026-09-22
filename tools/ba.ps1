@@ -4,7 +4,7 @@ param(
     [ValidateSet('setup', 'doctor', 'smoke', 'run', 'materialize', 'assets', 'clean')]
     [string]$Command = 'doctor',
     [Parameter(Position = 1)]
-    [ValidateSet('base', 'research-dtr-r0', 'research-l10-r0', 'android', 'device', 'export')]
+    [ValidateSet('base', 'research-dtr-r0', 'research-l10-r0', 'research-ue', 'android', 'device', 'export')]
     [string]$Profile = 'base',
     [string]$Python,
     [string]$Docker,
@@ -13,6 +13,7 @@ param(
     [string]$CanaryManifest,
     [string]$CanaryOutput,
     [string]$RunId,
+    [string]$RunSpec,
     [string]$RunQuestion,
     [string]$EvidenceBoundary,
     [string[]]$AssetInput,
@@ -356,6 +357,17 @@ function Invoke-GovernedResearchRun {
 function Invoke-Run {
     $forward = @($Arguments | Where-Object { $_ -ne '--' })
     switch ($Profile) {
+        'research-ue' {
+            $selected = Resolve-ResearchPython
+            if ($RunSpec) {
+                $resolvedSpec = Resolve-ConfiguredPath $RunSpec '__unused__' '__UNUSED__' ''
+                Invoke-NativeChecked $selected @((Join-Path $RepoRoot 'tools/data/asset_runtime.py'), 'run', '--spec', $resolvedSpec, '--require-ue-reuse')
+            } else {
+                $native = @((Join-Path $RepoRoot 'tools/data/ue_reuse_run.py'), 'run')
+                if ($RunId) { $native += @('--run-id', $RunId) }
+                Invoke-NativeChecked $selected $native
+            }
+        }
         'research-dtr-r0' {
             $selection = Invoke-DoctorResearch
             if ([string]::IsNullOrWhiteSpace($EventInput)) {

@@ -1,9 +1,1220 @@
+## Tiny-training query fitting: added spatial branch not retained (2026-09-22)
+
+[Fixed paired check](nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md):
+84 consumed train images,504queries. Original global FiLM179TP1FP1FN versus
+spatial180TP0FP0FN; both540/540same-imagequerypairs correct. Both learn
+image-dependent query answers; old fixed query ordering is not structurally
+unavoidable. Macro maskIoU0.484823/0.481782 fails fixed0.50gate, with no
+localization gain from the added branch. Exact package NEGATIVE_CONTROL;
+preserve query-fitting evidence and old negatives. New shared optimization
+and tiny cohort prevent historical-cause attribution. No dev/held access,
+threshold selection, video or App change. A/UNKNOWN remain unchanged.
+
+## Inheritance batch: three useful components, no default replacement (2026-09-22)
+
+[Four frozen trials](nearfield/INHERIT_BATCH_RESULTS_20260922.md) are complete.
+On the original576consumed frames, LOCAL plus A223TP8FP33FN versus
+RAW200/12/56 and A193/6/63 remains a COMPONENT; its two added false segments
+still exceed the old one-segment budget. [Frozen transfer](nearfield/LOCAL_TRANSFER_RESULTS_20260922.md)
+on576new same-generator frames gives LOCAL228/6/28, RAW193/7/63, A192/4/64,
+with5/7/4false segments. Task transfer, background tolerance and geometry rank
+pass;14/16base rescues survive background changes, with2lostTP/6gainedTP/2removedFP.
+This cohort passes the strict cost gate; the old failure remains. Retain LOCAL
+COMPONENT, A and UNKNOWN; no appearance-invariance, hardware or App claim.
+Additional hypothetical returns plus unchanged hold give 254/29/2 versus
+225/26/31, with entry-sample detection 17/32 to 31/32; retain information and
+its added costs, not a lossless upgrade. Support inheritance returns exactly
+to A current, losing every hold TP gain: exact recipe NEGATIVE_CONTROL.
+On 180 analytic geometries, hypothetical 1mm bins with unchanged shared bias
+and initial query increase nominal correct decisions 97 to 109, no observed
+wrong decisions or old losses: precision COMPONENT, not hardware evidence.
+A, UNKNOWN and old negatives remain. Real detector-track seven-frame analysis
+is NOT_EVALUABLE; physical CNH remains paused. No combined-system claim or retry.
+
+## Frozen checkpoint diagnosis: query ordering does not follow the image (2026-09-22)
+
+[Train/dev inference-only diagnostic](nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md)
+finds the same strict6-query order in all1152train/dev images in both models:
+HEAD-left > HEAD-centre > HEAD-right > BODY-left > BODY-centre > BODY-right.
+Thus centre max always uses HEAD-centre. Occupancy foregroundAUROC0.544/0.576
+and IoU0 show weak selected-state training localization; this is more than a
+held-layout or0.5cutoff failure. Conditional occupied-bin accuracy85.64/70.45%
+retains coarse distance signal but no reliable query localization. Diagnostic
+COMPONENT, original model NEGATIVE_CONTROL and A/UNKNOWN unchanged. Eight
+synthetic tests pass; original dev counts reproduce. No training, BN update,
+held-label access, held-row inference, threshold selection or video successor.
+
+## Single-frame query occupancy: exact recipe not retained (2026-09-22)
+
+[New-layout paired prototype](nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md)
+completed1728new controlled frames and24epochs per arm. On576held frames,
+classifier62TP34FP194FN becomes occupancy88TP44FP168FN,16 to29 of32events,
+but false segments17 to29 and addedFP10 exceed the +1/+2 costs. Both are worse
+than A current193TP6FP32events.880visible-positive queries have maskIoU0 and
+13correct first-hit bins; conditional0.283m MAE is not reliable detection/range.
+Preserve the exact recipe as NEGATIVE_CONTROL and this source as consumed
+Development. A/UNKNOWN unchanged.37tests and independent metric, geometry and
+component/decision audits PASS; inheritance and archived registration complete.
+Task-owned UE/training processes released. No video, App promotion or extra fit.
+
+## Retained A operating scope: broader-layout stability not established (2026-09-22)
+
+[Consumed two-cohort scope audit](nearfield/OPERATING_SCOPE_RESULTS_20260922.md)
+replays2304existing frames at nominal/left/right projection with unchanged A.
+Actual Core positive target fronts span2.294-3.000m; the0.3-3m query definition
+does not establish closer-range coverage. Nominal original173/33/0,16/16events
+becomes159/25/17,15/16on broader layouts. A1.124mwide,7.6cmhigh HEAD-horizontal
+object intruding13.1cm is wholly missed. Broader right shift165/63/11 detects16/16
+but has0.6s onset and58.33%minimum coverage; all three broader conditions fail
+historical Core usefulness. Nominal FP are range-entry/exit errors; shifts add
+OUTSIDE FP. Broader nominal UNKNOWN681/768 includes97alerts and584silent frames;
+silence never establishes clear space. Retain A and diagnostic COMPONENT only.
+Public replay nominal parity2304/2304; independent saved-output auditPASS and
+geometry-label parity2304/2304. No training/capture/App change or successor.
+[Exact receipt recovery](nearfield/LEDGER_REPAIR_20260922.md) resolves ledger303;
+the audit is now archived with explicit COMPONENT inheritance and a refreshed
+global decision index. Historical rows and failed-command receipts are preserved.
+
+## Initial-camera-relative query: semantic consistency without nominal gain (2026-09-22)
+
+[One fixed375history replay](nearfield/INITIAL_RELATIVE_RESULTS_20260922.md) shifts
+query constraints, labels and INprojection to the actual initialcamera, retaining
+all shared sensor uncertainty, worlddomain and anchoredwall. Nominal51TP/46correct
+negatives keep all97old identities with0wrong and0gains; boundary60remainUNKNOWN.
+Range+2mm adds one correctnegative over fullglobalquery, already recognized by
+oldrange-only; all375queries/2340mapped decisions equal that simpler oldcontrol.
+Eight pose/combined arms each change30boundary truth labels; denominators80/100
+or100/80 are explicit, oldlabels untouched. Drift retains92-96nominalcorrect,
+without observedwrong;40globalgauge alternatives preserve relativequery labels
+but do not yield40recognitions. Retain explicit initial-reference COMPONENT,
+nominal-gain NEGATIVE_CONTROL; current-camera runtime and extra sensing untouched.
+750MILPs,0newobservations,6tests and independent math/receipt/containment/metric
+auditPASS. Local inheritance and ledger303/unknown-terminal receipts retained.
+No successor tuning, continuing process or paid resource.
+
+## Boundary observability: sampling gains and query-reference ambiguity (2026-09-22)
+
+[Fixed angle/precision diagnostic](nearfield/BOUNDARY_OBSERVABILITY_RESULTS_20260922.md)
+reuses180consumed geometries,13views/12cm path and adds known5.625degree yaw.
+Coarse paired separation2/30 becomes5/30primary,4/30reverse; both lose one old pair.
+Hypothetical1mm quantization gives18/30fixed,20/30primary; all10far pairs separate
+only under fine quantization. These are observation differences, not TP/FP gains.
+All40lateral cases retain opposite-label common-X-translation witnesses under
+the fixed-global query, all3yaw schedules and both quantizers. More angles/range
+resolution cannot break that coordinate symmetry within the declared model.
+The adopted camera-relative corridor is a different query: common translation
+preserves labels for all40saved witnesses. Do not infer a need for submillimetre
+absolute-world localization; clarify initial/current reference camera before
+new inference. Relative-pose and sensor-extrinsic errors do not automatically
+cancel. Old labels/results unchanged.5tests,2independent audits and saved semantic
+checkPASS;0MILP,56160base and12480counterexample rays. Local inheritance and ledger
+block receipts retained, no further sweep/model, persistent or paid resources.
+
+## Frozen model under slow drift: finite tolerance, boundary information gap (2026-09-22)
+
+[One new-instance drift pilot](nearfield/BIAS_DRIFT_RESULTS_20260922.md) uses180
+new synthetic geometries,13conditions and unchanged shared-bias models. Primary
+nominal51TP/46correct negatives retains the same97cases in all6constant controls;
+six small linear drifts retain92-96, no observedFP/falseOUT. No lossless drift
+claim:1-5correct cases becomeUNKNOWN. General120cases contain all97nominal decisions;
+boundary60cases are allUNKNOWN under fullmodel across every condition.28-30of30
+opposite-truth boundary pairs have identical13view histories, so zero errors is
+not boundary robustness. Existing nominal model is misspecified for drift; no
+general safe-abstention, hardware calibration or independent-source claim.
+Retain finite response diagnostic and scoped lossless/boundary NEGATIVE_CONTROLs;
+prefer new distinguishable observations over more nuisance parameters if pursued.
+375unique queries/1500MILPs,30420new simulated views.6focused tests and independent
+capture/witness/containment/metric auditPASS. Local inheritance and supported
+ledger303/unknown-terminal receipts retained; no model tuning or successor run.
+
+## Shared sensor bias: primary collapse recovery with local identity retention (2026-09-22)
+
+[Frozen shared-bias comparison](nearfield/SHARED_BIAS_RESULTS_20260922.md) reuses
+749 public histories, two presets and2996MILP calls; no new observations. Primary
+X-then-Z restores84/87correct decisions from the two prior all-UNKNOWN conditions.
+Its nominal43TP+37correct negatives remain the SAME80cases across all5conditions;
+no FP or falseOUT observed. Range-only and full range/pose models give identical
+decisions on all900primary histories, so pose variables add no primary gain here.
+Full pose uncertainty costs3correct negatives on straight and2TP on reverse order
+per condition, all genuine opposing-witness UNKNOWN. Previous6straight-baseline
+TP losses on the bend remain; this is not route-wide lossless recovery.
+Bounds come from the frozen synthetic injector; shared constant bias only, no
+hardware calibration, fresh confirmation, arbitrary-noise or safety claim. Retain
+COMPONENT_OR_CHALLENGER/COMPONENT and simple attribution control.7focused tests
+and2independent saved-output/containment auditsPASS. Supported ledger303/unknown
+terminal failures and local inheritance retained; no continuing resources.
+
+## Equal-cost bent-path observation: partial gain, exact-model stress failure (2026-09-22)
+
+[One frozen3path x5condition comparison](nearfield/BENT_PATH_RESULTS_20260922.md)
+keeps12cm/13views on180consumed singlebox scenes. PrimaryXthenZ gives43TP/37correct
+negative versus34/45straight; gains15TP but loses6, so no lossless improvement.
+Reverse-order control reaches48/35, gains23TP loses9; it does not replace primary.
+Prior98constructive-ambiguity cases yield17/32correct conditional decisions on
+the two bends: new viewpoint information exists. No nominalFP/falseOUT observed.
+Range-2mm and pose+(1mm,1mm) make bothbends180UNKNOWN, all both-class infeasible:
+backgroundwall45to44bin crossings cannotfit fixedwall or declaredboxdomain.
+This is modelinconsistency, not complete loss of observationinformation. Retain
+partial geometrycomponent and scoped stressNEGATIVE_CONTROL; no tolerance/path
+retuning, Apppromotion or yaw/RGBsuccessor.9fixtures and2independent auditsPASS;
+749queries/1498calls,3600replayed+23400new simulatedmeasurements. Localinheritance
+andledger303receipts retained; originalexperiments and unrelatedWIP preserved.
+
+## Numerical witness recovery exposes the remaining observation ambiguity (2026-09-22)
+
+[One consumed258query replay](nearfield/CANDIDATE_RECOVERY_RESULTS_20260922.md)
+reproduces every frozen baseline result and restores94of97rejectedIN witnesses
+using closed-query center projection with unchanged forward validation. No added
+MILP/observations and no classification gain. Fixed13view incomplete64to3;
+98of101UNKNOWN have explicit compatibleIN/OUT geometries. Keep34TP/45correctnegative,
+0FP/falseOUT and all79correct decisions.70failures arose at12decimaldecode,24at
+face-to-center arithmetic;3bin mismatches persist and are not retuned. Initial42
+witness cache recovers only3fixedpath cases. Prioritize new observable information
+over solver-only recognition expectations; retain numerical repair as COMPONENT,
+not App/alert promotion.13fixtures and independent saved-output auditPASS;
+rawvectors, failures, local inheritance and ledger303 receipts preserved.
+
+## Saved-trace deepening: continuous path constraints and feedback attribution (2026-09-22)
+
+[Consumed180scene replay](nearfield/OBSERVATION_DEEPENING_RESULTS_20260922.md)
+raises correct numerical single-rectangle decisions4to79 with fixed+X path2to13
+views at unchanged12cm motion: TP2to34, correctnegative2to45, no observedFP/falseOUT,
+all4old correct decisions retained. This costs11extra observations; nothardware
+or formal exclusion evidence. Fixed13view UNKNOWN101includes37opposing-witness
+cases and64numerical candidate failures. Single-pair guided13view path loses14TP
+and gives64correct decisions; retain this selector as scoped NEGATIVE_CONTROL.
+Public initial openloop planning reproduces all180feedback decisions at3views/
+12cm:28TP/3FP/7falseOUT/36correctnegative, with5different paths but no decision gain.
+Continuous3view readout removes10wrong commitments but loses22oldTP and adds5;
+notlossless replacement. Preserve numerical limitations and separate ambiguity
+from rejected candidates.15focused tests and independent saved-output audits;
+258unique histories/516calls, no new actual views or retries. Components only,
+no App promotion; scoped local inheritance and ledger303 block receipts retained.
+
+## Five observation mechanisms: path information and constructive witnesses (2026-09-22)
+
+[One shared180scene suite](nearfield/OBSERVATION_MECHANISMS_RESULTS_20260922.md)
+finds fixed+X path information35to81/90pairs and finite-cohort purity30to156/180,
+at2to13observations with unchanged12cm travel. Strict same-surface quantization
+crossing has0gains on all4spokes; retain that exact check as NEGATIVE_CONTROL.
+Continuous real-valued MILPs produce119validated witnesses from122calls/61public
+signatures: initial180/180and two-view176/180cases have opposite-label witnesses.
+All15old fixed-endpoint commitments admit opposite explanations, including10
+correct ones; this is no selective veto or new classifier. Reasoned UNKNOWN stays
+180/180at both modes, distinguishing witness-pair ambiguity and incomplete search.
+Public3view two-step improves fixed24TP/3FP/8falseOUT to28TP/3FP/7falseOUT,
+retaining24TP, correcting2wrongOUT but adding1newwrongOUT; preserve partial gain
+without zero-new-error claim. Adaptive/nonadaptive evaluator ceilings both157,
+so no isolated feedback-ceiling gain is shown. Retain scoped components and costs;
+no aggregate system promotion, tuning or automatic successor.18tests and two
+independent saved-output audits PASS; old evidence intact, no resources remain.
+Per-mechanism local dispositions and ledger303/unknown-terminal receipts retained.
+
+## Boundary-pair information exists beyond frozen selector coverage (2026-09-22)
+
+[One fixed90pair check](nearfield/BOUNDARY_SEPARABILITY_RESULTS_20260922.md)
+uses180new same-generator boundary scenes. Of58initially identical pairs,
+38can separate under an allowed12cm action; one common action per initial
+observation class gives evaluator ceiling32 versus12for all frozen policies.
+This is not an implemented32-pair selector; the class oracle gains22and loses2
+versus fixed. Twenty pairs stay aliased across all5poses:14through quantization,
+6even in raw ray returns. Of26missed available pairs,20have no initial old-bank
+match; six share a background signature. Full180-scene opposite-label ambiguity
+is stricter than designated-pair separation:174initially mixed scenes have
+class-common82/per-case88resolved ceilings. No alert-accuracy or universal
+geometry guarantee follows. Retain diagnostic COMPONENT and original methods;
+no new selector, training, bank expansion or automatic successor. Four tests and
+independent900-view equation/count audit PASS; ledger303/unknown-terminal gap
+receipts retained, no allocated resources remain.
+
+## Frozen opportunity transfer: useful positive gain with new errors (2026-09-21)
+
+[One frozen +/-1cm synthetic transfer](nearfield/OPPORTUNITY_TRANSFER_RESULTS_20260921.md)
+uses348 shape and1304 active-view layouts derived from consumed parents; no
+unused in-prior layouts existed. These are correlated same-generator geometries,
+not independent-source confirmation. Shape point84TP/4FP becomes union84TP/6FP:
+no new TP, two added FP. Active fixed504TP/4FP/2false OUT becomes positive-priority
+512TP/6FP/4false OUT, retaining all504fixed TP but adding four wrong commitments.
+Versus old adaptive, net+2TP conceals17gained/15lost TP and18lost correct negatives.
+The old four wrong shape OUT remain; eight shifted descendants give6wrong OUT,
+2UNKNOWN and0IN. Original off-grid/wall active descendants all64remain UNKNOWN.
+Both full transfer criteria fail; preserve original consumed component gains in
+their original scope, and retain this local-transfer diagnostic as COMPONENT.
+No method/bank/tolerance change, retuning, successor or runtime promotion. Four
+focused tests and independent saved-output audit PASS; old evidence unchanged.
+Local disposition and ledger303/unknown-terminal receipts retained; no resource
+remains allocated. New geometry can share old observations; report that boundary.
+
+## Saved B/N disagreement: screening signal, binary-only budget failure (2026-09-21)
+
+[Completed posthoc diagnostic](nearfield/BRANCH_DISAGREEMENT_RESULTS_20260921.md)
+partitions A-excluded B_control/N outputs on the now-consumed1152-frame cohort.
+Boundary current common/B-only/N-only yield41/3,49/4,45/5 added TP/FP: each bucket
+alone exceeds the2-FP budget. All8fixed global binary retention masks are reported;
+only A alone passes every cost. No mask, cutoff, verifier or expert is trained/selected.
+Agreement still has real Core benefit: AND hold172/26/4 and16/16events versus
+A159/25/17 and15/16; Core costs pass. Boundary AND62/10/114 and10/16events fails
+current andheld budgets. Preserve this screening evidence and N's Core/HEAD
+improvement/B's BODY coverage; do not call Core universally solved or a partial
+gain a balanced upgrade. Layer labels remain evaluator strata, not routing inputs.
+This narrow result does not exclude continuous-score, public-input or temporal
+verification. A later method needs a justified within-pattern discriminator and
+different isolated validation data; no automatic successor starts. A/UNKNOWN and
+old B/N/R dispositions stay fixed. Diagnostic COMPONENT,4tests and independent
+arithmetic checks PASS; local inheritance/global ledger303 gap receipts retained.
+
+## Fixed B with broader training data: partial gains, joint budget failure (2026-09-21)
+
+[Completed data-condition experiment](nearfield/DATA_COVERAGE_RESULTS_20260921.md)
+captures3456 frames from48 distinct groups, fits one unchanged B recipe on1728,
+and evaluates16 isolated groups/1152 frames. Relative to old B calibrated by the
+same new-dev rule, N reduces Core held FP66 to34 and raises TP172 to175. Boundary
+held counts remain106/19/70,60.23% recall; detected events12/16 to13/16. This
+aggregate equality hides a trade: HEAD-horizontal12/1/34 to43/7/3, but BODY-plane
+38/9/6 to9/3/35. N's costs fail; Boundary adds14FP/10segments over A versus caps4/2,
+and Core segments also fail. Close exact condition as NEGATIVE_CONTROL without
+erasing Core/HEAD improvements or calling them a balanced upgrade. Old consumed
+regression N87/20/86 versus calibrated B145/20/28 is secondary evidence only.
+Preserve A/UNKNOWN, all prior B/R/U/G and paused POINT/REGION dispositions. No
+protected test, refit, threshold/loss retry, default promotion or successor.
+Twelve tests, independent arithmetic/event audit and64-frame public replay pass;
+task-owned processes released. Local inheritance and ledger303 gap receipts saved.
+
+## Dense-depth alert branch paused; partial R benefit retained (2026-09-21)
+
+[Completed POINT/REGION experiment and user review](nearfield/REGIONAL_DEPTH_RESULTS_20260921.md):
+Only the training measurement-consistency loss differs: center sample versus
+regional aggregation, same network/supervision/top16 inference readout. REGION
+adds0TP/1CoreFP; POINT gives Boundary hold22/5/151,6/16events but fails coverage
+and Core current costs. Both exact recipes remain NEGATIVE_CONTROL. Pause this
+recover-dense-depth-then-alert branch without another diagnostic, loss/top-k/
+aggregation change or longer fit. Core event/onset retention follows from A OR
+plus unchanged hold; it is not independent new-model benefit. Regional fusion
+in general remains unrefuted; this does not authorize a renamed retry.
+[Earlier R](nearfield/CORRIDOR_RELATIVE_RESULTS_20260921.md) has useful partial
+research value: Boundary hold14/5/159 to78/6/95, recall8.09% to45.09%, events4/16
+to11/16, gains9/16layouts; Boundary/Core adds1/5FP and all cost caps pass.
+Retain original nonpromotion: HEAD-horizontal0/43 in all4layouts, five wholly
+missed events and1.8s maximum detected onset delay. Present gains/costs/failures
+together, not all nonpromoted recipes as ineffective. These saved working points
+on consumed data do not establish equal-realized-FP dominance.
+A/demo, UNKNOWN and existing B/R/U/G dispositions stay fixed. Later work should
+introduce new spatial cues or object/layout/background learning coverage for
+specific misses; direct task alerts have priority and dense depth is optional.
+This is an investment priority, not a universal architecture claim. The1152
+consumed frames remain explanatory/replay evidence, never fresh confirmation.
+No experiment starts here. Existing local dispositions/ledger303 receipts remain.
+
+## Ordered spatial contrast: no added horizontal benefit (2026-09-21)
+
+[Matched ordered RGB comparison](nearfield/SPATIAL_STRUCTURE_RESULTS_20260921.md)
+reuses frozen 24-channel features with lossless zone/subcell spatial ordering.
+Same 65825-parameter U/G heads, initialization,1200 batches, optimizer and CUDA;
+only G's eight interval-relative geometry channels differ from U's zero ablation.
+On consumed1152-frame transfer, horizontal96-frame decisions are identical:
+15/43 true positives,2/4 timely events. Boundary hold U66/11/107 vs G68/9/105;
+Core173/44/0 vs173/45/0. Both fail the fixed cost/coverage criteria; G's extra
+horizontal TP is zero. Mark both exact recipes NEGATIVE_CONTROL and the geometry
+hypothesis NOT_SUPPORTED. This does not prove spatial pooling caused earlier
+misses or exclude other geometry representations. Existing A/B/R and UNKNOWN
+are unchanged; no threshold/fit retry, protected test or automatic successor.
+Local evidence and global index303/unknown-terminal receipts are retained.
+
+## Corridor-relative representation: low-cost gain below coverage floor (2026-09-21)
+
+[One fixed representation pilot](nearfield/CORRIDOR_RELATIVE_RESULTS_20260921.md)
+uses native RGB statistics in full-range-conditioned corridor query bands and a
+shared max MLP (3041 parameters), retaining original A/UNKNOWN and .2s hold.
+On consumed1152-frame transfer, Boundary hold14/5/159 becomes78/6/95;
+events4/16 to11/16, gains9/16layouts. Core173/33/0 becomes173/38/0, all added
+FP in one HEAD hanging-plane OUTSIDE clip. Added-cost caps pass, but45.09%
+recall misses the frozen50% floor; HEAD-horizontal0/43 across all four layouts.
+Detected Boundary onset delay reaches1.8s; five events remain wholly missed.
+NO_GO / NEGATIVE_CONTROL for this exact representation/fit/selection recipe,
+not a claim of no RGB information. A/demo retained; no retry, protected test,
+hardware claim or automatic successor. Five focused tests and independent audit
+PASS. Structured local disposition and global ledger303/unknown-terminal receipts
+are retained. User's current input scope remains simulation only.
+
+## Core projection sensitivity: events survive with lateral FP cost (2026-09-21)
+
+[One frozen +/-2-pixel projection check](nearfield/CORE_PROJECTION_STRESS_RESULTS_20260921.md)
+reuses1152 consumed transfer frames and unchanged ranges. Nominal Core hold
+173/33/0 becomes left172/36/1 and right172/64/1; all16events remain, with one
+HEAD onset delayed.2s per sign. All added Core FP occur in OUTSIDE clips
+(0 to11/34), while the same-condition Calibration-relative usefulness gates
+still pass. Thus retained event coverage does not imply calibration-insensitive
+specificity. Zero-offset all1152 scores/decisions reproduce exactly. Retain a
+diagnostic COMPONENT, preserve A/demo and all old negatives; no offset/threshold
+retry, training, protected test, hardware claim or automatic successor. The
+user confirmed no connected hardware/measured inputs. Local evidence and global
+ledger303/unknown-terminal receipts are retained.
+
+## Fixed-entry conditional hold: no transferred continuation gain (2026-09-21)
+
+[One separately authorized decoder contrast](nearfield/CONDITIONAL_HOLD_RESULTS_20260921.md)
+keeps original entry15.769264 and selects keep15.535847 on consumed selection
+layouts only. Selection gains one internal positive; evaluation matches every
+original_current flag (Core82/11/2, Boundary16/0/68). The12-frame gain over A
+belongs to the prior spatial supplement, not this decoder. Five unseeded events
+account for51 missed Boundary positives;1 precedes a seed and16 are reachable.
+The same selection event has an internal positive11.615569 below its exit
+negative14.757340; a Core exit15.453609 further binds the shared keep threshold.
+Close this original-score fixed-entry recipe as NEGATIVE_CONTROL; do not infer
+all temporal information is absent. Baseline, UNKNOWN and protected test remain
+unchanged. No entry/keep retry, training or automatic successor. Local evidence
+and global registration/inheritance failure receipts are retained. Four tests and
+independent audit PASS.
+
+## Multi-zone RGB anchoring: insufficient coverage (2026-09-21)
+
+[One frozen diagnostic](nearfield/RGB_MULTIZONE_RESULTS_20260921.md) on seven
+remaining lateral-negative/matched Boundary pairs finds zero explained OUTSIDE
+negatives. Only two selection positives meet the two-adjacent-whole-zone anchor
+rule; their three CROSSING queries cover307/307 observed-return contributor
+incidences. Eight frames have zero complete-zone anchors, four have one, two
+have two. Four frames lack an eligible query and remain unresolved. This closes
+the exact multi-zone anchoring recipe for residual lateral error, not RGB or
+8x8 information in general. Local NEGATIVE_CONTROL; A/demo, UNKNOWN and source
+alerts unchanged. No weaker anchors, segmentation retry, training, protected
+test or automatic successor. Three focused tests and independent audit PASS.
+Global metadata remains pending ledger303/unknown terminal; receipts retained.
+
+## Public ToF axes: distance evidence with boundary costs (2026-09-21)
+
+[Sealed1152-frame audit](nearfield/AXIS_EVIDENCE_RESULTS_20260921.md) finds
+contained-depth evidence on273/346positives and0/633distance negatives, but
+also137/173depth-valid lateral negatives. Every one of32positive clips lacks
+this evidence at its first and last positive sample. Of82native-backed
+balanced-suppressed positives,78have it; all15high-score distance negatives
+lack it. This is useful axis-separation evidence, not a lossless distance gate
+or lateral ownership solution. All frames have valid returns despite1040
+baseline UNKNOWN frames. Retain COMPONENT diagnostics and A/demo, with no new
+alerts, threshold, training, conditional hold or protected-test access.
+Independent audit PASS. Existing global registration/inheritance blocker remains;
+local receipts kept.
+
+## Current-only audit: local rescue, no broad low-FP repair (2026-09-21)
+
+[Fixed-score audit](nearfield/CURRENT_ONLY_RESULTS_20260921.md) removes hold
+from cutoff selection without fitting. Current evaluation Core remains82/11/2;
+Boundary A4/0/80 becomes16/0/68 original,12/0/72 uniform,9/0/75 balanced.
+All evaluation gains are in one head_hanging_plane layout; selection gains
+four frames in one body_protruding_plane layout. Zero added current FP,
+but all fail the prespecified >=4/8-layout criterion. New heads underperform
+original despite higher xAUC. The old hold constraint did suppress local
+signal; it was not the sole limit on useful cross-layout repair. Keep A/demo;
+NEGATIVE_CONTROL for this broad current-only role, local rescues diagnostic.
+No conditional hold, training or protected test follows. Global metadata
+pending ledger303/unknown terminal; independent audit PASS and receipts retained.
+
+## Last-layer pilot: no useful repair under unchanged hold (2026-09-21)
+
+[Frozen32D two-readout pilot](nearfield/LAST_LAYER_RESULTS_20260921.md) on fixed
+consumed Development roles improves evaluation xAUC .8975 to .9118/.9133,
+but both heads retain0/68 Boundary rescues at no-added-FP current+hold cutoffs.
+Both exactly equal A: Core82/11/2, Boundary4/0/80; hold84/19/0 and6/2/78.
+The binding cutoff sample is a true pre-exit Boundary frame whose hold would
+add a negative next-frame alert. Failure therefore applies to this combined
+recipe, not a proof against current-only linear separability. Audit PASS;
+local NEGATIVE_CONTROL, global metadata pending. No automatic successor or
+original-test activation. [Paired ordering](nearfield/LATERAL_PAIR_DIAGNOSTIC_RESULTS_20260921.md) remains173/173.
+
+## Existing-data reuse: geometry usable, hard-negative coverage insufficient (2026-09-21)
+
+[Read-only15000-row audit](nearfield/EXISTING_CORRIDOR_DATA_RESULTS_20260921.md)
+verifies controlled-cube OBB geometry and indexed path availability. The750
+lateral candidates are all crossbars from12 original fixture groups with
+1.636-1.794m clearance, unlike recent6.6-11.9cm OUTSIDE failures. Ten fixed pairs
+yield20payload checks (all hashes match), but only3 visibly supported target
+pairs and zero certified full-scene negatives. Existing ownership means query
+membership, not actor identity; preserve background/unseen UNKNOWN.
+Retain geometry/input adapter COMPONENT and data inventory; no immediate binary
+hard-negative fit. Seven geometry tests and independent saved-record recount pass.
+Local disposition records existing global metadata blocker. No new source,
+training, original-test access or automatic successor.
+
+## Frozen supplement transfer: recall persists, specificity fails (2026-09-21)
+
+[One new16-group/1152-frame verification](nearfield/SPATIAL_COMPLEMENT_TRANSFER_RESULTS_20260921.md)
+keeps the head, high cutoff and original hold fixed. Boundary current10/1/163
+becomes128/10/45, with gains in15/16 groups and event detection4/16 to15/16.
+Core171/17/2 becomes173/36/0;17 of19 new current FP are OUTSIDE, concentrated in
+three groups. Held Core173/33/0 becomes173/58/0; Boundary14/5/159 becomes140/19/33.
+Rescue signal passes, both strict no-added-FP gates fail. Retain COMPONENT
+evidence; no new operating point, runtime promotion or automatic successor.
+Source/prediction seals and independent audit PASS; UE/model processes released,
+original test still unactivated. Existing ledger303/unknown-terminal metadata
+gap is documented locally. [Data reuse inventory](nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md)
+records matched sources and15000 BODY-query frames requiring contract adaptation;
+it authorizes no new fit or protected-test access.
+
+## Frozen A/B complementarity: rescue signal with remaining costs (2026-09-21)
+
+[Saved-output diagnostic](nearfield/SPATIAL_COMPLEMENT_RESULTS_20260921.md) reuses
+eight consumed dev groups/576 frames. Fixed-high OR keeps every A alert and
+changes current Core85/4/1 to86/4/0 and Boundary5/3/81 to71/3/15. Boundary gains
+span seven groups. Whole-group cutoff calibration adds one Core pre-entry FP;
+unchanged hold adds three Boundary exit FP. Calibration screening changes no
+flags or cutoffs. No tested complete policy meets the zero-added-FP criterion.
+Retain diagnostic COMPONENT; preserve the earlier full-replacement negative.
+Four focused tests and independent audit pass, source hashes unchanged, test
+unactivated. Local disposition records global ledger303/unknown-terminal gap.
+No model fit, threshold retry, hold change, demo promotion or automatic successor.
+
+## Spatial BCE: Boundary signal, no admissible Core replacement (2026-09-21)
+
+[One frozen 40-group/2880-frame A/B pilot](nearfield/SPATIAL_BCE_RESULTS_20260920.md)
+completed one ordinary BCE fit, with no ranking or second return. Train fits all
+1728 labels; on eight dev groups the prescribed zero-logit diagnostic changes
+Boundary current5/3/81 to78/3/8, but Core85/4/1 to83/15/3 and delays two onsets.2s.
+All577 dev thresholds fail combined Core TP retention and FP/segment budgets;
+current-only constraints also have no feasible threshold. Test inference remains
+unactivated. Retain original Calibration/strong+hold; close this fixed full-alert
+replacement recipe as NEGATIVE_CONTROL, preserving Boundary diagnostic scores.
+Independent source/count/threshold audit PASS; UE/training released. No test,
+retuning, demo change or automatic successor. Global ledger303/unknown-terminal
+registration remains blocked, with local disposition and supported-CLI receipts.
+
+## Complete-event transfer: same Core alerts, Boundary tradeoff (2026-09-20)
+
+[One frozen24-clip/576-frame capture](nearfield/FULL_EVENT_RESULTS_20260920.md)
+compares strongest+hold with closest-exported+identical hold. Core384 is exactly
+identical96/14/0,8/8events, full coverage, zero onset delay/internal gaps; releases
+are seven.2s and one.4s, with5pre-entry and9post-exit FP. One native-backed HEAD
+current-frame recovery was already held by the baseline (held-only9to8).
+The frozen information screen passes, but complete-Core task gain is absent.
+Boundary0/0/96 becomes22/8/74;8/8events cover only1-4/12frames, five interruptions,
+and one2.2s delayed onset. Retain COMPONENT evidence; no Core upgrade or default
+promotion. Old demo/Calibration stay unchanged. Independent576-frame/native audit
+passes; task UE released. End this round without tuning/training/new cohort.
+Global metadata pending ledger303/unknown terminal; local disposition retained.
+
+## Multi-return pilot: conditional synthetic information gain (2026-09-20)
+
+[One frozen consumed432 simulation](nearfield/MULTIRETURN_PILOT_RESULTS_20260920.md)
+retains every original first return and adds one declared separated synthetic bin.
+Core strongest73/8/5 becomes77/8/1; with unchanged hold76/9/2 becomes77/9/1.
+Four current HEAD recoveries have native support in the triggering second-slot
+zones; one of two delayed onsets is repaired. Closest-exported and independent
+two-return alerts coincide; no learned/joint-representation gain is established.
+Boundary current6/1/72 becomes18/8/60, events3/12to9/12: seven extra FP remain.
+Retain COMPONENT_OR_CHALLENGER / COMPONENT for this hypothetical input law only.
+Hardware weak-return detectability and complete-event release remain unevaluated;
+the74/10/0 demo, Calibration and defaults stay unchanged. End this pilot without
+training, retuning or successor. Global metadata pending ledger303; sealed local
+evidence and structured disposition retained.
+
+## Consolidated Core policy: new-layout benefit, bounded challenger (2026-09-20)
+
+[One frozen new36-layout/432-frame validation](nearfield/CORE_HOLD_VALIDATION_RESULTS_20260920.md)
+compares Calibration, fixed strong T=.4071309640537889 and unchanged nonrecursive
+one-frame hold. Core74P/214N:74/133/0 to72/10/2 to74/10/0. Hold restores two HEAD
+gaps with no FP addition; the strong working point supplies most of the gain.
+Core false segments26 to8, sampled duration26.6 to2.0s; BODY36/7/0, HEAD38/3/0.
+All12 Core events have entry-frame alerts/full coverage;8 were already alarming
+before entry. OUTSIDE FP88 to0; INSIDE-negative45 to10. Prospective bounded
+tradeoff passes; independent432-frame recount, seals and process release pass.
+Retain COMPONENT_OR_CHALLENGER / CHALLENGER for controlled Core demonstrations.
+Boundary9/4/65 and4/12 events excludes full strict-task replacement. Original
+Calibration, earlier76/9/2 with two delayed HEAD onsets and all prior dispositions
+remain unchanged. No App promotion, retuning, extra cohort or automatic successor;
+this completes the consolidation round. Global metadata pending ledger303/unknown
+terminal, with supported-CLI receipts and local structured disposition retained.
+
+## One half-bin phase: local proxy sensitivity without onset repair (2026-09-20)
+
+[Frozen paired consumed432 diagnostic](nearfield/HALF_BIN_PHASE_RESULTS_20260920.md)
+changes the 10 cm histogram origin by exactly5 cm, preserving paired dropout and
+standardized noise. Neither original delayed HEAD onset's score/critical returns
+changes. Across27648 zone-frames,4405 observed contributor sets change and75
+paired ranges move >1 m. Core strong73/8/5 becomes72/8/6 (new f0007 loss),
+hold76/9/2 becomes75/9/3 (f0008 loses preceding genuine strong), and Calibration
+77/128/1 becomes77/129/1. Core12/12 events and first times persist; Boundary
+flags are identical. Independent source and complete metric recount pass.
+Retain original proxy, Calibration and hold; diagnostic COMPONENT only, no new
+phase selection, task-contract change or automatic successor. Global metadata
+pending ledger303/unknown-terminal; receipts and local disposition preserved.
+
+## Onset64-zone audit: return selection loss and interval scoring are distinct (2026-09-20)
+
+[One consumed432 audit plus six native frames](nearfield/ONSET_ZONE_AUDIT_RESULTS_20260920.md)
+reproduces all original64-zone observations/scores. At f0005,28 sampled corridor
+target points contribute to no selected return; dominant z35 chooses background,
+leaving only z34 joint.026336. At f0293,48 target corridor contributors survive in
+z36, but reported3.162859m gives depth fraction.245351 and joint.244035; this frame
+is1mm inside the depth boundary. The two positive-zone masks also occur in21/4
+Core negative frames; fixed support-magnitude tuple dominance counts78/7. Neither
+observation proves useful rescue or full64-vector inseparability. No candidate,
+retuning, new capture or automatic connected-support successor. Retain Calibration,
+one-frame hold and this COMPONENT diagnostic. Independent feature/native checks
+pass; global metadata remains pending ledger303/unknown-terminal with receipts.
+
+## Causal readout: hold helps continuity, rising extrapolation fails onset rescue (2026-09-20)
+
+[Two consumed432 fixed replays](nearfield/CAUSAL_EVENT_READOUT_RESULTS_20260920.md)
+keep T=0.4071309640537889, scalar scores, UNKNOWN and all layouts. Primary Core
+strong73/8/5; rising73/17/5; one genuine-strong-backed held frame76/9/2;
+combined76/18/2. Combined retains12/12events and BODY36/36, restores worst HEAD
+4/7 to6/7, but both HEAD first alerts remain delayed.2s. Rising adds9 CoreFP and
+no CoreTP; hold adds1FP and recovers3TP, including one Calibration FN with no
+current raw support. This is decision continuity, not recovered current evidence.
+Old consumed Core similarly gives rising0TP/+11FP versus hold+1TP/+1FP.
+Boundary and pre-entry costs remain explicit; no fresh transfer or promotion.
+Retain Calibration. Hold is separately scoped COMPONENT evidence for continuity
+(76/9/2, F1 93.25%), not current sensing or onset recovery; Boundary remains3/12.
+Close exact rising onset rescue and the combined onset-recovery role as NEGATIVE_CONTROL.
+The assumed smooth HEAD entry pattern and spatial sufficiency are unproven.
+First-alert evidence remains unresolved. No new experiment, parameter sweep or automatic
+connected-support successor. Independent864-frame five-arm recount, prefix causality
+and seals pass; no persistent resources. Global metadata pending ledger303/unknown
+terminal, with CLI receipts and local structured disposition.
+
+## Core workpoint: strong FP reduction, fixed transfer fails onset/coverage (2026-09-20)
+
+[Consumed-score diagnostic](nearfield/CORE_WORKPOINT_RESULTS_20260920.md) finds
+0/126 definite-bypass Core FP. Full-Core-TP threshold control gives72/29/0;
+event/onset ceiling gives71/10/1 with12/12 original onsets, one.2s trailing loss.
+[One frozen new-layout transfer](nearfield/CORE_WORKPOINT_TRANSFER_RESULTS_20260920.md)
+compares Calibration77/128/1 with fixedT=0.4071309640537889 candidate73/8/5 on
+Core288 (78P/210N). FP26segments/25.6s falls to7/1.6s; OUTSIDE90FP falls to0,
+INSIDE pre-entry38 to8. Both detect12/12 Core events, but two HEAD onsets delay.2s
+and one horizontal HEAD event covers4/7. Boundary events12/12 fall to3/12.
+Retain Calibration; close this exact transfer as NEGATIVE_CONTROL, retain the
+consumed diagnostic as COMPONENT. No threshold retune, RGB reopening or automatic
+successor. Seals and independent recount pass; task processes released. Global
+registration/inheritance remain pending ledger303/unknown-terminal; local structured
+dispositions and CLI receipts are preserved.
+
+## Return-lineage audit: positive foreground survives but can lose selection (2026-09-20)
+
+[One frozen Core432 + Thin96 diagnostic](nearfield/RETURN_LINEAGE_RESULTS_20260920.md)
+reproduces all528 original observations/predictions. Four of five negative gap
+frames retain the target but select backdrop; their three initial switches all
+coincide with backdrop entering the proxy's8m candidate gate. The fifth retains
+a target return. Do not repair these negatives or infer a hardware fault.
+In positive sampled corridor zones, far non-target winners occur94/500 Core
+and95/187 Thin zone-frames (55/144 and24/36 frames). Core retains all144TP;
+Thin's six existing small-foreground FN all retain near candidates suppressed
+by backdrop. This is candidate-selection loss, not demonstrated FN recovery.
+One Core true near-to-far switch also exposes10cm bin-boundary sensitivity.
+Retain Calibration and RGB/noRGB/Zone-Handoff closures. This evaluator-only
+lineage evidence is COMPONENT_OR_CHALLENGER in COMPONENT mode; no new return
+arm or automatic successor. Independent replay/recount passes; global metadata
+remains pending ledger303/unknown-terminal, with receipts and local disposition.
+
+## Core usefulness: existing results reassessed (2026-09-20)
+
+[Saved-decision stratified review](nearfield/EXISTING_RESULTS_STRATIFIED_REVIEW_20260920.md)
+recounts old BODY/HEAD A*70/1/2,12/12events; Raw/Single decisions are identical
+there. Public-positive v2 retains one HEAD configuration's five-frame gain;
+CCRL/tail provide no Core upgrade. These four-sensor results do not validate
+the current RGB+ToF task. Current Calibration Core-layout288 is72/126/0,
+12/12events,24false segments; retain it and prioritize false-alert burden.
+NFO near-area gains remain pixel components, not physical Core event evidence.
+Posthoc accounting preserves old full/challenge results, frozen gates and
+inheritance roles. No model run, new threshold, capture or successor follows.
+
+## Score-factor audit: dominant overlap sensitivity is not a causal geometry fault (2026-09-20)
+
+[Four gaps/five frames,13-frame factor audit](nearfield/SCORE_FACTOR_COLLAPSE_RESULTS_20260920.md)
+finds4overlap-replacement-only cases and1either-factor-sufficient case;0depth-only.
+But fixed-zone tracking shows outgoing high-overlap winners become far-return
+intervals (d=0) in those four frames; incoming winners retain depth support with
+tiny overlap. Three fixed-gap-zone CFs are undefined, one reference itself fails
+threshold, one is ambiguous. Neither dominant-depth collapse nor wrong geometry
+is established. All gaps are strict negatives, not missed true obstacles.
+Retain Calibration144/146/0,24/24and onsets; Zone-Handoff and RGB/noRGB stay closed.
+No formula/output/threshold change or successor. If requested later, isolate the
+outgoing-zone return lineage before choosing a range-quality or geometry method.
+Frozen source/factor checks retained; global metadata still pending ledger303.
+
+## Zone-handoff ceiling fails the gap-bridging condition (2026-09-20)
+
+[One frozen consumed432 spatial diagnostic](nearfield/ZONE_HANDOFF_CEILING_RESULTS_20260920.md)
+bridges only1/4 gaps (1/5frames), even though three gap frames have adjacent,
+depth-compatible corridor-continuous top2 support. The other four frames remain
+below threshold even under unconstrained all-positive-zone sum. Hypothetical
+component sums give144/150/0 versus Calibration144/146/0, FP segments40->39,
+OUTSIDE FP87->90;24/24events and onsets stay identical. Four new FP comprise one
+bridge and three collateral frames. The >=3gap/<=37segment implementation gate
+fails. Close this exact aggregation explanation as NEGATIVE_CONTROL; retain
+Calibration baseline and existing RGB/noRGB closures. No threshold/overlap change,
+training, runtime promotion, temporal layer or score-dip successor. Feature seals,
+baseline parity and focused checks retained; global metadata pending ledger303.
+
+## Calibration adopted baseline; proposed soft footprint already present (2026-09-20)
+
+User adopts [Calibration as the camera-forward branch baseline](nearfield/CALIBRATION_BASELINE_20260920.md):
+RETAINED_CORE144/146/0, F1 66.36%,24/24events and all first in-event alerts retained;
+OUTSIDE-layout FP87, false segments40. Exact RGB/noRGB vetoes are disabled in the
+branch's active method and retained as negative controls. Historical runners and
+App defaults stay unchanged. The existing score already integrates full-zone
+footprint overlap across depth; calibration selects a threshold, not extrinsics.
+Sealed432-frame/22,371-zone identity audit passes. Raw37 FP segments map to one
+removed,32single and four split-in-two segments, giving40; soft-score threshold
+crossings and winning-zone changes are observed, angular jitter is not established.
+No new soft predictor, repeated weighting, training or temporal successor ran.
+Versioned local disposition records adoption; global inheritance remains blocked.
+
+## Frozen Core transfer: calibration retained, RGB lossless-transfer fails (2026-09-20)
+
+[One frozen36-scene/432-frame validation](nearfield/CORE_TRANSFER_RESULTS_20260920.md)
+uses new BODY/HEAD targets, Brick/Wood backdrops and independent full-extent
+INSIDE/BOUNDARY/OUTSIDE arrangements under the shared simulator. Raw144/181/0
+becomes calibrated144/146/0 with all24events and onsets retained; false segments
+increase37->40. Frozen noRGB137/138/7 and RGB134/135/10 both fail lossless transfer.
+RGB improves OUTSIDE-layout FP87->79 (noRGB81), but loses10calibrated TP, one
+contact event, delays two by0.2/0.4s and suppresses30native-contributing zone
+samples. Core INSIDE events stay12/12 while boundary events drop12/12->11/12;
+one INSIDE TP is lost, so Core event recall alone conceals the failure.
+Retain calibration's scoped frame/duration benefit with fragmentation disclosed;
+close exact frozen RGB/noRGB vetoes as negative transfer controls. Old96 fitting
+and Thin-object Challenge remain unchanged. No fit, retuning or successor.
+Source/seal/native audits and independent recount pass; task processes released.
+Global metadata remains blocked by ledger303/unknown terminal; receipts and local
+disposition retained. This is controlled new-arrangement evidence, not natural,
+hardware, new-world, body-trajectory or safety validation.
+
+## Local RGB head fits lateral attribution with matched-control increment (2026-09-20)
+
+[One frozen local RGB pilot](nearfield/TOF_LATERAL_ATTRIBUTION_20260920.md) keeps
+calibrated A30/15/6 and compares Otsu B30/15/6, RGB C30/10/6, matched noRGB30/13/6
+on the same consumed96. C removes all5 eligible lateralFP, retains original30TP,
+4/5 interior and5/6 total events, all first alerts, and every native corridor
+contributor. Precision66.67%->75%, FPR25%->16.67%, false duration3s->2s; segments
+stay4. noRGB reduces2FP but fragments false segments4->6. B suppresses4zone votes
+without changing a frame. UNKNOWN stays86; all raw4912anchors remain unchanged.
+This is a5915-parameter in-sample fit (60crops,400updates per matched arm), not
+held-out transfer: all13OUTSIDE labels come from one physical arrangement.
+Retain C only as a COMPONENT with3FP increment over matched noRGB. B is a scoped
+negative control; A remains frozen. One3.007m lateral FP is ineligible;9depthFP
+and the fifth missing event remain. No cutoff change, new capture or successor.
+Core synthetic/CUDA checks pass; pre-fit backend API repair preserves sealed
+inputs and prescribed fits. Global metadata still blocked by ledger303/unknown
+terminal; local disposition/receipts retained and task compute released.
+
+## Fixed ToF score reduces in-sample false alerts (2026-09-20)
+
+[One calibrated readout on consumed96](nearfield/TOF_CORRIDOR_CALIBRATION_20260920.md)
+retains every original30TP and reduces nominal45-FOV FP19->15, with6FN unchanged.
+Recall stays83.33%, precision61.22%->66.67%, FPR31.67%->25%; false segments6->4,
+sampled duration3.8s->3.0s. Interior events4/5 and all events5/6 retain first
+in-event alerts; removed pre-entry false warnings move two clip-first timestamps.
+All4,912 valid returns and original intervals remain; suppressed frames lose0
+native corridor contributors. UNKNOWN stays86 and TN0. All6 lateral-only FP
+remain, and the same-zone small-object event is still missed.
+Retain only a consumed in-sample COMPONENT: the same96 labels select and report
+one maximal TP-preserving cutoff on a frozen geometric score, not a probability.
+Six synthetic checks pass; one evaluation schema repair preserves sealed scores
+and predictions. No new observations, RGB, models, training or successor.
+Global metadata remains pending ledger303/unknown-terminal with local disposition
+and receipts. All task-owned compute is released.
+
+## Nominal ToF FOV exposes returns but worsens false alerts (2026-09-20)
+
+[One fixed96-frame nominal45x45 contrast](nearfield/TOF_FOV45_20260920.md)
+changes only the8x8 bin layout on the original sampled depth. The center cylinder
+and thin plate gain pure near returns in5 event frames each; the small same-zone
+object remains unanchored. Raw ToF interior events rise2/5->4/5, TP12->30 and
+FN24->6, but FP5->19, FPR8.33%->31.67%, precision70.59%->61.22%, and false
+segments2->6. This retains a geometry-sensitive observation component, not an
+overall detector improvement. Prediction-UNKNOWN remains86/96; TN remains0.
+The narrower footprint loses21,032/31,416 old covered image samples; all target
+and reference-corridor surface samples happen to remain covered in this cohort.
+This is nominal geometry on an uncalibrated optical-Z/noise/return proxy, not
+physical VL53 evidence. Nine synthetic checks pass; predictions were sealed before
+ownership scoring. No model, new native capture, training or successor ran.
+Global registration/inheritance remains pending ledger303/unknown-terminal;
+local disposition and receipts preserve that metadata limitation.
+
+## Cross-zone existing-return ceiling is narrow (2026-09-20)
+
+[Fixed596-frame attribution audit](nearfield/CROSS_ZONE_ANCHOR_CEILING_20260920.md)
+replays every saved scalar and baseline exactly, with no new models or observations.
+Only1/4 originally missed corridor interior events has a pure same-frame near
+anchor elsewhere: horizontal bar s02, five interior frames, first at1.4s versus
+entry1.2s. None has an entry witness; center cylinder, thin plate and same-zone
+small object have no target-owned return anywhere. Raw ToF already detects s02.
+The separate500 VAL far_small component envelope covers4,539/6,079 FN pixels
+(74.67%), but8-connected reference-near regions can merge different objects.
+This is a privileged simulation availability ceiling, not a recovered prediction,
+valid pixel ownership, FPR gain or physical weak-peak result. Original NFO remains
+1/5 interior events; far_small precision11.73%, IoU11.13% and FP98,788 remain.
+Retain only bounded component evidence; no automatic association/training run.
+Sixteen synthetic tests pass; global metadata remains pending ledger303 and
+unknown-terminal errors, with local disposition/receipts retained.
+
+## Near-return raw input prerequisite absent (2026-09-20)
+
+[Existing-input audit](nearfield/TOF_NEAR_COMPONENT_AVAILABILITY_20260920.md)
+checks 1,044 records: corridor96 and NFO500 retain single simulated distances;
+real ZJU160 retains Gaussian location/scale parameters, not measured time bins;
+retained A*288 already includes403 double-return zones, all hypothetical.
+No existing measured weak-foreground peak stream was found in these fixed inputs.
+The user confirms no owned8x8 board/captures. Physical near-peak existence remains
+NOT_EVALUABLE, not a negative result. The actual Android scalar ToF4M adapter and
+research multi-slot schema do not establish an integrated8x8/CNH acquisition path.
+No inference, training, simulator, device operation, new capture or successor ran.
+
+## CPU contour-parallax recipe fails (2026-09-20)
+
+[One fixed 12-window / 36-frame reuse of G6](nearfield/BA_CONTOUR_PARALLAX_20260919.md)
+uses sparse line profiles and ideal metric poses, with no model, training, ToF
+input or new capture. It recovers 0/4 original translational 2–3 m misses.
+Far bars and wall mark have 21/3/34 target candidate samples and zero target
+false-near; their sparse coverage and frequent abstention do not prove reliable
+far ranging. Both pure-yaw windows keep every distance UNKNOWN. Across all
+windows, 104 non-target false-near samples remain; the accepted native-depth
+interval coverage is 5,853/7,695 (76.062%). Different proposal sets prevent paired
+false-positive claims against old G6. The old cached baseline replays exactly.
+Single-logical-core algorithm P95 is 554.568 ms against a frozen 200 ms allocation;
+peak RSS is 67.484 MiB. This is a desktop CPU proxy, not edge-device validation.
+Close the exact recipe as NEGATIVE_CONTROL; no automatic parameter, speed or
+successor rescue. This does not reject every contour or layered representation.
+Twelve predictions were sealed before native scoring. Actual work includes one
+extra unsealed call lost to scalar JSON serialization, with the failure retained;
+an old-report schema repair also preserves its failed code and logs. Global
+registration/inheritance remains pending ledger303/unknown-terminal errors;
+local disposition and receipts are retained. No owned compute remains active.
+
+## Frozen camera-corridor replacement fails (2026-09-19)
+
+[One new controlled 96-frame / 8-clip comparison](nearfield/BA_CAMERA_CORRIDOR_20260919.md)
+uses the fixed camera-forward volume and retained weights, without training or
+threshold search. Interior events: raw ToF 2/5, retained NFO 1/5, Depth Pro plus
+existing global ToF correction 0/5; all events 3/6, 2/6, 0/6. Frame TP/FP/FN:
+12/5/24, 7/5/29, 0/0/36. False-alert segments/duration: 2/1.0s, 3/1.0s, 0/0s.
+The candidate's zero false alerts accompany zero detections; the frozen retain
+gate fails. Raw ToF and NFO already alert before the large-plate entry, so their
+zero entry-relative delay is not evidence of timely onset discrimination.
+All three miss the thin center cylinder, thin plate and same-zone inside object.
+UNKNOWN remains 96/1/0 frames; raw alerts are all spatially ambiguous.
+Retain inherited NFO only as a comparator, not as an adequate solution; close
+this exact global-scale corridor replacement as NEGATIVE_CONTROL. This does not
+reject all spatial representations or reopen earlier near2m negatives.
+Source admission passes all96; two failed mechanical/source attempts are retained,
+including texture-loading rejection before model scoring. Predictions were sealed
+before evaluator access. This is posed synthetic Development, not real-time,
+hardware, natural-distribution or safety evidence. No automatic successor.
+Global metadata remains pending ledger303/unknown-terminal errors; local structured
+disposition and failure receipts are retained. All task-owned compute is released.
+
+## Existing ToF helps Depth Pro; frozen layer recipe rejected (2026-09-19)
+
+[Same500-frame global versus layered echo comparison](nearfield/BA_NFO_DEPTHPRO_ECHO_20260919.md)
+reuses native Depth Pro and saved single returns, with identical predicted
+histogram-peak pairs. Global improves bare Depth Pro far-small recall61.29%
+->67.84%, IoU23.93%->42.62%, pure-far FP344,336->19,236; mixed recall88.08%
+still misses94.5%. Layered recall58.66%, IoU38.81%, mixed90.22%, FP21,845:
+neither passes the two recall gates, and layers do not dominate global.
+Retain NFO as task baseline, global as descriptive calibration component,
+and this exact bounded-region recipe as NEGATIVE_CONTROL. This revises the
+prior range-priority interpretation: RGB-only failure did not exhaust existing
+ToF. 6,094/7,942 layered far-small misses lie in algorithm-assigned regions;
+assignment is not proof of correct near-surface anchoring. No automatic tuning,
+new hardware inference, training, fresh test, App change or successor.
+Old18-view G5 fusion is NOT_EVALUABLE_NO_FROZEN_TOF, not a negative result;
+its prior RGB-only diagnostic remains separate. Four synthetic tests and an
+independent500/4-arm/11-domain recount pass;350,140 UNKNOWN and9,903,793
+unanchored prediction pixels are retained. CPU postprocessing7.606s, no models.
+Global metadata remains pending ledger303 fingerprint/unknown-terminal errors;
+structured local disposition and failure receipts are preserved.
+
+
+## Depth Pro reference: contour gain, near2m task fails (2026-09-19)
+
+[One frozen500-frame comparison](nearfield/BA_NFO_DEPTHPRO_20260919.md) completes
+official Depth Pro with low/native RGB and public camera rectification, plus18
+separate old G5 views. Native contour F1 improves (matched70 SI:25.21% UniDepth
+to51.28%; near-mask boundary:4.61% NFO to44.43%), but far-small recall falls
+68.36%->61.29%, mixed recall95.00%->81.64%, pure-far FP212,988->344,336.
+Far-small IoU rises11.13%->23.93%; this does not pass the joint task. Low also
+fails. Native detail and inherited sampling differences prevent attribution
+solely to pretrained representation. Old bar optical-z median improves14.21m
+to2.875m versus1.947m reference, but remains0/1,054 pixels below2m.
+Retain NFO; exact standalone Depth Pro2m replacement is NEGATIVE_CONTROL,
+native shape/range-error evidence remains diagnostic. Prioritize near-layer
+range evidence over another segmentation-head round; no successor started.
+Six focused tests and independent all500/3-arm/11-domain recount pass;350,140
+UNKNOWN pixels preserved. No originaltest, training, threshold sweep or App
+change. Global registration is blocked by ledger303; terminal is unregistered,
+with structured local disposition and actual failure receipts retained.
+
+
+## NFO full-training support contrast: recipe rejected (2026-09-19)
+
+[Full3,000-frame paired training and500-frame Development check](nearfield/BA_NFO_FULLSUPPORT_20260919.md)
+uses original NFO, shared from-scratch initialization, identical12epochs/1,500
+batches and fixed0.081. Control vs full-support loss: far-small recall68.27%
+->62.56%, IoU11.25%->12.30%, mixed recall95.05%->90.40%, pure-far FP208,202
+->196,151. Both recalls decline in all6 Development families; net1,097 extra
+far-small FN. Outside-ToF FP grows238,643. Candidate passes2/4 usertargets,
+fails paired recall guards; retain original NFO and close this exact loss recipe.
+Coverage includes254,276 small-near TRAIN pixels,133,697 at1.8–2m; no selected32
+or depth-gap filtering. This rejects the full-coverage loss recipe, not all
+spatial architectures or a causal proof that data coverage cannot matter.
+Original baseline exactly reproduced; fresh control differs slightly. Two
+loss/mask tests, all500 independent counts and44-frame three-arm reload pass.
+Consumed synthetic Development only; no test, sweep, successor or App change.
+Global registration/inheritance remain pending at existing ledger303 failure.
+
+## NFO frozen cross-scene transfer check: adaptations rejected (2026-09-19)
+
+[Three frozen models on all 500 original val/Development frames](nearfield/BA_NFO_FROZEN_TRANSFER_20260919.md)
+close the 32-frame adaptation sequence. Far-small recall: original68.36%,
+joint62.37%, late60.12%; IoU11.13%,10.89%,11.64%; mixed recall95.00%,87.80%,87.25%;
+pure-far FP212,988,367,659,273,576. Joint meets0/4 user targets, late1/4. Both
+candidates lose far-small and mixed recall in all6 scene families. Preserve
+original NFO as reference (it still misses75%recall), reject these fixed checkpoints
+as transfer upgrades, retain local fit/ablation evidence and all old gate failures.
+This is separately authorized consumed-Development transfer, not new blind evidence
+or a retroactive pass of14/16. All500frames are image/scene/family-disjoint from
+both original training and32-frame fitting, but were used in prior calibration.
+No training, cutoff change, original test access or successor. Exact baseline,
+independent500-frame/domain/family recount and44-frame three-arm checkpoint reload
+pass. Stop same-checkpoint/small-set repair; future work needs representative
+training coverage and a distinct cross-scene question. Global metadata still pending.
+
+## NFO fixed-checkpoint branch ablation (2026-09-19)
+
+[Disable only the final late residual](nearfield/BA_NFO_LATE_BRANCH_ABLATION_20260919.md):
+102/183 prior lost small-near hits recover; 81 remain missed. But target IoU falls
+70.07% -> 29.05%, pure-far FP rises 9,496 -> 24,688 and zone coverage falls 12/16 ->
+7/16. The branch provides material far rejection with near-retention costs; off is
+not an adopted repair. All-small residual effect is 135 base hits suppressed and
+36 base FN recovered. Selected TP totals both398 hide one hit lost and one rescued;
+all four previous high-coverage FN are detected by base alone, only three with branch.
+The off state uses co-trained final base weights, not an independent trained baseline
+or a counterfactual frozen-base run. No causal training-history or raw-head sign claim.
+All32 saved-full/zero-correction/base equivalence and independent set-count checks pass;
+no training, val/test or successor. Original checkpoints and12/16 failure retained;
+global registration/inheritance remain pending at the existing ledger error.
+
+## NFO spatial tradeoff attribution (2026-09-19)
+
+[Saved-output audit of all 126 small-support zones](nearfield/BA_NFO_SPATIAL_TRADEOFF_AUDIT_20260919.md)
+resolves the net 122 extra FN into 183 previous hits lost and 61 misses recovered.
+All losses occur outside the 16 selected zones, still on the same supervised TRAIN
+images. Depth 1.8-2m contributes 138 losses/23 rescues; <=1.8m contributes 45/38.
+The original depth-separation + far-ToF stratum (30 zones) has 0 losses/5 rescues,
+but is not a new admission rule or promotion denominator. Keep all valid <2m
+positives, other-zone costs and the failed 12/16 coverage gate. Selected-pixel loss
+coefficients are about 101x other pixels under the existing half/half means, identically
+in both arms; this is not a causal explanation or measured gradient ratio.
+Independent all-zone set-difference and source/output checks pass; no new training,
+inference, validation, test or successor. Global registration/inheritance pending.
+
+## NFO late spatial-conditioning contrast (2026-09-19)
+
+[One fixed 512-update architecture contrast](nearfield/BA_NFO_LATEFUSION_20260919.md)
+adds a zero-initialized full-resolution RGB/ToF residual branch (+8,804 parameters).
+Same 32 TRAIN cases and joint loss: target recall 98.75% -> 99.50%, IoU 66.72% ->
+70.07%; full recall 98.89% -> 99.50%, pure-far FP 16,645 -> 9,496. Empty-native-near
+FP 125 -> 96; three of four high-coverage FN recovered. Coverage rises 11/16 ->
+12/16, still below 14/16; five original gates and all four paired guards pass.
+Broader small-support recall declines 92.43% -> 90.23% (122 extra FN), despite
+IoU improvement. Retain component evidence and this cost, not a promoted model.
+Exact public zone lookup and all-32 zero-initial identity verified; two tests and
+independent final-weight reload/count checks pass. Parameters and late conditioning
+are coupled; no isolated mechanism or generalization claim. This recipe ends with
+no val/test, sweep or successor. Original/joint checkpoints unchanged. Global
+registration/inheritance remains pending at the existing ledger error.
+
+## NFO native-support audit (2026-09-19)
+
+[All 16 positive TRAIN cases inspected](nearfield/BA_NFO_NATIVE_SUPPORT_AUDIT_20260919.md):
+original 1024x768 RGB/depth exactly reproduce 256x192 inputs. Only 38/400 near
+labels cover a minority-near native footprint. Of 192 joint-fit FP, 125 have no
+native near coverage; four FN have mean 96.875% near coverage, the fifth 12.5%.
+Input averaging is not supported as the principal failure explanation.
+Every case contains cross-zone near support; connectivity does not establish
+object identity or invalidate the mixed-cell task. Keep all cases and the 11/16
+failure unchanged. No automatic high-resolution fit or cohort replacement.
+A future bounded spatial-localization contrast may address spill and missed
+support; no successor was run. All source/array/confusion checks and all 16 visual
+inspections pass. No training, model inference, validation or test access.
+Global registration/inheritance remains pending at the existing ledger error.
+
+## NFO fixed joint-supervision diagnostic (2026-09-19)
+
+[Fixed 0.5 full + 0.5 target loss](nearfield/BA_NFO_JOINTFIT_20260919.md) on the same
+32 TRAIN cases gives target recall 98.75%, IoU 66.72%, FP 192; full recall 98.89%,
+pure-far FP 16,645 retain the original 32-frame baseline. Five of six gates pass,
+but local coverage 11/16 misses 14/16. Validation is therefore skipped, 0 frames
+read; no test/transfer claim. Retain joint-supervision contribution as COMPONENT,
+not a promoted model. Three remaining zones have excess FP, two lose near support.
+The fixed 512-step sequence ends with no ratio/threshold/budget sweep or successor.
+Two tests and independent all-32 reload/count/batch/skip checks pass; original NFO
+unchanged, global metadata pending at ledger line 303. Full-only fit retains stronger
+global metrics, so the joint recipe does not dominate every previous control.
+
+## NFO paired supervision-domain diagnostic (2026-09-19)
+
+[Same32TRAIN cases, target-zone loss](nearfield/BA_NFO_TARGETFIT_20260919.md)
+changes only supervised pixel support, retaining original initialization,
+512batches/updates, original loss formula and0.081cutoff. Versus full-image
+fit, target IoU25.83%->60%, FP1110->240, recall97.5%->96%, local passing
+zones1/16->11/16. It still misses65%IoU and14/16gates. Full-image recall
+falls99.40%->58.80%, IoU80.93%->29.34%, pure-far FP4937->70192.
+Retain the supervision-domain contribution as COMPONENT diagnostic evidence;
+do not replace NFO or infer an information/architecture ceiling or generalization.
+Two loss-gradient tests and independent all32output/count/support/batch checks
+pass. One fit ended, no tuning/successor; global metadata remains pending303.
+
+## NFO difficult-case learning check (2026-09-19)
+
+[One TRAIN-only32frame fit](nearfield/BA_NFO_HARDFIT_20260919.md) uses16depth-separated
+small-support cases plus16textured pure-far controls, original network/loss/inputs,
+512updates and frozen0.081. Target recall71.25%->97.50%, IoU13.62%->25.83%,
+FP1693->1110; negative target FP0->13/7689. Only1/16positive zones meet local
+recall90%/IoU50%; aggregate IoU65% and14/16coverage targets fail.
+Retain the learnability diagnostic as COMPONENT, not a replacement model.
+The fixed full-image-loss fit remains incomplete; neither RGB information
+limits nor network incapacity is established. No validation/test evaluation,
+recalibration or successor. Two tests and independent all32weight-reload/count
+checks pass; original NFO unchanged, metadata pending ledger303.
+
+## NFO-ZCR closes the current readout iteration (2026-09-19)
+
+[One frozen-NFO zone-median contrast](nearfield/BA_NFO_ZCR_20260919.md)
+gives far-small recall69.612%->99.740% but IoU12.090%->6.357%, mixed
+recall94.699%->94.285%, pure-far FP157,187->9,876,975. Three user gates fail.
+Validation alone selects residual cutoff-0.1943483. At this point mixed recall
+is already below94.5% and pure-far FP above cap; monotonicity proves no global
+cutoff can meet both on these fixed scores. AP14.701%->24.165% is retained
+ranking evidence, not a successful near mask or proof all margins are weak.
+Keep original NFO; ZCR and eight-parameter Zone Readout remain negative controls.
+No MAD, regional threshold/weight, new fit or successor. Three focused tests,
+independent public inference/NumPy median and exact baseline reproduction pass;
+one NCHW layout repair is documented. Metadata remains pending ledger303.
+The user's next direction readout is fixed image-center/left/right sectors;
+defer implementation until a useful mask, superseding the 3D corridor proposal
+below for that future readout. No body-frame reconstruction or alert claim.
+
+## Adopted camera-forward task (2026-09-19)
+
+[Camera-forward contract](nearfield/CAMERA_FORWARD_CONTRACT_20260919.md): optical axis defines forward; use RGB + 8x8 ToF and a fixed camera-frame corridor (0.3-3m forward, +/-0.3m lateral, explicit fixed vertical profile). Evaluate paired corridor alerts and UNKNOWN coverage; IoU remains a component metric. NFO threshold scores are not exact depth. No body-heading/IMU compensation, future trajectory or SLAM work is required. Definition adopted; runtime integration and alert validation are pending. Historical results below retain their original task.
+
+## BA-NFO local diagnosis and conditional-readout contrast (2026-09-19)
+
+[One local diagnosis and one frozen-backbone readout](nearfield/BA_NFO_ZONE_READOUT_20260919.md)
+find NFO median within-zone AUC0.9465, selecting an8-parameter public-zone
+offset rather than a decoder fit. Conditional AP14.701%->15.857%; at65,965FP
+diagnostic recall69.612%->71.401%. At frozen0.081, however, far-small recall
+falls63.596%, FP65,965->50,119, and validation recall94.598% fails95%.
+Mixed IoU51.042%->51.906%; pure-far FP157,187->106,249. This is improved
+ranking plus suppression, not foreground rescue. Keep NFO; fixed-cut replacement
+is NEGATIVE_CONTROL with ranking/local-diagnostic evidence retained.
+One12epoch CUDA fit complete; base/gate-out unchanged,4tests and independent
+public inference pass. No recalibration, alternative branch or successor fit.
+
+## BA-NFO conditional ranking diagnosis (2026-09-19)
+
+[Four frozen-model curves and spatial audit](nearfield/BA_NFO_CONDITIONAL_20260919.md)
+find Hybrid AP14.606% versus NFO14.701% in449far-return small zones. At80%
+recall Hybrid needs96,944FP versus91,526. Positive/negative mean score shifts
+are+0.00941/+0.01082; the lower Hybrid cutoff also contributes to near expansion.
+Curves cross locally: no overall ranking gain, but no exact translation claim.
+Local rescue spill exists, while35.44%of new FP occur in no-rescue frames.
+Keep original NFO and Hybrid NEGATIVE_CONTROL; retain this diagnostic component.
+No fifth fit, calibration adoption or local-branch implementation. A structured
+local mechanism remains a hypothesis with an unresolved observable trigger.
+All original2m counts reproduce,3focused tests pass; consumed Development only.
+
+## BA-NFO auxiliary-depth matched result (2026-09-19)
+
+[One hybrid fit](nearfield/BA_NFO_HYBRID_20260919.md) freezes train-only lambda0.89323,
+adds17 training parameters and removes the auxiliary head for inference.
+Far-return small recall69.61%->79.98%, but IoU12.09%->10.02%; mixed
+IoU51.04%->49.34%, recall94.70%->93.28%. Joint target fails. Retain original
+NFO and this recipe as NEGATIVE_CONTROL; no lambda tuning or successor.
+Both controls reproduce all original counts; actual pruned inference passes.
+One12epoch CUDA run complete and process released. Global metadata pending
+ledger303/unknown terminal; local structured disposition and weights retained.
+
+## BA-NFO trained RGB-only control (2026-09-19)
+
+[Matched RGB-only fit](nearfield/BA_NFO_RGB_CONTROL_20260919.md) completes12epochs
+with original split/loss/budget and identical surviving initial parameters.
+Far-return small foreground recall97.89% but IoU6.35%,FPR96.26%, versus fusion
+NFO69.61%/12.09%/31.79%. High recall is broad overprediction, not useful RGB
+recovery; frozen Non-Veto trigger fails. Retain NEGATIVE_CONTROL for this recipe,
+not RGB information impossibility or proven causal veto. No successor training;
+actual weight and input-independent inference pass; metadata pending ledger303.
+
+## BA-NFO small-area decomposition (2026-09-19)
+
+[Fixed-model diagnostic](nearfield/BA_NFO_AREA_DIAGNOSTIC_20260919.md) reproduces
+all original mixed counts. At2m <=20% area, near-return FN2542->1640 improves;
+far-return FN1437->4213 causes the net recall regression. Recovering every
+near-return miss alone reaches87.41%, below87.6% target. Do not train the
+proposed near-return existence auxiliary as the presumed fix; no new fit or
+threshold change. Retain decomposition as COMPONENT and matched NFO gain with
+small-area limitation.1m recall improves in every area band while FPR increases;
+ultra-near calibration/representation cause remains unresolved. Metadata pending.
+
+## BA-NFO matched supervision completed (2026-09-19)
+
+[Matched two-arm training](nearfield/BA_NFO_MATCHED_20260919.md) supersedes the
+preflight-only status below. On 500 training-unseen Hypersim Development frames,
+2m mixed IoU47.11%->51.04%, recall93.09%->94.70%, FP pixels536667->470344.
+48/57 eligible scenes and all6 held-out families improve. Same trainable RGB/ToF
+U-Net,3000train/500val,12epochs/arm; real weights and public-input inference pass.
+Small-near-area recall87.62%->83.01% remains a material loss; no thin-rod or alert
+benefit claim. Retain COMPONENT_OR_CHALLENGER/CHALLENGER for this synthetic
+supervision comparison only. No further fit/oracle/assignment branch launched;
+A/A*,Radar and App unchanged. Global registration/inheritance pending ledger303
+and unknown terminal; local evidence and disposition retained.
+
+## BA-NFO direct near-field occupancy preflight (2026-09-18)
+
+[BA-NFO protocol](nearfield/BA_NFO_PROTOCOL_20260918.md) is frozen as the
+last public-data training candidate, but preflight is BLOCKED_DATA_PREREQUISITES:
+no local Hypersim/SANPO-Synthetic and no dense UE RGB+depth+ToF manifest. Existing
+MZ120/MZ122 45-cell AABB occupancy is not interchangeable pixelwise near-mask
+truth. No download/training/alert change. Resume only with exact data manifest;
+one failed gate closes this route.
+
+## BA-RPCC-O0 cardinality curve (2026-09-18)
+
+[Rank-preserving cardinality oracle](nearfield/BA_RPCC_O0_20260918.md): with
+GT count and frozen DEPTHOR ranking, best global c=1.20 at recall96.13%
+gets IoU78.27% versus75.40% (+2.86), below the +5 training trigger.
+Close RPCC training from this evidence; per-zone oracle remains descriptive.
+No model/training/alert change; registration pending ledger303.
+
+## BA-Depth 2x2 oracle decomposition (2026-09-18)
+
+[Equal-support oracle](nearfield/BA_DEPTH_ORACLE_2X2_20260918.md) reproduces
+DEPTHOR 75.40% IoU. GT count + DEPTHOR ranking reaches87.02% IoU but recall
+falls93.06%; DEPTHOR count + perfect placement reaches76.17% IoU, recall96.24%.
+Threshold bands show57.51% of current FN have both GT/prediction >20cm from2m;
+small calibration is not dominant. Close ZPA/SCDE; count/fraction is only a
+candidate question, with recall constraint. Registration pending ledger303.
+
+## BA-ZMR fixed-mass placement (2026-09-18)
+
+[160-frame ZMR](nearfield/BA_ZMR_20260918.md): IoU75.40% DEPTHOR falls
+to74.22% mono rank/74.06% connected; precision and recall also fall. Exact
+zone/union mass retained. GT-mass rank86.47% is privileged, recall92.74%.
+No ZPA training trigger. User closes existence-only SCDE; preserve learned
+geometry component evidence. Registration/inheritance pending ledger303.
+
+## BA-Depth support-loss diagnosis (2026-09-18)
+
+[Paired FN audit](nearfield/BA_DEPTH_SUPPORT_DIAGNOSTIC_20260918.md) finds8,468
+new FN and4,627rescues (net3,841). All52affected near-return zones retain
+predicted near surface;48already satisfy Q10<=d+.1m, covering95.61%of new FN.
+Existence-only SCDE training trigger is not met; no training or alert change.
+Preserve localization gain and prior negatives; metadata remains pending303.
+
+## BA-Depth public diagnostic (2026-09-18)
+
+[160-frame ZJU-L5 probe](nearfield/BA_DEPTH_PROBE_20260918.md) improves mixed-zone
+2m IoU 63.18% to75.40%, but recall97.32% to95.69%; no joint replacement gain.
+Retain descriptive localization only. No BODY/HEAD corridor authority without
+pose/calibration; no training or alert changes. Prior UE negatives remain.
+Registration/inheritance pending existing ledger303.
+
 # Cane-complementary forward perception and DTR history
 
 Updated: 2026-09-12
 
 Status: `DTR_R2_DYNAMIC_RETAINED` (historical algorithm; no new promotion).
 Current work: cane-complementary, class-agnostic forward obstacle awareness.
+
+## MZ180 public feasibility and corrected audit (2026-09-18)
+
+[MZ180 corrected result](nearfield/corridor_fusion_v1/MZ180_RESULTS_20260918.md)
+reproduces public merged UNKNOWN on1920 frames:1228/103/156,142 full TP additions
+and44 new FP over A*. Historical privileged proxy has identical true-alert IDs
+and first risk-alert times, but22 more FP. Both retain the same98 of103 recoveries.
+835 merged slots expose no internal modes; stop this public decomposition recipe.
+Withdraw old native-union/strict-oracle claims: the range proxy is not authenticated
+component geometry; the oracle removed Radar and retained89/103, not66.
+Keep A*; no training, capture, promotion or automatic successor.
+
+## MZ181 fixed angular refinement (2026-09-18)
+
+[MZ181 result](nearfield/corridor_fusion_v1/MZ181_RESULTS_20260918.md) retains all142
+extra TP over A* but removes only5 of44 extra FP:1228/98/156 versus public UNKNOWN
+1228/103/156. Fixed extra-FP<=25 gate fails (39 remain); stop this recipe, no
+MZ182 or automatic geometry successor.8x8..64x64 outputs agree. Remaining32
+ToF-only FP have verified feasible public-support points;7 are Radar-sustained.
+All true-alert IDs/times and12 advance contacts remain.132 target-linked slots
+are removed, including94 in true frames still alerting; do not claim native
+contributor retention. Independent witness/count/Radar audit passes; A* remains,
+UNKNOWN stays high-recall research control. Metadata pending ledger303.
+
+## MZ182 angular dither ceiling (2026-09-18)
+
+[MZ182 result](nearfield/corridor_fusion_v1/MZ182_RESULTS_20260918.md) captures24
+matched scenes/144 native UE collision observations. Single and repeat0x3 both
+12TP/12FP; yaw0,+quarter-zone,-quarter-zone gives12TP/8FP.4/12FP removal fails
+frozen50% gate despite12/12TP retention. Stop fixed recipe, no phase expansion
+or public-association successor. Ideal exact yaw/no packet loss and oracle actor
+IDs define the ceiling; object association is not same-point registration.
+Native extent coverage is incomplete; no surface/hardware claim. Prior MZ179/180/
+181 remain closed. ST contract migration target documented, exact vendor figures
+not independently verified (access blocked); no sensor-default change. Metadata
+registration/inheritance pending ledger303/unknown terminal; UE resources released.
+
+## MZ183 visible angular ownership ceiling (2026-09-19)
+
+[MZ183 result](nearfield/corridor_fusion_v1/MZ183_RESULTS_20260919.md) applies a
+reconstructed visible actor mask to MZ181 valid-ToF support. It retains142/142
+extra TP but removes only3/32 ToF-only FP (3/39 total), leaving1228/95/156;
+Radar-only7 FP remain. The >=24 FP ceiling fails. Close ownership, do not train
+segmentation or start MZ184. Masks were reconstructed from controlled scene
+meshes because no instance-ID render was saved; no native depth or hit point
+entered readout. A*/Radar remain independent, baseline alerts/events retained.
+This reconstructed-mask result does not establish a limit for all RGB observables.
+ST multi-target/CNH contract is documented with user-provided official figures;
+local vendor fetch was blocked, so no default sensor contract changed.
+
+## MZ178 head/body current-frame diagnostic (2026-09-18)
+
+[MZ178-A result](nearfield/corridor_fusion_v1/MZ178_RESULTS_20260918.md)
+recovers103/106 head-turn supported FN (98 target-contributor linked), versus64
+for same-rule head-frame control. Transitions93->41, but FP59->162 and side-pass
+seconds1.2->11.2 fail the frozen gate. Existing A* already yaw-rotates supports;
+this was a direct geometric union readout, not newly introduced compensation.
+Stop A, do not launch memory or tune. Retain A*/raw; metadata remains pending.
+
+## Temporal frontier evidence ceiling (2026-09-18)
+
+[MZ179 fixed ceiling](nearfield/corridor_fusion_v1/MZ179_RESULTS_20260918.md)
+finds past Radar features separate the six clear A*/raw disagreement cases,
+but current Radar range and past model scores also separate them. Cell survival,
+density and Doppler overlap; incremental temporal mechanism is unproven.
+Withdraw ToF-survival rescue: none of the three TP has past native corridor ToF
+support. Tiny source yaw and absent prior support do not establish head-turn
+dropout here; keep the MZ177/178 question separate. Retain diagnostic tooling
+only, freeze A*/raw, no training/capture successor. Metadata pending ledger303.
+
+## Continuous approach diagnostic (2026-09-18)
+
+[MZ177 complete continuous result](nearfield/corridor_fusion_v1/MZ177_CONTINUOUS_APPROACH_RESULTS_20260918.md)
+finishes24 sequences/1920 frames with frozen A*, raw HGB and fixed hysteresis.
+All12 moving contact events receive advance alerts, but all A* moving sequences
+already alert at frame0: onset is left-censored. A* loses130 head-turn risk frames,
+106 with valid target ToF support; hysteresis leaves98 supported head-turn FN.
+Retain A*/raw; choose only rotation-conditioned body-frame evidence readout as
+an unlaunched candidate. Release is mostly censored; recovered controlled
+Development only. Existing ledger line303 fingerprint error leaves metadata pending.
+
+
+## Saved-score residual budget diagnosis (2026-09-18)
+
+The [posthoc budget diagnostic](nearfield/corridor_fusion_v1/RESIDUAL_BUDGET_DIAGNOSIS_20260918.md)
+finds maximum Clear TP at FP<=3/5: raw99/99, A*98/99, B088/91, B197/98,
+B293/95. All selected points retain18/18 core events and76/76 native Clear TP,
+but residuals delay one rod onset0.25s and exchange strict events. Full plateaus
+and event identities are retained. No demonstrated joint low-FP gain supports
+threshold-transfer rescue; keep raw/A* and the fixed residual recipe closed.
+Saved scores only, ten-point independent count/onset audit passes; no training,
+new data or formal-threshold edits. Existing metadata errors remain pending.
 
 ## Texture counterfactual training pilot (2026-09-18)
 

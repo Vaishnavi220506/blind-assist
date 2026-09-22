@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-12",
+  "updated_at": "2026-09-22",
   "roles": [
     {
       "terminal_id": "terminal-dtr-r6-static-occupancy-unreachable",
@@ -2061,6 +2061,106 @@
       "failure_signature": "Union adds54TP but19FP and2 false sessions; idealToF already detects all28events so new-event gate has no opportunity",
       "revisit_trigger": "Authorized observable support-reliability mechanism with paired recall timing and false-session evaluation",
       "assignment_basis": "Frozen288frame paired simulation, actual stereo image depth, separate native truth, six tests, sealed hashes and independent result audit"
+    },
+    {
+      "terminal_id": "terminal-dtr-operating-scope-stability-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Retrospective two-cohort fixed-A operating-scope stability and uncertainty diagnosis",
+      "retained_surface": "A strong threshold, definite support, hold, UNKNOWN, demo and App unchanged; diagnostic report retained",
+      "failure_signature": "All broader-cohort conditions fail event coverage silence or delay criteria; projection shifts add lateral false alerts; closer than2.29m untested",
+      "revisit_trigger": "Separate authorized validation or materially different mechanism without reclassifying consumed evidence",
+      "assignment_basis": "Sealed2304-frame public replay; independent metric support and geometry audit PASS; report commit6fef145c"
+    },
+    {
+      "terminal_id": "terminal-query-occupancy-20260922",
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Exact158137parameter single-frame RGB ToF first-hit plus visible-mask supervision and dev-selected alert readout on this48-layout source",
+      "retained_surface": "Retain unchanged A and UNKNOWN; retain source, paired classifier, predictions and component metrics as consumed Development diagnostic evidence",
+      "failure_signature": "Recall+10.156pp costs+10FP and+12segments; IoU0 and13of880positive bins correct; A current substantially stronger",
+      "revisit_trigger": "New independently justified observable or learning mechanism with appropriate evaluation and separate authorization, not a retuned consumed recipe",
+      "assignment_basis": "Frozen protocol, full held prediction seal, independent frame geometry event and component decision audits"
+    },
+    {
+      "terminal_id": "terminal-query-occupancy-diagnostic-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Interpretation of frozen selected query-occupancy checkpoints on consumed train and dev only",
+      "retained_surface": "Diagnostic evidence of invariant query rank and weak training-set localization; preserve original model NEGATIVE_CONTROL and A UNKNOWN",
+      "failure_signature": "All1152images both arms have strict query rank3,4,5,0,1,2; masks empty at0.5 and weak foreground ranking on train/dev",
+      "revisit_trigger": "Independently justified new query-conditioning or optimization check, first establish training-set spatial ability; separate authorization required for successor work",
+      "assignment_basis": "Fixed checkpoint replay with original dev counts, weighted foreground ranking, exact query ordering and no optimizer"
+    },
+    {
+      "terminal_id": "terminal-inherit-event-20260922",
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Exact same-zone original-support continuation recipe at0.2s sampling on current public ToF",
+      "retained_surface": "Retain unchanged A UNKNOWN and auditable birth versus continuation lifecycle; original hold remains measured reference",
+      "failure_signature": "Retains0/32hold-addedTP and qualifies no primary continuation despite eliminating20extraFP",
+      "revisit_trigger": "Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result",
+      "assignment_basis": "Frozen1728prediction seal,8focused tests, independent public-support reconstruction and primary576frame timing audit"
+    },
+    {
+      "terminal_id": "terminal-inherit-spatial-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Query-local representation package for shared HGB on six fixed queries and consumed RGB ToF source",
+      "retained_surface": "LOCAL representation COMPONENT; retain raw exact fit as NEGATIVE_CONTROL and preserve A UNKNOWN",
+      "failure_signature": "Relative A+30TP+2FP+2segments fails+1segment budget; standalone loses one event and is not selected Relative RAW loses one TP and delays one event onset0.2s despite positive net gain.",
+      "revisit_trigger": "Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast",
+      "assignment_basis": "One fit each, dev-only thresholds, sealed predictions,4focused tests and independent576frame3456query audit"
+    },
+    {
+      "terminal_id": "terminal-inherit-multireturn-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Hypothetical additional return observation preservation and sampled task tradeoff on consumed broader-distance source",
+      "retained_surface": "Information COMPONENT and native-support attribution; unchanged first-slot A and UNKNOWN",
+      "failure_signature": "Hold+29TP costs+3FP+2segments, failing frozen zero-added-Core-cost challenger gate; complex two-return readout adds no advantage",
+      "revisit_trigger": "Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results",
+      "assignment_basis": "576first-slot parity,24focused tests, independent27group native peak and metric audit, prediction seal before truth join"
+    },
+    {
+      "terminal_id": "terminal-inherit-precision-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Hypothetical fine range information under bounded single-rectangle shared-bias initial-query model",
+      "retained_surface": "Precision information COMPONENT and validated dual-geometry witnesses; retain original modules and coarse evidence",
+      "failure_signature": "Boundary remains mostlyUNKNOWN; no actual sensor precision, multiobject validity, event or safety evidence",
+      "revisit_trigger": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
+      "assignment_basis": "540coarse parity and true assignment checks,439queries878MILPs,4focused tests and saved seal metric witness audit"
+    },
+    {
+      "terminal_id": "terminal-query-spatial-fit-20260922",
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Fixed two-arm tiny-training joint query and mask fitting package; no alert or generalization authority.",
+      "retained_surface": "Train-only paired evidence that original FiLM can fit image-dependent query answers, with sealed spatial branch and remaining mask errors.",
+      "failure_signature": "Both arms pass query criteria but macro positive-mask IoU0.484823/0.481782 is below0.50; extra spatial branch has no localization gain.",
+      "revisit_trigger": "A separately justified changed mechanism addressing mask false area or boundary placement, with separately scoped evaluation.",
+      "assignment_basis": "Declared final-state fitting gate failed for both; retain useful query-fitting evidence without promoting the branch or reopening frozen trials."
+    },
+    {
+      "terminal_id": "terminal-local-transfer-diagnostic-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Read-only old LOCAL errors and observable-feature interpretation; no standalone alert role",
+      "retained_surface": "All30rescues,2addedFP,1RAW-onlyTP and complete576frame denominator; original LOCAL component and RAW negative preserved",
+      "failure_signature": "Marginal overlap and two false examples do not establish full-feature inseparability or physical return ownership",
+      "revisit_trigger": "Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention",
+      "assignment_basis": "One governed saved-output diagnostic, unchanged source hashes and full identity-index feature and score checks"
+    },
+    {
+      "terminal_id": "terminal-local-transfer-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Frozen query-local HGB component on eight new same-generator geometries and paired background material intervention",
+      "retained_surface": "LOCAL component transfer and full measured false costs; old LOCAL component and RAW negative control remain; no default App promotion",
+      "failure_signature": "Two addedFP and one segment meet cost limits exactly; background changes lose2TP gain6TP remove2FP; no appearance invariance or physical return ownership",
+      "revisit_trigger": "Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results",
+      "assignment_basis": "One576frame capture, exactToF288pairs, sealed fixed predictions,13focused tests, independent37156-check saved-output audit and read-only implementation review"
     }
   ]
 }

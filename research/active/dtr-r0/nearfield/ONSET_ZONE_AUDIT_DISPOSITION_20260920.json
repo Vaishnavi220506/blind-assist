@@ -1,0 +1,22 @@
+{
+  "terminal_id": "BA_ONSET_ZONE_AUDIT_20260920",
+  "inheritance_role": "COMPONENT_OR_CHALLENGER",
+  "inheritance_mode": "COMPONENT",
+  "role_scope": "Consumed six-frame native attribution plus432 public feature comparisons, not a new predictor",
+  "retained_surface": "f0005 selected returns lose corridor target contributions; f0293 retains target return with low depth fraction. Neither shows large dispersed positive mass lost by max.",
+  "failure_signature": "No recovered alerts, repair efficacy, fresh transfer or full64-vector information limit established; fixed feature tuple overlaps210 negatives",
+  "revisit_trigger": "Separately authorized observation-grounded hypothesis only; no automatic successor",
+  "assignment_basis": "Frozen features, exact original parity, separate evaluator lineage, independent public recount",
+  "global_metadata_status": "PENDING_LEDGER303_AND_UNKNOWN_TERMINAL",
+  "registration_receipt": "artifacts.local/work/ba-onset-zone-audit-20260920/registration.log",
+  "inheritance_receipt": "artifacts.local/work/ba-onset-zone-audit-20260920/inheritance-cli.log",
+  "evidence_sha256": {
+    "protocol.json": "a9050cb9bfaceab3aca4de61adacba813f2b7c93629504eab239fa2c72c014f0",
+    "feature-seal.json": "43249d5242a7fdd1cbc16923adcb87d723ce78892979fe0b669e22a98af11b49",
+    "audit-seal.json": "d80a4c6dd3d4a10df27ac28e44f4077aae513c3821f20b18cee67abd50b6d160",
+    "results.json": "3ee13aeff646ea9a16f209a6770138d1c1f9f8bfc361e63f771cc3687ecbbec6",
+    "evaluator-onset-lineage.json": "dd245b6660bc47ecb69909d70ad3d8836ecba93d1b31739e4374c1fcc14f466a",
+    "evaluator-onset-lineage.py": "4b029e55fb2effdf9b7c8bd875f2d1e28356ff028b731a217615fa4814a1739b",
+    "independent-feature-recount.json": "cb6ba715b672a1a80a1c66221e3ed783d9614555e762d8347efb7ac6466d30d8"
+  }
+}

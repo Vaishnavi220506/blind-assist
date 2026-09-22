@@ -33,6 +33,8 @@ foreach ($file in @(
     'research/active/dtr-r0/CURRENT.md',
     'research/active/l10-r0/README.md',
     'research/active/l10-r0/CURRENT.md',
+    'research/active/hardware-bringup/README.md',
+    'research/active/hardware-bringup/CURRENT.md',
     'research/active/l10-r0/l10_r0.py',
     'research/active/l10-r0/benchmark.py',
     'research/active/l10-r0/artvideo_replay.py',
@@ -51,7 +53,7 @@ $trackedActiveFiles = @(& git -C $repoRoot ls-files -- 'research/active/*')
 $active = @($trackedActiveFiles | ForEach-Object {
     if ($_ -match '^research/active/([^/]+)/') { $Matches[1] }
 } | Sort-Object -Unique)
-$expectedActive = @('dtr-r0', 'l10-r0')
+$expectedActive = @('dtr-r0', 'hardware-bringup', 'l10-r0')
 if (($active -join ',') -ne ($expectedActive -join ',')) {
     $failures.Add("Expected active routes $($expectedActive -join ','); found $($active -join ',').")
 }
@@ -73,6 +75,7 @@ $compactBudgets = @(
     [pscustomobject]@{ Path = 'docs/PROJECT_STATE.md'; Lines = 200; Bytes = 20480 },
     [pscustomobject]@{ Path = 'docs/CURRENT_DECISION.md'; Lines = 200; Bytes = 20480 },
     [pscustomobject]@{ Path = 'research/active/l10-r0/CURRENT.md'; Lines = 150; Bytes = 16384 },
+    [pscustomobject]@{ Path = 'research/active/hardware-bringup/CURRENT.md'; Lines = 150; Bytes = 16384 },
     [pscustomobject]@{ Path = 'research/active/dtr-r0/CURRENT.md'; Lines = 150; Bytes = 16384 }
 )
 foreach ($budget in $compactBudgets) {

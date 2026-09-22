@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>补漏对照回放 · A 与一致性补报</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">◧</span><div><span class="eyebrow">BLINDASSIST / RESEARCH REPLAY</span><h1>补漏对照回放</h1></div></div>
+    <div class="header-meta"><span class="badge">受控合成 · 已消费评估</span><span id="dataset-count">载入数据…</span></div>
+  </header>
+  <main id="app">
+    <section class="intro"><div><h2>同一帧，检查补漏与代价</h2><p>A 为保留基线。一致性补报是研究对照，尚未成为整体升级。</p></div><a href="#evidence" class="text-link">数据与使用边界 ↓</a></section>
+    <section id="scorecards" class="scorecards" aria-label="完整数据集结果"></section>
+    <p class="budget-note" id="budget-note"></p>
+    <div class="workspace">
+      <aside class="browser panel" aria-label="评估片段导航">
+        <div class="panel-heading"><h2>全部片段</h2><span id="filter-count"></span></div>
+        <label class="control-label" for="search">查找布局或片段</label><input id="search" type="search" placeholder="名称、HEAD / BODY、编号" autocomplete="off">
+        <div class="filter-grid"><div><label class="control-label" for="group-filter">评估分组</label><select id="group-filter"><option value="all">全部分组</option><option value="Core">Core</option><option value="Boundary">Boundary</option></select></div><div><label class="control-label" for="layer-filter">位置</label><select id="layer-filter"><option value="all">HEAD + BODY</option><option value="HEAD">HEAD</option><option value="BODY">BODY</option></select></div></div>
+        <label class="control-label" for="outcome-filter">查看结果</label><select id="outcome-filter"><option value="all">全部结果</option><option value="rescue">有新增正确报警</option><option value="extra_fp">有新增误报</option><option value="miss">对照仍漏掉整个事件</option><option value="new_event">A整段漏检、对照检出</option></select>
+        <div class="quick-filters"><button type="button" data-filter="rescue">看补漏</button><button type="button" data-filter="extra_fp">看误报</button><button type="button" data-filter="miss">看仍漏事件</button><button type="button" id="clear-filters">重置</button></div>
+        <p class="small muted">筛选只影响浏览；上方完整数据统计不随筛选改变。</p>
+        <div id="clip-list" class="clip-list" aria-label="片段列表"></div>
+      </aside>
+      <section class="replay" aria-label="当前片段回放">
+        <div class="replay-heading"><div><div class="eyebrow" id="clip-context"></div><h2 id="clip-title">等待数据</h2><p id="clip-id" class="small muted"></p></div><div class="mode-switch" role="group" aria-label="主画面告警方案"><button id="mode-a" type="button" aria-pressed="true">A 保留基线</button><button id="mode-and" type="button" aria-pressed="false">一致性补报 · 实验</button></div></div>
+        <div class="view-grid">
+          <div class="player panel">
+            <div class="image-stage"><img id="frame-image" alt="保存的合成场景RGB画面"><div class="image-top"><span class="image-label">保存画面 · 非实时</span><span id="frame-id" class="image-label"></span></div><div class="image-bottom"><span id="active-status" class="active-status"></span><span id="truth-status" class="image-label"></span></div><p id="image-error" hidden>该帧图片缺失，请完整解压回放文件夹。</p></div>
+            <div class="transport"><button id="step-back" type="button" aria-label="上一帧">‹</button><button id="play" type="button" aria-label="播放">▶ 播放</button><button id="step-forward" type="button" aria-label="下一帧">›</button><label for="speed" class="sr-only">播放速度</label><select id="speed"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select><span id="time-readout" class="time-readout"></span></div>
+            <label class="sr-only" for="frame-slider">当前帧</label><input id="frame-slider" type="range" min="0" max="23" step="1" value="0">
+            <div class="timeline-wrap"><div class="timeline-labels"><span>相交真值</span><span>A 告警</span><span>对照告警</span></div><div id="timeline" class="timeline" aria-label="逐帧真值与告警时间轴"></div></div>
+            <p class="timeline-legend small muted">蓝：相交标注　橙：正确报警　红：误报　虚线：漏报　点击任意列定位</p>
+          </div>
+          <aside class="frame-panel panel" aria-label="当前帧解释">
+            <h3>当前帧</h3><div id="outcome" class="outcome"></div>
+            <div id="frame-alerts" class="frame-alerts"></div>
+            <div class="rule-card"><h4>对照如何产生</h4><p class="formula">A ∨ (B ∧ N)</p><div id="current-bits" class="current-bits"></div><p id="reason" class="small"></p><p class="small muted">先合并当前判断，再执行原有不可递归的一帧保持；片段之间重置。</p></div>
+            <div class="unknown-card"><span class="control-label">A 当前证据状态</span><strong id="unknown-status"></strong><p class="small muted">UNKNOWN与补报告警分别记录。未报警不代表安全。</p></div>
+          </aside>
+        </div>
+        <section class="panel event-panel" aria-label="本片段指标"><div class="panel-heading"><h3>本片段：事件与误报</h3><span class="small muted">单帧间隔 0.2 秒</span></div><div class="table-scroll"><table><thead><tr><th>方案</th><th>正确 / 误报 / 漏报</th><th>事件内首次报警</th><th>相对进入延迟</th><th>误报片段</th><th>误报时长</th></tr></thead><tbody id="clip-metrics"></tbody></table></div><div id="event-note" class="small muted event-note"></div><div id="fp-details" class="small"></div></section>
+      </section>
+    </div>
+    <details id="evidence" class="panel evidence"><summary>数据来源、规则与使用边界</summary><div class="evidence-body"><p>完整覆盖16个评估布局、48个片段、1152帧。每个布局含相交、边界、外侧片段。这是同一批已使用合成数据的工程回放，不是新的独立验证、真实设备输入或安全认证。</p><p>Core / Boundary、HEAD / BODY以及相交真值均用于评估展示；不作为在线路由或补报条件。实际对照只读取保存的A、B_control、N当前判断。主线A没有被替换。</p><p>误报时长按误报样本数 × 0.2秒计算。事件内首次报警从第一个相交样本起计算，事件前误报不算提前检出。无相交事件的外侧片段显示“无事件”。UNKNOWN沿用A的当前证据状态，可以与保持或补报告警并存。</p><p>不同片段的计时各自从0开始；播放到末帧自动停止，不连续拼接为一次真实行走。图片来自对应帧的已保存RGB，只做显示尺寸与JPEG编码转换，未生成或补画。</p><p id="source-description" class="small muted"></p></div></details>
+  </main>
+  <div id="fatal" hidden role="alert"></div>
+  <footer>固定预测 · 完整评估片段 · 补漏与代价同时呈现</footer>
+  <script src="data.js"></script><script src="app.js"></script>
+</body>
+</html>

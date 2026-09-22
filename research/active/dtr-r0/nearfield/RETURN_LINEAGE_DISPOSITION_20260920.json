@@ -1,0 +1,21 @@
+{
+  "terminal_id": "ba-return-lineage-20260920",
+  "inheritance_role": "COMPONENT_OR_CHALLENGER",
+  "inheritance_mode": "COMPONENT",
+  "role_scope": "Evaluator-only consumed-data evidence of available foreground candidates lost by the original single-bin return selector",
+  "retained_surface": [
+    "Frozen native and sampled occupancy",
+    "All eligible candidate bins and selected-return lineage",
+    "Calibration baseline unchanged"
+  ],
+  "failure_signature": [
+    "Toy 8m eligibility and 10cm bin sensitivity",
+    "No physical target detector fidelity",
+    "No alternative-return FN recovery or collateral FP established"
+  ],
+  "revisit_trigger": "Separately authorized return-representation experiment; no automatic successor",
+  "assignment_basis": "528 exact original replays and independent record/native reconstruction audit",
+  "global_registration_status": "BLOCKED_EXISTING_LEDGER_LINE_303",
+  "global_inheritance_status": "BLOCKED_UNKNOWN_TERMINAL",
+  "receipts": "artifacts.local/work/ba-return-lineage-20260920/"
+}

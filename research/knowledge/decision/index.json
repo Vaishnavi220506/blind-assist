@@ -1,15 +1,15 @@
 {
   "schema_version": 3,
   "engine_version": "decision-v2-research-workflow",
-  "generated_at": "2026-09-12",
-  "source_fingerprint": "b1cb9f46abf71766278b2fb6e1a7af615f1102e063a5f03c48c821ea00d411c0",
+  "generated_at": "2026-09-22",
+  "source_fingerprint": "2bb9f23da5fe5f4b9b64ff9db119b8827a635d70277075304404cce72caea6e6",
   "counts": {
     "failure_layers": 13,
     "mechanisms": 272,
     "uses": 271,
-    "experiments": 425,
-    "current_terminals": 206,
-    "run_associations": 423
+    "experiments": 435,
+    "current_terminals": 216,
+    "run_associations": 433
   },
   "failure_layers": [
     {
@@ -24975,6 +24975,417 @@
       "search_text": "terminal-mz101-stereo-tof-spatial-20260912 obstacle-avoidance SPATIAL_COMPLEMENTARITY_WITH_FP_REGRESSION Fresh288-frame rendered stereo/full64-zone ToF current BODY HEAD corridor comparison: ToF148TP6FP76FN to union202TP25FP22FN.54 newTP no lostTP; thinpole36 to67 of68.28 of28 events already covered by ToF; false sessions0 to2 fails integration. Paired noncarried nonleftcensored19 entry delays.5658 to.1447 seconds. Retain spatial complementarity evidence only. Authorized new observable stereo-support reliability hypothesis preserving spatial recall and event timing with appropriate new evaluation; no native-depth filtering or test threshold tuning. COMPONENT_OR_CHALLENGER COMPONENT Rendered stereo and full ToF spatial complementarity in controlled current BODY HEAD corridor; direct union not promoted research/active/dtr-r0/nearfield/MZ101_STEREO_TOF_RESULTS_20260912.md Union adds54TP but19FP and2 false sessions; idealToF already detects all28events so new-event gate has no opportunity Authorized observable support-reliability mechanism with paired recall timing and false-session evaluation Claim same-input algorithm superiority from different sensor input arms Call current corridor entry latency collision prediction or real safety benefit Replace the failed primary integration gate with the secondary proxy event recovery Use native depth or actor truth to reject stereo points in the deployed predictor"
     },
     {
+      "kind": "current_terminal",
+      "id": "terminal-dtr-operating-scope-stability-20260922",
+      "status": "negative",
+      "question": "Two consumed simulation cohorts with2304public observations replayed at three projection offsets. Broader nominal159TP25FP17FN,15/16events; right shift165TP63FP11FN,16/16events but0.6s delay and58.33percent minimum coverage. Actual Core positive fronts2.294-3.000m; closer range untested. UNKNOWN remains separate from alerts. Keep A and diagnostic component.",
+      "baseline": null,
+      "change": "Separate authorization for a materially different mechanism or validation scope; preserve this retrospective audit and its consumed-data limits.",
+      "primary_metric": null,
+      "decision": "RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED",
+      "report": "research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "6fef145c8a6697ef45158257b5e91f7bf29725bb",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separate authorization for a materially different mechanism or validation scope; preserve this retrospective audit and its consumed-data limits.",
+      "forbidden_repeats": [
+        "Call this consumed replay fresh confirmation or hardware safety evidence",
+        "Treat silence or UNKNOWN as verified free space",
+        "Drop the missed HEAD event after outcomes to declare the original scope stable"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Retrospective two-cohort fixed-A operating-scope stability and uncertainty diagnosis",
+      "retained_surface": "A strong threshold, definite support, hold, UNKNOWN, demo and App unchanged; diagnostic report retained",
+      "failure_signature": "All broader-cohort conditions fail event coverage silence or delay criteria; projection shifts add lateral false alerts; closer than2.29m untested",
+      "revisit_trigger": "Separate authorized validation or materially different mechanism without reclassifying consumed evidence",
+      "assignment_basis": "Sealed2304-frame public replay; independent metric support and geometry audit PASS; report commit6fef145c",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/OPERATING_SCOPE_PROTOCOL_20260922.md"
+      ],
+      "association_id": "ba-operating-scope-20260922",
+      "search_text": "terminal-dtr-operating-scope-stability-20260922 obstacle-avoidance RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED Two consumed simulation cohorts with2304public observations replayed at three projection offsets. Broader nominal159TP25FP17FN,15/16events; right shift165TP63FP11FN,16/16events but0.6s delay and58.33percent minimum coverage. Actual Core positive fronts2.294-3.000m; closer range untested. UNKNOWN remains separate from alerts. Keep A and diagnostic component. Separate authorization for a materially different mechanism or validation scope; preserve this retrospective audit and its consumed-data limits. COMPONENT_OR_CHALLENGER COMPONENT Retrospective two-cohort fixed-A operating-scope stability and uncertainty diagnosis A strong threshold, definite support, hold, UNKNOWN, demo and App unchanged; diagnostic report retained All broader-cohort conditions fail event coverage silence or delay criteria; projection shifts add lateral false alerts; closer than2.29m untested Separate authorized validation or materially different mechanism without reclassifying consumed evidence Call this consumed replay fresh confirmation or hardware safety evidence Treat silence or UNKNOWN as verified free space Drop the missed HEAD event after outcomes to declare the original scope stable"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-query-occupancy-20260922",
+      "status": "negative",
+      "question": "New1728-frame grouped controlled Development;576held frames: matched classifier62TP34FP194FN to occupancy88TP44FP168FN, events16 to29 of32 but false segments17 to29.880visible positive queries have maskIoU0 and13correct distance bins. A current193TP6FP32events remains stronger.",
+      "baseline": null,
+      "change": "A materially different justified spatial-learning premise and separately authorized validation; preserve this exact recipe and consumed outcomes. No posthoc cutoff or training rescue and no temporal successor within this experiment.",
+      "primary_metric": null,
+      "decision": "QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN",
+      "report": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "def6c501ddb3a04050a1ccf13908d39b9bb4b450",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "A materially different justified spatial-learning premise and separately authorized validation; preserve this exact recipe and consumed outcomes. No posthoc cutoff or training rescue and no temporal successor within this experiment.",
+      "forbidden_repeats": [
+        "Claim the13gained events justify the failed FP and segment costs",
+        "Use conditional0.283m MAE or majority-none74.48percent accuracy as reliable localization",
+        "Treat UNKNOWN or silence as clear space",
+        "Reuse held outcomes for training selection or fresh-confirmation authority"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Exact158137parameter single-frame RGB ToF first-hit plus visible-mask supervision and dev-selected alert readout on this48-layout source",
+      "retained_surface": "Retain unchanged A and UNKNOWN; retain source, paired classifier, predictions and component metrics as consumed Development diagnostic evidence",
+      "failure_signature": "Recall+10.156pp costs+10FP and+12segments; IoU0 and13of880positive bins correct; A current substantially stronger",
+      "revisit_trigger": "New independently justified observable or learning mechanism with appropriate evaluation and separate authorization, not a retuned consumed recipe",
+      "assignment_basis": "Frozen protocol, full held prediction seal, independent frame geometry event and component decision audits",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md"
+      ],
+      "association_id": "ba-query-occupancy-20260922",
+      "search_text": "terminal-query-occupancy-20260922 obstacle-avoidance QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN New1728-frame grouped controlled Development;576held frames: matched classifier62TP34FP194FN to occupancy88TP44FP168FN, events16 to29 of32 but false segments17 to29.880visible positive queries have maskIoU0 and13correct distance bins. A current193TP6FP32events remains stronger. A materially different justified spatial-learning premise and separately authorized validation; preserve this exact recipe and consumed outcomes. No posthoc cutoff or training rescue and no temporal successor within this experiment. NEGATIVE_CONTROL  Exact158137parameter single-frame RGB ToF first-hit plus visible-mask supervision and dev-selected alert readout on this48-layout source Retain unchanged A and UNKNOWN; retain source, paired classifier, predictions and component metrics as consumed Development diagnostic evidence Recall+10.156pp costs+10FP and+12segments; IoU0 and13of880positive bins correct; A current substantially stronger New independently justified observable or learning mechanism with appropriate evaluation and separate authorization, not a retuned consumed recipe Claim the13gained events justify the failed FP and segment costs Use conditional0.283m MAE or majority-none74.48percent accuracy as reliable localization Treat UNKNOWN or silence as clear space Reuse held outcomes for training selection or fresh-confirmation authority"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-query-occupancy-diagnostic-20260922",
+      "status": "negative",
+      "question": "Frozen selected classifier and occupancy on864train288dev images always rank six queries HEADleft centre right then BODYleft centre right. Occupancy train/dev heatmapAUC0.544/0.576, fixedIoU0, conditional occupied-bin accuracy85.64/70.45percent; useful query localization not learned in selected states.",
+      "baseline": null,
+      "change": "Separately justified query-conditioned spatial learning check should establish train-set localization before new held evaluation; no automatic refit, cutoff rescue or video.",
+      "primary_metric": null,
+      "decision": "QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION",
+      "report": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "3be9045cd76a04d8e4e7bc16ddbad3649251f732",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified query-conditioned spatial learning check should establish train-set localization before new held evaluation; no automatic refit, cutoff rescue or video.",
+      "forbidden_repeats": [
+        "Treat invariant query score ordering as image-conditioned spatial understanding",
+        "Claim weak selected-state train fit rules out all architectures or longer optimization",
+        "Promote conditional distance-bin accuracy to reliable occupancy or measured range",
+        "Treat consumed train/dev diagnostic as fresh held confirmation"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Interpretation of frozen selected query-occupancy checkpoints on consumed train and dev only",
+      "retained_surface": "Diagnostic evidence of invariant query rank and weak training-set localization; preserve original model NEGATIVE_CONTROL and A UNKNOWN",
+      "failure_signature": "All1152images both arms have strict query rank3,4,5,0,1,2; masks empty at0.5 and weak foreground ranking on train/dev",
+      "revisit_trigger": "Independently justified new query-conditioning or optimization check, first establish training-set spatial ability; separate authorization required for successor work",
+      "assignment_basis": "Fixed checkpoint replay with original dev counts, weighted foreground ranking, exact query ordering and no optimizer",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_20260922.md"
+      ],
+      "association_id": "ba-query-occupancy-diagnostic-20260922",
+      "search_text": "terminal-query-occupancy-diagnostic-20260922 obstacle-avoidance QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION Frozen selected classifier and occupancy on864train288dev images always rank six queries HEADleft centre right then BODYleft centre right. Occupancy train/dev heatmapAUC0.544/0.576, fixedIoU0, conditional occupied-bin accuracy85.64/70.45percent; useful query localization not learned in selected states. Separately justified query-conditioned spatial learning check should establish train-set localization before new held evaluation; no automatic refit, cutoff rescue or video. COMPONENT_OR_CHALLENGER COMPONENT Interpretation of frozen selected query-occupancy checkpoints on consumed train and dev only Diagnostic evidence of invariant query rank and weak training-set localization; preserve original model NEGATIVE_CONTROL and A UNKNOWN All1152images both arms have strict query rank3,4,5,0,1,2; masks empty at0.5 and weak foreground ranking on train/dev Independently justified new query-conditioning or optimization check, first establish training-set spatial ability; separate authorization required for successor work Treat invariant query score ordering as image-conditioned spatial understanding Claim weak selected-state train fit rules out all architectures or longer optimization Promote conditional distance-bin accuracy to reliable occupancy or measured range Treat consumed train/dev diagnostic as fresh held confirmation"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-inherit-event-20260922",
+      "status": "negative",
+      "question": "Consumed primary576frames: A193TP6FP63FN, original hold225/26/31, support inheritance193/6/63. Candidate retains zero of32addedTP, removes20addedFP;32/32events unchanged. Only inheritance in full1728cohort is one train FP.",
+      "baseline": null,
+      "change": "Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result",
+      "primary_metric": null,
+      "decision": "ORIGINAL_SUPPORT_INHERITANCE_LOSES_ALL_HOLD_GAINS",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result",
+      "forbidden_repeats": [
+        "Claim this exact recipe rules out all temporal information",
+        "Treat same-zone compatibility or evaluator identity as observed object identity",
+        "Retune expiry, intervals or thresholds to rescue this consumed run"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Exact same-zone original-support continuation recipe at0.2s sampling on current public ToF",
+      "retained_surface": "Retain unchanged A UNKNOWN and auditable birth versus continuation lifecycle; original hold remains measured reference",
+      "failure_signature": "Retains0/32hold-addedTP and qualifies no primary continuation despite eliminating20extraFP",
+      "revisit_trigger": "Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result",
+      "assignment_basis": "Frozen1728prediction seal,8focused tests, independent public-support reconstruction and primary576frame timing audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_EVENT_PROTOCOL_20260922.md"
+      ],
+      "association_id": "inherit-event-20260922",
+      "search_text": "terminal-inherit-event-20260922 obstacle-avoidance ORIGINAL_SUPPORT_INHERITANCE_LOSES_ALL_HOLD_GAINS Consumed primary576frames: A193TP6FP63FN, original hold225/26/31, support inheritance193/6/63. Candidate retains zero of32addedTP, removes20addedFP;32/32events unchanged. Only inheritance in full1728cohort is one train FP. Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result NEGATIVE_CONTROL  Exact same-zone original-support continuation recipe at0.2s sampling on current public ToF Retain unchanged A UNKNOWN and auditable birth versus continuation lifecycle; original hold remains measured reference Retains0/32hold-addedTP and qualifies no primary continuation despite eliminating20extraFP Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result Claim this exact recipe rules out all temporal information Treat same-zone compatibility or evaluator identity as observed object identity Retune expiry, intervals or thresholds to rescue this consumed run"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-inherit-spatial-20260922",
+      "status": "positive",
+      "question": "Consumed576frames: A193TP6FP63FN, A RAW200/12/56, A LOCAL223/8/33. LOCAL versus RAW adds23TP removes4FP and one segment, improves12/16layouts; versus A adds2false segments exceeding one-segment budget. Preserve component only and RAW negative control.",
+      "baseline": null,
+      "change": "Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast",
+      "primary_metric": null,
+      "decision": "QUERY_LOCAL_HGB_COMPONENT_GAIN_WITH_ALERT_SEGMENT_COST",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast",
+      "forbidden_repeats": [
+        "Promote standalone207TP4FP while hiding31of32event coverage",
+        "Claim true pixel ownership, arbitrary query generalization or learned metric depth",
+        "Refit or retune this recipe after evaluation"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Query-local representation package for shared HGB on six fixed queries and consumed RGB ToF source",
+      "retained_surface": "LOCAL representation COMPONENT; retain raw exact fit as NEGATIVE_CONTROL and preserve A UNKNOWN",
+      "failure_signature": "Relative A+30TP+2FP+2segments fails+1segment budget; standalone loses one event and is not selected Relative RAW loses one TP and delays one event onset0.2s despite positive net gain.",
+      "revisit_trigger": "Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast",
+      "assignment_basis": "One fit each, dev-only thresholds, sealed predictions,4focused tests and independent576frame3456query audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_PROTOCOL_20260922.md"
+      ],
+      "association_id": "inherit-spatial-20260922",
+      "search_text": "terminal-inherit-spatial-20260922 obstacle-avoidance QUERY_LOCAL_HGB_COMPONENT_GAIN_WITH_ALERT_SEGMENT_COST Consumed576frames: A193TP6FP63FN, A RAW200/12/56, A LOCAL223/8/33. LOCAL versus RAW adds23TP removes4FP and one segment, improves12/16layouts; versus A adds2false segments exceeding one-segment budget. Preserve component only and RAW negative control. Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast COMPONENT_OR_CHALLENGER COMPONENT Query-local representation package for shared HGB on six fixed queries and consumed RGB ToF source LOCAL representation COMPONENT; retain raw exact fit as NEGATIVE_CONTROL and preserve A UNKNOWN Relative A+30TP+2FP+2segments fails+1segment budget; standalone loses one event and is not selected Relative RAW loses one TP and delays one event onset0.2s despite positive net gain. Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast Promote standalone207TP4FP while hiding31of32event coverage Claim true pixel ownership, arbitrary query generalization or learned metric depth Refit or retune this recipe after evaluation"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-inherit-multireturn-20260922",
+      "status": "positive",
+      "question": "576consumed frames: current193TP6FP63FN to211/7/45, fixed hold225/26/31 to254/29/2. Entry-sample detection17to31of32;14/16layouts gain.18new currentTP have native triggering-slot corridor contributors. Core false costs increase; closest and two-return identical.",
+      "baseline": null,
+      "change": "Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results",
+      "primary_metric": null,
+      "decision": "ADDITIONAL_RETURN_INFORMATION_GAIN_WITH_CORE_FALSE_ALERT_COST",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results",
+      "forbidden_repeats": [
+        "Describe additional sensing as equal-input algorithm superiority",
+        "Claim lossless Core upgrade or hardware multi-target detectability",
+        "Hide one right-censored release or tune the secondary-peak law"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Hypothetical additional return observation preservation and sampled task tradeoff on consumed broader-distance source",
+      "retained_surface": "Information COMPONENT and native-support attribution; unchanged first-slot A and UNKNOWN",
+      "failure_signature": "Hold+29TP costs+3FP+2segments, failing frozen zero-added-Core-cost challenger gate; complex two-return readout adds no advantage",
+      "revisit_trigger": "Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results",
+      "assignment_basis": "576first-slot parity,24focused tests, independent27group native peak and metric audit, prediction seal before truth join",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_PROTOCOL_20260922.md"
+      ],
+      "association_id": "inherit-multireturn-20260922",
+      "search_text": "terminal-inherit-multireturn-20260922 obstacle-avoidance ADDITIONAL_RETURN_INFORMATION_GAIN_WITH_CORE_FALSE_ALERT_COST 576consumed frames: current193TP6FP63FN to211/7/45, fixed hold225/26/31 to254/29/2. Entry-sample detection17to31of32;14/16layouts gain.18new currentTP have native triggering-slot corridor contributors. Core false costs increase; closest and two-return identical. Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results COMPONENT_OR_CHALLENGER COMPONENT Hypothetical additional return observation preservation and sampled task tradeoff on consumed broader-distance source Information COMPONENT and native-support attribution; unchanged first-slot A and UNKNOWN Hold+29TP costs+3FP+2segments, failing frozen zero-added-Core-cost challenger gate; complex two-return readout adds no advantage Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results Describe additional sensing as equal-input algorithm superiority Claim lossless Core upgrade or hardware multi-target detectability Hide one right-censored release or tune the secondary-peak law"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-inherit-precision-20260922",
+      "status": "positive",
+      "question": "180consumed analytic geometries, fixed13views12cm path and initial-camera query: nominal correct97to109 with no losses; two constant-bias controls97to120and122. No observed wrong IN OUT. Nominal boundary recall5of30; all20far-boundary remainUNKNOWN.",
+      "baseline": null,
+      "change": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
+      "primary_metric": null,
+      "decision": "FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
+      "forbidden_repeats": [
+        "Treat1mm simulated bins as1mm hardware accuracy",
+        "Treat numerical solver infeasibility as formal universal proof",
+        "Tune paths, bias ranges or quantization using these consumed outcomes"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Hypothetical fine range information under bounded single-rectangle shared-bias initial-query model",
+      "retained_surface": "Precision information COMPONENT and validated dual-geometry witnesses; retain original modules and coarse evidence",
+      "failure_signature": "Boundary remains mostlyUNKNOWN; no actual sensor precision, multiobject validity, event or safety evidence",
+      "revisit_trigger": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
+      "assignment_basis": "540coarse parity and true assignment checks,439queries878MILPs,4focused tests and saved seal metric witness audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_PRECISION_PROTOCOL_20260922.md"
+      ],
+      "association_id": "inherit-precision-20260922",
+      "search_text": "terminal-inherit-precision-20260922 obstacle-avoidance FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN 180consumed analytic geometries, fixed13views12cm path and initial-camera query: nominal correct97to109 with no losses; two constant-bias controls97to120and122. No observed wrong IN OUT. Nominal boundary recall5of30; all20far-boundary remainUNKNOWN. Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes COMPONENT_OR_CHALLENGER COMPONENT Hypothetical fine range information under bounded single-rectangle shared-bias initial-query model Precision information COMPONENT and validated dual-geometry witnesses; retain original modules and coarse evidence Boundary remains mostlyUNKNOWN; no actual sensor precision, multiobject validity, event or safety evidence Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes Treat1mm simulated bins as1mm hardware accuracy Treat numerical solver infeasibility as formal universal proof Tune paths, bias ranges or quantization using these consumed outcomes"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-query-spatial-fit-20260922",
+      "status": "negative",
+      "question": "84 consumed training images: global179TP1FP1FN versus spatial180TP0FP0FN; both540/540querypairs correct. MaskIoU0.484823/0.481782 fails fixed0.50gate. Original structure can fit query answers under new shared optimization, but spatial branch does not improve localization.",
+      "baseline": null,
+      "change": "Separately justified mask-boundary or false-area mechanism with its own evaluation; preserve this fixed training-only package and all older negatives.",
+      "primary_metric": null,
+      "decision": "SPATIAL_QUERY_BRANCH_NO_TINY_TRAIN_LOCALIZATION_GAIN",
+      "report": "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "1e585e02a95129d14a623a7cd1049fbe5c5178fd",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified mask-boundary or false-area mechanism with its own evaluation; preserve this fixed training-only package and all older negatives.",
+      "forbidden_repeats": [
+        "Tune cutoff, epoch, loss or cohort after this fixed final-state outcome",
+        "Treat tiny consumed train fitting as generalization or alert improvement",
+        "Claim invariant old query ordering is an unavoidable architecture property",
+        "Treat fixed depth hypotheses or model confidence as observed metric depth or free space"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Fixed two-arm tiny-training joint query and mask fitting package; no alert or generalization authority.",
+      "retained_surface": "Train-only paired evidence that original FiLM can fit image-dependent query answers, with sealed spatial branch and remaining mask errors.",
+      "failure_signature": "Both arms pass query criteria but macro positive-mask IoU0.484823/0.481782 is below0.50; extra spatial branch has no localization gain.",
+      "revisit_trigger": "A separately justified changed mechanism addressing mask false area or boundary placement, with separately scoped evaluation.",
+      "assignment_basis": "Declared final-state fitting gate failed for both; retain useful query-fitting evidence without promoting the branch or reopening frozen trials.",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_PROTOCOL_20260922.md"
+      ],
+      "association_id": "ba-query-spatial-fit-20260922",
+      "search_text": "terminal-query-spatial-fit-20260922 obstacle-avoidance SPATIAL_QUERY_BRANCH_NO_TINY_TRAIN_LOCALIZATION_GAIN 84 consumed training images: global179TP1FP1FN versus spatial180TP0FP0FN; both540/540querypairs correct. MaskIoU0.484823/0.481782 fails fixed0.50gate. Original structure can fit query answers under new shared optimization, but spatial branch does not improve localization. Separately justified mask-boundary or false-area mechanism with its own evaluation; preserve this fixed training-only package and all older negatives. NEGATIVE_CONTROL  Fixed two-arm tiny-training joint query and mask fitting package; no alert or generalization authority. Train-only paired evidence that original FiLM can fit image-dependent query answers, with sealed spatial branch and remaining mask errors. Both arms pass query criteria but macro positive-mask IoU0.484823/0.481782 is below0.50; extra spatial branch has no localization gain. A separately justified changed mechanism addressing mask false area or boundary placement, with separately scoped evaluation. Tune cutoff, epoch, loss or cohort after this fixed final-state outcome Treat tiny consumed train fitting as generalization or alert improvement Claim invariant old query ordering is an unavoidable architecture property Treat fixed depth hypotheses or model confidence as observed metric depth or free space"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-local-transfer-diagnostic-20260922",
+      "status": "positive",
+      "question": "Old576frame saved-output diagnosis: both addedFP won by HEAD-centre; regional support and RGB marginals overlaprescues. No model replay, refit or new performance claim. Motivates paired background-only transfer.",
+      "baseline": null,
+      "change": "Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention",
+      "primary_metric": null,
+      "decision": "LOCAL_SUPPORT_BACKGROUND_DEPENDENCE_HYPOTHESIS_RETAINED",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention",
+      "forbidden_repeats": [
+        "Refit or retune this frozen recipe on consumed outcomes",
+        "Equate aggregate background tolerance with appearance invariance or physical ownership",
+        "Replace old failed system evidence or claim default App hardware or safety validation"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Read-only old LOCAL errors and observable-feature interpretation; no standalone alert role",
+      "retained_surface": "All30rescues,2addedFP,1RAW-onlyTP and complete576frame denominator; original LOCAL component and RAW negative preserved",
+      "failure_signature": "Marginal overlap and two false examples do not establish full-feature inseparability or physical return ownership",
+      "revisit_trigger": "Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention",
+      "assignment_basis": "One governed saved-output diagnostic, unchanged source hashes and full identity-index feature and score checks",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md",
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md"
+      ],
+      "association_id": "local-transfer-diagnostic-20260922",
+      "search_text": "terminal-local-transfer-diagnostic-20260922 obstacle-avoidance LOCAL_SUPPORT_BACKGROUND_DEPENDENCE_HYPOTHESIS_RETAINED Old576frame saved-output diagnosis: both addedFP won by HEAD-centre; regional support and RGB marginals overlaprescues. No model replay, refit or new performance claim. Motivates paired background-only transfer. Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention COMPONENT_OR_CHALLENGER COMPONENT Read-only old LOCAL errors and observable-feature interpretation; no standalone alert role All30rescues,2addedFP,1RAW-onlyTP and complete576frame denominator; original LOCAL component and RAW negative preserved Marginal overlap and two false examples do not establish full-feature inseparability or physical return ownership Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention Refit or retune this frozen recipe on consumed outcomes Equate aggregate background tolerance with appearance invariance or physical ownership Replace old failed system evidence or claim default App hardware or safety validation"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-local-transfer-20260922",
+      "status": "positive",
+      "question": "576new controlled frames: A192TP4FP64FN, A RAW193/7/63, A LOCAL228/6/28; segments4/7/5. All three transfer gates and this-cohort strict gatePASS;14of16base rescues retained after background change. Preserve old failed strict gate and A UNKNOWN.",
+      "baseline": null,
+      "change": "Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results",
+      "primary_metric": null,
+      "decision": "FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results",
+      "forbidden_repeats": [
+        "Refit or retune this frozen recipe on consumed outcomes",
+        "Equate aggregate background tolerance with appearance invariance or physical ownership",
+        "Replace old failed system evidence or claim default App hardware or safety validation"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Frozen query-local HGB component on eight new same-generator geometries and paired background material intervention",
+      "retained_surface": "LOCAL component transfer and full measured false costs; old LOCAL component and RAW negative control remain; no default App promotion",
+      "failure_signature": "Two addedFP and one segment meet cost limits exactly; background changes lose2TP gain6TP remove2FP; no appearance invariance or physical return ownership",
+      "revisit_trigger": "Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results",
+      "assignment_basis": "One576frame capture, exactToF288pairs, sealed fixed predictions,13focused tests, independent37156-check saved-output audit and read-only implementation review",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md"
+      ],
+      "association_id": "local-transfer-20260922",
+      "search_text": "terminal-local-transfer-20260922 obstacle-avoidance FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE 576new controlled frames: A192TP4FP64FN, A RAW193/7/63, A LOCAL228/6/28; segments4/7/5. All three transfer gates and this-cohort strict gatePASS;14of16base rescues retained after background change. Preserve old failed strict gate and A UNKNOWN. Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results COMPONENT_OR_CHALLENGER COMPONENT Frozen query-local HGB component on eight new same-generator geometries and paired background material intervention LOCAL component transfer and full measured false costs; old LOCAL component and RAW negative control remain; no default App promotion Two addedFP and one segment meet cost limits exactly; background changes lose2TP gain6TP remove2FP; no appearance invariance or physical return ownership Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results Refit or retune this frozen recipe on consumed outcomes Equate aggregate background tolerance with appearance invariance or physical ownership Replace old failed system evidence or claim default App hardware or safety validation"
+    },
+    {
       "kind": "experiment",
       "id": "dtr-r0",
       "status": "active",
@@ -34247,6 +34658,238 @@
         "evaluation_evidence": 3
       },
       "search_text": "mz102-stereo-witness-20260912 Can query-local stereo surface span reject false supports while retaining incremental thin-obstacle detections? MZ101 full64-zone ToF and unqualified stereo union with same corridor and state Primary query-local disparity-coherent projected span qualification; fixed interval diagnostic Incremental TP and thin TP retention; extra FP; false sessions and event timing PENDING_FROZEN_WITNESS_COMPARISON research/active/dtr-r0/nearfield/MZ102_STEREO_WITNESS_PROTOCOL_20260912.md Consumed MZ101 development plus fresh seed102013 posed UE stereo with shared generator families"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-operating-scope-20260922",
+      "status": "archived",
+      "question": "Does retained A remain useful across two declared camera-forward simulation cohorts and fixed projection offsets?",
+      "baseline": "Frozen A strong threshold0.4071309640537889, definite-support bypass and nonrecursive0.2s hold",
+      "change": "Retrospective2304-frame public replay at dx=-2,0,+2; full miss false-alert and UNKNOWN audit",
+      "primary_metric": "Core events delay coverage silence; false frames segments and all-negative FPR; uncertainty cross counts",
+      "decision": "RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED",
+      "report": "research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md",
+      "source": "Two previously consumed same-generator simulation evaluation cohorts; no new source capture or protected-test access",
+      "commit": "6fef145c8a6697ef45158257b5e91f7bf29725bb",
+      "association_id": "ba-operating-scope-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 6,
+        "decision_lifecycle": 13,
+        "evaluation_evidence": 3
+      },
+      "search_text": "ba-operating-scope-20260922 Does retained A remain useful across two declared camera-forward simulation cohorts and fixed projection offsets? Frozen A strong threshold0.4071309640537889, definite-support bypass and nonrecursive0.2s hold Retrospective2304-frame public replay at dx=-2,0,+2; full miss false-alert and UNKNOWN audit Core events delay coverage silence; false frames segments and all-negative FPR; uncertainty cross counts RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md Two previously consumed same-generator simulation evaluation cohorts; no new source capture or protected-test access"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-query-occupancy-20260922",
+      "status": "archived",
+      "question": "Does joint first-hit and visible-region supervision improve matched small single-frame RGB plus regional ToF queries on unseen layouts?",
+      "baseline": "Same encoder fusion decoder initialization and24epoch query classifier; unchanged ToF A current and one-frame hold references",
+      "change": "Six first-hit bins plus no intersection and visible-mask supervision; alert is occupied probability mass, no independent alert head",
+      "primary_metric": "Fixed-dev held recall precision FPR event onset exit tail false segments; bin accuracy and native-area mask IoU with UNKNOWN",
+      "decision": "QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN",
+      "report": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
+      "source": "New48layout1728frame same-generator controlled-object UE Development; split24train8dev16evaluation; consumed after sealed576frame evaluation",
+      "commit": "def6c501ddb3a04050a1ccf13908d39b9bb4b450",
+      "association_id": "ba-query-occupancy-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 3,
+        "decision_lifecycle": 9,
+        "evaluation_evidence": 3,
+        "runtime_infrastructure": 3
+      },
+      "search_text": "ba-query-occupancy-20260922 Does joint first-hit and visible-region supervision improve matched small single-frame RGB plus regional ToF queries on unseen layouts? Same encoder fusion decoder initialization and24epoch query classifier; unchanged ToF A current and one-frame hold references Six first-hit bins plus no intersection and visible-mask supervision; alert is occupied probability mass, no independent alert head Fixed-dev held recall precision FPR event onset exit tail false segments; bin accuracy and native-area mask IoU with UNKNOWN QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md New48layout1728frame same-generator controlled-object UE Development; split24train8dev16evaluation; consumed after sealed576frame evaluation"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-query-occupancy-diagnostic-20260922",
+      "status": "archived",
+      "question": "Do selected frozen checkpoints fit train queries, localize foreground below the fixed cutoff and change relative query ranking with image evidence?",
+      "baseline": "Original epoch16classifier and epoch8occupancy with fixed dev thresholds; constant-score ranking controls",
+      "change": "Inference-only train864dev288 replay; weighted heatmap ranking and same-image query and matched-layout lateral contrasts",
+      "primary_metric": "Train/dev fixed-cutoff TP FP FN; foreground AUROC AP softIoU; conditional bins; query permutations and occupied-over-empty margins",
+      "decision": "QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION",
+      "report": "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md",
+      "source": "Consumed train and dev subset from query-occupancy1728frame same-generator Development; no held-label access or held-row inference",
+      "commit": "3be9045cd76a04d8e4e7bc16ddbad3649251f732",
+      "association_id": "ba-query-occupancy-diagnostic-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "authority_truth": 3,
+        "geometry_motion": 3,
+        "decision_lifecycle": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "ba-query-occupancy-diagnostic-20260922 Do selected frozen checkpoints fit train queries, localize foreground below the fixed cutoff and change relative query ranking with image evidence? Original epoch16classifier and epoch8occupancy with fixed dev thresholds; constant-score ranking controls Inference-only train864dev288 replay; weighted heatmap ranking and same-image query and matched-layout lateral contrasts Train/dev fixed-cutoff TP FP FN; foreground AUROC AP softIoU; conditional bins; query permutations and occupied-over-empty margins QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md Consumed train and dev subset from query-occupancy1728frame same-generator Development; no held-label access or held-row inference"
+    },
+    {
+      "kind": "experiment",
+      "id": "inherit-event-20260922",
+      "status": "archived",
+      "question": "Can fresh agreement with original support preserve hold coverage while removing its false alerts?",
+      "baseline": "A current and original nonrecursive one-frame hold",
+      "change": "Same-zone original interval agreement and capture expiry; inherited alerts never seed",
+      "primary_metric": "Retained hold TP fraction, false frames and segments, events and onset",
+      "decision": "ORIGINAL_SUPPORT_INHERITANCE_LOSES_ALL_HOLD_GAINS",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md",
+      "source": "Consumed UE query occupancy1728frames; original576evaluation role is primary",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "association_id": "inherit-event-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 3,
+        "identity_binding": 3,
+        "geometry_motion": 3,
+        "decision_lifecycle": 13,
+        "evaluation_evidence": 3
+      },
+      "search_text": "inherit-event-20260922 Can fresh agreement with original support preserve hold coverage while removing its false alerts? A current and original nonrecursive one-frame hold Same-zone original interval agreement and capture expiry; inherited alerts never seed Retained hold TP fraction, false frames and segments, events and onset ORIGINAL_SUPPORT_INHERITANCE_LOSES_ALL_HOLD_GAINS research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md Consumed UE query occupancy1728frames; original576evaluation role is primary"
+    },
+    {
+      "kind": "experiment",
+      "id": "inherit-spatial-20260922",
+      "status": "archived",
+      "question": "Does deterministic query-local RGB interval representation improve a matched simple tree learner?",
+      "baseline": "Same HGB learner and public raw RGB ToF regional features; unchanged A",
+      "change": "Fill51matched zero feature slots with query interval conditioned regional support statistics",
+      "primary_metric": "Added recall and false frames/segments; paired layout recall gain",
+      "decision": "QUERY_LOCAL_HGB_COMPONENT_GAIN_WITH_ALERT_SEGMENT_COST",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+      "source": "Consumed UE query occupancy864train288dev576evaluation frames",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "association_id": "inherit-spatial-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 3,
+        "evaluation_evidence": 3
+      },
+      "search_text": "inherit-spatial-20260922 Does deterministic query-local RGB interval representation improve a matched simple tree learner? Same HGB learner and public raw RGB ToF regional features; unchanged A Fill51matched zero feature slots with query interval conditioned regional support statistics Added recall and false frames/segments; paired layout recall gain QUERY_LOCAL_HGB_COMPONENT_GAIN_WITH_ALERT_SEGMENT_COST research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md Consumed UE query occupancy864train288dev576evaluation frames"
+    },
+    {
+      "kind": "experiment",
+      "id": "inherit-multireturn-20260922",
+      "status": "archived",
+      "question": "Does the unchanged additional-return sensing law improve broader-distance support and event timing?",
+      "baseline": "Exactly reproduced original strongest return with current and original hold",
+      "change": "Same frozen two-return generator; closest and independent two-return readouts at unchanged threshold",
+      "primary_metric": "TP FP FN, native contributors, onset, Core false segments and sampled duration",
+      "decision": "ADDITIONAL_RETURN_INFORMATION_GAIN_WITH_CORE_FALSE_ALERT_COST",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md",
+      "source": "Consumed576UEquery evaluation frames plus hypothetical additional return generation",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "association_id": "inherit-multireturn-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "decision_lifecycle": 16,
+        "evaluation_evidence": 3
+      },
+      "search_text": "inherit-multireturn-20260922 Does the unchanged additional-return sensing law improve broader-distance support and event timing? Exactly reproduced original strongest return with current and original hold Same frozen two-return generator; closest and independent two-return readouts at unchanged threshold TP FP FN, native contributors, onset, Core false segments and sampled duration ADDITIONAL_RETURN_INFORMATION_GAIN_WITH_CORE_FALSE_ALERT_COST research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md Consumed576UEquery evaluation frames plus hypothetical additional return generation"
+    },
+    {
+      "kind": "experiment",
+      "id": "inherit-precision-20260922",
+      "status": "archived",
+      "question": "Does finer simulated range information become useful relative-query decisions under unchanged shared bias?",
+      "baseline": "Sealed100mm quantized relative-query decisions on identical histories",
+      "change": "One fixed1mm analog export and corresponding existing shared-bias inference constraints",
+      "primary_metric": "Correct singleton IN OUT gained and lost, wrong decisions, UNKNOWN by boundary stratum",
+      "decision": "FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md",
+      "source": "Consumed analytic bias-drift180geometries and initial-relative baselines; three fixed conditions",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "association_id": "inherit-precision-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "temporal_belief": 3,
+        "decision_lifecycle": 3,
+        "evaluation_evidence": 3
+      },
+      "search_text": "inherit-precision-20260922 Does finer simulated range information become useful relative-query decisions under unchanged shared bias? Sealed100mm quantized relative-query decisions on identical histories One fixed1mm analog export and corresponding existing shared-bias inference constraints Correct singleton IN OUT gained and lost, wrong decisions, UNKNOWN by boundary stratum FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md Consumed analytic bias-drift180geometries and initial-relative baselines; three fixed conditions"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-query-spatial-fit-20260922",
+      "status": "archived",
+      "question": "Can explicit ray-query spatial conditioning fit query-dependent localization on a fixed tiny training cohort?",
+      "baseline": "Original global FiLM forward with matched initialization, training objective, batches and budget.",
+      "change": "Add zero-initialized768weight projection of24fixed ray-query geometry channels before decoder; training-only84image paired check.",
+      "primary_metric": "Fixed query precision recall and pair order >=0.95 plus macro positive-maskIoU>=0.50.",
+      "decision": "NEITHER_PACKAGE_FITS; query answers fit in both, spatial branch no mask localization gain; no held access.",
+      "report": "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md",
+      "source": "ue-query-occupancy-20260922-consumed-training",
+      "commit": "1e585e02a95129d14a623a7cd1049fbe5c5178fd",
+      "association_id": "ba-query-spatial-fit-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 6,
+        "runtime_infrastructure": 3
+      },
+      "search_text": "ba-query-spatial-fit-20260922 Can explicit ray-query spatial conditioning fit query-dependent localization on a fixed tiny training cohort? Original global FiLM forward with matched initialization, training objective, batches and budget. Add zero-initialized768weight projection of24fixed ray-query geometry channels before decoder; training-only84image paired check. Fixed query precision recall and pair order >=0.95 plus macro positive-maskIoU>=0.50. NEITHER_PACKAGE_FITS; query answers fit in both, spatial branch no mask localization gain; no held access. research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md ue-query-occupancy-20260922-consumed-training"
+    },
+    {
+      "kind": "experiment",
+      "id": "local-transfer-diagnostic-20260922",
+      "status": "archived",
+      "question": "What saved local support and appearance structure accompanies old added false alerts and rescued positives?",
+      "baseline": "Sealed old A RAW LOCAL outputs and identical public feature inputs",
+      "change": "Read-only matched positive false and lost-frame attribution without loading a model or choosing a threshold",
+      "primary_metric": "Full denominator, saved query winner, support color distributions and matched lateral identities",
+      "decision": "LOCAL_SUPPORT_BACKGROUND_DEPENDENCE_HYPOTHESIS_RETAINED",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md",
+      "source": "Consumed576frame UE query occupancy evaluation outputs; no new source or inference",
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "association_id": "local-transfer-diagnostic-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 3,
+        "temporal_belief": 3,
+        "geometry_motion": 3,
+        "decision_lifecycle": 10,
+        "evaluation_evidence": 6
+      },
+      "search_text": "local-transfer-diagnostic-20260922 What saved local support and appearance structure accompanies old added false alerts and rescued positives? Sealed old A RAW LOCAL outputs and identical public feature inputs Read-only matched positive false and lost-frame attribution without loading a model or choosing a threshold Full denominator, saved query winner, support color distributions and matched lateral identities LOCAL_SUPPORT_BACKGROUND_DEPENDENCE_HYPOTHESIS_RETAINED research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md Consumed576frame UE query occupancy evaluation outputs; no new source or inference"
+    },
+    {
+      "kind": "experiment",
+      "id": "local-transfer-20260922",
+      "status": "archived",
+      "question": "Does frozen LOCAL transfer to new geometry and retain useful decisions under a paired background-only intervention?",
+      "baseline": "Unchanged A plus sealed matched RAW HGB at old threshold",
+      "change": "Eight new base geometries with three lateral relations and two paired background appearances; frozen models and thresholds",
+      "primary_metric": "Recall precision FP false segments onset; paired rescue retention, geometry rank and whole-base-group bootstrap",
+      "decision": "FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md",
+      "source": "576new same-generator UE controlled Development frames;8base groups48clips288appearance pairs; now consumed",
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "association_id": "local-transfer-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 3,
+        "decision_lifecycle": 12
+      },
+      "search_text": "local-transfer-20260922 Does frozen LOCAL transfer to new geometry and retain useful decisions under a paired background-only intervention? Unchanged A plus sealed matched RAW HGB at old threshold Eight new base geometries with three lateral relations and two paired background appearances; frozen models and thresholds Recall precision FP false segments onset; paired rescue retention, geometry rank and whole-base-group bootstrap FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md 576new same-generator UE controlled Development frames;8base groups48clips288appearance pairs; now consumed"
     }
   ],
   "associations": [
@@ -34263,6 +34906,68 @@
         "artifacts.local/evidence/ase-body-query-pilot-20260909"
       ],
       "decision_id": "terminal-dtr-ase-body-query-pilot-coverage-insufficient",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-operating-scope-20260922",
+      "use_ids": [],
+      "protocol_id": "ba-operating-scope-20260922",
+      "code_revision": "6fef145c8a6697ef45158257b5e91f7bf29725bb",
+      "input_fingerprint": "1dfa9e0127a98d171c1762c27e472639fe1c029b5c970f82a56f3b69d1f77aa4",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md",
+        "artifacts.local/work/ba-operating-scope-20260922",
+        "artifacts.local/work/ba-operating-scope-20260922/evaluation-seal.json",
+        "artifacts.local/work/ba-operating-scope-20260922/independent-audit.json"
+      ],
+      "decision_id": "terminal-dtr-operating-scope-stability-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-query-occupancy-20260922",
+      "use_ids": [],
+      "protocol_id": "ba-query-occupancy-20260922",
+      "code_revision": "def6c501ddb3a04050a1ccf13908d39b9bb4b450",
+      "input_fingerprint": "5fddb9ddbccb03e217f1f44fa22c452f7b246f861e26e78cbb1ecee7ae6d55c7",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-query-occupancy-20260922",
+        "artifacts.local/evidence/ba-query-occupancy-20260922-predictions/prediction-seal.json",
+        "artifacts.local/evidence/ba-query-occupancy-20260922-evaluated/metrics.json",
+        "artifacts.local/evidence/ba-query-occupancy-20260922/independent-audit-delivery.json",
+        "artifacts.local/evidence/ba-query-occupancy-20260922/independent-components-decision-audit.json"
+      ],
+      "decision_id": "terminal-query-occupancy-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-query-occupancy-diagnostic-20260922",
+      "use_ids": [],
+      "protocol_id": "ba-query-occupancy-diagnostic-20260922",
+      "code_revision": "3be9045cd76a04d8e4e7bc16ddbad3649251f732",
+      "input_fingerprint": "459c5956bafde43bebb710f65b8e86e10f5237a2427b77172d90022ef3526a5e",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-query-occupancy-diagnostic-20260922",
+        "artifacts.local/evidence/ba-query-occupancy-diagnostic-20260922/result.json",
+        "artifacts.local/evidence/ba-query-occupancy-diagnostic-20260922/prediction-seal.json"
+      ],
+      "decision_id": "terminal-query-occupancy-diagnostic-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-query-spatial-fit-20260922",
+      "use_ids": [],
+      "protocol_id": "query-spatial-fit-20260922",
+      "code_revision": "1e585e02a95129d14a623a7cd1049fbe5c5178fd",
+      "input_fingerprint": "c907b79e4b89dc9c7d125684f2615ce5fb8c2ea6ae97e5e3bd9ed2735905ffa0",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-query-spatial-fit-20260922/result.json",
+        "artifacts.local/evidence/ba-query-spatial-fit-20260922/prediction-seal.json",
+        "artifacts.local/evidence/ba-query-spatial-fit-20260922/independent-audit.json"
+      ],
+      "decision_id": "terminal-query-spatial-fit-20260922",
       "source_rows": 1
     },
     {
@@ -35138,6 +35843,58 @@
       "source_rows": 1
     },
     {
+      "run_id": "inherit-event-20260922",
+      "use_ids": [],
+      "protocol_id": "inherit-event-20260922-v1",
+      "code_revision": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "input_fingerprint": "c959a33747899f23b2fd3247a07e6bf3d6ef09ec687040591c1334449b96ca9a",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-inherit-event-20260922-run"
+      ],
+      "decision_id": "terminal-inherit-event-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "inherit-multireturn-20260922",
+      "use_ids": [],
+      "protocol_id": "inherit-multireturn-20260922-v1",
+      "code_revision": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "input_fingerprint": "c5bd9fcfe8a9364c8512cd602893e791539bde88c14ce4bd0852519fb50914f9",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-inherit-multireturn-20260922-evaluated"
+      ],
+      "decision_id": "terminal-inherit-multireturn-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "inherit-precision-20260922",
+      "use_ids": [],
+      "protocol_id": "inherit-precision-20260922-v1",
+      "code_revision": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "input_fingerprint": "5e18cc4e1295b5537076322a7070f5bb76d1252b52923bc94ad09c812ce50825",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-inherit-precision-20260922-run"
+      ],
+      "decision_id": "terminal-inherit-precision-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "inherit-spatial-20260922",
+      "use_ids": [],
+      "protocol_id": "inherit-spatial-20260922-v1",
+      "code_revision": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "input_fingerprint": "26331f70bf88a6a80d7da7e175cfc31e130c6b51a07e7c596ac1274dd641da34",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-inherit-spatial-20260922-run"
+      ],
+      "decision_id": "terminal-inherit-spatial-20260922",
+      "source_rows": 1
+    },
+    {
       "run_id": "l10-3dstreetview-center-target-lock-2026-08-31",
       "use_ids": [],
       "protocol_id": "l10-3dstreetview-center-target-lock-protocol-v1",
@@ -35608,6 +36365,33 @@
         "research/active/l10-r0/l10_scenenn_temporal_hue_geometry_consensus_result_v1.json"
       ],
       "decision_id": "terminal-l10-scenenn-temporal-hue-geometry-consensus-posthoc-negative",
+      "source_rows": 1
+    },
+    {
+      "run_id": "local-transfer-20260922",
+      "use_ids": [],
+      "protocol_id": "local-transfer-20260922-v1",
+      "code_revision": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "input_fingerprint": "cffb9d1280adaa5ffff0bdf63d1a6da9466c8feb5608668a45e93c2a84f3560d",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-local-transfer-20260922-evaluated",
+        "artifacts.local/evidence/ba-local-transfer-20260922-audit/result.json"
+      ],
+      "decision_id": "terminal-local-transfer-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "local-transfer-diagnostic-20260922",
+      "use_ids": [],
+      "protocol_id": "local-transfer-diagnostic-20260922-v1",
+      "code_revision": "bda91338dfea2ede2be4e1e91611e8b97821cba4",
+      "input_fingerprint": "f139f967d9e3cd23b21e41a83f2ac8e5de9501e65af61fa0dea43753f34f9bfc",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md",
+        "artifacts.local/evidence/ba-local-transfer-diagnostic-20260922"
+      ],
+      "decision_id": "terminal-local-transfer-diagnostic-20260922",
       "source_rows": 1
     },
     {

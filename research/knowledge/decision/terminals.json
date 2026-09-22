@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-30",
+  "updated_at": "2026-09-22",
   "terminals": [
     {
       "id": "terminal-dtr-r6-static-occupancy-unreachable",
@@ -4873,6 +4873,247 @@
         "research/active/dtr-r0/nearfield/MZ101_STEREO_TOF_PROTOCOL_20260912.md"
       ],
       "commit": "7eaa4b58965d9c0b3fbc7dc4c3c39a7c27e0d683"
+    },
+    {
+      "id": "terminal-dtr-operating-scope-stability-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "negative",
+      "decision": "RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED",
+      "summary": "Two consumed simulation cohorts with2304public observations replayed at three projection offsets. Broader nominal159TP25FP17FN,15/16events; right shift165TP63FP11FN,16/16events but0.6s delay and58.33percent minimum coverage. Actual Core positive fronts2.294-3.000m; closer range untested. UNKNOWN remains separate from alerts. Keep A and diagnostic component.",
+      "successor_requires": "Separate authorization for a materially different mechanism or validation scope; preserve this retrospective audit and its consumed-data limits.",
+      "forbidden_repeats": [
+        "Call this consumed replay fresh confirmation or hardware safety evidence",
+        "Treat silence or UNKNOWN as verified free space",
+        "Drop the missed HEAD event after outcomes to declare the original scope stable"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/OPERATING_SCOPE_PROTOCOL_20260922.md"
+      ],
+      "commit": "6fef145c8a6697ef45158257b5e91f7bf29725bb"
+    },
+    {
+      "id": "terminal-query-occupancy-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "negative",
+      "decision": "QUERY_OCCUPANCY_NO_JOINT_ALERT_GAIN",
+      "summary": "New1728-frame grouped controlled Development;576held frames: matched classifier62TP34FP194FN to occupancy88TP44FP168FN, events16 to29 of32 but false segments17 to29.880visible positive queries have maskIoU0 and13correct distance bins. A current193TP6FP32events remains stronger.",
+      "successor_requires": "A materially different justified spatial-learning premise and separately authorized validation; preserve this exact recipe and consumed outcomes. No posthoc cutoff or training rescue and no temporal successor within this experiment.",
+      "forbidden_repeats": [
+        "Claim the13gained events justify the failed FP and segment costs",
+        "Use conditional0.283m MAE or majority-none74.48percent accuracy as reliable localization",
+        "Treat UNKNOWN or silence as clear space",
+        "Reuse held outcomes for training selection or fresh-confirmation authority"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_PROTOCOL_20260922.md"
+      ],
+      "commit": "def6c501ddb3a04050a1ccf13908d39b9bb4b450"
+    },
+    {
+      "id": "terminal-query-occupancy-diagnostic-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "evaluation_evidence"
+      ],
+      "status": "negative",
+      "decision": "QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION",
+      "summary": "Frozen selected classifier and occupancy on864train288dev images always rank six queries HEADleft centre right then BODYleft centre right. Occupancy train/dev heatmapAUC0.544/0.576, fixedIoU0, conditional occupied-bin accuracy85.64/70.45percent; useful query localization not learned in selected states.",
+      "successor_requires": "Separately justified query-conditioned spatial learning check should establish train-set localization before new held evaluation; no automatic refit, cutoff rescue or video.",
+      "forbidden_repeats": [
+        "Treat invariant query score ordering as image-conditioned spatial understanding",
+        "Claim weak selected-state train fit rules out all architectures or longer optimization",
+        "Promote conditional distance-bin accuracy to reliable occupancy or measured range",
+        "Treat consumed train/dev diagnostic as fresh held confirmation"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_20260922.md"
+      ],
+      "commit": "3be9045cd76a04d8e4e7bc16ddbad3649251f732"
+    },
+    {
+      "id": "terminal-inherit-event-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "negative",
+      "decision": "ORIGINAL_SUPPORT_INHERITANCE_LOSES_ALL_HOLD_GAINS",
+      "summary": "Consumed primary576frames: A193TP6FP63FN, original hold225/26/31, support inheritance193/6/63. Candidate retains zero of32addedTP, removes20addedFP;32/32events unchanged. Only inheritance in full1728cohort is one train FP.",
+      "successor_requires": "Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result",
+      "forbidden_repeats": [
+        "Claim this exact recipe rules out all temporal information",
+        "Treat same-zone compatibility or evaluator identity as observed object identity",
+        "Retune expiry, intervals or thresholds to rescue this consumed run"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_EVENT_PROTOCOL_20260922.md"
+      ],
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb"
+    },
+    {
+      "id": "terminal-inherit-spatial-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "positive",
+      "decision": "QUERY_LOCAL_HGB_COMPONENT_GAIN_WITH_ALERT_SEGMENT_COST",
+      "summary": "Consumed576frames: A193TP6FP63FN, A RAW200/12/56, A LOCAL223/8/33. LOCAL versus RAW adds23TP removes4FP and one segment, improves12/16layouts; versus A adds2false segments exceeding one-segment budget. Preserve component only and RAW negative control.",
+      "successor_requires": "Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast",
+      "forbidden_repeats": [
+        "Promote standalone207TP4FP while hiding31of32event coverage",
+        "Claim true pixel ownership, arbitrary query generalization or learned metric depth",
+        "Refit or retune this recipe after evaluation"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_PROTOCOL_20260922.md"
+      ],
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb"
+    },
+    {
+      "id": "terminal-inherit-multireturn-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "positive",
+      "decision": "ADDITIONAL_RETURN_INFORMATION_GAIN_WITH_CORE_FALSE_ALERT_COST",
+      "summary": "576consumed frames: current193TP6FP63FN to211/7/45, fixed hold225/26/31 to254/29/2. Entry-sample detection17to31of32;14/16layouts gain.18new currentTP have native triggering-slot corridor contributors. Core false costs increase; closest and two-return identical.",
+      "successor_requires": "Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results",
+      "forbidden_repeats": [
+        "Describe additional sensing as equal-input algorithm superiority",
+        "Claim lossless Core upgrade or hardware multi-target detectability",
+        "Hide one right-censored release or tune the secondary-peak law"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_PROTOCOL_20260922.md"
+      ],
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb"
+    },
+    {
+      "id": "terminal-inherit-precision-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "positive",
+      "decision": "FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN",
+      "summary": "180consumed analytic geometries, fixed13views12cm path and initial-camera query: nominal correct97to109 with no losses; two constant-bias controls97to120and122. No observed wrong IN OUT. Nominal boundary recall5of30; all20far-boundary remainUNKNOWN.",
+      "successor_requires": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
+      "forbidden_repeats": [
+        "Treat1mm simulated bins as1mm hardware accuracy",
+        "Treat numerical solver infeasibility as formal universal proof",
+        "Tune paths, bias ranges or quantization using these consumed outcomes"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_PRECISION_PROTOCOL_20260922.md"
+      ],
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb"
+    },
+    {
+      "id": "terminal-query-spatial-fit-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "evaluation_evidence"
+      ],
+      "status": "negative",
+      "decision": "SPATIAL_QUERY_BRANCH_NO_TINY_TRAIN_LOCALIZATION_GAIN",
+      "summary": "84 consumed training images: global179TP1FP1FN versus spatial180TP0FP0FN; both540/540querypairs correct. MaskIoU0.484823/0.481782 fails fixed0.50gate. Original structure can fit query answers under new shared optimization, but spatial branch does not improve localization.",
+      "successor_requires": "Separately justified mask-boundary or false-area mechanism with its own evaluation; preserve this fixed training-only package and all older negatives.",
+      "forbidden_repeats": [
+        "Tune cutoff, epoch, loss or cohort after this fixed final-state outcome",
+        "Treat tiny consumed train fitting as generalization or alert improvement",
+        "Claim invariant old query ordering is an unavoidable architecture property",
+        "Treat fixed depth hypotheses or model confidence as observed metric depth or free space"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/QUERY_SPATIAL_FIT_PROTOCOL_20260922.md"
+      ],
+      "commit": "1e585e02a95129d14a623a7cd1049fbe5c5178fd"
+    },
+    {
+      "id": "terminal-local-transfer-diagnostic-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "positive",
+      "decision": "LOCAL_SUPPORT_BACKGROUND_DEPENDENCE_HYPOTHESIS_RETAINED",
+      "summary": "Old576frame saved-output diagnosis: both addedFP won by HEAD-centre; regional support and RGB marginals overlaprescues. No model replay, refit or new performance claim. Motivates paired background-only transfer.",
+      "successor_requires": "Use the separately frozen paired transfer result; any further causal attribution needs a separately scoped intervention",
+      "forbidden_repeats": [
+        "Refit or retune this frozen recipe on consumed outcomes",
+        "Equate aggregate background tolerance with appearance invariance or physical ownership",
+        "Replace old failed system evidence or claim default App hardware or safety validation"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_DIAGNOSTIC_20260922.md",
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md"
+      ],
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4"
+    },
+    {
+      "id": "terminal-local-transfer-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "positive",
+      "decision": "FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE",
+      "summary": "576new controlled frames: A192TP4FP64FN, A RAW193/7/63, A LOCAL228/6/28; segments4/7/5. All three transfer gates and this-cohort strict gatePASS;14of16base rescues retained after background change. Preserve old failed strict gate and A UNKNOWN.",
+      "successor_requires": "Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results",
+      "forbidden_repeats": [
+        "Refit or retune this frozen recipe on consumed outcomes",
+        "Equate aggregate background tolerance with appearance invariance or physical ownership",
+        "Replace old failed system evidence or claim default App hardware or safety validation"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/LOCAL_TRANSFER_PROTOCOL_20260922.md"
+      ],
+      "commit": "bda91338dfea2ede2be4e1e91611e8b97821cba4"
     }
   ]
 }
