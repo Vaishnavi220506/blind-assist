@@ -1,15 +1,15 @@
 {
   "schema_version": 3,
   "engine_version": "decision-v2-research-workflow",
-  "generated_at": "2026-09-12",
-  "source_fingerprint": "b1cb9f46abf71766278b2fb6e1a7af615f1102e063a5f03c48c821ea00d411c0",
+  "generated_at": "2026-09-22",
+  "source_fingerprint": "c8a8638280a6442aeed7ca32729983e1d21d853ef5a269337522c99d3132d85d",
   "counts": {
     "failure_layers": 13,
     "mechanisms": 272,
     "uses": 271,
-    "experiments": 425,
-    "current_terminals": 206,
-    "run_associations": 423
+    "experiments": 426,
+    "current_terminals": 207,
+    "run_associations": 424
   },
   "failure_layers": [
     {
@@ -24975,6 +24975,47 @@
       "search_text": "terminal-mz101-stereo-tof-spatial-20260912 obstacle-avoidance SPATIAL_COMPLEMENTARITY_WITH_FP_REGRESSION Fresh288-frame rendered stereo/full64-zone ToF current BODY HEAD corridor comparison: ToF148TP6FP76FN to union202TP25FP22FN.54 newTP no lostTP; thinpole36 to67 of68.28 of28 events already covered by ToF; false sessions0 to2 fails integration. Paired noncarried nonleftcensored19 entry delays.5658 to.1447 seconds. Retain spatial complementarity evidence only. Authorized new observable stereo-support reliability hypothesis preserving spatial recall and event timing with appropriate new evaluation; no native-depth filtering or test threshold tuning. COMPONENT_OR_CHALLENGER COMPONENT Rendered stereo and full ToF spatial complementarity in controlled current BODY HEAD corridor; direct union not promoted research/active/dtr-r0/nearfield/MZ101_STEREO_TOF_RESULTS_20260912.md Union adds54TP but19FP and2 false sessions; idealToF already detects all28events so new-event gate has no opportunity Authorized observable support-reliability mechanism with paired recall timing and false-session evaluation Claim same-input algorithm superiority from different sensor input arms Call current corridor entry latency collision prediction or real safety benefit Replace the failed primary integration gate with the secondary proxy event recovery Use native depth or actor truth to reject stereo points in the deployed predictor"
     },
     {
+      "kind": "current_terminal",
+      "id": "terminal-dtr-operating-scope-stability-20260922",
+      "status": "negative",
+      "question": "Two consumed simulation cohorts with2304public observations replayed at three projection offsets. Broader nominal159TP25FP17FN,15/16events; right shift165TP63FP11FN,16/16events but0.6s delay and58.33percent minimum coverage. Actual Core positive fronts2.294-3.000m; closer range untested. UNKNOWN remains separate from alerts. Keep A and diagnostic component.",
+      "baseline": null,
+      "change": "Separate authorization for a materially different mechanism or validation scope; preserve this retrospective audit and its consumed-data limits.",
+      "primary_metric": null,
+      "decision": "RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED",
+      "report": "research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "6fef145c8a6697ef45158257b5e91f7bf29725bb",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separate authorization for a materially different mechanism or validation scope; preserve this retrospective audit and its consumed-data limits.",
+      "forbidden_repeats": [
+        "Call this consumed replay fresh confirmation or hardware safety evidence",
+        "Treat silence or UNKNOWN as verified free space",
+        "Drop the missed HEAD event after outcomes to declare the original scope stable"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Retrospective two-cohort fixed-A operating-scope stability and uncertainty diagnosis",
+      "retained_surface": "A strong threshold, definite support, hold, UNKNOWN, demo and App unchanged; diagnostic report retained",
+      "failure_signature": "All broader-cohort conditions fail event coverage silence or delay criteria; projection shifts add lateral false alerts; closer than2.29m untested",
+      "revisit_trigger": "Separate authorized validation or materially different mechanism without reclassifying consumed evidence",
+      "assignment_basis": "Sealed2304-frame public replay; independent metric support and geometry audit PASS; report commit6fef145c",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/OPERATING_SCOPE_PROTOCOL_20260922.md"
+      ],
+      "association_id": "ba-operating-scope-20260922",
+      "search_text": "terminal-dtr-operating-scope-stability-20260922 obstacle-avoidance RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED Two consumed simulation cohorts with2304public observations replayed at three projection offsets. Broader nominal159TP25FP17FN,15/16events; right shift165TP63FP11FN,16/16events but0.6s delay and58.33percent minimum coverage. Actual Core positive fronts2.294-3.000m; closer range untested. UNKNOWN remains separate from alerts. Keep A and diagnostic component. Separate authorization for a materially different mechanism or validation scope; preserve this retrospective audit and its consumed-data limits. COMPONENT_OR_CHALLENGER COMPONENT Retrospective two-cohort fixed-A operating-scope stability and uncertainty diagnosis A strong threshold, definite support, hold, UNKNOWN, demo and App unchanged; diagnostic report retained All broader-cohort conditions fail event coverage silence or delay criteria; projection shifts add lateral false alerts; closer than2.29m untested Separate authorized validation or materially different mechanism without reclassifying consumed evidence Call this consumed replay fresh confirmation or hardware safety evidence Treat silence or UNKNOWN as verified free space Drop the missed HEAD event after outcomes to declare the original scope stable"
+    },
+    {
       "kind": "experiment",
       "id": "dtr-r0",
       "status": "active",
@@ -34247,6 +34288,29 @@
         "evaluation_evidence": 3
       },
       "search_text": "mz102-stereo-witness-20260912 Can query-local stereo surface span reject false supports while retaining incremental thin-obstacle detections? MZ101 full64-zone ToF and unqualified stereo union with same corridor and state Primary query-local disparity-coherent projected span qualification; fixed interval diagnostic Incremental TP and thin TP retention; extra FP; false sessions and event timing PENDING_FROZEN_WITNESS_COMPARISON research/active/dtr-r0/nearfield/MZ102_STEREO_WITNESS_PROTOCOL_20260912.md Consumed MZ101 development plus fresh seed102013 posed UE stereo with shared generator families"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-operating-scope-20260922",
+      "status": "archived",
+      "question": "Does retained A remain useful across two declared camera-forward simulation cohorts and fixed projection offsets?",
+      "baseline": "Frozen A strong threshold0.4071309640537889, definite-support bypass and nonrecursive0.2s hold",
+      "change": "Retrospective2304-frame public replay at dx=-2,0,+2; full miss false-alert and UNKNOWN audit",
+      "primary_metric": "Core events delay coverage silence; false frames segments and all-negative FPR; uncertainty cross counts",
+      "decision": "RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED",
+      "report": "research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md",
+      "source": "Two previously consumed same-generator simulation evaluation cohorts; no new source capture or protected-test access",
+      "commit": "6fef145c8a6697ef45158257b5e91f7bf29725bb",
+      "association_id": "ba-operating-scope-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 6,
+        "decision_lifecycle": 13,
+        "evaluation_evidence": 3
+      },
+      "search_text": "ba-operating-scope-20260922 Does retained A remain useful across two declared camera-forward simulation cohorts and fixed projection offsets? Frozen A strong threshold0.4071309640537889, definite-support bypass and nonrecursive0.2s hold Retrospective2304-frame public replay at dx=-2,0,+2; full miss false-alert and UNKNOWN audit Core events delay coverage silence; false frames segments and all-negative FPR; uncertainty cross counts RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md Two previously consumed same-generator simulation evaluation cohorts; no new source capture or protected-test access"
     }
   ],
   "associations": [
@@ -34263,6 +34327,21 @@
         "artifacts.local/evidence/ase-body-query-pilot-20260909"
       ],
       "decision_id": "terminal-dtr-ase-body-query-pilot-coverage-insufficient",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-operating-scope-20260922",
+      "use_ids": [],
+      "protocol_id": "ba-operating-scope-20260922",
+      "code_revision": "6fef145c8a6697ef45158257b5e91f7bf29725bb",
+      "input_fingerprint": "1dfa9e0127a98d171c1762c27e472639fe1c029b5c970f82a56f3b69d1f77aa4",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md",
+        "artifacts.local/work/ba-operating-scope-20260922",
+        "artifacts.local/work/ba-operating-scope-20260922/evaluation-seal.json",
+        "artifacts.local/work/ba-operating-scope-20260922/independent-audit.json"
+      ],
+      "decision_id": "terminal-dtr-operating-scope-stability-20260922",
       "source_rows": 1
     },
     {

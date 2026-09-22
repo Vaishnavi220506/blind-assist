@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-12",
+  "updated_at": "2026-09-22",
   "roles": [
     {
       "terminal_id": "terminal-dtr-r6-static-occupancy-unreachable",
@@ -2061,6 +2061,16 @@
       "failure_signature": "Union adds54TP but19FP and2 false sessions; idealToF already detects all28events so new-event gate has no opportunity",
       "revisit_trigger": "Authorized observable support-reliability mechanism with paired recall timing and false-session evaluation",
       "assignment_basis": "Frozen288frame paired simulation, actual stereo image depth, separate native truth, six tests, sealed hashes and independent result audit"
+    },
+    {
+      "terminal_id": "terminal-dtr-operating-scope-stability-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Retrospective two-cohort fixed-A operating-scope stability and uncertainty diagnosis",
+      "retained_surface": "A strong threshold, definite support, hold, UNKNOWN, demo and App unchanged; diagnostic report retained",
+      "failure_signature": "All broader-cohort conditions fail event coverage silence or delay criteria; projection shifts add lateral false alerts; closer than2.29m untested",
+      "revisit_trigger": "Separate authorized validation or materially different mechanism without reclassifying consumed evidence",
+      "assignment_basis": "Sealed2304-frame public replay; independent metric support and geometry audit PASS; report commit6fef145c"
     }
   ]
 }

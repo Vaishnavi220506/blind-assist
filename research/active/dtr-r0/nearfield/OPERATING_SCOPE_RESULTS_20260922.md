@@ -144,7 +144,14 @@ Boundary正常条件原组仅4/16事件、14正确提醒／5误报／159漏报�
 - 支持的register-experiment仍被既有experiments/index.jsonl第303行输入指纹
   不匹配阻塞；set-terminal-inheritance返回unknown terminal，均退出码2。
   registration-receipt.json、inheritance-receipt.json及local-inheritance.json
-  已保存，全局登记未完成；未修改或绕过旧账本。
+  已保存，这是本轮首次交付时的状态；未修改或绕过旧账本。
+
+2026-09-22后续[登记修复](LEDGER_REPAIR_20260922.md)：从旧清理记录找到并恢复
+完全匹配原始指纹的ASE下载收据，425条旧记录全部通过校验。已正式归档登记
+`ba-operating-scope-20260922`，链接
+`terminal-dtr-operating-scope-stability-20260922`，继承角色为
+COMPONENT_OR_CHALLENGER／COMPONENT。全局账本和决策索引已更新；旧失败收据、
+历史行及本轮科学结果全部保留。
 
 本轮停止在稳定性反例和使用边界说明，不启动阈值、模型、数据或路径后继。
 保留原 A 及历史实验。本诊断的继承角色为 COMPONENT_OR_CHALLENGER／COMPONENT；

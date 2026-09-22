@@ -11,8 +11,10 @@ historical Core usefulness. Nominal FP are range-entry/exit errors; shifts add
 OUTSIDE FP. Broader nominal UNKNOWN681/768 includes97alerts and584silent frames;
 silence never establishes clear space. Retain A and diagnostic COMPONENT only.
 Public replay nominal parity2304/2304; independent saved-output auditPASS and
-geometry-label parity2304/2304. No training/capture/App change or successor;
-local inheritance and ledger303/unknown-terminal receipts retained.
+geometry-label parity2304/2304. No training/capture/App change or successor.
+[Exact receipt recovery](nearfield/LEDGER_REPAIR_20260922.md) resolves ledger303;
+the audit is now archived with explicit COMPONENT inheritance and a refreshed
+global decision index. Historical rows and failed-command receipts are preserved.
 
 ## Initial-camera-relative query: semantic consistency without nominal gain (2026-09-22)
 

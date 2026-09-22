@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-30",
+  "updated_at": "2026-09-22",
   "terminals": [
     {
       "id": "terminal-dtr-r6-static-occupancy-unreachable",
@@ -4873,6 +4873,30 @@
         "research/active/dtr-r0/nearfield/MZ101_STEREO_TOF_PROTOCOL_20260912.md"
       ],
       "commit": "7eaa4b58965d9c0b3fbc7dc4c3c39a7c27e0d683"
+    },
+    {
+      "id": "terminal-dtr-operating-scope-stability-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "negative",
+      "decision": "RETAINED_A_BROADER_SCOPE_STABILITY_NOT_ESTABLISHED",
+      "summary": "Two consumed simulation cohorts with2304public observations replayed at three projection offsets. Broader nominal159TP25FP17FN,15/16events; right shift165TP63FP11FN,16/16events but0.6s delay and58.33percent minimum coverage. Actual Core positive fronts2.294-3.000m; closer range untested. UNKNOWN remains separate from alerts. Keep A and diagnostic component.",
+      "successor_requires": "Separate authorization for a materially different mechanism or validation scope; preserve this retrospective audit and its consumed-data limits.",
+      "forbidden_repeats": [
+        "Call this consumed replay fresh confirmation or hardware safety evidence",
+        "Treat silence or UNKNOWN as verified free space",
+        "Drop the missed HEAD event after outcomes to declare the original scope stable"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/OPERATING_SCOPE_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/OPERATING_SCOPE_PROTOCOL_20260922.md"
+      ],
+      "commit": "6fef145c8a6697ef45158257b5e91f7bf29725bb"
     }
   ]
 }
