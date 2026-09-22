@@ -2,14 +2,14 @@
   "schema_version": 3,
   "engine_version": "decision-v2-research-workflow",
   "generated_at": "2026-09-22",
-  "source_fingerprint": "945c672b8f572ac819d20f953c65ead99ac79dcc5f7f8c167fd864934c600f33",
+  "source_fingerprint": "c5782d1dc4696cf4bf0f12d4837dda060061c15c5347d71940738338b3a0960b",
   "counts": {
     "failure_layers": 13,
     "mechanisms": 272,
     "uses": 271,
-    "experiments": 428,
-    "current_terminals": 209,
-    "run_associations": 426
+    "experiments": 432,
+    "current_terminals": 213,
+    "run_associations": 430
   },
   "failure_layers": [
     {
@@ -25099,6 +25099,170 @@
       "search_text": "terminal-query-occupancy-diagnostic-20260922 obstacle-avoidance QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION Frozen selected classifier and occupancy on864train288dev images always rank six queries HEADleft centre right then BODYleft centre right. Occupancy train/dev heatmapAUC0.544/0.576, fixedIoU0, conditional occupied-bin accuracy85.64/70.45percent; useful query localization not learned in selected states. Separately justified query-conditioned spatial learning check should establish train-set localization before new held evaluation; no automatic refit, cutoff rescue or video. COMPONENT_OR_CHALLENGER COMPONENT Interpretation of frozen selected query-occupancy checkpoints on consumed train and dev only Diagnostic evidence of invariant query rank and weak training-set localization; preserve original model NEGATIVE_CONTROL and A UNKNOWN All1152images both arms have strict query rank3,4,5,0,1,2; masks empty at0.5 and weak foreground ranking on train/dev Independently justified new query-conditioning or optimization check, first establish training-set spatial ability; separate authorization required for successor work Treat invariant query score ordering as image-conditioned spatial understanding Claim weak selected-state train fit rules out all architectures or longer optimization Promote conditional distance-bin accuracy to reliable occupancy or measured range Treat consumed train/dev diagnostic as fresh held confirmation"
     },
     {
+      "kind": "current_terminal",
+      "id": "terminal-inherit-event-20260922",
+      "status": "negative",
+      "question": "Consumed primary576frames: A193TP6FP63FN, original hold225/26/31, support inheritance193/6/63. Candidate retains zero of32addedTP, removes20addedFP;32/32events unchanged. Only inheritance in full1728cohort is one train FP.",
+      "baseline": null,
+      "change": "Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result",
+      "primary_metric": null,
+      "decision": "ORIGINAL_SUPPORT_INHERITANCE_LOSES_ALL_HOLD_GAINS",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result",
+      "forbidden_repeats": [
+        "Claim this exact recipe rules out all temporal information",
+        "Treat same-zone compatibility or evaluator identity as observed object identity",
+        "Retune expiry, intervals or thresholds to rescue this consumed run"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Exact same-zone original-support continuation recipe at0.2s sampling on current public ToF",
+      "retained_surface": "Retain unchanged A UNKNOWN and auditable birth versus continuation lifecycle; original hold remains measured reference",
+      "failure_signature": "Retains0/32hold-addedTP and qualifies no primary continuation despite eliminating20extraFP",
+      "revisit_trigger": "Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result",
+      "assignment_basis": "Frozen1728prediction seal,8focused tests, independent public-support reconstruction and primary576frame timing audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_EVENT_PROTOCOL_20260922.md"
+      ],
+      "association_id": "inherit-event-20260922",
+      "search_text": "terminal-inherit-event-20260922 obstacle-avoidance ORIGINAL_SUPPORT_INHERITANCE_LOSES_ALL_HOLD_GAINS Consumed primary576frames: A193TP6FP63FN, original hold225/26/31, support inheritance193/6/63. Candidate retains zero of32addedTP, removes20addedFP;32/32events unchanged. Only inheritance in full1728cohort is one train FP. Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result NEGATIVE_CONTROL  Exact same-zone original-support continuation recipe at0.2s sampling on current public ToF Retain unchanged A UNKNOWN and auditable birth versus continuation lifecycle; original hold remains measured reference Retains0/32hold-addedTP and qualifies no primary continuation despite eliminating20extraFP Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result Claim this exact recipe rules out all temporal information Treat same-zone compatibility or evaluator identity as observed object identity Retune expiry, intervals or thresholds to rescue this consumed run"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-inherit-spatial-20260922",
+      "status": "positive",
+      "question": "Consumed576frames: A193TP6FP63FN, A RAW200/12/56, A LOCAL223/8/33. LOCAL versus RAW adds23TP removes4FP and one segment, improves12/16layouts; versus A adds2false segments exceeding one-segment budget. Preserve component only and RAW negative control.",
+      "baseline": null,
+      "change": "Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast",
+      "primary_metric": null,
+      "decision": "QUERY_LOCAL_HGB_COMPONENT_GAIN_WITH_ALERT_SEGMENT_COST",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast",
+      "forbidden_repeats": [
+        "Promote standalone207TP4FP while hiding31of32event coverage",
+        "Claim true pixel ownership, arbitrary query generalization or learned metric depth",
+        "Refit or retune this recipe after evaluation"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Query-local representation package for shared HGB on six fixed queries and consumed RGB ToF source",
+      "retained_surface": "LOCAL representation COMPONENT; retain raw exact fit as NEGATIVE_CONTROL and preserve A UNKNOWN",
+      "failure_signature": "Relative A+30TP+2FP+2segments fails+1segment budget; standalone loses one event and is not selected Relative RAW loses one TP and delays one event onset0.2s despite positive net gain.",
+      "revisit_trigger": "Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast",
+      "assignment_basis": "One fit each, dev-only thresholds, sealed predictions,4focused tests and independent576frame3456query audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_PROTOCOL_20260922.md"
+      ],
+      "association_id": "inherit-spatial-20260922",
+      "search_text": "terminal-inherit-spatial-20260922 obstacle-avoidance QUERY_LOCAL_HGB_COMPONENT_GAIN_WITH_ALERT_SEGMENT_COST Consumed576frames: A193TP6FP63FN, A RAW200/12/56, A LOCAL223/8/33. LOCAL versus RAW adds23TP removes4FP and one segment, improves12/16layouts; versus A adds2false segments exceeding one-segment budget. Preserve component only and RAW negative control. Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast COMPONENT_OR_CHALLENGER COMPONENT Query-local representation package for shared HGB on six fixed queries and consumed RGB ToF source LOCAL representation COMPONENT; retain raw exact fit as NEGATIVE_CONTROL and preserve A UNKNOWN Relative A+30TP+2FP+2segments fails+1segment budget; standalone loses one event and is not selected Relative RAW loses one TP and delays one event onset0.2s despite positive net gain. Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast Promote standalone207TP4FP while hiding31of32event coverage Claim true pixel ownership, arbitrary query generalization or learned metric depth Refit or retune this recipe after evaluation"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-inherit-multireturn-20260922",
+      "status": "positive",
+      "question": "576consumed frames: current193TP6FP63FN to211/7/45, fixed hold225/26/31 to254/29/2. Entry-sample detection17to31of32;14/16layouts gain.18new currentTP have native triggering-slot corridor contributors. Core false costs increase; closest and two-return identical.",
+      "baseline": null,
+      "change": "Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results",
+      "primary_metric": null,
+      "decision": "ADDITIONAL_RETURN_INFORMATION_GAIN_WITH_CORE_FALSE_ALERT_COST",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results",
+      "forbidden_repeats": [
+        "Describe additional sensing as equal-input algorithm superiority",
+        "Claim lossless Core upgrade or hardware multi-target detectability",
+        "Hide one right-censored release or tune the secondary-peak law"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Hypothetical additional return observation preservation and sampled task tradeoff on consumed broader-distance source",
+      "retained_surface": "Information COMPONENT and native-support attribution; unchanged first-slot A and UNKNOWN",
+      "failure_signature": "Hold+29TP costs+3FP+2segments, failing frozen zero-added-Core-cost challenger gate; complex two-return readout adds no advantage",
+      "revisit_trigger": "Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results",
+      "assignment_basis": "576first-slot parity,24focused tests, independent27group native peak and metric audit, prediction seal before truth join",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_PROTOCOL_20260922.md"
+      ],
+      "association_id": "inherit-multireturn-20260922",
+      "search_text": "terminal-inherit-multireturn-20260922 obstacle-avoidance ADDITIONAL_RETURN_INFORMATION_GAIN_WITH_CORE_FALSE_ALERT_COST 576consumed frames: current193TP6FP63FN to211/7/45, fixed hold225/26/31 to254/29/2. Entry-sample detection17to31of32;14/16layouts gain.18new currentTP have native triggering-slot corridor contributors. Core false costs increase; closest and two-return identical. Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results COMPONENT_OR_CHALLENGER COMPONENT Hypothetical additional return observation preservation and sampled task tradeoff on consumed broader-distance source Information COMPONENT and native-support attribution; unchanged first-slot A and UNKNOWN Hold+29TP costs+3FP+2segments, failing frozen zero-added-Core-cost challenger gate; complex two-return readout adds no advantage Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results Describe additional sensing as equal-input algorithm superiority Claim lossless Core upgrade or hardware multi-target detectability Hide one right-censored release or tune the secondary-peak law"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-inherit-precision-20260922",
+      "status": "positive",
+      "question": "180consumed analytic geometries, fixed13views12cm path and initial-camera query: nominal correct97to109 with no losses; two constant-bias controls97to120and122. No observed wrong IN OUT. Nominal boundary recall5of30; all20far-boundary remainUNKNOWN.",
+      "baseline": null,
+      "change": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
+      "primary_metric": null,
+      "decision": "FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
+      "forbidden_repeats": [
+        "Treat1mm simulated bins as1mm hardware accuracy",
+        "Treat numerical solver infeasibility as formal universal proof",
+        "Tune paths, bias ranges or quantization using these consumed outcomes"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Hypothetical fine range information under bounded single-rectangle shared-bias initial-query model",
+      "retained_surface": "Precision information COMPONENT and validated dual-geometry witnesses; retain original modules and coarse evidence",
+      "failure_signature": "Boundary remains mostlyUNKNOWN; no actual sensor precision, multiobject validity, event or safety evidence",
+      "revisit_trigger": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
+      "assignment_basis": "540coarse parity and true assignment checks,439queries878MILPs,4focused tests and saved seal metric witness audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_PRECISION_PROTOCOL_20260922.md"
+      ],
+      "association_id": "inherit-precision-20260922",
+      "search_text": "terminal-inherit-precision-20260922 obstacle-avoidance FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN 180consumed analytic geometries, fixed13views12cm path and initial-camera query: nominal correct97to109 with no losses; two constant-bias controls97to120and122. No observed wrong IN OUT. Nominal boundary recall5of30; all20far-boundary remainUNKNOWN. Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes COMPONENT_OR_CHALLENGER COMPONENT Hypothetical fine range information under bounded single-rectangle shared-bias initial-query model Precision information COMPONENT and validated dual-geometry witnesses; retain original modules and coarse evidence Boundary remains mostlyUNKNOWN; no actual sensor precision, multiobject validity, event or safety evidence Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes Treat1mm simulated bins as1mm hardware accuracy Treat numerical solver infeasibility as formal universal proof Tune paths, bias ranges or quantization using these consumed outcomes"
+    },
+    {
       "kind": "experiment",
       "id": "dtr-r0",
       "status": "active",
@@ -34442,6 +34606,98 @@
         "evaluation_evidence": 3
       },
       "search_text": "ba-query-occupancy-diagnostic-20260922 Do selected frozen checkpoints fit train queries, localize foreground below the fixed cutoff and change relative query ranking with image evidence? Original epoch16classifier and epoch8occupancy with fixed dev thresholds; constant-score ranking controls Inference-only train864dev288 replay; weighted heatmap ranking and same-image query and matched-layout lateral contrasts Train/dev fixed-cutoff TP FP FN; foreground AUROC AP softIoU; conditional bins; query permutations and occupied-over-empty margins QUERY_OCCUPANCY_FIXED_QUERY_ORDER_AND_WEAK_TRAIN_LOCALIZATION research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md Consumed train and dev subset from query-occupancy1728frame same-generator Development; no held-label access or held-row inference"
+    },
+    {
+      "kind": "experiment",
+      "id": "inherit-event-20260922",
+      "status": "archived",
+      "question": "Can fresh agreement with original support preserve hold coverage while removing its false alerts?",
+      "baseline": "A current and original nonrecursive one-frame hold",
+      "change": "Same-zone original interval agreement and capture expiry; inherited alerts never seed",
+      "primary_metric": "Retained hold TP fraction, false frames and segments, events and onset",
+      "decision": "ORIGINAL_SUPPORT_INHERITANCE_LOSES_ALL_HOLD_GAINS",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md",
+      "source": "Consumed UE query occupancy1728frames; original576evaluation role is primary",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "association_id": "inherit-event-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 3,
+        "identity_binding": 3,
+        "geometry_motion": 3,
+        "decision_lifecycle": 13,
+        "evaluation_evidence": 3
+      },
+      "search_text": "inherit-event-20260922 Can fresh agreement with original support preserve hold coverage while removing its false alerts? A current and original nonrecursive one-frame hold Same-zone original interval agreement and capture expiry; inherited alerts never seed Retained hold TP fraction, false frames and segments, events and onset ORIGINAL_SUPPORT_INHERITANCE_LOSES_ALL_HOLD_GAINS research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md Consumed UE query occupancy1728frames; original576evaluation role is primary"
+    },
+    {
+      "kind": "experiment",
+      "id": "inherit-spatial-20260922",
+      "status": "archived",
+      "question": "Does deterministic query-local RGB interval representation improve a matched simple tree learner?",
+      "baseline": "Same HGB learner and public raw RGB ToF regional features; unchanged A",
+      "change": "Fill51matched zero feature slots with query interval conditioned regional support statistics",
+      "primary_metric": "Added recall and false frames/segments; paired layout recall gain",
+      "decision": "QUERY_LOCAL_HGB_COMPONENT_GAIN_WITH_ALERT_SEGMENT_COST",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+      "source": "Consumed UE query occupancy864train288dev576evaluation frames",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "association_id": "inherit-spatial-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 3,
+        "evaluation_evidence": 3
+      },
+      "search_text": "inherit-spatial-20260922 Does deterministic query-local RGB interval representation improve a matched simple tree learner? Same HGB learner and public raw RGB ToF regional features; unchanged A Fill51matched zero feature slots with query interval conditioned regional support statistics Added recall and false frames/segments; paired layout recall gain QUERY_LOCAL_HGB_COMPONENT_GAIN_WITH_ALERT_SEGMENT_COST research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md Consumed UE query occupancy864train288dev576evaluation frames"
+    },
+    {
+      "kind": "experiment",
+      "id": "inherit-multireturn-20260922",
+      "status": "archived",
+      "question": "Does the unchanged additional-return sensing law improve broader-distance support and event timing?",
+      "baseline": "Exactly reproduced original strongest return with current and original hold",
+      "change": "Same frozen two-return generator; closest and independent two-return readouts at unchanged threshold",
+      "primary_metric": "TP FP FN, native contributors, onset, Core false segments and sampled duration",
+      "decision": "ADDITIONAL_RETURN_INFORMATION_GAIN_WITH_CORE_FALSE_ALERT_COST",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md",
+      "source": "Consumed576UEquery evaluation frames plus hypothetical additional return generation",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "association_id": "inherit-multireturn-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "decision_lifecycle": 16,
+        "evaluation_evidence": 3
+      },
+      "search_text": "inherit-multireturn-20260922 Does the unchanged additional-return sensing law improve broader-distance support and event timing? Exactly reproduced original strongest return with current and original hold Same frozen two-return generator; closest and independent two-return readouts at unchanged threshold TP FP FN, native contributors, onset, Core false segments and sampled duration ADDITIONAL_RETURN_INFORMATION_GAIN_WITH_CORE_FALSE_ALERT_COST research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md Consumed576UEquery evaluation frames plus hypothetical additional return generation"
+    },
+    {
+      "kind": "experiment",
+      "id": "inherit-precision-20260922",
+      "status": "archived",
+      "question": "Does finer simulated range information become useful relative-query decisions under unchanged shared bias?",
+      "baseline": "Sealed100mm quantized relative-query decisions on identical histories",
+      "change": "One fixed1mm analog export and corresponding existing shared-bias inference constraints",
+      "primary_metric": "Correct singleton IN OUT gained and lost, wrong decisions, UNKNOWN by boundary stratum",
+      "decision": "FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN",
+      "report": "research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md",
+      "source": "Consumed analytic bias-drift180geometries and initial-relative baselines; three fixed conditions",
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "association_id": "inherit-precision-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "temporal_belief": 3,
+        "decision_lifecycle": 3,
+        "evaluation_evidence": 3
+      },
+      "search_text": "inherit-precision-20260922 Does finer simulated range information become useful relative-query decisions under unchanged shared bias? Sealed100mm quantized relative-query decisions on identical histories One fixed1mm analog export and corresponding existing shared-bias inference constraints Correct singleton IN OUT gained and lost, wrong decisions, UNKNOWN by boundary stratum FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md Consumed analytic bias-drift180geometries and initial-relative baselines; three fixed conditions"
     }
   ],
   "associations": [
@@ -35377,6 +35633,58 @@
         "artifacts.local/work/head-x0-20260908/matched-scaffold-check.json"
       ],
       "decision_id": "terminal-head-x0-20260908-diagnostic-coverage-candidate",
+      "source_rows": 1
+    },
+    {
+      "run_id": "inherit-event-20260922",
+      "use_ids": [],
+      "protocol_id": "inherit-event-20260922-v1",
+      "code_revision": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "input_fingerprint": "c959a33747899f23b2fd3247a07e6bf3d6ef09ec687040591c1334449b96ca9a",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-inherit-event-20260922-run"
+      ],
+      "decision_id": "terminal-inherit-event-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "inherit-multireturn-20260922",
+      "use_ids": [],
+      "protocol_id": "inherit-multireturn-20260922-v1",
+      "code_revision": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "input_fingerprint": "c5bd9fcfe8a9364c8512cd602893e791539bde88c14ce4bd0852519fb50914f9",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-inherit-multireturn-20260922-evaluated"
+      ],
+      "decision_id": "terminal-inherit-multireturn-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "inherit-precision-20260922",
+      "use_ids": [],
+      "protocol_id": "inherit-precision-20260922-v1",
+      "code_revision": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "input_fingerprint": "5e18cc4e1295b5537076322a7070f5bb76d1252b52923bc94ad09c812ce50825",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-inherit-precision-20260922-run"
+      ],
+      "decision_id": "terminal-inherit-precision-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "inherit-spatial-20260922",
+      "use_ids": [],
+      "protocol_id": "inherit-spatial-20260922-v1",
+      "code_revision": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb",
+      "input_fingerprint": "26331f70bf88a6a80d7da7e175cfc31e130c6b51a07e7c596ac1274dd641da34",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-inherit-spatial-20260922-run"
+      ],
+      "decision_id": "terminal-inherit-spatial-20260922",
       "source_rows": 1
     },
     {

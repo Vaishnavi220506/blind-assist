@@ -4946,6 +4946,102 @@
         "research/active/dtr-r0/nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_20260922.md"
       ],
       "commit": "3be9045cd76a04d8e4e7bc16ddbad3649251f732"
+    },
+    {
+      "id": "terminal-inherit-event-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "negative",
+      "decision": "ORIGINAL_SUPPORT_INHERITANCE_LOSES_ALL_HOLD_GAINS",
+      "summary": "Consumed primary576frames: A193TP6FP63FN, original hold225/26/31, support inheritance193/6/63. Candidate retains zero of32addedTP, removes20addedFP;32/32events unchanged. Only inheritance in full1728cohort is one train FP.",
+      "successor_requires": "Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result",
+      "forbidden_repeats": [
+        "Claim this exact recipe rules out all temporal information",
+        "Treat same-zone compatibility or evaluator identity as observed object identity",
+        "Retune expiry, intervals or thresholds to rescue this consumed run"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_EVENT_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_EVENT_PROTOCOL_20260922.md"
+      ],
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb"
+    },
+    {
+      "id": "terminal-inherit-spatial-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "positive",
+      "decision": "QUERY_LOCAL_HGB_COMPONENT_GAIN_WITH_ALERT_SEGMENT_COST",
+      "summary": "Consumed576frames: A193TP6FP63FN, A RAW200/12/56, A LOCAL223/8/33. LOCAL versus RAW adds23TP removes4FP and one segment, improves12/16layouts; versus A adds2false segments exceeding one-segment budget. Preserve component only and RAW negative control.",
+      "successor_requires": "Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast",
+      "forbidden_repeats": [
+        "Promote standalone207TP4FP while hiding31of32event coverage",
+        "Claim true pixel ownership, arbitrary query generalization or learned metric depth",
+        "Refit or retune this recipe after evaluation"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_SPATIAL_PROTOCOL_20260922.md"
+      ],
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb"
+    },
+    {
+      "id": "terminal-inherit-multireturn-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "positive",
+      "decision": "ADDITIONAL_RETURN_INFORMATION_GAIN_WITH_CORE_FALSE_ALERT_COST",
+      "summary": "576consumed frames: current193TP6FP63FN to211/7/45, fixed hold225/26/31 to254/29/2. Entry-sample detection17to31of32;14/16layouts gain.18new currentTP have native triggering-slot corridor contributors. Core false costs increase; closest and two-return identical.",
+      "successor_requires": "Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results",
+      "forbidden_repeats": [
+        "Describe additional sensing as equal-input algorithm superiority",
+        "Claim lossless Core upgrade or hardware multi-target detectability",
+        "Hide one right-censored release or tune the secondary-peak law"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_MULTIRETURN_PROTOCOL_20260922.md"
+      ],
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb"
+    },
+    {
+      "id": "terminal-inherit-precision-20260922",
+      "route": "obstacle-avoidance",
+      "failure_layers": [
+        "observation_perception",
+        "geometry_motion",
+        "decision_lifecycle",
+        "evaluation_evidence"
+      ],
+      "status": "positive",
+      "decision": "FINE_QUANTIZATION_SHARED_BIAS_QUERY_COMPONENT_GAIN",
+      "summary": "180consumed analytic geometries, fixed13views12cm path and initial-camera query: nominal correct97to109 with no losses; two constant-bias controls97to120and122. No observed wrong IN OUT. Nominal boundary recall5of30; all20far-boundary remainUNKNOWN.",
+      "successor_requires": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
+      "forbidden_repeats": [
+        "Treat1mm simulated bins as1mm hardware accuracy",
+        "Treat numerical solver infeasibility as formal universal proof",
+        "Tune paths, bias ranges or quantization using these consumed outcomes"
+      ],
+      "evidence": [
+        "research/active/dtr-r0/nearfield/INHERIT_PRECISION_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/INHERIT_PRECISION_PROTOCOL_20260922.md"
+      ],
+      "commit": "b6de71bedf756ed07c3caf5a63d8f1c96d4f97eb"
     }
   ]
 }

@@ -2091,6 +2091,46 @@
       "failure_signature": "All1152images both arms have strict query rank3,4,5,0,1,2; masks empty at0.5 and weak foreground ranking on train/dev",
       "revisit_trigger": "Independently justified new query-conditioning or optimization check, first establish training-set spatial ability; separate authorization required for successor work",
       "assignment_basis": "Fixed checkpoint replay with original dev counts, weighted foreground ranking, exact query ordering and no optimizer"
+    },
+    {
+      "terminal_id": "terminal-inherit-event-20260922",
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Exact same-zone original-support continuation recipe at0.2s sampling on current public ToF",
+      "retained_surface": "Retain unchanged A UNKNOWN and auditable birth versus continuation lifecycle; original hold remains measured reference",
+      "failure_signature": "Retains0/32hold-addedTP and qualifies no primary continuation despite eliminating20extraFP",
+      "revisit_trigger": "Materially different independently observed association or sensing premise with separate bounded validation; not relaxed gates on this consumed result",
+      "assignment_basis": "Frozen1728prediction seal,8focused tests, independent public-support reconstruction and primary576frame timing audit"
+    },
+    {
+      "terminal_id": "terminal-inherit-spatial-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Query-local representation package for shared HGB on six fixed queries and consumed RGB ToF source",
+      "retained_surface": "LOCAL representation COMPONENT; retain raw exact fit as NEGATIVE_CONTROL and preserve A UNKNOWN",
+      "failure_signature": "Relative A+30TP+2FP+2segments fails+1segment budget; standalone loses one event and is not selected Relative RAW loses one TP and delays one event onset0.2s despite positive net gain.",
+      "revisit_trigger": "Separately authorized mechanism addressing local-support false alerts or new evaluation, preserving this frozen contrast",
+      "assignment_basis": "One fit each, dev-only thresholds, sealed predictions,4focused tests and independent576frame3456query audit"
+    },
+    {
+      "terminal_id": "terminal-inherit-multireturn-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Hypothetical additional return observation preservation and sampled task tradeoff on consumed broader-distance source",
+      "retained_surface": "Information COMPONENT and native-support attribution; unchanged first-slot A and UNKNOWN",
+      "failure_signature": "Hold+29TP costs+3FP+2segments, failing frozen zero-added-Core-cost challenger gate; complex two-return readout adds no advantage",
+      "revisit_trigger": "Separately authorized observable lateral-ownership or physical sensing check; preserve fixed generator and consumed results",
+      "assignment_basis": "576first-slot parity,24focused tests, independent27group native peak and metric audit, prediction seal before truth join"
+    },
+    {
+      "terminal_id": "terminal-inherit-precision-20260922",
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Hypothetical fine range information under bounded single-rectangle shared-bias initial-query model",
+      "retained_surface": "Precision information COMPONENT and validated dual-geometry witnesses; retain original modules and coarse evidence",
+      "failure_signature": "Boundary remains mostlyUNKNOWN; no actual sensor precision, multiobject validity, event or safety evidence",
+      "revisit_trigger": "Separately authorized changed sensing premise or broader model evaluation; no quantization or nuisance sweep on these outcomes",
+      "assignment_basis": "540coarse parity and true assignment checks,439queries878MILPs,4focused tests and saved seal metric witness audit"
     }
   ]
 }

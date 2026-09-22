@@ -1,3 +1,19 @@
+## Inheritance batch: three useful components, no default replacement (2026-09-22)
+
+[Four frozen trials](nearfield/INHERIT_BATCH_RESULTS_20260922.md) are complete.
+On 576 consumed frames, query-local HGB plus A gives 223TP/8FP/33FN versus
+matched raw 200/12/56 and A 193/6/63. Local representation is a COMPONENT;
+two added false segments exceed its one-segment alert-upgrade budget.
+Additional hypothetical returns plus unchanged hold give 254/29/2 versus
+225/26/31, with entry-sample detection 17/32 to 31/32; retain information and
+its added costs, not a lossless upgrade. Support inheritance returns exactly
+to A current, losing every hold TP gain: exact recipe NEGATIVE_CONTROL.
+On 180 analytic geometries, hypothetical 1mm bins with unchanged shared bias
+and initial query increase nominal correct decisions 97 to 109, no observed
+wrong decisions or old losses: precision COMPONENT, not hardware evidence.
+A, UNKNOWN and old negatives remain. Real detector-track seven-frame analysis
+is NOT_EVALUABLE; physical CNH remains paused. No combined-system claim or retry.
+
 ## Frozen checkpoint diagnosis: query ordering does not follow the image (2026-09-22)
 
 [Train/dev inference-only diagnostic](nearfield/QUERY_OCCUPANCY_DIAGNOSTIC_RESULTS_20260922.md)
