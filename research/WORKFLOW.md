@@ -50,6 +50,16 @@ No workflow change retrospectively authorizes a sealed retry or changes old gate
 
 ## A short experiment brief
 
+For UE/nearfield data work, search existing assets before new capture and run through
+`tools/ba.ps1 run research-ue -RunSpec <run-spec.json>`. The existing run spec declares
+`reuse.mode`, a capability `reuse.query`, exact input subpaths and their data roles.
+The runtime records reuse candidates and checks the [UE input contracts](../data/ue-reuse-policy.json)
+before consumption, then registers result lineage. Use the
+[UE reuse guide](../docs/asset-management/UE_REUSE.md) for source choices and the built-in
+Core regression. A mixed reserved bundle needs a separately admitted subset; a folder
+label or `split=train` declaration cannot authorize its protected files. Add scoped
+contracts with new adapters; legacy direct scripts are not automatically governed.
+
 Put the following in the existing idea, command, protocol, or owning result; do not
 create another mandatory document. Fill in only details needed for the decision.
 

@@ -6,6 +6,64 @@
 原文件保持原位，索引通过现有 `asset_catalog` 登记稳定 locator、元数据身份和文件清单。
 这是一份用途导航，不是新的实验结论或数据权限总账；证据状态沿用总账，缺少依据保留 unknown。
 
+## 实验入口已经接入
+
+UE 实验通过 `tools/ba.ps1 run research-ue` 执行。默认是已消费 Core 432 帧的
+ToF 回归；提供 `-RunSpec` 则执行声明的研究命令。两种方式均强制走
+`asset_runtime` 的 UE 准入检查。已有 DTR/L10 governed run 若声明 UE 索引中的输入，
+或命令指向 UE/nearfield 研究脚本，也会自动触发检查。
+
+```powershell
+pwsh -NoProfile -File tools/ba.ps1 run research-ue -RunId ue-core-regression-NEW_ID
+pwsh -NoProfile -File tools/ba.ps1 run research-ue -RunSpec artifacts.local/evidence/MY_RUN/run-spec.json
+```
+
+使用配置好的 research Python（需有 NumPy/OpenCV）；可用 `-Python` 指定环境。
+默认回归不启动 UE、不训练模型、不改阈值；调用现有 `score_frame / decide`，
+逐帧核验观测哈希，封存新预测后才打开旧预测作一致性比较。
+
+运行规格在原 `blindassist-asset-run-v1` 中增加：
+
+```json
+{
+  "reuse": {"mode": "regression", "query": "core transfer observations tof calibration"},
+  "inputs": [{
+    "alias": "observations",
+    "asset": "work/ba-core-transfer-20260920",
+    "relative_path": "observations",
+    "role": "observation",
+    "purpose": "consumed-development-regression"
+  }]
+}
+```
+
+其余 `id / route / question / evaluator / command / outputs` 字段沿用
+[资产运行器](README.md)。命令使用 `{{input:observations}}` 等绑定路径。
+mode 支持 regression、diagnostic、development、training；本入口不授予 fresh/final 权限。
+
+实际执行顺序：
+
+1. 按 query 查询本地分类索引和总账中新产生的派生结果，将候选、选择、来源族与政策哈希写入 journal。
+2. 按 [准入策略](../../data/ue-reuse-policy.json) 检查路径范围、观测/配置/evaluator 角色、
+   已消费或保留状态；检查失败时，不启动子进程、不新增消费记录。
+3. 解析实际子路径、记录每个输入别名及身份，执行原研究命令。
+4. 登记结果、输出哈希和输入→输出派生关系，并将来源族、evaluator 角色限制传给后续复用。
+
+目录级 unknown 可以由有来源文档的精确准入条目获得本次 Development 使用许可，
+原总账状态不会因此被升级。来源族数也不等于已证明相互独立的数据集数。
+Spatial BCE 整目录含保留 test，不能靠填写 `split=train` 解锁；须先建立独立 train/dev
+子集及可审计契约。其他未准入目录、尚未声明角色的缓存，保留候选可见但阻止直接执行，
+按原来源文档补齐具体契约，不因目录名称猜权限。
+
+这不是操作系统访问沙箱；它校验 governed run 的声明。历史上绕过 `ba.ps1` / runtime
+直接调用的研究脚本尚未全部迁移，不能声称它们自动受控。新 UE 研究使用上述入口；
+新数据或适配器在同一改动中补齐精确输入契约，避免整理完成后再次失去来源记录。
+
+2026-09-22 集成验收：Core 432/432 帧与历史 calibrated 决策完全一致，原阈值保持不变；
+输入消费、派生边和 master/fabric 校验均通过。这只证明流程及回归一致性，不是算法提升。
+回执位于 `artifacts.local/evidence/resource-fabric/runs/ue-reuse/`，实际结果位于
+`artifacts.local/evidence/ue-reuse-ue-reuse-integration-20260922-v2/result.json`。
+
 ## 先按任务选数据
 
 以下规模来自所链接的已有研究文档，不是此次重新解码、验收或去重的结果。

@@ -1,0 +1,85 @@
+{
+  "schema": "blindassist-ue-reuse-policy-v1",
+  "description": "Reviewed input scopes, not inferred permission from directory names. Unlisted bundles need a scoped contract before governed use.",
+  "contracts": [
+    {
+      "locator": "work/ba-core-transfer-20260920",
+      "source_family": "ue-core-transfer-20260920",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md",
+      "allowed_inputs": [
+        {"relative_path": "observations.json", "role": "observation"},
+        {"relative_path": "observations", "role": "observation"},
+        {"relative_path": "capture/observations/rgb", "role": "observation"},
+        {"relative_path": "predictions.json", "role": "evaluator"}
+      ]
+    },
+    {
+      "locator": "work/ba-core-workpoint-transfer-20260920",
+      "source_family": "ue-core-workpoint-transfer-20260920",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md",
+      "allowed_inputs": [
+        {"relative_path": "observations.json", "role": "observation"},
+        {"relative_path": "observations", "role": "observation"},
+        {"relative_path": "capture/observations/rgb", "role": "observation"},
+        {"relative_path": "predictions.json", "role": "evaluator"}
+      ]
+    },
+    {
+      "locator": "work/ba-core-hold-validation-20260920",
+      "source_family": "ue-core-hold-validation-20260920",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md",
+      "allowed_inputs": [
+        {"relative_path": "observations.json", "role": "observation"},
+        {"relative_path": "observations", "role": "observation"},
+        {"relative_path": "capture/observations/rgb", "role": "observation"},
+        {"relative_path": "predictions.json", "role": "evaluator"}
+      ]
+    },
+    {
+      "locator": "work/ba-full-event-transfer-20260920",
+      "source_family": "ue-full-event-transfer-20260920",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md",
+      "allowed_inputs": [
+        {"relative_path": "observations.json", "role": "observation"},
+        {"relative_path": "observations", "role": "observation"},
+        {"relative_path": "capture/observations/rgb", "role": "observation"},
+        {"relative_path": "predictions.json", "role": "evaluator"}
+      ]
+    },
+    {
+      "locator": "work/ba-tof-corridor-calibration-20260920",
+      "source_family": "ue-tof-calibration96-20260920",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/TOF_CORRIDOR_CALIBRATION_20260920.md",
+      "allowed_inputs": [{"relative_path": "operating-point.json", "role": "configuration"}]
+    },
+    {
+      "locator": "work/ba-spatial-bce-20260920",
+      "source_family": "ue-spatial-bce-20260920",
+      "evidence_status": "reserved",
+      "evidence": "research/active/dtr-r0/nearfield/SPATIAL_BCE_RESULTS_20260920.md",
+      "blocked_reason": "Mixed train/dev/reserved test bundle: 576 test frames remain reserved. Admit an explicitly separated train/dev subset before reuse; split=train alone is insufficient.",
+      "allowed_inputs": []
+    },
+    {
+      "locator": "work/body-query-5000-20260909",
+      "source_family": "ue-body-query-5000-20260909",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md",
+      "blocked_reason": "Requires an admitted geometry/input subset; complete bundle mixes observations and query truth.",
+      "allowed_inputs": []
+    },
+    {
+      "locator": "work/ba-nfo-20260919",
+      "source_family": "ue-body-query-5000-20260909",
+      "evidence_status": "development_consumed",
+      "evidence": "research/active/dtr-r0/nearfield/SPATIAL_DATA_REUSE_INVENTORY_20260921.md",
+      "blocked_reason": "Mixed public/UE source bundle. UE500 derives from BODY-query5k, not an independent source; admit a specific subset first.",
+      "allowed_inputs": []
+    }
+  ]
+}

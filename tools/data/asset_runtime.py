@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -24,6 +25,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import asset_catalog as catalog  # noqa: E402
 import resource_fabric as fabric  # noqa: E402
+import ue_reuse  # noqa: E402
 
 
 RUN_SCHEMA = "blindassist-asset-run-v1"
@@ -168,6 +170,7 @@ def resolve_inputs(
     repo_root: Path,
     database: Path,
     policy: dict[str, Any],
+    reuse_report: dict[str, Any] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, str]]:
     snapshots: list[dict[str, Any]] = []
     paths: dict[str, str] = {}
@@ -186,17 +189,23 @@ def resolve_inputs(
             )
             if not requested_path.exists():
                 raise RuntimeError_(f"Input {alias} is missing: {requested_path}")
-            reconciled = reconcile_input_path(
-                requested_path,
-                artifact_root=artifact_root,
-                repo_root=repo_root,
-                database=database,
-                policy=policy,
-                run_id=run_id,
-            )
+            admitted = next((entry for entry in (reuse_report or {}).get("inputs", []) if entry["alias"] == alias), None)
+            if admitted and admitted.get("asset_id"):
+                reconciled = dict(asset_id=admitted["asset_id"], requested_relative_path=requested_path.relative_to(artifact_root / admitted["asset_locator"]).as_posix())
+            else:
+                reconciled = reconcile_input_path(
+                    requested_path, artifact_root=artifact_root, repo_root=repo_root,
+                    database=database, policy=policy, run_id=run_id)
             selector = reconciled["asset_id"]
         else:
             selector = require_text(item.get("asset"), f"input {alias}.asset")
+            if item.get("relative_path"):
+                connection = catalog.open_catalog(database)
+                try:
+                    requested_path, _, _ = ue_reuse.input_target(
+                        item, artifact_root=artifact_root, repo_root=repo_root, connection=connection)
+                finally:
+                    connection.close()
 
         snapshot, resolved = fabric.resolve_master_asset_input(
             artifact_root,
@@ -204,7 +213,7 @@ def resolve_inputs(
             consumer=run_id,
             purpose=item.get("purpose") or "experiment-input",
             experiment_id=run_id,
-            event_id=f"fabric-experiment:{fabric.slug(run_id)}:{selector.split('#', 1)[0]}",
+            event_id=f"fabric-experiment:{fabric.slug(run_id)}:{alias}:{selector}",
         )
         actual_path = requested_path or resolved
         snapshot = dict(snapshot)
@@ -212,7 +221,8 @@ def resolve_inputs(
         snapshot["purpose"] = item.get("purpose") or "experiment-input"
         if requested_path is not None:
             snapshot["requested_path"] = portable_path(requested_path, artifact_root)
-            snapshot["requested_relative_path"] = reconciled["requested_relative_path"]
+            snapshot["requested_relative_path"] = (
+                reconciled["requested_relative_path"] if has_path else item["relative_path"])
             if requested_path.is_file():
                 snapshot["requested_content_id"] = f"sha256:{fabric.sha256_file(requested_path)}"
                 snapshot["requested_bytes"] = requested_path.stat().st_size
@@ -564,6 +574,7 @@ def run_spec(
     repo_root: Path,
     artifact_root: Path,
     policy_path: Path,
+    require_ue_reuse: bool = False,
 ) -> tuple[dict[str, Any], int]:
     spec = load_spec(spec_path)
     repo_root = repo_root.resolve()
@@ -590,14 +601,38 @@ def run_spec(
     }
     write_journal(log_path, journal, "preparing")
     try:
+        reuse_report = ue_reuse.preflight(
+            spec, artifact_root=artifact_root, repo_root=repo_root,
+            database=database, required=require_ue_reuse)
+        if reuse_report is not None:
+            write_journal(log_path, journal, "preparing", reuse_preflight=reuse_report)
+            if reuse_report["status"] != "PASS":
+                raise RuntimeError_("UE reuse blocked: " + "; ".join(reuse_report["errors"]))
+            # Refuse overwrites before opening or consuming any inputs.
+            source_paths = [artifact_root / (entry.get("asset_locator") or entry["locator"]) for entry in reuse_report["inputs"]]
+            output_paths_checked = []
+            for item in spec.get("outputs", []):
+                candidate = ensure_artifact_path(resolve_repo_path(item["path"], repo_root), artifact_root, "UE output")
+                if candidate.exists() or any(ue_reuse.within(candidate, source) or ue_reuse.within(source, candidate) for source in source_paths):
+                    raise RuntimeError_(f"UE output overlaps existing data: {candidate}")
+                if any(ue_reuse.within(candidate, prior) or ue_reuse.within(prior, candidate) for prior in output_paths_checked):
+                    raise RuntimeError_("UE declared outputs overlap each other")
+                if not ue_reuse.within(candidate, fabric.fabric_root(artifact_root).resolve()):
+                    # Reject excluded/unmanaged output locations before spending compute.
+                    catalog.governed_asset_unit_for_path(candidate, artifact_root, policy)
+                output_paths_checked.append(candidate)
         asset_inputs, input_paths = resolve_inputs(
             spec,
             artifact_root=artifact_root,
             repo_root=repo_root,
             database=database,
             policy=policy,
+            reuse_report=reuse_report,
         )
         cache_keys, cache_paths, cache_events = resolve_cache_inputs(spec, artifact_root)
+        if reuse_report is not None:
+            for snapshot in asset_inputs:
+                snapshot["ue_reuse"] = next(entry for entry in reuse_report["inputs"] if entry["alias"] == snapshot["alias"])
         output_paths, output_records = resolve_outputs(spec, repo_root, artifact_root)
         command = substitute_command(spec["command"], input_paths, cache_paths, output_paths)
         fabric.create_experiment(
@@ -611,7 +646,7 @@ def run_spec(
             cache_keys=cache_keys,
             asset_inputs=asset_inputs,
             hard_case_ids=[],
-            parameters=spec.get("parameters", {}),
+            parameters={**spec.get("parameters", {}), **({"ue_reuse": reuse_report} if reuse_report else {})},
             boundary=spec["evidence_boundary"],
         )
         write_journal(
@@ -636,7 +671,10 @@ def run_spec(
     write_journal(log_path, journal, "running", started_at=fabric.utc_now())
 
     try:
-        completed = subprocess.run(command, cwd=repo_root, shell=False, check=False)
+        environment = dict(os.environ)
+        if reuse_report is not None:
+            environment["BLINDASSIST_ASSET_RUN_JOURNAL"] = str(log_path)
+        completed = subprocess.run(command, cwd=repo_root, shell=False, check=False, env=environment)
         native_exit = int(completed.returncode)
     except KeyboardInterrupt:
         write_journal(
@@ -738,6 +776,10 @@ def run_spec(
             output_paths=output_paths,
             run_id=run_id,
         )
+        if reuse_report is not None:
+            governance["ue_output_lineage"] = ue_reuse.record_output_lineage(
+                reuse_report, database=database, artifact_root=artifact_root,
+                outputs=output_records, run_id=run_id, evaluator=spec["evaluator"])
         state = "succeeded" if success else "failed"
         final = {
             "status": "PASS" if success else "FAIL",
@@ -752,6 +794,7 @@ def run_spec(
             "outputs": receipts,
             "journal": portable_path(log_path, artifact_root),
             "governance": governance,
+            "reuse_preflight": reuse_report,
         }
         write_journal(
             log_path,
@@ -764,6 +807,7 @@ def run_spec(
             created_cache_keys=produced_cache_keys,
             hard_cases=[item["hard_case"] for item in hard_cases],
             output_receipts=receipts,
+            ue_output_lineage=governance.get("ue_output_lineage", []),
         )
         if success:
             return final, 0
@@ -791,6 +835,7 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--repo-root", type=Path, default=catalog.DEFAULT_REPO_ROOT)
     run.add_argument("--artifact-root", type=Path, default=catalog.DEFAULT_ARTIFACT_ROOT)
     run.add_argument("--policy", type=Path, default=catalog.DEFAULT_POLICY_PATH)
+    run.add_argument("--require-ue-reuse", action="store_true")
     return parser
 
 
@@ -802,6 +847,7 @@ def main(argv: list[str] | None = None) -> int:
             repo_root=args.repo_root,
             artifact_root=args.artifact_root,
             policy_path=args.policy,
+            require_ue_reuse=args.require_ue_reuse,
         )
         print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
         return code
