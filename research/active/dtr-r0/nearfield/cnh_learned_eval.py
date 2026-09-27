@@ -21,6 +21,7 @@ def main():
     p.add_argument('--s2-key', default='S2__noisy@0.75')
     p.add_argument('--models', type=Path, nargs='+', required=True)
     p.add_argument('--out', type=Path, required=True)
+    p.add_argument('--with-s2', action='store_true')
     a = p.parse_args()
     units = L.load(a.features)
     for u, d in units.items():
@@ -31,7 +32,7 @@ def main():
     split = {s: sorted(u for u, d in units.items() if d['split'] == s) for s in ('calib', 'audit')}
     models = []
     for m in a.models:
-        net = L.Readout().to(L.DEV)
+        net = L.Readout(with_s2=a.with_s2).to(L.DEV)
         net.load_state_dict(torch.load(m, map_location=L.DEV))
         models.append(net)
     keys = split['calib']+split['audit']

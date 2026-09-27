@@ -25,6 +25,7 @@ def squash(z):
 
 
 def load(root, scores=None):
+    scores = [scores] if isinstance(scores, (str, Path)) else (scores or [])
     units = {}
     for f in sorted(Path(root).glob('unit*.npz')):
         d = np.load(f)
@@ -33,7 +34,7 @@ def load(root, scores=None):
         sup = np.unpackbits(d['sup'], axis=-1)[..., :16].astype(bool)
         item = dict(x=x, sup=sup, y=d['labels'].astype(np.float32), main=d['main'], w=d['witness'],
                     strata=d['strata'], config=d['config'], frame=d['frame'], split=str(d['split']))
-        cand = [Path(scores)/f'unit{u:02d}.npz', Path(scores)/f'unit{u:03d}.npz'] if scores is not None else []
+        cand = [Path(sd)/f'unit{u:{w}d}.npz' for sd in scores for w in ('02', '03')]
         found = next((c for c in cand if c.exists()), None)
         if found is not None:
             s = np.load(found)
@@ -44,32 +45,38 @@ def load(root, scores=None):
 
 
 class Readout(nn.Module):
-    def __init__(self, width=32):
+    def __init__(self, width=32, with_s2=False):
         super().__init__()
+        self.with_s2 = with_s2
         self.body = nn.Sequential(nn.Conv3d(2, 16, 3, padding=1), nn.GELU(),
                                   nn.Conv3d(16, width, 3, padding=1), nn.GELU(),
                                   nn.Conv3d(width, width, 3, padding=1), nn.GELU())
         self.emb = nn.Embedding(6, 8)
-        self.head = nn.Sequential(nn.Linear(2*width+8, 32), nn.GELU(), nn.Linear(32, 1))
+        self.head = nn.Sequential(nn.Linear(2*width+8+int(with_s2), 32), nn.GELU(), nn.Linear(32, 1))
 
-    def forward(self, x, sup):
+    def forward(self, x, sup, s2=None):
         f = self.body(x)                                            # [B,C,8,8,16]
         m = sup[:, :, None]                                         # [B,6,1,8,8,16]
         fq = f[:, None]
         mx = torch.where(m, fq, torch.full_like(fq, -1e4)).flatten(3).max(-1).values
         mean = (fq*m).flatten(3).sum(-1)/m.flatten(3).sum(-1).clamp_min(1)
         e = self.emb.weight[None].expand(len(x), -1, -1)
-        return self.head(torch.cat([mx, mean, e], -1)).squeeze(-1)  # [B,6]
+        parts = [mx, mean, e]+([torch.sign(s2)[..., None]*torch.log1p(s2.abs())[..., None]] if self.with_s2 else [])
+        return self.head(torch.cat(parts, -1)).squeeze(-1)  # [B,6]
 
 
 def batches(units, keys, main_only, bs, shuffle, rng=None):
     x = np.concatenate([units[u]['x'][units[u]['main']] if main_only else units[u]['x'] for u in keys])
     s = np.concatenate([units[u]['sup'][units[u]['main']] if main_only else units[u]['sup'] for u in keys])
     y = np.concatenate([units[u]['y'][units[u]['main']] if main_only else units[u]['y'] for u in keys])
+    q = np.concatenate([(units[u]['S2'][units[u]['main']] if main_only else units[u]['S2']) if 'S2' in units[u]
+                        else np.zeros((len(units[u]['main'] if not main_only else units[u]['main'][units[u]['main']]), 6))
+                        for u in keys]).astype(np.float32)
     idx = rng.permutation(len(x)) if shuffle else np.arange(len(x))
     for i in range(0, len(idx), bs):
         j = idx[i:i+bs]
-        yield (torch.as_tensor(x[j], device=DEV), torch.as_tensor(s[j], device=DEV), torch.as_tensor(y[j], device=DEV))
+        yield (torch.as_tensor(x[j], device=DEV), torch.as_tensor(s[j], device=DEV), torch.as_tensor(y[j], device=DEV),
+               torch.as_tensor(q[j], device=DEV))
 
 
 @torch.no_grad()
@@ -77,8 +84,8 @@ def predict(model, units, keys):
     model.eval()
     for u in keys:
         out = []
-        for xb, sb, _ in batches({u: units[u]}, [u], False, 512, False):
-            out.append(model(xb, sb).float().cpu().numpy())
+        for xb, sb, _, qb in batches({u: units[u]}, [u], False, 512, False):
+            out.append(model(xb, sb, qb).float().cpu().numpy())
         units[u]['NN'] = np.concatenate(out)
 
 
@@ -123,7 +130,8 @@ def threshold_for_budget(seqs, arm, boxes, budget):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--features', type=Path, required=True)
-    p.add_argument('--scores', type=Path, required=True)
+    p.add_argument('--scores', type=Path, nargs='+', required=True)
+    p.add_argument('--with-s2', action='store_true', help='feed the per-query S2 score to the head')
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--epochs', type=int, default=20)
     p.add_argument('--seed', type=int, default=0)
@@ -133,7 +141,9 @@ def main():
     units = load(a.features, a.scores)
     split = {s: sorted(u for u, d in units.items() if d['split'] == s) for s in ('train', 'calib', 'audit')}
     print({k: len(v) for k, v in split.items()}, flush=True)
-    model = Readout().to(DEV)
+    if a.with_s2:
+        assert all('S2' in units[u] for v in split.values() for u in v), 'S2 scores missing for some units'
+    model = Readout(with_s2=a.with_s2).to(DEV)
     opt = torch.optim.AdamW(model.parameters(), lr=2e-3, weight_decay=1e-4)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, a.epochs)
     lossf = nn.BCEWithLogitsLoss()
@@ -141,8 +151,8 @@ def main():
     for ep in range(a.epochs):
         model.train()
         tot = 0.
-        for xb, sb, yb in batches(units, split['train'], True, 256, True, rng):
-            loss = lossf(model(xb, sb), yb)
+        for xb, sb, yb, qb in batches(units, split['train'], True, 256, True, rng):
+            loss = lossf(model(xb, sb, qb), yb)
             opt.zero_grad()
             loss.backward()
             opt.step()
