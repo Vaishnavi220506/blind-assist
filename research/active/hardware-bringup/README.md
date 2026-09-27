@@ -3,6 +3,8 @@
 本路线负责 AtomS3R-M12、XIAO ESP32-S3 + 多区 ToF、安卓手机之间的真实采集与连接。
 与避障模拟路线并行；不修改其模型、阈值、冻结数据、评测器或运行时默认行为。
 当前状态见 [CURRENT.md](CURRENT.md)，数据格式见 [PROTOCOL.md](PROTOCOL.md)。
+8×8×16 CNH 的后续现场录制见 [H3 采集清单](CNH_H3_COLLECTION_CHECKLIST.md)，
+工具兼容性与旧数据回放见 [H3 录制工具验证](CNH_H3_CAPTURE_VALIDATION_20260928.md)。
 既有实机日志的相对路径和校验值见 [证据索引](evidence-index.json)。
 本轮环境、编译与离线检查见 [验证记录](VALIDATION.md)。
 官方手册、数据手册及板级原理图见 [离线参考资料库](references/README.md)。

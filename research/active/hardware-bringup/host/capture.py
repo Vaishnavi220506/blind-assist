@@ -78,16 +78,18 @@ def validate_frame(obj):
             "conversion_rule": "max(0, trunc_towards_zero(distance_q2 / 4)); independent of range validity",
         }
     if obj["type"] == "cnh_frame":
-        if count != 16 or obj.get("bins", 24) != 24:
-            raise ValueError("CNH supports only 16 zones x 24 bins in this bring-up")
+        bins = integer(obj.get("bins", 24), "bins", 1, 24)
+        if (count, bins) not in ((16, 24), (64, 16)):
+            raise ValueError("CNH supports 16 zones x 24 bins or 64 zones x 16 bins")
+        derived["bins"] = bins
         for key, low, high in (("hist_raw", -2**31, 2**31 - 1), ("hist_scaler", -128, 127)):
             matrix = obj.get(key)
-            if not isinstance(matrix, list) or len(matrix) != 16:
-                raise ValueError(f"{key}: expected 16 rows")
+            if not isinstance(matrix, list) or len(matrix) != count:
+                raise ValueError(f"{key}: expected {count} rows")
             for row in matrix:
-                vector({key: row}, key, 24, low, high)
-        ambient = vector(obj, "ambient_raw", 16, -2**31, 2**31 - 1)
-        ambient_scaler = vector(obj, "ambient_scaler", 16, -128, 127)
+                vector({key: row}, key, bins, low, high)
+        ambient = vector(obj, "ambient_raw", count, -2**31, 2**31 - 1)
+        ambient_scaler = vector(obj, "ambient_scaler", count, -128, 127)
         # ST UM3183 Rev 7, section 5.7: signed raw / (2 ** scaler).
         # The supplied Example_12 uses (2 << scaler), a conflicting factor of 2.
         # Follow the manual; ldexp handles negative signed int8 scalers safely.
@@ -123,6 +125,8 @@ class Decoder:
         self.first_ms = self.last_ms = None
         self.clock_discontinuities = 0
         self.cnh_zero_histograms = 0
+        self.cnh_histograms = 0
+        self.cnh_layouts = Counter()
         self.cnh_finite = True
         self.diagnostic_frames = self.distance_conversion_mismatches = 0
 
@@ -191,6 +195,8 @@ class Decoder:
             self.diagnostic_frames += 1
             self.distance_conversion_mismatches += derived["diagnostic"]["distance_conversion_mismatch_count"]
         if obj["type"] == "cnh_frame":
+            self.cnh_histograms += len(obj["hist_raw"])
+            self.cnh_layouts[f'{derived["rows"]}x{derived["cols"]}x{derived["bins"]}'] += 1
             self.cnh_zero_histograms += sum(all(v == 0 for v in row) for row in obj["hist_raw"])
             self.cnh_finite &= all(math.isfinite(v) for row in derived["hist_normalized"] for v in row)
             self.cnh_finite &= all(math.isfinite(v) for v in derived["ambient_normalized"])
@@ -219,7 +225,8 @@ class Decoder:
             "known_range_cells": self.known, "unknown_range_cells": self.unknown,
             "center_status5_median_mm": statistics.median(self.center) if self.center else None,
             "cnh_frames": self.kinds["cnh_frame"],
-            "cnh_histograms": self.kinds["cnh_frame"] * 16,
+            "cnh_histograms": self.cnh_histograms,
+            "cnh_layout_counts": dict(self.cnh_layouts),
             "cnh_all_zero_histograms": self.cnh_zero_histograms,
             "cnh_normalized_finite": self.cnh_finite if self.kinds["cnh_frame"] else None,
             "cnh_hardware_status": CNH_STATUS,
@@ -257,14 +264,16 @@ def live_chunks(port, baud, seconds, query_config=False, stop_file=None, stop_st
                 raise OSError("incomplete CONFIG command write")
         deadline = time.monotonic() + seconds
         while time.monotonic() < deadline:
+            if stop_state and stop_state.get("stopped_by_request"):
+                break
             if stop_file is not None and Path(stop_file).exists():
                 if stop_state is not None:
                     stop_state["stopped_by_request"] = True
                 break
             device.timeout = min(0.2, max(0.001, deadline - time.monotonic()))
             chunk = device.read(16384)
-            if chunk:
-                yield chunk, time.monotonic_ns()
+            # Empty reads allow keyboard polling even when the sensor is silent.
+            yield chunk, time.monotonic_ns()
     finally:
         device.close()
 
@@ -275,8 +284,37 @@ def file_chunks(path):
             yield chunk, None
 
 
-def run_session(output, chunks, metadata, display=None, stop_state=None):
+MARKER_KEYS = {"2": "wall", "3": "obstacles", "4": "corridor", "5": "paper",
+               "6": "open", "0": "pause", "m": "point", "q": "stop"}
+
+
+def keyboard_markers():
+    """Nonblocking Windows console reader; timestamps are polling times, not key IRQs."""
+    if sys.platform != "win32" or not sys.stdin.isatty():
+        raise ValueError("--markers requires an interactive Windows terminal")
+    import msvcrt
+
+    def poll():
+        records = []
+        while msvcrt.kbhit():
+            key = msvcrt.getwch()
+            if key in ("\x00", "\xe0"):
+                msvcrt.getwch()  # Ignore extended keys, including their scan code.
+                continue
+            if key == "\x03":
+                raise KeyboardInterrupt
+            key = key.lower()
+            if key in MARKER_KEYS:
+                records.append((key, time.monotonic_ns()))
+        return records
+
+    return poll
+
+
+def run_session(output, chunks, metadata, display=None, stop_state=None, marker_source=None):
     """Exclusive evidence directory; finalize receipts even after serial failure."""
+    if stop_state is None:
+        stop_state = {}
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
     manifest = {
@@ -292,9 +330,11 @@ def run_session(output, chunks, metadata, display=None, stop_state=None):
     total = 0
     error = None
     interrupted = False
+    marker_count = 0
+    active_segment = None
     decoder = None
     try:
-        for name in ("frames", "events", "issues", "received_chunks"):
+        for name in ("frames", "events", "issues", "received_chunks", "markers"):
             handles[name] = (output / f"{name}.jsonl").open("x", encoding="utf-8")
 
         def emit(kind, record):
@@ -308,12 +348,29 @@ def run_session(output, chunks, metadata, display=None, stop_state=None):
             last_ns = None
             try:
                 for chunk, host_ns in chunks:
-                    raw.write(chunk)
-                    digest.update(chunk)
-                    handles["received_chunks"].write(json.dumps({"offset": total, "bytes": len(chunk), "host_received_monotonic_ns": host_ns}) + "\n")
-                    total += len(chunk)
-                    last_ns = host_ns
-                    decoder.feed(chunk, host_ns)
+                    if chunk:
+                        raw.write(chunk)
+                        digest.update(chunk)
+                        handles["received_chunks"].write(json.dumps({"offset": total, "bytes": len(chunk), "host_received_monotonic_ns": host_ns}) + "\n")
+                        total += len(chunk)
+                        last_ns = host_ns
+                        decoder.feed(chunk, host_ns)
+                    for key, marker_ns in marker_source() if marker_source else ():
+                        marker_count += 1
+                        if key != "m":
+                            active_segment = MARKER_KEYS[key] if key in "23456" else None
+                        emit("markers", {"index": marker_count, "key": key, "label": MARKER_KEYS[key],
+                             "active_segment": active_segment, "host_marker_monotonic_ns": marker_ns,
+                             "preceding_seq": decoder.previous, "preceding_sensor_ms": decoder.last_ms,
+                             "raw_bytes_received": total, "source": "operator_key",
+                             "timing_scope": "host polling time; preceding frame is context, not exact sensor alignment"})
+                        print(f"MARK {marker_count}: {MARKER_KEYS[key]} (preceding seq={decoder.previous})", file=sys.stderr)
+                        if key == "q":
+                            if stop_state is not None:
+                                stop_state["stopped_by_request"] = True
+                            break
+                    if stop_state and stop_state.get("stopped_by_request"):
+                        break
             except KeyboardInterrupt:
                 interrupted = True
             except Exception as exc:
@@ -329,6 +386,7 @@ def run_session(output, chunks, metadata, display=None, stop_state=None):
             handle.close()
     summary = decoder.summary() if decoder else {"frames": 0}
     summary.update(bytes=total, raw_sha256=digest.hexdigest(), acquisition_error=error, interrupted=interrupted)
+    summary["markers"] = marker_count
     summary["stopped_by_request"] = bool(stop_state and stop_state.get("stopped_by_request"))
     if not summary["frames"]:
         summary["result"] = "NO_VALID_FRAMES"
@@ -361,6 +419,7 @@ def capture_arguments(parser):
     parser.add_argument("--label", help="optional scene label; operator-provided, not measured ground truth")
     parser.add_argument("--query-config", action="store_true", help="send CONFIG once after opening; request cached boot readback without resetting")
     parser.add_argument("--stop-file", type=Path, help="stop before the next serial read when this marker exists; preserve all collected evidence")
+    parser.add_argument("--markers", action="store_true", help="Windows console keys: 2 wall, 3 obstacles, 4 corridor, 5 paper, 6 open, 0 pause, m point, q stop")
 
 
 def firmware_metadata(path):
@@ -374,6 +433,9 @@ def firmware_metadata(path):
 
 
 def capture(args, display=None):
+    marker_source = keyboard_markers() if getattr(args, "markers", False) else None
+    if marker_source:
+        print("Marker keys (no Enter): 2 wall / 3 obstacles / 4 corridor / 5 paper / 6 open / 0 pause / m point / q stop", file=sys.stderr)
     firmware = firmware_metadata(args.firmware)
     selected = select_port(args.port)
     stop_state = {}
@@ -381,7 +443,9 @@ def capture(args, display=None):
                                                args.stop_file, stop_state),
                        {"mode": "live_serial", "port": selected, "baud": args.baud, "requested_seconds": args.seconds,
                         "firmware": firmware, "label": args.label, "query_config_requested": args.query_config,
-                        "stop_file": str(args.stop_file.resolve()) if args.stop_file else None}, display, stop_state)
+                        "markers_enabled": marker_source is not None,
+                        "marker_labels": "operator annotations, not measured ground truth",
+                        "stop_file": str(args.stop_file.resolve()) if args.stop_file else None}, display, stop_state, marker_source)
 
 
 def main():

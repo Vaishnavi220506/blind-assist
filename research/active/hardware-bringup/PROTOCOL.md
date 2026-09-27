@@ -17,6 +17,11 @@
 `ambient_raw`、`ambient_scaler` 各 16 项；`cnh_header` 保留 5 个 uint32。
 配置为 start_bin=0、sub_sample=4、integration=20 ms、requested_rate=5 Hz。
 
+H3 固件另支持 `rows=8`、`cols=8`、`bins=16`：距离/状态/目标数及 ambient
+各 64 项，histogram/scaler 为 64×16，start_bin=0、sub_sample=8；附 `read_us`
+表示固件读取耗时。解析器仅接受上述两种布局，按实际区数统计直方图数量。
+缺省 bins=24 仅为旧 4×4 日志兼容；8×8 CNH 必须显式给出 bins=16。
+
 归一化依据 [UM3183 Rev 7 §5.7](references/README.md)：`raw / (2 ** scaler)`，
 主机用 `ldexp(raw, -scaler)`，同时适用于 histogram 和 ambient。
 用户资料包 Example_12 使用 `raw / (2 << scaler)`，比手册值小一半；本路线不沿用
@@ -43,6 +48,17 @@
 这是保守查看规则，原始状态 9 等其他结果并未从日志删除。
 CNH 全零、非有限值、尺寸不符、帧序号跳变、设备重启应在摘要中可见。
 主机 monotonic 接收时间只描述主机观察，不代表曝光时间或完成跨设备同步。
+
+### 操作者分段标记
+
+交互式 Windows 终端采集可加 `--markers`，无需回车：`2` 墙、`3` 障碍、`4` 走廊、
+`5` 白纸、`6` 空旷切换场景；`0` 清除活动场景（采集和计时仍继续），`m` 保存定位点，
+`q` 保存停止标记并结束。标记单独写入 `markers.jsonl`，原始串口不掺入键盘事件。
+每条保存编号、按键、活动场景、主机轮询时间、此前解析帧的 seq/ms 及已收字节数。
+标记发生在串口读取/解析之后，读取等待最长约 0.2 秒，另有解析、缓冲和操作者延迟；
+不宣称精确传感器对齐。无帧时 seq/ms 为 null。文字说明按编号另记 `notes.md`。
+原始字节回放不重建主机时间或按键事件，需保留原会话的 sidecar 文件。
+操作步骤见 [H3 采集清单](CNH_H3_COLLECTION_CHECKLIST.md)。
 
 ## 证据边界
 
