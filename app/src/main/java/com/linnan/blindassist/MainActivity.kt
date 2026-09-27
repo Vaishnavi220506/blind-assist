@@ -1,6 +1,7 @@
 package com.linnan.blindassist
 
 import android.Manifest
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -97,7 +98,17 @@ class MainActivity : ComponentActivity() {
                     ),
                     actions = BlindAssistAppActions(
                         runtime = AssistRuntimeUiActions(
-                            onOpenCamera = { assistSession.dispatch(AssistRuntimeIntent.OpenPhoneCamera) },
+                            onOpenCamera = {
+                                // Start is explicit: the home itself never starts hardware acquisition.
+                                assistSession.dispatch(AssistRuntimeIntent.CloseCamera)
+                                getSharedPreferences("hardware_demo", MODE_PRIVATE).edit()
+                                    .putBoolean("a_local", true)
+                                    .putBoolean("wireless", true)
+                                    .putBoolean("speech", uiState.controls.speechEnabled)
+                                    .putBoolean("vibration", uiState.controls.vibrationEnabled)
+                                    .apply()
+                                startActivity(Intent(this@MainActivity, HardwareDemoActivity::class.java))
+                            },
                             onCloseCamera = { assistSession.dispatch(AssistRuntimeIntent.CloseCamera) },
                             onStartOfflineReplay = { scenario ->
                                 appViewModel.onStartOfflineReplay()
@@ -129,6 +140,10 @@ class MainActivity : ComponentActivity() {
                             onDismissGlassesCenter = appViewModel::onDismissGlassesCenter
                         ),
                         glasses = GlassesSimulatorActions(
+                            onOpenHardwareDemo = {
+                                assistSession.dispatch(AssistRuntimeIntent.CloseCamera)
+                                startActivity(Intent(this@MainActivity, HardwareDemoActivity::class.java))
+                            },
                             onConnect = appViewModel::onConnectGlassesDevice,
                             onDisconnect = appViewModel::onDisconnectGlassesDevice,
                             onStartLiveAssist = { endpoint ->

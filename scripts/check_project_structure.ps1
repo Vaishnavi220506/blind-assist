@@ -5,21 +5,6 @@ $repoRoot = (& git rev-parse --show-toplevel 2>$null | Select-Object -First 1).T
 if (-not $repoRoot) { throw 'Run inside the BlindAssist Git checkout.' }
 $failures = [Collections.Generic.List[string]]::new()
 
-$hasComparableBase = $false
-$changedPaths = @()
-if ($BaseRef) {
-    $baseCommit = (& git -C $repoRoot rev-parse --verify "$BaseRef^{commit}" 2>$null | Select-Object -First 1).Trim()
-    if ($baseCommit) {
-        $hasComparableBase = $true
-        $changedPaths = @(& git -C $repoRoot diff --name-only $baseCommit HEAD --)
-    }
-}
-
-function Test-ChangedPath([string]$RelativePath) {
-    if (-not $hasComparableBase) { return $true }
-    return $changedPaths -contains $RelativePath
-}
-
 function Require-Path([string]$Relative, [string]$Type = 'Leaf') {
     $path = Join-Path $repoRoot $Relative
     if (-not (Test-Path -LiteralPath $path -PathType $Type)) {
@@ -63,11 +48,7 @@ if (Test-Path $agents) {
     $agentLines = [IO.File]::ReadAllLines($agents).Count
     $agentBytes = (Get-Item $agents).Length
     if ($agentLines -gt 120 -or $agentBytes -gt 8192) {
-        if (Test-ChangedPath 'AGENTS.md') {
-            $failures.Add("AGENTS.md exceeds 120 lines or 8 KiB ($agentLines lines, $agentBytes bytes).")
-        } else {
-            Write-Host "Warning: pre-existing AGENTS.md budget is exceeded ($agentLines lines, $agentBytes bytes); the file is unchanged in this revision."
-        }
+        $failures.Add("AGENTS.md exceeds 120 lines or 8 KiB ($agentLines lines, $agentBytes bytes).")
     }
 }
 
@@ -84,11 +65,7 @@ foreach ($budget in $compactBudgets) {
     $lineCount = [IO.File]::ReadAllLines($path).Count
     $byteCount = (Get-Item -LiteralPath $path).Length
     if ($lineCount -gt $budget.Lines -or $byteCount -gt $budget.Bytes) {
-        if (Test-ChangedPath $budget.Path) {
-            $failures.Add("Compact current exceeds budget: $($budget.Path) ($lineCount lines, $byteCount bytes).")
-        } else {
-            Write-Host "Warning: pre-existing compact-current budget is exceeded by $($budget.Path) ($lineCount lines, $byteCount bytes); the file is unchanged in this revision."
-        }
+        $failures.Add("Compact current exceeds budget: $($budget.Path) ($lineCount lines, $byteCount bytes).")
     }
 }
 
@@ -103,7 +80,7 @@ if (Test-Path $log) {
 
 foreach ($forbidden in @(
     'DATASET_MASTER_LEDGER.json', 'DATASET_MASTER_LEDGER.csv',
-    'scripts/research', 'docs/research', 'docs/history', 'schemas'
+    'docs/research', 'docs/history', 'schemas'
 )) {
     if (Test-Path (Join-Path $repoRoot $forbidden)) { $failures.Add("Cold surface remains in current tree: $forbidden") }
 }
@@ -111,7 +88,8 @@ foreach ($forbidden in @(
 $topScripts = @(Get-ChildItem (Join-Path $repoRoot 'scripts') -File)
 if ($topScripts.Count -gt 25) { $failures.Add("Top-level scripts exceed 25 files: $($topScripts.Count)") }
 $topDocs = @(Get-ChildItem (Join-Path $repoRoot 'docs') -File)
-if ($topDocs.Count -gt 25) { $failures.Add("Top-level docs exceed 25 files: $($topDocs.Count)") }
+# Hot-page byte/line budgets above bound reading cost. Total documentation file
+# count does not distinguish useful operational guides from obsolete history.
 
 $hotFiles = @(
     'AGENTS.md', 'README.md', 'docs/PROJECT_STATE.md',

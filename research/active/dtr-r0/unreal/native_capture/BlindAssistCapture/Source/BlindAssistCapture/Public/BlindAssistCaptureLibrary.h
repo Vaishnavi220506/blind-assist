@@ -62,6 +62,23 @@ class BLINDASSISTCAPTURE_API UBlindAssistCaptureLibrary : public UBlueprintFunct
     GENERATED_BODY()
 
 public:
+    /** Exact engine MD_Surface fallback used by DynamicMesh null material slots. */
+    UFUNCTION(BlueprintCallable, Category = "BlindAssist|Capture")
+    static class UMaterialInterface* GetDefaultSurfaceMaterial();
+
+    /** Read-only active-RHI material shader capability JSON; never scene admission. */
+    UFUNCTION(BlueprintCallable, Category = "BlindAssist|Capture")
+    static FString GetMaterialGeometryCapability(class UMaterialInterface* Material);
+
+    /** Read-only full ISM custom-data and random-seed state for preservation checks. */
+    UFUNCTION(BlueprintCallable, Category = "BlindAssist|Capture")
+    static FString GetIsmPreservationState(class UInstancedStaticMeshComponent* Component);
+
+    /** Only unsaved /Game/CNH.../D_... clones: preserve attributes and zero WPO/PDO.
+     * Does not save or compile; caller recompiles and verifies source immutability. */
+    UFUNCTION(BlueprintCallable, Category = "BlindAssist|Capture")
+    static bool ZeroDerivedMaterialDeformation(class UMaterial* Material);
+
     /** Read-only loaded HLOD source-actor mappings. Writes only a fresh path under BA_CITY_OUT.
      * True means JSON export succeeded, never source/visibility admission. Does not load source actors. */
     UFUNCTION(BlueprintCallable, Category = "BlindAssist|Capture", meta = (WorldContext = "WorldContextObject"))
@@ -103,6 +120,13 @@ public:
     /** Queue GPU copies after the caller's CaptureScene commands. No synchronous readback. */
     UFUNCTION(BlueprintCallable, Category = "BlindAssist|Capture")
     static bool SubmitCapturePair(UTextureRenderTarget2D* RgbTarget, UTextureRenderTarget2D* DepthTarget, const FString& RgbFilename, const FString& DepthFilename, int32 MaxPending = 4);
+
+    /** Queue 1..4 RGBA32F attribute/depth copies in ONE slot of the SAME pair queue.
+     * DepthMetres=true: red cm -> metres [0,100), invalid=0, shape HxW.
+     * false: unchanged RGB float32, shape HxWx3. Poll/drain via CapturePairs.
+     * Caller must submit after CaptureScene and before reusing any target. */
+    UFUNCTION(BlueprintCallable, Category = "BlindAssist|Capture")
+    static bool SubmitCaptureNpyBatch(const TArray<UTextureRenderTarget2D*>& Targets, const TArray<FString>& Filenames, const TArray<bool>& DepthMetres, int32 MaxPending = 4);
 
     /** Schedule GPU fence checks and reap completed pairs. */
     UFUNCTION(BlueprintCallable, Category = "BlindAssist|Capture")

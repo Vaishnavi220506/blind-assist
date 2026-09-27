@@ -5,6 +5,12 @@ assistance. It combines camera perception, risk logic, and concise guidance to
 demonstrate measurable effects in clearly stated controlled conditions. It is
 not a certified mobility or safety product.
 
+App v10.15.1 opens the original home without starting perception. **Start assist**
+explicitly starts the **A+LOCAL experimental mode** with
+the frozen research classifier running offline on the phone. Its nominal camera/ToF
+registration is not physical calibration; simulation results do not establish hardware
+accuracy. The original ToF mode remains available. See [hardware guide](docs/HARDWARE_OBSTACLE_DEMO.md).
+
 The obstacle-perception research goal is **盲杖互补的类别无关前视障碍感知**
 (cane-complementary, class-agnostic forward obstacle awareness). Priorities are
 forward walls and large obstructions, body/head protrusions, suspended hazards,
@@ -22,15 +28,17 @@ deployed or validated. See the [current perception route](research/active/dtr-r0
 
 ## Start here
 
-- Current project state: [docs/PROJECT_STATE.md](docs/PROJECT_STATE.md)
+- 默认入口（v10.15.1）：打开 App 停留原首页；点击“开始辅助”才运行[相机与 10 Hz 8×8 ToF 的 A+LOCAL](docs/HARDWARE_OBSTACLE_DEMO.md)，点击“结束辅助”回首页并停止会话。支持基础 ToF 切换、事件提醒、最近 20 秒留证、静音回放与分路降级。
+- **中文一页状态（系统、指标、当前问题）**: [docs/PROJECT_STATE.md](docs/PROJECT_STATE.md)
 - Current research decision: [docs/CURRENT_DECISION.md](docs/CURRENT_DECISION.md)
-- L10-R0 current: [research/active/l10-r0/CURRENT.md](research/active/l10-r0/CURRENT.md)
+- L10-R0 paused / retained evidence: [research/active/l10-r0/CURRENT.md](research/active/l10-r0/CURRENT.md)
 - Forward obstacle perception / retained DTR history: [research/active/dtr-r0/CURRENT.md](research/active/dtr-r0/CURRENT.md)
 - Code ownership: [docs/CODE_MAP.md](docs/CODE_MAP.md)
 - Documentation map: [docs/README.md](docs/README.md)
 - Historical lookup: [docs/history-index.md](docs/history-index.md)
 
-Two tracked research routes are operational in the current branch. Closed
+Forward obstacle perception is the sole advancing research line. L10 is paused;
+its results and reproduction paths are retained. Closed
 experiments are summarized in `experiments/index.jsonl` and remain recoverable
 from the remote tag `archive/pre-agent-surface-2026-08-26` or the terminal
 commits listed in `docs/history-index.md`.

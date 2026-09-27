@@ -1,15 +1,15 @@
 {
   "schema_version": 3,
   "engine_version": "decision-v2-research-workflow",
-  "generated_at": "2026-09-22",
-  "source_fingerprint": "2bb9f23da5fe5f4b9b64ff9db119b8827a635d70277075304404cce72caea6e6",
+  "generated_at": "2026-09-26",
+  "source_fingerprint": "9d5dd05c1819cf24419a9d1ea9211220d269b4c3a8bdadf2ecf24008124df4b7",
   "counts": {
     "failure_layers": 13,
     "mechanisms": 272,
     "uses": 271,
-    "experiments": 435,
-    "current_terminals": 216,
-    "run_associations": 433
+    "experiments": 465,
+    "current_terminals": 236,
+    "run_associations": 463
   },
   "failure_layers": [
     {
@@ -16644,6 +16644,250 @@
   "experiments": [
     {
       "kind": "current_terminal",
+      "id": "terminal-stereo-adapt-balanced-20260923",
+      "status": "diagnostic",
+      "question": "Same192examples/order/budget; balanced newdistance209of256 versus ordinary220 and frozen215, falsecontact12 versus3; no layout net accuracy gains over ordinary,3 regressions. Historical gains do not justify retaining this fixed recipe.",
+      "baseline": null,
+      "change": "Materially different supervision or correspondence mechanism under a new explicit protocol; not reweighting this consumed recipe",
+      "primary_metric": null,
+      "decision": "FIXED_REGION_BALANCED_STEREO_ADAPTATION_NOT_RETAINED",
+      "report": "research/active/dtr-r0/nearfield/STEREO_ADAPT_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "611e5b6d38427865f58dba54ff5bf291dee92384",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Materially different supervision or correspondence mechanism under a new explicit protocol; not reweighting this consumed recipe",
+      "forbidden_repeats": [
+        "Rescue this run by posthoc region-weight or epoch search",
+        "Select balanced from historical gains while ignoring worse heldout-layout contact",
+        "Use mean pixel precision as proof of nearest-contact correctness"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "This fixed0.5uniform plus0.5equal four-native-region loss with192updates and three selected update/upsampling modules",
+      "retained_surface": "Final balanced delta and all raw outputs as paired negative control; same initial weights, order and projected RGB confirmed",
+      "failure_signature": "Newmean pixel5cm96.19percent highest but contact209of256 and falsecontact12 worse; historical smallHEAD last-frame output wrong by about1.90m",
+      "revisit_trigger": "Materially different supervision or correspondence mechanism under a new explicit protocol; not reweighting this consumed recipe",
+      "assignment_basis": "Fixed matched ordinary control, separate24layout Development evaluation, fullhistorical regression and independent audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/STEREO_ADAPT_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/STEREO_ADAPT_PROTOCOL_20260923.md"
+      ],
+      "association_id": null,
+      "search_text": "terminal-stereo-adapt-balanced-20260923 obstacle-avoidance FIXED_REGION_BALANCED_STEREO_ADAPTATION_NOT_RETAINED Same192examples/order/budget; balanced newdistance209of256 versus ordinary220 and frozen215, falsecontact12 versus3; no layout net accuracy gains over ordinary,3 regressions. Historical gains do not justify retaining this fixed recipe. Materially different supervision or correspondence mechanism under a new explicit protocol; not reweighting this consumed recipe NEGATIVE_CONTROL  This fixed0.5uniform plus0.5equal four-native-region loss with192updates and three selected update/upsampling modules Final balanced delta and all raw outputs as paired negative control; same initial weights, order and projected RGB confirmed Newmean pixel5cm96.19percent highest but contact209of256 and falsecontact12 worse; historical smallHEAD last-frame output wrong by about1.90m Materially different supervision or correspondence mechanism under a new explicit protocol; not reweighting this consumed recipe Rescue this run by posthoc region-weight or epoch search Select balanced from historical gains while ignoring worse heldout-layout contact Use mean pixel precision as proof of nearest-contact correctness"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-stereo-adapt-20260923",
+      "status": "diagnostic",
+      "question": "Fixed192-step ordinary adapter: new layout distance5cm215to220of256 but missing15to18; historical distance1299to1306of1692 and falsecontact48to17. Retain geometry challenger; no current-A or alert baseline replacement. Balanced recipe separately closed.",
+      "baseline": null,
+      "change": "A separately specified mechanism or training budget targeting no-hint smallHEAD and boundary regressions, with unconsumed layout evaluation; no retrospective rescue of this fixed pilot",
+      "primary_metric": null,
+      "decision": "ORDINARY_STEREO_ADAPTATION_GEOMETRY_CHALLENGER_ONLY",
+      "report": "research/active/dtr-r0/nearfield/STEREO_ADAPT_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "611e5b6d38427865f58dba54ff5bf291dee92384",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "A separately specified mechanism or training budget targeting no-hint smallHEAD and boundary regressions, with unconsumed layout evaluation; no retrospective rescue of this fixed pilot",
+      "forbidden_repeats": [
+        "Promote this candidate as stable joint avoidance or current-A replacement",
+        "Tune epochs layers loss weights or masks on these consumed outcomes to rescue this pilot",
+        "Call partially recovered smallHEAD pixels accurate nearest contact",
+        "Treat same-renderer layout transfer as hardware or natural-distribution evidence"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "CHALLENGER",
+      "role_scope": "Original Large VPP disparity-update and upsampling adaptation for controlled nearfield metric contact geometry",
+      "retained_surface": "Ordinary final delta, new192train/96eval grouped source, full672pair regressions, exact contact evaluation, matched VPP inputs and frozen-weight proof",
+      "failure_signature": "New layouts only2groups improve and2regress; newmissing15to18, thin5cm96to93; historical flat smallHEAD0of36 accurate contacts despite last-frame pixel recovery",
+      "revisit_trigger": "A separately specified mechanism or training budget targeting no-hint smallHEAD and boundary regressions, with unconsumed layout evaluation; no retrospective rescue of this fixed pilot",
+      "assignment_basis": "Both192step trainings and all1440inferences complete; new24heldoutlayouts plus576historicalpairs;26synthetic tests and independent input/weight/group audit PASS",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/STEREO_ADAPT_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/STEREO_ADAPT_PROTOCOL_20260923.md"
+      ],
+      "association_id": "stereo-adapt-20260923",
+      "search_text": "terminal-stereo-adapt-20260923 obstacle-avoidance ORDINARY_STEREO_ADAPTATION_GEOMETRY_CHALLENGER_ONLY Fixed192-step ordinary adapter: new layout distance5cm215to220of256 but missing15to18; historical distance1299to1306of1692 and falsecontact48to17. Retain geometry challenger; no current-A or alert baseline replacement. Balanced recipe separately closed. A separately specified mechanism or training budget targeting no-hint smallHEAD and boundary regressions, with unconsumed layout evaluation; no retrospective rescue of this fixed pilot COMPONENT_OR_CHALLENGER CHALLENGER Original Large VPP disparity-update and upsampling adaptation for controlled nearfield metric contact geometry Ordinary final delta, new192train/96eval grouped source, full672pair regressions, exact contact evaluation, matched VPP inputs and frozen-weight proof New layouts only2groups improve and2regress; newmissing15to18, thin5cm96to93; historical flat smallHEAD0of36 accurate contacts despite last-frame pixel recovery A separately specified mechanism or training budget targeting no-hint smallHEAD and boundary regressions, with unconsumed layout evaluation; no retrospective rescue of this fixed pilot Promote this candidate as stable joint avoidance or current-A replacement Tune epochs layers loss weights or masks on these consumed outcomes to rescue this pilot Call partially recovered smallHEAD pixels accurate nearest contact Treat same-renderer layout transfer as hardware or natural-distribution evidence"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-surface-contact-20260923",
+      "status": "diagnostic",
+      "question": "Frozen576pairs camera-aligned boundary task: original/VPP directpoint distance5cm1156/1299 of1692; local surface1157/1301 exactlymatches fittedpoint control. No width/contact-presence/falsecontact/alert gain from surface. Close fixed3x3recipe; VPP retains boundary component value.",
+      "baseline": null,
+      "change": "A materially different source of boundary or correspondence evidence; retain far-background false contact, thin/HEAD and no-hint failures. No retuning this fixed local recipe on consumed data.",
+      "primary_metric": null,
+      "decision": "BOUNDED_LOCAL_SURFACE_CONTACT_NO_ADDITIONAL_GAIN",
+      "report": "research/active/dtr-r0/nearfield/SURFACE_CONTACT_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "77d0c2667f5727828bb7aa466b71fc5507e6b7b5",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "A materially different source of boundary or correspondence evidence; retain far-background false contact, thin/HEAD and no-hint failures. No retuning this fixed local recipe on consumed data.",
+      "forbidden_repeats": [
+        "Tune this3x3fit or adjacency thresholds on consumed cohort to rescue boundary scores",
+        "Claim surface interpolation gains already explained by fittedpoint control",
+        "Treat camera-aligned labels as unchanged historical body-frame labels",
+        "Treat missing contact as free space or fill absent smallHEAD with unsupported surfaces"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Fixed complete3x3inverse-depth fit plus bounded adjacent surface as contact-boundary recovery on frozen Large depths",
+      "retained_surface": "ExactcameraOBB contact oracle, raw/fitted/surface controls, fullwidth and UNKNOWN accounting, fixed576pair negative result",
+      "failure_signature": "Surface addszero5cmhits beyond fittedpoints, zero contactcoverage or falsecontact gain;18of18taggednegativequeries stillfalse; smallHEAD36of36missing",
+      "revisit_trigger": "Materially different boundary evidence mechanism, not window/edge/threshold rescue; new layouts for confirmation",
+      "assignment_basis": "Sealed576predictions before exactLP scene truth;24synthetic tests and565461independent audit assertions",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/SURFACE_CONTACT_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/SURFACE_CONTACT_PROTOCOL_20260923.md"
+      ],
+      "association_id": "surface-contact-20260923",
+      "search_text": "terminal-surface-contact-20260923 obstacle-avoidance BOUNDED_LOCAL_SURFACE_CONTACT_NO_ADDITIONAL_GAIN Frozen576pairs camera-aligned boundary task: original/VPP directpoint distance5cm1156/1299 of1692; local surface1157/1301 exactlymatches fittedpoint control. No width/contact-presence/falsecontact/alert gain from surface. Close fixed3x3recipe; VPP retains boundary component value. A materially different source of boundary or correspondence evidence; retain far-background false contact, thin/HEAD and no-hint failures. No retuning this fixed local recipe on consumed data. NEGATIVE_CONTROL  Fixed complete3x3inverse-depth fit plus bounded adjacent surface as contact-boundary recovery on frozen Large depths ExactcameraOBB contact oracle, raw/fitted/surface controls, fullwidth and UNKNOWN accounting, fixed576pair negative result Surface addszero5cmhits beyond fittedpoints, zero contactcoverage or falsecontact gain;18of18taggednegativequeries stillfalse; smallHEAD36of36missing Materially different boundary evidence mechanism, not window/edge/threshold rescue; new layouts for confirmation Tune this3x3fit or adjacency thresholds on consumed cohort to rescue boundary scores Claim surface interpolation gains already explained by fittedpoint control Treat camera-aligned labels as unchanged historical body-frame labels Treat missing contact as free space or fill absent smallHEAD with unsupported surfaces"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-vpp-geometry-20260923",
+      "status": "diagnostic",
+      "question": "Fixed ideal-ray VPP on576historical pairs improves correct-query Z5cm87.62to94.75percent and missing50519to34935. Final union377/22/69 becomes375/24/71; small_head_flat remains missed. Retain geometry component, reject direct alert replacement.",
+      "baseline": null,
+      "change": "Separate same-depth structure/contact experiment preserving no-hint small HEAD, negative-query far-background errors and frozen downstream controls; new layouts before confirmation.",
+      "primary_metric": null,
+      "decision": "VPP_GEOMETRY_COMPONENT_ONLY",
+      "report": "research/active/dtr-r0/nearfield/VPP_GEOMETRY_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "0e8c2ead96d886a37121a4926ff41b7ab4269bd8",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separate same-depth structure/contact experiment preserving no-hint small HEAD, negative-query far-background errors and frozen downstream controls; new layouts before confirmation.",
+      "forbidden_repeats": [
+        "Promote this fixed VPP recipe as direct alert or current-A replacement",
+        "Tune alpha patch seed confidence or hysteresis on the consumed cohort to rescue this run",
+        "Treat ideal registered rays as real regional ToF validation",
+        "Treat no return as free space or this recipe failure as a sensor information ceiling"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "VPP-guided original Large geometry as a component for separate spatial structure tests, not direct alert ownership",
+      "retained_surface": "Sealed576depth outputs; fixed-denominator localization94.75percent, coverage98.11percent,138144corrected versus6466regressed pixels",
+      "failure_signature": "Final union loses2TP adds2FP; small_head_flat unchanged; negative-query far-background support28518to33890;62.6percent net pixel gain fromwall",
+      "revisit_trigger": "Explicitly different structure/contact mechanism and no-hint/negative-query diagnostics; no parameter rescue of this fixed recipe",
+      "assignment_basis": "One frozen VPP intervention, exact historical baseline parity, all204zero-hint identities and167368independent audit assertions",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/VPP_GEOMETRY_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/VPP_GEOMETRY_PROTOCOL_20260923.md"
+      ],
+      "association_id": "vpp-geometry-20260923",
+      "search_text": "terminal-vpp-geometry-20260923 obstacle-avoidance VPP_GEOMETRY_COMPONENT_ONLY Fixed ideal-ray VPP on576historical pairs improves correct-query Z5cm87.62to94.75percent and missing50519to34935. Final union377/22/69 becomes375/24/71; small_head_flat remains missed. Retain geometry component, reject direct alert replacement. Separate same-depth structure/contact experiment preserving no-hint small HEAD, negative-query far-background errors and frozen downstream controls; new layouts before confirmation. COMPONENT_OR_CHALLENGER COMPONENT VPP-guided original Large geometry as a component for separate spatial structure tests, not direct alert ownership Sealed576depth outputs; fixed-denominator localization94.75percent, coverage98.11percent,138144corrected versus6466regressed pixels Final union loses2TP adds2FP; small_head_flat unchanged; negative-query far-background support28518to33890;62.6percent net pixel gain fromwall Explicitly different structure/contact mechanism and no-hint/negative-query diagnostics; no parameter rescue of this fixed recipe Promote this fixed VPP recipe as direct alert or current-A replacement Tune alpha patch seed confidence or hysteresis on the consumed cohort to rescue this run Treat ideal registered rays as real regional ToF validation Treat no return as free space or this recipe failure as a sensor information ceiling"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-foundation-geometry-20260923",
+      "status": "diagnostic",
+      "question": "Original23-51-11 ViT-Large completes576historical stereo pairs. Fixed-denominator correct-query Z5cm48.67to87.62percent, but final SGBM+ToF402/40/44 becomes377/22/69; small_head_flat event lost and near-outside support increases. Retain geometry component, reject direct alert substitution.",
+      "baseline": null,
+      "change": "Separate same-depth structure or explicitly specified geometry-estimation mechanism with fixed downstream; preserve small_head_flat missingness, near-outside errors and historical SGBM; new layouts before confirmation.",
+      "primary_metric": null,
+      "decision": "ORIGINAL_STEREO_GEOMETRY_COMPONENT_ONLY",
+      "report": "research/active/dtr-r0/nearfield/FOUNDATION_GEOMETRY_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "e71068de",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separate same-depth structure or explicitly specified geometry-estimation mechanism with fixed downstream; preserve small_head_flat missingness, near-outside errors and historical SGBM; new layouts before confirmation.",
+      "forbidden_repeats": [
+        "Promote this configuration as direct SGBM or current-A replacement",
+        "Rescue consumed outputs with local confidence threshold tuning",
+        "Treat ideal64ray ToF as real zonal sensor validation",
+        "Treat no depth support as clear or structure as recovery of unobserved geometry"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Original stereo geometry for separate structure or estimation experiments, not direct alert ownership",
+      "retained_surface": "Full576original Large outputs; improved fixed-denominator localization and thin-object coverage",
+      "failure_signature": "FinalFN44to69, small_head_flat zero of5452visible pixels retained, near-outside support grows",
+      "revisit_trigger": "Explicitly different mechanism with unchanged downstream and small-HEAD/no-hint diagnostics; no threshold rescue",
+      "assignment_basis": "One fixed original checkpoint, sealed outputs, exact baseline parity and62533independent assertions",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/FOUNDATION_GEOMETRY_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/FOUNDATION_GEOMETRY_PROTOCOL_20260923.md"
+      ],
+      "association_id": "foundation-geometry-20260923",
+      "search_text": "terminal-foundation-geometry-20260923 obstacle-avoidance ORIGINAL_STEREO_GEOMETRY_COMPONENT_ONLY Original23-51-11 ViT-Large completes576historical stereo pairs. Fixed-denominator correct-query Z5cm48.67to87.62percent, but final SGBM+ToF402/40/44 becomes377/22/69; small_head_flat event lost and near-outside support increases. Retain geometry component, reject direct alert substitution. Separate same-depth structure or explicitly specified geometry-estimation mechanism with fixed downstream; preserve small_head_flat missingness, near-outside errors and historical SGBM; new layouts before confirmation. COMPONENT_OR_CHALLENGER COMPONENT Original stereo geometry for separate structure or estimation experiments, not direct alert ownership Full576original Large outputs; improved fixed-denominator localization and thin-object coverage FinalFN44to69, small_head_flat zero of5452visible pixels retained, near-outside support grows Explicitly different mechanism with unchanged downstream and small-HEAD/no-hint diagnostics; no threshold rescue Promote this configuration as direct SGBM or current-A replacement Rescue consumed outputs with local confidence threshold tuning Treat ideal64ray ToF as real zonal sensor validation Treat no depth support as clear or structure as recovery of unobserved geometry"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-observation-separation-20260923",
+      "status": "diagnostic",
+      "question": "Matched16groups32opposite-label pairs at2.38/2.55m: fixed local RGB distances separate32/32beyond repeated-pose variation, including arrival exclusion. Standardized ToF separates8/16boundary and16/16inside. Preserve observation diagnostic; no transferable decoder, hardware noise or input ceiling claim.",
+      "baseline": null,
+      "change": "Separately specified geometry-group-held lateral readout with preserved local RGB and explicit ToF correspondence uncertainty; retain prior regional/contact negatives",
+      "primary_metric": null,
+      "decision": "MATCHED_RGB_DIFFERENCES_SURVIVE_VARIATION",
+      "report": "research/active/dtr-r0/nearfield/OBSERVATION_SEPARATION_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "421173a8",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately specified geometry-group-held lateral readout with preserved local RGB and explicit ToF correspondence uncertainty; retain prior regional/contact negatives",
+      "forbidden_repeats": [
+        "Treat pair-distance separation as deployed obstacle accuracy or generalization",
+        "Treat metric failure as information-theoretic sensor impossibility",
+        "Treat renderer repeats or proxy draws as calibrated hardware noise or new scenes"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "matched-pose-public-observation-separation",
+      "retained_surface": "Fixed local RGB differences survive renderer variation in32matched pairs; ToF boundary/inside disparity and complete coverage retained",
+      "failure_signature": "No transferable task decoder, no calibrated hardware noise, no range-entry or general information ceiling",
+      "revisit_trigger": "New geometry-group-held local spatial readout with explicit ToF correspondence uncertainty",
+      "assignment_basis": "Fixed controlled diagnostic and sealed public matrices before evaluator join",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/OBSERVATION_SEPARATION_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/OBSERVATION_SEPARATION_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-observation-separation-20260923",
+      "search_text": "terminal-observation-separation-20260923 obstacle-avoidance MATCHED_RGB_DIFFERENCES_SURVIVE_VARIATION Matched16groups32opposite-label pairs at2.38/2.55m: fixed local RGB distances separate32/32beyond repeated-pose variation, including arrival exclusion. Standardized ToF separates8/16boundary and16/16inside. Preserve observation diagnostic; no transferable decoder, hardware noise or input ceiling claim. Separately specified geometry-group-held lateral readout with preserved local RGB and explicit ToF correspondence uncertainty; retain prior regional/contact negatives COMPONENT_OR_CHALLENGER COMPONENT matched-pose-public-observation-separation Fixed local RGB differences survive renderer variation in32matched pairs; ToF boundary/inside disparity and complete coverage retained No transferable task decoder, no calibrated hardware noise, no range-entry or general information ceiling New geometry-group-held local spatial readout with explicit ToF correspondence uncertainty Treat pair-distance separation as deployed obstacle accuracy or generalization Treat metric failure as information-theoretic sensor impossibility Treat renderer repeats or proxy draws as calibrated hardware noise or new scenes"
+    },
+    {
+      "kind": "current_terminal",
       "id": "terminal-dtr-r6-static-occupancy-unreachable",
       "status": "not_evaluable",
       "question": "Perspective metric depth and current/past raw LiDAR both recovered 0/9 dropout windows because the frozen matcher had no admissible closing signal; this is not a metric-depth or LiDAR negative.",
@@ -25384,6 +25628,569 @@
       ],
       "association_id": "local-transfer-20260922",
       "search_text": "terminal-local-transfer-20260922 obstacle-avoidance FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE 576new controlled frames: A192TP4FP64FN, A RAW193/7/63, A LOCAL228/6/28; segments4/7/5. All three transfer gates and this-cohort strict gatePASS;14of16base rescues retained after background change. Preserve old failed strict gate and A UNKNOWN. Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results COMPONENT_OR_CHALLENGER COMPONENT Frozen query-local HGB component on eight new same-generator geometries and paired background material intervention LOCAL component transfer and full measured false costs; old LOCAL component and RAW negative control remain; no default App promotion Two addedFP and one segment meet cost limits exactly; background changes lose2TP gain6TP remove2FP; no appearance invariance or physical return ownership Separately authorized materially different support-ownership or external-distribution check; preserve frozen thresholds and both old and new results Refit or retune this frozen recipe on consumed outcomes Equate aggregate background tolerance with appearance invariance or physical ownership Replace old failed system evidence or claim default App hardware or safety validation"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-local-support-20260922",
+      "status": "positive",
+      "question": "Consumed576frames: exact originalToF parity; primary retains32/36LOCALrescues and removes2/2addedFP; either-centre control retains32/36. PrimaryPASS; native witness is privileged, false-alert removal largely constructive; preserve original LOCAL component and all timing costs.",
+      "baseline": null,
+      "change": "Separately justified public-input mechanism informed by observed versus unreturned support; no point-count tolerance or query sweep on this consumed diagnostic",
+      "primary_metric": null,
+      "decision": "PRIVILEGED_WINNING_QUERY_SUPPORT_OPPORTUNITY_PUBLIC_ASSOCIATION_UNTESTED",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_SUPPORT_RESULTS_20260922.md",
+      "source": "decision/terminals.json",
+      "commit": "e2f2e0293cbd3f5fdd7a0cd3717409115181d04e",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified public-input mechanism informed by observed versus unreturned support; no point-count tolerance or query sweep on this consumed diagnostic",
+      "forbidden_repeats": [
+        "Treat privileged native occupancy witnesses as public RGB ToF ownership or deployable predictions",
+        "Promote any-centre control instead of reporting a failed primary or hide LOCAL timing losses",
+        "Retune native point count box tolerance centre selection or original HGB cutoff on these outcomes"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Exact privileged observed-winning-bin support requirement on the saved score-winning centre query; information diagnostic only",
+      "retained_surface": "Native support partitions and pixel-band compatibility diagnosis; unchanged public LOCAL component A and UNKNOWN",
+      "failure_signature": "Consumed576frames: exact originalToF parity; primary retains32/36LOCALrescues and removes2/2addedFP; either-centre control retains32/36. PrimaryPASS; native witness is privileged, false-alert removal largely constructive; preserve original LOCAL component and all timing costs.",
+      "revisit_trigger": "Separately justified public-input mechanism informed by observed versus unreturned support; no point-count tolerance or query sweep on this consumed diagnostic",
+      "assignment_basis": "Frozen one-pass576frame reconstruction,8synthetic tests,16audit assertions and independent native plus full metric recount",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_SUPPORT_RESULTS_20260922.md",
+        "research/active/dtr-r0/nearfield/LOCAL_SUPPORT_PROTOCOL_20260922.md"
+      ],
+      "association_id": "local-support-20260922",
+      "search_text": "terminal-local-support-20260922 obstacle-avoidance PRIVILEGED_WINNING_QUERY_SUPPORT_OPPORTUNITY_PUBLIC_ASSOCIATION_UNTESTED Consumed576frames: exact originalToF parity; primary retains32/36LOCALrescues and removes2/2addedFP; either-centre control retains32/36. PrimaryPASS; native witness is privileged, false-alert removal largely constructive; preserve original LOCAL component and all timing costs. Separately justified public-input mechanism informed by observed versus unreturned support; no point-count tolerance or query sweep on this consumed diagnostic COMPONENT_OR_CHALLENGER COMPONENT Exact privileged observed-winning-bin support requirement on the saved score-winning centre query; information diagnostic only Native support partitions and pixel-band compatibility diagnosis; unchanged public LOCAL component A and UNKNOWN Consumed576frames: exact originalToF parity; primary retains32/36LOCALrescues and removes2/2addedFP; either-centre control retains32/36. PrimaryPASS; native witness is privileged, false-alert removal largely constructive; preserve original LOCAL component and all timing costs. Separately justified public-input mechanism informed by observed versus unreturned support; no point-count tolerance or query sweep on this consumed diagnostic Treat privileged native occupancy witnesses as public RGB ToF ownership or deployable predictions Promote any-centre control instead of reporting a failed primary or hide LOCAL timing losses Retune native point count box tolerance centre selection or original HGB cutoff on these outcomes"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-return-correspondence-20260923",
+      "status": "negative",
+      "question": "Consumed576frames: perfect observed-contributor angular association plus unchanged public range intervals retains36/36LOCALrescues but removes0/2addedFP; exact and1024ray controls reproduceLOCAL228/6/28 and5false segments. NativeXYZcontrol224/4/32 retains32rescues with4early-onset losses. Scoped interval-readout opportunity fails; stop before student training, not a trained-model negative.",
+      "baseline": null,
+      "change": "Materially different decision mechanism or independently justified joint angular/range information; no consumed point-count grid interval or threshold sweep to rescue this fixed possibility-preserving filter",
+      "primary_metric": null,
+      "decision": "STOP_BEFORE_STUDENT_INTERVAL_READOUT_OPPORTUNITY_FAILED",
+      "report": "research/active/dtr-r0/nearfield/RETURN_CORRESPONDENCE_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "88c20ce5e5036a086d57048618e0660cab45c098",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Materially different decision mechanism or independently justified joint angular/range information; no consumed point-count grid interval or threshold sweep to rescue this fixed possibility-preserving filter",
+      "forbidden_repeats": [
+        "Claim perfect contributor association plus unchanged public possibility support removes these two LOCAL false alerts",
+        "Retune range interval grid point count query or cutoff on this consumed feasibility check",
+        "Treat this pre-student diagnostic as a trained-model failure or a general impossibility of RGB learning"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Perfect contributor association as an any-possible-public-interval gate for the frozen LOCAL winning centre",
+      "retained_surface": "Native support and LOCAL components remain unchanged; preserve distinction between angular association and native metric XYZ",
+      "failure_signature": "Consumed576frames: perfect observed-contributor angular association plus unchanged public range intervals retains36/36LOCALrescues but removes0/2addedFP; exact and1024ray controls reproduceLOCAL228/6/28 and5false segments. NativeXYZcontrol224/4/32 retains32rescues with4early-onset losses. Scoped interval-readout opportunity fails; stop before student training, not a trained-model negative.",
+      "revisit_trigger": "Materially different decision mechanism or independently justified joint angular/range information; no consumed point-count grid interval or threshold sweep to rescue this fixed possibility-preserving filter",
+      "assignment_basis": "Frozen576frame readout,7synthetic tests and15614independent analytical/hash/metric checks; no student fit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/RETURN_CORRESPONDENCE_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/RETURN_CORRESPONDENCE_PROTOCOL_20260923.md"
+      ],
+      "association_id": "return-correspondence-20260923",
+      "search_text": "terminal-return-correspondence-20260923 obstacle-avoidance STOP_BEFORE_STUDENT_INTERVAL_READOUT_OPPORTUNITY_FAILED Consumed576frames: perfect observed-contributor angular association plus unchanged public range intervals retains36/36LOCALrescues but removes0/2addedFP; exact and1024ray controls reproduceLOCAL228/6/28 and5false segments. NativeXYZcontrol224/4/32 retains32rescues with4early-onset losses. Scoped interval-readout opportunity fails; stop before student training, not a trained-model negative. Materially different decision mechanism or independently justified joint angular/range information; no consumed point-count grid interval or threshold sweep to rescue this fixed possibility-preserving filter NEGATIVE_CONTROL  Perfect contributor association as an any-possible-public-interval gate for the frozen LOCAL winning centre Native support and LOCAL components remain unchanged; preserve distinction between angular association and native metric XYZ Consumed576frames: perfect observed-contributor angular association plus unchanged public range intervals retains36/36LOCALrescues but removes0/2addedFP; exact and1024ray controls reproduceLOCAL228/6/28 and5false segments. NativeXYZcontrol224/4/32 retains32rescues with4early-onset losses. Scoped interval-readout opportunity fails; stop before student training, not a trained-model negative. Materially different decision mechanism or independently justified joint angular/range information; no consumed point-count grid interval or threshold sweep to rescue this fixed possibility-preserving filter Claim perfect contributor association plus unchanged public possibility support removes these two LOCAL false alerts Retune range interval grid point count query or cutoff on this consumed feasibility check Treat this pre-student diagnostic as a trained-model failure or a general impossibility of RGB learning"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-local-stability-20260923",
+      "status": "negative",
+      "question": "New576composite shape/size/posed-trajectory Development: LOCAL119/20/105, RAW109/16/115, A107/12/117 TP/FP/FN; LOCAL18false segments, 8earlier-or-recovered events out of22A opportunities. Frozen stabilityFAIL; no fit or cutoff change. Preserve old LOCAL component, A and UNKNOWN.",
+      "baseline": null,
+      "change": "Materially different mechanism or independently justified source/observation evidence; no source exclusion or fit threshold interval rescue on this consumed transfer",
+      "primary_metric": null,
+      "decision": "LOCAL_COMPOSITE_TRAJECTORY_STABILITY_NEGATIVE",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_STABILITY_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "31c4f97bb4969b8a9c9318641a3c6872ea557925",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Materially different mechanism or independently justified source/observation evidence; no source exclusion or fit threshold interval rescue on this consumed transfer",
+      "forbidden_repeats": [
+        "Retune frozen LOCAL or select geometry subgroups to rescue this consumed transfer",
+        "Turn posed timing or primitive-composition results into physical continuous-motion natural-distribution or safety evidence",
+        "Erase prior LOCAL component value because a broader transfer fails"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Frozen LOCAL stability across this composite-shape two-size two-posed-trajectory cohort",
+      "retained_surface": "Full frame/event/cost/subgroup evidence; prior LOCAL component and A/UNKNOWN remain independently retained",
+      "failure_signature": "New576composite shape/size/posed-trajectory Development: LOCAL119/20/105, RAW109/16/115, A107/12/117 TP/FP/FN; LOCAL18false segments, 8earlier-or-recovered events out of22A opportunities. Frozen stabilityFAIL; no fit or cutoff change. Preserve old LOCAL component, A and UNKNOWN.",
+      "revisit_trigger": "Materially different mechanism or independently justified source/observation evidence; no source exclusion or fit threshold interval rescue on this consumed transfer",
+      "assignment_basis": "Predeclared new576frame capture, unchanged models, sealed predictions and independent geometry/output/event/gate audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_STABILITY_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/LOCAL_STABILITY_PROTOCOL_20260923.md"
+      ],
+      "association_id": "local-stability-20260923",
+      "search_text": "terminal-local-stability-20260923 obstacle-avoidance LOCAL_COMPOSITE_TRAJECTORY_STABILITY_NEGATIVE New576composite shape/size/posed-trajectory Development: LOCAL119/20/105, RAW109/16/115, A107/12/117 TP/FP/FN; LOCAL18false segments, 8earlier-or-recovered events out of22A opportunities. Frozen stabilityFAIL; no fit or cutoff change. Preserve old LOCAL component, A and UNKNOWN. Materially different mechanism or independently justified source/observation evidence; no source exclusion or fit threshold interval rescue on this consumed transfer NEGATIVE_CONTROL  Frozen LOCAL stability across this composite-shape two-size two-posed-trajectory cohort Full frame/event/cost/subgroup evidence; prior LOCAL component and A/UNKNOWN remain independently retained New576composite shape/size/posed-trajectory Development: LOCAL119/20/105, RAW109/16/115, A107/12/117 TP/FP/FN; LOCAL18false segments, 8earlier-or-recovered events out of22A opportunities. Frozen stabilityFAIL; no fit or cutoff change. Preserve old LOCAL component, A and UNKNOWN. Materially different mechanism or independently justified source/observation evidence; no source exclusion or fit threshold interval rescue on this consumed transfer Retune frozen LOCAL or select geometry subgroups to rescue this consumed transfer Turn posed timing or primitive-composition results into physical continuous-motion natural-distribution or safety evidence Erase prior LOCAL component value because a broader transfer fails"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-contact-boundary-20260923",
+      "status": "negative",
+      "question": "Consumed576layout-held images: direct3346TP1162FP1136FN versus geometry3894TP2196FP588FN on27648novel queries. Recall74.65/86.88%,FPR5.016/9.479%. Pair order99.80/99.20% but width within5cm37/528 versus43/528 and horizon19/352 versus61/352. Neither package passes; preserve partial gains and all costs.",
+      "baseline": null,
+      "change": "Separately scoped mechanism resolving metric boundary information or absolute calibration; preserve this fixed cached-feature comparison and prior negatives",
+      "primary_metric": null,
+      "decision": "CONTACT_BOUNDARY_RANKING_WITHOUT_METRIC_GENERALIZATION",
+      "report": "research/active/dtr-r0/nearfield/CONTACT_BOUNDARY_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "ab271f6577101cde2e42f17aba6e5a5e14c7b578",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately scoped mechanism resolving metric boundary information or absolute calibration; preserve this fixed cached-feature comparison and prior negatives",
+      "forbidden_repeats": [
+        "Retune this consumed run threshold backbone loss seed or epochs to rescue its fixed gate",
+        "Treat query counts as independent samples or near-perfect pair ordering as accurate contact",
+        "Promote latent geometry or model confidence into measured space complete-body walking or App safety evidence"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Frozen shared-feature direct versus monotone geometry contact-width and horizon readout; consumed grouped Development only",
+      "retained_surface": "Relative lateral ranking and conditional metric-error reduction with all false costs; preserve A LOCAL UNKNOWN and old recipe dispositions",
+      "failure_signature": "Neither component gate passes; geometry recall gain12.23points costs4.46points FPR and boundary within5cm remains8.14percent width17.33percent horizon",
+      "revisit_trigger": "Separately scoped changed mechanism addressing metric boundary information or absolute calibration, not tuning this consumed package",
+      "assignment_basis": "Two100epoch fits,22focused tests,714816independent world labels and full saved-output selection/count/pair/bootstrap audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/CONTACT_BOUNDARY_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/CONTACT_BOUNDARY_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-contact-boundary-20260923",
+      "search_text": "terminal-contact-boundary-20260923 obstacle-avoidance CONTACT_BOUNDARY_RANKING_WITHOUT_METRIC_GENERALIZATION Consumed576layout-held images: direct3346TP1162FP1136FN versus geometry3894TP2196FP588FN on27648novel queries. Recall74.65/86.88%,FPR5.016/9.479%. Pair order99.80/99.20% but width within5cm37/528 versus43/528 and horizon19/352 versus61/352. Neither package passes; preserve partial gains and all costs. Separately scoped mechanism resolving metric boundary information or absolute calibration; preserve this fixed cached-feature comparison and prior negatives NEGATIVE_CONTROL  Frozen shared-feature direct versus monotone geometry contact-width and horizon readout; consumed grouped Development only Relative lateral ranking and conditional metric-error reduction with all false costs; preserve A LOCAL UNKNOWN and old recipe dispositions Neither component gate passes; geometry recall gain12.23points costs4.46points FPR and boundary within5cm remains8.14percent width17.33percent horizon Separately scoped changed mechanism addressing metric boundary information or absolute calibration, not tuning this consumed package Retune this consumed run threshold backbone loss seed or epochs to rescue its fixed gate Treat query counts as independent samples or near-perfect pair ordering as accurate contact Promote latent geometry or model confidence into measured space complete-body walking or App safety evidence"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-boundary-error-20260923",
+      "status": "diagnostic",
+      "question": "Consumed contact audit: width label brackets24-36cm and horizon30cm; geometry evaluation bracket-incompatible errors292/485width and156/291horizon. Returned-near native support463/528width and277/352horizon does not imply precise public localization. No refit or threshold change; old packages remain negative.",
+      "baseline": null,
+      "change": "Separately scoped boundary-localized supervision versus fixed public representation; distinguish train fitting, held-layout transfer and missing native support without rescuing consumed gates",
+      "primary_metric": null,
+      "decision": "COARSE_SUPERVISION_AND_CONSTRAINT_VIOLATIONS_COEXIST",
+      "report": "research/active/dtr-r0/nearfield/BOUNDARY_ERROR_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "27040e8244c82373132ec4a5a654d8ea227e7f54",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately scoped boundary-localized supervision versus fixed public representation; distinguish train fitting, held-layout transfer and missing native support without rescuing consumed gates",
+      "forbidden_repeats": [
+        "Claim coarse labels or broad single-return intervals prove RGB-ToF information impossibility",
+        "Treat native near-boundary support as public metric localization or erase UNKNOWN",
+        "Retune the old contact package or start an automatic successor from this diagnostic"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Consumed boundary-error attribution only; no predictor promotion",
+      "retained_surface": "Per-image label brackets, frozen constraint errors and native-return support partitions; A LOCAL UNKNOWN and failed contact packages preserved",
+      "failure_signature": "Consumed contact audit: width label brackets24-36cm and horizon30cm; geometry evaluation bracket-incompatible errors292/485width and156/291horizon. Returned-near native support463/528width and277/352horizon does not imply precise public localization. No refit or threshold change; old packages remain negative.",
+      "revisit_trigger": "New scoped mechanism that distinguishes metric supervision from representation or observational limitations",
+      "assignment_basis": "Saved-output audit with exact576-frame ToF parity and independent13824-row/48-native-frame checks",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/BOUNDARY_ERROR_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/BOUNDARY_ERROR_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-boundary-error-20260923",
+      "search_text": "terminal-boundary-error-20260923 obstacle-avoidance COARSE_SUPERVISION_AND_CONSTRAINT_VIOLATIONS_COEXIST Consumed contact audit: width label brackets24-36cm and horizon30cm; geometry evaluation bracket-incompatible errors292/485width and156/291horizon. Returned-near native support463/528width and277/352horizon does not imply precise public localization. No refit or threshold change; old packages remain negative. Separately scoped boundary-localized supervision versus fixed public representation; distinguish train fitting, held-layout transfer and missing native support without rescuing consumed gates COMPONENT_OR_CHALLENGER COMPONENT Consumed boundary-error attribution only; no predictor promotion Per-image label brackets, frozen constraint errors and native-return support partitions; A LOCAL UNKNOWN and failed contact packages preserved Consumed contact audit: width label brackets24-36cm and horizon30cm; geometry evaluation bracket-incompatible errors292/485width and156/291horizon. Returned-near native support463/528width and277/352horizon does not imply precise public localization. No refit or threshold change; old packages remain negative. New scoped mechanism that distinguishes metric supervision from representation or observational limitations Claim coarse labels or broad single-return intervals prove RGB-ToF information impossibility Treat native near-boundary support as public metric localization or erase UNKNOWN Retune the old contact package or start an automatic successor from this diagnostic"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-contact-sampling-20260923",
+      "status": "partial",
+      "question": "Fixed72query sampling: geometry evaluation width within5cm43/528 to134/528 and horizon61/352 to168/352; train horizon175/560 to467/560. Recall86.88 to78.49percent; horizon falsecross119/800 to146/800. Retain sampling mechanism COMPONENT, neither full package passes.",
+      "baseline": null,
+      "change": "Separately scoped mechanism comparison retaining sampling and censoring controls; test residual transfer and metric error without consumed threshold rescue",
+      "primary_metric": null,
+      "decision": "BOUNDARY_SAMPLING_COMPONENT_WITH_QUERY_COSTS",
+      "report": "research/active/dtr-r0/nearfield/CONTACT_SAMPLING_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "7f23bf61739e9075ae8ed53ac239616e352833dc",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately scoped mechanism comparison retaining sampling and censoring controls; test residual transfer and metric error without consumed threshold rescue",
+      "forbidden_repeats": [
+        "Treat sampling improvement as unique occupancy or precise virtual walking",
+        "Hide missing boundaries false crossings or recall loss",
+        "Retune this consumed two-fit package to rescue the old component gate"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Boundary-aware query sampling mechanism on fixed consumed RGB ToF contact Development; no checkpoint promotion",
+      "retained_surface": "Geometry metric-boundary gains under same72query budget; old controls and A LOCAL UNKNOWN preserved",
+      "failure_signature": "Neither full package passes; geometry recall loses8.39points and horizon falsecross increases27/800 despite width and horizon hit gains17.23/30.40points",
+      "revisit_trigger": "Separately scoped metric readout or transfer comparison preserving sampling censoring and all costs",
+      "assignment_basis": "Two fixed100epoch fits13tests777024independent worldlabels sealed controls and full output audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/CONTACT_SAMPLING_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/CONTACT_SAMPLING_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-contact-sampling-20260923",
+      "search_text": "terminal-contact-sampling-20260923 obstacle-avoidance BOUNDARY_SAMPLING_COMPONENT_WITH_QUERY_COSTS Fixed72query sampling: geometry evaluation width within5cm43/528 to134/528 and horizon61/352 to168/352; train horizon175/560 to467/560. Recall86.88 to78.49percent; horizon falsecross119/800 to146/800. Retain sampling mechanism COMPONENT, neither full package passes. Separately scoped mechanism comparison retaining sampling and censoring controls; test residual transfer and metric error without consumed threshold rescue COMPONENT_OR_CHALLENGER COMPONENT Boundary-aware query sampling mechanism on fixed consumed RGB ToF contact Development; no checkpoint promotion Geometry metric-boundary gains under same72query budget; old controls and A LOCAL UNKNOWN preserved Neither full package passes; geometry recall loses8.39points and horizon falsecross increases27/800 despite width and horizon hit gains17.23/30.40points Separately scoped metric readout or transfer comparison preserving sampling censoring and all costs Treat sampling improvement as unique occupancy or precise virtual walking Hide missing boundaries false crossings or recall loss Retune this consumed two-fit package to rescue the old component gate"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-boundary-supervision-20260923",
+      "status": "negative",
+      "question": "Fixed-feature geometry dense supervision improves held width5cm43/528to192/528 and horizon61/352to122/352; FPR9.479to6.013percent, recall86.88to81.44percent. Accuracy gains pass train/transfer but5.44point recall loss fails3point retention. Preserve partial boundary gain and exact joint-upgrade negative.",
+      "baseline": null,
+      "change": "Separately justified mechanism addressing accuracy recall coverage; no consumed density cutoff loss seed or epoch rescue",
+      "primary_metric": null,
+      "decision": "DENSE_BOUNDARY_ACCURACY_RECALL_TRADEOFF",
+      "report": "research/active/dtr-r0/nearfield/BOUNDARY_SUPERVISION_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "dc006dc6f22e8b761288b2377bf8890ab19bbda5",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified mechanism addressing accuracy recall coverage; no consumed density cutoff loss seed or epoch rescue",
+      "forbidden_repeats": [
+        "Treat improved conditional error or boundary precision as a lossless contact upgrade",
+        "Retune the consumed fixed query schedule loss checkpoint or threshold to rescue its failed joint gate",
+        "Erase measured boundary supervision gains or promote them to hardware safety evidence"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "This fixed-budget dense-slice geometry package as a joint boundary-and-contact upgrade",
+      "retained_surface": "Large train and layout-transfer boundary gains with reduced false positives; retain all recall coverage and individual boundary losses and A LOCAL UNKNOWN",
+      "failure_signature": "Fixed-feature geometry dense supervision improves held width5cm43/528to192/528 and horizon61/352to122/352; FPR9.479to6.013percent, recall86.88to81.44percent. Accuracy gains pass train/transfer but5.44point recall loss fails3point retention. Preserve partial boundary gain and exact joint-upgrade negative.",
+      "revisit_trigger": "Separately scoped materially different mechanism; no additional fit from this pilot",
+      "assignment_basis": "One completed fit with frozen representation and independent label selection metric audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/BOUNDARY_SUPERVISION_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/BOUNDARY_SUPERVISION_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-boundary-supervision-20260923",
+      "search_text": "terminal-boundary-supervision-20260923 obstacle-avoidance DENSE_BOUNDARY_ACCURACY_RECALL_TRADEOFF Fixed-feature geometry dense supervision improves held width5cm43/528to192/528 and horizon61/352to122/352; FPR9.479to6.013percent, recall86.88to81.44percent. Accuracy gains pass train/transfer but5.44point recall loss fails3point retention. Preserve partial boundary gain and exact joint-upgrade negative. Separately justified mechanism addressing accuracy recall coverage; no consumed density cutoff loss seed or epoch rescue NEGATIVE_CONTROL  This fixed-budget dense-slice geometry package as a joint boundary-and-contact upgrade Large train and layout-transfer boundary gains with reduced false positives; retain all recall coverage and individual boundary losses and A LOCAL UNKNOWN Fixed-feature geometry dense supervision improves held width5cm43/528to192/528 and horizon61/352to122/352; FPR9.479to6.013percent, recall86.88to81.44percent. Accuracy gains pass train/transfer but5.44point recall loss fails3point retention. Preserve partial boundary gain and exact joint-upgrade negative. Separately scoped materially different mechanism; no additional fit from this pilot Treat improved conditional error or boundary precision as a lossless contact upgrade Retune the consumed fixed query schedule loss checkpoint or threshold to rescue its failed joint gate Erase measured boundary supervision gains or promote them to hardware safety evidence"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-metric-contact-20260923",
+      "status": "negative",
+      "question": "Same72binary-query CDF head: held horizon5cm168/352to117/352,width134/528to57/528; horizon falsecross146to111 but finite missing47to94,recall78.49to72.45percent,FPR5.16to6.04percent. Joint upgrade fails; preserve sampling gains.",
+      "baseline": null,
+      "change": "Separately justified mechanism and identifiable supervision; preserve exact sampling and direct CDF negatives",
+      "primary_metric": null,
+      "decision": "DIRECT_METRIC_CDF_COVERAGE_REGRESSION",
+      "report": "research/active/dtr-r0/nearfield/METRIC_CONTACT_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "980f78b87c06f3f2b7b979670f59a471f4feeccf",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified mechanism and identifiable supervision; preserve exact sampling and direct CDF negatives",
+      "forbidden_repeats": [
+        "Retune this consumed head loss seed epochs or cutoff to rescue joint criteria",
+        "Treat fewer false crossings with lost coverage as accurate contact geometry",
+        "Interpret q or no crossing as certified clear space"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Fixed sampled-label direct current-status CDF as a joint metric upgrade",
+      "retained_surface": "Reduced false horizon crossings with all lost coverage and prior sampling gains retained; A LOCAL UNKNOWN unchanged",
+      "failure_signature": "Same72binary-query CDF head: held horizon5cm168/352to117/352,width134/528to57/528; horizon falsecross146to111 but finite missing47to94,recall78.49to72.45percent,FPR5.16to6.04percent. Joint upgrade fails; preserve sampling gains.",
+      "revisit_trigger": "New separately justified mechanism; no automatic retry of consumed package",
+      "assignment_basis": "One100epoch fit7tests independent counts selection hashes and832896exact checkpoint probabilities",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/METRIC_CONTACT_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/METRIC_CONTACT_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-metric-contact-20260923",
+      "search_text": "terminal-metric-contact-20260923 obstacle-avoidance DIRECT_METRIC_CDF_COVERAGE_REGRESSION Same72binary-query CDF head: held horizon5cm168/352to117/352,width134/528to57/528; horizon falsecross146to111 but finite missing47to94,recall78.49to72.45percent,FPR5.16to6.04percent. Joint upgrade fails; preserve sampling gains. Separately justified mechanism and identifiable supervision; preserve exact sampling and direct CDF negatives NEGATIVE_CONTROL  Fixed sampled-label direct current-status CDF as a joint metric upgrade Reduced false horizon crossings with all lost coverage and prior sampling gains retained; A LOCAL UNKNOWN unchanged Same72binary-query CDF head: held horizon5cm168/352to117/352,width134/528to57/528; horizon falsecross146to111 but finite missing47to94,recall78.49to72.45percent,FPR5.16to6.04percent. Joint upgrade fails; preserve sampling gains. New separately justified mechanism; no automatic retry of consumed package Retune this consumed head loss seed epochs or cutoff to rescue joint criteria Treat fewer false crossings with lost coverage as accurate contact geometry Interpret q or no crossing as certified clear space"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-exact-contact-20260923",
+      "status": "negative",
+      "question": "Exact train supervision same CDF: selected held Z5cm117/352to27/352,width57/528to10/528,recall72.45to49.53percent,missing94to165. Fixed0.5 train trajectory reaches548/560Zhits with254falsecross; final465/560with17falsecross. Selected transfer fails; retain train-fit evidence only.",
+      "baseline": null,
+      "change": "Separately scoped matched metric-selection comparison; train-only fit cannot substitute for held-layout evidence",
+      "primary_metric": null,
+      "decision": "EXACT_SUPERVISION_SELECTED_TRANSFER_FAILURE",
+      "report": "research/active/dtr-r0/nearfield/EXACT_CONTACT_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "cdbd83299503ad34bd41f0c64ed3da34b8fe248a",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately scoped matched metric-selection comparison; train-only fit cannot substitute for held-layout evidence",
+      "forbidden_repeats": [
+        "Promote a posthoc epoch or cutoff from this consumed package",
+        "Infer sensor or representation impossibility from selected checkpoint failure",
+        "Treat lower conditional error or training hit rate as lossless transfer or clear-space evidence"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Fixed direct CDF with exact interval supervision under inherited binary dev selection",
+      "retained_surface": "Predeclared train trajectory demonstrates partial distance fitting with full falsecross and width costs; prior sampling and A LOCAL UNKNOWN preserved",
+      "failure_signature": "Exact train supervision same CDF: selected held Z5cm117/352to27/352,width57/528to10/528,recall72.45to49.53percent,missing94to165. Fixed0.5 train trajectory reaches548/560Zhits with254falsecross; final465/560with17falsecross. Selected transfer fails; retain train-fit evidence only.",
+      "revisit_trigger": "New declared metric-aligned selection comparison without retrospective promotion",
+      "assignment_basis": "One100epoch fit15tests independent62208world labels and832896exact checkpoint probabilities",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/EXACT_CONTACT_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/EXACT_CONTACT_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-exact-contact-20260923",
+      "search_text": "terminal-exact-contact-20260923 obstacle-avoidance EXACT_SUPERVISION_SELECTED_TRANSFER_FAILURE Exact train supervision same CDF: selected held Z5cm117/352to27/352,width57/528to10/528,recall72.45to49.53percent,missing94to165. Fixed0.5 train trajectory reaches548/560Zhits with254falsecross; final465/560with17falsecross. Selected transfer fails; retain train-fit evidence only. Separately scoped matched metric-selection comparison; train-only fit cannot substitute for held-layout evidence NEGATIVE_CONTROL  Fixed direct CDF with exact interval supervision under inherited binary dev selection Predeclared train trajectory demonstrates partial distance fitting with full falsecross and width costs; prior sampling and A LOCAL UNKNOWN preserved Exact train supervision same CDF: selected held Z5cm117/352to27/352,width57/528to10/528,recall72.45to49.53percent,missing94to165. Fixed0.5 train trajectory reaches548/560Zhits with254falsecross; final465/560with17falsecross. Selected transfer fails; retain train-fit evidence only. New declared metric-aligned selection comparison without retrospective promotion Promote a posthoc epoch or cutoff from this consumed package Infer sensor or representation impossibility from selected checkpoint failure Treat lower conditional error or training hit rate as lossless transfer or clear-space evidence"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-local-rescue-20260923",
+      "status": "negative",
+      "question": "Frozen public ambiguity gate keeps41/41 incremental TP and all LOCAL onsets on576 new controlled frames, but removes4/15 incremental FP below50percent. A118/7/106 versus LOCAL159/22/65 and gate159/18/65; events24/29/29 of32. Retain partial lossless filtering, not reliable admission.",
+      "baseline": null,
+      "change": "Separately justified public evidence mechanism with frozen new evaluation; retain all remaining false alerts misses UNKNOWN and prior negatives",
+      "primary_metric": null,
+      "decision": "RESCUE_GATE_NEW_INSTANCE_NEGATIVE",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_RESCUE_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "79dc812fa8c6453b650e867e4fe93a8baf877a4f",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "decision_lifecycle": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified public evidence mechanism with frozen new evaluation; retain all remaining false alerts misses UNKNOWN and prior negatives",
+      "forbidden_repeats": [
+        "Tune the frozen scalar cutoff on this consumed new-instance result",
+        "Treat partial filtering as passing full stability or deployed benefit",
+        "Use native ownership geometry as gate input"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Fixed ambiguity fraction scalar gate as reliable LOCAL-only admission on composite controlled trajectories",
+      "retained_surface": "Causal selective-rescue tooling; new-instance41of41true retention and4of15false removal without onset loss; all baseline and UNKNOWN costs",
+      "failure_signature": "26.7percent incremental FP rejection below frozen50percent target; still11added false segments versus A",
+      "revisit_trigger": "Different justified public evidence mechanism and separately frozen new source, not consumed cutoff tuning",
+      "assignment_basis": "Frozen gate and new576frame source plus independent15629assertion audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/LOCAL_RESCUE_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/LOCAL_RESCUE_GATE_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-local-rescue-20260923",
+      "search_text": "terminal-local-rescue-20260923 obstacle-avoidance RESCUE_GATE_NEW_INSTANCE_NEGATIVE Frozen public ambiguity gate keeps41/41 incremental TP and all LOCAL onsets on576 new controlled frames, but removes4/15 incremental FP below50percent. A118/7/106 versus LOCAL159/22/65 and gate159/18/65; events24/29/29 of32. Retain partial lossless filtering, not reliable admission. Separately justified public evidence mechanism with frozen new evaluation; retain all remaining false alerts misses UNKNOWN and prior negatives NEGATIVE_CONTROL  Fixed ambiguity fraction scalar gate as reliable LOCAL-only admission on composite controlled trajectories Causal selective-rescue tooling; new-instance41of41true retention and4of15false removal without onset loss; all baseline and UNKNOWN costs 26.7percent incremental FP rejection below frozen50percent target; still11added false segments versus A Different justified public evidence mechanism and separately frozen new source, not consumed cutoff tuning Tune the frozen scalar cutoff on this consumed new-instance result Treat partial filtering as passing full stability or deployed benefit Use native ownership geometry as gate input"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-contact-decomposition-20260923",
+      "status": "diagnostic",
+      "question": "Frozen contact split: binary/exact held conditional median both100/352within5cm; exact train404/560. Only31/165exact blocked finite cases have accurate median,134also mislocalized. Exact width order passes1cmcheck but localization stays poor. Diagnostic COMPONENT; old negatives A LOCAL UNKNOWN unchanged.",
+      "baseline": null,
+      "change": "Independently justified transferable regional observation correspondence or coupled readout comparison; no retrospective threshold checkpoint promotion",
+      "primary_metric": null,
+      "decision": "POSITION_TRANSFER_GAP_NOT_GATE_ONLY",
+      "report": "research/active/dtr-r0/nearfield/CONTACT_DECOMPOSITION_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "a3aecb678a02101ef5f52bdc507a8d5fe6bb0478",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Independently justified transferable regional observation correspondence or coupled readout comparison; no retrospective threshold checkpoint promotion",
+      "forbidden_repeats": [
+        "Deploy q-unity or evaluator-conditioned position readout",
+        "Claim gate or monotonicity adjustment alone solves metric transfer",
+        "Infer causal memorization or sensor impossibility from conditional error partitions"
+      ],
+      "inheritance_role": "COMPONENT_OR_CHALLENGER",
+      "inheritance_mode": "COMPONENT",
+      "role_scope": "Read-only frozen CDF probability position and width diagnostic on consumed Development",
+      "retained_surface": "Full gate-location partitions transfer distributions and width-order tests with no model promotion",
+      "failure_signature": "Frozen contact split: binary/exact held conditional median both100/352within5cm; exact train404/560. Only31/165exact blocked finite cases have accurate median,134also mislocalized. Exact width order passes1cmcheck but localization stays poor. Diagnostic COMPONENT; old negatives A LOCAL UNKNOWN unchanged.",
+      "revisit_trigger": "Mechanism adding transferable position evidence; preserve sensor UNKNOWN and legacy predictors",
+      "assignment_basis": "8tests146880worldtargets independentCDFbisection and39168exact representative component replays",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/CONTACT_DECOMPOSITION_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/CONTACT_DECOMPOSITION_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-contact-decomposition-20260923",
+      "search_text": "terminal-contact-decomposition-20260923 obstacle-avoidance POSITION_TRANSFER_GAP_NOT_GATE_ONLY Frozen contact split: binary/exact held conditional median both100/352within5cm; exact train404/560. Only31/165exact blocked finite cases have accurate median,134also mislocalized. Exact width order passes1cmcheck but localization stays poor. Diagnostic COMPONENT; old negatives A LOCAL UNKNOWN unchanged. Independently justified transferable regional observation correspondence or coupled readout comparison; no retrospective threshold checkpoint promotion COMPONENT_OR_CHALLENGER COMPONENT Read-only frozen CDF probability position and width diagnostic on consumed Development Full gate-location partitions transfer distributions and width-order tests with no model promotion Frozen contact split: binary/exact held conditional median both100/352within5cm; exact train404/560. Only31/165exact blocked finite cases have accurate median,134also mislocalized. Exact width order passes1cmcheck but localization stays poor. Diagnostic COMPONENT; old negatives A LOCAL UNKNOWN unchanged. Mechanism adding transferable position evidence; preserve sensor UNKNOWN and legacy predictors Deploy q-unity or evaluator-conditioned position readout Claim gate or monotonicity adjustment alone solves metric transfer Infer causal memorization or sensor impossibility from conditional error partitions"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-range-pair-20260923",
+      "status": "negative",
+      "question": "Three frozen public readouts fail joint3m admission across two consumed cohorts. Nearest compatible noise ranking99.22/99.87percent but crossing76.56/88.02percent and outsideFPR26.17/41.54percent. Preserve ordering and attribution diagnostic; no fit or App change.",
+      "baseline": null,
+      "change": "Separately justified public return ownership or range mechanism; retain exact readout negatives and consumed evidence boundary",
+      "primary_metric": null,
+      "decision": "PUBLIC_RANGE_ADMISSION_NOT_ESTABLISHED",
+      "report": "research/active/dtr-r0/nearfield/RANGE_PAIR_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "a7b3ffbc8b787f5ca4cfa91b24b5dd38214cac01",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified public return ownership or range mechanism; retain exact readout negatives and consumed evidence boundary",
+      "forbidden_repeats": [
+        "Retune consumed cutoff to claim frozen criteria passed",
+        "Treat near far ordering as target ownership or reliable absolute range",
+        "Use evaluator target mask as public gate or claim input impossibility"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Three fixed public range readouts for3m admission on consumed controlled pairs",
+      "retained_surface": "Ordering signal and evaluator attribution diagnostic",
+      "failure_signature": "Joint crossing and outside false alert criteria fail",
+      "revisit_trigger": "Separately justified public return ownership or range mechanism",
+      "assignment_basis": "Frozen paired diagnostic and independent103397assertion audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/RANGE_PAIR_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/RANGE_PAIR_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-range-pair-20260923",
+      "search_text": "terminal-range-pair-20260923 obstacle-avoidance PUBLIC_RANGE_ADMISSION_NOT_ESTABLISHED Three frozen public readouts fail joint3m admission across two consumed cohorts. Nearest compatible noise ranking99.22/99.87percent but crossing76.56/88.02percent and outsideFPR26.17/41.54percent. Preserve ordering and attribution diagnostic; no fit or App change. Separately justified public return ownership or range mechanism; retain exact readout negatives and consumed evidence boundary NEGATIVE_CONTROL  Three fixed public range readouts for3m admission on consumed controlled pairs Ordering signal and evaluator attribution diagnostic Joint crossing and outside false alert criteria fail Separately justified public return ownership or range mechanism Retune consumed cutoff to claim frozen criteria passed Treat near far ordering as target ownership or reliable absolute range Use evaluator target mask as public gate or claim input impossibility"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-motion-return-20260923",
+      "status": "negative",
+      "question": "Frozen public two-frame projection residual within-zone contributor AUC0.603/0.596 below static0.637/0.633; matched contributor coverage66.68/64.81percent on1152consumed frames. No incremental attribution gate pass; no student or App change.",
+      "baseline": null,
+      "change": "Separately justified return identity or joint angular range mechanism with explicit coverage and matched controls",
+      "primary_metric": null,
+      "decision": "MOTION_RETURN_ATTRIBUTION_NOT_ESTABLISHED",
+      "report": "research/active/dtr-r0/nearfield/MOTION_RETURN_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "ec3a1ebd9498b3aff5f7107c415b0057313b0256",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "temporal_belief": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified return identity or joint angular range mechanism with explicit coverage and matched controls",
+      "forbidden_repeats": [
+        "Tune consumed LK or ownership cutoff to rescue the frozen diagnostic",
+        "Promote contributor ranking or conditional AUC to target ownership or alert benefit",
+        "Infer all RGB or temporal information absent from this fixed residual failure"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Fixed two-frame public projection residual as return attribution on consumed pure translation",
+      "retained_surface": "Public residual diagnostics and explicit tracking coverage",
+      "failure_signature": "AUC0.603/0.596 below static0.637/0.633 with incomplete coverage",
+      "revisit_trigger": "Separately justified joint angular range or return identity mechanism",
+      "assignment_basis": "Frozen1152frame diagnostic and independent756511check audit",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/MOTION_RETURN_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/MOTION_RETURN_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-motion-return-20260923",
+      "search_text": "terminal-motion-return-20260923 obstacle-avoidance MOTION_RETURN_ATTRIBUTION_NOT_ESTABLISHED Frozen public two-frame projection residual within-zone contributor AUC0.603/0.596 below static0.637/0.633; matched contributor coverage66.68/64.81percent on1152consumed frames. No incremental attribution gate pass; no student or App change. Separately justified return identity or joint angular range mechanism with explicit coverage and matched controls NEGATIVE_CONTROL  Fixed two-frame public projection residual as return attribution on consumed pure translation Public residual diagnostics and explicit tracking coverage AUC0.603/0.596 below static0.637/0.633 with incomplete coverage Separately justified joint angular range or return identity mechanism Tune consumed LK or ownership cutoff to rescue the frozen diagnostic Promote contributor ranking or conditional AUC to target ownership or alert benefit Infer all RGB or temporal information absent from this fixed residual failure"
+    },
+    {
+      "kind": "current_terminal",
+      "id": "terminal-regional-contact-20260923",
+      "status": "negative",
+      "question": "Matched regional pairing raises held query recall58.01to70.06percent but actualZ5cm12to28of352 and conditionalmedian55to51of352 fail joint localization gains. Width false crossings98to176of624. Preserve classification partial signal and exact negative; no App change.",
+      "baseline": null,
+      "change": "Separately justified transferable observation or readout mechanism with new fixed comparison; retain consumed negatives and coverage costs",
+      "primary_metric": null,
+      "decision": "REGIONAL_PAIRING_LOCALIZATION_NOT_ESTABLISHED",
+      "report": "research/active/dtr-r0/nearfield/REGIONAL_CONTACT_RESULTS_20260923.md",
+      "source": "decision/terminals.json",
+      "commit": "a966ef4a5f12ea21dc9328b7c4e2d1da54507ed5",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 30,
+        "geometry_motion": 30,
+        "evaluation_evidence": 30
+      },
+      "successor_requires": "Separately justified transferable observation or readout mechanism with new fixed comparison; retain consumed negatives and coverage costs",
+      "forbidden_repeats": [
+        "Retune consumed checkpoint cutoff or pairing seed to claim frozen gate passed",
+        "Treat query recall gain as precise contact geometry or return ownership",
+        "Claim sensor impossibility from this coarse regional model"
+      ],
+      "inheritance_role": "NEGATIVE_CONTROL",
+      "inheritance_mode": null,
+      "role_scope": "Fixed coarse regional pairing contact localization on consumed Development",
+      "retained_surface": "Matched pairing controls and partial recall ordering gain",
+      "failure_signature": "Held actualZ gain4.55pp and median gain-1.14pp; width false crossings grow98to176",
+      "revisit_trigger": "Separately justified observation or readout mechanism with new explicit comparison",
+      "assignment_basis": "Frozen twoarm experiment independent audit and report",
+      "evidence": [
+        "research/active/dtr-r0/nearfield/REGIONAL_CONTACT_RESULTS_20260923.md",
+        "research/active/dtr-r0/nearfield/REGIONAL_CONTACT_PROTOCOL_20260923.md"
+      ],
+      "association_id": "ba-regional-contact-20260923",
+      "search_text": "terminal-regional-contact-20260923 obstacle-avoidance REGIONAL_PAIRING_LOCALIZATION_NOT_ESTABLISHED Matched regional pairing raises held query recall58.01to70.06percent but actualZ5cm12to28of352 and conditionalmedian55to51of352 fail joint localization gains. Width false crossings98to176of624. Preserve classification partial signal and exact negative; no App change. Separately justified transferable observation or readout mechanism with new fixed comparison; retain consumed negatives and coverage costs NEGATIVE_CONTROL  Fixed coarse regional pairing contact localization on consumed Development Matched pairing controls and partial recall ordering gain Held actualZ gain4.55pp and median gain-1.14pp; width false crossings grow98to176 Separately justified observation or readout mechanism with new explicit comparison Retune consumed checkpoint cutoff or pairing seed to claim frozen gate passed Treat query recall gain as precise contact geometry or return ownership Claim sensor impossibility from this coarse regional model"
     },
     {
       "kind": "experiment",
@@ -34890,6 +35697,681 @@
         "decision_lifecycle": 12
       },
       "search_text": "local-transfer-20260922 Does frozen LOCAL transfer to new geometry and retain useful decisions under a paired background-only intervention? Unchanged A plus sealed matched RAW HGB at old threshold Eight new base geometries with three lateral relations and two paired background appearances; frozen models and thresholds Recall precision FP false segments onset; paired rescue retention, geometry rank and whole-base-group bootstrap FROZEN_LOCAL_TRANSFER_COMPONENT_PASS_WITH_BACKGROUND_DEPENDENCE research/active/dtr-r0/nearfield/LOCAL_TRANSFER_RESULTS_20260922.md 576new same-generator UE controlled Development frames;8base groups48clips288appearance pairs; now consumed"
+    },
+    {
+      "kind": "experiment",
+      "id": "local-support-20260922",
+      "status": "archived",
+      "question": "Which retained LOCAL rescues have observed native support in their score-winning centre query?",
+      "baseline": "Saved A and A OR LOCAL decisions on all576consumed transfer frames",
+      "change": "Evaluator-only contributor and2x2native subpixel audit; fixed winning-centre and either-centre diagnostic readouts",
+      "primary_metric": "Rescues retained >=32of36 with2addedFP removed, full onset gap and native support opportunity costs",
+      "decision": "PRIVILEGED_WINNING_QUERY_SUPPORT_OPPORTUNITY_PUBLIC_ASSOCIATION_UNTESTED",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_SUPPORT_RESULTS_20260922.md",
+      "source": "Consumed UE local-transfer576frames; no new captured or learned observations",
+      "commit": "e2f2e0293cbd3f5fdd7a0cd3717409115181d04e",
+      "association_id": "local-support-20260922",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "decision_lifecycle": 6
+      },
+      "search_text": "local-support-20260922 Which retained LOCAL rescues have observed native support in their score-winning centre query? Saved A and A OR LOCAL decisions on all576consumed transfer frames Evaluator-only contributor and2x2native subpixel audit; fixed winning-centre and either-centre diagnostic readouts Rescues retained >=32of36 with2addedFP removed, full onset gap and native support opportunity costs PRIVILEGED_WINNING_QUERY_SUPPORT_OPPORTUNITY_PUBLIC_ASSOCIATION_UNTESTED research/active/dtr-r0/nearfield/LOCAL_SUPPORT_RESULTS_20260922.md Consumed UE local-transfer576frames; no new captured or learned observations"
+    },
+    {
+      "kind": "experiment",
+      "id": "return-correspondence-20260923",
+      "status": "archived",
+      "question": "Can perfect contributor correspondence remove LOCAL false alerts with unchanged public range intervals?",
+      "baseline": "Frozen LOCAL228TP6FP28FN and A192TP4FP64FN on576consumed transfer frames",
+      "change": "Full native-contributor angular support plus public interval possibility; fixed1024ray and nativeXYZ controls",
+      "primary_metric": "Retain at least32of36rescues and remove2addedFP with A preservation and full timing costs",
+      "decision": "STOP_BEFORE_STUDENT_INTERVAL_READOUT_OPPORTUNITY_FAILED",
+      "report": "research/active/dtr-r0/nearfield/RETURN_CORRESPONDENCE_RESULTS_20260923.md",
+      "source": "Consumed LOCALtransfer576frames and previously sealed contributor lineage",
+      "commit": "88c20ce5e5036a086d57048618e0660cab45c098",
+      "association_id": "return-correspondence-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "decision_lifecycle": 4
+      },
+      "search_text": "return-correspondence-20260923 Can perfect contributor correspondence remove LOCAL false alerts with unchanged public range intervals? Frozen LOCAL228TP6FP28FN and A192TP4FP64FN on576consumed transfer frames Full native-contributor angular support plus public interval possibility; fixed1024ray and nativeXYZ controls Retain at least32of36rescues and remove2addedFP with A preservation and full timing costs STOP_BEFORE_STUDENT_INTERVAL_READOUT_OPPORTUNITY_FAILED research/active/dtr-r0/nearfield/RETURN_CORRESPONDENCE_RESULTS_20260923.md Consumed LOCALtransfer576frames and previously sealed contributor lineage"
+    },
+    {
+      "kind": "experiment",
+      "id": "local-stability-20260923",
+      "status": "archived",
+      "question": "Does frozen LOCAL retain earlier detections under composite shapes size changes and approach dwell return?",
+      "baseline": "Unchanged A and A OR RAW compared with A OR LOCAL; samepublic RGB and8x8ToF",
+      "change": "Eight new two-cuboid composites crossed with two sizes per family two posed trajectories and three lateral placements",
+      "primary_metric": "At least8earlier/recovered events with3pertrajectory, addedFP<=2segments<=1, plus>=5pp recall overRAW and group/layer checks",
+      "decision": "LOCAL_COMPOSITE_TRAJECTORY_STABILITY_NEGATIVE",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_STABILITY_RESULTS_20260923.md",
+      "source": "New same-generator composite shape/size Development; static posed samples not physical continuous motion",
+      "commit": "31c4f97bb4969b8a9c9318641a3c6872ea557925",
+      "association_id": "local-stability-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 6,
+        "geometry_motion": 6,
+        "decision_lifecycle": 3
+      },
+      "search_text": "local-stability-20260923 Does frozen LOCAL retain earlier detections under composite shapes size changes and approach dwell return? Unchanged A and A OR RAW compared with A OR LOCAL; samepublic RGB and8x8ToF Eight new two-cuboid composites crossed with two sizes per family two posed trajectories and three lateral placements At least8earlier/recovered events with3pertrajectory, addedFP<=2segments<=1, plus>=5pp recall overRAW and group/layer checks LOCAL_COMPOSITE_TRAJECTORY_STABILITY_NEGATIVE research/active/dtr-r0/nearfield/LOCAL_STABILITY_RESULTS_20260923.md New same-generator composite shape/size Development; static posed samples not physical continuous motion"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-contact-boundary-20260923",
+      "status": "archived",
+      "question": "Do direct or monotone contact functions generalize to unseen body widths and horizons on layout-disjoint Development?",
+      "baseline": "Shared frozen RGB features and regional ToF direct contact-query MLP",
+      "change": "Same contact supervision and feature trunk, monotone folded-lateral depth-grid aggregation; new continuous query task",
+      "primary_metric": "Primary query recall FPR and all-finite-boundary within5cm success; matched lateral pairs and whole-layout bootstrap",
+      "decision": "NEITHER_CONTACT_PACKAGE_PASSES; geometry improves recall and conditional error but increases false cost; retain exact negative control",
+      "report": "research/active/dtr-r0/nearfield/CONTACT_BOUNDARY_RESULTS_20260923.md",
+      "source": "ue-query-occupancy-20260922-consumed-development",
+      "commit": "ab271f6577101cde2e42f17aba6e5a5e14c7b578",
+      "association_id": "ba-contact-boundary-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 3,
+        "geometry_motion": 9
+      },
+      "search_text": "ba-contact-boundary-20260923 Do direct or monotone contact functions generalize to unseen body widths and horizons on layout-disjoint Development? Shared frozen RGB features and regional ToF direct contact-query MLP Same contact supervision and feature trunk, monotone folded-lateral depth-grid aggregation; new continuous query task Primary query recall FPR and all-finite-boundary within5cm success; matched lateral pairs and whole-layout bootstrap NEITHER_CONTACT_PACKAGE_PASSES; geometry improves recall and conditional error but increases false cost; retain exact negative control research/active/dtr-r0/nearfield/CONTACT_BOUNDARY_RESULTS_20260923.md ue-query-occupancy-20260922-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-boundary-error-20260923",
+      "status": "archived",
+      "question": "Do metric errors exceed binary supervision ambiguity and is native boundary support retained?",
+      "baseline": "Frozen direct and geometry contact predictions with original cutoffs",
+      "change": "Read-only monotone label constraints, native support and feature diagnostic; no model change",
+      "primary_metric": "All finite-interior errors versus incompatible label brackets; nearest native support and interval spans",
+      "decision": "DIAGNOSTIC_COMPONENT; coarse supervision and constraint violations coexist; no algorithm promotion",
+      "report": "research/active/dtr-r0/nearfield/BOUNDARY_ERROR_RESULTS_20260923.md",
+      "source": "ue-query-occupancy-20260922-consumed-development",
+      "commit": "27040e8244c82373132ec4a5a654d8ea227e7f54",
+      "association_id": "ba-boundary-error-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "authority_truth": 3,
+        "geometry_motion": 9,
+        "evaluation_evidence": 3
+      },
+      "search_text": "ba-boundary-error-20260923 Do metric errors exceed binary supervision ambiguity and is native boundary support retained? Frozen direct and geometry contact predictions with original cutoffs Read-only monotone label constraints, native support and feature diagnostic; no model change All finite-interior errors versus incompatible label brackets; nearest native support and interval spans DIAGNOSTIC_COMPONENT; coarse supervision and constraint violations coexist; no algorithm promotion research/active/dtr-r0/nearfield/BOUNDARY_ERROR_RESULTS_20260923.md ue-query-occupancy-20260922-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-contact-sampling-20260923",
+      "status": "archived",
+      "question": "Does boundary-aware continuous sampling improve metric contact boundaries at fixed query budget?",
+      "baseline": "Sealed ba-contact-boundary-20260923 direct and geometry72query fits",
+      "change": "36uniform plus36boundary-or-fallback queries perimage; identical frozen features initial schedule architecture and loss",
+      "primary_metric": "All finite boundary within5cm coverage conditional error and rightcensored falsecross; query recall FPR",
+      "decision": "BOUNDARY_SAMPLING_COMPONENT_WITH_QUERY_COSTS",
+      "report": "research/active/dtr-r0/nearfield/CONTACT_SAMPLING_RESULTS_20260923.md",
+      "source": "ue-query-occupancy-20260922-consumed-development",
+      "commit": "7f23bf61739e9075ae8ed53ac239616e352833dc",
+      "association_id": "ba-contact-sampling-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 3,
+        "geometry_motion": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "ba-contact-sampling-20260923 Does boundary-aware continuous sampling improve metric contact boundaries at fixed query budget? Sealed ba-contact-boundary-20260923 direct and geometry72query fits 36uniform plus36boundary-or-fallback queries perimage; identical frozen features initial schedule architecture and loss All finite boundary within5cm coverage conditional error and rightcensored falsecross; query recall FPR BOUNDARY_SAMPLING_COMPONENT_WITH_QUERY_COSTS research/active/dtr-r0/nearfield/CONTACT_SAMPLING_RESULTS_20260923.md ue-query-occupancy-20260922-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-boundary-supervision-20260923",
+      "status": "archived",
+      "question": "Does finer fixed-budget supervision improve boundary fitting and layout transfer at acceptable contact costs?",
+      "baseline": "Saved coarse-query geometry model with same initial features schedule optimizer and dev selection",
+      "change": "Geometry-independent72query curriculum from24coarse and48fine slice queries per image per epoch; one new fit",
+      "primary_metric": "Train/evaluation both-axis joint5cm gains with recall FPR and censored-crossing retention",
+      "decision": "ACCURACY_COST_TRADEOFF; retain measured boundary gains; exact joint-upgrade NEGATIVE_CONTROL",
+      "report": "research/active/dtr-r0/nearfield/BOUNDARY_SUPERVISION_RESULTS_20260923.md",
+      "source": "ue-query-occupancy-20260922-consumed-development",
+      "commit": "dc006dc6f22e8b761288b2377bf8890ab19bbda5",
+      "association_id": "ba-boundary-supervision-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "ba-boundary-supervision-20260923 Does finer fixed-budget supervision improve boundary fitting and layout transfer at acceptable contact costs? Saved coarse-query geometry model with same initial features schedule optimizer and dev selection Geometry-independent72query curriculum from24coarse and48fine slice queries per image per epoch; one new fit Train/evaluation both-axis joint5cm gains with recall FPR and censored-crossing retention ACCURACY_COST_TRADEOFF; retain measured boundary gains; exact joint-upgrade NEGATIVE_CONTROL research/active/dtr-r0/nearfield/BOUNDARY_SUPERVISION_RESULTS_20260923.md ue-query-occupancy-20260922-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-metric-contact-20260923",
+      "status": "archived",
+      "question": "Does direct first-contact CDF improve boundaries under the same sampled binary supervision?",
+      "baseline": "Frozen sampled geometry control",
+      "change": "Width-layer conditioned q location scale head and normalized current-status CDF",
+      "primary_metric": "Grid horizon within5cm missing falsecross width retention and query recall FPR",
+      "decision": "NEGATIVE_CONTROL: fewer false horizon crossings but worse precision coverage and recall",
+      "report": "research/active/dtr-r0/nearfield/METRIC_CONTACT_RESULTS_20260923.md",
+      "source": "ue-query-occupancy-20260922-consumed-development",
+      "commit": "980f78b87c06f3f2b7b979670f59a471f4feeccf",
+      "association_id": "ba-metric-contact-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 3,
+        "geometry_motion": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "ba-metric-contact-20260923 Does direct first-contact CDF improve boundaries under the same sampled binary supervision? Frozen sampled geometry control Width-layer conditioned q location scale head and normalized current-status CDF Grid horizon within5cm missing falsecross width retention and query recall FPR NEGATIVE_CONTROL: fewer false horizon crossings but worse precision coverage and recall research/active/dtr-r0/nearfield/METRIC_CONTACT_RESULTS_20260923.md ue-query-occupancy-20260922-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-exact-contact-20260923",
+      "status": "archived",
+      "question": "Can exact first-contact supervision improve fixed CDF fitting and held-layout boundaries?",
+      "baseline": "Frozen binary-only direct CDF with same initial weights and schedule; sampled geometry reference",
+      "change": "Add unit-weight train-only censored5cm interval NLL to original sampled binary BCE",
+      "primary_metric": "Selected train and evaluation Z5cm gains plus missing falsecross width retention recall FPR; predeclared train trajectory",
+      "decision": "NEGATIVE_CONTROL: selected transfer worsens; retain narrower train distance-fitting evidence with costs",
+      "report": "research/active/dtr-r0/nearfield/EXACT_CONTACT_RESULTS_20260923.md",
+      "source": "ue-query-occupancy-20260922-consumed-development",
+      "commit": "cdbd83299503ad34bd41f0c64ed3da34b8fe248a",
+      "association_id": "ba-exact-contact-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 9,
+        "evaluation_evidence": 6
+      },
+      "search_text": "ba-exact-contact-20260923 Can exact first-contact supervision improve fixed CDF fitting and held-layout boundaries? Frozen binary-only direct CDF with same initial weights and schedule; sampled geometry reference Add unit-weight train-only censored5cm interval NLL to original sampled binary BCE Selected train and evaluation Z5cm gains plus missing falsecross width retention recall FPR; predeclared train trajectory NEGATIVE_CONTROL: selected transfer worsens; retain narrower train distance-fitting evidence with costs research/active/dtr-r0/nearfield/EXACT_CONTACT_RESULTS_20260923.md ue-query-occupancy-20260922-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-local-rescue-20260923",
+      "status": "archived",
+      "question": "Can causal public admission preserve LOCAL rescues while rejecting added false alerts?",
+      "baseline": "Frozen A and A OR LOCAL plus two-frame confirmation",
+      "change": "Consumed feature diagnosis then one transfer-selected ambiguity fraction gate frozen before new576frame capture",
+      "primary_metric": "Incremental TP retention FP rejection event onset coverage and UNKNOWN",
+      "decision": "RESCUE_GATE_NEW_INSTANCE_NEGATIVE; partial lossless filtering retained but4of15FP rejection below50percent",
+      "report": "research/active/dtr-r0/nearfield/LOCAL_RESCUE_RESULTS_20260923.md",
+      "source": "ue-local-rescue-consumed-and-new-instance-development",
+      "commit": "79dc812fa8c6453b650e867e4fe93a8baf877a4f",
+      "association_id": "ba-local-rescue-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 3,
+        "identity_binding": 6,
+        "decision_lifecycle": 10
+      },
+      "search_text": "ba-local-rescue-20260923 Can causal public admission preserve LOCAL rescues while rejecting added false alerts? Frozen A and A OR LOCAL plus two-frame confirmation Consumed feature diagnosis then one transfer-selected ambiguity fraction gate frozen before new576frame capture Incremental TP retention FP rejection event onset coverage and UNKNOWN RESCUE_GATE_NEW_INSTANCE_NEGATIVE; partial lossless filtering retained but4of15FP rejection below50percent research/active/dtr-r0/nearfield/LOCAL_RESCUE_RESULTS_20260923.md ue-local-rescue-consumed-and-new-instance-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-contact-decomposition-20260923",
+      "status": "archived",
+      "question": "Are frozen selected contact errors hidden accurate positions or localization and width transfer failures?",
+      "baseline": "Selected binary and exact-supervision CDF weights and original cutoffs",
+      "change": "Read-only q location scale decomposition across widths and train versus evaluation; no fit",
+      "primary_metric": "Blocked/admitted by median accurate/inaccurate partitions and allfinite hit5 MAE plus width order",
+      "decision": "DIAGNOSTIC_COMPONENT: position transfer remains poor beyond gate removal; no predictor promotion",
+      "report": "research/active/dtr-r0/nearfield/CONTACT_DECOMPOSITION_RESULTS_20260923.md",
+      "source": "ue-query-occupancy-20260922-consumed-development",
+      "commit": "a3aecb678a02101ef5f52bdc507a8d5fe6bb0478",
+      "association_id": "ba-contact-decomposition-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "ba-contact-decomposition-20260923 Are frozen selected contact errors hidden accurate positions or localization and width transfer failures? Selected binary and exact-supervision CDF weights and original cutoffs Read-only q location scale decomposition across widths and train versus evaluation; no fit Blocked/admitted by median accurate/inaccurate partitions and allfinite hit5 MAE plus width order DIAGNOSTIC_COMPONENT: position transfer remains poor beyond gate removal; no predictor promotion research/active/dtr-r0/nearfield/CONTACT_DECOMPOSITION_RESULTS_20260923.md ue-query-occupancy-20260922-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-range-pair-20260923",
+      "status": "archived",
+      "question": "Can public range readouts distinguish matched3m crossings",
+      "baseline": "Saved public8x8ToF and global nearest control",
+      "change": "Fixed compatible nearest and median3 paired observability diagnostic",
+      "primary_metric": "Joint crossing and outside endpoint FPR including missing",
+      "decision": "PUBLIC_RANGE_ADMISSION_NOT_ESTABLISHED",
+      "report": "research/active/dtr-r0/nearfield/RANGE_PAIR_RESULTS_20260923.md",
+      "source": "ue-local-stability-and-rescue-consumed-development",
+      "commit": "a7b3ffbc8b787f5ca4cfa91b24b5dd38214cac01",
+      "association_id": "ba-range-pair-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {},
+      "search_text": "ba-range-pair-20260923 Can public range readouts distinguish matched3m crossings Saved public8x8ToF and global nearest control Fixed compatible nearest and median3 paired observability diagnostic Joint crossing and outside endpoint FPR including missing PUBLIC_RANGE_ADMISSION_NOT_ESTABLISHED research/active/dtr-r0/nearfield/RANGE_PAIR_RESULTS_20260923.md ue-local-stability-and-rescue-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-motion-return-20260923",
+      "status": "archived",
+      "question": "Does public temporal projection consistency add return attribution evidence",
+      "baseline": "Same matched population static coordinate and wrong prior zone controls",
+      "change": "Fixed bidirectional RGB optical flow with current prior ToF ratio",
+      "primary_metric": "Within mixed zone contributor macro AUC and all contributor coverage",
+      "decision": "MOTION_RETURN_ATTRIBUTION_NOT_ESTABLISHED",
+      "report": "research/active/dtr-r0/nearfield/MOTION_RETURN_RESULTS_20260923.md",
+      "source": "ue-local-stability-and-rescue-consumed-development",
+      "commit": "ec3a1ebd9498b3aff5f7107c415b0057313b0256",
+      "association_id": "ba-motion-return-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 3,
+        "temporal_belief": 3,
+        "geometry_motion": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "ba-motion-return-20260923 Does public temporal projection consistency add return attribution evidence Same matched population static coordinate and wrong prior zone controls Fixed bidirectional RGB optical flow with current prior ToF ratio Within mixed zone contributor macro AUC and all contributor coverage MOTION_RETURN_ATTRIBUTION_NOT_ESTABLISHED research/active/dtr-r0/nearfield/MOTION_RETURN_RESULTS_20260923.md ue-local-stability-and-rescue-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-regional-contact-20260923",
+      "status": "archived",
+      "question": "Does correctly paired regional RGB ToF improve contact localization?",
+      "baseline": "Same model with within-frame RGB derangement",
+      "change": "Correct regional RGB pairing with sensor tokens fixed",
+      "primary_metric": "Held actual and conditional-median Z5cm gain with coverage and false-crossing controls",
+      "decision": "Joint localization gate failed; retain query recall partial gain and exact NEGATIVE_CONTROL",
+      "report": "research/active/dtr-r0/nearfield/REGIONAL_CONTACT_RESULTS_20260923.md",
+      "source": "ue-query-occupancy-20260922-consumed-development",
+      "commit": "a966ef4a5f12ea21dc9328b7c4e2d1da54507ed5",
+      "association_id": "ba-regional-contact-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 3,
+        "geometry_motion": 3
+      },
+      "search_text": "ba-regional-contact-20260923 Does correctly paired regional RGB ToF improve contact localization? Same model with within-frame RGB derangement Correct regional RGB pairing with sensor tokens fixed Held actual and conditional-median Z5cm gain with coverage and false-crossing controls Joint localization gate failed; retain query recall partial gain and exact NEGATIVE_CONTROL research/active/dtr-r0/nearfield/REGIONAL_CONTACT_RESULTS_20260923.md ue-query-occupancy-20260922-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "ba-observation-separation-20260923",
+      "status": "archived",
+      "question": "Do matched opposite corridor truths retain public RGB ToF differences beyond repeated-pose variation?",
+      "baseline": "Same-pose RGB repeats and unchanged16draw ToF noise proxy",
+      "change": "Fixed local and full RGB distances plus common-valid ToF distances on matched lateral contrasts",
+      "primary_metric": "Cross distances above within-pose95th percentile;32pairs16groups; missing and UNKNOWN retained",
+      "decision": "Local RGB32/32separated; standardized ToF boundary8/16inside16/16; retain diagnostic COMPONENT, no transferable decoder or hardware ceiling",
+      "report": "research/active/dtr-r0/nearfield/OBSERVATION_SEPARATION_RESULTS_20260923.md",
+      "source": "ue-local-stability-and-rescue-consumed-development",
+      "commit": "421173a8f8a4c48d9dce28e7b4ed6731b4ab43a1",
+      "association_id": "ba-observation-separation-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 3,
+        "runtime_infrastructure": 3
+      },
+      "search_text": "ba-observation-separation-20260923 Do matched opposite corridor truths retain public RGB ToF differences beyond repeated-pose variation? Same-pose RGB repeats and unchanged16draw ToF noise proxy Fixed local and full RGB distances plus common-valid ToF distances on matched lateral contrasts Cross distances above within-pose95th percentile;32pairs16groups; missing and UNKNOWN retained Local RGB32/32separated; standardized ToF boundary8/16inside16/16; retain diagnostic COMPONENT, no transferable decoder or hardware ceiling research/active/dtr-r0/nearfield/OBSERVATION_SEPARATION_RESULTS_20260923.md ue-local-stability-and-rescue-consumed-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "foundation-geometry-20260923",
+      "status": "archived",
+      "question": "Can original Large stereo fix historical false geometry while preserving thin and HEAD obstacles?",
+      "baseline": "Exact historical SGBM+ToF and MZ104 TAO+ToF on576consumed stereo pairs",
+      "change": "One original23-51-11 ViT-Large fullresolution frontend, unchanged downstream",
+      "primary_metric": "Geometric origins, fixed native-query pixel accuracy/coverage, TPFPFN and event timing",
+      "decision": "ORIGINAL_STEREO_GEOMETRY_COMPONENT_ONLY; direct alert substitution rejected",
+      "report": "research/active/dtr-r0/nearfield/FOUNDATION_GEOMETRY_RESULTS_20260923.md",
+      "source": "MZ101/MZ102 consumed rendered Development",
+      "commit": "e71068dea1b7c43cbc01c38166b9cf191265bd4c",
+      "association_id": "foundation-geometry-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "source_coverage": 3,
+        "geometry_motion": 3,
+        "decision_lifecycle": 3,
+        "evaluation_evidence": 3
+      },
+      "search_text": "foundation-geometry-20260923 Can original Large stereo fix historical false geometry while preserving thin and HEAD obstacles? Exact historical SGBM+ToF and MZ104 TAO+ToF on576consumed stereo pairs One original23-51-11 ViT-Large fullresolution frontend, unchanged downstream Geometric origins, fixed native-query pixel accuracy/coverage, TPFPFN and event timing ORIGINAL_STEREO_GEOMETRY_COMPONENT_ONLY; direct alert substitution rejected research/active/dtr-r0/nearfield/FOUNDATION_GEOMETRY_RESULTS_20260923.md MZ101/MZ102 consumed rendered Development"
+    },
+    {
+      "kind": "experiment",
+      "id": "vpp-geometry-20260923",
+      "status": "archived",
+      "question": "Can public sparse distance hints improve stereo geometry and fixed contact events?",
+      "baseline": "Frozen original23-51-11 Large with and without ToF union; historical SGBM+ToF reference",
+      "change": "Official VPP rnd3x3 blending0.4 from ideal64ray public ToF; all model and downstream settings fixed",
+      "primary_metric": "Correct-query Z5cm87.62to94.75percent; final union TP/FP/FN377/22/69to375/24/71",
+      "decision": "COMPONENT_ONLY: geometry improves, direct alert replacement rejected",
+      "report": "research/active/dtr-r0/nearfield/VPP_GEOMETRY_RESULTS_20260923.md",
+      "source": "artifacts.local/evidence/ba-vpp-geometry-20260923-evaluation-v1/summary.json",
+      "commit": "0e8c2ead96d886a37121a4926ff41b7ab4269bd8",
+      "association_id": "vpp-geometry-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 3,
+        "decision_lifecycle": 3,
+        "evaluation_evidence": 6
+      },
+      "search_text": "vpp-geometry-20260923 Can public sparse distance hints improve stereo geometry and fixed contact events? Frozen original23-51-11 Large with and without ToF union; historical SGBM+ToF reference Official VPP rnd3x3 blending0.4 from ideal64ray public ToF; all model and downstream settings fixed Correct-query Z5cm87.62to94.75percent; final union TP/FP/FN377/22/69to375/24/71 COMPONENT_ONLY: geometry improves, direct alert replacement rejected research/active/dtr-r0/nearfield/VPP_GEOMETRY_RESULTS_20260923.md artifacts.local/evidence/ba-vpp-geometry-20260923-evaluation-v1/summary.json"
+    },
+    {
+      "kind": "experiment",
+      "id": "surface-contact-20260923",
+      "status": "archived",
+      "question": "Can bounded local surfaces recover more accurate camera-forward contact boundaries from frozen stereo depths?",
+      "baseline": "Frozen unguided and VPP Large rawpoints plus matched fittedpoint controls and unchanged ToF union",
+      "change": "One complete3x3inverse-depth fit and bounded adjacent edges/triangles, independent cameraOBB boundary oracle",
+      "primary_metric": "Distance5cm1156/1299to1157/1301of1692; surfaceequalsfitted control, width/contactpresence/falsecontact unchanged",
+      "decision": "NEGATIVE_CONTROL: close fixedlocal recipe; retain VPP boundary evidence, no surface gain",
+      "report": "research/active/dtr-r0/nearfield/SURFACE_CONTACT_RESULTS_20260923.md",
+      "source": "artifacts.local/evidence/ba-surface-contact-20260923-evaluation-v1/summary.json",
+      "commit": "77d0c2667f5727828bb7aa466b71fc5507e6b7b5",
+      "association_id": "surface-contact-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "authority_truth": 3,
+        "observation_perception": 3,
+        "geometry_motion": 3,
+        "evaluation_evidence": 6
+      },
+      "search_text": "surface-contact-20260923 Can bounded local surfaces recover more accurate camera-forward contact boundaries from frozen stereo depths? Frozen unguided and VPP Large rawpoints plus matched fittedpoint controls and unchanged ToF union One complete3x3inverse-depth fit and bounded adjacent edges/triangles, independent cameraOBB boundary oracle Distance5cm1156/1299to1157/1301of1692; surfaceequalsfitted control, width/contactpresence/falsecontact unchanged NEGATIVE_CONTROL: close fixedlocal recipe; retain VPP boundary evidence, no surface gain research/active/dtr-r0/nearfield/SURFACE_CONTACT_RESULTS_20260923.md artifacts.local/evidence/ba-surface-contact-20260923-evaluation-v1/summary.json"
+    },
+    {
+      "kind": "experiment",
+      "id": "stereo-adapt-20260923",
+      "status": "archived",
+      "question": "Can fixed nearfield disparity-update adaptation recover missing obstacles and reduce false near geometry on heldout layouts?",
+      "baseline": "Frozen original23-51-11 VPP with identical public ToF and direct metric contact queries",
+      "change": "Two paired192step adapters; ordinary versus balanced visible disparity supervision,48train/24eval layouts",
+      "primary_metric": "New distance5cm215/220/209of256; historical1299/1306/1308of1692; falsecontactnew3/3/12 historical48/17/23 for frozen/ordinary/balanced",
+      "decision": "ORDINARY_STEREO_ADAPTATION_GEOMETRY_CHALLENGER_ONLY",
+      "report": "research/active/dtr-r0/nearfield/STEREO_ADAPT_RESULTS_20260923.md",
+      "source": "artifacts.local/evidence/ba-stereo-adapt-20260923-evaluation/summary.json",
+      "commit": "611e5b6d38427865f58dba54ff5bf291dee92384",
+      "association_id": "stereo-adapt-20260923",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 3,
+        "evaluation_evidence": 9
+      },
+      "search_text": "stereo-adapt-20260923 Can fixed nearfield disparity-update adaptation recover missing obstacles and reduce false near geometry on heldout layouts? Frozen original23-51-11 VPP with identical public ToF and direct metric contact queries Two paired192step adapters; ordinary versus balanced visible disparity supervision,48train/24eval layouts New distance5cm215/220/209of256; historical1299/1306/1308of1692; falsecontactnew3/3/12 historical48/17/23 for frozen/ordinary/balanced ORDINARY_STEREO_ADAPTATION_GEOMETRY_CHALLENGER_ONLY research/active/dtr-r0/nearfield/STEREO_ADAPT_RESULTS_20260923.md artifacts.local/evidence/ba-stereo-adapt-20260923-evaluation/summary.json"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-route-comparison-20260924",
+      "status": "active",
+      "question": "Does CNH improve camera-forward alerts and add information over matched scalar readouts?",
+      "baseline": "G1 scalar H1 plus G3s and G4s matched scalar controls",
+      "change": "Fixed simulation benchmark with seven input arms and predefined sensor stress scenarios",
+      "primary_metric": "Head and rod macro event recall at fixed false-alert budget",
+      "decision": "ACTIVE_IMPLEMENTATION_NO_RESULTS",
+      "report": "artifacts.local/work/cnh-route-comparison-20260924/progress.json",
+      "source": "research/active/dtr-r0/nearfield/CNH_ROUTE_COMPARISON_PLAN_20260924.md",
+      "commit": "3ba20fc1eed2d1e3fa3a319a7b319e1c046e675a",
+      "association_id": "cnh-route-comparison-20260924",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "decision_lifecycle": 7,
+        "evaluation_evidence": 3
+      },
+      "search_text": "cnh-route-comparison-20260924 Does CNH improve camera-forward alerts and add information over matched scalar readouts? G1 scalar H1 plus G3s and G4s matched scalar controls Fixed simulation benchmark with seven input arms and predefined sensor stress scenarios Head and rod macro event recall at fixed false-alert budget ACTIVE_IMPLEMENTATION_NO_RESULTS artifacts.local/work/cnh-route-comparison-20260924/progress.json research/active/dtr-r0/nearfield/CNH_ROUTE_COMPARISON_PLAN_20260924.md"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-learning-diagnostic-20260925",
+      "status": "active",
+      "question": "Why do full-depth and ToF V2 learners fail on existing Development?",
+      "baseline": "Frozen V2 and learned visible-depth checkpoints",
+      "change": "Exact input audit, train AP, bounded 32-frame overfit and H3 geometry rule",
+      "primary_metric": "Train/dev query AP; per-frame depth equality; overfit train AP",
+      "decision": "Diagnose implementation versus representation; no test or City",
+      "report": "research/active/dtr-r0/nearfield/CNH_LEARNING_DIAGNOSTIC_20260925.md",
+      "source": "research/active/dtr-r0/nearfield/cnh_learning_diagnostic.py",
+      "commit": "79cf3c0cbdbe8aea0dc398513acec7068f931c14",
+      "association_id": "cnh-learning-diagnostic-20260925",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 3,
+        "geometry_motion": 6
+      },
+      "search_text": "cnh-learning-diagnostic-20260925 Why do full-depth and ToF V2 learners fail on existing Development? Frozen V2 and learned visible-depth checkpoints Exact input audit, train AP, bounded 32-frame overfit and H3 geometry rule Train/dev query AP; per-frame depth equality; overfit train AP Diagnose implementation versus representation; no test or City research/active/dtr-r0/nearfield/CNH_LEARNING_DIAGNOSTIC_20260925.md research/active/dtr-r0/nearfield/cnh_learning_diagnostic.py"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-qg1-20260925",
+      "status": "active",
+      "question": "Can query geometry repair full-depth fitting and which sensor components lose ranking?",
+      "baseline": "Frozen V2 and H3 geometry rule on repeated Development",
+      "change": "QG1 ROI and query bin conditioning; fixed cumulative and isolated response diagnosis",
+      "primary_metric": "Gate0 train AP; Gate1 three seed AP; response stage AP differences",
+      "decision": "Frozen gates before dev; diagnostic only, no generalization claims",
+      "report": "research/active/dtr-r0/nearfield/CNH_QG1_PROTOCOL_20260925.md",
+      "source": "research/active/dtr-r0/nearfield/cnh_qg1_train.py",
+      "commit": "80f84ee70f026729d61653230d5f2f5ea32aaff3",
+      "association_id": "cnh-qg1-20260925",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 3,
+        "geometry_motion": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "cnh-qg1-20260925 Can query geometry repair full-depth fitting and which sensor components lose ranking? Frozen V2 and H3 geometry rule on repeated Development QG1 ROI and query bin conditioning; fixed cumulative and isolated response diagnosis Gate0 train AP; Gate1 three seed AP; response stage AP differences Frozen gates before dev; diagnostic only, no generalization claims research/active/dtr-r0/nearfield/CNH_QG1_PROTOCOL_20260925.md research/active/dtr-r0/nearfield/cnh_qg1_train.py"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-r1-readout-20260925",
+      "status": "active",
+      "question": "Can fixed causal rule readouts improve simulated ToF ranking without network training?",
+      "baseline": "Frozen H3 geometry rule AP 0.2101159982",
+      "change": "Train median bias, known calibration control, raw128 matched filter and causal motion-aligned averaging",
+      "primary_metric": "Frozen dev AP gates and train-selected K",
+      "decision": "Development diagnostic only; no sensor information ceiling inference",
+      "report": "research/active/dtr-r0/nearfield/CNH_R1_READOUT_PROTOCOL_20260925.md",
+      "source": "research/active/dtr-r0/nearfield/cnh_r1_readout_run.py",
+      "commit": "73363031a71d570905d1eb4c9a0c130a789e1914",
+      "association_id": "cnh-r1-readout-20260925",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "geometry_motion": 6,
+        "evaluation_evidence": 6,
+        "runtime_infrastructure": 3
+      },
+      "search_text": "cnh-r1-readout-20260925 Can fixed causal rule readouts improve simulated ToF ranking without network training? Frozen H3 geometry rule AP 0.2101159982 Train median bias, known calibration control, raw128 matched filter and causal motion-aligned averaging Frozen dev AP gates and train-selected K Development diagnostic only; no sensor information ceiling inference research/active/dtr-r0/nearfield/CNH_R1_READOUT_PROTOCOL_20260925.md research/active/dtr-r0/nearfield/cnh_r1_readout_run.py"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-track-a-pilot12-20260925",
+      "status": "active",
+      "question": "Can independent procedural nearfield sequences pass frozen geometry and label gates?",
+      "baseline": "v1.0 acceptance; old alley smoke only",
+      "change": "Python label-first causal 12-unit Track A with H3-only B1-R",
+      "primary_metric": "G0 G1 G2 G3-sim G4 G5 and descriptive layout AP",
+      "decision": "Stop on gate failure or after 12 units; no scale-up",
+      "report": "research/active/dtr-r0/nearfield/CNH_NEARFIELD_ACCEPTANCE_PLAN_V1_1_20260925.md",
+      "source": "user-authorized-procedural-development",
+      "commit": "f61b1789a4e12626e2c1f942877fe554fd137115",
+      "association_id": "cnh-track-a-pilot12-20260925",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "authority_truth": 3,
+        "temporal_belief": 3,
+        "geometry_motion": 3
+      },
+      "search_text": "cnh-track-a-pilot12-20260925 Can independent procedural nearfield sequences pass frozen geometry and label gates? v1.0 acceptance; old alley smoke only Python label-first causal 12-unit Track A with H3-only B1-R G0 G1 G2 G3-sim G4 G5 and descriptive layout AP Stop on gate failure or after 12 units; no scale-up research/active/dtr-r0/nearfield/CNH_NEARFIELD_ACCEPTANCE_PLAN_V1_1_20260925.md user-authorized-procedural-development"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-scan-development-20260925",
+      "status": "active",
+      "question": "Does standardized query-supported scanning improve fixed consumed Development readouts?",
+      "baseline": "Exact stored H3 R0",
+      "change": "Fixed window scan and K4 accumulation; literal and corrected null variance",
+      "primary_metric": "alley dev AP with train-only tau and F1 threshold; Street descriptive",
+      "decision": "Directional consumed Development only; no independent confirmation",
+      "report": "research/active/dtr-r0/nearfield/CNH_SCAN_DEVELOPMENT_PROTOCOL_20260925.md",
+      "source": "research/active/dtr-r0/nearfield/cnh_scan_development.py",
+      "commit": "a9194827f938878430984fdab1ae6c9f58610f11",
+      "association_id": "cnh-scan-development-20260925",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "decision_lifecycle": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "cnh-scan-development-20260925 Does standardized query-supported scanning improve fixed consumed Development readouts? Exact stored H3 R0 Fixed window scan and K4 accumulation; literal and corrected null variance alley dev AP with train-only tau and F1 threshold; Street descriptive Directional consumed Development only; no independent confirmation research/active/dtr-r0/nearfield/CNH_SCAN_DEVELOPMENT_PROTOCOL_20260925.md research/active/dtr-r0/nearfield/cnh_scan_development.py"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-track-a-v12-pilot12-20260926",
+      "status": "active",
+      "question": "Can trajectory-level fixed quotas pass unchanged geometry acceptance and support H3 scan diagnostics?",
+      "baseline": "Frozen v1.1 G1/G2 FAIL retained",
+      "change": "Purpose-isolated seeds,32 configs,trajectory MILP,dedup,r2 H3 scan matrix",
+      "primary_metric": "Unchanged G0 G1 G2 gates; conditional descriptive sensor/readout checks",
+      "decision": "One12-unit cohort; stop on failure; no third generation plan or scaleup",
+      "report": "research/active/dtr-r0/nearfield/CNH_NEARFIELD_ACCEPTANCE_PLAN_V1_2_20260925.md",
+      "source": "controlled-python-track-a",
+      "commit": "9873b52967a462786aedb4bcc82729975e2f2b6f",
+      "association_id": "cnh-track-a-v12-pilot12-20260926",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "observation_perception": 3,
+        "temporal_belief": 3,
+        "geometry_motion": 6
+      },
+      "search_text": "cnh-track-a-v12-pilot12-20260926 Can trajectory-level fixed quotas pass unchanged geometry acceptance and support H3 scan diagnostics? Frozen v1.1 G1/G2 FAIL retained Purpose-isolated seeds,32 configs,trajectory MILP,dedup,r2 H3 scan matrix Unchanged G0 G1 G2 gates; conditional descriptive sensor/readout checks One12-unit cohort; stop on failure; no third generation plan or scaleup research/active/dtr-r0/nearfield/CNH_NEARFIELD_ACCEPTANCE_PLAN_V1_2_20260925.md controlled-python-track-a"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-track-a-scale-20260926",
+      "status": "active",
+      "question": "On 64 independent procedural audit layouts, do scan readouts (S1 vs B0, S2 vs B1-R) and near-field memory (S3 vs S2) improve layout-macro AP for HEAD and BODY?",
+      "baseline": "B0 weighted-sum H3 rule and B1-R K4 accumulation (v1.2 frozen)",
+      "change": "Standardized multi-scale scan S1/S2 and 8-frame near-field memory S3; v1.3 generator and sensor at 192 units",
+      "primary_metric": "audit layout-macro AP per group; six one-sided paired unit-bootstrap tests with Holm at 0.05; M1 SNR6 5Hz noisy ego",
+      "decision": "Hard G0-G4 gates; stop on failure; no reseed; secondary conditions descriptive only; learner excluded",
+      "report": "research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_PROTOCOL_20260926.md",
+      "source": "research/active/dtr-r0/nearfield/cnh_track_a_scale_evaluate.py",
+      "commit": "56c07669ca128d5762aeddb6b7b6b17ab8189ca9",
+      "association_id": "cnh-track-a-scale-20260926",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "temporal_belief": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "cnh-track-a-scale-20260926 On 64 independent procedural audit layouts, do scan readouts (S1 vs B0, S2 vs B1-R) and near-field memory (S3 vs S2) improve layout-macro AP for HEAD and BODY? B0 weighted-sum H3 rule and B1-R K4 accumulation (v1.2 frozen) Standardized multi-scale scan S1/S2 and 8-frame near-field memory S3; v1.3 generator and sensor at 192 units audit layout-macro AP per group; six one-sided paired unit-bootstrap tests with Holm at 0.05; M1 SNR6 5Hz noisy ego Hard G0-G4 gates; stop on failure; no reseed; secondary conditions descriptive only; learner excluded research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_PROTOCOL_20260926.md research/active/dtr-r0/nearfield/cnh_track_a_scale_evaluate.py"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-track-a-scale-v2-20260926",
+      "status": "active",
+      "question": "On independent procedural audit layouts (new seed family), do scan readouts (S1 vs B0, S2 vs B1-R) and near-field memory (S3 vs S2) improve layout-macro AP for HEAD and BODY?",
+      "baseline": "B0 weighted-sum H3 rule and B1-R K4 accumulation (v1.2 frozen)",
+      "change": "Same readouts as v1 protocol plus S1cell ablation; split-level label gates; certified fast margins; 5 Hz only",
+      "primary_metric": "audit layout-macro AP per group; six one-sided paired unit-bootstrap tests with Holm at 0.05; M1 SNR6 5Hz noisy ego",
+      "decision": "v1 FAIL preserved; hard integrity gates and split-level G2; INCOMPLETE excluded up to 5% per split; secondary descriptive only",
+      "report": "research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V2_PROTOCOL_20260926.md",
+      "source": "research/active/dtr-r0/nearfield/cnh_track_a_scale_evaluate.py",
+      "commit": "d8e0a4378fb2e9ef32c8f83fbbb102bf7bd20826",
+      "association_id": "cnh-track-a-scale-v2-20260926",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "authority_truth": 3,
+        "identity_binding": 3,
+        "temporal_belief": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "cnh-track-a-scale-v2-20260926 On independent procedural audit layouts (new seed family), do scan readouts (S1 vs B0, S2 vs B1-R) and near-field memory (S3 vs S2) improve layout-macro AP for HEAD and BODY? B0 weighted-sum H3 rule and B1-R K4 accumulation (v1.2 frozen) Same readouts as v1 protocol plus S1cell ablation; split-level label gates; certified fast margins; 5 Hz only audit layout-macro AP per group; six one-sided paired unit-bootstrap tests with Holm at 0.05; M1 SNR6 5Hz noisy ego v1 FAIL preserved; hard integrity gates and split-level G2; INCOMPLETE excluded up to 5% per split; secondary descriptive only research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V2_PROTOCOL_20260926.md research/active/dtr-r0/nearfield/cnh_track_a_scale_evaluate.py"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-track-a-scale-v3-20260926",
+      "status": "active",
+      "question": "On independent procedural audit layouts (v3 seed family), do scan readouts (S1 vs B0, S2 vs B1-R) and near-field memory (S3 vs S2) improve layout-macro AP for HEAD and BODY?",
+      "baseline": "B0 weighted-sum H3 rule and B1-R K4 accumulation (v1.2 frozen)",
+      "change": "v2 protocol plus sequential cross-unit dedup repair after parallel generation",
+      "primary_metric": "audit layout-macro AP per group; six one-sided paired unit-bootstrap tests with Holm at 0.05; M1 SNR6 5Hz noisy ego",
+      "decision": "v1 and v2 FAIL preserved; gates unchanged from v2; secondary descriptive only",
+      "report": "research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V3_PROTOCOL_20260926.md",
+      "source": "research/active/dtr-r0/nearfield/cnh_track_a_scale_fast.py",
+      "commit": "d158ff125a62cebff4954aab6af4a560255e8289",
+      "association_id": "cnh-track-a-scale-v3-20260926",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "identity_binding": 3,
+        "temporal_belief": 6,
+        "evaluation_evidence": 3
+      },
+      "search_text": "cnh-track-a-scale-v3-20260926 On independent procedural audit layouts (v3 seed family), do scan readouts (S1 vs B0, S2 vs B1-R) and near-field memory (S3 vs S2) improve layout-macro AP for HEAD and BODY? B0 weighted-sum H3 rule and B1-R K4 accumulation (v1.2 frozen) v2 protocol plus sequential cross-unit dedup repair after parallel generation audit layout-macro AP per group; six one-sided paired unit-bootstrap tests with Holm at 0.05; M1 SNR6 5Hz noisy ego v1 and v2 FAIL preserved; gates unchanged from v2; secondary descriptive only research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V3_PROTOCOL_20260926.md research/active/dtr-r0/nearfield/cnh_track_a_scale_fast.py"
+    },
+    {
+      "kind": "experiment",
+      "id": "cnh-track-a-scale-v4-20260926",
+      "status": "active",
+      "question": "On a fresh procedural seed family, do the v3 readout gains (S2 vs B1-R, S1 vs B0, S3 vs S2) replicate, and at calib-matched false-alert budgets (5/10/20%) does memory reduce BODY never-warned near events and do single-frame thresholds warn more timely than 2/2 persistence?",
+      "baseline": "v3 frozen readouts and evaluator; S2 single-frame alerts; B1-R and B0 baselines",
+      "change": "fresh seed family (calib 0-31, audit 32-95, no train), primary condition only, alert family with calib-only thresholds at three false-alert budgets",
+      "primary_metric": "P: six v3 macro-AP tests (Holm .05); A: nine alert tests A1 BODY never-warned S2-S3 and A2 timely S2 1/1 - 2/2 x HEAD/BODY at 5/10/20% budgets (Holm .05; claim needs all three budgets)",
+      "decision": "frozen before generation; descriptive visibility and model-conditional matched-filter reference make no physical-limit claims",
+      "report": "research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V4_PROTOCOL_20260926.md",
+      "source": "research/active/dtr-r0/nearfield/cnh_track_a_v4_analysis.py",
+      "commit": "1a26c719379d928fb9fd5acfcd8ad72282b14ba0",
+      "association_id": "cnh-track-a-scale-v4-20260926",
+      "routes": [
+        "obstacle-avoidance"
+      ],
+      "layer_scores": {
+        "temporal_belief": 6,
+        "decision_lifecycle": 13,
+        "evaluation_evidence": 6
+      },
+      "search_text": "cnh-track-a-scale-v4-20260926 On a fresh procedural seed family, do the v3 readout gains (S2 vs B1-R, S1 vs B0, S3 vs S2) replicate, and at calib-matched false-alert budgets (5/10/20%) does memory reduce BODY never-warned near events and do single-frame thresholds warn more timely than 2/2 persistence? v3 frozen readouts and evaluator; S2 single-frame alerts; B1-R and B0 baselines fresh seed family (calib 0-31, audit 32-95, no train), primary condition only, alert family with calib-only thresholds at three false-alert budgets P: six v3 macro-AP tests (Holm .05); A: nine alert tests A1 BODY never-warned S2-S3 and A2 timely S2 1/1 - 2/2 x HEAD/BODY at 5/10/20% budgets (Holm .05; claim needs all three budgets) frozen before generation; descriptive visibility and model-conditional matched-filter reference make no physical-limit claims research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V4_PROTOCOL_20260926.md research/active/dtr-r0/nearfield/cnh_track_a_v4_analysis.py"
     }
   ],
   "associations": [
@@ -34906,6 +36388,152 @@
         "artifacts.local/evidence/ase-body-query-pilot-20260909"
       ],
       "decision_id": "terminal-dtr-ase-body-query-pilot-coverage-insufficient",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-boundary-error-20260923",
+      "use_ids": [],
+      "protocol_id": "boundary-error-20260923",
+      "code_revision": "27040e8244c82373132ec4a5a654d8ea227e7f54",
+      "input_fingerprint": "fe35b5b7a7b0f91206c7834dae55991e06a268c62741afe79c6d3327bfa250ea",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/BOUNDARY_ERROR_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-boundary-error-20260923-v3/result.json",
+        "artifacts.local/evidence/ba-boundary-error-20260923-v3/rows.json",
+        "artifacts.local/evidence/ba-boundary-error-20260923-audit-v2/result.json"
+      ],
+      "decision_id": "terminal-boundary-error-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-boundary-supervision-20260923",
+      "use_ids": [],
+      "protocol_id": "boundary-supervision-20260923",
+      "code_revision": "dc006dc6f22e8b761288b2377bf8890ab19bbda5",
+      "input_fingerprint": "e98595820b49bc181cf0b1a7ce96798656ac656b71e35887064654356be567ed",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/BOUNDARY_SUPERVISION_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-boundary-supervision-20260923-v2/result.json",
+        "artifacts.local/evidence/ba-boundary-supervision-20260923-v2/prediction-seal.json",
+        "artifacts.local/evidence/ba-boundary-supervision-20260923-audit-v2/result.json"
+      ],
+      "decision_id": "terminal-boundary-supervision-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-contact-boundary-20260923",
+      "use_ids": [],
+      "protocol_id": "contact-boundary-20260923",
+      "code_revision": "ab271f6577101cde2e42f17aba6e5a5e14c7b578",
+      "input_fingerprint": "a526b9a0e9382cbe5c1d92f7b9c67cc19302db2d99305053636221aa4b213c1e",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CONTACT_BOUNDARY_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-contact-boundary-20260923/result.json",
+        "artifacts.local/evidence/ba-contact-boundary-20260923/prediction-seal.json",
+        "artifacts.local/evidence/ba-contact-boundary-20260923/independent-audit.json"
+      ],
+      "decision_id": "terminal-contact-boundary-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-contact-decomposition-20260923",
+      "use_ids": [],
+      "protocol_id": "contact-decomposition-20260923",
+      "code_revision": "a3aecb678a02101ef5f52bdc507a8d5fe6bb0478",
+      "input_fingerprint": "d60ad8bcc628d74446fb060ddf9869020c94f0426c2a066123f422175b1b1f63",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CONTACT_DECOMPOSITION_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-contact-decomposition-20260923-v3/result.json",
+        "artifacts.local/evidence/ba-contact-decomposition-20260923/component-seal.json",
+        "artifacts.local/evidence/ba-contact-decomposition-20260923-audit/result.json"
+      ],
+      "decision_id": "terminal-contact-decomposition-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-contact-sampling-20260923",
+      "use_ids": [],
+      "protocol_id": "contact-sampling-20260923",
+      "code_revision": "7f23bf61739e9075ae8ed53ac239616e352833dc",
+      "input_fingerprint": "0bd8d01755f0b621dfceaad87175d8d95d42d8f15e7ee47b173e6dcac8f2b1f1",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CONTACT_SAMPLING_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-contact-sampling-20260923/result.json",
+        "artifacts.local/evidence/ba-contact-sampling-20260923/prediction-seal.json",
+        "artifacts.local/evidence/ba-contact-sampling-20260923/independent-audit.json"
+      ],
+      "decision_id": "terminal-contact-sampling-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-exact-contact-20260923",
+      "use_ids": [],
+      "protocol_id": "exact-contact-20260923",
+      "code_revision": "cdbd83299503ad34bd41f0c64ed3da34b8fe248a",
+      "input_fingerprint": "c626c4b635d9a714dc0ddf4e12ea5c210dc9bef20eb87892ed365ca887ac5e3c",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/EXACT_CONTACT_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-exact-contact-20260923/result.json",
+        "artifacts.local/evidence/ba-exact-contact-20260923-audit/result.json"
+      ],
+      "decision_id": "terminal-exact-contact-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-local-rescue-20260923",
+      "use_ids": [],
+      "protocol_id": "local-rescue-gate-20260923",
+      "code_revision": "79dc812fa8c6453b650e867e4fe93a8baf877a4f",
+      "input_fingerprint": "a920377677d84c0fba9041a9a6b9fd2ca8b095c73c1c31934e834ce92055062a",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/LOCAL_RESCUE_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-local-rescue-fresh-20260923-evaluated/result.json",
+        "artifacts.local/evidence/ba-local-rescue-fresh-audit-20260923-run/result.json",
+        "artifacts.local/evidence/ba-local-rescue-audit-20260923/run/compact.json"
+      ],
+      "decision_id": "terminal-local-rescue-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-metric-contact-20260923",
+      "use_ids": [],
+      "protocol_id": "metric-contact-20260923",
+      "code_revision": "980f78b87c06f3f2b7b979670f59a471f4feeccf",
+      "input_fingerprint": "129a6757a145ce25c4d212fee3f9c135deec1ea6bb89ca56db32828777743d22",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/METRIC_CONTACT_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-metric-contact-20260923/result.json",
+        "artifacts.local/evidence/ba-metric-contact-20260923-audit/result.json"
+      ],
+      "decision_id": "terminal-metric-contact-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-motion-return-20260923",
+      "use_ids": [],
+      "protocol_id": "motion-return-20260923",
+      "code_revision": "ec3a1ebd9498b3aff5f7107c415b0057313b0256",
+      "input_fingerprint": "22abd8fdde4562bdf1716660dff93f95298fc9f5b0bc639d1e272046f48e3223",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/MOTION_RETURN_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-motion-return-20260923-run/result.json",
+        "artifacts.local/evidence/ba-motion-return-audit-20260923-run-v3/result.json"
+      ],
+      "decision_id": "terminal-motion-return-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-observation-separation-20260923",
+      "use_ids": [],
+      "protocol_id": "observation-separation-20260923",
+      "code_revision": "421173a8f8a4c48d9dce28e7b4ed6731b4ab43a1",
+      "input_fingerprint": "e664d627b697c00c526c0857495dd1d268e3fae713cc8dcef480d398871f3e7f",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/OBSERVATION_SEPARATION_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-observation-separation-20260923-run/result.json",
+        "artifacts.local/evidence/ba-observation-separation-audit-20260923-run/result.json"
+      ],
+      "decision_id": "terminal-observation-separation-20260923",
       "source_rows": 1
     },
     {
@@ -34968,6 +36596,34 @@
         "artifacts.local/evidence/ba-query-spatial-fit-20260922/independent-audit.json"
       ],
       "decision_id": "terminal-query-spatial-fit-20260922",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-range-pair-20260923",
+      "use_ids": [],
+      "protocol_id": "range-pair-20260923",
+      "code_revision": "a7b3ffbc8b787f5ca4cfa91b24b5dd38214cac01",
+      "input_fingerprint": "f9e06925d7f825f1c906aaafdc64cb4feafa07d75d0227f2c33db189acf60264",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/RANGE_PAIR_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-range-pair-20260923-run/result.json",
+        "artifacts.local/evidence/ba-range-pair-audit-20260923-run/result.json"
+      ],
+      "decision_id": "terminal-range-pair-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "ba-regional-contact-20260923",
+      "use_ids": [],
+      "protocol_id": "regional-contact-20260923",
+      "code_revision": "a966ef4a5f12ea21dc9328b7c4e2d1da54507ed5",
+      "input_fingerprint": "cabea8d4bafa5fd3cb698382318d3eb17035e7143aeac5ba7e405d8234a14b4a",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/REGIONAL_CONTACT_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-regional-contact-20260923/result.json",
+        "artifacts.local/evidence/ba-regional-contact-20260923-audit/result.json"
+      ],
+      "decision_id": "terminal-regional-contact-20260923",
       "source_rows": 1
     },
     {
@@ -35637,6 +37293,149 @@
       "source_rows": 1
     },
     {
+      "run_id": "cnh-learning-diagnostic-20260925",
+      "use_ids": [],
+      "protocol_id": "cnh-learning-diagnostic-20260925",
+      "code_revision": "79cf3c0cbdbe8aea0dc398513acec7068f931c14",
+      "input_fingerprint": "09e4b09483fbce3d5b038f63c61691ce6773cfc5763ef3ab929ab68141c10247",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CNH_LEARNING_DIAGNOSTIC_20260925.md"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "cnh-qg1-20260925",
+      "use_ids": [],
+      "protocol_id": "cnh-qg1-20260925",
+      "code_revision": "80f84ee70f026729d61653230d5f2f5ea32aaff3",
+      "input_fingerprint": "808b9397eec62221f3da285607752a0c1292b19e1da4a32b127a8aaa9074c0ac",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CNH_QG1_PROTOCOL_20260925.md",
+        "artifacts.local/evidence/cnh-qg1-20260925-v1",
+        "artifacts.local/evidence/cnh-qg1-response-decomposition-20260925-v1"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "cnh-r1-readout-20260925",
+      "use_ids": [],
+      "protocol_id": "cnh-r1-readout-20260925",
+      "code_revision": "73363031a71d570905d1eb4c9a0c130a789e1914",
+      "input_fingerprint": "808b9397eec62221f3da285607752a0c1292b19e1da4a32b127a8aaa9074c0ac",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CNH_R1_READOUT_PROTOCOL_20260925.md",
+        "artifacts.local/evidence/cnh-r1-readout-20260925-v1"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "cnh-route-comparison-20260924",
+      "use_ids": [],
+      "protocol_id": "cnh-route-v3-execution-20260924",
+      "code_revision": "3ba20fc1eed2d1e3fa3a319a7b319e1c046e675a",
+      "input_fingerprint": "648185f85506ef8c12c6d95ec1ca5ed726af2b995088302e67a45814b08beef4",
+      "artifact_refs": [
+        "artifacts.local/work/cnh-route-comparison-20260924/progress.json",
+        "artifacts.local/work/cnh-route-comparison-20260924"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "cnh-scan-development-20260925",
+      "use_ids": [],
+      "protocol_id": "cnh-scan-development-v1",
+      "code_revision": "a9194827f938878430984fdab1ae6c9f58610f11",
+      "input_fingerprint": "7b8485852ad1e29f30f58629850fb13d4b9713e11734fb1fef23a986972c4f82",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CNH_SCAN_DEVELOPMENT_PROTOCOL_20260925.md",
+        "artifacts.local/evidence/cnh-scan-development-20260925-v1"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "cnh-track-a-pilot12-20260925",
+      "use_ids": [],
+      "protocol_id": "cnh-track-a-v1.1",
+      "code_revision": "f61b1789a4e12626e2c1f942877fe554fd137115",
+      "input_fingerprint": "684121c9bf4bce0e743ac503b656e77e5d4f407666222170efd33751de1fa3bb",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CNH_NEARFIELD_ACCEPTANCE_PLAN_V1_1_20260925.md",
+        "artifacts.local/evidence/cnh-track-a-pilot12-20260925-v1"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "cnh-track-a-scale-20260926",
+      "use_ids": [],
+      "protocol_id": "cnh-track-a-scale-protocol-20260926",
+      "code_revision": "56c07669ca128d5762aeddb6b7b6b17ab8189ca9",
+      "input_fingerprint": "4891c28542a498ef7653367edebb5148ce91c69aa1af2eb38c57481b163e8151",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_PROTOCOL_20260926.md",
+        "artifacts.local/evidence/cnh-track-a-scale-20260926-v1"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "cnh-track-a-scale-v2-20260926",
+      "use_ids": [],
+      "protocol_id": "cnh-track-a-scale-v2-protocol-20260926",
+      "code_revision": "d8e0a4378fb2e9ef32c8f83fbbb102bf7bd20826",
+      "input_fingerprint": "ec582994d5204c09fbb7537aa5d26eaebad5110982b457503ab5df95f9263e21",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V2_PROTOCOL_20260926.md",
+        "artifacts.local/evidence/cnh-track-a-scale-v2-20260926-v1"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "cnh-track-a-scale-v3-20260926",
+      "use_ids": [],
+      "protocol_id": "cnh-track-a-scale-v3-protocol-20260926",
+      "code_revision": "d158ff125a62cebff4954aab6af4a560255e8289",
+      "input_fingerprint": "03d78a0d2150b4caf7da5205deb00c1fd766655250c959c267697e49c2939ee9",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V3_PROTOCOL_20260926.md",
+        "artifacts.local/evidence/cnh-track-a-scale-v3-20260926-v1"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "cnh-track-a-scale-v4-20260926",
+      "use_ids": [],
+      "protocol_id": "cnh-track-a-scale-v4-protocol-20260926",
+      "code_revision": "1a26c719379d928fb9fd5acfcd8ad72282b14ba0",
+      "input_fingerprint": "42eec4f485e8a169906d007ecee04b7d3c5cf12440433e2c24ac3fa4696b0343",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V4_PROTOCOL_20260926.md",
+        "artifacts.local/evidence/cnh-track-a-scale-v4-20260926-v1"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "cnh-track-a-v12-pilot12-20260926",
+      "use_ids": [],
+      "protocol_id": "cnh-track-a-v1.2-20260926",
+      "code_revision": "9873b52967a462786aedb4bcc82729975e2f2b6f",
+      "input_fingerprint": "40e746db498556d0cc1544de5b07b25e3570db3aa074b77aafe8738303852a22",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/CNH_NEARFIELD_ACCEPTANCE_PLAN_V1_2_20260925.md",
+        "artifacts.local/evidence/cnh-track-a-v12-pilot12-20260926-v1"
+      ],
+      "decision_id": null,
+      "source_rows": 1
+    },
+    {
       "run_id": "dtr-carla-c10-x31-source-not-evaluable-2026-08-30",
       "use_ids": [],
       "protocol_id": null,
@@ -35734,6 +37533,20 @@
         "docs/CURRENT_DECISION.md"
       ],
       "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "foundation-geometry-20260923",
+      "use_ids": [],
+      "protocol_id": "foundation-geometry-20260923",
+      "code_revision": "e71068dea1b7c43cbc01c38166b9cf191265bd4c",
+      "input_fingerprint": "262a1e22356f41be86ed72e70359f73d397ea838ceabfe6c7edbbe4e91ef581a",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/FOUNDATION_GEOMETRY_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-foundation-geometry-20260923-evaluation-v1/summary.json",
+        "artifacts.local/evidence/ba-foundation-geometry-20260923-audit-v1/result.json"
+      ],
+      "decision_id": "terminal-foundation-geometry-20260923",
       "source_rows": 1
     },
     {
@@ -36365,6 +38178,36 @@
         "research/active/l10-r0/l10_scenenn_temporal_hue_geometry_consensus_result_v1.json"
       ],
       "decision_id": "terminal-l10-scenenn-temporal-hue-geometry-consensus-posthoc-negative",
+      "source_rows": 1
+    },
+    {
+      "run_id": "local-stability-20260923",
+      "use_ids": [],
+      "protocol_id": "local-stability-20260923-v1",
+      "code_revision": "31c4f97bb4969b8a9c9318641a3c6872ea557925",
+      "input_fingerprint": "e5ee9019bc400e1a3cdffe30e14d5fd25f500c24a65ce1f6f9b1321a4eba0af1",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/LOCAL_STABILITY_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-local-stability-20260923-capture/launcher-terminal.json",
+        "artifacts.local/evidence/ba-local-stability-20260923-predictions/prediction-seal.json",
+        "artifacts.local/evidence/ba-local-stability-20260923-evaluated",
+        "artifacts.local/evidence/ba-local-stability-20260923-audit/result.json"
+      ],
+      "decision_id": "terminal-local-stability-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "local-support-20260922",
+      "use_ids": [],
+      "protocol_id": "local-support-20260922-v1",
+      "code_revision": "e2f2e0293cbd3f5fdd7a0cd3717409115181d04e",
+      "input_fingerprint": "5f4cbafc39d419d0e23bbeec8e66c90e7265b8793a1e51bd2dd11e410e399d8c",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/LOCAL_SUPPORT_RESULTS_20260922.md",
+        "artifacts.local/evidence/ba-local-support-20260922-run",
+        "artifacts.local/evidence/ba-local-support-20260922-audit/result.json"
+      ],
+      "decision_id": "terminal-local-support-20260922",
       "source_rows": 1
     },
     {
@@ -40479,6 +42322,48 @@
       "source_rows": 1
     },
     {
+      "run_id": "return-correspondence-20260923",
+      "use_ids": [],
+      "protocol_id": "return-correspondence-20260923-v1",
+      "code_revision": "88c20ce5e5036a086d57048618e0660cab45c098",
+      "input_fingerprint": "b7472d0d753778208fd6463801149d2d6b88f6695080727df045daa1596c6419",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/RETURN_CORRESPONDENCE_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-return-correspondence-20260923-run",
+        "artifacts.local/evidence/ba-return-correspondence-20260923-audit/result.json"
+      ],
+      "decision_id": "terminal-return-correspondence-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "stereo-adapt-20260923",
+      "use_ids": [],
+      "protocol_id": "stereo-adapt-20260923",
+      "code_revision": "611e5b6d38427865f58dba54ff5bf291dee92384",
+      "input_fingerprint": "f196675d106f1b9e7123cc38fa15c4c682d4cb6c93687d159ebf7d35e5bd4b01",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/STEREO_ADAPT_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-stereo-adapt-20260923-evaluation/summary.json",
+        "artifacts.local/evidence/ba-stereo-adapt-20260923/audit-v1/audit.json"
+      ],
+      "decision_id": "terminal-stereo-adapt-20260923",
+      "source_rows": 1
+    },
+    {
+      "run_id": "surface-contact-20260923",
+      "use_ids": [],
+      "protocol_id": "surface-contact-20260923",
+      "code_revision": "77d0c2667f5727828bb7aa466b71fc5507e6b7b5",
+      "input_fingerprint": "22d7b69406d69c6034d2698e3add1b2b4e2fcfb2ff821c4b339039565020c40f",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/SURFACE_CONTACT_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-surface-contact-20260923-evaluation-v1/summary.json",
+        "artifacts.local/evidence/ba-surface-contact-20260923-audit-v1/result.json"
+      ],
+      "decision_id": "terminal-surface-contact-20260923",
+      "source_rows": 1
+    },
+    {
       "run_id": "tof-motion-scan-20260910",
       "use_ids": [],
       "protocol_id": "tof-motion-scan-v1",
@@ -40502,6 +42387,20 @@
         "research/active/unseen-location-router/README.md"
       ],
       "decision_id": null,
+      "source_rows": 1
+    },
+    {
+      "run_id": "vpp-geometry-20260923",
+      "use_ids": [],
+      "protocol_id": "vpp-geometry-20260923",
+      "code_revision": "0e8c2ead96d886a37121a4926ff41b7ab4269bd8",
+      "input_fingerprint": "03d06e2cd2d2a914e43fe750535e1b20be9399c3cfe7f23230e18d50fd567b5a",
+      "artifact_refs": [
+        "research/active/dtr-r0/nearfield/VPP_GEOMETRY_RESULTS_20260923.md",
+        "artifacts.local/evidence/ba-vpp-geometry-20260923-evaluation-v1/summary.json",
+        "artifacts.local/evidence/ba-vpp-geometry-20260923-audit-v1/result.json"
+      ],
+      "decision_id": "terminal-vpp-geometry-20260923",
       "source_rows": 1
     }
   ]

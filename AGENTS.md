@@ -3,10 +3,10 @@
 ## Project
 
 BlindAssist is an Android research demo and thesis project, not a certified safety product.
-Choose methods by measured benefit, stability and cost; bold hypotheses are welcome, novelty claims need evidence.
+Choose methods by measured benefit, stability and cost; novelty claims need evidence.
 
-Keep module ownership stable: `:app` shell/assets, `:feature:assist` runtime,
-`:core:assist` risk, `:core:vision` detection, `:core:device` adapters, and `:core:ui` UI.
+Keep ownership stable: `:app` shell/assets, `:feature:assist` runtime, `:core:assist` risk,
+`:core:vision` detection, `:core:device` adapters, `:core:ui` UI.
 
 ## Context routing
 
@@ -21,41 +21,46 @@ Keep module ownership stable: `:app` shell/assets, `:feature:assist` runtime,
 5. Check `git status --short` before editing/staging; use
    `scripts/show_worktree_scope.ps1` only when ownership is unclear.
 
-Historical gates apply to the tested scope. For a new hypothesis, explain what prior
-evidence rules out, what mechanism changes and what check could change the decision.
-Preserve route authority and consumed evidence; load history only as needed.
+Historical gates retain their tested scope. Explain changed mechanisms and useful
+checks; preserve route authority and consumed evidence.
 
 ## Execution policy
 
-In open-ended research or at a bottleneck, proactively consider different mechanisms,
-reframe the problem and offer unconventional hypotheses. Recommend the strongest
-direction with a rationale; idea generation needs no experiment registration.
-Default research mode is `EXPLORE`: select a capability question, hypothesis,
-credible baseline, useful contrast and outcome decisions. Bound tests, not ideas.
-Use [research workflow](research/WORKFLOW.md) for experiments; coupled edits are allowed.
-Engineering fixes need no hypothesis or registration. Experiment stops preserve
-other authorized work within the task's budget and evidence boundaries.
-
-In `EXPLORE`, choose details and complete authorized reversible work without repeated
-approval. Ask only for consequential unresolved choices; continue independent work.
-
-- disclosed consumed/curated Development data and controlled scenarios are allowed;
-- record a failure in the owning current/ledger when it changes a decision;
-- use one falsifying check; expand for an observed defect, explicit acceptance
-  criterion, or decision-changing evidence gap;
-- missing deployment/safety evidence limits claims, not reversible experiments;
-- reused evidence may support disclosed Development, never fresh confirmation.
-
-Keep process proportionate to decision value or named risk; simplify ineffective rules.
-Update current only for changed decisions; persist undecided ideas in `idea.md` as needed.
-Public data needs provenance for internal research; access grants no redistribution,
-promotion, consent or license rights.
-
-Use `FINAL` only before protected blind/final access or a claim-critical paper
-number; follow [research governance](docs/formal/RESEARCH_GOVERNANCE.md). Use
-`EXTERNAL` only for release, deployment, credentials, privacy, destructive
-external actions, default-App promotion, or real-user/product-safety claims.
-These modes constrain the affected claim/action, not nearby reversible work.
+Propose mechanisms by measured effect; ideas need no registration. The user decides
+new research questions, budget expansions and changed success criteria. Existing
+authorization covers implementation, recovery, validation and delivery. Preserve
+frozen failures and stop rules; do not reopen them by changing thresholds/subsets.
+Default mode is `EXPLORE`, with two proportionate lanes (2026-09-26 decision):
+- **Fast lane:** diagnostics, prechecks, engineering troubleshooting and pilots.
+  No experiment registration or separate protocol. Reuse validated inputs without
+  repeating hash-chain audits unless inputs changed or concrete integrity evidence
+  requires a check. Deliver at most one page: conclusion, one table with denominators,
+  next step, and one combined scope/limitations paragraph, in `artifacts.local/` or
+  a short Markdown file. Do not update either CURRENT page for routine diagnostics.
+- **Formal lane:** experiments changing the mainline/baseline or producing paper
+  numbers. Freeze criteria before outcomes, register, verify input identity, provide
+  the full report and update the owning current decision. Follow
+  [research workflow](research/WORKFLOW.md); keep train/calib/evaluation separate.
+- When uncertain, start in the fast lane. Before using its outcome to change a
+  decision or support a paper claim, perform a frozen formal reproduction. This is
+  not permission to retrospectively promote consumed diagnostic results.
+- From **v1.3**, pilot quota gates (G2 counts/combination counts) report shortfalls
+  without stopping downstream. G0 identity/coordinates and G1 duplicates remain
+  hard stops; all gates remain hard at scale-up. Other frozen criteria remain as
+  written. Frozen **v1.2 is unchanged**; preserve its failure and stop conditions.
+- Lead reports with the conclusion and main table; consolidate limitations once.
+  Keep `docs/CURRENT_DECISION.md` and the route CURRENT near 3KB: current decision,
+  key numbers/denominators, pending questions and links. Update only when decisions
+  change; archive the prior full text rather than append chronological results.
+Use independent sampling units for power/precision before inferential collection;
+small pilots do not establish generalization. Reused Development stays consumed.
+Use one falsifying check; expand for observed defects or material evidence gaps.
+Compare on the fixed benchmark by default; supplements need scoped authorization.
+Public data needs provenance; access grants no redistribution, consent or license rights.
+Use `FINAL` before protected blind/final access or claim-critical paper numbers and
+[research governance](docs/formal/RESEARCH_GOVERNANCE.md). Use `EXTERNAL` for release,
+deployment, credentials, privacy, destructive external actions or real-user safety
+claims. Missing deployment evidence limits claims, not authorized reversible work.
 
 ## Integrity and evidence
 
@@ -69,11 +74,10 @@ These modes constrain the affected claim/action, not nearby reversible work.
   performance.
 - Preserve failed/consumed terminals. Reuse permits diagnostics, regression, or
   disclosed Development, never fresh confirmation authority.
-- Every current terminal must have one structured inheritance role in
-  `research/knowledge/decision/inheritance.json`. `RETAINED_CORE` supplies the
-  next baseline, `COMPONENT_OR_CHALLENGER` remains eligible only in its recorded
-  mode, `NEGATIVE_CONTROL` is carried into the next related falsifier, and only
-  `DEAD_FOR_THIS_ROLE` blocks the same scoped responsibility from reopening.
+- Formal inheritance applies to terminals changing mainline, baseline or reuse
+  decisions; ordinary exploration needs a clear conclusion, not a new terminal.
+  Preserve existing records and use supported tooling; roles and obligations are
+  defined in [research workflow](research/WORKFLOW.md).
 - Do not leak protected outcomes, silently change denominators, hide collapsed
   coverage, or read evaluator truth from observations.
 
@@ -94,17 +98,13 @@ These modes constrain the affected claim/action, not nearby reversible work.
 ## Tools and compute
 
 - Prefer Exa for external search, literature discovery, and multi-source research when available.
-- SkyDiscover is optional and isolated. BlindAssist owns evaluation and claims; never mutate/clean SkyDiscover or use it to replace missing evidence.
 - Run Android/Gradle through `pwsh -NoProfile -File scripts/run_android_gradle.ps1 <tasks...>`.
-- Register new runs with `python tools/knowledge.py register-experiment`; never append `experiments/index.jsonl` manually.
-- Assign or revise a current terminal with `python tools/knowledge.py
-  set-terminal-inheritance`; an archived registration must link `--decision-id`
-  to a terminal whose inheritance role is already complete.
-- Install the knowledge hook once with `pwsh -NoProfile -File scripts/refresh_knowledge.ps1 -InstallHook`; full refresh is for stale-index repair or a requested rebuild.
+- Register formal experiments with `python tools/knowledge.py register-experiment`; never append `experiments/index.jsonl` manually.
+- Use `python tools/knowledge.py set-terminal-inheritance`; archived registration
+  links `--decision-id` to a terminal with complete inheritance.
 - Use `pwsh -NoProfile -File tools/ba.ps1 doctor <profile>` for an affected prerequisite or failure, not as a per-task gate.
-- Use the worker for scoped work without renewed approval; see [host compute](docs/HOST_RESEARCH_COMPUTE.md). Keep host details in ignored config.
-- Validate only the changed surface with `git diff --check`, structure for layout, and docs index for hot links; broaden only for the named risk.
-- GPU-helpful work is GPU-first. Record actual backend/device/providers and timings; compare equivalent CPU/GPU work when choosing placement; reuse measurements while workload and environment remain equivalent. CPU requires `CPU_FASTER_MEASURED`, `TASK_NOT_GPU_SUITABLE`, `ACCELERATOR_UNAVAILABLE`, `GPU_BACKEND_UNAVAILABLE`, or `FROZEN_PROTOCOL_CPU_ONLY`. Small scalar/metadata work stays on CPU. Reuse `tools/research_backend.py`; never claim CUDA from CPU execution.
+- Validate changed surfaces: `git diff --check`, structure for layout, docs index for hot links.
+- Use [host compute](docs/HOST_RESEARCH_COMPUTE.md) for GPU-first placement, CPU exceptions and backend evidence.
 
 ## Ownership and delivery
 
@@ -114,6 +114,7 @@ These modes constrain the affected claim/action, not nearby reversible work.
 - Never rewrite history, force-push, delete branches, change remotes, or perform destructive actions without explicit authorization.
 - Deliver routine research directly to the default branch unless requested otherwise; verify remote parity and never absorb unrelated changes.
 
-Completion means the outcome exists, its narrow check passes or the gap is stated,
-any current terminal has a structured inheritance disposition, the scoped diff
-is reviewed, task-owned resources are released, and no speculative polish remains.
+Report results first in plain Chinese: what improved, its cost and the decision;
+then give labeled metrics with denominators/units. Avoid cryptic compressed counts;
+tables are optional. Completion requires the outcome, scoped checks or stated gaps,
+applicable inheritance, reviewed diff and release of task-owned resources.
