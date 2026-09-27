@@ -39,6 +39,21 @@ def fake_process(command, **kwargs):
 
 
 class GuideTests(unittest.TestCase):
+    def test_wifi_camera_uses_url_without_requiring_camera_serial_port(self):
+        commands = []
+        def launch(command, **kwargs):
+            commands.append(command)
+            return fake_process(command, **kwargs)
+        with tempfile.TemporaryDirectory() as temp:
+            guide = Guide(Path(temp)/"captures", launch, lambda: PORTS[:1],
+                          camera_url="http://192.168.1.50:81/stream")
+            guide.start({"port": "TOF", "camera_port": "wifi"})
+            guide.worker.join(3)
+            self.assertEqual("ready", guide.phase)
+            self.assertIn("--camera-url", commands[0])
+            self.assertEqual("http://192.168.1.50:81/stream", guide.state()["camera_transport_url"])
+            guide.close()
+
     def test_preview_is_separate_from_guided_capture(self):
         with tempfile.TemporaryDirectory() as temp:
             guide = Guide(Path(temp)/"captures", fake_process, lambda: PORTS)

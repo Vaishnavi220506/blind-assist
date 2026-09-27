@@ -26,7 +26,7 @@ SEGMENTS = [
 
 
 class Guide:
-    def __init__(self, data_root, process_factory=subprocess.Popen, port_source=ports):
+    def __init__(self, data_root, process_factory=subprocess.Popen, port_source=ports, camera_url=None):
         self.data_root = Path(data_root)
         self.process_factory, self.port_source = process_factory, port_source
         self.camera_latest = self.camera_summary = self.camera_error = None
@@ -47,6 +47,7 @@ class Guide:
         self.preview_process = self.preview_log = self.preview_index = self.preview_stop = None
         self.preview_id = None
         self.preview_mode = False
+        self.camera_url = camera_url
 
     def preview(self, payload):
         with self.lock:
@@ -55,10 +56,10 @@ class Guide:
             if self.preview_process and self.preview_process.poll() is None:
                 return self.state()
             port = payload.get("camera_port")
-            if port not in {p["port"] for p in self.available_ports()}:
+            if not self.camera_url and port not in {p["port"] for p in self.available_ports()}:
                 raise ValueError("请选择相机端口")
             tof_port = payload.get("port")
-            if tof_port == port or tof_port not in {p["port"] for p in self.available_ports()}:
+            if (not self.camera_url and tof_port == port) or tof_port not in {p["port"] for p in self.available_ports()}:
                 raise ValueError("请选择不同的 ToF 端口")
             if self.preview_log:
                 self.preview_log.close()
@@ -71,6 +72,8 @@ class Guide:
             command = [sys.executable, "-B", str(HERE / "pair_capture.py"), "--camera-port", port,
                        "--tof-port", tof_port, "--seconds", "300", "--output", str(root / "data"),
                        "--stop-file", str(self.preview_stop), "--label", "PREVIEW_ONLY_NOT_GUIDED_COLLECTION"]
+            if self.camera_url:
+                command += ["--camera-url", self.camera_url]
             self.preview_index = RunIndex(root / "data")
             try:
                 self.preview_process = self.process_factory(command, stdout=self.preview_log,
@@ -133,6 +136,7 @@ class Guide:
                     "ports": available, "issues": self.summary.get("issues", {}) if self.summary else {},
                     "results": list(self.results), "stopping": self.stopping,
                     "selected_port": self.selected_port, "camera_port": self.camera_port,
+                    "camera_transport_url": self.camera_url,
                     "suggested_tof": next((p["port"] for p in available if str(p.get("serial_number", "")).replace(":", "").upper() == "98A316F7881C"), None),
                     "suggested_camera": next((p["port"] for p in available if str(p.get("serial_number", "")).replace(":", "").upper() == "B43A45BD12D8"), None),
                     "camera_latest": self.camera_latest, "camera_frames": self.camera_frames,
@@ -154,7 +158,7 @@ class Guide:
             camera_port = payload.get("camera_port")
             if not isinstance(port, str) or port not in {p["port"] for p in self.available_ports()}:
                 raise ValueError("请选择当前列表中的 XIAO 串口")
-            if camera_port == port or camera_port not in {p["port"] for p in self.available_ports()}:
+            if not self.camera_url and (camera_port == port or camera_port not in {p["port"] for p in self.available_ports()}):
                 raise ValueError("请选择与 ToF 不同的相机串口")
             if self.selected_port and (self.selected_port != port or self.camera_port != camera_port):
                 raise ValueError("同一轮请使用同一设备；设备重连后请重启本页服务另建一轮")
@@ -165,7 +169,8 @@ class Guide:
                 self.output.mkdir(parents=True, exist_ok=False)
                 write_json(self.output / "session.json", {
                     "schema": "cnh.simple-guide.v1", "segments": SEGMENTS,
-                    "port": port, "camera_port": camera_port, "object": object_name, "sensor_movement_operator_note": moved,
+                    "port": port, "camera_port": camera_port, "camera_url": self.camera_url,
+                    "object": object_name, "sensor_movement_operator_note": moved,
                     "scope": "operator-guided exploratory capture; no measured distance or detection claims"})
                 (self.output / "notes.md").write_text(
                     f"# 简单采集备注\n\n物体：{object_name}\n\n传感器是否移动：{moved}\n\n距离：未知\n\n"
@@ -191,6 +196,8 @@ class Guide:
                    "--camera-port", self.camera_port, "--tof-port", self.selected_port,
                    "--seconds", str(segment["seconds"]), "--output", str(target),
                    "--stop-file", str(self.stop_file), "--label", segment["id"]]
+        if self.camera_url:
+            command += ["--camera-url", self.camera_url]
         process = None
         failure = None
         try:
@@ -333,8 +340,12 @@ class Handler(LocalHandler):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port", type=int, default=8768)
+    parser.add_argument("--camera-url", help="local Wi-Fi camera MJPEG URL")
     args = parser.parse_args()
-    guide = Guide(ARTIFACTS / "captures")
+    if args.camera_url:
+        from wifi_camera_capture import validate_url
+        args.camera_url = validate_url(args.camera_url)
+    guide = Guide(ARTIFACTS / "captures", camera_url=args.camera_url)
     server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
     server.guide = guide
     print(f"http://127.0.0.1:{server.server_port}/ — click Start to open the sensor", flush=True)
