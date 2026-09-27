@@ -1,4 +1,8 @@
-"""Anchor simulator parameters on real H3-layout CNH recordings (fast lane, descriptive).
+"""HISTORICAL / SUPERSEDED: use cnh_h3_anchor_revision.py for current analysis.
+Preserved to reproduce the withdrawn original estimates; see
+CNH_H3_ANCHOR_CORRECTION_20260928.md. Not a calibration or valid SNR anchor.
+
+Anchor simulator parameters on real H3-layout CNH recordings (fast lane, descriptive).
 
 Input: simple-20260927T164234Z-cc4d0e (XIAO + VL53L8CH, 8x8 zones x 16 bins, start 0,
 sub-sample 8, 5 Hz, 20 ms/zone, 1 MHz I2C), the same layout as the simulator's H3.
@@ -160,4 +164,7 @@ def main():
 
 
 if __name__ == '__main__':
+    import warnings
+    warnings.warn('Historical estimates withdrawn; use cnh_h3_anchor_revision.py. '
+                  'Running this script reproduces the original errors.', RuntimeWarning)
     main()
