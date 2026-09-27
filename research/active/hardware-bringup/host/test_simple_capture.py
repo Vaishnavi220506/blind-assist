@@ -39,6 +39,20 @@ def fake_process(command, **kwargs):
 
 
 class GuideTests(unittest.TestCase):
+    def test_preview_is_separate_from_guided_capture(self):
+        with tempfile.TemporaryDirectory() as temp:
+            guide = Guide(Path(temp)/"captures", fake_process, lambda: PORTS)
+            state = guide.preview({"port": "TOF", "camera_port": "CAM"})
+            self.assertIsNone(guide.output)
+            self.assertEqual("idle", state["phase"])
+            self.assertEqual(0, state["step"])
+            self.assertEqual(0, state["total_frames"])
+            self.assertEqual(1, state["camera_frames"])
+            self.assertEqual(1, state["frames"])
+            self.assertIn("/preview-", state["camera_url"])
+            self.assertEqual(b"synthetic-not-served-as-real-camera", guide.image("preview-"+guide.preview_id, "fixture.jpg"))
+            guide.close()
+
     def test_four_steps_wait_for_operator_and_keep_both_streams(self):
         with tempfile.TemporaryDirectory() as temp:
             guide = Guide(temp, fake_process, lambda: PORTS)

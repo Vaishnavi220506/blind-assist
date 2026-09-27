@@ -44,6 +44,52 @@ class Guide:
         self.results = []
         self.selected_port = None
         self.port_cache, self.port_cache_at = [], 0
+        self.preview_process = self.preview_log = self.preview_index = self.preview_stop = None
+        self.preview_id = None
+        self.preview_mode = False
+
+    def preview(self, payload):
+        with self.lock:
+            if self.phase == "recording" or self.closing or (self.worker and self.worker.is_alive()):
+                raise ValueError("正式录制正在进行")
+            if self.preview_process and self.preview_process.poll() is None:
+                return self.state()
+            port = payload.get("camera_port")
+            if port not in {p["port"] for p in self.available_ports()}:
+                raise ValueError("请选择相机端口")
+            tof_port = payload.get("port")
+            if tof_port == port or tof_port not in {p["port"] for p in self.available_ports()}:
+                raise ValueError("请选择不同的 ToF 端口")
+            if self.preview_log:
+                self.preview_log.close()
+            self.preview_id = uuid.uuid4().hex[:8]
+            root = self.data_root.parent / "previews" / ("preview-" + self.preview_id)
+            root.mkdir(parents=True, exist_ok=False)
+            self.preview_stop = root / "stop"
+            self.preview_index = RunIndex(root)
+            self.preview_log = (root / "console.log").open("xb")
+            command = [sys.executable, "-B", str(HERE / "pair_capture.py"), "--camera-port", port,
+                       "--tof-port", tof_port, "--seconds", "300", "--output", str(root / "data"),
+                       "--stop-file", str(self.preview_stop), "--label", "PREVIEW_ONLY_NOT_GUIDED_COLLECTION"]
+            self.preview_index = RunIndex(root / "data")
+            try:
+                self.preview_process = self.process_factory(command, stdout=self.preview_log,
+                    stderr=subprocess.STDOUT, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+            except Exception:
+                self.preview_log.close()
+                raise
+            self.preview_mode = True
+            self.camera_latest, self.camera_error, self.camera_frames = None, None, 0
+        return self.state()
+
+    def stop_preview(self):
+        if self.preview_process and self.preview_process.poll() is None:
+            self.preview_stop.touch(exist_ok=True)
+            self.preview_process.wait(timeout=8)
+        if self.preview_log:
+            self.preview_log.close()
+            self.preview_log = None
+        self.preview_mode = False
 
     def available_ports(self):
         # Enumerate only; do not open/reset a device during page load.
@@ -55,6 +101,28 @@ class Guide:
     def state(self):
         available = self.available_ports()
         with self.lock:
+            if self.preview_mode:
+                self.preview_index.refresh()
+                rows = self.preview_index.rows["camera"]
+                self.camera_latest = rows[-1] if rows else None
+                self.camera_frames = len(rows)
+                tof_rows = self.preview_index.rows["tof"]
+                self.latest = tof_rows[-1] if tof_rows else None
+                self.frames = len(tof_rows)
+                summary_path = self.preview_index.root / "camera/summary.json"
+                if summary_path.exists():
+                    try:
+                        self.camera_summary = json.loads(summary_path.read_text())
+                    except ValueError:
+                        pass  # Collector may still be writing its final receipt.
+                    if self.camera_summary and not self.camera_summary.get("frames"):
+                        self.camera_error = "USB 未收到相机画面；若仍是 Wi-Fi 固件，请开启原手机热点并让电脑连接同一网络"
+                if self.preview_process.poll() is not None:
+                    if not rows and not self.camera_error:
+                        self.camera_error = "预览未收到画面，请检查相机连接；日志已保留"
+                    if self.preview_log:
+                        self.preview_log.close()
+                        self.preview_log = None
             stamp = self.latest.get("host_received_monotonic_ns") if self.latest else None
             return {"phase": self.phase, "step": self.step, "segments": SEGMENTS,
                     "remaining_s": max(0, self.deadline-time.monotonic()) if self.phase == "recording" else 0,
@@ -71,9 +139,14 @@ class Guide:
                     "camera_error": self.camera_error, "camera_summary": self.camera_summary,
                     "camera_age_ms": ((time.monotonic_ns()-self.camera_latest["host_received_monotonic_ns"])/1e6
                                       if self.camera_latest else None),
-                    "camera_url": f'/api/image/{self.attempt}/{self.camera_latest["filename"]}' if self.camera_latest else None}
+                    "preview_active": bool(self.preview_mode and self.preview_process.poll() is None),
+                    "preview_mode": self.preview_mode,
+                    "preview_output": str(self.preview_index.root) if self.preview_index else None,
+                    "camera_url": (f'/api/image/{"preview-"+self.preview_id if self.preview_mode else self.attempt}/{self.camera_latest["filename"]}'
+                                   if self.camera_latest else None)}
 
     def start(self, payload):
+        self.stop_preview()
         with self.lock:
             if self.closing or self.stopping or self.phase in ("recording", "complete") or (self.worker and self.worker.is_alive()):
                 raise ValueError("当前不能开始；录制时请等待本段结束")
@@ -176,6 +249,8 @@ class Guide:
 
     def image(self, attempt, filename):
         with self.lock:
+            if self.preview_index and attempt == "preview-"+self.preview_id:
+                return self.preview_index.image_path(filename).read_bytes()
             if attempt != str(self.attempt) or self.current is None:
                 raise ValueError("图片不属于当前分段")
             return self.current.image_path(filename).read_bytes()
@@ -200,6 +275,7 @@ class Guide:
 
     def close(self):
         self.closing = True
+        self.stop_preview()
         if self.phase != "complete":
             self.stop()
         if self.worker:
@@ -238,6 +314,8 @@ class Handler(LocalHandler):
             guide = self.server.guide
             if self.path == "/api/start":
                 result = guide.start(payload)
+            elif self.path == "/api/preview":
+                result = guide.preview(payload)
             elif self.path == "/api/stop":
                 result = guide.stop()
             elif self.path == "/api/shutdown":
