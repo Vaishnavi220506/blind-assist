@@ -39,6 +39,19 @@ def fake_process(command, **kwargs):
 
 
 class GuideTests(unittest.TestCase):
+    def test_camera_reconnection_status_visible_without_changing_step(self):
+        with tempfile.TemporaryDirectory() as temp:
+            guide = Guide(Path(temp)/"captures", fake_process, lambda: PORTS)
+            guide.preview({"port": "TOF", "camera_port": "CAM"})
+            status = guide.preview_index.root/"camera/status.json"
+            status.write_text(json.dumps({"state": "reconnecting", "reconnects": 1}))
+            self.assertEqual("reconnecting", guide.state()["camera_status"]["state"])
+            self.assertEqual(0, guide.step)
+            guide.camera_error = "old error"
+            status.write_text(json.dumps({"state": "streaming", "reconnects": 1}))
+            self.assertIsNone(guide.state()["camera_error"])
+            guide.close()
+
     def test_wifi_camera_uses_url_without_requiring_camera_serial_port(self):
         commands = []
         def launch(command, **kwargs):

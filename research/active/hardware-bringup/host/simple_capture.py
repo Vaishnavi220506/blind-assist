@@ -120,6 +120,8 @@ class Guide:
                         pass  # Collector may still be writing its final receipt.
                     if self.camera_summary and not self.camera_summary.get("frames"):
                         self.camera_error = "USB 未收到相机画面；若仍是 Wi-Fi 固件，请开启原手机热点并让电脑连接同一网络"
+                    elif self.camera_summary and self.camera_summary.get("acquisition_error"):
+                        self.camera_error = "相机连接已中断：" + self.camera_summary["acquisition_error"]
                 if self.preview_process.poll() is not None:
                     if not rows and not self.camera_error:
                         self.camera_error = "预览未收到画面，请检查相机连接；日志已保留"
@@ -127,6 +129,17 @@ class Guide:
                         self.preview_log.close()
                         self.preview_log = None
             stamp = self.latest.get("host_received_monotonic_ns") if self.latest else None
+            camera_status = {}
+            index = self.preview_index if self.preview_mode else self.current
+            if index:
+                status_path = index.root / "camera/status.json"
+                if status_path.exists():
+                    try:
+                        camera_status = json.loads(status_path.read_text())
+                    except (OSError, ValueError):
+                        pass
+            if camera_status.get("state") == "streaming":
+                self.camera_error = None
             return {"phase": self.phase, "step": self.step, "segments": SEGMENTS,
                     "remaining_s": max(0, self.deadline-time.monotonic()) if self.phase == "recording" else 0,
                     "frames": self.frames, "total_frames": self.total_frames,
@@ -141,6 +154,7 @@ class Guide:
                     "suggested_camera": next((p["port"] for p in available if str(p.get("serial_number", "")).replace(":", "").upper() == "B43A45BD12D8"), None),
                     "camera_latest": self.camera_latest, "camera_frames": self.camera_frames,
                     "camera_error": self.camera_error, "camera_summary": self.camera_summary,
+                    "camera_status": camera_status,
                     "camera_age_ms": ((time.monotonic_ns()-self.camera_latest["host_received_monotonic_ns"])/1e6
                                       if self.camera_latest else None),
                     "preview_active": bool(self.preview_mode and self.preview_process.poll() is None),
