@@ -37,8 +37,8 @@ def sequence_features(hist, ambient, bias, tq, noisy):
     return z4.cpu().numpy(), z1.cpu().numpy(), sup.cpu().numpy()
 
 
-def unit_features(geometry, sensor, unit, bias):
-    se.sensor_module.FAMILY = FAMILY
+def unit_features(geometry, sensor, unit, bias, family=FAMILY):
+    se.sensor_module.FAMILY = family
     split, records, _ = se.unit_records(geometry, sensor, unit, -10, 1)
     rows = {}
     for rec in records:
@@ -62,6 +62,7 @@ def main():
     p.add_argument('--bias', type=Path, required=True)
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--units', type=int, nargs='+', required=True)
+    p.add_argument('--family', default=FAMILY)
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     bias = np.load(a.bias)
@@ -73,7 +74,7 @@ def main():
         if sensor is None:
             print(u, 'no sensor data, skipped', flush=True)
             continue
-        np.savez_compressed(target, **unit_features(a.geometry, sensor, u, bias))
+        np.savez_compressed(target, **unit_features(a.geometry, sensor, u, bias, a.family))
         print(u, flush=True)
 
 
