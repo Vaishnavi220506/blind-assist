@@ -1,12 +1,12 @@
 # 前视障碍感知：当前状态
 
-更新：2026-09-28。用户指定的 v5 冻结复现完成，现场硬件演示延后。
+更新：2026-09-27（用户与两位执行者共识，由用户确认）。Track A 程序化 ToF 仿真阶段暂时封口。
 
-Status: `DTR_R2_DYNAMIC_RETAINED`（仅为历史保留）；ToF 阶段：`V5_FROZEN_COMPLETE / HARDWARE_DEFERRED`。
+Status: `DTR_R2_DYNAMIC_RETAINED`（仅为历史保留）；ToF 阶段：`TEMPORARILY_CLOSED`。
 
 ## 当前决定
 
-- **本轮授权的 v5 主判据通过，保留 A2（冻结NN加五分数平滑）。** HEAD/BODY AP 0.8444/0.7914，相对S2的95%配对区间 [+0.0970,+0.1142]/[+0.1105,+0.1277]，均64/64单位胜出。A3补回6个BODY强信号漏检，但guard误报未通过预设要求，不采用。见[v5完整入口](nearfield/CNH_V5_RESULTS_20260928.md)。不扩大记忆网络、不追加调参；设备不便，交付真实历史输入回放，现场采集与配准延后。真实回放135个有效帧六查询盒均持续触发，模拟阈值迁移未成立。
+- **不再新增 ToF 实验。** 用户指定下一优先级仅为公开真实直方图数据检索。相机线未决定；硬件恢复时间未知。历史诊断里的“下一步”建议不构成执行授权。
 - **v4 偏差已由用户接受，必须披露。** 六个主检验与 A1/A2 为“正式结果，带已披露偏差”。在 GPU 宏 AP 已打印后补做未执行的数值比较，再续跑冻结命令；不得抹去偏差或追改协议，见[v4结果](nearfield/CNH_TRACK_A_SCALE_V4_RESULTS_20260926.md)。
 - v3/v4 只支持同一生成器分布下的相对读出效果；v1/v2 原失败不变。修复 v2 和后续诊断是已消费 Development，不能升级成正式复现。
 - City/test、UE/RGB、硬件第二阶段继续暂停。手机 A/A+LOCAL 与首页语义保留，研究结论不自动进入实机。
@@ -30,4 +30,4 @@ Status: `DTR_R2_DYNAMIC_RETAINED`（仅为历史保留）；ToF 阶段：`V5_FRO
 
 [v3结果](nearfield/CNH_TRACK_A_SCALE_V3_RESULTS_20260926.md) · [v4协议](nearfield/CNH_TRACK_A_SCALE_V4_PROTOCOL_20260926.md) · [软先验](nearfield/CNH_SOFT_PRIOR_DEV_20260927.md) · [ZJUL5粗锚点](nearfield/CNH_ZJUL5_SNR_ANCHOR_20260926.md)
 
-[总决定](../../../docs/CURRENT_DECISION.md)拥有跨路线优先级；[封口前全文](CURRENT_HISTORY_20260927_PRE_TOF_CLOSE.md)逐字节归档。[本轮更新前全文](CURRENT_HISTORY_20260928_PRE_V5.md)保留；本次仅完成指定的v5与回放，不授权新实验。
+[总决定](../../../docs/CURRENT_DECISION.md)拥有跨路线优先级；[封口前全文](CURRENT_HISTORY_20260927_PRE_TOF_CLOSE.md)逐字节归档。本次仅收口证据与决定，不制作章节大纲或图表清单。
