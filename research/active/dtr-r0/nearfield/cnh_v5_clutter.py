@@ -173,7 +173,7 @@ def main():
     p.add_argument('--data',type=Path,required=True)
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--models',type=Path,nargs=3,required=True)
-    p.add_argument('--stage',choices=('precheck','pilot','full','evaluate'),required=True)
+    p.add_argument('--stage',choices=('precheck','pilot','full','evaluate','supplement'),required=True)
     p.add_argument('--workers',type=int,default=4)
     p.add_argument('--cpu-workers',type=int,default=4)
     a=p.parse_args()
@@ -207,7 +207,7 @@ def main():
     lock=a.out/'RUNNING.lock'
     with lock.open('x') as f: f.write(str(os.getpid()))
     try:
-        if a.stage!='evaluate':
+        if a.stage not in ('evaluate', 'supplement'):
             if a.stage!='precheck':
                 assert json.loads((root_out/'precheck_terminal.json').read_text())['status']=='complete'
             if a.stage=='full':
@@ -216,7 +216,9 @@ def main():
             if doses:
                 fit_bias(a,doses,units)
                 run_batch(a,a.stage+'-readout',prediction_job,[(str(a.data),str(a.out),u,k,[str(m) for m in a.models]) for k in doses for u in units],a.workers)
-        if a.stage!='precheck':
+        if a.stage == 'supplement':
+            supplement_clutter(a.data, a.out)
+        elif a.stage!='precheck':
             evaluate_clutter(a.data,a.out,units,report_name='pilot_results.json' if a.stage=='pilot' else 'results.json')
         assert R.digest(__file__)==contract['script_sha256'], 'Script changed during execution'
         save_json(root_out/(a.stage+'_terminal.json'),dict(status='complete',elapsed_s=time.monotonic()-start,units=units,doses=doses,contract=contract))
@@ -521,6 +523,130 @@ def evaluate_clutter(data, out, units=None, report_name='results.json'):
     E.save(out/report_name, report)
     return report
 
+
+
+def supplement_clutter(data, out):
+    """Saved-score-only descriptive supplement; never select thresholds on audit."""
+    import cnh_v5_evaluate as E
+    import cnh_v5_episode_calibration as C
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    targets = (0.5, 1., 1.5, 2., 3., 4., 5., 7., 10., 15., 20.)
+    clean = R.load(data/'predictions')
+    splits = {s: sorted(u for u, d in clean.items() if str(d['split']) == s)
+              for s in ('calib', 'audit')}
+    assert len(splits['calib']) == 32 and len(splits['audit']) == 64
+    report = dict(targets=targets, doses={}, paired_attribution={},
+        scope='Development; saved scores only. Thresholds selected on calib, never audit. '
+              'Audit-rate alignment is descriptive, without confidence intervals.',
+        interpolation='Sort by audit rate; average timely counts at duplicate rates (no best-point selection); '
+                      'linear interpolation within A2 support only, no extrapolation.',
+        attribution='Paired K10 vs K0, same clean-calib nominal threshold, audit t=3..11 and y==0. '
+                    'Denominator: class first-hit ray in query angular projection. Classes overlap. '
+                    'No no-clutter-visible reference group.')
+    fig, axes = plt.subplots(2, 4, figsize=(16, 8), sharey='row')
+    for col, k in enumerate((0, 3, 6, 10)):
+        ds = clean if k == 0 else R.load(out/f'K{k}'/'predictions')
+        for u in clean:
+            for field in ('y', 'main', 'config', 'frame', 'strata'):
+                assert np.array_equal(ds[u][field], clean[u][field]), (k,u,field)
+        report['doses'][str(k)] = {}
+        for row, (g, ix) in enumerate(E.GROUPS):
+            cal, aud = (E.pack(ds, splits[s], ix) for s in ('calib','audit'))
+            curves = {}
+            for name, arm in (('S2','A0'),('A2','A2')):
+                points = []
+                for target in targets:
+                    thr = C.calibrate(cal, arm, target)
+                    rate = C.episodes(cal, cal[arm] >= thr)[0]
+                    assert rate <= target + 1e-10
+                    stat = E.alert_stats(aud, aud[arm] >= thr)
+                    points.append(dict(target=target, threshold=thr, calib_rate=rate,
+                        audit_rate=stat['false_episodes_per_simulated_empty_minute'],
+                        false_episodes=stat['false_episodes'], empty_minutes=stat['empty_group_minutes'],
+                        tiny_timely=stat['tiny']['timely_count'], tiny_near=stat['tiny']['near']))
+                curves[name] = points
+            a2 = curves['A2']
+            xs = sorted(set(p['audit_rate'] for p in a2))
+            ys = [float(np.mean([p['tiny_timely'] for p in a2 if p['audit_rate']==x])) for x in xs]
+            aligned = []
+            for p in curves['S2']:
+                x = p['audit_rate']
+                y = float(np.interp(x,xs,ys)) if xs[0] <= x <= xs[-1] else None
+                aligned.append(dict(s2_target=p['target'], audit_rate=x, s2_timely=p['tiny_timely'],
+                    a2_interpolated_timely=y, delta=None if y is None else y-p['tiny_timely'],
+                    denominator=p['tiny_near'], status='outside A2 support' if y is None else 'interpolated'))
+            report['doses'][str(k)][g] = dict(curves=curves, aligned=aligned)
+            ax = axes[row,col]
+            for name, color in (('S2','tab:blue'),('A2','tab:orange')):
+                points = curves[name]
+                xx = sorted(set(p['audit_rate'] for p in points))
+                yy = [np.mean([p['tiny_timely'] for p in points if p['audit_rate']==x]) for x in xx]
+                ax.plot(xx,yy,'o-',label=name,color=color,markersize=3)
+                ax.scatter([p['audit_rate'] for p in points],[p['tiny_timely'] for p in points],s=12,color=color)
+            ax.set_title(f'K={k} {g} (n={curves["S2"][0]["tiny_near"]})')
+            ax.set_xlabel('Actual audit false episodes / empty minute')
+            if col==0: ax.set_ylabel('Tiny near events alerted in time')
+            ax.grid(alpha=.25); ax.legend()
+            if k != 10: continue
+            clean_cal = E.pack(clean, splits['calib'], ix)
+            report['paired_attribution'][g] = {}
+            for name, arm in (('S2','A0'),('A2','A2')):
+                result = {}
+                for t in C.TARGETS:
+                    thr = C.calibrate(clean_cal,arm,t)
+                    counts = {c:dict(added=0,removed=0,net=0,denominator=0) for c in CLUTTER_CLASSES}
+                    for u in splits['audit']:
+                        d,b = ds[u],clean[u]
+                        assert np.array_equal(np.lexsort((d['frame'],d['config'])),np.arange(len(d['frame'])))
+                        eligible = (d['frame'][:,None]>=3)&(d['y'][:,ix]==0)
+                        new,old = d[arm][:,ix]>=thr,b[arm][:,ix]>=thr
+                        with np.load(out/'K10'/'diagnostics'/f'unit{u:03d}.npz') as z:
+                            masks = z['class_visible'][:,ix,:]
+                        for ci,c in enumerate(CLUTTER_CLASSES):
+                            mask = eligible & masks[:,:,ci]
+                            v = counts[c]
+                            added=int((mask & new & ~old).sum()); removed=int((mask & old & ~new).sum())
+                            assert added-removed == int((mask&new).sum())-int((mask&old).sum())
+                            v['added']+=added; v['removed']+=removed; v['denominator']+=int(mask.sum())
+                    for v in counts.values(): v['net']=v['added']-v['removed']
+                    result[str(t)] = dict(threshold=thr,classes=counts)
+                report['paired_attribution'][g][name] = result
+            print(f'Supplement K={k} {g} complete',flush=True)
+    fig.suptitle('Frozen v5 clutter: calib-selected thresholds; descriptive audit-rate curves')
+    fig.tight_layout()
+    fig.savefig(out/'supplement_curves.png',dpi=180)
+    fig.savefig(out/'supplement_curves.svg')
+    plt.close(fig)
+    save_json(out/'supplement_results.json',report)
+    write_supplement_tables(report, out)
+
+
+def write_supplement_tables(report, out):
+    lines = ['# Saved-score descriptive supplement', '', report['scope'], '',
+             report['interpolation'], '', report['attribution'], '']
+    for k, groups in report['doses'].items():
+        for g, result in groups.items():
+            lines += [f'## K={k} {g}', '',
+                '|Calib budget|S2 actual rate|S2 timely/n|A2 actual rate|A2 timely/n|A2 interpolated at S2 rate|Delta|',
+                '|---|---|---|---|---|---|---|']
+            for s,a,v in zip(result['curves']['S2'],result['curves']['A2'],result['aligned']):
+                y = 'N/A' if v['delta'] is None else f"{v['a2_interpolated_timely']:.3f}"
+                delta = 'N/A' if v['delta'] is None else f"{v['delta']:+.3f}"
+                lines.append(f"|{s['target']:g}|{s['audit_rate']:.6f}|{s['tiny_timely']}/{s['tiny_near']}|"
+                             f"{a['audit_rate']:.6f}|{a['tiny_timely']}/{a['tiny_near']}|{y}|{delta}|")
+            lines += ['', 'Rates: episodes per simulated empty minute; denominator 19.2 minutes per group.', '']
+    for g, arms in report['paired_attribution'].items():
+        for arm, budgets in arms.items():
+            lines += [f'## K10 minus K0 paired attribution: {g} {arm}', '',
+                      '|Clean calib budget|Class|Added|Removed|Net|Negative query-frame denominator|',
+                      '|---|---|---|---|---|---|']
+            for t, result in budgets.items():
+                for c,v in result['classes'].items():
+                    lines.append(f"|{t}|{c}|{v['added']}|{v['removed']}|{v['net']:+d}|{v['denominator']}|")
+            lines += ['', 'Zero denominator means N/A; overlapping classes must not be summed.', '']
+    (out/'supplement_tables.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
 
 if __name__ == '__main__':
     main()
