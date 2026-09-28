@@ -174,7 +174,7 @@ def main():
         jobs = []
         for u in range(n):
             unit = geometry / f'unit{u:02d}'
-            unit.mkdir(exist_ok=True)
+            # Frozen generator owns mkdir(exist_ok=False); do not precreate it.
             completed = unit / f'unit{u:02d}.json'
             if completed.exists():
                 meta = json.loads(completed.read_text(encoding='utf-8-sig'))
