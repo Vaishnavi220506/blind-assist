@@ -173,7 +173,7 @@ def main():
     p.add_argument('--data',type=Path,required=True)
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--models',type=Path,nargs=3,required=True)
-    p.add_argument('--stage',choices=('precheck','pilot','full','evaluate','supplement'),required=True)
+    p.add_argument('--stage',choices=('precheck','pilot','full','evaluate','supplement','paired-total'),required=True)
     p.add_argument('--workers',type=int,default=4)
     p.add_argument('--cpu-workers',type=int,default=4)
     a=p.parse_args()
@@ -207,7 +207,7 @@ def main():
     lock=a.out/'RUNNING.lock'
     with lock.open('x') as f: f.write(str(os.getpid()))
     try:
-        if a.stage not in ('evaluate', 'supplement'):
+        if a.stage not in ('evaluate', 'supplement', 'paired-total'):
             if a.stage!='precheck':
                 assert json.loads((root_out/'precheck_terminal.json').read_text())['status']=='complete'
             if a.stage=='full':
@@ -216,7 +216,12 @@ def main():
             if doses:
                 fit_bias(a,doses,units)
                 run_batch(a,a.stage+'-readout',prediction_job,[(str(a.data),str(a.out),u,k,[str(m) for m in a.models]) for k in doses for u in units],a.workers)
-        if a.stage == 'supplement':
+        if a.stage == 'paired-total':
+            report = json.loads((a.out/'supplement_results.json').read_text())
+            add_paired_totals(a.data, a.out, report)
+            save_json(a.out/'supplement_results.json', report)
+            write_supplement_tables(report, a.out)
+        elif a.stage == 'supplement':
             supplement_clutter(a.data, a.out)
         elif a.stage!='precheck':
             evaluate_clutter(a.data,a.out,units,report_name='pilot_results.json' if a.stage=='pilot' else 'results.json')
@@ -619,9 +624,41 @@ def supplement_clutter(data, out):
     fig.savefig(out/'supplement_curves.png',dpi=180)
     fig.savefig(out/'supplement_curves.svg')
     plt.close(fig)
+    add_paired_totals(data, out, report)
     save_json(out/'supplement_results.json',report)
     write_supplement_tables(report, out)
 
+
+
+def add_paired_totals(data, out, report):
+    """Count each eligible negative query-frame once, irrespective of visibility."""
+    import cnh_v5_evaluate as E
+    clean, clutter = R.load(data/'predictions'), R.load(out/'K10'/'predictions')
+    audit = sorted(u for u,d in clean.items() if str(d['split']) == 'audit')
+    assert len(audit) == 64
+    for g,ix in E.GROUPS:
+        for name,arm in (('S2','A0'),('A2','A2')):
+            for result in report['paired_attribution'][g][name].values():
+                total = dict(added=0,removed=0,net=0,denominator=0,k0_alarms=0,k10_alarms=0)
+                for u in audit:
+                    b,d = clean[u],clutter[u]
+                    for field in ('y','config','frame'):
+                        assert np.array_equal(b[field],d[field]), (u,field)
+                    mask = (b['frame'][:,None]>=3)&(b['frame'][:,None]<=11)&(b['y'][:,ix]==0)
+                    old,new = b[arm][:,ix]>=result['threshold'],d[arm][:,ix]>=result['threshold']
+                    total['added'] += int((mask & new & ~old).sum())
+                    total['removed'] += int((mask & old & ~new).sum())
+                    total['denominator'] += int(mask.sum())
+                    total['k0_alarms'] += int((mask & old).sum())
+                    total['k10_alarms'] += int((mask & new).sum())
+                total['net'] = total['added']-total['removed']
+                assert total['net'] == total['k10_alarms']-total['k0_alarms']
+                assert total['denominator'] == dict(HEAD=34571,BODY=34541)[g]
+                result['all_negative_query_frames'] = total
+    report['total_effect_definition'] = ('All audit t=3..11 negative query-frames, no visibility filtering or class summation. '
+        'Fixed clean-calib thresholds; paired geometry, labels, noise seeds and frozen readouts. '
+        'Net change estimates the overall effect of adding this clutter in this controlled simulation; '
+        'class-conditioned changes are not isolated class causal effects. Counts are query-frames, not episodes.')
 
 def write_supplement_tables(report, out):
     lines = ['# Saved-score descriptive supplement', '', report['scope'], '',
@@ -643,7 +680,7 @@ def write_supplement_tables(report, out):
                       '|Clean calib budget|Class|Added|Removed|Net|Negative query-frame denominator|',
                       '|---|---|---|---|---|---|']
             for t, result in budgets.items():
-                for c,v in result['classes'].items():
+                for c,v in dict(result['classes'], all_negative_query_frames=result['all_negative_query_frames']).items():
                     lines.append(f"|{t}|{c}|{v['added']}|{v['removed']}|{v['net']:+d}|{v['denominator']}|")
             lines += ['', 'Zero denominator means N/A; overlapping classes must not be summed.', '']
     (out/'supplement_tables.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
