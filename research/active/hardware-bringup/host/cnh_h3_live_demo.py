@@ -107,8 +107,62 @@ def noise_model(background):
         scope='Empirical stationary normalization, not physical noise/SNR calibration; overlapping windows are not independent')
 
 
+class InputNotAvailable(ValueError):
+    """Explicit simulation fields are absent/invalid; never substitute real estimates."""
+
+
+class SimFloorFeatures:
+    SCHEMA = 'cnh.sim-floor.v1'
+
+    def __init__(self, path):
+        if path is None or not Path(path).is_file():
+            raise InputNotAvailable('sim-floor requires --sim-floor-fields NPZ')
+        self.path = Path(path)
+        try:
+            with np.load(path, allow_pickle=False) as d:
+                if str(d['schema']) != self.SCHEMA or not str(d['source']).strip():
+                    raise ValueError('schema/source missing')
+                self.source = str(d['source'])
+                self.bias = np.array(d['bias'])
+                seq = np.array(d['seq']); ambient = np.array(d['ambient']); tq = np.array(d['T_Q_tof'])
+            if seq.ndim != 1 or not len(seq) or not np.issubdtype(seq.dtype,np.integer) or len(np.unique(seq)) != len(seq):
+                raise ValueError('unique integer seq[N] required')
+            if self.bias.shape != (8,8,16) or ambient.shape != (len(seq),8,8) or tq.shape != (len(seq),4,4):
+                raise ValueError('bias[8,8,16], ambient[N,8,8], T_Q_tof[N,4,4] required')
+            if not all(np.isfinite(x).all() for x in (self.bias,ambient,tq)) or (ambient < 0).any():
+                raise ValueError('finite fields and nonnegative ambient required')
+            from cnh_track_a_readout import _poses
+            _poses(tq,len(seq))
+            self.by_seq = {int(s):(ambient[i],tq[i]) for i,s in enumerate(seq)}
+        except (KeyError,ValueError,TypeError,OSError) as e:
+            raise InputNotAvailable(f'invalid sim-floor fields: {e}') from e
+        self.history = deque(maxlen=4)
+
+    def require_sequences(self, seqs):
+        missing = sorted(set(seqs)-self.by_seq.keys())
+        if missing:
+            raise InputNotAvailable(f'sim-floor ambient/query fields absent for {len(missing)} sequences; first={missing[0]}')
+
+    def step(self, row, histogram, reset=False):
+        self.require_sequences([row['sensor']['seq']])
+        if reset: self.history.clear()
+        ambient,tq = self.by_seq[row['sensor']['seq']]
+        self.history.append((histogram,ambient,tq))
+        from cnh_learned_features import sequence_features
+        from cnh_learned_readout import squash
+        h,a,t = (np.asarray([item[i] for item in self.history]) for i in range(3))
+        poses = np.repeat(np.eye(4)[None],len(h),axis=0)
+        z4,z1,sup = sequence_features(h,a,self.bias,t,poses)
+        # Frozen unit_features stores float16; Readout.load restores float32 before squash.
+        e4,e1 = (z[-1].astype(np.float16).astype(np.float32) for z in (z4,z1))
+        x = np.stack((squash(e4),squash(e1)))[None]
+        if not np.isfinite(x).all():
+            raise InputNotAvailable('sim-floor feature float16 overflow; no clipping/fallback')
+        return z4[-1],z1[-1],sup[-1],x
+
+
 class Engine:
-    def __init__(self, models, mean, variance, tq):
+    def __init__(self, models, mean, variance, tq, sim_floor=None):
         import torch
         from cnh_learned_readout import Readout, squash
         from cnh_track_a_readout import query_weights
@@ -125,6 +179,7 @@ class Engine:
             self.models.append(m.eval())
         self.support = torch.as_tensor((query_weights(tq) >= .75).reshape(1, 6, 8, 8, 16), device=self.device)
         self.mean, self.variance = mean, variance
+        self.sim_floor = sim_floor
         self.history, self.logits = deque(maxlen=4), deque(maxlen=5)
         self.last = None
 
@@ -136,10 +191,15 @@ class Engine:
         if reset:
             self.history.clear(); self.logits.clear()
         self.last = (seq, ms, tick, row['stream_segment'])
-        self.history.append(hist(row)-self.mean)
-        z1 = self.history[-1]/np.sqrt(self.variance[0])
-        z4 = np.sum(self.history, axis=0)/np.sqrt(self.variance[len(self.history)-1])
-        x = np.stack((self.squash(z4), self.squash(z1)))[None].astype(np.float32)
+        if self.sim_floor is None:
+            self.history.append(hist(row)-self.mean)
+            z1 = self.history[-1]/np.sqrt(self.variance[0])
+            z4 = np.sum(self.history, axis=0)/np.sqrt(self.variance[len(self.history)-1])
+            x = np.stack((self.squash(z4), self.squash(z1)))[None].astype(np.float32)
+        else:
+            h = hist(row); self.history.append(h)
+            z4,z1,sup,x = self.sim_floor.step(row,h,reset=reset)
+            self.support = self.torch.as_tensor(sup[None],device=self.device)
         with self.torch.inference_mode():
             xt = self.torch.as_tensor(x, device=self.device)
             nn = self.torch.stack([m(xt, self.support) for m in self.models]).mean(0)[0].cpu().numpy()
@@ -147,7 +207,8 @@ class Engine:
         # Exactly cnh_learned_memory_fusion.causal_ewma(alpha=.5, window=5), including dtype.
         a2 = smooth_logits(self.logits)
         return dict(seq=seq, ms=ms, NN=nn.tolist(), A2=a2.tolist(), reset=reset,
-                    history=len(self.history), compute_ms=(time.perf_counter()-t0)*1000), z4
+                    history=len(self.history), compute_ms=(time.perf_counter()-t0)*1000,
+                    **({'input_mode':'sim-floor'} if self.sim_floor is not None else {})), z4
 
 
 def load_registration(path):
@@ -185,7 +246,7 @@ def render(camera, z4, result, mode, registration, thresholds):
             draw.rectangle((640+c*60,110+r*60,699+c*60,169+r*60),outline='#bbbbbb')
             draw.text((643+c*60,130+r*60),f'{zone_z[r,c]:.0f}',font=small,fill='white',stroke_width=1,stroke_fill='black')
     lines = [f'{mode} | 模拟训练模型、真实传感器输入、无定量结论',
-             '静止传感器、恒等输运；名义安装角 -10°，非人体姿态标定',
+             ('恒等输运；显式仿真 bias/ambient/查询变换，非实测噪声标定' if result.get('input_mode') == 'sim-floor' else '静止传感器、恒等输运；名义安装角 -10°，非人体姿态标定'),
              '相机配准：'+('已提供验证文件（仅该固定装置）' if registration else '未完成；仅并排显示，不作像素定位'),
              f"seq {result['seq']} | 处理 {result['compute_ms']:.1f} ms | max-bin z4 色标 0–{heat_limit:.0f}（逐帧）；非距离/概率"]
     for y, text in zip((10, 40, 76, 600), lines):
@@ -209,7 +270,9 @@ def main():
     source = p.add_mutually_exclusive_group(required=True)
     source.add_argument('--replay', type=Path, help='segment directory containing tof and camera')
     source.add_argument('--port', help='explicit XIAO serial port; no automatic scan or flashing')
-    p.add_argument('--background', type=Path, required=True, help='separate static tof/frames.jsonl, >=80 frames')
+    p.add_argument('--background', type=Path, help='empirical mode: separate static tof/frames.jsonl, >=80 frames')
+    p.add_argument('--input-mode', choices=('empirical','sim-floor'), default='empirical')
+    p.add_argument('--sim-floor-fields', type=Path, help='explicit cnh.sim-floor.v1 NPZ; never estimated from real background')
     p.add_argument('--models', type=Path, nargs=3, required=True)
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--seconds', type=float, default=30)
@@ -223,11 +286,25 @@ def main():
         p.error('positive duration and video fps required')
     import cv2
     a.out.mkdir(parents=True, exist_ok=True)
-    mean, variance, noise_receipt = noise_model(a.background)
-    np.savez_compressed(a.out/'background_model.npz', mean=mean, variance=variance)
+    sim_floor = None
+    if a.input_mode == 'sim-floor':
+        try:
+            sim_floor = SimFloorFeatures(a.sim_floor_fields)
+            if a.replay:
+                sim_floor.require_sequences(r['sensor']['seq'] for r in rows(a.replay/'tof/frames.jsonl'))
+        except InputNotAvailable as e:
+            status = dict(status='NOT_AVAILABLE',input_mode='sim-floor',reason=str(e),fallback=False)
+            (a.out/'not_available.json').write_text(json.dumps(status,indent=2),encoding='utf-8')
+            print(json.dumps(status)); return 2
+        mean = variance = None
+        noise_receipt = dict(median_period_ms=200.,scope='Explicit simulation fields; not derived from real background')
+    else:
+        if a.background is None: p.error('--background required for empirical input mode')
+        mean, variance, noise_receipt = noise_model(a.background)
+        np.savez_compressed(a.out/'background_model.npz', mean=mean, variance=variance)
     tq = np.eye(4); angle = np.deg2rad(-10)
     tq[:3, :3] = [[1, 0, 0], [0, np.cos(angle), -np.sin(angle)], [0, np.sin(angle), np.cos(angle)]]
-    engine = Engine(a.models, mean, variance, tq)
+    engine = Engine(a.models, mean, variance, tq, sim_floor=sim_floor)
     registration = load_registration(a.registration)
     thresholds = json.loads(a.thresholds.read_text()) if a.thresholds else None
     if thresholds and (not thresholds.get('source') or not thresholds.get('scope') or
@@ -282,6 +359,9 @@ def main():
             frame_start = time.perf_counter()
             try:
                 result, z4 = engine.step(row)
+            except InputNotAvailable as e:
+                (a.out/'not_available.json').write_text(json.dumps(dict(status='NOT_AVAILABLE',input_mode='sim-floor',reason=str(e),fallback=False),indent=2),encoding='utf-8')
+                raise
             except ValueError as e:
                 pending.append(str(e)); continue
             result['sample_tick_ns'] = row['sample_tick_ns']
@@ -344,13 +424,18 @@ def main():
         acquired_raw_fps=(len(raw_stamps)-1)*1e9/(raw_stamps[-1]-raw_stamps[0]) if len(raw_stamps)>1 else None,
         processing_render_encode_ms={str(q):float(np.percentile([r['processing_render_encode_ms'] for r in results], q)) for q in (50,95)} if results else {},
         paired_camera_frames=len(pair_offsets), pairing_abs_ms_p95=float(np.percentile(np.abs(pair_offsets),95)) if pair_offsets else None,
-        models={str(m):sha(m) for m in a.models}, background=dict(path=str(a.background),sha256=sha(a.background),**noise_receipt),
+        models={str(m):sha(m) for m in a.models}, background=dict(path=str(a.background),sha256=sha(a.background),**noise_receipt) if sim_floor is None else None,
         source_sha256=sha(__file__), backend=str(engine.device),torch=engine.torch.__version__,
         thresholds=dict(path=str(a.thresholds),sha256=sha(a.thresholds),content=thresholds) if a.thresholds else None,
         registration=dict(path=str(a.registration),sha256=sha(a.registration)) if a.registration else None,
         replay_source=dict(path=str(a.replay/'tof/frames.jsonl'),sha256=sha(a.replay/'tof/frames.jsonl')) if a.replay else None,
         A3='NOT_AVAILABLE: simulation guard cannot be treated as real-sensor calibrated S2', errors=pending,
         scope='Engineering only; real noise and nominal query geometry differ from simulator; causal latest-observation sampling on 5 Hz host receipt grid, no interpolation or duplicate frame. No exposure-to-alert latency or quantitative accuracy claim.')
+    if sim_floor is not None:
+        report['input_mode'] = 'sim-floor'
+        report['sim_floor_fields'] = dict(path=str(sim_floor.path),sha256=sha(sim_floor.path),source=sim_floor.source,
+            schema=sim_floor.SCHEMA,feature_encoding='frozen float32 features -> float16 -> float32 -> sign*log1p',
+            scope='Explicit supplied simulation fields; no real calibration or domain-transfer claim')
     (a.out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     with (a.out/'inference.jsonl').open('w',encoding='utf-8') as f:
         for r in results: f.write(json.dumps(r)+'\n')
@@ -358,4 +443,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

@@ -51,5 +51,37 @@ class DemoTests(unittest.TestCase):
         sampled = list(demo.causal_sample(records))
         self.assertEqual([r['sensor']['seq'] for r in sampled],[1])
 
+    def test_sim_floor_matches_frozen_features_and_encoding_after_reset(self):
+        from cnh_learned_features import sequence_features
+        from cnh_learned_readout import squash
+        rng = np.random.default_rng(28)
+        h = rng.uniform(2,100,(7,8,8,16)).astype(np.float32)
+        ambient = rng.uniform(.2,2,(7,8,8)).astype(np.float32)
+        bias = rng.uniform(-.2,4,(8,8,16)).astype(np.float32)
+        tq = np.repeat(np.eye(4)[None],7,axis=0)
+        tq[:,0,3] = np.linspace(-.02,.02,7)
+        with tempfile.TemporaryDirectory(dir=TEMP_ROOT) as td:
+            p=Path(td)/'fields.npz'
+            np.savez(p,schema=demo.SimFloorFeatures.SCHEMA,source='synthetic test only',
+                     bias=bias,ambient=ambient,T_Q_tof=tq,seq=np.arange(7))
+            engine=demo.SimFloorFeatures(p)
+            for i in range(7):
+                start=0 if i<5 else 5
+                z4,z1,sup,x=engine.step(dict(sensor=dict(seq=i)),h[i],reset=i==5)
+                e4,e1,es=sequence_features(h[start:i+1],ambient[start:i+1],bias,tq[start:i+1],np.repeat(np.eye(4)[None],i-start+1,axis=0))
+                np.testing.assert_array_equal(z4,e4[-1]);np.testing.assert_array_equal(z1,e1[-1]);np.testing.assert_array_equal(sup,es[-1])
+                encoded=np.stack([squash(z[-1].astype(np.float16).astype(np.float32)) for z in (e4,e1)])[None]
+                np.testing.assert_array_equal(x,encoded)
+
+    def test_sim_floor_missing_fields_or_sequence_never_fallback(self):
+        with self.assertRaises(demo.InputNotAvailable):demo.SimFloorFeatures(None)
+        with tempfile.TemporaryDirectory(dir=TEMP_ROOT) as td:
+            p=Path(td)/'fields.npz';np.savez(p,bias=np.ones((8,8,16)))
+            with self.assertRaises(demo.InputNotAvailable):demo.SimFloorFeatures(p)
+            np.savez(p,schema=demo.SimFloorFeatures.SCHEMA,source='test',bias=np.ones((8,8,16)),
+                     ambient=np.ones((1,8,8)),T_Q_tof=np.eye(4)[None],seq=np.array([1]))
+            e=demo.SimFloorFeatures(p)
+            with self.assertRaises(demo.InputNotAvailable):e.require_sequences([2])
+
 
 if __name__ == '__main__': unittest.main()

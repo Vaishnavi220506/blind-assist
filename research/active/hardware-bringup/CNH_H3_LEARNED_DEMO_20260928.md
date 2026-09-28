@@ -47,6 +47,36 @@ $models = 0..2 | ForEach-Object { "artifacts.local/work/cnh-learned-readout-2026
 `background_model.npz`、逐帧 `inference.jsonl`、`preview.jpg` 和 `demo.mp4`。
 视频 CFR 仅用于编码，重复视频帧不计为新传感器帧。
 
+### 可选 sim-floor 输入对齐检查
+
+默认仍为 `--input-mode empirical`，上述历史回放不变。可选
+`--input-mode sim-floor --sim-floor-fields <显式字段.npz>` 仅提供与仿真特征计算对齐的代码路径，
+**不从真实背景均值/方差猜测仿真参数，不据此认定真实输入已对齐**。
+本轮真实录制没有所需字段，因此没有执行真实 sim-floor 回放。
+
+NPZ 使用 `allow_pickle=False`，必须包含：
+
+| 字段 | 约定 |
+| --- | --- |
+| `schema` / `source` | 标量字符串 `cnh.sim-floor.v1` / 非空来源说明 |
+| `seq` | 唯一整数序号 `[N]`，与输入传感器序号精确对应 |
+| `bias` | 有限数值 `[8,8,16]`，显式仿真串扰项；不是整段场景背景 |
+| `ambient` | 非负有限数值 `[N,8,8]`，与原仿真 `16*ambient + max(bias,0)` 定义、单位一致 |
+| `T_Q_tof` | 合法刚体变换 `[N,4,4]`，对应每个seq；不由图像或背景猜测 |
+
+缺文件、字段、对应序号或合法数值时，输出 `not_available.json`，状态 `NOT_AVAILABLE`、
+`fallback=false`；不退回 empirical。离线回放在启动推理前检查全段序号。
+该分支直接调用冻结 `cnh_learned_features.sequence_features`，每步只保留最近至多4帧、
+使用恒等输运和显式查询变换，保留原函数的float32算术及查询支持。
+进入NN前也与冻结特征文件一致：**z4/z1先float16量化，再转float32，最后sign*log1p**。
+返回用于检查的原始z1/z4保持原函数float32；两层数据不混为一谈。
+
+验证使用非零bias、随帧变化的非零ambient、显式查询变换和历史重置，
+z1、z4、支持掩码及量化后的NN输入均与实际冻结函数逐元素完全相同。
+7项聚焦测试通过；另对原02段146帧检查默认empirical分支，NN/A2分数及历史/重置
+与已保存回放逐值完全相同，见
+[默认分支回归收据](../../../artifacts.local/work/cnh-h3-live-demo-20260928/sim-floor-default-regression.json)。
+
 后续设备可用时，把 `--replay` 换成明确 XIAO 的 `--port COMx`，
 提供当前静止装置、当前环境的独立背景采集文件及明确 `--camera <URL或索引>`。
 不要把旧场景背景文件用于新环境。串口默认与 H3 固件一致为 115200；不刷固件、不自动扫描网络。
