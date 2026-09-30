@@ -33,10 +33,10 @@ iteration, recovery and delivery need no new approval. Preserve explicit stop ru
 a failed experiment ends that run, not every different mechanism in the same question.
 
 - **Fast lane (default):** diagnostics, engineering and pilots. No registration,
-  separate protocol or independent review by default. Eligible Development permits
-  iteration with recorded changes; frozen runs keep their rules. Repeat identity
-  audits only for changed inputs or concrete integrity evidence. A short existing
-  result record suffices; tables optional. CURRENT changes only with route decisions.
+  separate protocol or independent review by default. Reuse eligible Development
+  for iteration and synthetic-source repair; no one-shot/cohort churn by default.
+  Respect existing frozen rules. Repeat identity audits only for changed inputs or
+  concrete integrity evidence. Short existing result records suffice; tables optional.
 - **Formal lane:** mainline/baseline promotion or confirmatory paper claims. Freeze
   criteria, register, check identity and reproduce with independence suited to the
   claim. Follow [research workflow](research/WORKFLOW.md), keeping train/calib/eval
@@ -53,9 +53,9 @@ a failed experiment ends that run, not every different mechanism in the same que
 - From **v1.3**, pilot G2 quota shortfalls do not stop downstream; G0 identity/axes
   and G1 duplicates still stop. All gates stay hard at scale-up; **v1.2 is unchanged**.
 - Lead with effect, cost and next decision; consolidate limits once. Keep currents
-  near 3KB, archive prior text, and put chronology in results rather than CURRENT.
+  near 3KB; update for route decisions, archive prior text, keep history in results.
 Assess independent units/power before inferential collection; small pilots do not
-establish generalization. Reused Development stays consumed. Use the fixed benchmark;
+establish generalization. Development reuse is not fresh confirmation. Use the benchmark;
 supplements stay within authorized scope. Public access grants no extra data rights.
 Use `FINAL` before protected blind/final access or claim-critical paper numbers and
 [research governance](docs/formal/RESEARCH_GOVERNANCE.md). Use `EXTERNAL` for release,

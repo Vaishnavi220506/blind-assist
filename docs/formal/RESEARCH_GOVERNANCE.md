@@ -2,8 +2,8 @@
 
 Most of this document applies only before opening protected final/blind outcomes
 or publishing a claim-critical number. Ordinary reversible Development work
-follows the smaller loop in `AGENTS.md`. The experiment-inheritance section
-applies whenever any result is retired, reused, or compared with a successor.
+follows the smaller loop in `AGENTS.md`. Experiment inheritance governs formal
+decision-changing terminals; routine Development reuse follows the research workflow.
 
 ## Scope of historical constraints
 
@@ -29,6 +29,13 @@ Confirmation fixes a method to test a specified claim; its required independence
 depends on that claim. Enter the protected rules below for blind/final access or
 claim-critical numbers, not for every Development diagnostic. A mechanical
 interruption is not a method verdict; its existing retry contract still applies.
+
+Source-generation defects alone are not algorithm failures or a reason to impose
+one-shot Development. Repair and repeat eligible synthetic inputs as engineering,
+with a brief versioned log; do not create a sealed terminal for every attempt.
+For confirmation, independent evidence protects against adaptive selection, not
+against data scarcity. Synthetic evaluation can also overfit: changing seeds or
+pixels does not establish independent geometry or structural generalization.
 
 ## Freeze before access
 
@@ -57,9 +64,10 @@ source. A narrow result cannot establish a universal, product, or safety claim.
 ## Experiment inheritance is not a terminal status
 
 `ACTIVE`, `GATE_NOT_MET`, `NOT_EVALUABLE`, and `CLOSED` describe the execution or
-contract. They do not decide whether a method remains useful. After a terminal,
-assign the exact method version a separate inheritance role for a named system
-responsibility:
+contract. They do not decide whether a method remains useful. At a formal terminal
+changing mainline, baseline or governed reuse authority, assign the method version
+an inheritance role for a named system responsibility. Routine source debugging
+needs no new role or terminal. The formal roles are:
 
 - `RETAINED_CORE`: the named surface still runs in the current main algorithm.
   Retain its evidence ceiling and known failure signature with the code; this is

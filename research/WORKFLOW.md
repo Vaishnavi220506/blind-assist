@@ -80,6 +80,21 @@ Eligible exploratory Development may guide parameter, representation and mechani
 changes; label that selection honestly. This does not override an explicitly frozen
 run, its stop rule, protected access or a ban on tuning for that experiment.
 
+Synthetic-source defects (wrong occlusion, visibility, coordinates or coverage) are
+engineering work. On eligible Development, fix the generator and regenerate or
+replay the same scenes/seeds to inspect the repair. Do not require fresh cohorts,
+changed appearances or one-shot runs merely because generation failed. Keep the
+old output and record the code version, seed/config changes and repair result in
+the existing run log; no new protocol or terminal document for each failed attempt.
+Without an evaluable algorithm run, source failure alone consumes no algorithm
+performance evidence and gives no verdict on that algorithm. Existing sealed or
+protected bundles retain their access/retry rules; use eligible debug inputs.
+
+Preserve hashes where they serve immutable identity, transfer verification or a
+concrete integrity issue; do not hand-build a hash/sealing chain for every pilot.
+Independent confirmation may use synthetic or real data. Choose separation to
+match the claim: new pixels/seeds alone do not establish unseen-structure transfer.
+
 Before collecting data for significance, non-inferiority or other inferential
 gates, assess power or expected precision using independent sampling units,
 plausible effect size and dependence between observations. Frames/assertions are
@@ -107,7 +122,8 @@ No workflow change retrospectively authorizes a sealed retry or changes old gate
 
 ## A short experiment brief
 
-For UE/nearfield data work, search existing assets before new capture and run through
+For UE/nearfield work consuming governed asset bundles, search existing assets before
+new capture and run through
 `tools/ba.ps1 run research-ue -RunSpec <run-spec.json>`. The existing run spec declares
 `reuse.mode`, a capability `reuse.query`, exact input subpaths and their data roles.
 The runtime records reuse candidates and checks the [UE input contracts](../data/ue-reuse-policy.json)
@@ -116,6 +132,9 @@ before consumption, then registers result lineage. Use the
 Core regression. A mixed reserved bundle needs a separately admitted subset; a folder
 label or `split=train` declaration cannot authorize its protected files. Add scoped
 contracts with new adapters; legacy direct scripts are not automatically governed.
+
+Generator repairs on eligible Development follow the engineering loop above;
+this asset-consumption route is not a universal admission gate for synthetic debugging.
 
 Put the following in the existing idea, command, protocol, or owning result; do not
 create another mandatory document. Fill in only details needed for the decision.
