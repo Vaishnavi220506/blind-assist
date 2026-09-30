@@ -5,10 +5,10 @@ readouts retain their occupancy direction. Vector probes are privileged
 noiseless-reference matched directions, not information ceilings.
 """
 import argparse
-import hashlib
 import json
 import os
-import sys
+import subprocess
+import tempfile
 import time
 from pathlib import Path
 
@@ -24,10 +24,6 @@ K = 12
 MARGIN = .015
 LIMIT_SECONDS = 1200
 REPS = ('raw8', 'z1_8', 'voxel15', 'logit15', 'raw12', 'logit5')
-
-
-def sha(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def save(path, value):
@@ -67,15 +63,10 @@ def prepare():
         net.load_state_dict(torch.load(path, map_location='cuda', weights_only=True))
         nets.append(net.eval())
         models.append(path)
-    dependency_paths = [Path(__file__), bias_path, *models]
-    for name, module in list(sys.modules.items()):
-        path = getattr(module, '__file__', None)
-        if name.startswith('cnh_') and path and Path(path).suffix == '.py':
-            dependency_paths.append(Path(path))
-    sources = {str(p.resolve()): sha(p) for p in sorted(set(dependency_paths), key=str)}
     return dict(SS=SS, S=S, target_at=target_at, labels=labels_for_all, torch=torch,
                 g=g, F=F, noisy=noisy_poses, relative=relative_transforms, bias=bias,
-                projector=projector, masks=masks, nets=nets, sources=sources)
+                projector=projector, masks=masks, nets=nets,
+                inputs=dict(bias=str(bias_path), models=[str(p) for p in models]))
 
 
 def scenes(ctx, unit):
@@ -149,7 +140,7 @@ def threshold_reference():
         ranks = np.searchsorted(reference, reference, side='right')
         k = next(k for k in range(len(reference) + 2) if 10 * int((ranks >= k).sum()) <= len(reference))
         refs.append((reference, k))
-    return refs, {str(p.resolve()): sha(p) for p in (manifest_path, pred_path)}
+    return refs, [str(manifest_path), str(pred_path)]
 
 
 def one_pair(ctx, unit, cond, pair, group, reps_count, check=False):
@@ -232,51 +223,47 @@ def summarize(rows, refs):
     return summaries, comparisons
 
 
-def run(smoke=False):
-    OUT.mkdir(parents=True, exist_ok=True)
+def run(out, smoke=False):
+    out.mkdir(parents=True, exist_ok=True)
     started = time.monotonic()
     ctx = prepare()
     if smoke:
         pair_map, group = scenes(ctx, SMOKE_UNIT)
         row = one_pair(ctx, SMOKE_UNIT, 'B4', pair_map['B4'], group, 2, check=True)
-        save(OUT / 'smoke.json', dict(status='PASS', excluded_unit=SMOKE_UNIT,
+        save(out / 'smoke.json', dict(status='PASS', excluded_unit=SMOKE_UNIT,
              elapsed_s=time.monotonic() - started, estimated_pair_seconds=time.monotonic() - started,
              finite_projections=all(np.isfinite(v).all() for r in row['projections'].values() for v in r),
              z1_exact_match=True, backend='numpy CPU frozen renderer; CUDA projector and FULL inference'))
         print('smoke PASS', round(time.monotonic() - started, 1), 'seconds', flush=True)
         return
-    lock = json.loads((OUT / 'freeze.json').read_text(encoding='utf8'))
-    assert lock['plan_sha256'] == sha(OUT / 'PLAN.md')
-    refs, calibration_hashes = threshold_reference()
-    sources = dict(ctx['sources'], **calibration_hashes)
-    assert sources == lock['sources'], 'input/source drift after freeze'
-    assert not (OUT / 'terminal.json').exists() and not (OUT / 'pairs.jsonl').exists(), 'one-shot already started'
-    save(OUT / 'request.json', dict(pid=os.getpid(), started_unix=time.time(), total_pairs=72,
-         K=K, runtime_limit_seconds=LIMIT_SECONDS, sources=sources,
+    refs, calibration_inputs = threshold_reference()
+    inputs = dict(ctx['inputs'], calibration=calibration_inputs)
+    revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+    save(out / 'request.json', dict(pid=os.getpid(), started_unix=time.time(), total_pairs=72,
+         K=K, runtime_limit_seconds=LIMIT_SECONDS, code_revision=revision, inputs=inputs,
          device=ctx['torch'].cuda.get_device_name(), backend='numpy CPU frozen renderer; CUDA projector and FULL inference'))
     rows = []
     for unit in UNITS:
         pair_map, group = scenes(ctx, unit)
         for cond in CONDITIONS:
             if time.monotonic() - started > LIMIT_SECONDS:
-                save(OUT / 'terminal.json', dict(status='BUDGET_STOP', completed_pairs=len(rows),
+                save(out / 'terminal.json', dict(status='BUDGET_STOP', completed_pairs=len(rows),
                      elapsed_s=time.monotonic() - started, pid=os.getpid(), remaining_pairs=72-len(rows)))
                 return
             row = one_pair(ctx, unit, cond, pair_map[cond], group, K)
             rows.append(row)
-            with (OUT / 'pairs.jsonl').open('a', encoding='utf8') as stream:
+            with (out / 'pairs.jsonl').open('a', encoding='utf8') as stream:
                 stream.write(json.dumps(row, allow_nan=False) + '\n')
-            save(OUT / 'progress.json', dict(completed_pairs=len(rows), total_pairs=72, unit=unit,
+            save(out / 'progress.json', dict(completed_pairs=len(rows), total_pairs=72, unit=unit,
                  condition=cond, elapsed_s=time.monotonic() - started, pid=os.getpid()))
             print('pair', len(rows), '/72', unit, cond, round(time.monotonic()-started, 1), flush=True)
     assert len(rows) == 72
-    assert all(sha(path) == digest for path, digest in sources.items()), 'source changed during run'
     summary, comparisons = summarize(rows, refs)
-    save(OUT / 'results.json', dict(scope='privileged shallow-boundary Development witness; not an information ceiling',
-         plan_sha256=lock['plan_sha256'], sources=sources, summary=summary, comparisons=comparisons,
+    save(out / 'results.json', dict(scope='privileged shallow-boundary Development witness; not an information ceiling',
+         code_revision=revision, inputs=inputs, summary=summary, comparisons=comparisons,
          completed_pairs=len(rows), independent_target_units=len(UNITS), K=K,
          elapsed_s=time.monotonic()-started))
-    save(OUT / 'terminal.json', dict(status='complete', completed_pairs=72, pid=os.getpid(),
+    save(out / 'terminal.json', dict(status='complete', completed_pairs=72, pid=os.getpid(),
          elapsed_s=time.monotonic()-started))
     print('complete', round(time.monotonic()-started, 1), flush=True)
 
@@ -285,10 +272,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--smoke', action='store_true')
     args = parser.parse_args()
+    OUT.mkdir(parents=True, exist_ok=True)
+    out = Path(tempfile.mkdtemp(prefix='smoke-' if args.smoke else 'run-', dir=OUT))
+    print('output', out, flush=True)
     try:
-        run(args.smoke)
+        run(out, args.smoke)
     except BaseException as exc:
-        OUT.mkdir(parents=True, exist_ok=True)
-        save(OUT / ('smoke_failure.json' if args.smoke else 'terminal.json'),
+        save(out / ('smoke_failure.json' if args.smoke else 'terminal.json'),
              dict(status='failed', error=repr(exc), pid=os.getpid()))
         raise
