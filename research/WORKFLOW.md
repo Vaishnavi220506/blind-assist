@@ -1,6 +1,6 @@
 # Research workflow
 
-Updated: 2026-09-24
+Updated: 2026-10-01
 
 Improve a concrete BlindAssist capability and explain why the improvement works.
 Use this page for implementation choices; route currents own active evidence and
@@ -12,19 +12,28 @@ The user decides a new research question, budget expansion, or changed success
 criteria. Reuse authorization already given for that question: routine implementation,
 mechanical recovery, targeted validation and delivery proceed without new approval.
 A failed frozen experiment cannot be reopened by changing its threshold or subset.
-Propose ideas freely; starting a new research question requires user authorization.
-A technical Git branch alone does not create a new research question. This is not
-a requirement to ask before every command, diagnostic or engineering fix.
+Its stop rule applies to that run and scoped claim, not every materially different
+mechanism. Within the authorized capability question and budget, comparing mechanisms,
+iterating on eligible Development and fixing execution are routine work. Ask when the
+question, budget or frozen criteria actually change; do not ask for each technical step.
 
-For exploration, put question, comparison, decision rule, result and next decision
-in one existing record, with necessary input/code identity and UNKNOWN/cost reporting.
-Do not create separate protocol, audit and approval documents by default. Register
-runs through existing supported commands. Ordinary exploration needs a conclusion,
-not a new formal terminal. Assign structured inheritance when a terminal changes
-mainline, baseline or reuse decisions; batch metadata there without invented entries.
-Use independent audit when a paper-critical claim or a concrete integrity risk
-justifies it. Large assertion counts are mechanical checks, not independent samples.
-Use one meaningful falsifier; expand only for an observed defect or evidence gap.
+For exploration, implement a small credible approach and inspect one meaningful
+task-effect comparison. Keep the question, inputs/code, comparison, changes, result
+and next decision in one short existing record, including UNKNOWN/cost when relevant.
+Fast-lane diagnostics and pilots need no registration, separate protocol, independent
+audit or new terminal by default. Register formal runs through supported commands;
+assign inheritance when changing mainline, baseline or governed reuse authority.
+An exploratory next-step decision or reversible engineering fix alone is not formal
+promotion. Do not apply confirmation requirements to it.
+
+Add a check or review for an observed defect, explicit acceptance requirement,
+consequential action or evidence gap that can change the decision. State that reason
+briefly when expanding work, not in a separate justification/approval document.
+Use the narrowest check that covers changed behavior and material risk. Broaden for
+integration impact or actual failures; do not repeat successful checks without new
+inputs or concerns. Large assertion counts are not independent research samples.
+Prefer direct code for the current task; add abstraction, fallback or hardening for
+a concrete need, while preserving necessary error handling and data integrity.
 
 ## Effect before novelty
 
@@ -48,10 +57,11 @@ change. Search literature or history when it resolves a mechanism or evidence ga
 Candidate rankings and historical successor suggestions are not an exhaustive
 research agenda. Keep a simple comparator when it can challenge added complexity.
 
-Use one explanatory hypothesis. It may require coordinated changes to representation,
-observation, state, and decision interfaces. Preserve comparable inputs and metrics;
-add an ablation only if it changes the contribution judgment. Revisit a run of local
-patches when a simpler common mechanism may explain their gains and failure modes.
+Keep each implemented comparison interpretable; broader exploration can examine
+different hypotheses before choosing. A mechanism may coordinate representation,
+observation, state and decisions. Preserve comparable inputs and metrics; add an
+ablation only if it changes the contribution judgment. Revisit repeated local
+patches when a simpler mechanism may explain their gains and failures.
 
 ## Benchmark, data roles and statistical decisions
 
@@ -66,6 +76,9 @@ it; repeated use needs no new consumption ceremony. Preserve existing access and
 lineage receipts. A locked test set supports independent confirmation only under
 its frozen access plan. Outcomes used for tuning or repeated unplanned selection
 cannot become fresh confirmation by keeping the test label or changing its name.
+Eligible exploratory Development may guide parameter, representation and mechanism
+changes; label that selection honestly. This does not override an explicitly frozen
+run, its stop rule, protected access or a ban on tuning for that experiment.
 
 Before collecting data for significance, non-inferiority or other inferential
 gates, assess power or expected precision using independent sampling units,
@@ -73,8 +86,9 @@ plausible effect size and dependence between observations. Frames/assertions are
 not automatically independent samples. Report small-category event counts and
 uncertainty; do not claim reliable category-level inference from inadequate data.
 A predeclared engineering retention/stop rule may still use small counts, provided
-its limited purpose is explicit. Freeze criteria before outcomes; this guidance
-never authorizes retrospective gate changes or reopening a consumed experiment.
+its limited purpose is explicit. Freeze confirmation criteria before outcomes.
+Exploratory observations can guide the next check, with changes recorded; they do
+not rewrite old gates or authorize reopening an explicitly stopped frozen run.
 
 ## Three kinds of work
 

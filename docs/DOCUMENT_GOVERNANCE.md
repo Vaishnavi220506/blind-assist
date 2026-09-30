@@ -27,6 +27,14 @@ reason in the existing change/result note; do not add a routine meta-review,
 new checklist, or approval gate. Preserve evidence identity and protected
 blind/final boundaries.
 
+Apply the 2026-10-01 execution clarification: fast-lane work needs a short result
+in an existing record, not a protocol/audit/report bundle. Reuse known context and
+input records. Investigate promising public-data leads first; deepen file, license
+and task-fit checks as actual use requires, preserving access/use restrictions.
+Define controls by their concrete trigger; do not turn every possible limitation
+into a prerequisite. Judge this simplification by visible results and useful next
+decisions, not by adding workflow tests, review rounds or process scorecards.
+
 Current pages contain capability, baseline, bottleneck, next check, outcome
 decisions, and essential boundaries. Keep chronological increments in owning
 results/ledgers or exact Git history; replace superseded current prose rather

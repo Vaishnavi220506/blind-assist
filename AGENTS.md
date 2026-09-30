@@ -26,37 +26,37 @@ checks; preserve route authority and consumed evidence.
 
 ## Execution policy
 
-Propose mechanisms by measured effect; ideas need no registration. The user decides
-new research questions, budget expansions and changed success criteria. Existing
-authorization covers implementation, recovery, validation and delivery. Preserve
-frozen failures and stop rules; do not reopen them by changing thresholds/subsets.
-Default mode is `EXPLORE`, with two proportionate lanes (2026-09-26 decision):
-- **Fast lane:** diagnostics, prechecks, engineering troubleshooting and pilots.
-  No experiment registration or separate protocol. Reuse validated inputs without
-  repeating hash-chain audits unless inputs changed or concrete integrity evidence
-  requires a check. Deliver at most one page: conclusion, one table with denominators,
-  next step, and one combined scope/limitations paragraph, in `artifacts.local/` or
-  a short Markdown file. Do not update either CURRENT page for routine diagnostics.
-- **Formal lane:** experiments changing the mainline/baseline or producing paper
-  numbers. Freeze criteria before outcomes, register, verify input identity, provide
-  the full report and update the owning current decision. Follow
-  [research workflow](research/WORKFLOW.md); keep train/calib/evaluation separate.
-- When uncertain, start in the fast lane. Before using its outcome to change a
-  decision or support a paper claim, perform a frozen formal reproduction. This is
-  not permission to retrospectively promote consumed diagnostic results.
-- From **v1.3**, pilot quota gates (G2 counts/combination counts) report shortfalls
-  without stopping downstream. G0 identity/coordinates and G1 duplicates remain
-  hard stops; all gates remain hard at scale-up. Other frozen criteria remain as
-  written. Frozen **v1.2 is unchanged**; preserve its failure and stop conditions.
-- Lead reports with the conclusion and main table; consolidate limitations once.
-  Keep `docs/CURRENT_DECISION.md` and the route CURRENT near 3KB: current decision,
-  key numbers/denominators, pending questions and links. Update only when decisions
-  change; archive the prior full text rather than append chronological results.
-Use independent sampling units for power/precision before inferential collection;
-small pilots do not establish generalization. Reused Development stays consumed.
-Use one falsifying check; expand for observed defects or material evidence gaps.
-Compare on the fixed benchmark by default; supplements need scoped authorization.
-Public data needs provenance; access grants no redistribution, consent or license rights.
+Default to a small working implementation and a task-effect check, not a review chain.
+The user decides new questions, budget expansions and changed frozen criteria.
+Within an authorized question/budget, routine mechanism comparisons, Development
+iteration, recovery and delivery need no new approval. Preserve explicit stop rules;
+a failed experiment ends that run, not every different mechanism in the same question.
+
+- **Fast lane (default):** diagnostics, engineering and pilots. No registration,
+  separate protocol or independent review by default. Eligible Development permits
+  iteration with recorded changes; frozen runs keep their rules. Repeat identity
+  audits only for changed inputs or concrete integrity evidence. A short existing
+  result record suffices; tables optional. CURRENT changes only with route decisions.
+- **Formal lane:** mainline/baseline promotion or confirmatory paper claims. Freeze
+  criteria, register, check identity and reproduce with independence suited to the
+  claim. Follow [research workflow](research/WORKFLOW.md), keeping train/calib/eval
+  separate. Consumed diagnostics cannot become fresh confirmation retrospectively.
+- An exploratory next-step decision or a reversible engineering fix does not by
+  itself require formal reproduction. When uncertain, start in the fast lane.
+- Add a precheck, review, test or abstraction only for an observed defect, explicit
+  acceptance requirement, consequential action or decision-changing evidence gap.
+  Name that reason briefly when expanding work; do not create a new approval gate.
+- Start with one meaningful falsifier or focused check; stop when covered. Repeat
+  or broaden only for changed inputs, defects or material integration/evidence gaps.
+- Implement the current need directly. Do not add speculative fallback paths,
+  configuration layers or frameworks; keep necessary error/data-integrity handling.
+- From **v1.3**, pilot G2 quota shortfalls do not stop downstream; G0 identity/axes
+  and G1 duplicates still stop. All gates stay hard at scale-up; **v1.2 is unchanged**.
+- Lead with effect, cost and next decision; consolidate limits once. Keep currents
+  near 3KB, archive prior text, and put chronology in results rather than CURRENT.
+Assess independent units/power before inferential collection; small pilots do not
+establish generalization. Reused Development stays consumed. Use the fixed benchmark;
+supplements stay within authorized scope. Public access grants no extra data rights.
 Use `FINAL` before protected blind/final access or claim-critical paper numbers and
 [research governance](docs/formal/RESEARCH_GOVERNANCE.md). Use `EXTERNAL` for release,
 deployment, credentials, privacy, destructive external actions or real-user safety
