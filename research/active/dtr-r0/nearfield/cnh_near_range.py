@@ -23,6 +23,7 @@ PER = {'train': 22, 'evaluation': 40}
 RANGE_BINS = ((.6, .9), (.9, 1.2), (1.2, 1.6), (1.6, 2.1), (2.1, 2.6))
 ZONE_TAN = 2*np.tan(np.pi/8)/8
 _ORIGINAL = {}
+SUFFIX = '_res' if (OUT/'models/NEAR_RES/model_seed4.pt').exists() else ''  # keep the first results file
 
 
 def known(unit):
@@ -121,7 +122,7 @@ def load_split(split):
     return xs, {key: np.concatenate([m[key] for m in ms]) for key in ms[0]}
 
 
-def train():
+def train(arm='NEAR'):
     import torch
     from cnh_cvr_pilot import CVR
     from cnh_cvr_projection import query_masks
@@ -138,10 +139,12 @@ def train():
         x = xb.float(); x[:, 0] = x[:, 0].sign()*x[:, 0].abs().log1p(); x[:, 2] = x[:, 2].sign()*x[:, 2].abs().log1p(); x[:, 1] /= 8
         return torch.cat((x, masks[None].expand(len(x), -1, -1, -1, -1)), 1)
     for seed in range(5):
-        final = OUT/'models/NEAR'/f'model_seed{seed}.pt'
+        final = OUT/'models'/arm/f'model_seed{seed}.pt'
         if final.exists(): continue
         torch.manual_seed(seed); torch.cuda.manual_seed_all(seed); rng = np.random.default_rng(seed)
-        net = CVR().cuda(); opt = torch.optim.AdamW(net.parameters(), lr=.002, weight_decay=.0001)
+        net = CVR()
+        if arm == 'NEAR_RES': net.body[0] = torch.nn.Conv3d(5, 16, 3, stride=(1, 2, 2), padding=1)
+        net = net.cuda(); opt = torch.optim.AdamW(net.parameters(), lr=.002, weight_decay=.0001)
         sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, 20); history = []
         for epoch in range(20):
             t0 = time.monotonic(); net.train(); order = rng.permutation(ids); total = 0.
@@ -150,7 +153,7 @@ def train():
                 loss = torch.nn.functional.binary_cross_entropy_with_logits(net(prep_gpu(X[pos])), Y[pos])
                 loss.backward(); opt.step(); total += float(loss.detach())*len(pos)
             sched.step(); history.append(dict(epoch=epoch+1, loss=total/n, elapsed_s=time.monotonic()-t0))
-            print('train NEAR', seed, history[-1], flush=True)
+            print('train', arm, seed, history[-1], flush=True)
         final.parent.mkdir(parents=True, exist_ok=True)
         torch.save({k: v.detach().cpu() for k, v in net.state_dict().items()}, final); SS.save(final.parent/f'seed{seed}_history.json', history)
         del net, opt; torch.cuda.empty_cache()
@@ -163,10 +166,14 @@ def infer():
     torch.backends.cuda.matmul.allow_tf32 = False; torch.backends.cudnn.allow_tf32 = False
     masks = torch.as_tensor(query_masks(), dtype=torch.float32, device='cuda')
     xs, m = load_split('evaluation')
-    for name, paths in (('NEAR', [OUT/'models/NEAR'/f'model_seed{s}.pt' for s in range(5)]), ('BASE', [RF.model_path('BASE', s) for s in range(5)])):
+    for name, paths in (('NEAR', [OUT/'models/NEAR'/f'model_seed{s}.pt' for s in range(5)]), ('BASE', [RF.model_path('BASE', s) for s in range(5)]),
+                        ('NEAR_RES', [OUT/'models/NEAR_RES'/f'model_seed{s}.pt' for s in range(5)])):
+        if (OUT/f'scores_{name}.npz').exists() or not all(p.exists() for p in paths): continue
         nets = []
         for p in paths:
-            net = CVR().cuda(); net.load_state_dict(torch.load(p, map_location='cuda', weights_only=True)); nets.append(net.eval())
+            net = CVR()
+            if name == 'NEAR_RES': net.body[0] = torch.nn.Conv3d(5, 16, 3, stride=(1, 2, 2), padding=1)
+            net = net.cuda(); net.load_state_dict(torch.load(p, map_location='cuda', weights_only=True)); nets.append(net.eval())
         raw = []
         with torch.no_grad():
             for x in xs:
@@ -184,7 +191,8 @@ def infer():
 def evaluate():
     from sklearn.linear_model import LogisticRegression
     import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
-    sc = {a: SS.read(OUT/f'scores_{a}.npz') for a in ('NEAR', 'BASE')}; rows = []
+    names = [a for a in ('NEAR', 'BASE', 'NEAR_RES') if (OUT/f'scores_{a}.npz').exists()]
+    sc = {a: SS.read(OUT/f'scores_{a}.npz') for a in names}; rows = []
     for u in SPLITS['evaluation']:
         d = SS.read(OUT/'features/evaluation'/f'unit{u}.npz'); scenes = scenes_for(u); lab = d['labels'].reshape(40, 16, 6)[:, -1, 2:4]
         for c in range(40):
@@ -192,8 +200,8 @@ def evaluate():
             for q in (0, 1):
                 rows.append(dict(unit=u, g=q, cond=str(d['family'][c]), rng=scenes[c]['meta']['range'], lab=int(lab[c, q]),
                                  off=-float(d['margin'][c]) if q == tq else None,
-                                 s={'NEAR': float(sc['NEAR'][str(u)][c, q]), 'BASE': float(sc['BASE'][str(u)][c, q]), 'PARTIAL': float(d['motion'][c, 2, q])}))
-    arms = ('NEAR', 'BASE', 'PARTIAL'); thr = {}
+                                 s={**{a: float(sc[a][str(u)][c, q]) for a in names}, 'PARTIAL': float(d['motion'][c, 2, q])}))
+    arms = (*names, 'PARTIAL'); thr = {}
     for a in arms:
         for q in (0, 1):
             thr[(a, q)] = float(np.quantile([r['s'][a] for r in rows if r['g'] == q and r['off'] is None and r['lab'] == 0], .9))
@@ -218,14 +226,14 @@ def evaluate():
                 fits[f'{a}|{cond}|{lo}-{hi}'] = dict(n=len(o), mu_cm=mu*100, s_cm=s*100, band_cm=band*100,
                                                     band_ci_cm=[float(np.percentile(2*boot[:, 1]*np.log(9), q))*100 for q in (2.5, 97.5)],
                                                     d90_cm=(mu+s*np.log(9))*100, zone_cm=ZONE_TAN*(lo+hi)/2*100)
-                if a != 'PARTIAL':
+                if a in ('NEAR', 'BASE'):
                     xs_ = np.linspace(-.10, .15, 200)
                     axes[ai].plot(xs_*100, 1/(1+np.exp(-(xs_-mu)/s)), color=f'C{bi}', ls='-' if a == 'NEAR' else ':',
                                   label=f'{a} {lo}-{hi} m')
         axes[ai].axvline(0, color='k', lw=.6); axes[ai].set_title({'none': 'no context', 'corner': 'near same-side panel'}[cond])
         axes[ai].set_xlabel('target intrusion into corridor (cm; <0 = outside)'); axes[ai].grid(alpha=.3); axes[ai].legend(fontsize=7, ncol=2)
-    axes[0].set_ylabel('P(alarm) at 10% clear-row alarm rate'); fig.tight_layout(); fig.savefig(OUT/'near_range_envelope.png', dpi=150)
-    SS.save(OUT/'results.json', dict(scope='Development characterisation; thresholds at 10% alarm on clear (other-band) rows of this evaluation set',
+    axes[0].set_ylabel('P(alarm) at 10% clear-row alarm rate'); fig.tight_layout(); fig.savefig(OUT/f'near_range_envelope{SUFFIX}.png', dpi=150)
+    SS.save(OUT/f'results{SUFFIX}.json', dict(scope='Development characterisation; thresholds at 10% alarm on clear (other-band) rows of this evaluation set',
                                      fits=fits, script_sha256=SS.sha(__file__)))
     for k, v in fits.items():
         print(f"{k:24s} n={v['n']:4d} mu={v['mu_cm']:+6.1f} s={v['s_cm']:5.1f} band={v['band_cm']:6.1f} [{v['band_ci_cm'][0]:.1f},{v['band_ci_cm'][1]:.1f}] d90={v['d90_cm']:+6.1f} zone={v['zone_cm']:.0f}cm")
@@ -233,11 +241,12 @@ def evaluate():
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('--stage', required=True, choices=['generate', 'materialize', 'train', 'infer', 'evaluate'])
-    p.add_argument('--split'); p.add_argument('--chunk'); a = p.parse_args(); OUT.mkdir(parents=True, exist_ok=True)
-    tag = a.stage+(f'_{a.split}' if a.split else '')+(f"_c{a.chunk.replace('/', 'of')}" if a.chunk else '')
+    p.add_argument('--split'); p.add_argument('--chunk'); p.add_argument('--arm', default='NEAR'); a = p.parse_args(); OUT.mkdir(parents=True, exist_ok=True)
+    tag = a.stage+(f'_{a.arm}' if a.stage == 'train' and a.arm != 'NEAR' else '')+(f'_{a.split}' if a.split else '')+(f"_c{a.chunk.replace('/', 'of')}" if a.chunk else '')
     try:
         if a.stage in ('generate', 'materialize'): {'generate': generate, 'materialize': materialize}[a.stage](a.split, a.chunk)
-        else: {'train': train, 'infer': infer, 'evaluate': evaluate}[a.stage]()
+        elif a.stage == 'train': train(a.arm)
+        else: {'infer': infer, 'evaluate': evaluate}[a.stage]()
         SS.save(OUT/f'terminal_{tag}.json', dict(status='complete'))
     except BaseException as e:
         SS.save(OUT/f'terminal_{tag}.json', dict(status='failed', error=repr(e))); raise
