@@ -12,7 +12,7 @@ import unittest
 from unittest.mock import Mock, patch
 from types import SimpleNamespace
 
-from capture import Decoder, bounded_seconds, capture_arguments, firmware_metadata, live_chunks, run_session, select_port, validate_frame
+from capture import Decoder, bounded_seconds, capture_arguments, firmware_metadata, keyboard_markers, live_chunks, run_session, select_port, validate_frame
 
 
 def frame(seq=1, ms=100, zones=16, cnh=False):
@@ -21,9 +21,10 @@ def frame(seq=1, ms=100, zones=16, cnh=False):
             "rows": side, "cols": side, "distance_mm": [600]*zones,
             "target_status": [5]*zones, "nb_target": [1]*zones}
     if cnh:
-        item.update(bins=24, hist_raw=[[16]*24 for _ in range(16)],
-                    hist_scaler=[[0]*24 for _ in range(16)],
-                    ambient_raw=[8]*16, ambient_scaler=[1]*16)
+        bins = 24 if zones == 16 else 16
+        item.update(bins=bins, hist_raw=[[16]*bins for _ in range(zones)],
+                    hist_scaler=[[0]*bins for _ in range(zones)],
+                    ambient_raw=[8]*zones, ambient_scaler=[1]*zones)
     return item
 
 
@@ -43,6 +44,29 @@ def diagnostic_frame(zones=16):
 
 
 class ParserTests(unittest.TestCase):
+    def test_h3_and_legacy_mixed_layout_summary(self):
+        decoder = Decoder()
+        items = [frame(1, 100, cnh=True), frame(2, 300, zones=64, cnh=True)]
+        raw = encoded(*items)
+        for offset in range(0, len(raw), 137):
+            decoder.feed(raw[offset:offset+137], 456)
+        summary = decoder.summary()
+        self.assertEqual(2, summary["frames"])
+        self.assertEqual(80, summary["cnh_histograms"])
+        self.assertEqual({"4x4x24": 1, "8x8x16": 1}, summary["cnh_layout_counts"])
+        self.assertEqual({}, summary["issues"])
+        self.assertEqual([16.0]*16, validate_frame(items[1])["hist_normalized"][63])
+
+    def test_h3_rejects_wrong_arrays_or_bins(self):
+        for key, value in (("bins", 24), ("bins", True), ("hist_raw", [[0]*16]*16),
+                           ("hist_scaler", [[0]*24]*64), ("ambient_scaler", [0]*16)):
+            with self.subTest(key=key), self.assertRaises(ValueError):
+                validate_frame({**frame(zones=64, cnh=True), key: value})
+        item = frame(zones=64, cnh=True)
+        del item["bins"]
+        with self.assertRaises(ValueError):
+            validate_frame(item)
+
     def test_diagnostic_signed_conversion_and_shape(self):
         for zones in (16, 64):
             item = diagnostic_frame(zones)
@@ -201,6 +225,37 @@ class ParserTests(unittest.TestCase):
 
 
 class EvidenceTests(unittest.TestCase):
+    def test_keyboard_ignores_extended_keys_and_timestamps_valid_keys(self):
+        fake = SimpleNamespace(kbhit=Mock(side_effect=[True, True, True, False]),
+                               getwch=Mock(side_effect=["\xe0", "M", "2", "Q"]))
+        with patch("capture.sys.platform", "win32"), patch("capture.sys.stdin.isatty", return_value=True), \
+             patch.dict(sys.modules, {"msvcrt": fake}), patch("capture.time.monotonic_ns", side_effect=[10, 20]):
+            self.assertEqual([("2", 10), ("q", 20)], keyboard_markers()())
+
+    def test_markers_survive_silent_sensor_and_stop_closes_source(self):
+        closed = []
+        def source():
+            try:
+                yield b"", 10
+                yield encoded(frame(zones=64, cnh=True)), 20
+                yield b"", 30
+                self.fail("q must stop consuming serial data")
+            finally:
+                closed.append(True)
+        poll = Mock(side_effect=[[("2", 11)], [("m", 21)], [("0", 31), ("q", 32)]])
+        with tempfile.TemporaryDirectory() as temp:
+            out = Path(temp)/"capture"
+            result = run_session(out, source(), {"mode": "synthetic_test"}, marker_source=poll)
+            markers = [json.loads(line) for line in (out/"markers.jsonl").read_text().splitlines()]
+            self.assertEqual(["wall", "wall", None, None], [m["active_segment"] for m in markers])
+            self.assertEqual([None, 1, 1, 1], [m["preceding_seq"] for m in markers])
+            self.assertEqual([11, 21, 31, 32], [m["host_marker_monotonic_ns"] for m in markers])
+            self.assertEqual(4, result["markers"])
+            self.assertTrue(result["stopped_by_request"])
+            self.assertEqual("FRAMES_RECORDED", result["result"])
+            self.assertEqual(encoded(frame(zones=64, cnh=True)), (out/"raw.bin").read_bytes())
+        self.assertEqual([True], closed)
+
     def test_stop_marker_after_frame_finalizes_and_closes_serial(self):
         with tempfile.TemporaryDirectory() as temp:
             stop_file = Path(temp)/"stop"

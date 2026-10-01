@@ -18,6 +18,7 @@ def write(path, value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--camera-port", required=True)
+    parser.add_argument("--camera-url", help="explicit local Atom MJPEG URL; overrides USB camera transport")
     parser.add_argument("--tof-port", required=True)
     parser.add_argument("--seconds", type=bounded_seconds, default=40)
     parser.add_argument("--output", type=Path, required=True)
@@ -26,10 +27,13 @@ def main():
     parser.add_argument("--tof-query-config", action="store_true",
                         help="ask the identified ToF diagnostic firmware for cached configuration")
     args = parser.parse_args()
-    if args.camera_port.upper() == args.tof_port.upper():
+    if not args.camera_url and args.camera_port.upper() == args.tof_port.upper():
         parser.error("camera and ToF must use different explicitly identified ports")
     available = {p["port"].upper(): p for p in ports()}
-    for port in (args.camera_port, args.tof_port):
+    if args.camera_url:
+        from wifi_camera_capture import validate_url
+        args.camera_url = validate_url(args.camera_url)
+    for port in ((args.tof_port,) if args.camera_url else (args.camera_port, args.tof_port)):
         if port.upper() not in available or available[port.upper()]["vid"] != 0x303A:
             parser.error(f"{port}: expected an enumerated Espressif USB device")
     root = args.output.resolve()
@@ -42,6 +46,9 @@ def main():
         "tof": common + [str(source/"capture.py"), "capture", "--port", args.tof_port,
                          "--seconds", str(args.seconds), "--output", str(root/"tof"), "--label", args.label],
     }
+    if args.camera_url:
+        commands["camera"] = common + [str(source/"wifi_camera_capture.py"), "--url", args.camera_url,
+                                       "--seconds", str(args.seconds), "--output", str(root/"camera")]
     if args.tof_query_config:
         commands["tof"].append("--query-config")
     if args.stop_file is not None:
@@ -51,12 +58,13 @@ def main():
         "schema": "hardware-bringup.parallel-capture.v1", "label": args.label,
         "started_utc": datetime.now(timezone.utc).isoformat(),
         "host_start_monotonic_ns": time.monotonic_ns(), "requested_seconds": args.seconds,
-        "devices": {k: available[p.upper()] for k, p in (("camera", args.camera_port), ("tof", args.tof_port))},
+        "devices": {"tof": available[args.tof_port.upper()],
+                    "camera": {"transport": "wifi_mjpeg", "url": args.camera_url} if args.camera_url else available[args.camera_port.upper()]},
         "commands": commands, "status": "STARTING", "firmware_flashing": False,
         "stop_file": str(args.stop_file.resolve()) if args.stop_file else None,
         "clock_boundary": "same-host monotonic receipts only; no exposure alignment, hardware trigger or device-clock mapping",
         "source_sha256": {name: hashlib.sha256((source/name).read_bytes()).hexdigest()
-                          for name in ("pair_capture.py", "atom_capture.py", "capture.py")},
+                          for name in ("pair_capture.py", "atom_capture.py", "capture.py") + (("wifi_camera_capture.py",) if args.camera_url else ())},
     }
     write(root/"manifest.json", manifest)
     children, logs = {}, []

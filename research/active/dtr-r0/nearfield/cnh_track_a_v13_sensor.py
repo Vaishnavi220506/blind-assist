@@ -6,6 +6,7 @@ readouts never open the oracle files. calib/audit units are rendered at 10 Hz
 Assumption (ASSUMED): per-frame integration identical at 5 and 10 Hz; hardware
 bus throughput DEFERRED_PHASE2. Oracle arrays default to audit units only;
 --oracle-calib explicitly enables evaluator-only calib arrays for Development.
+--oracle-train explicitly enables privileged training masks for Development.
 """
 import argparse
 from dataclasses import asdict, replace
@@ -112,13 +113,14 @@ def render_config(c, mount, params, rate, keep_oracle):
 FORCE_RATE = None
 
 
-def run(geometry, output, unit, mount, oracle_calib=False):
+def run(geometry, output, unit, mount, oracle_calib=False, oracle_train=False):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     params, g3 = reference_parameters()
     data = json.loads((Path(geometry)/f'unit{unit:02d}'/f'unit{unit:02d}.json').read_text(encoding='utf-8-sig'))
     rate = FORCE_RATE or (5 if data['split'] == 'train' else 10)
-    keep = data['split'] == 'audit' or (oracle_calib and data['split'] == 'calib')
+    keep = (data['split'] == 'audit' or (oracle_calib and data['split'] == 'calib')
+            or (oracle_train and data['split'] == 'train'))
     parts, oracles = [], []
     for c in data['configs']:
         obs, oracle = render_config(c, mount, params, rate, keep)
@@ -147,6 +149,7 @@ if __name__ == '__main__':
     p.add_argument('--family', default=FAMILY)
     p.add_argument('--rate', type=int, choices=(5,), default=None, help='force 5 Hz rendering for all splits')
     p.add_argument('--oracle-calib', action='store_true', help='write evaluator-only calib oracle (default: audit only)')
+    p.add_argument('--oracle-train', action='store_true', help='write privileged train oracle for Development (default: off)')
     a = p.parse_args()
     FAMILY, FORCE_RATE = a.family, a.rate
-    print(json.dumps(dict(unit=a.unit, mount=a.mount, rate_frames=run(a.geometry, a.output, a.unit, a.mount, a.oracle_calib))))
+    print(json.dumps(dict(unit=a.unit, mount=a.mount, rate_frames=run(a.geometry, a.output, a.unit, a.mount, a.oracle_calib, a.oracle_train))))
