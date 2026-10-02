@@ -1,15 +1,16 @@
 # 当前研究决定
 
-更新：2026-09-28。主线：盲杖互补的前视障碍感知。用户授权的冻结 v5 与回放已完成。
+更新：2026-10-02。主线：盲杖互补的前视障碍感知。冻结v5与回放已完成；用户新授权持续推进ToF相关突破，开展Development机制探索。
 
 Status: `L10_R0_PAUSED / DTR_R2_DYNAMIC_RETAINED`（历史保留）；ToF 阶段：`V5_FROZEN_COMPLETE / HARDWARE_DEFERRED`。
 
 ## 当前决定
 
+- **新授权继续ToF机制探索。** 9月29日方法暂停属于当轮决定；10月2日用户明确要求“尝试不断推进突破tof相关”。保留旧停止结果和判据，在新问题上继续可逆小试。当前优先解决粗格回波的局部表面归属与浅擦碰选择性，不将新种子或同批数据重用写成独立确认。最新运行、对照和代价见[避障当前页](../research/active/dtr-r0/CURRENT.md)及[实验日志](../research/active/dtr-r0/RUNS.md)。分级报警没有超越单阈值基线，跨格校正也尚未建立稳定额外收益；静态预测mask选格在15例H3电子代理中把净距≤2cm从7/15提高到10/15，作为下一探索优先项，尚非硬件或报警安全证据。
 - **本轮用户授权的 v5 冻结复现通过，保留 NN 加固定五分数平滑 A2。** HEAD/BODY AP 0.8444/0.7914；相对 S2 配对95%区间均高于零，两组均64/64单位胜出。A3补回6个强信号漏检，但guard实际误报未通过预设要求，不采用。见[v5结果](../research/active/dtr-r0/nearfield/CNH_V5_RESULTS_20260928.md)。不扩大记忆网络、不追加调参；用户设备暂不方便，交付历史真实输入回放，现场演示延后。02段整段有物体、无负帧，不能判定误报或选择性；主失败对照改为04恢复背景中HEAD左/中均128/128触发。这里“空”仅指无新增物体，64cm柜面仍在名义查询范围内，不能当真实应用假警率；输入定义与查询语义尚未分离，迁移未成立。
 - **接受 v4 执行偏差并披露。** 六个主检验及 A1/A2 保留为“正式结果，带已披露偏差”；不写成完全符合冻结流程，不事后修改协议。接受理由及恢复时点见[v4结果追加决定](../research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V4_RESULTS_20260926.md)。
 - v1/v2 原失败保留；修复 v2、位置/质量/软先验诊断均为已消费 Development，不追认为正式证据。相机必要性、ToF物理上限与真实效果均未建立。
-- 手机保留 A 基线及原首页→手动开始 A+LOCAL→结束返回首页；UNKNOWN 不等于无障碍。City、保护test、UE/RGB和硬件第二阶段仍暂停。
+- 手机保留 A 基线及原首页→手动开始 A+LOCAL→结束返回首页；UNKNOWN 不等于无障碍。City、保护test、新UE采集和硬件第二阶段仍暂停；已有RGB/深度Development缓存可用于已授权的ToF归属探索。
 
 ## 保留证据
 
@@ -23,10 +24,10 @@ Status: `L10_R0_PAUSED / DTR_R2_DYNAMIC_RETAINED`（历史保留）；ToF 阶段
 
 ## 未决与入口
 
-RGB 线已由用户于 2026-09-28 开启；首项[逼近选择性快速诊断](../research/active/dtr-r0/nearfield/CNH_RGB_LOOMING_DEV_20260928.md)未过预设门槛（合成数据，1–3 m AUC 0.580 < 位置基线 0.809），后续方向待用户定。产品报警工作点仍未决定；1.8秒“序列×查询盒”假警率不能换算实际提醒负担。真实计数/串扰/安装标定待硬件。确认畅通距离仅作≥10cm、ρ≥0.5、最坏摆放的附录辅助地图。
+RGB逼近选择性首轮失败保留；后续局部边缘小试发现理想正确距离可改善净距，但实际粗格对象/表面归属未解决。产品报警工作点仍未决定；短模拟序列及“序列×查询盒”假警不能换算真实提醒负担。真实计数/串扰/安装标定待硬件。确认畅通距离仅作≥10cm、ρ≥0.5、最坏摆放的附录辅助地图。
 
 [公开数据检索](../artifacts.local/work/tof-real-histogram-search-20260927/REPORT.md)：已核实LCSPCData（TMF8820）真实直方图与部分真值的文件目录；THDR3K（L8CH）入口仍未核验。未下载数据；后续文件审计/验证另行决定，不直接迁移为L8CH标定。
 
 [路线当前页](../research/active/dtr-r0/CURRENT.md) · [v3结果](../research/active/dtr-r0/nearfield/CNH_TRACK_A_SCALE_V3_RESULTS_20260926.md) · [软先验诊断](../research/active/dtr-r0/nearfield/CNH_SOFT_PRIOR_DEV_20260927.md) · [项目入口](PROJECT_STATE.md)
 
-[封口前全文](operations/snapshots/CURRENT_DECISION_20260927_PRE_TOF_CLOSE.md)逐字节保存；旧快照中的待决状态不覆盖本页。本次只完成用户指定 v5 与回放；[本轮更新前全文](operations/snapshots/CURRENT_DECISION_20260928_PRE_V5.md)保留。
+[封口前全文](operations/snapshots/CURRENT_DECISION_20260927_PRE_TOF_CLOSE.md)逐字节保存；旧快照中的待决状态不覆盖本页。[v5更新前全文](operations/snapshots/CURRENT_DECISION_20260928_PRE_V5.md)保留；后续当前页变更由Git历史保存。
