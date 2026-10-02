@@ -51,6 +51,7 @@ import com.linnan.blindassist.MainActivity
 import com.linnan.blindassist.model.AssistInputSource
 import com.linnan.blindassist.model.ReplayScenario
 import com.linnan.blindassist.preferences.DailyUsageMode
+import com.linnan.blindassist.preferences.UserPreferences
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -169,24 +170,39 @@ class BlindAssistComposeTest {
     fun defaultFlowKeepsModeAndSettingsOptionsAsIndependentAccessibleControls() {
         prepareMainShell()
         openFeaturesTab()
+        val preferences = UserPreferences(composeRule.activity)
+        val saved = preferences.load()
+        try {
+            composeRule.onNodeWithContentDescription("选择日常辅助模式")
+                .performScrollTo()
+                .performClick()
+            composeRule.onNodeWithContentDescription("选择灵敏辅助模式")
+                .performScrollTo()
+                .assertHasClickAction()
+                .assertRole(Role.RadioButton)
+                .assertStateDescription("未选择")
+                .assertHeightIsAtLeast(48.dp)
+                .performClick()
+            composeRule.onNodeWithContentDescription("选择灵敏辅助模式")
+                .assertStateDescription("当前辅助模式")
 
-        composeRule.onNodeWithContentDescription("选择灵敏辅助模式")
-            .performScrollTo()
-            .assertHasClickAction()
-            .assertRole(Role.RadioButton)
-            .assertStateDescription("未选择")
-            .assertHeightIsAtLeast(48.dp)
+            composeRule.onNodeWithText("设置").performClick()
+            composeRule.onNodeWithTag("language_selector")
+                .performScrollTo()
+                .assert(SemanticsMatcher.keyNotDefined(SemanticsProperties.ContentDescription))
 
-        composeRule.onNodeWithText("设置").performClick()
-        composeRule.onNodeWithTag("language_selector")
-            .performScrollTo()
-            .assert(SemanticsMatcher.keyNotDefined(SemanticsProperties.ContentDescription))
-
-        composeRule.onNodeWithContentDescription("选择敏感提醒档位")
-            .performScrollTo()
-            .assertHasClickAction()
-            .assertRole(Role.RadioButton)
-            .assertHeightIsAtLeast(48.dp)
+            composeRule.onNodeWithContentDescription("选择敏感提醒档位")
+                .performScrollTo()
+                .assertHasClickAction()
+                .assertRole(Role.RadioButton)
+                .assertHeightIsAtLeast(48.dp)
+        } finally {
+            preferences.setAlertProfile(saved.alertProfile)
+            preferences.setAssistScenario(saved.assistScenario)
+            preferences.setSpeechStyle(saved.speechStyle)
+            preferences.setVibrationStrength(saved.vibrationStrength)
+            preferences.setCareModeEnabled(saved.careModeEnabled)
+        }
     }
 
     @Test
