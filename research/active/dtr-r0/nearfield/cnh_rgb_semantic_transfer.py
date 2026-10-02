@@ -4,6 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 from copy import deepcopy
 from datetime import datetime, timezone
 from pathlib import Path
+import zlib
 import numpy as np
 
 import cnh_rgb_dense_semantics as D
@@ -30,7 +31,11 @@ def prepare():
         row['semantic_path']=str(depth.with_name(depth.name.replace('depth_meters','semantic')))
         row['instance_path']=str(depth.with_name(depth.name.replace('depth_meters','semantic_instance')))
         for key in ('rgb','depth','semantic','instance'):
-            digest=P.sha(row[key+'_path'])
+            path=Path(row[key+'_path'])
+            if key in ('semantic','instance') and not path.exists():
+                row[key+'_sha256']=None
+                continue
+            digest=P.sha(path)
             if key+'_sha256' in row:assert row[key+'_sha256']==digest
             row[key+'_sha256']=digest
         rows.append(row)
@@ -42,8 +47,11 @@ def prepare():
     sources=[Path(__file__),INFER,Path(D.__file__),Path(I.__file__),Path(Y.__file__),
              Path(S.__file__),Path(D.A.__file__),Path(D.V.__file__),Path(P.__file__)]
     dependencies=[OLD/'PLAN.json',BASE/'PLAN.json',BASE/'model-receipt.json',
-                  S.OUT/'predictions/inference-result.json',S.OUT/'nyu40-labels.csv',S.MODEL,S.LABELS]
-    row=(f'| 2026-10-02 | {RUN_ID} | PRE_RUN: exact prior nonNFO96 frames/48 scenes; frozen SegFormerB0 ADE29 and phoneYOLO8, no training/calibration; same >=16 support / >=50% naming, all40 classes, foreground/context separate | NOT_RUN; foreground query hits and pooled correct-pixel recall co-primary descriptive transfer; family bootstrap1000 seed2026100223; original objects and full confusion retained | Both positive = LIMITED_TRANSFER_INCREMENT_DEV; only hits positive = MIXED_TRANSFER_DEV; hits nonpositive = CATEGORY_GAIN_NOT_REPLICATED_DEV; no alarm or fresh confirmation, no remapping | `artifacts.local/work/cnh-rgb-semantic-transfer-20261002/REPORT.md` |')
+                  S.OUT/'predictions/inference-result.json',S.OUT/'nyu40-labels.csv',S.MODEL,S.LABELS,OUT/'label-manifest.json']
+    labels=P.read(OUT/'label-manifest.json')['files']
+    expected={str((P.DATA/r['path']).resolve()) for r in labels}
+    assert len(labels)==192 and expected=={str(Path(r[k+'_path']).resolve()) for r in rows for k in ('semantic','instance')}
+    row=(f'| 2026-10-02 | {RUN_ID} | PRE_RUN: exact prior nonNFO96 frames/48 scenes; frozen SegFormerB0 ADE29 and phoneYOLO8, no training/calibration; same >=16 support / >=50% naming, all40 classes, foreground/context separate; label paths/official CRC frozen, missing SHA bound separately before evaluation | NOT_RUN; foreground query hits and pooled correct-pixel recall co-primary descriptive transfer; family bootstrap1000 seed2026100223; original objects and full confusion retained | Both positive = LIMITED_TRANSFER_INCREMENT_DEV; only hits positive = MIXED_TRANSFER_DEV; hits nonpositive = CATEGORY_GAIN_NOT_REPLICATED_DEV; no alarm or fresh confirmation, no remapping | `artifacts.local/work/cnh-rgb-semantic-transfer-20261002/REPORT.md` |')
     body=P.RUNS.read_text(encoding='utf-8');assert f'| {RUN_ID} |' not in body
     OUT.mkdir(parents=True,exist_ok=True)
     P.RUNS.write_text(body.rstrip()+'\n'+row+'\n',encoding='utf-8')
@@ -57,11 +65,12 @@ def prepare():
         observations_sha256=P.sha(OUT/'observations.json'),
         rules=base['rules'],mapping_nyu_to_ade=base['mapping_nyu_to_ade'],mapping_nyu_to_coco=base['mapping_nyu_to_coco'],
         comparison='Identical full RGB recipes, representations/taxonomy differ; no model fitting, query input, remapping, sample replacement or threshold search',
+        label_binding='RGB inference independent of absent labels; all192 exact official member paths/CRC/sizes frozen in dependency label-manifest. Separate immutable label-binding.json required before evaluation, never change PLAN or replace inputs.',
         decision='Foreground query-hit delta>0 and pooled correct-pixel delta>0 => LIMITED_TRANSFER_INCREMENT_DEV; hit delta>0 only => MIXED_TRANSFER_DEV; otherwise CATEGORY_GAIN_NOT_REPLICATED_DEV. Descriptive, not significance or deployment.',
         bootstrap=dict(cluster='family',draws=1000,seed=2026100223,include='All39 families including no foreground support; zero-denominator draws counted/excluded'),
         overlap_with343=dict(ids=[],scenes=[],families=sorted({r['family'] for r in rows}&{r['family'] for r in base['inputs']})),
         preregistration=row))
-    print('Prepared exact96 frozen observations; all RGB/depth/semantic/instance hashes verified')
+    print('Prepared exact96 RGB/depth hashes and official label member identities; missing label SHA awaits separate binding')
 
 
 def validate():
@@ -70,6 +79,28 @@ def validate():
     for k,v in plan['dependencies'].items():assert P.sha(ROOT/k)==v,k
     assert P.sha(OUT/'observations.json')==plan['observations_sha256']
     return plan
+
+
+def bind_labels():
+    """Bind exact preselected official labels after authorized acquisition, no selection."""
+    plan=validate();assert not (OUT/'label-binding.json').exists()
+    manifest=P.read(OUT/'label-manifest.json')
+    labels={str((P.DATA/r['path']).resolve()):r for r in manifest['files']}
+    hashes={}
+    for row in plan['inputs']:
+        hashes[row['id']]={}
+        for key in ('semantic','instance'):
+            path=Path(row[key+'_path']);entry=labels[str(path.resolve())]
+            assert entry['frame_id']==row['id']
+            data=path.read_bytes()
+            assert len(data)==entry['uncompressed_bytes'] and zlib.crc32(data)==entry['crc32']
+            digest=P.sha(path)
+            if row[key+'_sha256'] is not None:assert digest==row[key+'_sha256']
+            hashes[row['id']][key+'_sha256']=digest
+    P.save(OUT/'label-binding.json',dict(plan_sha256=P.sha(OUT/'PLAN.json'),
+        label_manifest_sha256=P.sha(OUT/'label-manifest.json'),hashes=hashes,
+        bound_at=datetime.now(timezone.utc).isoformat(),scope='All192 preselected labels, no cohort or recipe change'))
+    print('Bound all192 exact official CRC/size/SHA labels')
 
 
 def paired(frames):
@@ -96,7 +127,12 @@ def paired(frames):
 
 def evaluate():
     assert not (OUT/'result.json').exists()
-    plan=validate();dense=P.read(OUT/'predictions/inference-result.json')
+    plan=validate();binding=P.read(OUT/'label-binding.json')
+    assert binding['plan_sha256']==P.sha(OUT/'PLAN.json')
+    assert binding['label_manifest_sha256']==P.sha(OUT/'label-manifest.json')
+    assert set(binding['hashes'])=={r['id'] for r in plan['inputs']}
+    for row in plan['inputs']:row.update(binding['hashes'][row['id']])
+    dense=P.read(OUT/'predictions/inference-result.json')
     yolo=P.read(OUT/'yolo/predictions/inference-result.json')
     assert dense['status']==yolo['status']=='COMPLETE'
     ids={r['id'] for r in plan['inputs']}
@@ -132,10 +168,11 @@ def evaluate():
     P.save(OUT/'frame-ledger.json',frames)
     P.save(OUT/'result.json',dict(run_id=RUN_ID,role=plan['role'],decision=decision,summary=summary,paired=pairs,
         families={family:D.summarize([f for f in frames if f['family']==family]) for family in pairs['family_order']},
+        label_binding_sha256=P.sha(OUT/'label-binding.json'),
         inference_hashes=dict(dense=P.sha(OUT/'predictions/inference-result.json'),yolo=P.sha(OUT/'yolo/predictions/inference-result.json'))))
     print(decision,a,b,pairs['bootstrap'])
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('action',choices=('prepare','evaluate','validate'))
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('action',choices=('prepare','bind_labels','evaluate','validate'))
     globals()[parser.parse_args().action]()
