@@ -55,6 +55,15 @@ def truncated(sigma_lat, lo, hi):
     return float(norm.cdf((OFFSET_SUPPORT[0]-a)/sigma_lat)+norm.sf((OFFSET_SUPPORT[1]-a)/sigma_lat))
 
 
+def sigma_star(cells, range_key, sigmas):
+    """Find a crossing only among cells interpretable under the frozen rule."""
+    base = cells[f'{range_key}|0.0']['contact 0-2']['alarm']['NEAR@10%']
+    star = next((s for s in sigmas if s > 0 and
+                 cells[f'{range_key}|{s}']['contact 0-2']['truncated_mass'] <= .05 and
+                 cells[f'{range_key}|{s}']['contact 0-2']['alarm']['perfect m=0cm'] < base), None)
+    return dict(sigma_star=star, near10_at_sigma0=base)
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=False)
     SS.save(OUT/'PLAN.json', dict(rule=RULE, sigmas_deg=SIGMAS_DEG, draws=DRAWS, ranges=RANGES, bins=BINS,
@@ -87,10 +96,7 @@ def main():
                                   alarm={a: float((np.broadcast_to(v[:, None], inbin.shape)[inbin]).mean()) if n_eff else None
                                          for a, v in arms.items()})
             result['cells'][f'{lo_r}-{hi_r}|{sig}'] = cell
-        base = result['cells'][f'{lo_r}-{hi_r}|0.0']['contact 0-2']['alarm']['NEAR@10%']
-        star = next((s for s in SIGMAS_DEG if s > 0 and
-                     result['cells'][f'{lo_r}-{hi_r}|{s}']['contact 0-2']['alarm']['perfect m=0cm'] < base), None)
-        result['sigma_star_deg'][f'{lo_r}-{hi_r}'] = dict(sigma_star=star, near10_at_sigma0=base)
+        result['sigma_star_deg'][f'{lo_r}-{hi_r}'] = sigma_star(result['cells'], f'{lo_r}-{hi_r}', SIGMAS_DEG)
     far = [v['sigma_star'] for k, v in result['sigma_star_deg'].items() if float(k.split('-')[0]) >= 1.2]
     result['reading'] = ('PATH_LIMITED_AT_<=1DEG' if all(s is not None and s <= 1 for s in far)
                          else 'NOT_PATH_LIMITED_AT_<=1DEG')
